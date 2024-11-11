@@ -9,6 +9,8 @@ export default defineConfig({
       // 경로 별칭 설정
       { find: "@asset", replacement: "/src/assets" },
       { find: "@shared", replacement: "/src/shared" },
+      { find: "@layouts", replacement: "/src/layouts" },
+      { find: "@pages", replacement: "/src/pages" },
       { find: "@tests", replacement: "/src/tests" },
       { find: "@", replacement: "/src" },
     ],

@@ -9,8 +9,7 @@ const PageLayout = () => {
         <aside className={styles.sidebar}>sidebar</aside>
         {/* 컨텐츠 */}
         <main className={styles.main}>
-          content
-          {/* <Outlet /> */}
+          <Outlet />
         </main>
         {/* 기타 */}
         <aside className={styles.extra}>extra</aside>
