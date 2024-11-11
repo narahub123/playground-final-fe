@@ -1,0 +1,46 @@
+.layout {
+  width: 100%;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+.sidebar {
+  width: 70px;
+  height: 100%;
+  border: 1px solid cornflowerblue;
+}
+.main {
+  width: 600px;
+  border: 1px solid #ccc;
+}
+.extra {
+  display: none;
+  border: 1px solid coral;
+}
+
+@media screen and (min-width: 901px) and (max-width: 1050px) {
+  .extra {
+    display: block;
+    width: 380px;
+  }
+}
+
+@media screen and (min-width: 1051px) and (max-width: 1279px) {
+  .extra {
+    display: block;
+    width: 380px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .sidebar {
+    width: 300px;
+  }
+  .extra {
+    display: block;
+    width: 380px;
+  }
+}
