@@ -13,62 +13,77 @@ import {
   Login,
   Signin,
   Logout,
+  Cover,
 } from "@pages/index";
+import AuthLayout from "@layouts/AuthLayout/AuthLayout";
 
 // 로그인 여부 확인
-const login = false;
+const login = true;
 // 로그인 한 경우 유저 아이디
 const id = "abc";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: login ? <PageLayout /> : <Auth />,
+    element: <Cover />,
     children: [
       {
-        path: "home",
-        element: <Home />,
-      },
-      {
-        path: "explore",
-        element: <Explore />,
-      },
-      {
-        path: "search",
-        element: <Search />,
-      },
-      {
-        path: "notification",
-        element: <Notification />,
-      },
-      {
-        path: "messages",
-        element: <Messages />,
-      },
-      {
-        path: `${id}`,
-        element: <ProfilePage />,
-      },
-      {
-        path: `bookmarks`,
-        element: <Bookmarks />,
-      },
-      {
-        path: `settings`,
-        element: <Settings />,
+        path: "/",
+        element: login ? <PageLayout /> : <AuthLayout />,
+        children: login
+          ? [
+              {
+                path: "home",
+                element: <Home />,
+              },
+              {
+                path: "explore",
+                element: <Explore />,
+              },
+              {
+                path: "search",
+                element: <Search />,
+              },
+              {
+                path: "notification",
+                element: <Notification />,
+              },
+              {
+                path: "messages",
+                element: <Messages />,
+              },
+              {
+                path: `${id}`,
+                element: <ProfilePage />,
+              },
+              {
+                path: `bookmarks`,
+                element: <Bookmarks />,
+              },
+              {
+                path: `settings`,
+                element: <Settings />,
+              },
+            ]
+          : [
+              {
+                index: true,
+                element: <Auth />,
+              },
+              {
+                path: `login`,
+                element: <Login />,
+              },
+              {
+                path: `signin`,
+                element: <Signin />,
+              },
+              {
+                path: `logout`,
+                element: <Logout />,
+              },
+            ],
       },
     ],
-  },
-  {
-    path: `login`,
-    element: <Login />,
-  },
-  {
-    path: `signin`,
-    element: <Signin />,
-  },
-  {
-    path: `logout`,
-    element: <Logout />,
   },
 ]);

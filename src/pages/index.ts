@@ -10,6 +10,7 @@ import Auth from "./Authentication/Auth";
 import Login from "./Login/Login";
 import Signin from "./Signin/Signin";
 import Logout from "./Logout/Logout";
+import Cover from "./Cover/Cover";
 
 export {
   Home,
@@ -24,4 +25,5 @@ export {
   Login,
   Signin,
   Logout,
+  Cover,
 };
