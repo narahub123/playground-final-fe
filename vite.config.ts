@@ -8,8 +8,7 @@ export default defineConfig({
     alias: [
       // 경로 별칭 설정
       { find: "@asset", replacement: "/src/assets" },
-      { find: "@routers", replacement: "/src/routers" },
-      { find: "@store", replacement: "/src/store" },
+      { find: "@shared", replacement: "/src/shared" },
       { find: "@tests", replacement: "/src/tests" },
       { find: "@", replacement: "/src" },
     ],

@@ -10,8 +10,7 @@
     "baseUrl": ".",
     "paths": {
       "@asset/*": ["src/assets/*"],
-      "@routers/*": ["src/routers/*"],
-      "@store/*": ["src/store/*"],
+      "@shared/*": ["src/shared/*"],
       "@tests/*": ["src/tests/*"],
       "@/*": ["src/*"]
     },
