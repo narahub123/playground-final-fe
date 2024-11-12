@@ -29,7 +29,7 @@ const tabTitles = [
   },
   {
     url: "",
-    name: "Playground",
+    name: "어서오세요",
   },
   {
     url: "login",
