@@ -2,6 +2,10 @@
 // import {} from "./apis";
 
 // pages와 관련된 상수
-// import {} from "./pages";
+import bookmarks from "./pages/bookmarks";
 
-export {};
+const Constant = {
+  bookmarks,
+};
+
+export default Constant;

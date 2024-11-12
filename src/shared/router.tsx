@@ -19,7 +19,7 @@ import {
 import AuthLayout from "@layouts/AuthLayout/AuthLayout";
 
 // 로그인 여부 확인
-const login = false;
+const login = true;
 // 로그인 한 경우 유저 아이디
 const id = "abc";
 

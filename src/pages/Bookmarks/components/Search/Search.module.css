@@ -1,0 +1,16 @@
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  position: absolute;
+  left: 10px;
+}
+
+.input {
+  width: 100%;
+  border-radius: 15px;
+  padding-left: 30px;
+}
