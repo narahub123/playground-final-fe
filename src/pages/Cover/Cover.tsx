@@ -5,7 +5,6 @@ import { tabTitles } from "@data/title";
 
 const Cover = () => {
   const { pathname } = useLocation();
-  console.log("현재 페이지 url", pathname);
 
   // 탭 타이틀 설정하기
   useEffect(() => {
@@ -21,7 +20,7 @@ const Cover = () => {
     // 문서 타이틀에 타이틀 삽입하기
     // 매체되는 타이틀이 있는 경우
     document.title = title
-      ? title + " | PlayGround"
+      ? `title | PlayGround`
       : url && name // 매치되는 타이틀은 없지만 유저 이름을 찾을 수 있는 경우(프로필 페이지)
       ? `${name}(@${url}) | PlayGround`
       : "페이지를 찾을 수 없습니다 | PlayGrond"; // 유저 이름을 찾을 수 없는 경우
