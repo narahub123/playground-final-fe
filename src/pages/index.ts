@@ -11,6 +11,7 @@ import Login from "./Login/Login";
 import Signin from "./Signin/Signin";
 import Logout from "./Logout/Logout";
 import Cover from "./Cover/Cover";
+import NotFound from "./NotFound/NotFound";
 
 export {
   Home,
@@ -26,4 +27,5 @@ export {
   Signin,
   Logout,
   Cover,
+  NotFound,
 };

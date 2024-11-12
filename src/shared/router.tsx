@@ -14,6 +14,7 @@ import {
   Signin,
   Logout,
   Cover,
+  NotFound,
 } from "@pages/index";
 import AuthLayout from "@layouts/AuthLayout/AuthLayout";
 
@@ -64,6 +65,10 @@ export const router = createBrowserRouter([
                 path: `settings`,
                 element: <Settings />,
               },
+              {
+                path: "*",
+                element: <NotFound />,
+              },
             ]
           : [
               {
@@ -81,6 +86,10 @@ export const router = createBrowserRouter([
               {
                 path: `logout`,
                 element: <Logout />,
+              },
+              {
+                path: "*",
+                element: <NotFound />,
               },
             ],
       },
