@@ -1,0 +1,28 @@
+.card {
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+}
+
+.type {
+  font-size: 12px;
+}
+
+.keyword {
+  font-weight: bold;
+}
+
+.amount {
+  font-size: 12px;
+}
+
+.right {
+  position: relative;
+  margin-right: 10px;
+}

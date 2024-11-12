@@ -1,10 +1,10 @@
 import styles from "./Post.module.css";
 
-type PostProps = {
-  post: any; // 실제로는 post type을 이용해야 함
+export type PostProps = {
+  item: any; // 실제로는 post type을 이용해야 함
 };
-const Post = ({ post }: PostProps) => {
-  return <article className={styles.post}>Post {post}</article>;
+const Post = ({ item }: PostProps) => {
+  return <article className={styles.post}>Post {item}</article>;
 };
 
 export default Post;

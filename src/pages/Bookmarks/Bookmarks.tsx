@@ -24,7 +24,7 @@ const Bookmarks = () => {
             description={Constant.bookmarks.empty.description}
           />
         ) : (
-          bookmarks.map((bookmark) => <Post post={bookmark} />)
+          bookmarks.map((bookmark) => <Post item={bookmark} />)
         )}
       </section>
     </div>

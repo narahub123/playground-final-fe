@@ -1,0 +1,16 @@
+.videos {
+  width: 100%;
+}
+
+.cover {
+  display: grid;
+  grid-template-columns: repeat(6, 200px);
+  gap: 10px;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+.container {
+  width: 200px;
+  height: 250px;
+}

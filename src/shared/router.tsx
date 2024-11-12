@@ -17,6 +17,8 @@ import {
   NotFound,
 } from "@pages/index";
 import AuthLayout from "@layouts/AuthLayout/AuthLayout";
+import Trend from "@pages/Explore/components/Trend/Trend";
+import ForYou from "@pages/Explore/components/ForYou/ForYou";
 
 // 로그인 여부 확인
 const login = true;
@@ -40,6 +42,11 @@ export const router = createBrowserRouter([
               {
                 path: "explore",
                 element: <Explore />,
+                children: [
+                  { path: "", element: <ForYou /> },
+                  { path: "tabs/trending", element: <Trend /> },
+                  { path: "tabs/for_you", element: <ForYou /> },
+                ],
               },
               {
                 path: "search",
