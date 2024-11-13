@@ -1,8 +1,9 @@
 import { NavLink } from "react-router-dom";
 import styles from "./Tabs.module.css";
+import { TabListType } from "@/types";
 
 type TabsProps = {
-  tabList: any[];
+  tabList: TabListType[];
 };
 
 const Tabs = ({ tabList }: TabsProps) => {

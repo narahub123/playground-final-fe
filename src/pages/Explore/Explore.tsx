@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import styles from "./Explore.module.css";
 import Search from "@pages/Bookmarks/components/Search/Search";
 import SettingButton from "./components/SettingButton/SettingButton";

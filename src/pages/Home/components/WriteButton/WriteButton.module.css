@@ -1,0 +1,10 @@
+.button {
+  border-radius: 20px;
+  padding: 7px 13px;
+  background-color: cornflowerblue;
+  color: white;
+}
+
+.active {
+  cursor: pointer;
+}

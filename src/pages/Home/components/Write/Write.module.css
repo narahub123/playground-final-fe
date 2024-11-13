@@ -1,0 +1,8 @@
+.write {
+  display: flex;
+  gap: 10px;
+}
+
+.right {
+  flex: 1;
+}

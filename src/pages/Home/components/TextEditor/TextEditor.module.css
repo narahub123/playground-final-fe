@@ -1,0 +1,15 @@
+.editor {
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+/* placeholder 구현하기  */
+[contentEditable="true"]:empty:not(:focus):before {
+  color: #555;
+  content: attr(data-placeholder);
+  display: inline-block;
+}
+
+[contentEditable="true"] {
+  display: inline-block;
+}

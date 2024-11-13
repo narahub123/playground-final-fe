@@ -1,0 +1,21 @@
+.modal {
+  position: absolute;
+  left: 0;
+  bottom: -230px;
+  background-color: #fff;
+  max-width: 500px;
+  height: 230px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+}
+.header {
+  padding: 7px;
+}
+.title {
+  font-weight: bold;
+}
+
+.detail {
+  font-size: 14px;
+  color: #aaa;
+}
