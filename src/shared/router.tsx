@@ -19,6 +19,8 @@ import {
 import AuthLayout from "@layouts/AuthLayout/AuthLayout";
 import Trend from "@pages/Explore/components/Trend/Trend";
 import ForYou from "@pages/Explore/components/ForYou/ForYou";
+import Notifications from "@pages/Notification/Notifications";
+import NotificationFeeds from "@pages/Notification/components/NotificationFeeds/NotificationFeeds";
 
 // 로그인 여부 확인
 const login = true;
@@ -53,8 +55,22 @@ export const router = createBrowserRouter([
                 element: <Search />,
               },
               {
-                path: "notification",
-                element: <Notification />,
+                path: "notifications",
+                element: <Notifications />,
+                children: [
+                  {
+                    path: "",
+                    element: <NotificationFeeds />,
+                  },
+                  {
+                    path: "verified",
+                    element: <NotificationFeeds />,
+                  },
+                  {
+                    path: "mentions",
+                    element: <NotificationFeeds />,
+                  },
+                ],
               },
               {
                 path: "messages",

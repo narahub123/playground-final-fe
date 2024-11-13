@@ -7,6 +7,7 @@ import explore from "./pages/explore";
 import home from "./pages/home";
 import trend from "./pages/trend";
 import textEditor from "./components/text-editor";
+import notifications from "./pages/notifications";
 
 const Constant = {
   bookmarks,
@@ -14,6 +15,7 @@ const Constant = {
   trend,
   home,
   textEditor,
+  notifications,
 };
 
 export default Constant;

@@ -15,6 +15,7 @@ import {
   LuSmile as emoji,
   LuCalendarClock as reserve,
   LuMapPin as location,
+  LuBell as alarm,
 } from "react-icons/lu";
 
 const ICONS = {
@@ -38,6 +39,9 @@ const ICONS = {
     emoji,
     reserve,
     location,
+  },
+  notificationIcons: {
+    alarm,
   },
 };
 
