@@ -1,8 +1,8 @@
-import UserType from "@pages/Explore/types/user";
-import Image from "../Image/Image";
 import styles from "./RecommendAccount.module.css";
+import Image from "../Image/Image";
 import FollowButton from "../FollowButton/FollowButton";
 import { Link } from "react-router-dom";
+import { UserType } from "@/types";
 
 export type RecommendAccountProps = {
   item: UserType;
@@ -14,7 +14,7 @@ const RecommendAccount = ({ item }: RecommendAccountProps) => {
   return (
     <Link to={``} className={styles.link}>
       <div className={styles.account}>
-        <Image url={item.imgUrl} />
+        <Image url={item.image} />
         <div className={styles.text}>
           <p>{item.name}</p>
           <p>{item.id}</p>

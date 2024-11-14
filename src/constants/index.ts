@@ -11,6 +11,7 @@ import notifications from "./pages/notifications";
 import messages from "./pages/messages";
 import profilePage from "./pages/profile-page";
 import dateUtil from "./utils/date";
+import search from "./pages/search";
 
 const Constant = {
   bookmarks,
@@ -22,6 +23,7 @@ const Constant = {
   messages,
   profilePage,
   dateUtil,
+  search,
 };
 
 export default Constant;

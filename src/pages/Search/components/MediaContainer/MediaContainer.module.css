@@ -1,0 +1,8 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(
+    3,
+    1fr
+  ); /* 열을 3개로 고정하여 동일한 너비 설정 */
+  grid-auto-rows: 1fr; /* 각 행의 높이도 열 너비에 비례해 동일하게 설정 */
+}

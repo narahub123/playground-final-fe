@@ -91,6 +91,10 @@ const ICONS = {
     addImage,
     deleteImage: close,
   },
+  searchIcons: {
+    backward,
+    more,
+  },
 };
 
 export default ICONS;

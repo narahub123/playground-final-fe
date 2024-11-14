@@ -8,6 +8,7 @@ export type FeedsProps = {
 const Feeds = ({ list }: FeedsProps) => {
   return (
     <div className={styles.feeds}>
+      피드
       {list.map((item, index) => (
         <Post item={item} key={index} />
       ))}

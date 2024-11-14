@@ -1,6 +1,5 @@
 import { background1, profile1, profile2, video1, video2 } from "@asset/index";
 import TrendType from "@pages/Explore/types/trend";
-import UserType from "@pages/Explore/types/user";
 
 const trendExample: TrendType[] = [
   {
@@ -16,18 +15,18 @@ const trendExample: TrendType[] = [
   },
 ];
 
-const UserList: UserType[] = [
+const UserList = [
   {
     name: "몰러",
     id: "adfe",
     intro: "ㅁㅇㄹㄴㅁㄹ",
-    imgUrl: profile1,
+    image: profile1,
   },
   {
     name: "그냥",
     id: "111adfsfef",
     intro: "이런저런그런메롱 하하힠ㅋ ㄴㅇㄹㄴ엶ㄴㄹ",
-    imgUrl: profile2,
+    image: profile2,
   },
 ];
 
