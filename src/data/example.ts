@@ -1,4 +1,4 @@
-import { profile1, profile2, video1, video2 } from "@asset/index";
+import { background1, profile1, profile2, video1, video2 } from "@asset/index";
 import TrendType from "@pages/Explore/types/trend";
 import UserType from "@pages/Explore/types/user";
 
@@ -43,11 +43,19 @@ const videoList: any[] = [
 const userData = {
   name: "몰러",
   image: profile1,
+  headerImage: background1,
   id: "abc",
   intro: "이게 뭐여?",
+  location: "",
+  website: "",
   regDate: new Date(),
   followers: ["abc111", "abc222"],
   followings: ["abc111", "abc222"],
+  birth: {
+    year: "2006",
+    month: "5",
+    date: "15",
+  },
 };
 
 const currentUserData = {

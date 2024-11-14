@@ -34,7 +34,7 @@ const MessageIcon = ({
 
   return (
     <div className={styles.container} onClick={modal ? openModal : undefined}>
-      {showModal && Modal}
+      {showModal && Modal }
       <Icon className={styles.icon} onClick={handleClick} title={title} />
     </div>
   );

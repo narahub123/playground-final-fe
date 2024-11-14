@@ -9,6 +9,8 @@ import trend from "./pages/trend";
 import textEditor from "./components/text-editor";
 import notifications from "./pages/notifications";
 import messages from "./pages/messages";
+import profilePage from "./pages/profile-page";
+import dateUtil from "./utils/date";
 
 const Constant = {
   bookmarks,
@@ -18,6 +20,8 @@ const Constant = {
   textEditor,
   notifications,
   messages,
+  profilePage,
+  dateUtil,
 };
 
 export default Constant;

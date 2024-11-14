@@ -1,0 +1,64 @@
+.container {
+  border: 1px solid #ccc;
+}
+
+.upper {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+.upper.focused {
+}
+.title {
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.title.focused {
+  font-size: inherit;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.countWords {
+  /* 변경 */
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.countWords.focused {
+  /* 변경 */
+  visibility: visible;
+  transition: all 0.3s ease-in-out;
+}
+
+.lower {
+  position: relative;
+  /* 고정 */
+  /* 변경 */
+  height: 0px;
+  transition: all 0.3s ease-in-out;
+}
+.lower.focused {
+  /* 변경 */
+  height: 40px;
+  transition: all 0.3s ease-in-out;
+}
+.input {
+  /* 고정 */
+  width: 100%;
+  height: 100%;
+  border: 0;
+  /* 변경 */
+  padding-block: 0;
+  padding-inline: 0;
+
+  transition: all 0.3s ease-in-out;
+}
+.input.focused {
+  /* 변경 */
+  padding-block: 1px;
+  padding-inline: 2px;
+
+  transition: all 0.3s ease-in-out;
+}

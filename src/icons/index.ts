@@ -35,7 +35,10 @@ import {
   LuInfo as info,
   LuSend as talkReply,
   LuCopy as copy,
+  LuX as close,
 } from "react-icons/lu";
+
+import { TbCameraPlus as addImage } from "react-icons/tb";
 
 const ICONS = {
   replyOptions: {
@@ -83,6 +86,10 @@ const ICONS = {
     talkReport: report,
     talkCopy: copy,
     talkDelete: delConversation,
+  },
+  profileIcons: {
+    addImage,
+    deleteImage: close,
   },
 };
 

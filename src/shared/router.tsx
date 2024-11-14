@@ -23,6 +23,7 @@ import Notifications from "@pages/Notification/Notifications";
 import NotificationFeeds from "@pages/Notification/components/NotificationFeeds/NotificationFeeds";
 import MessageSettings from "@pages/Messages/components/MessageSettings/MessageSettings";
 import ConversationWindow from "@pages/Messages/components/ConversationWindow/ConversationWindow";
+import Feeds from "@pages/Explore/components/Feeds/Feeds";
 
 // 로그인 여부 확인
 const login = true;
@@ -91,6 +92,24 @@ export const router = createBrowserRouter([
               {
                 path: `${id}`,
                 element: <ProfilePage />,
+                children: [
+                  {
+                    path: "",
+                    element: <Feeds list={[]} />,
+                  },
+                  {
+                    path: "with_replies",
+                    element: <Feeds list={[]} />,
+                  },
+                  {
+                    path: "media",
+                    element: <Feeds list={[]} />,
+                  },
+                  {
+                    path: "likes",
+                    element: <Feeds list={[]} />,
+                  },
+                ],
               },
               {
                 path: `bookmarks`,
