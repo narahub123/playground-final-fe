@@ -1,0 +1,15 @@
+.modal {
+  position: absolute;
+  right: 0px;
+  top: 0;
+  width: 180px;
+  background-color: #fff;
+  z-index: 1;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+}

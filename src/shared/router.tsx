@@ -21,6 +21,8 @@ import Trend from "@pages/Explore/components/Trend/Trend";
 import ForYou from "@pages/Explore/components/ForYou/ForYou";
 import Notifications from "@pages/Notification/Notifications";
 import NotificationFeeds from "@pages/Notification/components/NotificationFeeds/NotificationFeeds";
+import MessageSettings from "@pages/Messages/components/MessageSettings/MessageSettings";
+import ConversationWindow from "@pages/Messages/components/ConversationWindow/ConversationWindow";
 
 // 로그인 여부 확인
 const login = true;
@@ -75,6 +77,16 @@ export const router = createBrowserRouter([
               {
                 path: "messages",
                 element: <Messages />,
+                children: [
+                  {
+                    path: "settings",
+                    element: <MessageSettings />,
+                  },
+                  {
+                    path: `${id}`,
+                    element: <ConversationWindow />,
+                  },
+                ],
               },
               {
                 path: `${id}`,

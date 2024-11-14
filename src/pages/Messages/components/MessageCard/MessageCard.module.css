@@ -1,0 +1,21 @@
+.link {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  display: flex;
+  gap: 5px;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #ccc;
+}
+
+.name {
+  color: black;
+  font-weight: bold;
+}

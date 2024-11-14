@@ -40,4 +40,39 @@ const videoList: any[] = [
   { video: video2 },
 ];
 
-export { trendExample, UserList, postList, videoList };
+const userData = {
+  name: "몰러",
+  image: profile1,
+  id: "abc",
+  intro: "이게 뭐여?",
+  regDate: new Date(),
+  followers: ["abc111", "abc222"],
+  followings: ["abc111", "abc222"],
+};
+
+const currentUserData = {
+  userId: "abc",
+};
+
+const conversationData = [
+  {
+    text: "안녕하세요",
+    talkDate: new Date(),
+    userId: "abc",
+  },
+  {
+    text: "안녕하세요",
+    talkDate: new Date(),
+    userId: "def",
+  },
+];
+
+export {
+  trendExample,
+  UserList,
+  postList,
+  videoList,
+  currentUserData,
+  userData,
+  conversationData,
+};

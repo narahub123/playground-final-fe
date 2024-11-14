@@ -1,0 +1,34 @@
+.mate {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.id {
+  color: #ccc;
+  font-size: 14px;
+}
+
+.intro {
+  color: #ccc;
+  font-size: 14px;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #ccc;
+  font-size: 14px;
+}
+
+.matchedFollowings {
+  color: #ccc;
+  font-size: 14px;
+}

@@ -1,0 +1,20 @@
+.navigation {
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search {
+  display: flex;
+}
+
+.input {
+  flex: 1;
+}
+
+.right {
+}

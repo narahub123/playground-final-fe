@@ -1,0 +1,52 @@
+.talk {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+}
+
+.left {
+  justify-content: left;
+}
+
+.right {
+  justify-content: right;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.me {
+  align-items: end;
+}
+
+.you {
+  align-items: start;
+}
+
+.textArea {
+  display: flex;
+}
+
+.text {
+  padding: 7px 15px;
+  border-radius: 20px;
+  background-color: cornflowerblue;
+  color: #fff;
+  cursor: pointer;
+}
+
+.me1 {
+  border-radius: 20px 20px 0px;
+}
+
+.you1 {
+  border-radius: 20px 20px 20px 0;
+}
+
+.date {
+  color: #ccc;
+  font-size: 14px;
+}

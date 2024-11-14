@@ -1,3 +1,4 @@
 import { TabListType } from "./home";
+import { TalkType } from "./messages";
 
-export type { TabListType };
+export type { TabListType, TalkType };
