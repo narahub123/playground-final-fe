@@ -1,0 +1,16 @@
+.landing {
+  width: 100%;
+}
+/* 설정 목록 컨테이너 */
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.setting {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}

@@ -7,6 +7,7 @@ type SettingCardProps = {
   checked: string;
   unchecked: string;
   setting: boolean | string;
+  detail?: string;
   setDefaultValue?: React.Dispatch<React.SetStateAction<string>>;
   value?: string;
 };
@@ -16,6 +17,7 @@ const SettingCard = ({
   checked,
   unchecked,
   setting,
+  detail,
   setDefaultValue,
   value,
 }: SettingCardProps) => {
@@ -33,17 +35,24 @@ const SettingCard = ({
 
   return (
     <div className={styles.card} onClick={handleClick}>
-      <p>{text}</p>
-      {!value ? (
-        <MessageIcon
-          option={isChecked ? checked : unchecked}
-          handleClick={() => {}}
-        />
-      ) : (
-        <MessageIcon
-          option={value === setting ? checked : unchecked}
-          handleClick={() => {}}
-        />
+      <div className={styles.upper}>
+        <p>{text}</p>
+        {!value ? (
+          <MessageIcon
+            option={isChecked ? checked : unchecked}
+            handleClick={() => {}}
+          />
+        ) : (
+          <MessageIcon
+            option={value === setting ? checked : unchecked}
+            handleClick={() => {}}
+          />
+        )}
+      </div>
+      {detail && (
+        <div className={styles.lower}>
+          <p className={styles.detail}>{detail}</p>
+        </div>
       )}
     </div>
   );

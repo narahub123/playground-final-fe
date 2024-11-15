@@ -1,0 +1,36 @@
+.downloadData {
+}
+
+.detail {
+  font-size: 12px;
+}
+
+.main {
+  padding: 10px;
+}
+
+.explanation {
+  font-size: 14px;
+}
+
+.btnContainer {
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  flex: 3;
+  font-size: 14px;
+}
+
+.btn {
+}
+
+.button {
+  flex: 2;
+  font-size: 14px;
+  border-radius: 20px;
+  background-color: cornflowerblue;
+  color: white;
+  padding: 10px 20px;
+}

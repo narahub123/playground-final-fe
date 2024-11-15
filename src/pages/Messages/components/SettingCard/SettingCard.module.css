@@ -1,6 +1,13 @@
 .card {
   width: 100%;
+}
+
+.upper {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.detail {
+  font-size: 12px;
 }

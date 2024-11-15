@@ -1,0 +1,16 @@
+.appAndSession {
+}
+
+.detail {
+  font-size: 12px;
+}
+
+.container {
+  width: 100%;
+}
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}

@@ -1,0 +1,17 @@
+.account {
+  width: 100%;
+}
+.main {
+  width: inherit;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.detail {
+  font-size: 12px;
+}

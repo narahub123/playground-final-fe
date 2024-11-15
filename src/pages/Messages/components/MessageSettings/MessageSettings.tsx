@@ -27,7 +27,7 @@ const MessageSettings = () => {
       <Header title={Constant.messages.title} />
       <main className={styles.main}>
         <section className={styles.section}>
-          <p>다음 사용ㅇ자의 채팅 요청 허용</p>
+          <p>다음 사용자의 채팅 요청 허용</p>
           <p>내가 팔로우 하는 사용자가 보낸 채팅는 항상 받을 수 있습니다.</p>
           <ul className={styles.container}>
             {allowMessageList.map((item) => (

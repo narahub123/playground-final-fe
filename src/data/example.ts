@@ -1,3 +1,4 @@
+import { UserType } from "@/types";
 import { background1, profile1, profile2, video1, video2 } from "@asset/index";
 import TrendType from "@pages/Explore/types/trend";
 
@@ -39,13 +40,13 @@ const videoList: any[] = [
   { video: video2 },
 ];
 
-const userData = {
+const userData: UserType = {
   name: "몰러",
   image: profile1,
   headerImage: background1,
   id: "abc",
   intro: "이게 뭐여?",
-  location: "",
+  location: "대한민국",
   website: "",
   regDate: new Date(),
   followers: ["abc111", "abc222"],
@@ -55,6 +56,13 @@ const userData = {
     month: "5",
     date: "15",
   },
+  phone: "",
+  email: "abc@test.com",
+  isAuthorized: false,
+  isHidden: false,
+  ip: "182.227.103.48",
+  languages: ["한국어"],
+  gender: "f",
 };
 
 const currentUserData = {

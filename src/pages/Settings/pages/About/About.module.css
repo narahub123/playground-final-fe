@@ -1,0 +1,30 @@
+.about {
+  width: 100%;
+}
+
+.detail {
+  font-size: 14px;
+}
+
+.main {
+}
+
+.container {
+}
+
+.title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.linkContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5px;
+}

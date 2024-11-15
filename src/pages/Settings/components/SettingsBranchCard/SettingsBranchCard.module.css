@@ -1,0 +1,22 @@
+.card {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  padding: 10px 15px;
+}
+.content {
+  flex: 1;
+}
+
+.title {
+  font-weight: bold;
+}
+.detail {
+  font-size: 14px;
+  color: #aaa;
+}
+.forward {
+  padding: 10px;
+}

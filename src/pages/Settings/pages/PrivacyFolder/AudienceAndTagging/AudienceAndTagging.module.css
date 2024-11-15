@@ -1,0 +1,22 @@
+.audienceAndTagging {
+  width: 100%;
+}
+
+.detail {
+  font-size: 12px;
+}
+
+.main {
+}
+.section {
+  padding: 10px;
+}
+.description {
+  font-size: 12px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

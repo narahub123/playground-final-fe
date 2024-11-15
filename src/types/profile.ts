@@ -10,6 +10,13 @@ interface UserType {
   followers: string[];
   followings: string[];
   birth: BirthType;
+  phone: string;
+  email: string;
+  isAuthorized: boolean; // 인증 메일과 다른 인증
+  isHidden: boolean; // 게시물 공개 여부
+  ip: string;
+  languages: string[];
+  gender: "f" | "m";
 }
 
 interface BirthType {

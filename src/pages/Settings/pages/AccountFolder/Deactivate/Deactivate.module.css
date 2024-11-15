@@ -1,0 +1,36 @@
+.deactivate {
+  width: 100%;
+}
+
+.main {
+  width: 100%;
+}
+
+.userContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.name {
+  font-weight: bold;
+}
+.id {
+  color: #ccc;
+  font-size: 15px;
+}
+.item {
+  font-size: 12px;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.button {
+  color: red;
+  cursor: pointer;
+}

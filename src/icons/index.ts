@@ -4,9 +4,12 @@ import {
   FaEarthAsia as asia,
   FaEarthEurope as europe,
   FaEarthOceania as oceania,
+  FaRegEnvelope as message,
 } from "react-icons/fa6";
 
 import { BsEnvelopePlus as addMessage } from "react-icons/bs";
+
+import { GiEarthAsiaOceania as world } from "react-icons/gi";
 
 import {
   LuUserCheck as usercheck,
@@ -36,7 +39,29 @@ import {
   LuSend as talkReply,
   LuCopy as copy,
   LuX as close,
+  LuChevronRight as forward,
+  LuUser2 as account,
+  LuKeyRound as password,
+  LuDownload as download,
+  LuHeartCrack as deactivate,
+  LuLock as security,
+  LuCopy as app,
+  LuArrowLeftRight as connect,
+  LuUsers2 as delegate,
+  LuPenLine as write,
+  LuText as content,
+  LuVolumeX as mute,
+  LuContact as contact,
+  LuArrowUpRightSquare as ads,
+  LuSlidersHorizontal as filter,
+  LuSettings2 as preference,
+  LuEyeOff as accessibility,
+  LuPen as display,
+  LuBarChart3 as chart,
+  LuArrowUpRight as link,
 } from "react-icons/lu";
+
+import { PiPersonSimpleCircleLight as shortcut } from "react-icons/pi";
 
 import { TbCameraPlus as addImage } from "react-icons/tb";
 
@@ -94,6 +119,32 @@ const ICONS = {
   searchIcons: {
     backward,
     more,
+  },
+  settingsIcons: {
+    forward,
+    account,
+    password,
+    download,
+    deactivate,
+    security,
+    app,
+    connect,
+    delegate,
+    write,
+    content,
+    mute,
+    message,
+    contact,
+    location,
+    ads,
+    filter,
+    preference,
+    accessibility,
+    display,
+    world,
+    chart,
+    shortcut,
+    link,
   },
 };
 
