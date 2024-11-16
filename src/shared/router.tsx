@@ -284,7 +284,6 @@ export const router = createBrowserRouter([
                   {
                     path: "content_you_see",
                     element: <SortContents />,
-                    
                   },
                   {
                     path: "mute_and_block",

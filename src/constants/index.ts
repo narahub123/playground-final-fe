@@ -13,6 +13,7 @@ import profilePage from "./pages/profile-page";
 import dateUtil from "./utils/date";
 import search from "./pages/search";
 import settings from "./pages/settings";
+import notFound from "./pages/notfound";
 
 const Constant = {
   bookmarks,
@@ -26,6 +27,7 @@ const Constant = {
   dateUtil,
   search,
   settings,
+  notFound,
 };
 
 export default Constant;
