@@ -10,7 +10,7 @@
     "baseUrl": ".",
     "paths": {
       "@asset/*": ["src/assets/*"],
-      "@shared/*": ["src/shared/*"],
+      "@shared/*": ["src/sharedfolder/*"],
       "@layouts/*": ["src/layouts/*"],
       "@pages/*": ["src/pages/*"],
       "@data/*": ["src/data/*"],

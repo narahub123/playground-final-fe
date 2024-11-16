@@ -1,6 +1,7 @@
 import { UserType } from "@/types";
 import { background1, profile1, profile2, video1, video2 } from "@asset/index";
 import TrendType from "@pages/Explore/types/trend";
+import { MediaType } from "@pages/Search/components/MediaContainer/MediaContainer";
 
 const trendExample: TrendType[] = [
   {
@@ -82,6 +83,13 @@ const conversationData = [
   },
 ];
 
+const mediaList: MediaType[] = [
+  { postId: "abc", type: "image", src: profile1 },
+  { postId: "abd", type: "video", src: video1 },
+  { postId: "abd", type: "video", src: video2 },
+  { postId: "abd", type: "image", src: background1 },
+];
+
 export {
   trendExample,
   UserList,
@@ -90,4 +98,5 @@ export {
   currentUserData,
   userData,
   conversationData,
+  mediaList,
 };

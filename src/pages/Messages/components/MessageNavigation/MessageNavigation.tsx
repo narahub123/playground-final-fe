@@ -62,30 +62,49 @@ const MessageNavigation = () => {
     setIsSearching(false);
   };
 
+  const {
+    pageName,
+    title,
+    settingIconOption,
+    settingIconTitle,
+    addMessageIconOption,
+    addMessageIconTitle,
+    searchBackwordButtonOption,
+    searchPlaceholder,
+    empty,
+  } = Constant.messages;
+
   return (
     <div className={styles.navigation}>
       <div className={styles.header}>
         <div className="left">
-          <Header title={Constant.messages.title} />
+          <Header title={title} />
         </div>
         <div className="right">
-          <MessageIcon option="setting" handleClick={() => {}} title="설정" />
           <MessageIcon
-            option="addMessage"
+            option={settingIconOption}
             handleClick={() => {}}
-            title="새 채팅"
+            title={settingIconTitle}
+          />
+          <MessageIcon
+            option={addMessageIconOption}
+            handleClick={() => {}}
+            title={addMessageIconTitle}
           />
         </div>
       </div>
       <section className={styles.search}>
         {/* 이전 페이지 버튼이 생김: 이전 페이지 이동 및 isSearching이 false로 바뀜 */}
         {isSearching && (
-          <MessageIcon option="backward" handleClick={handleBackward} />
+          <MessageIcon
+            option={searchBackwordButtonOption}
+            handleClick={handleBackward}
+          />
         )}
         <span className={styles.input}>
           <Search
-            pageName="messages"
-            placeholder={Constant.messages.searchPlaceholder}
+            pageName={pageName}
+            placeholder={searchPlaceholder}
             setKeyword={setKeyword}
             setIsSearching={setIsSearching}
           />
@@ -98,10 +117,7 @@ const MessageNavigation = () => {
         results.groups.length === 0 &&
         results.conversations.length === 0 &&
         !keyword ? (
-        <Empty
-          title={Constant.messages.empty.title}
-          description={Constant.messages.empty.description}
-        />
+        <Empty title={empty.title} description={empty.description} />
       ) : (
         <MessageSearchResult results={results} keyword={keyword} />
       )}

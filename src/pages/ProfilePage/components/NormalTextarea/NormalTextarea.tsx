@@ -1,6 +1,5 @@
 import { useState } from "react";
 import styles from "./NormalTextarea.module.css";
-import Constant from "@constants/index";
 
 type NormalTextareaProps = {
   title: string;

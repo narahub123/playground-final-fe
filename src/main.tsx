@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import { RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
-import { router, store } from "./shared";
+import { router, store } from "./sharedfolder";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

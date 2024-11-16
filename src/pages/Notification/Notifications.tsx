@@ -5,10 +5,11 @@ import Tabs from "@pages/Explore/components/Tabs/Tabs";
 import { Outlet } from "react-router-dom";
 
 const Notifications = () => {
+  const { title, tabList } = Constant.notifications;
   return (
     <div className={styles.notifiaction}>
-      <Header title={Constant.notifications.title} />
-      <Tabs tabList={Constant.notifications.tabList} />
+      <Header title={title} />
+      <Tabs tabList={tabList} />
       <Outlet />
     </div>
   );

@@ -1,6 +1,11 @@
 const messages = {
   pageName: "messages",
   title: "채팅",
+  settingIconOption: "setting",
+  settingIconTitle: "설정",
+  addMessageIconOption: "addMessage",
+  addMessageIconTitle: "새 채팅",
+  searchBackwordButtonOption: "backward",
   searchPlaceholder: "채팅 검색하기",
   empty: {
     title: "",
@@ -38,11 +43,6 @@ const messages = {
     users: "사용자",
     groups: "그룹",
     conversations: "채팅",
-  },
-  settings: {
-    allowMessage: "all",
-    filtering: true,
-    readIndicator: false,
   },
 };
 

@@ -4,12 +4,14 @@ import { TalkType } from "@/types";
 import MessageIcon from "../MessageIcon/MessageIcon";
 import { useState } from "react";
 import TalkModal from "../TalkModal/TalkModal";
+import Constant from "@constants/index";
 
 type TalkContainerProps = {
   talk: TalkType;
 };
 
 const TalkContainer = ({ talk }: TalkContainerProps) => {
+  const { moreIcon } = Constant.components.conversation;
   const [isOver, setIsOver] = useState(false);
 
   const curUser = currentUserData;
@@ -34,7 +36,11 @@ const TalkContainer = ({ talk }: TalkContainerProps) => {
           }}
         >
           {isOver && curUser.userId === talk.userId && (
-            <MessageIcon option="more" handleClick={() => {}} title="더보기" />
+            <MessageIcon
+              option={moreIcon.option}
+              handleClick={() => {}}
+              title={moreIcon.title}
+            />
           )}
           <p
             className={`${styles.text} ${
@@ -45,9 +51,9 @@ const TalkContainer = ({ talk }: TalkContainerProps) => {
           </p>
           {isOver && curUser.userId !== talk.userId && (
             <MessageIcon
-              option="more"
+              option={moreIcon.option}
               handleClick={() => {}}
-              title="더보기"
+              title={moreIcon.title}
               modal="talkModal"
             />
           )}

@@ -1,5 +1,6 @@
 const explore = {
   pageName: "explore",
+  settingButton: "설정",
   tabList: [
     {
       name: "나를 위한 추천",

@@ -1,6 +1,6 @@
-import { background1, profile1, video1, video2 } from "@asset/index";
 import styles from "./MediaContainer.module.css";
 import Thumb from "../Thumb/Thumb";
+import { mediaList } from "@data/example";
 
 export interface MediaType {
   postId: string;
@@ -9,12 +9,6 @@ export interface MediaType {
 }
 
 const MediaContainer = () => {
-  const mediaList: MediaType[] = [
-    { postId: "abc", type: "image", src: profile1 },
-    { postId: "abd", type: "video", src: video1 },
-    { postId: "abd", type: "video", src: video2 },
-    { postId: "abd", type: "image", src: background1 },
-  ];
   return (
     <div className={styles.mediaContainer}>
       <ul className={styles.container}>

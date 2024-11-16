@@ -5,8 +5,7 @@ import Tabs from "@pages/Explore/components/Tabs/Tabs";
 import Constant from "@constants/index";
 import { useLocation } from "react-router-dom";
 import Feeds from "@pages/Explore/components/Feeds/Feeds";
-import RecommendAccount from "@pages/Explore/components/RecommendAccount/RecommendAccount";
-import { userData, UserList } from "@data/example";
+import { UserList } from "@data/example";
 import { RecommendLayout } from "@layouts/index";
 import RecommendAccounts from "@pages/Explore/components/RecommendAccounts/RecommendAccounts";
 import MediaContainer from "./components/MediaContainer/MediaContainer";
@@ -14,21 +13,25 @@ import MediaContainer from "./components/MediaContainer/MediaContainer";
 const Search = () => {
   const { search } = useLocation();
   const f = search.split("&f=")[1];
-  console.log(f);
+  const { tabList, backwardIcon, searchBox, moreIcon, recUser } =
+    Constant.search;
 
   return (
     <div className={styles.search}>
       <header className={styles.header}>
-        <Icon option="backward" />
-        <SearchBox pageName="search" placeholder="" />
-        <Icon option="more" />
+        <Icon option={backwardIcon.option} />
+        <SearchBox
+          pageName={searchBox.pageName}
+          placeholder={searchBox.placeholder}
+        />
+        <Icon option={moreIcon.option} />
       </header>
-      <Tabs tabList={Constant.search.tabList} isQuery={true} />
+      <Tabs tabList={tabList} isQuery={true} />
       <main className={styles.main}>
         {!f ? (
           <>
             <RecommendLayout
-              title="사용자"
+              title={recUser.title}
               list={UserList}
               component={RecommendAccounts}
             />

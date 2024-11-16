@@ -1,17 +1,19 @@
-import Tabs from "@pages/Explore/components/Tabs/Tabs";
 import styles from "./ProfilePage.module.css";
+import Image from "@pages/Explore/components/Image/Image";
+import Tabs from "@pages/Explore/components/Tabs/Tabs";
+import ProfileModal from "./components/ProfileModal/ProfileModal";
 import Constant from "@constants/index";
 import { Outlet } from "react-router-dom";
-import Image from "@pages/Explore/components/Image/Image";
 import { currentUserData, userData } from "@data/example";
 import { LuCalendar } from "react-icons/lu";
 import { useState } from "react";
-import ProfileModal from "./components/ProfileModal/ProfileModal";
 import { UserType } from "@/types";
 
 const ProfilePage = () => {
   const [showModal, setShowModal] = useState(false);
   const [user, setUser] = useState<UserType>(userData);
+
+  const { tabList } = Constant.profilePage;
 
   const showBtnCond = user.id === currentUserData.userId;
 
@@ -84,7 +86,7 @@ const ProfilePage = () => {
           </div>
         </div>
       </section>
-      <Tabs tabList={Constant.profilePage.tabList} />
+      <Tabs tabList={tabList} />
       <Outlet />
     </div>
   );

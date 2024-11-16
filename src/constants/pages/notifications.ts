@@ -14,6 +14,10 @@ const notifications = {
       mentions: "누군가가 나를 멘션하면 여기에 표시됩니다.",
     },
   },
+  notificationCard: {
+    imageWidth: "40px",
+    text: "님의 새게시물 알림",
+  },
 };
 
 export default notifications;

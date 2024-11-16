@@ -43,6 +43,8 @@ const ProfileModal = ({ user, setUser }: ProfileModalProps) => {
     deleteBirth,
     nameMaxLength,
     introMaxLength,
+    editBirthWarning1,
+    editBirthWarning2,
   } = Constant.profilePage;
 
   const { unitOfYear, unitOfMonth, unitOfDate } = Constant.dateUtil;
@@ -138,14 +140,8 @@ const ProfileModal = ({ user, setUser }: ProfileModalProps) => {
             {editBirth ? (
               <>
                 <div>
-                  <p>
-                    계정을 사용하는 사람의 생년월일을 입력해 주세요. 비즈니스,
-                    이벤트 또는 고양이를 위한 계정인 경우에도 마찬가지입니다.
-                  </p>
-                  <p>
-                    PlayGround는 광고를 포함한 사용자 경험을 맞춤 설정하기 위해
-                    사용자의 연령을 사용합니다.
-                  </p>
+                  <p>{editBirthWarning1}</p>
+                  <p>{editBirthWarning2}</p>
                 </div>
                 <div className={styles.editContainer}>
                   <Dropdown

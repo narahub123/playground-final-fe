@@ -18,18 +18,21 @@ const MessageSearchResult = ({
   results,
   keyword,
 }: MessageSearchResultProps) => {
+  const { resultFields, resultEmpty, tabList } = Constant.messages;
+
   // 검색 결과 섹션 목록
-  const keys = Object.keys(Constant.messages.resultFields);
+  const keys = Object.keys(resultFields);
+
   return (
     <div className={styles.container}>
-      <Tabs tabList={Constant.messages.tabList} />
+      <Tabs tabList={tabList} />
       {/* 검색 결과가 없는 경우 */}
       {results.users.length === 0 &&
       results.groups.length === 0 &&
       results.conversations.length === 0 ? (
         <Empty
-          title={`${keyword}${Constant.messages.resultEmpty.title}`}
-          description={Constant.messages.resultEmpty.description}
+          title={`${keyword}${resultEmpty.title}`}
+          description={resultEmpty.description}
         />
       ) : (
         // 검색 결과가 있는 경우
@@ -38,13 +41,7 @@ const MessageSearchResult = ({
             <section key={key}>
               <header className={styles.header}>
                 <MessageIcon option={key} handleClick={() => {}} />
-                <p>
-                  {
-                    Constant.messages.resultFields[
-                      key as keyof typeof Constant.messages.resultFields
-                    ]
-                  }
-                </p>
+                <p>{resultFields[key as keyof typeof resultFields]}</p>
               </header>
               <MessageList items={results[key as keyof typeof results]} />
             </section>
