@@ -1,5 +1,4 @@
 import { createBrowserRouter } from "react-router-dom";
-import { PageLayout } from "@layouts/index";
 import {
   Home,
   Explore,
@@ -15,8 +14,8 @@ import {
   Logout,
   Cover,
   NotFound,
+  Test,
 } from "@pages/index";
-import AuthLayout from "@layouts/AuthLayout/AuthLayout";
 import Trend from "@pages/Explore/components/Trend/Trend";
 import ForYou from "@pages/Explore/components/ForYou/ForYou";
 import Notifications from "@pages/Notification/Notifications";
@@ -50,7 +49,8 @@ import {
   YourPosts,
 } from "@pages/Settings/pages";
 import SettingsBranchContainer from "@pages/Settings/layouts/SettingsBranchContainer/SettingsBranchContainer";
-import Constant from "@constants/index";
+import { AuthLayout, PageLayout } from "@/layouts";
+import Constant from "@/constants";
 
 // 로그인 여부 확인
 const login = true;
@@ -360,5 +360,9 @@ export const router = createBrowserRouter([
             ],
       },
     ],
+  },
+  {
+    path: "/test",
+    element: <Test />,
   },
 ]);

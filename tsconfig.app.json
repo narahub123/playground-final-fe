@@ -11,9 +11,17 @@
     "paths": {
       "@app/*": ["src/app/*"],
       "@pages/*": ["src/pages/*"],
+      "@shared/*": ["src/shared/*"],
       "@features/*": ["src/features/*"],
-      "@shared/*": ["src/sharedfolder/*"],
-      "@/*": ["src/*"]
+      "#icons/*": ["src/shared/@common/ui/icons/*"],
+      "@/*": ["src/*"],
+      "@asset/*": ["src/assets/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@data/*": ["src/data/*"],
+      "@constants/*": ["src/constants/*"],
+      "@components/*": ["src/components/*"],
+      "@store/*": ["src/app/store/*"],
+      "@tests/*": ["src/tests/*"]
     },
 
     /* Bundler mode */

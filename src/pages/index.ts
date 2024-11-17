@@ -12,6 +12,7 @@ import Signin from "./Signin/Signin";
 import Logout from "./Logout/Logout";
 import Cover from "./Cover/Cover";
 import NotFound from "./NotFound/NotFound";
+import Test from "./Test/Test";
 
 export {
   Home,
@@ -28,4 +29,5 @@ export {
   Logout,
   Cover,
   NotFound,
+  Test,
 };
