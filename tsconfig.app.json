@@ -9,15 +9,10 @@
     "types": ["vitest/globals"], // Vitest의 글로벌 타입을 사용
     "baseUrl": ".",
     "paths": {
-      "@asset/*": ["src/assets/*"],
-      "@shared/*": ["src/sharedfolder/*"],
-      "@layouts/*": ["src/layouts/*"],
+      "@app/*": ["src/app/*"],
       "@pages/*": ["src/pages/*"],
-      "@data/*": ["src/data/*"],
-      "@constants/*": ["src/constants/*"],
-      "@components/*": ["src/components/*"],
-      "@store/*": ["src/app/store/*"],
-      "@tests/*": ["src/tests/*"],
+      "@features/*": ["src/features/*"],
+      "@shared/*": ["src/sharedfolder/*"],
       "@/*": ["src/*"]
     },
 

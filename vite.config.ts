@@ -7,15 +7,10 @@ export default defineConfig({
   resolve: {
     alias: [
       // 경로 별칭 설정
-      { find: "@asset", replacement: "/src/assets" },
-      { find: "@shared", replacement: "/src/shared" },
-      { find: "@layouts", replacement: "/src/layouts" },
+      { find: "@app", replacement: "/src/app" },
       { find: "@pages", replacement: "/src/pages" },
-      { find: "@data", replacement: "/src/data" },
-      { find: "@store", replacement: "/src/store" },
-      { find: "@constants", replacement: "/src/constants" },
-      { find: "@components", replacement: "/src/components" },
-      { find: "@tests", replacement: "/src/tests" },
+      { find: "@features", replacement: "/src/features" },
+      { find: "@shared", replacement: "/src/shared" },
       { find: "@", replacement: "/src" },
     ],
   },
