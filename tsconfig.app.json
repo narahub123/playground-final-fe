@@ -16,7 +16,7 @@
       "@data/*": ["src/data/*"],
       "@constants/*": ["src/constants/*"],
       "@components/*": ["src/components/*"],
-      "@store/*": ["src/store/*"],
+      "@store/*": ["src/app/store/*"],
       "@tests/*": ["src/tests/*"],
       "@/*": ["src/*"]
     },

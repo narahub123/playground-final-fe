@@ -4,7 +4,7 @@ import Search from "@pages/Bookmarks/components/Search/Search";
 import MessageList from "../MessageList/MessageList";
 import MessageIcon from "../MessageIcon/MessageIcon";
 import { useState } from "react";
-import { profile1, profile2 } from "@asset/index";
+import { profile1, profile2 } from "@/shared/@common/assets/images/index";
 import Empty from "@pages/Bookmarks/components/Empty/Empty";
 import MessageSearchResult from "../MessageSearchResult/MessageSearchResult";
 import Constant from "@constants/index";

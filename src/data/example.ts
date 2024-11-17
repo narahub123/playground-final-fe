@@ -1,5 +1,11 @@
 import { UserType } from "@/types";
-import { background1, profile1, profile2, video1, video2 } from "@asset/index";
+import {
+  background1,
+  profile1,
+  profile2,
+  video1,
+  video2,
+} from "@/shared/@common/assets/images/index";
 import TrendType from "@pages/Explore/types/trend";
 import { MediaType } from "@pages/Search/components/MediaContainer/MediaContainer";
 

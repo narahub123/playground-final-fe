@@ -1,4 +1,4 @@
-import ICONS from "@/icons";
+import ICONS from "@/shared/@common/ui/icons";
 
 type ReplyOptionIconProps = {
   option: string;

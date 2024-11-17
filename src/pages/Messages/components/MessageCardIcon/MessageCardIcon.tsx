@@ -1,4 +1,4 @@
-import ICONS from "@/icons";
+import ICONS from "@/shared/@common/ui/icons";
 import styles from "./MessageCardIcon.module.css";
 import { useState } from "react";
 import MessageCardIconModal from "../MessageCardIconModal/MessageCardIconModal";

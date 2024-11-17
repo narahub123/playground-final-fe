@@ -1,9 +1,9 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
 import "./index.css";
-import { RouterProvider } from "react-router-dom";
+import { createRoot } from "react-dom/client";
+import { StrictMode } from "react";
 import { Provider } from "react-redux";
-import { router, store } from "./sharedfolder";
+import { RouterProvider } from "react-router-dom";
+import { router, store } from "./app";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

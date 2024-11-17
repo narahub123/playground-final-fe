@@ -1,5 +1,5 @@
 import styles from "./NotificationIcon.module.css";
-import ICONS from "@/icons";
+import ICONS from "@/shared/@common/ui/icons";
 
 type NotificationIconProps = {
   option: string;

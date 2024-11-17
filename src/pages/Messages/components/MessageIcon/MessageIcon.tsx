@@ -1,4 +1,4 @@
-import ICONS from "@/icons";
+import ICONS from "@/shared/@common/ui/icons";
 import styles from "./MessageIcon.module.css";
 import TalkModal from "../TalkModal/TalkModal";
 import { useState } from "react";
@@ -34,7 +34,7 @@ const MessageIcon = ({
 
   return (
     <div className={styles.container} onClick={modal ? openModal : undefined}>
-      {showModal && Modal }
+      {showModal && Modal}
       <Icon className={styles.icon} onClick={handleClick} title={title} />
     </div>
   );

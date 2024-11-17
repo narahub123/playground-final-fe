@@ -1,6 +1,6 @@
 import styles from "./Write.module.css";
 import Image from "@pages/Explore/components/Image/Image";
-import { profile1 } from "@asset/index";
+import { profile1 } from "@/shared/@common/assets/images/index";
 import TextEditor from "../TextEditor/TextEditor";
 import ReplyOptions from "../ReplyOptions/ReplyOptions";
 import WriteOptions from "../WriteOptions/WriteOptions";
