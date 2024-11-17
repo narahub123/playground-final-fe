@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import Icon from "./Icon";
 
 // #icons/index 모듈을 모킹
@@ -31,9 +31,10 @@ describe("Icon", () => {
     );
 
     const icon = getByTestId("backward");
+    const iconContainer = icon.parentElement as Element;
 
     expect(icon).toBeInTheDocument();
-    expect(icon).toHaveAttribute("title", "뒤로 가기");
+    expect(iconContainer).toHaveAttribute("title", "뒤로 가기");
   });
 
   it("유효하지 않은 아이콘 이름을 전달받으면 wrong 아이콘을 표시하고 유효하지 않은 이름을 전달 받음 표시해야 함", () => {
@@ -42,9 +43,10 @@ describe("Icon", () => {
     );
 
     const icon = getByTestId("wrong");
+    const iconContainer = icon.parentElement as Element;
 
     expect(icon).toBeInTheDocument();
-    expect(icon).toHaveAttribute("title", "유효하지 않는 아이콘 이름");
+    expect(iconContainer).toHaveAttribute("title", "유효하지 않는 아이콘 이름");
   });
 
   it("아이콘 이름을 전달하지 않으면 잘못된 아이콘을 표시해야 함", () => {
@@ -53,9 +55,10 @@ describe("Icon", () => {
     );
 
     const icon = getByTestId("wrong");
+    const iconContainer = icon.parentElement as Element;
 
     expect(icon).toBeInTheDocument();
-    expect(icon).toHaveAttribute("title", "유효하지 않는 아이콘 이름");
+    expect(iconContainer).toHaveAttribute("title", "유효하지 않는 아이콘 이름");
   });
 
   it("전달된 iconTitle이 아이콘의 title 속성으로 적용되어야 함", () => {
@@ -63,8 +66,36 @@ describe("Icon", () => {
       <Icon iconName="backward" iconTitle="뒤로 가기" />
     );
 
-    const icon = getByTestId("backward");
+    const iconContainer = getByTestId("backward").parentElement as Element;
 
-    expect(icon).toHaveAttribute("title", "뒤로 가기");
+    expect(iconContainer).toHaveAttribute("title", "뒤로 가기");
+  });
+
+  it("handlClick이 있는 경우 아이콘을 클릭하는 경우 handleClick이 호출되어야 함 ", () => {
+    const handleClick = vi.fn();
+    render(
+      <Icon
+        iconName="backward"
+        iconTitle="뒤로 가기"
+        handleClick={handleClick}
+      />
+    );
+
+    const iconContainer = screen.getByTestId("backward")
+      .parentElement as Element;
+    fireEvent.click(iconContainer);
+
+    expect(handleClick).toHaveBeenCalledTimes(1);
+  });
+
+  it("handlClick이 없는 경우 아이콘을 클릭하는 경우 handleClick이 호출되지 않음", () => {
+    const handleClick = vi.fn();
+    render(<Icon iconName="backward" iconTitle="뒤로 가기" />);
+
+    const iconContainer = screen.getByTestId("backward")
+      .parentElement as Element;
+    fireEvent.click(iconContainer);
+
+    expect(handleClick).toHaveBeenCalledTimes(0);
   });
 });
