@@ -24,7 +24,7 @@ const ListModal = ({ list, handleClick }: ListModalProps) => {
               key={value || text}
               to={url}
               className={styles.item}
-              //   onClick={() => handleClick(url)} // Link인 경우 이동을 주로하기 때문에 추가적인 onClick 이벤트 사용 안함
+              onClick={() => handleClick(value)} // Link인 경우 이동을 주로하기 때문에 추가적인 onClick 이벤트 사용 안할 가능성이 있음 한다면 value 값을 전달하지 않을까 싶음
               title={cardTitle}
               aria-label={cardTitle}
             >
