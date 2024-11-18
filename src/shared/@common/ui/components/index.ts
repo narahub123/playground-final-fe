@@ -1,3 +1,4 @@
 import Icon from "./Icon/Icon";
+import ListModal from "./ListModal/ListModal";
 
-export { Icon };
+export { Icon, ListModal };
