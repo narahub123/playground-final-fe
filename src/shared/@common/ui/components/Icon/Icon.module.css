@@ -3,10 +3,6 @@
   justify-content: center;
   align-items: center;
 }
-.container:hover {
-  border-radius: 50%;
-  background-color: rgb(204, 204, 204, 0.5);
-}
 
 .icon {
   display: flex;
