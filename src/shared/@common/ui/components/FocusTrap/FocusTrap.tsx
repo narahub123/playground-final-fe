@@ -95,11 +95,23 @@ const FocusTrap = (props: FocusTrapProps) => {
     focusPrevElement();
   };
 
+  // enter를 누른 경우 해당 요소의 onclick 요소 호출
+  const handleEnterKey = (event: KeyboardEvent) => {
+    const isEnterKey = event.key === "Enter";
+    if (!isEnterKey) return;
+
+    event.preventDefault();
+    focusableElements.current[currentFocusIndex.current]?.click();
+  };
+
   // 키보드 이벤트 처리
   useEffect(() => {
     const handleTabKey = (e: KeyboardEvent) => {
+      console.log(e.key);
+
       handleTabKeyDown(e);
       handleShiftTabKeyDown(e);
+      handleEnterKey(e);
     };
 
     document.addEventListener("keydown", handleTabKey);
