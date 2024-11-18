@@ -2,10 +2,13 @@ import { listModalCardType } from "@shared/@common/types";
 import styles from "./Test.module.css";
 import { Icon, ListModal } from "@shared/@common/ui/components";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { useFocusTrap } from "@shared/@common/model/hooks";
 
 const Test = () => {
   const [showModal, setShowModal] = useState(false);
+  const pageRef = useRef<HTMLDivElement>(null);
+  useFocusTrap({ ref: pageRef });
   // 예시
   const list: listModalCardType[] = [
     { value: 1, text: "실패", cardTitle: "실패", iconName: "backward" },
@@ -27,7 +30,7 @@ const Test = () => {
   };
 
   return (
-    <div className="test">
+    <div className="test" ref={pageRef}>
       <div className={styles[`modal-container`]}>
         <Icon
           iconName="backward"
