@@ -3,28 +3,33 @@ import styles from "./ListModal.module.css";
 import Icon from "../Icon/Icon";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
-import { useFocusTrap } from "@shared/@common/model/hooks";
+import { useClickOutside, useFocusTrap } from "@shared/@common/model/hooks";
 
 type ListModalProps = {
   list: listModalCardType[]; // 모달창안의 목록에 대한 정보
   handleClick: (value: string | number | undefined) => void; // 호출할 클릭 이벤트
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>; 
 };
 
-const ListModal = ({ list, handleClick }: ListModalProps) => {
+const ListModal = ({
+  list,
+  handleClick,
+
+  setShowModal,
+}: ListModalProps) => {
   const modalRef = useRef<HTMLDivElement>(null);
 
   useFocusTrap({
     ref: modalRef,
     location: "ListModal component",
     onEscapeFocusTrap: () => {
-      console.log("Escape 함수가 실행됨");
-
       handleClick(undefined);
     },
   });
 
+  useClickOutside(modalRef, setShowModal);
+
   return (
-    // <FocusTrap>
     <div className={styles.modal} role="dialog" ref={modalRef}>
       <ul className={styles.container}>
         {list.map((item) => {
@@ -64,7 +69,6 @@ const ListModal = ({ list, handleClick }: ListModalProps) => {
         })}
       </ul>
     </div>
-    // </FocusTrap>
   );
 };
 

@@ -18,12 +18,8 @@ const Test = () => {
   // 각 모달에 따라 다른 값이 들어가게 됨
   // 매개변수의 타입을 string | number | undefined로 한정함
   const handleClick = (value: string | number | undefined) => {
-    console.log("클릭 이벤트가 실행됨");
-    console.log(value); // 클릭시 해당 값이 잘 나오는지 확인함
     setShowModal(!showModal); // 클릭하면 해당 모달창이 닫혀야 함
   };
-
-  console.log("모달창 닫힘 여부", showModal);
 
   return (
     <div className="test" ref={pageRef}>
@@ -32,7 +28,6 @@ const Test = () => {
           iconName="backward"
           iconTitle="뒤로 가기"
           handleClick={(e) => {
-            console.log("아이콘을 클릭한 함수가 실행됨");
             setShowModal(!showModal);
             setLastClick(e.target); // 기존 페이지의 마지막 요소 저장
           }}
@@ -41,13 +36,16 @@ const Test = () => {
           iconName="wrong"
           iconTitle="뒤로 가기"
           handleClick={(e) => {
-            console.log("아이콘을 클릭한 함수가 실행됨");
             setShowModal(!showModal);
             setLastClick(e.target); // 기존 페이지의 마지막 요소 저장
           }}
         />
         {showModal && (
-          <ListModal list={listModalExample} handleClick={handleClick} />
+          <ListModal
+            list={listModalExample}
+            handleClick={handleClick}
+            setShowModal={setShowModal}
+          />
         )}
       </div>
     </div>

@@ -37,11 +37,10 @@ const useFocusTrap = ({
       const currentIndex = focusableElements.findIndex(
         (el) => el === document.activeElement
       );
-      console.log("현재 요소의 index", currentIndex);
 
+      // 다음 인덱스
       const nextIndex =
         currentIndex + 1 >= focusableElements.length ? 0 : currentIndex + 1;
-      console.log("다음 요소의 index", nextIndex);
 
       // 다음 요소
       const element = focusableElements[nextIndex] as HTMLElement;
@@ -52,11 +51,10 @@ const useFocusTrap = ({
       const currentIndex = focusableElements.findIndex(
         (el) => el === document.activeElement
       );
-      console.log("현재 요소의 index", currentIndex);
 
+      // 이전 인덱스
       const prevIndex =
         currentIndex - 1 < 0 ? focusableElements.length - 1 : currentIndex - 1;
-      console.log("이전 요소의 index", prevIndex);
 
       // 이전 요소
       const element = focusableElements[prevIndex] as HTMLElement;
@@ -97,8 +95,6 @@ const useFocusTrap = ({
         moveToPrevElement();
       }
     }
-
-    console.log(`${location} 기존 페이지 포커스 저장`, lastClick);
 
     if (lastClick && showModal === false) {
       lastClick.focus(); // 기존 요소에 포커스 설정
