@@ -15,7 +15,12 @@ const ListModal = ({ list, handleClick }: ListModalProps) => {
 
   useFocusTrap({
     ref: modalRef,
-    onEscapeFocusTrap: () => handleClick(undefined),
+    location: "ListModal component",
+    onEscapeFocusTrap: () => {
+      console.log("Escape 함수가 실행됨");
+
+      handleClick(undefined);
+    },
   });
 
   return (
