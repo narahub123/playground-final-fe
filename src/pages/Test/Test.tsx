@@ -1,7 +1,7 @@
 import styles from "./Test.module.css";
 import { Icon, ListModal } from "@shared/@common/ui/components";
 
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useFocusTrap } from "@shared/@common/model/hooks";
 import { listModalExample } from "@shared/@common/data";
 
@@ -14,15 +14,6 @@ const Test = () => {
     location: "test page",
     showModal,
   });
-
-  // 마지막 클릭한 요소가 저장되어 있거나 모달이 닫혀 있는 경우
-  // 저장된 요소에 포커스가 걸리게 함
-  // useLayoutEffect(() => {
-  //   if (!lastClick || showModal) return;
-
-  //   lastClick.focus();
-  //   setLastClick(null);
-  // }, [showModal, lastClick, setLastClick]); // 의존성 배열 추가
 
   // 각 모달에 따라 다른 값이 들어가게 됨
   // 매개변수의 타입을 string | number | undefined로 한정함

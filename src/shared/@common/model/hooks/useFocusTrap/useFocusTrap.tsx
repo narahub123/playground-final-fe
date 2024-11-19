@@ -33,6 +33,36 @@ const useFocusTrap = ({
       focusableElements.length - 1
     ] as HTMLElement;
 
+    const moveToNextElement = () => {
+      const currentIndex = focusableElements.findIndex(
+        (el) => el === document.activeElement
+      );
+      console.log("현재 요소의 index", currentIndex);
+
+      const nextIndex =
+        currentIndex + 1 >= focusableElements.length ? 0 : currentIndex + 1;
+      console.log("다음 요소의 index", nextIndex);
+
+      // 다음 요소
+      const element = focusableElements[nextIndex] as HTMLElement;
+      element.focus();
+    };
+
+    const moveToPrevElement = () => {
+      const currentIndex = focusableElements.findIndex(
+        (el) => el === document.activeElement
+      );
+      console.log("현재 요소의 index", currentIndex);
+
+      const prevIndex =
+        currentIndex - 1 < 0 ? focusableElements.length - 1 : currentIndex - 1;
+      console.log("이전 요소의 index", prevIndex);
+
+      // 이전 요소
+      const element = focusableElements[prevIndex] as HTMLElement;
+      element.focus();
+    };
+
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "Tab") {
         if (event.shiftKey && document.activeElement === firstElement) {
@@ -57,6 +87,14 @@ const useFocusTrap = ({
         event.stopPropagation();
         if (!onEscapeFocusTrap) return;
         onEscapeFocusTrap();
+      } else if (event.key === "ArrowDown" || event.key === "ArrowRight") {
+        event.preventDefault();
+        event.stopPropagation();
+        moveToNextElement();
+      } else if (event.key === "ArrowUp" || event.key === "ArrowLeft") {
+        event.preventDefault();
+        event.stopPropagation();
+        moveToPrevElement();
       }
     }
 
