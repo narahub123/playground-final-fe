@@ -2,13 +2,14 @@ import { listModalCardType } from "@shared/@common/types";
 import styles from "./ListModal.module.css";
 import Icon from "../Icon/Icon";
 import { Link } from "react-router-dom";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useClickOutside, useFocusTrap } from "@shared/@common/model/hooks";
+import { PiCylinderThin } from "react-icons/pi";
 
 type ListModalProps = {
   list: listModalCardType[]; // 모달창안의 목록에 대한 정보
   handleClick: (value: string | number | undefined) => void; // 호출할 클릭 이벤트
-  setShowModal: React.Dispatch<React.SetStateAction<boolean>>; 
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const ListModal = ({
@@ -18,6 +19,7 @@ const ListModal = ({
   setShowModal,
 }: ListModalProps) => {
   const modalRef = useRef<HTMLDivElement>(null);
+  const [style, setStyle] = useState({});
 
   useFocusTrap({
     ref: modalRef,
@@ -28,6 +30,41 @@ const ListModal = ({
   });
 
   useClickOutside(modalRef, setShowModal);
+
+  // 컨테이너의 창 내에의 위치에 따라 모달창 위치 변경하기
+  useEffect(() => {
+    if (!modalRef.current) return;
+
+    const modal = modalRef.current;
+    const parentElem = modal.parentElement as HTMLElement;
+
+    // 창 너비, 창 높이
+    const { clientWidth, clientHeight } = document.documentElement;
+
+    const parentRect = parentElem.getBoundingClientRect();
+    const modalRect = modal.getBoundingClientRect();
+
+    const shouldFlipHorizontally =
+      clientWidth - parentRect.right < modalRect.width;
+    const shouldFlipvertically =
+      clientHeight - parentRect.bottom < modalRect.height;
+
+    if (shouldFlipHorizontally) {
+      modal.style.right = `0px`;
+      modal.style.left = "auto";
+    } else {
+      modal.style.left = "0px";
+      modal.style.right = "auto";
+    }
+
+    if (shouldFlipvertically) {
+      modal.style.bottom = `0px`;
+      modal.style.top = "auto";
+    } else {
+      modal.style.top = `0px`;
+      modal.style.bottom = "auto";
+    }
+  }, [modalRef]);
 
   return (
     <div className={styles.modal} role="dialog" ref={modalRef}>

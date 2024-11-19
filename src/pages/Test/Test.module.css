@@ -1,3 +1,13 @@
 .modal-container {
   position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left {
+  position: relative;
+}
+
+.right {
+  position: relative;
 }

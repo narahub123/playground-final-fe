@@ -24,29 +24,40 @@ const Test = () => {
   return (
     <div className="test" ref={pageRef}>
       <div className={styles[`modal-container`]}>
-        <Icon
-          iconName="backward"
-          iconTitle="뒤로 가기"
-          handleClick={(e) => {
-            setShowModal(!showModal);
-            setLastClick(e.target); // 기존 페이지의 마지막 요소 저장
-          }}
-        />
-        <Icon
-          iconName="wrong"
-          iconTitle="뒤로 가기"
-          handleClick={(e) => {
-            setShowModal(!showModal);
-            setLastClick(e.target); // 기존 페이지의 마지막 요소 저장
-          }}
-        />
-        {showModal && (
-          <ListModal
-            list={listModalExample}
-            handleClick={handleClick}
-            setShowModal={setShowModal}
+        <div className={styles.left}>
+          <Icon
+            iconName="backward"
+            iconTitle="뒤로 가기"
+            handleClick={(e) => {
+              setShowModal(!showModal);
+              setLastClick(e.target); // 기존 페이지의 마지막 요소 저장
+            }}
           />
-        )}
+          {showModal && (
+            <ListModal
+              list={listModalExample}
+              handleClick={handleClick}
+              setShowModal={setShowModal}
+            />
+          )}
+        </div>
+        <div className={styles.right}>
+          <Icon
+            iconName="wrong"
+            iconTitle="뒤로 가기"
+            handleClick={(e) => {
+              setShowModal(!showModal);
+              setLastClick(e.target); // 기존 페이지의 마지막 요소 저장
+            }}
+          />
+          {showModal && (
+            <ListModal
+              list={listModalExample}
+              handleClick={handleClick}
+              setShowModal={setShowModal}
+            />
+          )}
+        </div>
       </div>
     </div>
   );
