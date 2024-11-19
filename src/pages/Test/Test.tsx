@@ -29,6 +29,7 @@ const Test = () => {
             iconName="backward"
             iconTitle="뒤로 가기"
             handleClick={(e) => {
+              e.stopPropagation();
               setShowModal(!showModal);
               setLastClick(e.target); // 기존 페이지의 마지막 요소 저장
             }}
@@ -46,6 +47,7 @@ const Test = () => {
             iconName="wrong"
             iconTitle="뒤로 가기"
             handleClick={(e) => {
+              e.stopPropagation();  
               setShowModal(!showModal);
               setLastClick(e.target); // 기존 페이지의 마지막 요소 저장
             }}
