@@ -12,7 +12,7 @@ const Test = () => {
   const { setLastClick } = useFocusTrap({
     ref: pageRef,
     location: "test page",
-    showMoal: showModal,
+    showModal,
   });
 
   // 마지막 클릭한 요소가 저장되어 있거나 모달이 닫혀 있는 경우

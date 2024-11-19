@@ -3,7 +3,7 @@ import { useLayoutEffect, useState } from "react";
 interface useFocusTrapProps {
   ref: React.RefObject<HTMLElement>;
   location: string; // 테스트를 위한 코드 : 굳이 필요없음
-  showMoal?: boolean;
+  showModal?: boolean;
   onEscapeFocusTrap?: () => void;
 }
 
@@ -19,7 +19,7 @@ function getFocusableElements(element: HTMLElement) {
 const useFocusTrap = ({
   ref,
   location,
-  showMoal,
+  showModal,
   onEscapeFocusTrap,
 }: useFocusTrapProps) => {
   const [lastClick, setLastClick] = useState<HTMLElement | null>(null);
@@ -62,7 +62,7 @@ const useFocusTrap = ({
 
     console.log(`${location} 기존 페이지 포커스 저장`, lastClick);
 
-    if (lastClick && showMoal === false) {
+    if (lastClick && showModal === false) {
       lastClick.focus(); // 기존 요소에 포커스 설정
     } else {
       firstElement.focus(); // 처음에 첫 번째 포커스 가능한 요소에 포커스 설정
@@ -71,7 +71,7 @@ const useFocusTrap = ({
     element.addEventListener("keydown", handleKeyDown); // keydown 이벤트 리스너 추가
 
     return () => element.removeEventListener("keydown", handleKeyDown); // 리스너 제거 함수 반환
-  }, [ref, onEscapeFocusTrap, lastClick, setLastClick, showMoal]); // 의존성 배열 추가
+  }, [ref, onEscapeFocusTrap, lastClick, setLastClick, showModal]); // 의존성 배열 추가
 
   return {
     lastClick,
