@@ -1,9 +1,10 @@
-import { useEffect, useLayoutEffect } from "react";
+import { useEffect } from "react";
 
 const useClickOutside = (
   containerRef: React.RefObject<HTMLElement | null>,
   setToggle: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
+  // containerRef 생성 전에는 실행이 안되도록 막아줌
   if (!containerRef.current) return;
 
   useEffect(() => {
