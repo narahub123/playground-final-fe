@@ -2,7 +2,6 @@ import { listModalCardType } from "@shared/@common/types";
 import styles from "./ListModal.module.css";
 import Icon from "../Icon/Icon";
 import { Link } from "react-router-dom";
-import FocusTrap from "../FocusTrap/FocusTrap";
 import { useRef } from "react";
 import { useFocusTrap } from "@shared/@common/model/hooks";
 
@@ -14,8 +13,10 @@ type ListModalProps = {
 const ListModal = ({ list, handleClick }: ListModalProps) => {
   const modalRef = useRef<HTMLDivElement>(null);
 
-  const onEscapeFocusTrap = () => handleClick(undefined);
-  useFocusTrap({ ref: modalRef, onEscapeFocusTrap });
+  useFocusTrap({
+    ref: modalRef,
+    onEscapeFocusTrap: () => handleClick(undefined),
+  });
 
   return (
     // <FocusTrap>

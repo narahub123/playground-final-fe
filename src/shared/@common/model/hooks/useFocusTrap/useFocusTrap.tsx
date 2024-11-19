@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 interface useFocusTrapProps {
   ref: React.RefObject<HTMLElement>;
@@ -15,6 +15,7 @@ function getFocusableElements(element: HTMLElement) {
 }
 
 const useFocusTrap = ({ ref, onEscapeFocusTrap }: useFocusTrapProps) => {
+  const [lastClick, setLastClick] = useState<HTMLElement | null>(null);
   useEffect(() => {
     const element = ref.current;
     if (!element) return;
@@ -38,8 +39,6 @@ const useFocusTrap = ({ ref, onEscapeFocusTrap }: useFocusTrapProps) => {
         }
       } else if (event.key === "Enter") {
         const currentElement = document.activeElement as HTMLElement;
-        console.log("현재 요소", currentElement);
-
         currentElement.click();
       } else if (event.key === "Escape") {
         if (!onEscapeFocusTrap) return;
@@ -53,7 +52,10 @@ const useFocusTrap = ({ ref, onEscapeFocusTrap }: useFocusTrapProps) => {
     return () => element.removeEventListener("keydown", handleKeyDown); // 리스너 제거 함수 반환
   }, [ref]);
 
-  return <div className="usefocustrap">useFocusTrap</div>;
+  return {
+    lastClick,
+    setLastClick,
+  };
 };
 
 export default useFocusTrap;
