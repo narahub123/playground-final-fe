@@ -18,7 +18,11 @@
   padding: 5px 10px;
   gap: 5px;
   cursor: pointer;
-  width: inherit    ;
+  width: inherit;
+}
+
+.item:focus-visible {
+  outline-offset: 0px;
 }
 
 .item:first-child:focus-visible {

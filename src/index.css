@@ -188,6 +188,11 @@ a {
   text-decoration: none; /* 기본 밑줄 제거 */
 }
 
+/* 크롬 브라우저의 기본 설정 제거 */
+a:focus-visible {
+  outline-offset: 0px;
+}
+
 /* 버튼 및 입력 요소의 기본 스타일 초기화 */
 button,
 input,
