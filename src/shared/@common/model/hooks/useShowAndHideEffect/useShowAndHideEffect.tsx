@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 
+type EffectMode = "fadeInAndOut" | "dropdown";
+
 const useShowAndHideEffect = (
   setToggle: React.Dispatch<React.SetStateAction<boolean>>, // 토글
-  effect: "fadeInAndOut" | "dropdown" = "fadeInAndOut" // 적용 효과
+  effect: EffectMode = "fadeInAndOut" // 적용 효과
 ) => {
   const [modalState, setModalState] = useState("hidden");
 
-  // 초기 상태(모달창이 열렸을 때) 변경: show로 변경
-  useEffect(() => {
+  const initializeModal = () => {
     setModalState("show");
-  }, []);
+  };
 
   // 모달창을 닫고 싶을 때: 모달창이 닫히는 효과 발생
   const hideModal = () => {
@@ -24,9 +25,13 @@ const useShowAndHideEffect = (
     }
   };
 
-  const mode = effect === "fadeInAndOut" ? "fadeInAndOut " : "dropdown ";
+  const showCond =
+    modalState === "show" ? `${effect} show` : `${effect} hidden`;
 
-  const showCond = modalState === "show" ? mode + "show" : mode + "hidden";
+  // 초기 상태(모달창이 열렸을 때) 변경: show로 변경
+  useEffect(() => {
+    initializeModal();
+  }, []);
 
   return {
     showCond,
