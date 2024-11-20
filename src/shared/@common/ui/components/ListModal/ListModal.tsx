@@ -7,6 +7,7 @@ import {
   useClickOutside,
   useDynamicPosition,
   useFocusTrap,
+  useShowAndHideEffect,
 } from "@shared/@common/model/hooks";
 
 type ListModalProps = {
@@ -36,6 +37,9 @@ const ListModal = ({ list, handleClick, setShowModal }: ListModalProps) => {
   };
 
   const showCond = modalState === "show" ? styles.show : styles.hidden;
+
+  const { showCond, hideModal, handleTransitionEnd } =
+    useShowAndHideEffect(setShowModal);
 
   // 모달 위치 지정
   const position = useDynamicPosition(modalRef);
