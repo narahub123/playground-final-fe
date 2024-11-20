@@ -1,4 +1,4 @@
-import { fireEvent, render, renderHook, screen } from "@testing-library/react";
+import { fireEvent, renderHook } from "@testing-library/react";
 
 import useClickOutside from "./useClickOutside";
 import { useRef, useState } from "react";
