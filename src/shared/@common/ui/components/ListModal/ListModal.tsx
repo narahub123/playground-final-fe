@@ -1,5 +1,5 @@
 import styles from "./ListModal.module.css";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Icon from "../Icon/Icon";
 import { listModalCardType } from "@shared/@common/types";
@@ -16,13 +16,26 @@ type ListModalProps = {
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const ListModal = ({
-  list,
-  handleClick,
-  showModal,
-  setShowModal,
-}: ListModalProps) => {
+const ListModal = ({ list, handleClick, setShowModal }: ListModalProps) => {
   const modalRef = useRef<HTMLDivElement>(null);
+  const [modalState, setModalState] = useState("hidden");
+
+  useEffect(() => {
+    setModalState("show");
+  }, []);
+
+  const hideModal = () => {
+    setModalState("hidding");
+  };
+
+  const handleTransitionEnd = () => {
+    if (modalState === "hidding") {
+      setModalState("hidden");
+      setShowModal(false); // 가변적인 값
+    }
+  };
+
+  const showCond = modalState === "show" ? styles.show : styles.hidden;
 
   // 모달 위치 지정
   const position = useDynamicPosition(modalRef);
@@ -33,19 +46,21 @@ const ListModal = ({
     location: "ListModal component",
     onEscapeFocusTrap: () => {
       handleClick(undefined);
+      hideModal();
     },
   });
 
   // 외부 클릭시 모달창 닫힘
   useClickOutside(modalRef, setShowModal);
 
+  console.log(modalState);
+
   return (
     <div
-      className={`${styles.modal} ${position} ${
-        showModal ? styles.show : styles.hidden
-      }`}
+      className={`${styles.modal} ${position} ${showCond}`}
       role="dialog"
       ref={modalRef}
+      onTransitionEnd={handleTransitionEnd}
     >
       <ul className={styles.container}>
         {list.map((item) => {
@@ -60,7 +75,10 @@ const ListModal = ({
               key={value || text}
               to={url}
               className={styles.item}
-              onClick={() => handleClick(value)} // Link인 경우 이동을 주로하기 때문에 추가적인 onClick 이벤트 사용 안할 가능성이 있음 한다면 value 값을 전달하지 않을까 싶음
+              onClick={() => {
+                handleClick(value);
+                hideModal();
+              }} // Link인 경우 이동을 주로하기 때문에 추가적인 onClick 이벤트 사용 안할 가능성이 있음 한다면 value 값을 전달하지 않을까 싶음
               title={cardTitle}
               aria-label={cardTitle}
               tabIndex={0}
@@ -73,7 +91,12 @@ const ListModal = ({
             <li
               key={value || text}
               className={styles.item}
-              onClick={() => handleClick(value)}
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                handleClick(value);
+                hideModal();
+              }}
               title={cardTitle}
               aria-label={cardTitle}
               tabIndex={0}

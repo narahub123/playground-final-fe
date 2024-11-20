@@ -19,8 +19,10 @@ const Test = () => {
   // 매개변수의 타입을 string | number | undefined로 한정함
   const handleClick = (value: string | number | undefined) => {
     console.log(value);
-    setShowModal(!showModal); // 클릭하면 해당 모달창이 닫혀야 함
+    // setShowModal(!showModal); // 클릭하면 해당 모달창이 닫혀야 함
   };
+
+  console.log(showModal);
 
   return (
     <div className="test" ref={pageRef}>
@@ -31,16 +33,18 @@ const Test = () => {
             iconTitle="뒤로 가기"
             handleClick={(e) => {
               e.stopPropagation();
-              setShowModal(!showModal);
+              setShowModal(true);
               setLastClick(e.target); // 기존 페이지의 마지막 요소 저장
             }}
           />
-          <ListModal
-            list={listModalExample}
-            handleClick={handleClick}
-            showModal={showModal}
-            setShowModal={setShowModal}
-          />
+          {showModal && (
+            <ListModal
+              list={listModalExample}
+              handleClick={handleClick}
+              showModal={showModal}
+              setShowModal={setShowModal}
+            />
+          )}
         </div>
         <div className={styles.right}>
           <Icon
@@ -48,7 +52,7 @@ const Test = () => {
             iconTitle="뒤로 가기"
             handleClick={(e) => {
               e.stopPropagation();
-              setShowModal(!showModal);
+              setShowModal(true);
               setLastClick(e.target); // 기존 페이지의 마지막 요소 저장
             }}
           />

@@ -9,7 +9,7 @@
 }
 
 .modal.hidden {
-  visibility: hidden;
+  /* visibility: hidden; */
   /* 드롭 다운 효과 */
   /* max-height: 0px; */
   /* fade-out 효과 */
@@ -18,7 +18,7 @@
 }
 
 .modal.show {
-  visibility: visible;
+  /* visibility: visible; */
   /* 드롭 다운 효과 */
   /* max-height: 300px; */
   /* fade-in 효과 */
