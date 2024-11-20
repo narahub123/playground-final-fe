@@ -37,7 +37,7 @@ const ListModal = ({ list, handleClick, setShowModal }: ListModalProps) => {
   });
 
   // 외부 클릭시 모달창 닫힘
-  useClickOutside(modalRef, setShowModal);
+  useClickOutside(modalRef, setShowModal, hideModal);
 
   return (
     <div
