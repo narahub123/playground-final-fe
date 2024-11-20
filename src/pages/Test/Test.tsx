@@ -18,6 +18,7 @@ const Test = () => {
   // 각 모달에 따라 다른 값이 들어가게 됨
   // 매개변수의 타입을 string | number | undefined로 한정함
   const handleClick = (value: string | number | undefined) => {
+    console.log(value);
     setShowModal(!showModal); // 클릭하면 해당 모달창이 닫혀야 함
   };
 
@@ -47,7 +48,7 @@ const Test = () => {
             iconName="wrong"
             iconTitle="뒤로 가기"
             handleClick={(e) => {
-              e.stopPropagation();  
+              e.stopPropagation();
               setShowModal(!showModal);
               setLastClick(e.target); // 기존 페이지의 마지막 요소 저장
             }}

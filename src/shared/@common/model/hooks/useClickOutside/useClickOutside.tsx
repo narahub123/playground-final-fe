@@ -4,8 +4,6 @@ const useClickOutside = (
   containerRef: React.RefObject<HTMLElement | null>,
   setToggle: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
-  // containerRef 생성 전에는 실행이 안되도록 막아줌
-
   useEffect(() => {
     // 클릭한 위치를 찾아내서 모달 내부인 여부 확인하는 함수
     const handleClickOutside = (e: MouseEvent) => {

@@ -1,8 +1,8 @@
-import { listModalCardType } from "@shared/@common/types";
 import styles from "./ListModal.module.css";
-import Icon from "../Icon/Icon";
-import { Link } from "react-router-dom";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
+import Icon from "../Icon/Icon";
+import { listModalCardType } from "@shared/@common/types";
 import {
   useClickOutside,
   useDynamicPosition,
