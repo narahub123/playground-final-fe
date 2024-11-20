@@ -5,6 +5,7 @@
   background-color: #fff;
   z-index: 1;
   width: 200px;
+  overflow: hidden;
 }
 
 .container {
@@ -12,7 +13,6 @@
 }
 
 .item {
-  position: relative;
   display: flex;
   align-items: center;
   padding: 5px 10px;

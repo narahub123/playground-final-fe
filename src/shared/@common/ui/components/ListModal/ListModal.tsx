@@ -18,8 +18,10 @@ type ListModalProps = {
 const ListModal = ({ list, handleClick, setShowModal }: ListModalProps) => {
   const modalRef = useRef<HTMLDivElement>(null);
 
+  // 모달 위치 지정
   const position = useDynamicPosition(modalRef);
 
+  // 포커스 트랩
   useFocusTrap({
     ref: modalRef,
     location: "ListModal component",
@@ -28,6 +30,7 @@ const ListModal = ({ list, handleClick, setShowModal }: ListModalProps) => {
     },
   });
 
+  // 외부 클릭시 모달창 닫힘
   useClickOutside(modalRef, setShowModal);
 
   return (
