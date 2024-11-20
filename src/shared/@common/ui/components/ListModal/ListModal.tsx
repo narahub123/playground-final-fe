@@ -1,5 +1,5 @@
 import styles from "./ListModal.module.css";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 import Icon from "../Icon/Icon";
 import { listModalCardType } from "@shared/@common/types";
@@ -19,24 +19,6 @@ type ListModalProps = {
 
 const ListModal = ({ list, handleClick, setShowModal }: ListModalProps) => {
   const modalRef = useRef<HTMLDivElement>(null);
-  const [modalState, setModalState] = useState("hidden");
-
-  useEffect(() => {
-    setModalState("show");
-  }, []);
-
-  const hideModal = () => {
-    setModalState("hidding");
-  };
-
-  const handleTransitionEnd = () => {
-    if (modalState === "hidding") {
-      setModalState("hidden");
-      setShowModal(false); // 가변적인 값
-    }
-  };
-
-  const showCond = modalState === "show" ? styles.show : styles.hidden;
 
   const { showCond, hideModal, handleTransitionEnd } =
     useShowAndHideEffect(setShowModal);
@@ -56,8 +38,6 @@ const ListModal = ({ list, handleClick, setShowModal }: ListModalProps) => {
 
   // 외부 클릭시 모달창 닫힘
   useClickOutside(modalRef, setShowModal);
-
-  console.log(modalState);
 
   return (
     <div
