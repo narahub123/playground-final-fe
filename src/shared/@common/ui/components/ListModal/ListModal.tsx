@@ -1,5 +1,5 @@
 import styles from "./ListModal.module.css";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Icon from "../Icon/Icon";
 import { listModalCardType } from "@shared/@common/types";
@@ -7,6 +7,7 @@ import {
   useClickOutside,
   useDynamicPosition,
   useFocusTrap,
+  useShowAndHideEffect,
 } from "@shared/@common/model/hooks";
 
 type ListModalProps = {
@@ -18,6 +19,9 @@ type ListModalProps = {
 const ListModal = ({ list, handleClick, setShowModal }: ListModalProps) => {
   const modalRef = useRef<HTMLDivElement>(null);
 
+  const { showCond, hideModal, handleTransitionEnd } =
+    useShowAndHideEffect(setShowModal);
+
   // 모달 위치 지정
   const position = useDynamicPosition(modalRef);
 
@@ -27,6 +31,7 @@ const ListModal = ({ list, handleClick, setShowModal }: ListModalProps) => {
     location: "ListModal component",
     onEscapeFocusTrap: () => {
       handleClick(undefined);
+      hideModal();
     },
   });
 
@@ -34,7 +39,12 @@ const ListModal = ({ list, handleClick, setShowModal }: ListModalProps) => {
   useClickOutside(modalRef, setShowModal);
 
   return (
-    <div className={`${styles.modal} ${position}`} role="dialog" ref={modalRef}>
+    <div
+      className={`${styles.modal} ${position} ${showCond}`}
+      role="dialog"
+      ref={modalRef}
+      onTransitionEnd={handleTransitionEnd}
+    >
       <ul className={styles.container}>
         {list.map((item) => {
           const { text, cardTitle, iconName, url, value } = item;
@@ -48,7 +58,10 @@ const ListModal = ({ list, handleClick, setShowModal }: ListModalProps) => {
               key={value || text}
               to={url}
               className={styles.item}
-              onClick={() => handleClick(value)} // Link인 경우 이동을 주로하기 때문에 추가적인 onClick 이벤트 사용 안할 가능성이 있음 한다면 value 값을 전달하지 않을까 싶음
+              onClick={() => {
+                handleClick(value);
+                hideModal();
+              }} // Link인 경우 이동을 주로하기 때문에 추가적인 onClick 이벤트 사용 안할 가능성이 있음 한다면 value 값을 전달하지 않을까 싶음
               title={cardTitle}
               aria-label={cardTitle}
               tabIndex={0}
@@ -61,7 +74,12 @@ const ListModal = ({ list, handleClick, setShowModal }: ListModalProps) => {
             <li
               key={value || text}
               className={styles.item}
-              onClick={() => handleClick(value)}
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                handleClick(value);
+                hideModal();
+              }}
               title={cardTitle}
               aria-label={cardTitle}
               tabIndex={0}

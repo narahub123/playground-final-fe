@@ -19,7 +19,7 @@ const Test = () => {
   // 매개변수의 타입을 string | number | undefined로 한정함
   const handleClick = (value: string | number | undefined) => {
     console.log(value);
-    setShowModal(!showModal); // 클릭하면 해당 모달창이 닫혀야 함
+    // setShowModal(!showModal); // 클릭하면 해당 모달창이 닫혀야 함
   };
 
   return (

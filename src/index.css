@@ -270,3 +270,21 @@ hr {
   bottom: 0;
   right: 0;
 }
+
+.fadeInAndOut.hidden {
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+.fadeInAndOut.show {
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.dropdown.hidden {
+  max-height: 0px;
+  transition: all 0.3s ease-in-out;
+}
+.dropdown.show {
+  max-height: 500px;
+  transition: all 0.3s ease-in-out;
+}
