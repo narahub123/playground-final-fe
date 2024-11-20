@@ -11,14 +11,18 @@
 .modal.hidden {
   visibility: hidden;
   /* 드롭 다운 효과 */
-  max-height: 0px;
+  /* max-height: 0px; */
+  /* fade-out 효과 */
+  opacity: 0;
   transition: all 0.3s ease-in-out;
 }
 
 .modal.show {
   visibility: visible;
   /* 드롭 다운 효과 */
-  max-height: 300px;
+  /* max-height: 300px; */
+  /* fade-in 효과 */
+  opacity: 1;
   transition: all 0.3s ease-in-out;
 }
 
