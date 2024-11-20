@@ -30,18 +30,14 @@ const ListModal = ({ list, handleClick, setShowModal }: ListModalProps) => {
   useFocusTrap({
     ref: modalRef,
     location: "ListModal component",
-    onEscapeFocusTrap: () => {
-      if (hideModal) {
-        hideModal();
-      } else {
-        setShowModal(false);
-      }
-    },
+    setShowModal,
+    hideModal,
   });
 
   // 외부 클릭시 모달창 닫힘
   useClickOutside(modalRef, setShowModal, hideModal);
 
+  // 아이템 클릭시 호출되는 함수
   const handleClickItem = (value: string | number | undefined) => {
     handleClick(value);
     hideModal();

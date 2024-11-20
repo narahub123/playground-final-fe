@@ -4,7 +4,8 @@ interface useFocusTrapProps {
   ref: React.RefObject<HTMLElement>;
   location: string; // 테스트를 위한 코드 : 굳이 필요없음
   showModal?: boolean;
-  onEscapeFocusTrap?: () => void;
+  setShowModal?: React.Dispatch<React.SetStateAction<boolean>>;
+  hideModal?: () => void;
 }
 
 // 포커스 가능한 요소들 찾는 함수 (tabIndex가 0 이상인 요소들)
@@ -20,9 +21,19 @@ const useFocusTrap = ({
   ref,
   location,
   showModal,
-  onEscapeFocusTrap,
+  setShowModal,
+  hideModal,
 }: useFocusTrapProps) => {
   const [lastClick, setLastClick] = useState<HTMLElement | null>(null);
+
+  const handleEscapeKeyDown = () => {
+    if (hideModal) {
+      hideModal();
+    } else {
+      setShowModal && setShowModal(false);
+    }
+  };
+
   useLayoutEffect(() => {
     const element = ref.current;
     if (!element) return;
@@ -83,8 +94,7 @@ const useFocusTrap = ({
       } else if (event.key === "Escape") {
         event.preventDefault();
         event.stopPropagation();
-        if (!onEscapeFocusTrap) return;
-        onEscapeFocusTrap();
+        handleEscapeKeyDown();
       } else if (event.key === "ArrowDown" || event.key === "ArrowRight") {
         event.preventDefault();
         event.stopPropagation();
@@ -105,7 +115,7 @@ const useFocusTrap = ({
     element.addEventListener("keydown", handleKeyDown); // keydown 이벤트 리스너 추가
 
     return () => element.removeEventListener("keydown", handleKeyDown); // 리스너 제거 함수 반환
-  }, [ref, onEscapeFocusTrap, lastClick, setLastClick, showModal]); // 의존성 배열 추가
+  }, [ref, setShowModal, lastClick, setLastClick, showModal]); // 의존성 배열 추가
 
   return {
     lastClick,
