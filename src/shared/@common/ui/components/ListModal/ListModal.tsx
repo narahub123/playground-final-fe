@@ -31,13 +31,21 @@ const ListModal = ({ list, handleClick, setShowModal }: ListModalProps) => {
     ref: modalRef,
     location: "ListModal component",
     onEscapeFocusTrap: () => {
-      handleClick(undefined);
-      hideModal();
+      if (hideModal) {
+        hideModal();
+      } else {
+        setShowModal(false);
+      }
     },
   });
 
   // 외부 클릭시 모달창 닫힘
   useClickOutside(modalRef, setShowModal, hideModal);
+
+  const handleClickItem = (value: string | number | undefined) => {
+    handleClick(value);
+    hideModal();
+  };
 
   return (
     <div
@@ -49,45 +57,22 @@ const ListModal = ({ list, handleClick, setShowModal }: ListModalProps) => {
       <ul className={styles.container}>
         {list.map((item) => {
           const { text, cardTitle, iconName, url, value } = item;
-
+          const ItemCompo = url ? Link : "li";
           // 필수 속성 검증: 텍스트가 없는 경우 아무것도 리턴하지 않음
           if (!text) return null;
-
-          return url ? (
-            // url이 있는 경우: 다른 url로 이동함
-            <Link
+          return (
+            <ItemCompo
               key={value || text}
-              to={url}
+              to={url ? url : ""}
               className={styles.item}
-              onClick={() => {
-                handleClick(value);
-                hideModal();
-              }} // Link인 경우 이동을 주로하기 때문에 추가적인 onClick 이벤트 사용 안할 가능성이 있음 한다면 value 값을 전달하지 않을까 싶음
+              onClick={() => handleClickItem(value)}
               title={cardTitle}
               aria-label={cardTitle}
               tabIndex={0}
             >
               {iconName && <Icon iconName={iconName} iconTitle="" />}
               <p className={styles.text}>{text}</p>
-            </Link>
-          ) : (
-            // url이 없는 경우: 해당 이벤트 처리
-            <li
-              key={value || text}
-              className={styles.item}
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                handleClick(value);
-                hideModal();
-              }}
-              title={cardTitle}
-              aria-label={cardTitle}
-              tabIndex={0}
-            >
-              {iconName && <Icon iconName={iconName} iconTitle="" />}
-              <p className={styles.text}>{text}</p>
-            </li>
+            </ItemCompo>
           );
         })}
       </ul>

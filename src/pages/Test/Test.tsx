@@ -22,8 +22,6 @@ const Test = () => {
     // setShowModal(!showModal); // 클릭하면 해당 모달창이 닫혀야 함
   };
 
-  console.log(showModal);
-
   return (
     <div className="test" ref={pageRef}>
       <div className={styles[`modal-container`]}>
