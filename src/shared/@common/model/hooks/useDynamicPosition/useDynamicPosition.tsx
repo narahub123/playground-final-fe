@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 
 const useDynamicPosition = (ref: React.RefObject<HTMLElement | null>) => {
   const [position, setPosition] = useState("top-left");
   // 컨테이너의 창 내에의 위치에 따라 모달창 위치 변경하기
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!ref.current) return;
 
     const modal = ref.current;
