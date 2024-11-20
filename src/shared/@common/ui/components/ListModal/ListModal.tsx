@@ -12,10 +12,16 @@ import {
 type ListModalProps = {
   list: listModalCardType[]; // 모달창안의 목록에 대한 정보
   handleClick: (value: string | number | undefined) => void; // 호출할 클릭 이벤트
+  showModal: boolean;
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const ListModal = ({ list, handleClick, setShowModal }: ListModalProps) => {
+const ListModal = ({
+  list,
+  handleClick,
+  showModal,
+  setShowModal,
+}: ListModalProps) => {
   const modalRef = useRef<HTMLDivElement>(null);
 
   // 모달 위치 지정
@@ -34,7 +40,13 @@ const ListModal = ({ list, handleClick, setShowModal }: ListModalProps) => {
   useClickOutside(modalRef, setShowModal);
 
   return (
-    <div className={`${styles.modal} ${position}`} role="dialog" ref={modalRef}>
+    <div
+      className={`${styles.modal} ${position} ${
+        showModal ? styles.show : styles.hidden
+      }`}
+      role="dialog"
+      ref={modalRef}
+    >
       <ul className={styles.container}>
         {list.map((item) => {
           const { text, cardTitle, iconName, url, value } = item;

@@ -8,6 +8,20 @@
   overflow: hidden;
 }
 
+.modal.hidden {
+  visibility: hidden;
+  /* 드롭 다운 효과 */
+  max-height: 0px;
+  transition: all 0.3s ease-in-out;
+}
+
+.modal.show {
+  visibility: visible;
+  /* 드롭 다운 효과 */
+  max-height: 300px;
+  transition: all 0.3s ease-in-out;
+}
+
 .container {
   position: relative;
 }

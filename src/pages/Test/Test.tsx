@@ -35,13 +35,12 @@ const Test = () => {
               setLastClick(e.target); // 기존 페이지의 마지막 요소 저장
             }}
           />
-          {showModal && (
-            <ListModal
-              list={listModalExample}
-              handleClick={handleClick}
-              setShowModal={setShowModal}
-            />
-          )}
+          <ListModal
+            list={listModalExample}
+            handleClick={handleClick}
+            showModal={showModal}
+            setShowModal={setShowModal}
+          />
         </div>
         <div className={styles.right}>
           <Icon
@@ -57,6 +56,7 @@ const Test = () => {
             <ListModal
               list={listModalExample}
               handleClick={handleClick}
+              showModal={showModal}
               setShowModal={setShowModal}
             />
           )}
