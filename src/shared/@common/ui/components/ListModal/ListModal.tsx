@@ -18,7 +18,7 @@ type ListModalProps = {
 const ListModal = ({ list, handleClick, setShowModal }: ListModalProps) => {
   const modalRef = useRef<HTMLDivElement>(null);
 
-  useDynamicPosition(modalRef);
+  const position = useDynamicPosition(modalRef);
 
   useFocusTrap({
     ref: modalRef,
@@ -31,7 +31,7 @@ const ListModal = ({ list, handleClick, setShowModal }: ListModalProps) => {
   useClickOutside(modalRef, setShowModal);
 
   return (
-    <div className={`${styles.modal}`} role="dialog" ref={modalRef}>
+    <div className={`${styles.modal} ${position}`} role="dialog" ref={modalRef}>
       <ul className={styles.container}>
         {list.map((item) => {
           const { text, cardTitle, iconName, url, value } = item;
