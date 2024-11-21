@@ -29,8 +29,7 @@ const ModalLayout = (props: any) => {
 
   // content 생성하기
   const Content = React.cloneElement(children, {
-    hideModal,
-    className: styles.content,
+    hideModal, // 내부 버튼을 누르면 창이 닫히는 효과를 위해 사용
   });
 
   return (
@@ -48,7 +47,7 @@ const ModalLayout = (props: any) => {
               handleClick={() => hideModal()}
             />
           </div>
-          <>{Content}</>
+          <div className={styles.content}>{Content}</div>
           <div className={styles.footer}>푸터</div>
         </div>
       </div>

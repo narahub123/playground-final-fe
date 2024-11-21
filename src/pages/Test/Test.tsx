@@ -25,10 +25,10 @@ const Test = () => {
 
   // 컴포넌트 생성해서 사용할 때 아래의 사용법을 사용해야 함
   const Content = (props: any) => {
-    const { hideModal, className } = props;
+    const { hideModal } = props;
     return (
       // 클래스 이름 추가하기
-      <div className={className}>
+      <div>
         {/* 클릭이벤트에 hideModal 추가하기 */}
         <button className={styles.button} onClick={() => hideModal()}>
           1
