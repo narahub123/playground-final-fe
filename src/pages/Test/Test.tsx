@@ -14,7 +14,7 @@ const Test = () => {
   const { setLastClick } = useFocusTrap({
     ref: pageRef,
     location: "test page",
-    showModal,
+    showModal: showModal || isOpen, // 여러 모달 창에 적용하기 위해서 유니언으로 전달해야 함
   });
 
   // 각 모달에 따라 다른 값이 들어가게 됨
