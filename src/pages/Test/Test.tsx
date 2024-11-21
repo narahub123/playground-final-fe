@@ -8,6 +8,7 @@ import ModalLayout from "@shared/@common/layouts/ModalLayout/ModalLayout";
 
 const Test = () => {
   const [showModal, setShowModal] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const pageRef = useRef<HTMLDivElement>(null);
 
   const { setLastClick } = useFocusTrap({
@@ -25,28 +26,24 @@ const Test = () => {
 
   return (
     <div className="test" ref={pageRef}>
-      <ModalLayout>
-        <>안녕</>
-      </ModalLayout>
+      {showModal && (
+        <ModalLayout setToggle={setShowModal}>
+          <>
+            <button className={styles.button}>1</button>
+            <button className={styles.button}>2</button>
+            <button className={styles.button}>3</button>
+            <button className={styles.button}>4</button>
+          </>
+        </ModalLayout>
+      )}
       <div className={styles[`modal-container`]}>
         <div className={styles.left}>
-          <Icon
-            iconName="backward"
-            iconTitle="뒤로 가기"
-            handleClick={(e) => {
-              e.stopPropagation();
-              setShowModal(true);
-              setLastClick(e.target); // 기존 페이지의 마지막 요소 저장
-            }}
-          />
-          {showModal && (
-            <ListModal
-              list={listModalExample}
-              handleClick={handleClick}
-              showModal={showModal}
-              setShowModal={setShowModal}
-            />
-          )}
+          <button
+            className={styles.button}
+            onClick={() => setShowModal(!showModal)}
+          >
+            모달창 열기
+          </button>
         </div>
         <div className={styles.right}>
           <Icon
@@ -54,16 +51,16 @@ const Test = () => {
             iconTitle="뒤로 가기"
             handleClick={(e) => {
               e.stopPropagation();
-              setShowModal(true);
+              setIsOpen(true);
               setLastClick(e.target); // 기존 페이지의 마지막 요소 저장
             }}
           />
-          {showModal && (
+          {isOpen && (
             <ListModal
               list={listModalExample}
               handleClick={handleClick}
-              showModal={showModal}
-              setShowModal={setShowModal}
+              showModal={isOpen}
+              setShowModal={setIsOpen}
             />
           )}
         </div>

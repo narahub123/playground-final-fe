@@ -1,14 +1,44 @@
 import { Icon, Overlay } from "@shared/@common/ui/components";
 import styles from "./ModalLayout.module.css";
+import {
+  useClickOutside,
+  useFocusTrap,
+  useShowAndHideEffect,
+} from "@shared/@common/model/hooks";
+import { useRef } from "react";
 
 const ModalLayout = (props: any) => {
-  const { children } = props;
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { children, setToggle } = props;
+
+  // 창 여닫기 효과
+  const { showCond, hideModal, handleTransitionEnd } =
+    useShowAndHideEffect(setToggle);
+
+  // 포커스 트랩
+  useFocusTrap({
+    ref: containerRef,
+    location: "ModalLayout",
+    setShowModal: setToggle,
+    hideModal,
+  });
+
+  // 외부 클릭시 창 닫기
+  useClickOutside(containerRef, setToggle, hideModal);
+
   return (
-    <div className={styles.layout}>
+    <div
+      className={`${styles.layout} ${showCond}`}
+      onTransitionEnd={handleTransitionEnd}
+    >
       <Overlay />
-      <div className={styles.container}>
+      <div className={styles.container} ref={containerRef}>
         <div className={styles.header}>
-          <Icon iconName="close" iconTitle="닫기" handleClick={() => {}} />
+          <Icon
+            iconName="close"
+            iconTitle="닫기"
+            handleClick={() => hideModal()}
+          />
         </div>
         <div className={styles.content}>{children}</div>
         <div className={styles.footer}>푸터</div>
