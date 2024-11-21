@@ -21,38 +21,35 @@ const Test = () => {
   // 매개변수의 타입을 string | number | undefined로 한정함
   const handleClick = (value: string | number | undefined) => {
     console.log(value);
-    // setShowModal(!showModal); // 클릭하면 해당 모달창이 닫혀야 함
+  };
+
+  const Content = (props: any) => {
+    const { hideModal } = props;
+    return (
+      <div className={styles.content}>
+        <button className={styles.button} onClick={() => hideModal()}>
+          1
+        </button>
+      </div>
+    );
   };
 
   return (
     <div className="test" ref={pageRef}>
       {showModal && (
         <ModalLayout setToggle={setShowModal}>
-          <>
-            <button className={styles.button}>1</button>
-            <button className={styles.button}>2</button>
-            <button className={styles.button}>3</button>
-            <button className={styles.button}>4</button>
-          </>
+          <Content />
         </ModalLayout>
       )}
       <div className={styles[`modal-container`]}>
-        <div className={styles.left}>
-          <button
-            className={styles.button}
-            onClick={() => setShowModal(!showModal)}
-          >
-            모달창 열기
-          </button>
-        </div>
         <div className={styles.right}>
           <Icon
             iconName="wrong"
             iconTitle="뒤로 가기"
             handleClick={(e) => {
               e.stopPropagation();
-              setIsOpen(true);
-              setLastClick(e.target); // 기존 페이지의 마지막 요소 저장
+              setIsOpen(!isOpen);
+              setLastClick(e.target as HTMLElement); // 기존 페이지의 마지막 요소 저장
             }}
           />
           {isOpen && (
@@ -63,6 +60,18 @@ const Test = () => {
               setShowModal={setIsOpen}
             />
           )}
+        </div>
+        <div className={styles.left}>
+          <button
+            className={styles.button}
+            onClick={(e) => {
+              e.stopPropagation();
+              setShowModal(!showModal);
+              setLastClick(e.target as HTMLElement);
+            }}
+          >
+            모달창 열기
+          </button>
         </div>
       </div>
     </div>
