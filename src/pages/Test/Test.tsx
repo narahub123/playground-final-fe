@@ -4,6 +4,7 @@ import { Icon, ListModal } from "@shared/@common/ui/components";
 import { useRef, useState } from "react";
 import { useFocusTrap } from "@shared/@common/model/hooks";
 import { listModalExample } from "@shared/@common/data";
+import ModalLayout from "@shared/@common/layouts/ModalLayout/ModalLayout";
 
 const Test = () => {
   const [showModal, setShowModal] = useState(false);
@@ -24,6 +25,9 @@ const Test = () => {
 
   return (
     <div className="test" ref={pageRef}>
+      <ModalLayout>
+        <>안녕</>
+      </ModalLayout>
       <div className={styles[`modal-container`]}>
         <div className={styles.left}>
           <Icon
