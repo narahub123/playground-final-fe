@@ -28,12 +28,16 @@ const Test = () => {
     const { hideModal } = props;
     return (
       // 클래스 이름 추가하기
-      <div>
-        {/* 클릭이벤트에 hideModal 추가하기 */}
-        <button className={styles.button} onClick={() => hideModal()}>
-          1
-        </button>
-      </div>
+      <>
+        <div>제목</div>
+        <div>
+          {/* 클릭이벤트에 hideModal 추가하기 */}
+          <button className={styles.button} onClick={() => hideModal()}>
+            zdhifasfasf adfasfasfasfasfasfasf
+          </button>
+        </div>
+        <div>푸터</div>
+      </>
     );
   };
 

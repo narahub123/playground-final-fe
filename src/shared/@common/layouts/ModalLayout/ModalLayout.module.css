@@ -1,4 +1,4 @@
-.layout {
+.backdrop {
   position: absolute;
   top: 0;
   left: 0;
@@ -7,30 +7,31 @@
   z-index: 1; /* 다른 레이어보다 위에 존재해야 함 */
 }
 
-.container {
+.wrapper {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #fff;
-  width: 600px;
-  height: 600px;
+  max-width: 600px;
+  max-height: 600px;
   border-radius: 15px;
 
   display: flex;
   flex-direction: column;
 }
 
-.header {
+.close {
+  position: absolute;
+  width: 100%;
   display: flex;
-  justify-content: end;
-  border: 1px solid #ccc;
-}
-.content {
-  flex: 1;
-  border: 1px solid #ccc;
+  justify-content: flex-end;
 }
 
-.footer {
+.content {
+  margin: 31px;
+  display: flex;
+  flex-direction: column;
   border: 1px solid #ccc;
+  height: 100%;
 }

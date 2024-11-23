@@ -35,12 +35,12 @@ const ModalLayout = (props: any) => {
   return (
     <Portal>
       <div
-        className={`${styles.layout} ${showCond}`}
+        className={`${styles.backdrop} ${showCond}`}
         onTransitionEnd={handleTransitionEnd}
       >
         <Overlay />
-        <div className={styles.container} ref={containerRef}>
-          <div className={styles.header}>
+        <div className={styles.wrapper} ref={containerRef}>
+          <div className={styles.close}>
             <Icon
               iconName="close"
               iconTitle="닫기"
@@ -48,7 +48,6 @@ const ModalLayout = (props: any) => {
             />
           </div>
           <div className={styles.content}>{Content}</div>
-          <div className={styles.footer}>푸터</div>
         </div>
       </div>
     </Portal>
