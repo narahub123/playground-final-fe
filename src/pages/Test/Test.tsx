@@ -44,7 +44,7 @@ const Test = () => {
   return (
     <div className="test" ref={pageRef}>
       {showModal && (
-        <ModalLayout setToggle={setShowModal}>
+        <ModalLayout setToggle={setShowModal} overlayColor={"bluo"}>
           <Content />
         </ModalLayout>
       )}
