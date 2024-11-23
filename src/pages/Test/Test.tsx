@@ -15,7 +15,7 @@ const Test = () => {
   const { setLastClick } = useFocusTrap({
     ref: pageRef,
     location: "test page",
-    showModal: showModal || isOpen || showSecondModal, // 여러 모달 창에 적용하기 위해서 유니언으로 전달해야 함
+    showModal: showModal || isOpen, // 여러 모달 창에 적용하기 위해서 유니언으로 전달해야 함
   });
 
   // 각 모달에 따라 다른 값이 들어가게 됨
@@ -26,13 +26,13 @@ const Test = () => {
 
   // 컴포넌트 생성해서 사용할 때 아래의 사용법을 사용해야 함
   const Content = (props: any) => {
-    const { hideModal } = props;
+    const { hideModal, setLastClick } = props;
     return (
       // 클래스 이름 추가하기
       <>
         <div className={styles.mid}>
           <button
-            className={styles.button}
+            className={styles.modal}
             onClick={(e) => {
               e.stopPropagation();
               setShowSecondModal(!showSecondModal);
@@ -71,16 +71,18 @@ const Test = () => {
     );
   };
 
+  console.log("포커스 요소", document.activeElement);
+
   return (
     <div className="test" ref={pageRef}>
+      {showModal && (
+        <ModalLayout setToggle={setShowModal} showModal={showSecondModal}>
+          <Content />
+        </ModalLayout>
+      )}
       {showSecondModal && (
         <ModalLayout setToggle={setShowSecondModal}>
           <Content2 />
-        </ModalLayout>
-      )}
-      {showModal && (
-        <ModalLayout setToggle={setShowModal} overlayColor={"bluo"}>
-          <Content />
         </ModalLayout>
       )}
       <div className={styles[`modal-container`]}>
@@ -91,7 +93,7 @@ const Test = () => {
             handleClick={(e) => {
               e.stopPropagation();
               setIsOpen(!isOpen);
-              setLastClick(e.target as HTMLElement); // 기존 페이지의 마지막 요소 저장
+              setLastClick(e.target as HTMLElement);
             }}
           />
           {isOpen && (

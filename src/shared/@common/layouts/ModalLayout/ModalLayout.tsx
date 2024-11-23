@@ -10,16 +10,17 @@ import Portal from "../Portal/Portal";
 
 const ModalLayout = (props: any) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const { children, setToggle, overlayColor } = props;
+  const { children, setToggle, overlayColor, showModal } = props;
 
   // 창 여닫기 효과
   const { showCond, hideModal, handleTransitionEnd } =
     useShowAndHideEffect(setToggle);
 
   // 포커스 트랩
-  useFocusTrap({
+  const { setLastClick } = useFocusTrap({
     ref: containerRef,
     location: "ModalLayout",
+    showModal, // 이중 모달을 사용하는 경우 필요함
     setShowModal: setToggle,
     hideModal,
   });
@@ -30,6 +31,7 @@ const ModalLayout = (props: any) => {
   // content 생성하기
   const Content = React.cloneElement(children, {
     hideModal, // 내부 버튼을 누르면 창이 닫히는 효과를 위해 사용
+    setLastClick, // 이 부분을 활용 안하면 마지막 클릭은 저장 안되지만 이전 모달창으로 이동은 함
   });
 
   return (

@@ -3,9 +3,9 @@ import { useLayoutEffect, useState } from "react";
 interface useFocusTrapProps {
   ref: React.RefObject<HTMLElement>;
   location: string; // 테스트를 위한 코드 : 굳이 필요없음
-  showModal?: boolean;
-  setShowModal?: React.Dispatch<React.SetStateAction<boolean>>;
-  hideModal?: () => void;
+  showModal?: boolean; // 되돌아가야 할 컴포넌트에서 사용됨
+  setShowModal?: React.Dispatch<React.SetStateAction<boolean>>; // 닫힐 컴포넌트에서 사용됨
+  hideModal?: () => void; // 닫힐 컴포넌트에서 사용됨
 }
 
 // 포커스 가능한 요소들 찾는 함수 (tabIndex가 0 이상인 요소들)
@@ -106,9 +106,24 @@ const useFocusTrap = ({
       }
     }
 
-    if (lastClick && showModal === false) {
-      lastClick.focus(); // 기존 요소에 포커스 설정
-    } else {
+    if (lastClick && !showModal) {
+      console.log("기존 요소가 있고 모달창이 닫히는 경우");
+      console.log("기존 요소", lastClick);
+
+      // lastClick과 일치하는 요소를 찾기 (isEqualNode 비교)
+      // 모달창이 이중으로 열린 경우에는 기존 방법으로는 저장된 요소가 포커스 가능한 요소 내의 요소라는 것을 인식 못함
+      // 따라서 같은 구조의 요소를 찾아서 그 요소에 포커스를 주는 방식을 택함 : 나중에 문제 발생할 수도 있음
+      const matchedElement = focusableElements.find((el) =>
+        el.isEqualNode(lastClick)
+      ) as HTMLElement;
+
+      if (matchedElement) {
+        matchedElement.focus(); // 기존 요소에 포커스 설정
+      } else {
+        firstElement.focus(); // 첫 번째 포커스 가능한 요소에 포커스 설정
+      }
+    } else if (!lastClick) {
+      console.log("기존 요소가 없고 모달창이 닫히는 경우");
       firstElement.focus(); // 처음에 첫 번째 포커스 가능한 요소에 포커스 설정
     }
 
