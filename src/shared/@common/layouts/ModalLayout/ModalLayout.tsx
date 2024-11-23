@@ -44,7 +44,10 @@ const ModalLayout = (props: any) => {
             <Icon
               iconName="close"
               iconTitle="닫기"
-              handleClick={() => hideModal()}
+              handleClick={(e) => {
+                e.stopPropagation();
+                hideModal();
+              }}
             />
           </div>
           <div className={styles.content}>{Content}</div>

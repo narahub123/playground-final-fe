@@ -8,13 +8,14 @@ import ModalLayout from "@shared/@common/layouts/ModalLayout/ModalLayout";
 
 const Test = () => {
   const [showModal, setShowModal] = useState(false);
+  const [showSecondModal, setShowSecondModal] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const pageRef = useRef<HTMLDivElement>(null);
 
   const { setLastClick } = useFocusTrap({
     ref: pageRef,
     location: "test page",
-    showModal: showModal || isOpen, // 여러 모달 창에 적용하기 위해서 유니언으로 전달해야 함
+    showModal: showModal || isOpen || showSecondModal, // 여러 모달 창에 적용하기 위해서 유니언으로 전달해야 함
   });
 
   // 각 모달에 따라 다른 값이 들어가게 됨
@@ -29,6 +30,18 @@ const Test = () => {
     return (
       // 클래스 이름 추가하기
       <>
+        <div className={styles.mid}>
+          <button
+            className={styles.button}
+            onClick={(e) => {
+              e.stopPropagation();
+              setShowSecondModal(!showSecondModal);
+              setLastClick(e.target as HTMLElement);
+            }}
+          >
+            모달창 열기
+          </button>
+        </div>
         <div>제목</div>
         <div>
           {/* 클릭이벤트에 hideModal 추가하기 */}
@@ -41,8 +54,30 @@ const Test = () => {
     );
   };
 
+  const Content2 = (props: any) => {
+    const { hideModal } = props;
+
+    return (
+      <>
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            hideModal();
+          }}
+        >
+          adfasf
+        </button>
+      </>
+    );
+  };
+
   return (
     <div className="test" ref={pageRef}>
+      {showSecondModal && (
+        <ModalLayout setToggle={setShowSecondModal}>
+          <Content2 />
+        </ModalLayout>
+      )}
       {showModal && (
         <ModalLayout setToggle={setShowModal} overlayColor={"bluo"}>
           <Content />
@@ -68,6 +103,7 @@ const Test = () => {
             />
           )}
         </div>
+
         <div className={styles.left}>
           <button
             className={styles.button}
