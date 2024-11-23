@@ -10,7 +10,7 @@ import Portal from "../Portal/Portal";
 
 const ModalLayout = (props: any) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const { children, setToggle } = props;
+  const { children, setToggle, overlayColor } = props;
 
   // 창 여닫기 효과
   const { showCond, hideModal, handleTransitionEnd } =
@@ -38,7 +38,7 @@ const ModalLayout = (props: any) => {
         className={`${styles.backdrop} ${showCond}`}
         onTransitionEnd={handleTransitionEnd}
       >
-        <Overlay />
+        <Overlay bgColor={overlayColor} />
         <div className={styles.wrapper} ref={containerRef}>
           <div className={styles.close}>
             <Icon
