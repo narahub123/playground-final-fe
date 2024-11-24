@@ -5,6 +5,7 @@ import { useRef, useState } from "react";
 import { useFocusTrap } from "@shared/@common/model/hooks";
 import { listModalExample } from "@shared/@common/data";
 import ModalLayout from "@shared/@common/layouts/ModalLayout/ModalLayout";
+import Select from "@shared/@common/ui/components/Select/Select";
 
 const Test = () => {
   const [showModal, setShowModal] = useState(false);
@@ -120,6 +121,9 @@ const Test = () => {
             모달창 열기
           </button>
         </div>
+      </div>
+      <div className={styles[`select-contaienr`]}>
+        <Select />
       </div>
     </div>
   );
