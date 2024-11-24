@@ -37,6 +37,8 @@ const ModalLayout = (props: any) => {
   return (
     <Portal>
       <div
+        role="dialog"
+        aria-modal="true"
         className={`${styles.backdrop} ${showCond}`}
         onTransitionEnd={handleTransitionEnd}
       >

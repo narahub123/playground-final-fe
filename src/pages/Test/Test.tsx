@@ -114,6 +114,8 @@ const Test = () => {
               setShowModal(!showModal);
               setLastClick(e.target as HTMLElement);
             }}
+            aria-haspopup="true" // 해당 요소가 하위 팝업이나 메뉴를 가지고 있음
+            aria-expanded="false" // 해당 요소가 접혀 있음
           >
             모달창 열기
           </button>
