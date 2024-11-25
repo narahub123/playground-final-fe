@@ -9,6 +9,7 @@ import Select from "@shared/@common/ui/components/Select/Select";
 import { setBackgroundTheme } from "@shared/@common/model/slices/settingsSlice";
 import { useSelector } from "react-redux";
 import { getBgTheme } from "@shared/@common/model/selectors";
+import BGToggleButton from "@shared/@common/ui/components/BGToggleButton/BGToggleButton";
 
 const Test = () => {
   const bgTheme = useSelector(getBgTheme);
@@ -139,15 +140,7 @@ const Test = () => {
         />
       </div>
       <div className={styles[`toggle-container`]}>
-        <ToggleButton
-          isOnCond={bgTheme === "dark" ? true : false}
-          reducer={setBackgroundTheme(bgTheme === "dark" ? "light" : "dark")}
-          iconName={bgTheme === "dark" ? "light" : "dark"}
-          iconTitle={bgTheme === "dark" ? "라이트 모드" : "다크 모드"}
-          buttonColor={bgTheme === "dark" ? "rgb(100, 149, 237)" : "white"}
-          iconColor={bgTheme === "dark" ? "white" : "rgb(100, 149, 237)"}
-          setLastClick={setLastClick}
-        />
+        <BGToggleButton setLastClick={setLastClick} />
       </div>
     </div>
   );
