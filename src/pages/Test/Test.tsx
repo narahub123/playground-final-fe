@@ -6,8 +6,12 @@ import { useFocusTrap } from "@shared/@common/model/hooks";
 import { listModalExample } from "@shared/@common/data";
 import ModalLayout from "@shared/@common/layouts/ModalLayout/ModalLayout";
 import Select from "@shared/@common/ui/components/Select/Select";
+import { setBackgroundTheme } from "@shared/@common/model/slices/settingsSlice";
+import { useSelector } from "react-redux";
+import { getBgTheme } from "@shared/@common/model/selectors";
 
 const Test = () => {
+  const bgTheme = useSelector(getBgTheme);
   const [showModal, setShowModal] = useState(false);
   const [showSecondModal, setShowSecondModal] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -73,7 +77,7 @@ const Test = () => {
     );
   };
 
-  console.log("포커스 요소", document.activeElement);
+  console.log(bgTheme);
 
   return (
     <div className="test" ref={pageRef}>
@@ -132,7 +136,13 @@ const Test = () => {
         />
       </div>
       <div className={styles[`toggle-container`]}>
-        <ToggleButton />
+        <ToggleButton
+          isOnCond={bgTheme === "dark" ? true : false}
+          reducer={setBackgroundTheme(bgTheme === "dark" ? "light" : "dark")}
+          iconName={bgTheme === "dark" ? "light" : "dark"}
+          buttonColor={bgTheme === "dark" ? "rgb(100, 149, 237)" : "white"}
+          iconColor={bgTheme === "dark" ? "white" : "rgb(100, 149, 237)"}
+        />
       </div>
     </div>
   );
