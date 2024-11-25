@@ -6,6 +6,7 @@ import {
   useFocusTrap,
   useShowAndHideEffect,
 } from "@shared/@common/model/hooks";
+import Icon from "../Icon/Icon";
 
 type OptionProps = {
   option: any;
@@ -40,7 +41,8 @@ const Option = ({
       tabIndex={option.value === selection ? -1 : 0}
       aria-selected={option.value === selection} // 현재 선택된 항목인지 표시
     >
-      {option.text}
+      {option.iconName && <Icon iconName={option.iconName} iconTitle="" />}
+      <span>{option.text}</span>
     </li>
   );
 };
