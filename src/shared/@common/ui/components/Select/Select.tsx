@@ -27,6 +27,7 @@ const Option = ({
   const selectedCond = option.value === selection ? styles.selected : "";
   return (
     <li
+      role="option" // 역할 정의
       className={`${styles.option} ${selectedCond} ${showCond}`}
       onClick={
         selectedCond
@@ -36,7 +37,8 @@ const Option = ({
               hideModal();
             }
       }
-      tabIndex={selectedCond ? -1 : 0}
+      tabIndex={option.value === selection ? -1 : 0}
+      aria-selected={option.value === selection} // 현재 선택된 항목인지 표시
     >
       {option.text}
     </li>
@@ -74,6 +76,8 @@ const List = ({ selection, setSelection, setIsOpen, isOpen }: ListProps) => {
       className={`${styles.list} ${showCond}`}
       ref={containerRef}
       onTransitionEnd={handleTransitionEnd}
+      role="listbox" // 리스트 역할 명시
+      id="dropdown-list" // 버튼과 연결
     >
       {listModalExample.map((option) => (
         <Option
@@ -122,6 +126,9 @@ const Select = ({ pageRef, isOpen, setIsOpen, setLastClick }: SelectProps) => {
           setIsOpen(!isOpen);
         }}
         ref={buttonRef}
+        aria-haspopup="listbox" // 버튼이 리스트 박스를 열 수 있음 명시
+        aria-expanded={isOpen} // 현재 드롭다운이 열렸는지 여부 표시
+        aria-controls="dropdown-list" // 드롭다운 리스트의 ID를 참조
       >
         {listModalExample.find((item) => item.value === selection)?.text || ""}
       </button>
