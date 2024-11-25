@@ -9,6 +9,7 @@ const useClickOutside = (
     // 클릭한 위치를 찾아내서 모달 내부인 여부 확인하는 함수
     const handleClickOutside = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
+      console.log("클릭한 요소", target);
 
       // 클릭한 곳이 모달 창 내부가 아니라면 모달 창을 닫음
       if (containerRef.current && !containerRef.current?.contains(target)) {

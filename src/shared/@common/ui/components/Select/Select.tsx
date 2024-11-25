@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import styles from "./Select.module.css";
 import { listModalExample } from "@shared/@common/data";
 import {
+  useClickOutside,
   useFocusTrap,
   useShowAndHideEffect,
 } from "@shared/@common/model/hooks";
@@ -65,6 +66,8 @@ const List = ({ selection, setSelection, setIsOpen, isOpen }: ListProps) => {
     setShowModal: setIsOpen,
     hideModal,
   });
+
+  useClickOutside(containerRef, setIsOpen, hideModal);
 
   return (
     <ul
