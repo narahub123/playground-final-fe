@@ -11,12 +11,13 @@ const Test = () => {
   const [showModal, setShowModal] = useState(false);
   const [showSecondModal, setShowSecondModal] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpenDropdown, setIsOpenDropdown] = useState(false);
   const pageRef = useRef<HTMLDivElement>(null);
 
   const { setLastClick } = useFocusTrap({
     ref: pageRef,
     location: "test page",
-    showModal: showModal || isOpen, // 여러 모달 창에 적용하기 위해서 유니언으로 전달해야 함
+    showModal: showModal || isOpen || isOpenDropdown, // 여러 모달 창에 적용하기 위해서 유니언으로 전달해야 함
   });
 
   // 각 모달에 따라 다른 값이 들어가게 됨
@@ -123,7 +124,12 @@ const Test = () => {
         </div>
       </div>
       <div className={styles[`select-contaienr`]}>
-        <Select />
+        <Select
+          pageRef={pageRef}
+          isOpen={isOpenDropdown}
+          setIsOpen={setIsOpenDropdown}
+          setLastClick={setLastClick}
+        />
       </div>
     </div>
   );
