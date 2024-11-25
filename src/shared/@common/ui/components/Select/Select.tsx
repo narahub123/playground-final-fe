@@ -13,6 +13,7 @@ type OptionProps = {
     React.SetStateAction<string | number | undefined>
   >;
   hideModal: () => void;
+  showCond: string;
 };
 
 const Option = ({
@@ -20,11 +21,12 @@ const Option = ({
   selection,
   setSelection,
   hideModal,
+  showCond,
 }: OptionProps) => {
   const selectedCond = option.value === selection ? styles.selected : "";
   return (
     <li
-      className={`${styles.option} ${selectedCond}`}
+      className={`${styles.option} ${selectedCond} ${showCond}`}
       onClick={
         selectedCond
           ? undefined
@@ -33,7 +35,7 @@ const Option = ({
               hideModal();
             }
       }
-      tabIndex={0}
+      tabIndex={selectedCond ? -1 : 0}
     >
       {option.text}
     </li>
@@ -77,6 +79,7 @@ const List = ({ selection, setSelection, setIsOpen, isOpen }: ListProps) => {
           selection={selection}
           setSelection={setSelection}
           hideModal={hideModal}
+          showCond={showCond}
         />
       ))}
     </ul>
@@ -97,6 +100,8 @@ const Select = ({ pageRef, isOpen, setIsOpen, setLastClick }: SelectProps) => {
     listModalExample[0].value
   );
 
+  const { hideModal } = useShowAndHideEffect(setIsOpen);
+
   useFocusTrap({
     ref: pageRef,
     location: "Select component",
@@ -109,8 +114,9 @@ const Select = ({ pageRef, isOpen, setIsOpen, setLastClick }: SelectProps) => {
         className={styles.select}
         onClick={(e) => {
           e.stopPropagation();
-          setIsOpen(!isOpen);
           setLastClick(buttonRef.current);
+          hideModal();
+          setIsOpen(!isOpen);
         }}
         ref={buttonRef}
       >
