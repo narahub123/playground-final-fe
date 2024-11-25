@@ -41,7 +41,9 @@ const Option = ({
       tabIndex={option.value === selection ? -1 : 0}
       aria-selected={option.value === selection} // 현재 선택된 항목인지 표시
     >
-      {option.iconName && <Icon iconName={option.iconName} iconTitle="" />}
+      {option.iconName && (
+        <Icon iconName={option.iconName} iconTitle="" ariaHidden="true" />
+      )}
       <span>{option.text}</span>
     </li>
   );

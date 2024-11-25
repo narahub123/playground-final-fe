@@ -12,17 +12,19 @@ type IconProps = {
   bgColor?: string;
   unit?: string;
   handleClick?: (value: any) => void;
+  ariaHidden?: "true" | "false";
 };
 
 const Icon = ({
   iconName, // 아이콘 이름
   iconTitle, // 아이콘 설명
   fontSize = 16, // 아이콘의 사이즈
-  color = "black", // 아이콘의 색
+  color = "inherit", // 아이콘의 색
   bgSize = 15, // hover시 배경의 사이즈: 아이콘 사이즈 + bgSize
   bgColor = "rgb(204, 204, 204, 0.5)", // hover 시 배경색
   unit = "px", // 사이즈 단위
   handleClick, // 클릭 이벤트 적용하는 경우
+  ariaHidden = "false", // 아이콘이 의미 전달을 하는지 여부 aria-hidden: true이면 장식일 뿐 의미전달 하지 않음
 }: IconProps) => {
   const { wrongIcon } = CONSTANTS.components.icon;
   const [isOver, setIsOver] = useState(false);
@@ -66,6 +68,7 @@ const Icon = ({
       onClick={handleClick}
       onMouseEnter={hoverCond ? handleMouseEnter : undefined}
       onMouseLeave={hoverCond ? handleMouseLeave : undefined}
+      aria-hidden={ariaHidden}
     >
       <Icon
         className={`${styles.icon}`}
