@@ -1,21 +1,23 @@
 .container {
   display: flex;
   flex-direction: column;
-  border: 1px solid #ccc;
 }
 .select {
   display: flex;
   justify-content: center;
   cursor: pointer;
 }
+
 .select:focus-visible {
-  outline: 1px solid black;
+  outline: var(--outline-basic);
 }
+
 .list {
   display: flex;
   flex-direction: column;
   border: 1px solid #ccc;
 }
+
 .option {
   display: flex;
   justify-content: center;

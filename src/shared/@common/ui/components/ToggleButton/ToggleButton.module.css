@@ -19,5 +19,5 @@
   transition: all 0.3s ease-in-out;
 }
 .btn:focus-visible {
-  outline: 1px solid black;
+  outline: var(--outline-basic);
 }

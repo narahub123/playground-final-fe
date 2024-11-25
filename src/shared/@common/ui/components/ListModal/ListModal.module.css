@@ -1,8 +1,9 @@
 .modal {
   position: absolute;
-  border: 1px solid #ccc;
   border-radius: 15px;
-  background-color: #fff;
+  background-color: var(--color-background);
+  color: var(--color-primary);
+  border: var(--border-list);
   z-index: 1;
   width: 200px;
   overflow: hidden;
@@ -27,11 +28,11 @@
 
 .item:first-child:focus-visible {
   border-radius: 15px 15px 0 0;
-  outline: 1px auto black;
+  outline: var(--outline-basic);
 }
 .item:last-child:focus-visible {
   border-radius: 0 0 15px 15px;
-  outline: 1px auto black;
+  outline: var(--outline-basic);
 }
 
 .item:hover {

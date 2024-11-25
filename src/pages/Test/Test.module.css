@@ -13,9 +13,9 @@
 }
 
 .button:focus-visible {
-  outline: 1px solid black;
+  outline: var(--outline-basic);
 }
 
 .modal:focus-visible {
-  outline: 1px solid black;
+  outline: var(--outline-basic);
 }
