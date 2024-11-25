@@ -7,6 +7,7 @@ type ToggleButtonProps = {
   isOnCond: boolean; // 최소의 값
   reducer: { payload: any; type: string }; // 값 변경
   iconName: string; // 버튼에 들어갈 아이콘 결정
+  iconTitle: string; // 버튼에 대한 설명
   setLastClick: React.Dispatch<React.SetStateAction<HTMLElement | null>>;
   backgroundColor?: string; // 토글의 배경색 결정
   buttonColor?: string; // 버튼 배경색 결정
@@ -18,6 +19,7 @@ const ToggleButton = ({
   reducer,
   isOnCond,
   iconName,
+  iconTitle,
   backgroundColor = "rgba(100, 149, 237, 0.5)",
   buttonColor = "white",
   iconColor = "rgba(100, 149, 237, 1)",
@@ -62,12 +64,7 @@ const ToggleButton = ({
           }}
           ref={buttonRef}
         >
-          <Icon
-            iconName={iconName}
-            iconTitle=""
-            fontSize={fontSize}
-            ariaHidden="true"
-          />
+          <Icon iconName={iconName} iconTitle={iconTitle} fontSize={fontSize} />
         </button>
       </div>
     </div>

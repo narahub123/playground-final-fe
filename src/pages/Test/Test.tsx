@@ -143,6 +143,7 @@ const Test = () => {
           isOnCond={bgTheme === "dark" ? true : false}
           reducer={setBackgroundTheme(bgTheme === "dark" ? "light" : "dark")}
           iconName={bgTheme === "dark" ? "light" : "dark"}
+          iconTitle={bgTheme === "dark" ? "라이트 모드" : "다크 모드"}
           buttonColor={bgTheme === "dark" ? "rgb(100, 149, 237)" : "white"}
           iconColor={bgTheme === "dark" ? "white" : "rgb(100, 149, 237)"}
           setLastClick={setLastClick}
