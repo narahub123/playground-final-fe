@@ -1,5 +1,5 @@
 import styles from "./Test.module.css";
-import { Icon, ListModal } from "@shared/@common/ui/components";
+import { Icon, ListModal, ToggleButton } from "@shared/@common/ui/components";
 
 import { useRef, useState } from "react";
 import { useFocusTrap } from "@shared/@common/model/hooks";
@@ -130,6 +130,9 @@ const Test = () => {
           setIsOpen={setIsOpenDropdown}
           setLastClick={setLastClick}
         />
+      </div>
+      <div className={styles[`toggle-container`]}>
+        <ToggleButton />
       </div>
     </div>
   );

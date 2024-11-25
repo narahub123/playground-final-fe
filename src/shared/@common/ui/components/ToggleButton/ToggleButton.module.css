@@ -1,0 +1,25 @@
+.toggle {
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  width: 82px;
+  height: 32px;
+}
+
+.track {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 50px;
+  height: 20px;
+  border: 1px solid #ccc;
+  margin-left: 15px;
+}
+
+.btn {
+  position: absolute;
+  border: 1px solid black;
+  border-radius: 50%;
+  /* background-color: #ccc; */
+  transition: left 0.3s ease-in-out;
+}
