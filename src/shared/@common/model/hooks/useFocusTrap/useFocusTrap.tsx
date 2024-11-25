@@ -106,9 +106,6 @@ const useFocusTrap = ({
       }
     }
 
-    console.log(focusableElements);
-    console.log(firstElement);
-
     if (lastClick && !showModal) {
       console.log("기존 요소가 있고 모달창이 닫히는 경우");
       console.log("기존 요소", lastClick);

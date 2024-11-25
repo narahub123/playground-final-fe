@@ -6,20 +6,56 @@ import {
   useShowAndHideEffect,
 } from "@shared/@common/model/hooks";
 
+type OptionProps = {
+  option: any;
+  selection: string | number | undefined;
+  setSelection: React.Dispatch<
+    React.SetStateAction<string | number | undefined>
+  >;
+  hideModal: () => void;
+};
+
+const Option = ({
+  option,
+  selection,
+  setSelection,
+  hideModal,
+}: OptionProps) => {
+  const selectedCond = option.value === selection ? styles.selected : "";
+  return (
+    <li
+      className={`${styles.option} ${selectedCond}`}
+      onClick={
+        selectedCond
+          ? undefined
+          : () => {
+              setSelection(option.value);
+              hideModal();
+            }
+      }
+      tabIndex={0}
+    >
+      {option.text}
+    </li>
+  );
+};
+
 type ListProps = {
   isOpen: boolean;
+  selection: string | number | undefined;
   setSelection: React.Dispatch<
     React.SetStateAction<string | number | undefined>
   >;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const List = ({ setSelection, setIsOpen, isOpen }: ListProps) => {
+const List = ({ selection, setSelection, setIsOpen, isOpen }: ListProps) => {
   const containerRef = useRef<HTMLUListElement>(null);
   const { showCond, handleTransitionEnd, hideModal } = useShowAndHideEffect(
     setIsOpen,
     "dropdown"
   );
+
   useFocusTrap({
     ref: containerRef,
     location: "List component",
@@ -35,17 +71,13 @@ const List = ({ setSelection, setIsOpen, isOpen }: ListProps) => {
       onTransitionEnd={handleTransitionEnd}
     >
       {listModalExample.map((option) => (
-        <li
+        <Option
           key={option.text}
-          className={styles.option}
-          onClick={() => {
-            setSelection(option.value);
-            setIsOpen(!isOpen);
-          }}
-          tabIndex={0}
-        >
-          {option.text}
-        </li>
+          option={option}
+          selection={selection}
+          setSelection={setSelection}
+          hideModal={hideModal}
+        />
       ))}
     </ul>
   );
@@ -89,6 +121,7 @@ const Select = ({ pageRef, isOpen, setIsOpen, setLastClick }: SelectProps) => {
           isOpen={isOpen}
           setIsOpen={setIsOpen}
           setSelection={setSelection}
+          selection={selection}
         />
       )}
     </div>

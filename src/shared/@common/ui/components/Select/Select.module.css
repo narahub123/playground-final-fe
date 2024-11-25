@@ -16,3 +16,18 @@
   text-align: center;
   cursor: pointer;
 }
+
+.option:focus-visible {
+  outline: 0;
+  background-color: cornflowerblue;
+  color: white;
+}
+
+.option:hover {
+  background-color: cornflowerblue;
+  color: white;
+}
+
+.selected {
+  color: cornflowerblue;
+}
