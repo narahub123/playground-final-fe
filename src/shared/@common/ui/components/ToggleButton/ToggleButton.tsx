@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Icon from "../Icon/Icon";
 import styles from "./ToggleButton.module.css";
 import { useAppDispatch } from "@app/store";
@@ -7,6 +7,7 @@ type ToggleButtonProps = {
   isOnCond: boolean; // 최소의 값
   reducer: { payload: any; type: string }; // 값 변경
   iconName: string; // 버튼에 들어갈 아이콘 결정
+  setLastClick: React.Dispatch<React.SetStateAction<HTMLElement | null>>;
   backgroundColor?: string; // 토글의 배경색 결정
   buttonColor?: string; // 버튼 배경색 결정
   iconColor?: string; // 아이콘의 색상 결정
@@ -21,7 +22,9 @@ const ToggleButton = ({
   buttonColor = "white",
   iconColor = "rgba(100, 149, 237, 1)",
   fontSize = 14,
+  setLastClick,
 }: ToggleButtonProps) => {
+  const buttonRef = useRef<HTMLButtonElement>(null);
   const dispatch = useAppDispatch();
   const [isOn, setIsOn] = useState(isOnCond);
 
@@ -45,18 +48,26 @@ const ToggleButton = ({
       onClick={() => {
         setIsOn(!isOn);
         dispatch(reducer);
+        setLastClick(buttonRef.current);
       }}
     >
       <div className={styles.track} style={{ width: `${trackWidth}px` }}>
         <button
+          role="button"
           className={styles.btn}
           style={{
             left: `${buttonPositionCond}`,
             backgroundColor: `${buttonColor}`,
             color: `${iconColor}`,
           }}
+          ref={buttonRef}
         >
-          <Icon iconName={iconName} iconTitle="" fontSize={fontSize} />
+          <Icon
+            iconName={iconName}
+            iconTitle=""
+            fontSize={fontSize}
+            ariaHidden="true"
+          />
         </button>
       </div>
     </div>

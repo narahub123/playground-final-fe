@@ -21,7 +21,10 @@ const Test = () => {
   const { setLastClick } = useFocusTrap({
     ref: pageRef,
     location: "test page",
-    showModal: showModal || isOpen || isOpenDropdown, // 여러 모달 창에 적용하기 위해서 유니언으로 전달해야 함
+    showModal:
+      showModal || isOpen || isOpenDropdown || bgTheme === "dark"
+        ? true
+        : false, // 여러 모달 창에 적용하기 위해서 유니언으로 전달해야 함
   });
 
   // 각 모달에 따라 다른 값이 들어가게 됨
@@ -142,6 +145,7 @@ const Test = () => {
           iconName={bgTheme === "dark" ? "light" : "dark"}
           buttonColor={bgTheme === "dark" ? "rgb(100, 149, 237)" : "white"}
           iconColor={bgTheme === "dark" ? "white" : "rgb(100, 149, 237)"}
+          setLastClick={setLastClick}
         />
       </div>
     </div>
