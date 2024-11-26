@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./Input.module.css";
 import Icon from "../Icon/Icon";
+import { debounce } from "@shared/@common/utils";
 
 interface InputProps {
   field: string;
@@ -41,8 +42,13 @@ const Input = ({
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
+    console.log(value);
+
     setValue(value);
   };
+
+  // debounce를 적용한 handleChange 함수
+  const debounceHandleChange = debounce<typeof handleChange>(handleChange, 500);
 
   // input type 변수
   const inputType = field === "password" && !isVisible ? "password" : "text";
@@ -69,7 +75,7 @@ const Input = ({
         <input
           type={inputType}
           className={`${styles.input} ${focusCond}`}
-          onChange={(e) => handleChange(e)}
+          onChange={debounceHandleChange}
           ref={inputRef}
         />
         {field === "password" && (
