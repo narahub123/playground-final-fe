@@ -1,7 +1,11 @@
-.container {
-  position: relative;
+.wrapper {
   flex: 1;
   width: 100%;
+}
+
+.container {
+  position: relative;
+
   border: var(--border-input-normal);
   border-radius: 8px;
   transition: all 0.3s ease-in-out;
@@ -9,6 +13,10 @@
 
 .container.focused {
   border: var(--border-input-focused);
+  transition: all 0.3s ease-in-out;
+}
+.container.invalid {
+  border: var(--border-input-invalid);
   transition: all 0.3s ease-in-out;
 }
 
@@ -85,4 +93,12 @@
 .icon.focused {
   opacity: 1;
   transition: all 0.3s ease-in-out;
+}
+
+.error {
+  padding: 3px;
+}
+.error-message {
+  color: red;
+  font-size: 14px;
 }
