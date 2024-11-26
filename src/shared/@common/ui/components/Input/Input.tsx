@@ -24,6 +24,8 @@ const Input = ({
   const [isFocus, setIsFocus] = useState(false);
   // 비밀번호 보이기 여부 상태
   const [isVisible, setIsVisible] = useState(false);
+  // 입력값의 유효성을 여부 상태
+  const [isValid, setIsValid] = useState(true);
   const [value, setValue] = useState("");
   const focusCond = isFocus || value ? styles.focused : "";
 
@@ -66,6 +68,15 @@ const Input = ({
               setIsVisible(!isVisible);
             }}
             className={`${styles.icon} ${focusCond}`}
+          />
+        )}
+        {field === "userId" && (
+          <Icon
+            iconName={isValid ? "valid" : "invalid"}
+            iconTitle={isValid ? "입력값이 유효함" : "입력값이 유효하지 않음"}
+            className={`${styles.icon} ${focusCond}`}
+            color={isValid ? "green" : "red"}
+            ariaHidden="true"
           />
         )}
         {iconName && (
