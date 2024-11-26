@@ -23,6 +23,8 @@ const Input = ({ field, fieldTitle, valueMaxLength }: InputProps) => {
   // input type 변수
   const inputType = field === "password" && !isVisible ? "password" : "text";
 
+  console.log(document.activeElement);
+
   return (
     <div
       className={`${styles.container} ${focusCond}`}
