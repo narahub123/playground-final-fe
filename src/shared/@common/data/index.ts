@@ -1,3 +1,4 @@
 import { listModalExample } from "./example";
+import bgThemes from "./bgThemes";
 
-export { listModalExample };
+export { listModalExample, bgThemes };

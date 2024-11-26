@@ -2,6 +2,7 @@ import styles from "./Icon.module.css";
 import ICONS from "#icons/index";
 import CONSTANTS from "@shared/@common/constants";
 import { useState } from "react";
+import { useGetBGThemeColor } from "@shared/@common/model/hooks";
 
 type IconProps = {
   iconName: string;
@@ -21,11 +22,13 @@ const Icon = ({
   fontSize = 16, // 아이콘의 사이즈
   color = "inherit", // 아이콘의 색
   bgSize = 15, // hover시 배경의 사이즈: 아이콘 사이즈 + bgSize
-  bgColor = "rgb(204, 204, 204, 0.5)", // hover 시 배경색
+  bgColor, // hover 시 배경색
   unit = "px", // 사이즈 단위
   handleClick, // 클릭 이벤트 적용하는 경우
   ariaHidden = "false", // 아이콘이 의미 전달을 하는지 여부 aria-hidden: true이면 장식일 뿐 의미전달 하지 않음
 }: IconProps) => {
+  const iconHover = useGetBGThemeColor("hoverIcon");
+
   const { wrongIcon } = CONSTANTS.components.icon;
   const [isOver, setIsOver] = useState(false);
 
@@ -61,7 +64,9 @@ const Icon = ({
         width: `${containerSize}${unit}`,
         height: `${containerSize}${unit}`,
         borderRadius: `50%`,
-        backgroundColor: `${isOver ? bgColor : `transparent`}`,
+        backgroundColor: `${
+          isOver ? (bgColor ? bgColor : iconHover) : `transparent`
+        }`,
       }}
       tabIndex={handleClick ? 0 : -1} // 클릭 이벤트가 있는 경우 tab 이동 가능 없는 경우 tab 이동 불가
       title={title}

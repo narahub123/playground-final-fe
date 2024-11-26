@@ -36,8 +36,5 @@
 }
 
 .item:hover {
-  background-color: #eee;
-}
-
-.text {
+  background-color: var(--hover-icon);
 }

@@ -6,4 +6,6 @@ interface listModalCardType {
   url?: string;
 }
 
-export type { listModalCardType };
+import { ThemeColorType, ThemeKey } from "./bgThemes";
+
+export type { listModalCardType, ThemeColorType, ThemeKey };
