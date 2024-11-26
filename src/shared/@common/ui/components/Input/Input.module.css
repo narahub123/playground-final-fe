@@ -25,12 +25,13 @@
 }
 
 .title {
+  font-weight: bold;
   font-size: 30px;
   transition: all 0.3s ease-in-out;
 }
 
 .title.focused {
-  font-size: 16px;
+  font-size: 14px;
   transition: all 0.3s ease-in-out;
 }
 
@@ -39,6 +40,7 @@
   /* transition: all 0.3s ease-in-out; */
 }
 .count.focused {
+  font-size: 14px;
   visibility: visible;
   /* transition: all 0.3s ease-in-out; */
 }
@@ -67,7 +69,4 @@
   padding-inline: 2px;
   height: 28px;
   font-size: 20px;
-}
-
-input[type="text"] {
 }

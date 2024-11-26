@@ -142,7 +142,7 @@ const Test = () => {
         <BGToggleButton setLastClick={setLastClick} />
       </div>
       <div className={styles[`input-container`]}>
-        <Input />
+        <Input field="username" fieldTitle="이름" valueMaxLength={20} />
         {/* <Input /> */}
       </div>
     </div>
