@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./Input.module.css";
 import Icon from "../Icon/Icon";
+import { useFocusTrap } from "@shared/@common/model/hooks";
 
 interface InputProps {
   field: string;
@@ -21,6 +22,7 @@ const Input = ({
   iconColor,
   iconHandleClick,
 }: InputProps) => {
+  const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const [isFocus, setIsFocus] = useState(false);
   // 비밀번호 보이기 여부 상태
@@ -31,10 +33,9 @@ const Input = ({
   const focusCond = isFocus || value ? styles.focused : "";
 
   useEffect(() => {
-    if (!isFocus) return;
-    if (!inputRef.current) return;
+    if (!isFocus || !inputRef.current) return;
 
-    if (isFocus) {
+    if (isFocus && document.activeElement === containerRef.current) {
       inputRef.current.focus();
     }
   }, [isFocus]);
@@ -57,6 +58,7 @@ const Input = ({
         e.stopPropagation();
         setIsFocus(false);
       }}
+      ref={containerRef}
     >
       <div className={`${styles.upper} ${focusCond}`}>
         <span className={`${styles.title} ${focusCond}`}>{fieldTitle}</span>
