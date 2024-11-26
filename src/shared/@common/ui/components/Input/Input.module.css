@@ -2,6 +2,7 @@
   flex: 1;
   width: 100%;
   border: var(--border-input-normal);
+  border-radius: 8px;
   transition: all 0.3s ease-in-out;
 }
 
@@ -32,6 +33,7 @@
 
 .title.focused {
   font-size: 14px;
+  color: var(--color-focused);
   transition: all 0.3s ease-in-out;
 }
 
@@ -46,13 +48,13 @@
 }
 
 .lower {
+  display: flex;
   height: 0;
   transition: all 0.3s ease-in-out;
 }
 
 .lower.focused {
   height: 28px;
-
   transition: all 0.3s ease-in-out;
 }
 

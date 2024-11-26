@@ -143,7 +143,7 @@ const Test = () => {
       </div>
       <div className={styles[`input-container`]}>
         <Input field="username" fieldTitle="이름" valueMaxLength={20} />
-        {/* <Input /> */}
+        <Input field="password" fieldTitle="비밀번호" />
       </div>
     </div>
   );
