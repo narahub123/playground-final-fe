@@ -1,5 +1,10 @@
 import styles from "./Test.module.css";
-import { Icon, Input, ListModal } from "@shared/@common/ui/components";
+import {
+  Icon,
+  Input,
+  ListModal,
+  Textarea,
+} from "@shared/@common/ui/components";
 
 import { useRef, useState } from "react";
 import { useFocusTrap } from "@shared/@common/model/hooks";
@@ -153,6 +158,13 @@ const Test = () => {
           iconName="valid"
         />
         <Input field="userId" fieldTitle="사용자 아이디" />
+      </div>
+      <div className={styles[`textarea-container`]}>
+        <Textarea
+          field={"userIntro"}
+          fieldTitle="자기 소개글"
+          valueMaxLength={120}
+        />
       </div>
     </div>
   );
