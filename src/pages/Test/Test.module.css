@@ -19,3 +19,8 @@
 .modal:focus-visible {
   outline: var(--outline-basic);
 }
+.input-container {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}

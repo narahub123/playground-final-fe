@@ -1,12 +1,11 @@
 import styles from "./Test.module.css";
-import { Icon, ListModal, ToggleButton } from "@shared/@common/ui/components";
+import { Icon, Input, ListModal } from "@shared/@common/ui/components";
 
 import { useRef, useState } from "react";
 import { useFocusTrap } from "@shared/@common/model/hooks";
 import { listModalExample } from "@shared/@common/data";
 import ModalLayout from "@shared/@common/layouts/ModalLayout/ModalLayout";
 import Select from "@shared/@common/ui/components/Select/Select";
-import { setBackgroundTheme } from "@shared/@common/model/slices/settingsSlice";
 import { useSelector } from "react-redux";
 import { getBgTheme } from "@shared/@common/model/selectors";
 import BGToggleButton from "@shared/@common/ui/components/BGToggleButton/BGToggleButton";
@@ -141,6 +140,10 @@ const Test = () => {
       </div>
       <div className={styles[`toggle-container`]}>
         <BGToggleButton setLastClick={setLastClick} />
+      </div>
+      <div className={styles[`input-container`]}>
+        <Input />
+        {/* <Input /> */}
       </div>
     </div>
   );
