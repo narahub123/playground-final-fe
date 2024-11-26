@@ -1,4 +1,8 @@
-import { FaArrowLeft as backward } from "react-icons/fa6";
+import {
+  FaArrowLeft as backward,
+  FaCircleCheck as valid,
+  FaCircleXmark as invalid,
+} from "react-icons/fa6";
 import { LuX as close } from "react-icons/lu";
 import { CiLight as light, CiDark as dark } from "react-icons/ci";
 import { RiEyeLine as eye, RiEyeOffLine as eyeoff } from "react-icons/ri";
@@ -11,6 +15,8 @@ const ICONS = {
   light, // 라이트 모드
   eye, // 비밀번호 보이기
   eyeoff, // 비밀번호 숨기기
+  valid, // 유효함 표시
+  invalid, // 유효하지 않음 표시
 };
 
 export default ICONS;

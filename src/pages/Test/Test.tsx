@@ -144,7 +144,14 @@ const Test = () => {
       <div className={styles[`input-container`]}>
         <Input field="username" fieldTitle="이름" valueMaxLength={20} />
         <Input field="password" fieldTitle="비밀번호" />
-        <Input field="userId" fieldTitle="사용자 아이디" valueMaxLength={20} />
+      </div>
+      <div>
+        <Input
+          field="username"
+          fieldTitle="이름"
+          valueMaxLength={20}
+          iconName="valid"
+        />
       </div>
     </div>
   );

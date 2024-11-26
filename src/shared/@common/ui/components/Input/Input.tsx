@@ -6,9 +6,21 @@ interface InputProps {
   field: string;
   fieldTitle: string;
   valueMaxLength?: number;
+  iconName?: string;
+  iconTitle?: string;
+  iconColor?: string;
+  iconHandleClick?: () => void;
 }
 
-const Input = ({ field, fieldTitle, valueMaxLength }: InputProps) => {
+const Input = ({
+  field,
+  fieldTitle,
+  valueMaxLength,
+  iconName,
+  iconTitle = "",
+  iconColor,
+  iconHandleClick,
+}: InputProps) => {
   const [isFocus, setIsFocus] = useState(false);
   // 비밀번호 보이기 여부 상태
   const [isVisible, setIsVisible] = useState(false);
@@ -54,6 +66,15 @@ const Input = ({ field, fieldTitle, valueMaxLength }: InputProps) => {
               setIsVisible(!isVisible);
             }}
             className={`${styles.icon} ${focusCond}`}
+          />
+        )}
+        {iconName && (
+          <Icon
+            iconName={iconName}
+            iconTitle={iconTitle}
+            className={`${styles.icon} ${focusCond}`}
+            color={iconColor}
+            handleClick={iconHandleClick}
           />
         )}
       </div>
