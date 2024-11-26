@@ -14,6 +14,7 @@ type IconProps = {
   unit?: string;
   handleClick?: (value: any) => void;
   ariaHidden?: "true" | "false";
+  className?: string; 
 };
 
 const Icon = ({
@@ -26,6 +27,7 @@ const Icon = ({
   unit = "px", // 사이즈 단위
   handleClick, // 클릭 이벤트 적용하는 경우
   ariaHidden = "false", // 아이콘이 의미 전달을 하는지 여부 aria-hidden: true이면 장식일 뿐 의미전달 하지 않음
+  className, // 외부에서 Icon container에 className 추가 가능
 }: IconProps) => {
   const iconHover = useGetBGThemeColor("hoverIcon");
 
@@ -59,7 +61,9 @@ const Icon = ({
 
   return (
     <div
-      className={`${styles.container} ${handleClick ? styles.button : ""}`}
+      className={`${styles.container} ${
+        handleClick ? styles.button : ""
+      } ${className}`}
       style={{
         width: `${containerSize}${unit}`,
         height: `${containerSize}${unit}`,
