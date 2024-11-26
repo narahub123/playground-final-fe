@@ -23,15 +23,16 @@ const Input = ({ field, fieldTitle, valueMaxLength }: InputProps) => {
   // input type 변수
   const inputType = field === "password" && !isVisible ? "password" : "text";
 
-  console.log(document.activeElement);
-
   return (
     <div
       className={`${styles.container} ${focusCond}`}
       onClick={() => {}}
       tabIndex={0}
       onFocus={() => setIsFocus(true)}
-      onBlur={() => setIsFocus(false)}
+      onBlur={(e) => {
+        e.stopPropagation();
+        setIsFocus(false);
+      }}
     >
       <div className={`${styles.upper} ${focusCond}`}>
         <span className={`${styles.title} ${focusCond}`}>{fieldTitle}</span>
@@ -49,7 +50,10 @@ const Input = ({ field, fieldTitle, valueMaxLength }: InputProps) => {
           <Icon
             iconName={isVisible ? "eyeoff" : "eye"}
             iconTitle={isVisible ? "비밀번호 숨기기" : "비밀번호 보이기"}
-            handleClick={() => setIsVisible(!isVisible)}
+            handleClick={() => {
+              setIsVisible(!isVisible);
+            }}
+            className={`${styles.icon} ${focusCond}`}
           />
         )}
       </div>
