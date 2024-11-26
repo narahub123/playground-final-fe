@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./Input.module.css";
 import Icon from "../Icon/Icon";
-import { useFocusTrap } from "@shared/@common/model/hooks";
 
 interface InputProps {
   field: string;
