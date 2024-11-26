@@ -51,7 +51,7 @@ const Input = ({
     <div
       className={`${styles.container} ${focusCond}`}
       onClick={() => {}}
-      tabIndex={0}
+      tabIndex={isFocus ? -1 : 0}
       onFocus={() => setIsFocus(true)}
       onBlur={(e) => {
         e.stopPropagation();
