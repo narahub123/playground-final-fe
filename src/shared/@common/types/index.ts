@@ -8,4 +8,7 @@ interface listModalCardType {
 
 import { ThemeColorType, ThemeKey } from "./bgThemes";
 
-export type { listModalCardType, ThemeColorType, ThemeKey };
+// Select 컴포넌트에 사용하는 types
+import { SelectListCardType } from "./Select";
+
+export type { listModalCardType, ThemeColorType, ThemeKey, SelectListCardType };

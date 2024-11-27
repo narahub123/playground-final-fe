@@ -1,6 +1,6 @@
-import { listModalCardType } from "../types";
+import { SelectListCardType } from "../types";
 
-const listModalExample: listModalCardType[] = [
+const listModalExample: SelectListCardType[] = [
   { value: 1, text: "실패", cardTitle: "실패", iconName: "backward" },
   { value: 2, text: "그냥", cardTitle: "그냥", iconName: "" },
   {
