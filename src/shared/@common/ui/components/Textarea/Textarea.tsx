@@ -55,11 +55,17 @@ const Textarea = ({
             className={`${styles.textarea} ${focusCond}`}
             onChange={(e) => handleChange(e)}
             ref={textareaRef}
+            aria-labelledby={field}
+            aria-invalid={!isValid}
+            aria-describedby={isValid ? "" : "textarea-error"}
           />
         </div>
       </div>
       <div className={styles.error}>
-        <p className={`${styles[`error-message`]} ${validCond}`}>
+        <p
+          id="textarea-error"
+          className={`${styles[`error-message`]} ${validCond}`}
+        >
           {errorMessage || "입력값이 유효하지 않습니다."}
         </p>
       </div>
