@@ -14,10 +14,13 @@ const Flag = ({ countryCode, width = 20 }: FlagProps) => {
 
   return (
     <img
+      role="img"
       className="flag"
-      alt={`${flagAlt}의 국기 이미지`}
       src={flag}
       style={{ aspectRatio: "4/3", width: `${width}px` }}
+      alt={`${flagAlt}의 국기 이미지`} // 대체 텍스트
+      aria-hidden="true" // 의미 없는 콘턴츠임
+      aria-label={`${flagAlt}의 국기`} // 이미지 설명을 명시적으로 지정
     />
   );
 };
