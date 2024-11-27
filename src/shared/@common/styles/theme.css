@@ -1,6 +1,7 @@
 :root,
 html[data-theme="light"] {
   --color-primary: black;
+  --color-invalid: red;
   --color-focused: cornflowerblue;
   --color-background: white;
   --outline-basic: 2px solid black;
@@ -15,6 +16,7 @@ html[data-theme="light"] {
 html[data-theme="dark"] {
   --color-primary: white;
   --color-focused: cornflowerblue;
+  --color-invalid: red;
   --color-background: black;
   --outline-basic: 2px solid white;
   --border-input-normal: 2px solid white;

@@ -18,6 +18,10 @@
 
   transition: all 0.3s ease-in-out;
 }
+.container.invalid {
+  border: var(--border-input-invalid);
+  transition: all 0.3s ease-in-out;
+}
 
 .upper {
   position: absolute;
@@ -85,4 +89,18 @@
 
 /* 에러 메시지 표시 */
 .error {
+  padding-left: 8px;
+  margin-top: 3px;
+}
+
+.error-message {
+  font-size: 14px;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.error-message.invalid {
+  color: var(--color-invalid);
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
 }

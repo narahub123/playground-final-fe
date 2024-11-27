@@ -4,13 +4,20 @@ import styles from "./Textarea.module.css";
 interface TextareaProps {
   field: string;
   fieldTitle: string;
-  valueMaxLength: number;
+  valueMaxLength?: number;
+  errorMessage?: string;
 }
 
-const Textarea = ({ field, fieldTitle, valueMaxLength }: TextareaProps) => {
+const Textarea = ({
+  field,
+  fieldTitle,
+  valueMaxLength,
+  errorMessage,
+}: TextareaProps) => {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const [isFocused, setIsFocused] = useState(false);
   const [value, setValue] = useState("");
+  const [isValid, setIsValid] = useState(false);
 
   useEffect(() => {
     if (isFocused) {
@@ -19,6 +26,7 @@ const Textarea = ({ field, fieldTitle, valueMaxLength }: TextareaProps) => {
   }, [isFocused]);
 
   const focusCond = isFocused || value !== "" ? styles.focused : "";
+  const validCond = !isValid && value !== "" ? styles.invalid : "";
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const value = e.target.value;
@@ -28,7 +36,7 @@ const Textarea = ({ field, fieldTitle, valueMaxLength }: TextareaProps) => {
   return (
     <div className={styles.wrapper}>
       <div
-        className={`${styles.container} ${focusCond}`}
+        className={`${styles.container} ${focusCond} ${validCond}`}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
         tabIndex={isFocused ? -1 : 0}
@@ -50,7 +58,11 @@ const Textarea = ({ field, fieldTitle, valueMaxLength }: TextareaProps) => {
           />
         </div>
       </div>
-      <div className={styles.error}>에러 메시지</div>
+      <div className={styles.error}>
+        <p className={`${styles[`error-message`]} ${validCond}`}>
+          {errorMessage || "입력값이 유효하지 않습니다."}
+        </p>
+      </div>
     </div>
   );
 };
