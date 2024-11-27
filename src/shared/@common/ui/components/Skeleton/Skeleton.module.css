@@ -51,17 +51,6 @@
   animation: circleLoading 1s infinite linear;
 }
 
-.skeletonText {
-  width: 100%;
-  height: 20px;
-  background-color: #ccc;
-  border-radius: 4px;
-}
-
-.skeletonText:last-child:not(.skeletonText:first-child) {
-  width: 90%;
-}
-
 @keyframes circleLoading {
   0% {
     transform: translateX(0);
@@ -69,5 +58,39 @@
   50%,
   100% {
     transform: translateX(100px);
+  }
+}
+
+.skeletonText {
+  width: 100%;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.skeletonText:last-child:not(.skeletonText:first-child) {
+  width: 90%;
+}
+
+.skeletonText:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 100%;
+  background: linear-gradient(to right, #f2f2f2, #ddd, #f2f2f2);
+  animation: textLoading 3s infinite linear;
+}
+
+@keyframes textLoading {
+  0% {
+    transform: translateX(0);
+  }
+  50%,
+  100% {
+    transform: translateX(700px);
   }
 }
