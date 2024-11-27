@@ -5,7 +5,7 @@ import ToggleButton from "./ToggleButton/ToggleButton";
 import Input from "./Input/Input";
 import Textarea from "./Textarea/Textarea";
 import Flag from "./Flag/Flag";
-import Skeleton from "./Skeleton/Skeleton";
+import { Skeleton, SkeletonCircle } from "./Skeleton/Skeleton";
 
 export {
   Icon,
@@ -16,4 +16,5 @@ export {
   Textarea,
   Flag,
   Skeleton,
+  SkeletonCircle,
 };

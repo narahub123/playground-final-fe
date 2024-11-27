@@ -4,6 +4,7 @@ import {
   Icon,
   Input,
   ListModal,
+  SkeletonCircle,
   Textarea,
 } from "@shared/@common/ui/components";
 
@@ -180,6 +181,7 @@ const Test = () => {
         />
       </div>
       <Flag countryCode="kr" />
+      <SkeletonCircle size={100} />
     </div>
   );
 };

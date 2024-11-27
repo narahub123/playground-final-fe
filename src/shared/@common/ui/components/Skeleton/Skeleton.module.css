@@ -32,3 +32,8 @@
     transform: translate(20px);
   }
 }
+
+.skeletonCircle {
+  background-color: #ccc;
+  border-radius: 50%;
+}

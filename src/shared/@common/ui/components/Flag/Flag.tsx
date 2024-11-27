@@ -1,7 +1,7 @@
 import { flags } from "@shared/@common/assets";
 import { countryNames } from "@shared/@common/data";
 import { useEffect, useState } from "react";
-import Skeleton from "../Skeleton/Skeleton";
+import { Skeleton } from "../Skeleton/Skeleton";
 
 type FlagProps = {
   countryCode: string; // 국가 코드
