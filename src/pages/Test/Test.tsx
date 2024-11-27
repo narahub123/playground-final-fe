@@ -8,7 +8,7 @@ import {
 
 import { useRef, useState } from "react";
 import { useFocusTrap } from "@shared/@common/model/hooks";
-import { listModalExample } from "@shared/@common/data";
+import { listLanguageList, listModalExample } from "@shared/@common/data";
 import ModalLayout from "@shared/@common/layouts/ModalLayout/ModalLayout";
 import Select from "@shared/@common/ui/components/Select/Select";
 import { useSelector } from "react-redux";
@@ -20,6 +20,7 @@ const Test = () => {
   const [showModal, setShowModal] = useState(false);
   const [showSecondModal, setShowSecondModal] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isLangOpen, setIsLangOpen] = useState(false);
   const [isOpenDropdown, setIsOpenDropdown] = useState(false);
   const pageRef = useRef<HTMLDivElement>(null);
 
@@ -27,7 +28,7 @@ const Test = () => {
     ref: pageRef,
     location: "test page",
     showModal:
-      showModal || isOpen || isOpenDropdown || bgTheme === "dark"
+      showModal || isOpen || isOpenDropdown || isLangOpen || bgTheme === "dark"
         ? true
         : false, // 여러 모달 창에 적용하기 위해서 유니언으로 전달해야 함
   });
@@ -165,6 +166,15 @@ const Test = () => {
           field={"userIntro"}
           fieldTitle="자기 소개글"
           valueMaxLength={120}
+        />
+      </div>
+      <div className={styles[`language-container`]}>
+        <Select
+          pageRef={pageRef}
+          isOpen={isLangOpen}
+          setIsOpen={setIsLangOpen}
+          setLastClick={setLastClick}
+          list={listLanguageList}
         />
       </div>
     </div>
