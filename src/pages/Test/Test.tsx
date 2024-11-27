@@ -182,6 +182,7 @@ const Test = () => {
       </div>
       <Flag countryCode="kr" />
       <SkeletonCircle size={100} />
+      <SkeletonCircle size={100} />
     </div>
   );
 };
