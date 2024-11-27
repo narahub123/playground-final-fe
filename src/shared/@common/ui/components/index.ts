@@ -5,5 +5,15 @@ import ToggleButton from "./ToggleButton/ToggleButton";
 import Input from "./Input/Input";
 import Textarea from "./Textarea/Textarea";
 import Flag from "./Flag/Flag";
+import Skeleton from "./Skeleton/Skeleton";
 
-export { Icon, ListModal, Overlay, ToggleButton, Input, Textarea, Flag };
+export {
+  Icon,
+  ListModal,
+  Overlay,
+  ToggleButton,
+  Input,
+  Textarea,
+  Flag,
+  Skeleton,
+};

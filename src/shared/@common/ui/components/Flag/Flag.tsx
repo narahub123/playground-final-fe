@@ -1,6 +1,7 @@
 import { flags } from "@shared/@common/assets";
 import { countryNames } from "@shared/@common/data";
 import { useEffect, useState } from "react";
+import Skeleton from "../Skeleton/Skeleton";
 
 type FlagProps = {
   countryCode: string; // 국가 코드
@@ -28,7 +29,7 @@ const Flag = ({ countryCode, width = 20 }: FlagProps) => {
   console.log("로딩 여부", loading ? "로딩 중" : "로딩 완료");
 
   if (loading) {
-    return <>안뇽</>;
+    return <Skeleton width={width} />;
   } else {
     return (
       <img
