@@ -1,6 +1,5 @@
 import { useRef, useState } from "react";
 import styles from "./Select.module.css";
-import { listModalExample } from "@shared/@common/data";
 import {
   useClickOutside,
   useFocusTrap,
@@ -26,6 +25,7 @@ const Option = ({
   showCond,
 }: OptionProps) => {
   const selectedCond = option.value === selection ? styles.selected : "";
+
   return (
     <li
       role="option" // 역할 정의
@@ -56,9 +56,16 @@ type ListProps = {
     React.SetStateAction<string | number | undefined>
   >;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  list: any[];
 };
 
-const List = ({ selection, setSelection, setIsOpen, isOpen }: ListProps) => {
+const List = ({
+  selection,
+  setSelection,
+  setIsOpen,
+  isOpen,
+  list,
+}: ListProps) => {
   const containerRef = useRef<HTMLUListElement>(null);
   const { showCond, handleTransitionEnd, hideModal } = useShowAndHideEffect(
     setIsOpen,
@@ -83,7 +90,7 @@ const List = ({ selection, setSelection, setIsOpen, isOpen }: ListProps) => {
       role="listbox" // 리스트 역할 명시
       id="dropdown-list" // 버튼과 연결
     >
-      {listModalExample.map((option) => (
+      {list.map((option) => (
         <Option
           key={option.text}
           option={option}
@@ -102,13 +109,20 @@ type SelectProps = {
   isOpen: boolean; // 드롭다운을 열 수 있는 상태
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   setLastClick: React.Dispatch<React.SetStateAction<HTMLElement | null>>; // 버튼을 저장하기 위한 set 함수
+  list: any[];
 };
 
-const Select = ({ pageRef, isOpen, setIsOpen, setLastClick }: SelectProps) => {
+const Select = ({
+  pageRef,
+  isOpen,
+  setIsOpen,
+  setLastClick,
+  list,
+}: SelectProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [selection, setSelection] = useState<string | number | undefined>(
-    listModalExample[0].value
+    list[0].value
   );
 
   const { hideModal } = useShowAndHideEffect(setIsOpen);
@@ -134,7 +148,7 @@ const Select = ({ pageRef, isOpen, setIsOpen, setLastClick }: SelectProps) => {
         aria-expanded={isOpen} // 현재 드롭다운이 열렸는지 여부 표시
         aria-controls="dropdown-list" // 드롭다운 리스트의 ID를 참조
       >
-        {listModalExample.find((item) => item.value === selection)?.text || ""}
+        {list.find((item) => item.value === selection)?.text || ""}
       </button>
       {isOpen && (
         <List
@@ -142,6 +156,7 @@ const Select = ({ pageRef, isOpen, setIsOpen, setLastClick }: SelectProps) => {
           setIsOpen={setIsOpen}
           setSelection={setSelection}
           selection={selection}
+          list={list}
         />
       )}
     </div>

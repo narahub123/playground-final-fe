@@ -141,6 +141,7 @@ const Test = () => {
           isOpen={isOpenDropdown}
           setIsOpen={setIsOpenDropdown}
           setLastClick={setLastClick}
+          list={listModalExample}
         />
       </div>
       <div className={styles[`toggle-container`]}>
