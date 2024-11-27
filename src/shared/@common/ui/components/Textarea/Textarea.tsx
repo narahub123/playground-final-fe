@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./Textarea.module.css";
+import { debounce } from "@shared/@common/utils";
 
 interface TextareaProps {
   field: string;
@@ -31,8 +32,12 @@ const Textarea = ({
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const value = e.target.value;
 
+    console.log(value);
+
     setValue(value);
   };
+
+  const debounceHandleChange = debounce<typeof handleChange>(handleChange, 500);
   return (
     <div className={styles.wrapper}>
       <div
@@ -53,7 +58,7 @@ const Textarea = ({
           <textarea
             id={field}
             className={`${styles.textarea} ${focusCond}`}
-            onChange={(e) => handleChange(e)}
+            onChange={debounceHandleChange}
             ref={textareaRef}
             aria-labelledby={field}
             aria-invalid={!isValid}
