@@ -1,3 +1,34 @@
+.wrapper {
+  width: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+}
+
 .skeleton {
   background-color: #ccc;
+}
+
+.skeleton:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 15px;
+  background: linear-gradient(to right, #f2f2f2, #ddd, #f2f2f2);
+  animation: loading 1s infinite linear;
+}
+
+@keyframes loading {
+  0% {
+    transform: translateX(0);
+  }
+  50%,
+  100% {
+    transform: translate(20px);
+  }
 }
