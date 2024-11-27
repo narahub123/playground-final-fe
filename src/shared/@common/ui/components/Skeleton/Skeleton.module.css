@@ -48,10 +48,21 @@
   width: 20px;
   height: inherit;
   background: linear-gradient(to right, #f2f2f2, #ddd, #f2f2f2);
-  animation: loading 1s infinite linear;
+  animation: circleLoading 1s infinite linear;
 }
 
-@keyframes loading {
+.skeletonText {
+  width: 100%;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+.skeletonText:last-child:not(.skeletonText:first-child) {
+  width: 90%;
+}
+
+@keyframes circleLoading {
   0% {
     transform: translateX(0);
   }

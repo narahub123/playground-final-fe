@@ -16,6 +16,38 @@ const SkeletonCircle = ({ size, loading = true }: SkeletonCircleProps) => {
   );
 };
 
+interface SkeletonTextProps {
+  noOfLines: number;
+  gap?: number;
+  loading?: boolean; // loading이 false이면 사라짐
+}
+
+const SkeletonText = ({
+  noOfLines,
+  gap = 1,
+  loading = true,
+}: SkeletonTextProps) => {
+  if (!loading) return null;
+
+  const Compo = Array.from({ length: noOfLines }).map((_, index) => (
+    <li style={{}} className={styles.skeletonText} key={index} />
+  ));
+
+  return (
+    <ul
+      className={styles[`skeleton-text-container`]}
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        flex: "1",
+        gap: `${8 * gap}px`,
+      }}
+    >
+      {Compo}
+    </ul>
+  );
+};
+
 interface SkeletonProps {
   width: number;
 }
@@ -32,4 +64,4 @@ const Skeleton = ({ width }: SkeletonProps) => {
   );
 };
 
-export { SkeletonCircle, Skeleton };
+export { SkeletonCircle, Skeleton, SkeletonText };

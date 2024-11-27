@@ -5,6 +5,7 @@ import {
   Input,
   ListModal,
   SkeletonCircle,
+  SkeletonText,
   Textarea,
 } from "@shared/@common/ui/components";
 
@@ -181,8 +182,10 @@ const Test = () => {
         />
       </div>
       <Flag countryCode="kr" />
-      <SkeletonCircle size={100} />
-      <SkeletonCircle size={100} />
+      <div className={styles.skeleton}>
+        <SkeletonCircle size={100} />
+        <SkeletonText noOfLines={3} gap={1.5} />
+      </div>
     </div>
   );
 };
