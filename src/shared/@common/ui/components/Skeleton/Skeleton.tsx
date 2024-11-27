@@ -49,18 +49,14 @@ const SkeletonText = ({
 };
 
 interface SkeletonProps {
-  width: number;
+  height: number;
 }
-const Skeleton = ({ width }: SkeletonProps) => {
+const Skeleton = ({ height }: SkeletonProps) => {
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.container}>
-        <div
-          className={styles.skeleton}
-          style={{ width: `${width}px`, aspectRatio: `4/3` }}
-        />
-      </div>
-    </div>
+    <div
+      className={styles.skeleton}
+      style={{ height: `${height}px`, width: `100%` }}
+    />
   );
 };
 

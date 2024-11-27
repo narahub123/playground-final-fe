@@ -4,6 +4,7 @@ import {
   Icon,
   Input,
   ListModal,
+  Skeleton,
   SkeletonCircle,
   SkeletonText,
   Textarea,
@@ -186,6 +187,7 @@ const Test = () => {
         <SkeletonCircle size={100} />
         <SkeletonText noOfLines={3} gap={1.5} />
       </div>
+      <Skeleton height={200} />
     </div>
   );
 };
