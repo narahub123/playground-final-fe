@@ -179,7 +179,7 @@ const Test = () => {
           list={listLanguageList}
         />
       </div>
-      <Flag countryCode="ko" />
+      <Flag countryCode="kr" />
     </div>
   );
 };

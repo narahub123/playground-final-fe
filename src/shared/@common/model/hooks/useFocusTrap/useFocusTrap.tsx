@@ -123,7 +123,7 @@ const useFocusTrap = ({
         firstElement.focus(); // 첫 번째 포커스 가능한 요소에 포커스 설정
       }
     } else if (!lastClick) {
-      console.log("기존 요소가 없고 모달창이 닫히는 경우");
+      // console.log("기존 요소가 없고 모달창이 닫히는 경우");
       firstElement.focus(); // 처음에 첫 번째 포커스 가능한 요소에 포커스 설정
     }
 
