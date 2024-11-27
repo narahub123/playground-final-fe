@@ -1,5 +1,6 @@
 import styles from "./Test.module.css";
 import {
+  Flag,
   Icon,
   Input,
   ListModal,
@@ -178,7 +179,7 @@ const Test = () => {
           list={listLanguageList}
         />
       </div>
-      <img src={flags["kr"]} alt="" />
+      <Flag countryCode="kr" />
     </div>
   );
 };
