@@ -1,7 +1,7 @@
 .skeleton {
   position: relative;
   overflow: hidden;
-  background-color: #ccc;
+  background-color: #f2f2f2;
   border-radius: 8px;
 }
 
@@ -10,26 +10,15 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 20px;
+  width: 100%;
   height: 100%;
-  background: linear-gradient(to right, #f2f2f2, #ddd, #f2f2f2);
-  animation: loading 2s infinite linear;
-}
-
-@keyframes loading {
-  0% {
-    transform: translateX(0);
-  }
-  50%,
-  100% {
-    transform: translate(800px);
-  }
+  animation: skeleton-gradient 1.5s infinite ease-in-out;
 }
 
 .skeletonCircle {
   position: relative;
   overflow: hidden;
-  background-color: #ccc;
+  background-color: #f2f2f2;
   border-radius: 50%;
 }
 
@@ -38,26 +27,15 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 20px;
-  height: inherit;
-  background: linear-gradient(to right, #f2f2f2, #ddd, #f2f2f2);
-  animation: circleLoading 1s infinite linear;
-}
-
-@keyframes circleLoading {
-  0% {
-    transform: translateX(0);
-  }
-  50%,
-  100% {
-    transform: translateX(100px);
-  }
+  width: 100%;
+  height: 100%;
+  animation: skeleton-gradient 1.5s infinite ease-in-out;
 }
 
 .skeletonText {
   width: 100%;
   height: 20px;
-  background-color: #ccc;
+  background-color: #f2f2f2;
   border-radius: 4px;
   position: relative;
   overflow: hidden;
@@ -72,18 +50,19 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 20px;
+  width: 100%;
   height: 100%;
-  background: linear-gradient(to right, #f2f2f2, #ddd, #f2f2f2);
-  animation: textLoading 3s infinite linear;
+  animation: skeleton-gradient 1.5s infinite ease-in-out;
 }
 
-@keyframes textLoading {
+@keyframes skeleton-gradient {
   0% {
-    transform: translateX(0);
+    background-color: rgba(165, 165, 165, 0.1);
   }
-  50%,
+  50% {
+    background-color: rgba(165, 165, 165, 0.3);
+  }
   100% {
-    transform: translateX(700px);
+    background-color: rgba(165, 165, 165, 0.1);
   }
 }
