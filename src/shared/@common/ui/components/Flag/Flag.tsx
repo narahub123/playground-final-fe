@@ -26,27 +26,21 @@ const Flag = ({ countryCode, width = 20 }: FlagProps) => {
     image.src = flag;
   }, [countryCode]);
 
-  console.log("로딩 여부", loading ? "로딩 중" : "로딩 완료");
-
-  if (loading) {
-    return <Skeleton width={width} />;
-  } else {
-    return (
-      <img
-        role="img"
-        className="flag"
-        src={flag}
-        style={{ aspectRatio: "4/3", width: `${width}px` }}
-        alt={`${flagAlt}의 국기 이미지`} // 대체 텍스트
-        aria-hidden="true" // 의미 없는 콘턴츠임
-        aria-label={`${flagAlt}의 국기`} // 이미지 설명을 명시적으로 지정
-        onError={(e) =>
-          (e.currentTarget.src = "/src/shared/@common/asset/un.svg")
-        } // 이미지 로딩에 실패한 경우
-        onLoad={() => setLoading(false)}
-      />
-    );
-  }
+  return (
+    <img
+      role="img"
+      className="flag"
+      src={flag}
+      style={{ aspectRatio: "4/3", width: `${width}px` }}
+      alt={`${flagAlt}의 국기 이미지`} // 대체 텍스트
+      aria-hidden="true" // 의미 없는 콘턴츠임
+      aria-label={`${flagAlt}의 국기`} // 이미지 설명을 명시적으로 지정
+      onError={(e) =>
+        (e.currentTarget.src = "/src/shared/@common/asset/un.svg")
+      } // 이미지 로딩에 실패한 경우
+      onLoad={() => setLoading(false)}
+    />
+  );
 };
 
 export default Flag;
