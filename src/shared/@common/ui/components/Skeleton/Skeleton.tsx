@@ -1,3 +1,4 @@
+import React, { ReactElement, useEffect, useRef, useState } from "react";
 import styles from "./Skeleton.module.css";
 
 interface SkeletonCircleProps {
@@ -49,15 +50,47 @@ const SkeletonText = ({
 };
 
 interface SkeletonProps {
-  height: number;
+  height?: number;
+  asChild?: boolean;
+  children?: ReactElement;
 }
-const Skeleton = ({ height }: SkeletonProps) => {
-  return (
-    <div
-      className={styles.skeleton}
-      style={{ height: `${height}px`, width: `100%` }}
-    />
-  );
+
+const Skeleton = ({ height, asChild, children }: SkeletonProps) => {
+  if (!children) {
+    return (
+      <div
+        className={styles.skeleton}
+        style={{
+          height: `${height}px`,
+          width: `${"100%"}`,
+        }}
+      />
+    );
+  } else if (children && !asChild) {
+    return (
+      <div
+        className={styles.skeleton}
+        style={{
+          height: `${height}px`,
+          width: `${"100%"}`,
+        }}
+      >
+        <div style={{ visibility: "hidden" }}>{children}</div>
+      </div>
+    );
+  } else if (children && asChild) {
+    return (
+      <div
+        className={styles.skeleton}
+        style={{
+          width: "fit-content", // 자식요소와 동일한 크기를 가지게 하기 위한 설정
+          borderRadius: "2px",
+        }}
+      >
+        <div style={{ visibility: "hidden" }}>{children}</div>
+      </div>
+    );
+  }
 };
 
 export { SkeletonCircle, Skeleton, SkeletonText };

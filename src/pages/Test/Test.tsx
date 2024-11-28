@@ -187,7 +187,9 @@ const Test = () => {
         <SkeletonCircle size={100} />
         <SkeletonText noOfLines={3} gap={1.5} />
       </div>
-      <Skeleton height={200} />
+      <Skeleton asChild>
+        <Input field="userId" fieldTitle="사용자 아이디" />
+      </Skeleton>
     </div>
   );
 };
