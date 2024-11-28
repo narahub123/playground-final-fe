@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import { ReactElement, useLayoutEffect, useRef, useState } from "react";
 import styles from "./Skeleton.module.css";
 
 interface SkeletonCircleProps {
@@ -56,6 +56,19 @@ interface SkeletonProps {
 }
 
 const Skeleton = ({ height, asChild, children }: SkeletonProps) => {
+  const [flexGrow, setFlexGrow] = useState("1");
+
+  const skeletonRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    const curElem = skeletonRef.current;
+    const childElem = curElem?.children[0];
+    const grandElem = childElem?.children[0] as HTMLElement;
+    const grandStyle = window.getComputedStyle(grandElem);
+
+    setFlexGrow(grandStyle.flexGrow);
+  }, []);
+
   if (!children) {
     return (
       <div
@@ -83,11 +96,18 @@ const Skeleton = ({ height, asChild, children }: SkeletonProps) => {
       <div
         className={styles.skeleton}
         style={{
-          width: "fit-content", // 자식요소와 동일한 크기를 가지게 하기 위한 설정
-          borderRadius: "2px",
+          flex: 1,
+          display: `${flexGrow === "1" ? "block" : "inline-flex"}`,
         }}
+        ref={skeletonRef}
       >
-        <div style={{ visibility: "hidden" }}>{children}</div>
+        <div
+          style={{
+            visibility: "hidden",
+          }}
+        >
+          {children}
+        </div>
       </div>
     );
   }

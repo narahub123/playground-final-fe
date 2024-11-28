@@ -2,7 +2,6 @@
   position: relative;
   overflow: hidden;
   background-color: #f2f2f2;
-  border-radius: 8px;
 }
 
 .skeleton:before {
