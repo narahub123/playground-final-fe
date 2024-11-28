@@ -18,7 +18,6 @@ import Select from "@shared/@common/ui/components/Select/Select";
 import { useSelector } from "react-redux";
 import { getBgTheme } from "@shared/@common/model/selectors";
 import BGToggleButton from "@shared/@common/ui/components/BGToggleButton/BGToggleButton";
-import { flags } from "@shared/@common/assets";
 
 const Test = () => {
   const bgTheme = useSelector(getBgTheme);

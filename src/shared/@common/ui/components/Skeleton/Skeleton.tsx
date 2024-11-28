@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect, useRef, useState } from "react";
+import { ReactElement } from "react";
 import styles from "./Skeleton.module.css";
 
 interface SkeletonCircleProps {
