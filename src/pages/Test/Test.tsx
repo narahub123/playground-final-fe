@@ -183,12 +183,7 @@ const Test = () => {
         />
       </div>
 
-      <Skeleton asChild isLoading={isLoading} setIsLoading={setIsLoading}>
-        <Flag countryCode="kr" />
-      </Skeleton>
-      <Flag countryCode="kr" />
-
-      <div className={styles.skeleton}>
+      {/* <div className={styles.skeleton}>
         <SkeletonCircle
           size={100}
           isLoading={isLoading}
@@ -200,7 +195,7 @@ const Test = () => {
           isLoading={isLoading}
           setIsLoading={setIsLoading}
         />
-        {/* <Skeleton asChild>
+        <Skeleton asChild>
           <Select
             pageRef={pageRef}
             isOpen={isLangOpen}
@@ -214,34 +209,14 @@ const Test = () => {
         </Skeleton>
         <Skeleton asChild>
           <Input field="username" fieldTitle="이름" valueMaxLength={20} />
-        </Skeleton> */}
-        <Skeleton asChild>
-          <Flag countryCode="kr" />
         </Skeleton>
         <Skeleton asChild>
           <Flag countryCode="kr" />
         </Skeleton>
-      </div>
-      <Skeleton asChild>
-        <Flag countryCode="kr" />
-      </Skeleton>
-      {/* <Skeleton asChild>
-        <Textarea
-          field={"userIntro"}
-          fieldTitle="자기 소개글"
-          valueMaxLength={120}
-        />
-      </Skeleton>
-
-      <Skeleton asChild>
-        <Select
-          pageRef={pageRef}
-          isOpen={isLangOpen}
-          setIsOpen={setIsLangOpen}
-          setLastClick={setLastClick}
-          list={listLanguageList}
-        />
-      </Skeleton> */}
+        <Skeleton asChild>
+          <Flag countryCode="kr" />
+        </Skeleton>
+      </div> */}
     </div>
   );
 };

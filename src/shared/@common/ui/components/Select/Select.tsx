@@ -6,9 +6,10 @@ import {
   useShowAndHideEffect,
 } from "@shared/@common/model/hooks";
 import Icon from "../Icon/Icon";
+import { SelectOptionType } from "@shared/@common/types";
 
 type OptionProps = {
-  option: any;
+  option: SelectOptionType;
   selection: string | number | undefined;
   setSelection: React.Dispatch<
     React.SetStateAction<string | number | undefined>
@@ -26,6 +27,8 @@ const Option = ({
 }: OptionProps) => {
   const selectedCond = option.value === selection ? styles.selected : "";
 
+  console.log(option);
+
   return (
     <li
       role="option" // 역할 정의
@@ -40,11 +43,22 @@ const Option = ({
       }
       tabIndex={option.value === selection ? -1 : 0}
       aria-selected={option.value === selection} // 현재 선택된 항목인지 표시
+      title={option.optionTitle}
     >
+      {/* 아이콘이 있는 경우 */}
       {option.iconName && (
         <Icon iconName={option.iconName} iconTitle="" ariaHidden="true" />
       )}
-      <span>{option.text}</span>
+      {/* 이미지가 있는 경우 */}
+      {option.imgSrc && (
+        <img
+          src={option.imgSrc}
+          alt={option.imgAlt}
+          aria-hidden="true"
+          className={styles.img}
+        />
+      )}
+      <span className={styles.text}>{option.text}</span>
     </li>
   );
 };
