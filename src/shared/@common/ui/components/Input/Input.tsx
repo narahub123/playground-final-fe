@@ -12,6 +12,7 @@ interface InputProps {
   iconColor?: string;
   iconHandleClick?: () => void;
   errorMessage?: string;
+  disabled?: boolean;
 }
 
 const Input = ({
@@ -23,6 +24,7 @@ const Input = ({
   iconColor,
   iconHandleClick,
   errorMessage,
+  disabled = false,
 }: InputProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -61,9 +63,9 @@ const Input = ({
       <div
         className={`${styles.container} ${focusCond} ${validCond}`}
         onClick={() => {}}
-        tabIndex={isFocus ? -1 : 0}
+        tabIndex={isFocus || disabled ? -1 : 0}
         onFocus={() => setIsFocus(true)}
-        onBlur={(e) => setIsFocus(false)}
+        onBlur={() => setIsFocus(false)}
         ref={containerRef}
       >
         <div className={`${styles.upper} ${focusCond}`}>
@@ -84,6 +86,8 @@ const Input = ({
             aria-labelledby={field}
             aria-invalid={!isValid}
             aria-describedby={isValid ? "" : "input-error"}
+            disabled={disabled}
+            aria-hidden={disabled}
           />
           {field === "password" && (
             <Icon
