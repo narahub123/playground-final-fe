@@ -185,7 +185,7 @@ const Test = () => {
       <div className={styles.skeleton}>
         <SkeletonCircle size={100} />
         <SkeletonText noOfLines={3} gap={1.5} />
-        {/* <Skeleton asChild>
+        <Skeleton asChild>
           <Select
             pageRef={pageRef}
             isOpen={isLangOpen}
@@ -193,7 +193,7 @@ const Test = () => {
             setLastClick={setLastClick}
             list={listLanguageList}
           />
-        </Skeleton> */}
+        </Skeleton>
         <Skeleton asChild>
           <Input field="userId" fieldTitle="사용자 아이디" />
         </Skeleton>
@@ -211,7 +211,7 @@ const Test = () => {
       {/* <Skeleton asChild>
         <Flag countryCode="kr" />
       </Skeleton> */}
-      {/* <Skeleton asChild>
+      <Skeleton asChild>
         <Select
           pageRef={pageRef}
           isOpen={isLangOpen}
@@ -219,7 +219,7 @@ const Test = () => {
           setLastClick={setLastClick}
           list={listLanguageList}
         />
-      </Skeleton> */}
+      </Skeleton>
     </div>
   );
 };

@@ -110,6 +110,7 @@ type SelectProps = {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   setLastClick: React.Dispatch<React.SetStateAction<HTMLElement | null>>; // 버튼을 저장하기 위한 set 함수
   list: any[];
+  disabled?: boolean;
 };
 
 const Select = ({
@@ -118,6 +119,7 @@ const Select = ({
   setIsOpen,
   setLastClick,
   list,
+  disabled = false,
 }: SelectProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -147,6 +149,8 @@ const Select = ({
         aria-haspopup="listbox" // 버튼이 리스트 박스를 열 수 있음 명시
         aria-expanded={isOpen} // 현재 드롭다운이 열렸는지 여부 표시
         aria-controls="dropdown-list" // 드롭다운 리스트의 ID를 참조
+        disabled={disabled}
+        aria-hidden={disabled}
       >
         {list.find((item) => item.value === selection)?.text || ""}
       </button>
