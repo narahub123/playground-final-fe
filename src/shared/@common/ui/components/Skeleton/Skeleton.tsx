@@ -119,8 +119,6 @@ const Skeleton = ({
     const curElem = skeletonRef.current;
     const childElem = curElem?.children[0];
     const grandElem = childElem?.children[0] as HTMLElement;
-    console.log(grandElem);
-
     if (grandElem) {
       const grandStyle = window.getComputedStyle(grandElem);
 
