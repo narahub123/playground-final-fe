@@ -1,4 +1,10 @@
-import { ReactElement, useLayoutEffect, useRef, useState } from "react";
+import React, {
+  ReactElement,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import styles from "./Skeleton.module.css";
 
 interface SkeletonCircleProps {
@@ -92,12 +98,18 @@ const Skeleton = ({ height, asChild, children }: SkeletonProps) => {
       </div>
     );
   } else if (children && asChild) {
+    const Compo = React.cloneElement(children, {
+      ...{ ...children.props },
+      disabled: true, // children에 포커스가 영향을 주지 못하기 위한 속성
+    });
+
     return (
       <div
         className={styles.skeleton}
         style={{
           flex: 1,
           display: `${flexGrow === "1" ? "block" : "inline-flex"}`,
+          borderRadius: "4px",
         }}
         ref={skeletonRef}
       >
@@ -106,7 +118,7 @@ const Skeleton = ({ height, asChild, children }: SkeletonProps) => {
             visibility: "hidden",
           }}
         >
-          {children}
+          {Compo}
         </div>
       </div>
     );

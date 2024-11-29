@@ -183,16 +183,25 @@ const Test = () => {
       </div>
       <Flag countryCode="kr" />
       <div className={styles.skeleton}>
-        {/* <SkeletonCircle size={100} />
-        <SkeletonText noOfLines={3} gap={1.5} /> */}
+        <SkeletonCircle size={100} />
+        <SkeletonText noOfLines={3} gap={1.5} />
         <Skeleton asChild>
+          <Select
+            pageRef={pageRef}
+            isOpen={isLangOpen}
+            setIsOpen={setIsLangOpen}
+            setLastClick={setLastClick}
+            list={listLanguageList}
+          />
+        </Skeleton>
+        {/* <Skeleton asChild>
           <Input field="userId" fieldTitle="사용자 아이디" />
         </Skeleton>
         <Skeleton asChild>
           <Input field="username" fieldTitle="이름" valueMaxLength={20} />
-        </Skeleton>
+        </Skeleton> */}
       </div>
-      <Skeleton asChild>
+      {/* <Skeleton asChild>
         <Textarea
           field={"userIntro"}
           fieldTitle="자기 소개글"
@@ -201,6 +210,15 @@ const Test = () => {
       </Skeleton>
       <Skeleton asChild>
         <Flag countryCode="kr" />
+      </Skeleton> */}
+      <Skeleton asChild>
+        <Select
+          pageRef={pageRef}
+          isOpen={isLangOpen}
+          setIsOpen={setIsLangOpen}
+          setLastClick={setLastClick}
+          list={listLanguageList}
+        />
       </Skeleton>
     </div>
   );
