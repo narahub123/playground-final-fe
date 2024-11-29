@@ -1,10 +1,4 @@
-import React, {
-  ReactElement,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { ReactElement, useLayoutEffect, useRef, useState } from "react";
 import styles from "./Skeleton.module.css";
 
 interface SkeletonCircleProps {
@@ -107,7 +101,7 @@ const Skeleton = ({ height, asChild, children }: SkeletonProps) => {
       <div
         className={styles.skeleton}
         style={{
-          flex: 1,
+          flexGrow: `${flexGrow}`, // 요소에 맞게 flex-grown도 변경
           display: `${flexGrow === "1" ? "block" : "inline-flex"}`,
           borderRadius: "4px",
         }}
