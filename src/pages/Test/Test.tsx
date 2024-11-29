@@ -27,6 +27,7 @@ const Test = () => {
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [isOpenDropdown, setIsOpenDropdown] = useState(false);
   const pageRef = useRef<HTMLDivElement>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   const { setLastClick } = useFocusTrap({
     ref: pageRef,
@@ -181,10 +182,24 @@ const Test = () => {
           list={listLanguageList}
         />
       </div>
+
+      <Skeleton asChild isLoading={isLoading} setIsLoading={setIsLoading}>
+        <Flag countryCode="kr" />
+      </Skeleton>
       <Flag countryCode="kr" />
+
       <div className={styles.skeleton}>
-        <SkeletonCircle size={100} />
-        <SkeletonText noOfLines={3} gap={1.5} />
+        <SkeletonCircle
+          size={100}
+          isLoading={isLoading}
+          setIsLoading={setIsLoading}
+        />
+        <SkeletonText
+          noOfLines={3}
+          gap={1.5}
+          isLoading={isLoading}
+          setIsLoading={setIsLoading}
+        />
         {/* <Skeleton asChild>
           <Select
             pageRef={pageRef}
