@@ -7,6 +7,7 @@ interface TextareaProps {
   fieldTitle: string;
   valueMaxLength?: number;
   errorMessage?: string;
+  disabled?: boolean;
 }
 
 const Textarea = ({
@@ -14,6 +15,7 @@ const Textarea = ({
   fieldTitle,
   valueMaxLength,
   errorMessage,
+  disabled = false,
 }: TextareaProps) => {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const [isFocused, setIsFocused] = useState(false);
@@ -32,8 +34,6 @@ const Textarea = ({
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const value = e.target.value;
 
-    console.log(value);
-
     setValue(value);
   };
 
@@ -44,7 +44,7 @@ const Textarea = ({
         className={`${styles.container} ${focusCond} ${validCond}`}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
-        tabIndex={isFocused ? -1 : 0}
+        tabIndex={isFocused || disabled ? -1 : 0}
       >
         <div className={`${styles.upper} ${focusCond}`}>
           <label htmlFor={field} className={`${styles.title} ${focusCond}`}>
@@ -63,6 +63,8 @@ const Textarea = ({
             aria-labelledby={field}
             aria-invalid={!isValid}
             aria-describedby={isValid ? "" : "textarea-error"}
+            disabled={disabled}
+            aria-hidden={disabled}
           />
         </div>
       </div>

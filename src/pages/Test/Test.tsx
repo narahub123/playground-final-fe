@@ -201,14 +201,14 @@ const Test = () => {
           <Input field="username" fieldTitle="이름" valueMaxLength={20} />
         </Skeleton>
       </div>
-      {/* <Skeleton asChild>
+      <Skeleton asChild>
         <Textarea
           field={"userIntro"}
           fieldTitle="자기 소개글"
           valueMaxLength={120}
         />
       </Skeleton>
-      <Skeleton asChild>
+      {/* <Skeleton asChild>
         <Flag countryCode="kr" />
       </Skeleton> */}
       {/* <Skeleton asChild>
