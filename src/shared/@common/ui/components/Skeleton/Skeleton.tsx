@@ -31,6 +31,8 @@ const SkeletonCircle = ({
       className={`${styles.skeletonCircle} ${show}`}
       style={{ width: `${size}px`, height: `${size}px` }}
       onTransitionEnd={transition}
+      aria-busy="true" // 로딩 상태임을 화면 리더에게 알림
+      aria-live="polite" // 상태 변화를 알릴 수 있는 설정 - polite: 사용자 작업을 방해하지 않고 업데이트를 알리는 옵션
     />
   );
 };
@@ -75,6 +77,8 @@ const SkeletonText = ({
         gap: `${8 * gap}px`,
       }}
       onTransitionEnd={transition}
+      aria-busy="true" // 로딩 상태임을 화면 리더에게 알림
+      aria-live="polite" // 상태 변화를 알릴 수 있는 설정 - polite: 사용자 작업을 방해하지 않고 업데이트를 알리는 옵션
     >
       {Compo}
     </ul>
@@ -137,6 +141,8 @@ const Skeleton = ({
             width: `${"100%"}`,
           }}
           onTransitionEnd={transition}
+          aria-busy="true" // 로딩 상태임을 화면 리더에게 알림
+          aria-live="polite" // 상태 변화를 알릴 수 있는 설정 - polite: 사용자 작업을 방해하지 않고 업데이트를 알리는 옵션
         />
       );
     } else if (children && !asChild) {
@@ -148,6 +154,8 @@ const Skeleton = ({
             width: `${"100%"}`,
           }}
           onTransitionEnd={transition}
+          aria-busy="true" // 로딩 상태임을 화면 리더에게 알림
+          aria-live="polite" // 상태 변화를 알릴 수 있는 설정 - polite: 사용자 작업을 방해하지 않고 업데이트를 알리는 옵션
         >
           <div style={{ visibility: "hidden" }}>{children}</div>
         </div>
@@ -168,6 +176,9 @@ const Skeleton = ({
           }}
           ref={skeletonRef}
           onTransitionEnd={transition}
+          aria-busy="true" // 로딩 상태임을 화면 리더에게 알림
+          aria-live="polite" // 상태 변화를 알릴 수 있는 설정 - polite: 사용자 작업을 방해하지 않고 업데이트를 알리는 옵션
+          aria-hidden="true" // 자식 요소가 보이지 않고  비활성화된 상태임
         >
           <div
             style={{
