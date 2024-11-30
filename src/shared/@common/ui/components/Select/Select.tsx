@@ -7,7 +7,6 @@ import {
 } from "@shared/@common/model/hooks";
 import Icon from "../Icon/Icon";
 import { SelectOptionType } from "@shared/@common/types";
-import { LuChevronDown } from "react-icons/lu";
 
 type OptionProps = {
   option: SelectOptionType;
