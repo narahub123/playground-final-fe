@@ -6,10 +6,6 @@ const getCountryCode = (code: string) => {
   return code.split("-")[1].toLowerCase();
 };
 
-const getImgSrc = (countryCode: string) => {
-  return flags[countryCode as keyof typeof flags] || flags["un"];
-};
-
 const listLanguageList: SelectOptionType[] = [
   {
     value: "ko-KR",
@@ -64,7 +60,7 @@ const listLanguageList: SelectOptionType[] = [
   },
   {
     value: "zh-CN",
-    text: "중국어 간체",
+    text: "중국어 간체 asfasfasfasfafasf",
     optionTitle: "중국어 간첸",
     get imgSrc() {
       return (

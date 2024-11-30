@@ -125,6 +125,8 @@ type SelectProps = {
   setLastClick: React.Dispatch<React.SetStateAction<HTMLElement | null>>; // 버튼을 저장하기 위한 set 함수
   list: any[];
   disabled?: boolean;
+  width?: number | string;
+  widthUnit?: string;
 };
 
 const Select = ({
@@ -134,6 +136,8 @@ const Select = ({
   setLastClick,
   list,
   disabled = false,
+  width = "100%",
+  widthUnit = "px",
 }: SelectProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -150,7 +154,11 @@ const Select = ({
   });
 
   return (
-    <div className={styles.container} ref={containerRef}>
+    <div
+      className={styles.container}
+      ref={containerRef}
+      style={{ width: `${width}${typeof width === "string" ? "" : widthUnit}` }}
+    >
       <button
         className={styles.select}
         onClick={(e) => {

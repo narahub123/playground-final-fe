@@ -4,8 +4,9 @@
 }
 .select {
   display: flex;
-  justify-content: center;
+  gap: 10px;
   cursor: pointer;
+  border: 1px solid #ccc;
 }
 
 .select:focus-visible {
@@ -13,16 +14,16 @@
 }
 
 .list {
-  display: flex;
-  flex-direction: column;
+  margin-top: 5px;
   border: 1px solid #ccc;
 }
 
 .option {
   display: flex;
-  justify-content: center;
   align-items: center;
+  gap: 10px;
   cursor: pointer;
+  padding: 5px 8px;
 }
 
 .option:focus-visible {
@@ -46,4 +47,7 @@
   height: 15px;
 }
 .text {
+  /* 텍스트가 너비를 넘지 못하게 */
+  white-space: nowrap;
+  overflow: hidden;
 }
