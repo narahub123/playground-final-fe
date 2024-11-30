@@ -27,8 +27,6 @@ const Option = ({
 }: OptionProps) => {
   const selectedCond = option.value === selection ? styles.selected : "";
 
-  console.log(option);
-
   return (
     <li
       role="option" // 역할 정의
@@ -124,6 +122,8 @@ type SelectProps = {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   setLastClick: React.Dispatch<React.SetStateAction<HTMLElement | null>>; // 버튼을 저장하기 위한 set 함수
   list: any[];
+  initialValue?: number | string; // 초기 값
+  initialIndex?: number; // 초기 값이 주어지지 않을 때 list 목록에서 초기값으로 주어질 값 지정
   disabled?: boolean;
   width?: number | string;
   widthUnit?: string;
@@ -135,6 +135,8 @@ const Select = ({
   setIsOpen,
   setLastClick,
   list,
+  initialValue,
+  initialIndex = 0, // index가 주어지지 않으면 첫 번째 아이템을 초기값으로 지정
   disabled = false,
   width = "100%",
   widthUnit = "px",
@@ -142,7 +144,7 @@ const Select = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [selection, setSelection] = useState<string | number | undefined>(
-    list[0].value
+    initialValue || list[initialIndex].value // initialValue가 주어지면 initialValue로 아니면 목록의 값 중 하나를 초기 값으로 지정
   );
 
   const { hideModal } = useShowAndHideEffect(setIsOpen);

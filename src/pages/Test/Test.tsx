@@ -180,6 +180,7 @@ const Test = () => {
           setIsOpen={setIsLangOpen}
           setLastClick={setLastClick}
           list={listLanguageList}
+          initialValue={"en-US"}
         />
       </div>
 
