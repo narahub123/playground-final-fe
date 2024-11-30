@@ -2,6 +2,7 @@ import { listModalExample } from "./example";
 import bgThemes from "./bgThemes";
 import { listLanguageList } from "./language";
 import countryNames from "./countries";
+import language from "./languages";
 
 export {
   // 예시: 삭제 예정
@@ -12,4 +13,6 @@ export {
   listLanguageList,
   // 국가 이름
   countryNames,
+  // 언어
+  language,
 };
