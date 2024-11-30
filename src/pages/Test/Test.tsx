@@ -18,6 +18,7 @@ import Select from "@shared/@common/ui/components/Select/Select";
 import { useSelector } from "react-redux";
 import { getBgTheme, getLanguage } from "@shared/@common/model/selectors";
 import BGToggleButton from "@shared/@common/ui/components/BGToggleButton/BGToggleButton";
+import { setLanguage } from "@shared/@common/model/slices/settingsSlice";
 
 const Test = () => {
   const bgTheme = useSelector(getBgTheme);
@@ -92,7 +93,7 @@ const Test = () => {
     );
   };
 
-  console.log(document.activeElement);
+  console.log(language);
 
   return (
     <div className="test" ref={pageRef}>
@@ -182,6 +183,7 @@ const Test = () => {
           setLastClick={setLastClick}
           list={listLanguageList}
           initialValue={language}
+          reducer={setLanguage}
         />
       </div>
 

@@ -1,5 +1,5 @@
 // 설정 관련 slice
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface SettingsState {
   bgTheme: string;
@@ -19,9 +19,12 @@ const settingsSlice = createSlice({
     setBackgroundTheme: (state, action) => {
       state.bgTheme = action.payload;
     },
+    setLanguage: (state, action: PayloadAction<string>) => {
+      state.language = action.payload;
+    },
   },
 });
 
 export default settingsSlice.reducer;
 
-export const { setBackgroundTheme } = settingsSlice.actions;
+export const { setBackgroundTheme, setLanguage } = settingsSlice.actions;
