@@ -16,11 +16,12 @@ import { listLanguageList, listModalExample } from "@shared/@common/data";
 import ModalLayout from "@shared/@common/layouts/ModalLayout/ModalLayout";
 import Select from "@shared/@common/ui/components/Select/Select";
 import { useSelector } from "react-redux";
-import { getBgTheme } from "@shared/@common/model/selectors";
+import { getBgTheme, getLanguage } from "@shared/@common/model/selectors";
 import BGToggleButton from "@shared/@common/ui/components/BGToggleButton/BGToggleButton";
 
 const Test = () => {
   const bgTheme = useSelector(getBgTheme);
+  const language = useSelector(getLanguage);
   const [showModal, setShowModal] = useState(false);
   const [showSecondModal, setShowSecondModal] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -180,7 +181,7 @@ const Test = () => {
           setIsOpen={setIsLangOpen}
           setLastClick={setLastClick}
           list={listLanguageList}
-          initialValue={"en-US"}
+          initialValue={language}
         />
       </div>
 

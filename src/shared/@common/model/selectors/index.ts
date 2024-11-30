@@ -1,5 +1,3 @@
-import { RootState } from "@app/store";
+import { getBgTheme, getLanguage } from "./settingsSelectors";
 
-const getBgTheme = (state: RootState) => state.settings.bgTheme;
-
-export { getBgTheme };
+export { getBgTheme, getLanguage };

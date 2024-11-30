@@ -1,8 +1,14 @@
 // 설정 관련 slice
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
+interface SettingsState {
+  bgTheme: string;
+  language: string;
+}
+
+const initialState: SettingsState = {
   bgTheme: "light",
+  language: "en-US",
 };
 
 // 페이지 로드 전에 setting를 먼저 로드해야 함
