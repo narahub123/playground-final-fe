@@ -18,7 +18,7 @@ type OptionProps = {
   >;
   hideModal: () => void;
   showCond: string;
-  reducer?: ActionCreatorWithPayload<any, "settings/setBackgroundTheme">;
+  reducer?: ActionCreatorWithPayload<any, string>;
 };
 
 const Option = ({
@@ -76,7 +76,7 @@ type ListProps = {
   >;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   list: any[];
-  reducer?: ActionCreatorWithPayload<any, "settings/setBackgroundTheme">;
+  reducer?: ActionCreatorWithPayload<any, string>;
 };
 
 const List = ({
@@ -134,7 +134,7 @@ type SelectProps = {
   list: any[];
   initialValue?: number | string; // 초기 값
   initialIndex?: number; // 초기 값이 주어지지 않을 때 list 목록에서 초기값으로 주어질 값 지정
-  reducer?: ActionCreatorWithPayload<any, "settings/setBackgroundTheme">;
+  reducer?: ActionCreatorWithPayload<any, string>;
   disabled?: boolean;
   width?: number | string;
   widthUnit?: string;
