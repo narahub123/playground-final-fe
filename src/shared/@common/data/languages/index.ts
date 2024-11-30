@@ -5,11 +5,11 @@ import zh_CN from "./zh_CN";
 import zh_TW from "./zh_TW";
 
 const language = {
-  ko_KR, // 한국어
-  en_US, // 영어
-  ja_JP, // 일본어
-  zh_CN, // 간체
-  zh_TW, // 번체
+  [`ko-KR`]: ko_KR, // 한국어
+  [`en-US`]: en_US, // 영어
+  [`ja-JP`]: ja_JP, // 일본어
+  [`zh-CN`]: zh_CN, // 간체
+  [`zh-TW`]: zh_TW, // 번체
 };
 
 export default language;

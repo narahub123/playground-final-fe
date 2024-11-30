@@ -12,7 +12,7 @@ import {
 
 import { useRef, useState } from "react";
 import { useFocusTrap } from "@shared/@common/model/hooks";
-import { listLanguageList, listModalExample } from "@shared/@common/data";
+import { languageList, listModalExample } from "@shared/@common/data";
 import ModalLayout from "@shared/@common/layouts/ModalLayout/ModalLayout";
 import Select from "@shared/@common/ui/components/Select/Select";
 import { useSelector } from "react-redux";
@@ -181,7 +181,7 @@ const Test = () => {
           isOpen={isLangOpen}
           setIsOpen={setIsLangOpen}
           setLastClick={setLastClick}
-          list={listLanguageList}
+          list={languageList(language)}
           initialValue={language}
           reducer={setLanguage}
         />
