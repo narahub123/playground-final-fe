@@ -7,6 +7,8 @@ import {
 } from "@shared/@common/model/hooks";
 import Icon from "../Icon/Icon";
 import { SelectOptionType } from "@shared/@common/types";
+import { ActionCreatorWithPayload } from "@reduxjs/toolkit";
+import { useAppDispatch } from "@app/store";
 
 type OptionProps = {
   option: SelectOptionType;
@@ -16,6 +18,7 @@ type OptionProps = {
   >;
   hideModal: () => void;
   showCond: string;
+  reducer?: ActionCreatorWithPayload<any, "settings/setBackgroundTheme">;
 };
 
 const Option = ({
@@ -24,7 +27,10 @@ const Option = ({
   setSelection,
   hideModal,
   showCond,
+  reducer,
 }: OptionProps) => {
+  const dispatch = useAppDispatch();
+
   const selectedCond = option.value === selection ? styles.selected : "";
 
   return (
@@ -36,6 +42,7 @@ const Option = ({
           ? undefined
           : () => {
               setSelection(option.value);
+              reducer && dispatch(reducer(option.value));
               hideModal();
             }
       }
@@ -69,6 +76,7 @@ type ListProps = {
   >;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   list: any[];
+  reducer?: ActionCreatorWithPayload<any, "settings/setBackgroundTheme">;
 };
 
 const List = ({
@@ -77,6 +85,7 @@ const List = ({
   setIsOpen,
   isOpen,
   list,
+  reducer,
 }: ListProps) => {
   const containerRef = useRef<HTMLUListElement>(null);
   const { showCond, handleTransitionEnd, hideModal } = useShowAndHideEffect(
@@ -110,6 +119,7 @@ const List = ({
           setSelection={setSelection}
           hideModal={hideModal}
           showCond={showCond}
+          reducer={reducer}
         />
       ))}
     </ul>
@@ -124,6 +134,7 @@ type SelectProps = {
   list: any[];
   initialValue?: number | string; // 초기 값
   initialIndex?: number; // 초기 값이 주어지지 않을 때 list 목록에서 초기값으로 주어질 값 지정
+  reducer?: ActionCreatorWithPayload<any, "settings/setBackgroundTheme">;
   disabled?: boolean;
   width?: number | string;
   widthUnit?: string;
@@ -137,6 +148,7 @@ const Select = ({
   list,
   initialValue,
   initialIndex = 0, // index가 주어지지 않으면 첫 번째 아이템을 초기값으로 지정
+  reducer,
   disabled = false,
   width = "100%",
   widthUnit = "px",
@@ -205,6 +217,7 @@ const Select = ({
           setSelection={setSelection}
           selection={selection}
           list={list}
+          reducer={reducer}
         />
       )}
     </div>
