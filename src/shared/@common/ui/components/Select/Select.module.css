@@ -4,9 +4,11 @@
 }
 .select {
   display: flex;
-  gap: 10px;
+  align-items: center;
+  padding: 8px 2.5px 8px 8px;
   cursor: pointer;
   border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .select:focus-visible {
@@ -16,14 +18,15 @@
 .list {
   margin-top: 5px;
   border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .option {
   display: flex;
   align-items: center;
-  gap: 10px;
+  padding: 8px;
   cursor: pointer;
-  padding: 5px 8px;
 }
 
 .option:focus-visible {
@@ -46,8 +49,24 @@
   width: 20px;
   height: 15px;
 }
+
 .text {
+  flex: 1;
+  text-align: left;
   /* 텍스트가 너비를 넘지 못하게 */
   white-space: nowrap;
   overflow: hidden;
+  margin-left: 10px;
+}
+
+.icon {
+  transform: rotate(0deg);
+
+  transition: transform 0.3s ease-in-out;
+}
+
+.open {
+  transform: rotate(180deg);
+
+  transition: transform 0.3s ease-in-out;
 }

@@ -7,6 +7,7 @@ import {
 } from "@shared/@common/model/hooks";
 import Icon from "../Icon/Icon";
 import { SelectOptionType } from "@shared/@common/types";
+import { LuChevronDown } from "react-icons/lu";
 
 type OptionProps = {
   option: SelectOptionType;
@@ -153,6 +154,7 @@ const Select = ({
     showModal: isOpen,
   });
 
+  const selected = list.find((item) => item.value === selection);
   return (
     <div
       className={styles.container}
@@ -174,7 +176,26 @@ const Select = ({
         disabled={disabled}
         aria-hidden={disabled}
       >
-        {list.find((item) => item.value === selection)?.text || ""}
+        {/* 아이콘이 있는 경우 */}
+        {selected.iconName && (
+          <Icon iconName={selected.iconName} iconTitle="" ariaHidden="true" />
+        )}
+        {/* 이미지가 있는 경우 */}
+        {selected.imgSrc && (
+          <img
+            src={selected.imgSrc}
+            alt={selected.imgAlt}
+            aria-hidden="true"
+            className={styles.img}
+          />
+        )}
+        <span className={styles.text}>{selected?.text || ""}</span>
+        <Icon
+          iconName="down"
+          iconTitle=""
+          className={`${styles.icon} ${isOpen ? styles.open : ""}`}
+          ariaHidden="true"
+        />
       </button>
       {isOpen && (
         <List
