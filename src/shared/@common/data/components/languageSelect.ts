@@ -2,7 +2,6 @@
 import { flags } from "@shared/@common/assets";
 import { SelectOptionType } from "@shared/@common/types";
 import { getCountryCode, getLangObjValue } from "@shared/@common/utils";
-import countryNames from "../countries";
 
 // 공통 데이터
 const langList = [
@@ -21,7 +20,7 @@ const languageList: (lang: string) => SelectOptionType[] = (lang: string) => {
     optionTitle: item.text,
     imgSrc: flags[(getCountryCode(item.value) as keyof typeof flags) || "un"],
     imgAlt:
-      countryNames[getCountryCode(item.value) as keyof typeof countryNames] ||
+      getLangObjValue(lang, "countryNames", getCountryCode(item.value)) ||
       getLangObjValue(lang, "languageSelect", "wrongCountryCode"),
   }));
 };

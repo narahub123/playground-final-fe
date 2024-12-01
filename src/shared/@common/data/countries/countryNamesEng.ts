@@ -1,4 +1,4 @@
-const countryNames = {
+const countryNamesEng = {
   ad: "Andorra",
   ae: "United Arab Emirates",
   af: "Afghanistan",
@@ -256,4 +256,4 @@ const countryNames = {
   zw: "Zimbabwe",
 };
 
-export default countryNames;
+export default countryNamesEng;

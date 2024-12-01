@@ -1,6 +1,6 @@
 import { listModalExample } from "./example";
 import bgThemes from "./bgThemes";
-import countryNames from "./countries";
+import countryNames from "./countries/countryNamesEng";
 import language from "./languages";
 import { languageList } from "./components/index";
 
