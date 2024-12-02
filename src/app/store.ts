@@ -3,12 +3,14 @@ import { useDispatch } from "react-redux";
 import {
   settingsSlice as settings,
   userSlice as user,
+  loginSlice as login,
 } from "@shared/@common/model/slices";
 
 export const store = configureStore({
   reducer: {
     settings,
     user,
+    login,
   },
 
   // serializableCheck 옵션을 false로 설정하여

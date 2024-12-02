@@ -1,17 +1,20 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { UserType } from "@shared/@common/types";
 
-interface UserState {
-  profileImage?: string;
-}
-
-const initialState: UserState = {};
+const initialState: UserType = {
+  userId: "111",
+};
 
 const userSlice = createSlice({
   name: "user",
   initialState,
-  reducers: {},
+  reducers: {
+    setUser: (state, action: PayloadAction<Partial<UserType>>) => {
+      return { ...state, ...action.payload };
+    },
+  },
 });
 
 export default userSlice.reducer;
 
-export const {} = userSlice.actions;
+export const { setUser } = userSlice.actions;

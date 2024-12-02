@@ -11,4 +11,12 @@ import { ThemeColorType, ThemeKey } from "./bgThemes";
 // Select 컴포넌트에 사용하는 types
 import { SelectOptionType } from "./Select";
 
-export type { listModalCardType, ThemeColorType, ThemeKey, SelectOptionType };
+import UserType from "./user";
+
+export type {
+  listModalCardType,
+  ThemeColorType,
+  ThemeKey,
+  SelectOptionType,
+  UserType,
+};
