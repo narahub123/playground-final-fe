@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { bgThemes } from "@shared/@common/data";
 import { useSelector } from "react-redux";
-import { getBgTheme } from "@shared/@common/model/selectors";
+import { getBgTheme, getLanguage } from "@shared/@common/model/selectors";
+import { getLangObjValue } from "@shared/@common/utils";
 
 interface ImageProps {
   src: string;
@@ -22,11 +23,14 @@ const Image = ({
 }: ImageProps) => {
   const [isFocused, setIsFocused] = useState(false);
   const bgTheme = useSelector(getBgTheme);
+  const lang = useSelector(getLanguage);
+  const { imgAlt } = getLangObjValue(lang, ["image"]);
+
   return (
     <figure className="container" style={{ width: "100%" }}>
       <img
         src={src}
-        alt="이미지"
+        alt={imgAlt}
         className={"image"}
         style={{
           borderRadius: `${borderRadius}${unit}`,

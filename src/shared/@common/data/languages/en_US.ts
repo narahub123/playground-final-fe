@@ -11,6 +11,10 @@ const en_US = {
     imgAlt: { login: "'s profile photo", logout: "Profile Photo" },
     ariaLabel: "Click to change the profile picture.",
   },
+  // 아미지
+  image: {
+    imgAlt: "Image",
+  },
 };
 
 export default en_US;

@@ -10,6 +10,10 @@ const ko_KR = {
     imgAlt: { login: "의 프로필 사진", logout: "프로필 사진" },
     ariaLabel: "프로필 사진을 변경하려면 클릭하세요.",
   },
+  // 아미지
+  image: {
+    imgAlt: "이미지",
+  },
 };
 
 export default ko_KR;

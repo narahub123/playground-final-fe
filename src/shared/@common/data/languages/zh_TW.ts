@@ -13,6 +13,10 @@ const zh_TW = {
     },
     ariaLabel: "點擊更換個人資料照片。",
   },
+  // 아미지
+  image: {
+    imgAlt: "圖片",
+  },
 };
 
 export default zh_TW;

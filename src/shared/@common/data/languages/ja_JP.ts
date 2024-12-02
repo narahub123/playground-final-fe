@@ -13,6 +13,10 @@ const ja_JP = {
     },
     ariaLabel: "プロフィール写真を変更するにはクリックしてください。",
   },
+  // 아미지
+  image: {
+    imgAlt: "画像",
+  },
 };
 
 export default ja_JP;

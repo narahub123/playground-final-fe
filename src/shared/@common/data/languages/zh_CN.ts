@@ -13,6 +13,10 @@ const zh_CN = {
     },
     ariaLabel: "点击更换个人资料照片。",
   },
+  // 아미지
+  image: {
+    imgAlt: "图片",
+  },
 };
 
 export default zh_CN;
