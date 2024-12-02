@@ -3,6 +3,7 @@ import useClickOutside from "./useClickOutside/useClickOutside";
 import useDynamicPosition from "./useDynamicPosition/useDynamicPosition";
 import useShowAndHideEffect from "./useShowAndHideEffect/useShowAndHideEffect";
 import useGetBGThemeColor from "./useGetBGThemeColor/useGetBGThemeColor";
+import useImagePreview from "./useImagePreview/useImagePreview";
 
 export {
   useFocusTrap,
@@ -10,4 +11,5 @@ export {
   useDynamicPosition,
   useShowAndHideEffect,
   useGetBGThemeColor,
+  useImagePreview,
 };
