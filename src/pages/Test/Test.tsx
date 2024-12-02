@@ -19,6 +19,7 @@ import { useSelector } from "react-redux";
 import { getBgTheme, getLanguage } from "@shared/@common/model/selectors";
 import BGToggleButton from "@shared/@common/ui/components/BGToggleButton/BGToggleButton";
 import { setLanguage } from "@shared/@common/model/slices/settingsSlice";
+import ProfileImage from "@shared/@common/ui/components/ProfileImage/ProfileImage";
 
 const Test = () => {
   const bgTheme = useSelector(getBgTheme);
@@ -221,6 +222,9 @@ const Test = () => {
           <Flag countryCode="kr" />
         </Skeleton>
       </div> */}
+      <div className={styles[`profile-image-container`]}>
+        <ProfileImage />
+      </div>
     </div>
   );
 };
