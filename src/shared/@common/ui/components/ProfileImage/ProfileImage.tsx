@@ -12,7 +12,7 @@ import { useAppDispatch } from "@app/store";
 import { setUser } from "@shared/@common/model/slices/userSlice";
 import { setSigninUser } from "@shared/@common/model/slices/signinSlice";
 import { getLangObjValue } from "@shared/@common/utils";
-import { useImagePreview } from "@shared/@common/model/hooks";
+import { useImagePreview, useLanguageMode } from "@shared/@common/model/hooks";
 
 interface ProfileImageProps {
   size?: number;
@@ -32,9 +32,7 @@ const ProfileImage = ({
   const login = useSelector(getIsLoggedIn);
 
   // 언어 설정
-  const lang = useSelector(getLanguage);
-
-  const { imgAlt, ariaLabel } = getLangObjValue(lang, ["profileImage"]);
+  const { imgAlt, ariaLabel } = useLanguageMode("profileImage");
 
   const bgTheme = useSelector(getBgTheme);
 
