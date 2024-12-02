@@ -1,11 +1,18 @@
 import { language } from "../data";
 
-const getLangObjValue = (lang: string, ObjName: string, key: string) => {
+// 언어 설정에 맞는 값 가져오기
+const getLangObjValue = (lang: string, ObjNames: string[]) => {
   const langObj = language[lang as keyof typeof language];
 
-  const compoObj = langObj[ObjName as keyof typeof langObj];
+  const compoObj = ObjNames.reduce((acc: any, name: string) => {
+    if (acc && name in acc) {
+      return acc[name as keyof typeof acc];
+    }
 
-  return compoObj[key as keyof typeof compoObj];
+    return undefined;
+  }, langObj);
+
+  return compoObj;
 };
 
 export { getLangObjValue };

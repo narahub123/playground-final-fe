@@ -20,8 +20,11 @@ const languageList: (lang: string) => SelectOptionType[] = (lang: string) => {
     optionTitle: item.text,
     imgSrc: flags[(getCountryCode(item.value) as keyof typeof flags) || "un"],
     imgAlt:
-      getLangObjValue(lang, "countryNames", getCountryCode(item.value)) ||
-      getLangObjValue(lang, "languageSelect", "wrongCountryCode"),
+      getLangObjValue(lang, [
+        "languageSelect",
+        "countryNames",
+        getCountryCode(item.value),
+      ]) || getLangObjValue(lang, ["languageSelect", "wrongCountryCode"]),
   }));
 };
 

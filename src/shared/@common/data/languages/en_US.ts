@@ -3,8 +3,8 @@ import { countryNamesEng } from "../countries";
 const en_US = {
   languageSelect: {
     wrongCountryCode: "Invalid country code",
+    countryNames: countryNamesEng,
   },
-  countryNames: countryNamesEng,
 };
 
 export default en_US;
