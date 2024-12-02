@@ -1,6 +1,6 @@
 import { defaultProfile, defaultProfile1 } from "@shared/@common/assets/images";
 import styles from "./ProfileImage.module.css";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import {
   getBgTheme,
@@ -60,10 +60,10 @@ const ProfileImage = ({
   useEffect(() => {
     // 로그인한 경우
     if (login) {
-      setUser({ profileImage: image });
+      dispatch(setUser({ profileImage: image }));
     } else {
       // 로그인 안 한 경우
-      setSigninUser({ profileImage: image });
+      dispatch(setSigninUser({ profileImage: image }));
     }
   }, [image]);
 
