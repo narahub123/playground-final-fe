@@ -1,5 +1,6 @@
 interface UserType {
-  userId: string;
+  userId?: string;
+  username?: string;
   profileImage?: string;
 }
 

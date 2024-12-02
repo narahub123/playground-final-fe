@@ -3,6 +3,7 @@ import { UserType } from "@shared/@common/types";
 
 const initialState: UserType = {
   userId: "111",
+  username: "몰러",
 };
 
 const userSlice = createSlice({
