@@ -117,7 +117,7 @@ const ProfileImage = ({
             // 이미지를 클릭하면 input이 열리도록하는 메서드
             inputRef.current?.click();
           }}
-          tabIndex={0}
+          tabIndex={disabled ? -1 : 0} // 포커스 가능 여부
           aria-hidden={disabled} // disabled 라면 true 아니면 true
           title={`${
             login ? `${user.username} ${imgAlt.login}` : `${imgAlt.logout}`
