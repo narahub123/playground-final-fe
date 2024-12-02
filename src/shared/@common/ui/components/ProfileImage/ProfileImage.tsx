@@ -4,12 +4,14 @@ import { useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import {
   getIsLoggedIn,
+  getLanguage,
   getSigninUser,
   getUser,
 } from "@shared/@common/model/selectors";
 import { useAppDispatch } from "@app/store";
 import { setUser } from "@shared/@common/model/slices/userSlice";
 import { setSigninUser } from "@shared/@common/model/slices/signinSlice";
+import { getLangObjValue } from "@shared/@common/utils";
 
 interface ProfileImageProps {
   size?: number;
@@ -28,10 +30,10 @@ const ProfileImage = ({
   // 로그인 여부 확인 하기
   const login = useSelector(getIsLoggedIn);
 
-  // 로그인을 하지 않은 경우 signin 정보 불러오기
-  const signinInfo = useSelector(getSigninUser);
+  // 언어 설정
+  const lang = useSelector(getLanguage);
 
-  console.log(signinInfo);
+  const { imgAlt } = getLangObjValue(lang, ["profileImage"]);
 
   console.log("로그인 여부", login);
 
@@ -45,12 +47,8 @@ const ProfileImage = ({
       : defaultProfile // 이미지가 없는 경우
     : defaultProfile; // login 안 한 경우
 
-  console.log(defaultImage);
-
   // 이미지 상태
   const [image, setImage] = useState(defaultImage);
-
-  console.log(user.profileImage);
 
   // 업로드할 이미지 프리뷰를 생성하는 함수
   const handleImage = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -103,7 +101,9 @@ const ProfileImage = ({
         <img
           className={styles.img}
           src={image}
-          alt={`${login ? `${user.username} 프로필 사진` : "프로필 사진"}`}
+          alt={`${
+            login ? `${user.username} ${imgAlt.login}` : `${imgAlt.logout}`
+          }`}
           style={{
             width: `${size}${unit}`,
             height: `${size}${unit}`,
@@ -119,7 +119,9 @@ const ProfileImage = ({
           }}
           tabIndex={0}
           aria-hidden={disabled} // disabled 라면 true 아니면 true
-          title={`${login ? `${user.username} 프로필 사진` : "프로필 사진"}`}
+          title={`${
+            login ? `${user.username} ${imgAlt.login}` : `${imgAlt.logout}`
+          }`}
         />
       </figure>
     </div>

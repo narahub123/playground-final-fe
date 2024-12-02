@@ -8,7 +8,7 @@ interface SettingsState {
 
 const initialState: SettingsState = {
   bgTheme: "light",
-  language: "en-US",
+  language: "ko-KR",
 };
 
 // 페이지 로드 전에 setting를 먼저 로드해야 함
