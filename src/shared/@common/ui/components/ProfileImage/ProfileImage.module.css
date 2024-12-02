@@ -4,3 +4,11 @@
   justify-content: center;
   align-items: center;
 }
+
+.img {
+  border: var(--border-default);
+}
+
+.img:focus-visible {
+  outline: var(--outline-profile-image);
+}
