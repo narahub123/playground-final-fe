@@ -231,7 +231,12 @@ const Test = () => {
       <div className={styles[`image-container`]}>
         <ul className={styles[`image-list`]}>
           {Array.from({ length: 4 }).map((_, index) => (
-            <Image src={profile2} key={index} />
+            <Image
+              src={profile2}
+              key={index}
+              func={() => console.log("안녕")}
+              canFocus
+            />
           ))}
         </ul>
       </div>

@@ -6,4 +6,5 @@ export type ThemeColorType = {
   borderModal: string;
   borderList: string;
   hoverIcon: string;
+  outlineImage: string;
 };

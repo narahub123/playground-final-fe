@@ -6,6 +6,7 @@ html[data-theme="light"] {
   --color-background: white;
   --outline-basic: 2px solid black;
   --outline-profile-image: 2px solid cornflowerblue;
+  --outline-image: 2px solid cornflowerblue;
   --border-default: 2px solid black;
   --border-input-normal: 2px solid black;
   --border-input-focused: 2px solid cornflowerblue;
@@ -22,6 +23,7 @@ html[data-theme="dark"] {
   --color-background: black;
   --outline-basic: 2px solid white;
   --outline-profile-image: 2px solid cornflowerblue;
+  --outline-image: 2px solid cornflowerblue;
   --border-default: 2px solid white;
   --border-input-normal: 2px solid white;
   --border-input-focused: 2px solid cornflowerblue;
