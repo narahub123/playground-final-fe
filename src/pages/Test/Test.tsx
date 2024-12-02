@@ -236,6 +236,7 @@ const Test = () => {
               key={index}
               func={() => console.log("안녕")}
               canFocus
+              role="link"
             />
           ))}
         </ul>

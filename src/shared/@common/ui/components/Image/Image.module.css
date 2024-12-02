@@ -1,0 +1,3 @@
+.container:focus-visible {
+  outline: var(--outline-image);
+}
