@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { getBgTheme, getLanguage } from "@shared/@common/model/selectors";
 import { getLangObjValue } from "@shared/@common/utils";
 import { Link } from "react-router-dom";
+import { useLanguageMode } from "@shared/@common/model/hooks";
 
 interface ImageProps {
   src: string;
@@ -24,8 +25,7 @@ const Image = ({
 }: ImageProps) => {
   const [isFocused, setIsFocused] = useState(false);
   const bgTheme = useSelector(getBgTheme);
-  const lang = useSelector(getLanguage);
-  const { imgAlt } = getLangObjValue(lang, ["image"]);
+  const { imgAlt } = useLanguageMode("image");
 
   const isFocusable = role === "link";
   const container = isFocusable ? Link : "figure";
