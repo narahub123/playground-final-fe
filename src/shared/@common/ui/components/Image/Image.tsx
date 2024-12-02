@@ -9,27 +9,26 @@ interface ImageProps {
   src: string;
   borderRadius?: number;
   unit?: string;
-  canFocus?: boolean;
+  role?: string;
+  to?: string;
   func?: (value: any) => any;
   value?: any;
-  role?: string;
 }
 
 const Image = ({
   src,
   borderRadius = 15,
   unit = "px",
-  canFocus = true,
-  func,
-  value,
-  role = "link",
+  role = "link", // 컨테이너의 역할
+  to, // 컨테이너가 link인 경우 이동한 위치
 }: ImageProps) => {
   const [isFocused, setIsFocused] = useState(false);
   const bgTheme = useSelector(getBgTheme);
   const lang = useSelector(getLanguage);
   const { imgAlt } = getLangObjValue(lang, ["image"]);
 
-  const container = role === "link" ? Link : "figure";
+  const isFocusable = role === "link";
+  const container = isFocusable ? Link : "figure";
 
   const child = (
     <img
@@ -39,27 +38,28 @@ const Image = ({
       style={{
         borderRadius: `${borderRadius}${unit}`,
         width: "100%",
-        cursor: `${canFocus ? "pointer" : "default"}`,
+      }}
+    />
+  );
+
+  return React.createElement(
+    container,
+    {
+      to: to ? to : "",
+      style: {
+        borderRadius: `${borderRadius}${unit}`,
         outline: `${
           isFocused
             ? bgThemes[bgTheme as keyof typeof bgThemes][`outlineImage`]
             : "0px"
         }`,
-      }}
-      tabIndex={canFocus ? 0 : -1}
-      onFocus={canFocus ? () => setIsFocused(true) : undefined}
-      onBlur={canFocus ? () => setIsFocused(false) : undefined}
-      onClick={canFocus && func ? () => func(value) : undefined}
-      onKeyDown={(e) => {
-        if (!canFocus) return;
-        e.stopPropagation();
-        if (e.key === "Enter" && e.currentTarget.className === "image")
-          func && func(value);
-      }}
-    />
-  );
+      },
+      onFocus: () => setIsFocused(true),
+      onBlur: () => setIsFocused(false),
+    },
 
-  return React.createElement(container, null, child);
+    child
+  );
 };
 
 export default Image;
