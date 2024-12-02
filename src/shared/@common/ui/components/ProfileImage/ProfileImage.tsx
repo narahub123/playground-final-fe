@@ -2,9 +2,14 @@ import { defaultProfile } from "@shared/@common/assets/images";
 import styles from "./ProfileImage.module.css";
 import { useRef, useState } from "react";
 import { useSelector } from "react-redux";
-import { getIsLoggedIn, getUser } from "@shared/@common/model/selectors";
+import {
+  getIsLoggedIn,
+  getSigninUser,
+  getUser,
+} from "@shared/@common/model/selectors";
 import { useAppDispatch } from "@app/store";
 import { setUser } from "@shared/@common/model/slices/userSlice";
+import { setSigninUser } from "@shared/@common/model/slices/signinSlice";
 
 interface ProfileImageProps {
   size?: number;
@@ -22,6 +27,11 @@ const ProfileImage = ({
 
   // 로그인 여부 확인 하기
   const login = useSelector(getIsLoggedIn);
+
+  // 로그인을 하지 않은 경우 signin 정보 불러오기
+  const signinInfo = useSelector(getSigninUser);
+
+  console.log(signinInfo);
 
   console.log("로그인 여부", login);
 
@@ -53,9 +63,17 @@ const ProfileImage = ({
     reader.onload = () => {
       const result = reader.result as string;
       setImage(result);
+      // 로그인 여부 확인하기
       if (login) {
         dispatch(
           setUser({
+            profileImage: result,
+          })
+        );
+      } else {
+        // 로그인을 하지 않은 경우: signIn의 경우 사용
+        dispatch(
+          setSigninUser({
             profileImage: result,
           })
         );
