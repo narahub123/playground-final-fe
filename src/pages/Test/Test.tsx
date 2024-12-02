@@ -2,6 +2,7 @@ import styles from "./Test.module.css";
 import {
   Flag,
   Icon,
+  Image,
   Input,
   ListModal,
   ProfileImage,
@@ -20,6 +21,8 @@ import { useSelector } from "react-redux";
 import { getBgTheme, getLanguage } from "@shared/@common/model/selectors";
 import BGToggleButton from "@shared/@common/ui/components/BGToggleButton/BGToggleButton";
 import { setLanguage } from "@shared/@common/model/slices/settingsSlice";
+import { profile } from "console";
+import { profile1, profile2 } from "@shared/@common/assets/images";
 
 const Test = () => {
   const bgTheme = useSelector(getBgTheme);
@@ -224,6 +227,13 @@ const Test = () => {
       </div> */}
       <div className={styles[`profile-image-container`]}>
         <ProfileImage size={150} disabled={false} />
+      </div>
+      <div className={styles[`image-container`]}>
+        <ul className={styles[`image-list`]}>
+          {Array.from({ length: 4 }).map((_, index) => (
+            <Image src={profile2} key={index} />
+          ))}
+        </ul>
       </div>
     </div>
   );

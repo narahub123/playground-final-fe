@@ -7,6 +7,7 @@ import Textarea from "./Textarea/Textarea";
 import Flag from "./Flag/Flag";
 import { Skeleton, SkeletonCircle, SkeletonText } from "./Skeleton/Skeleton";
 import ProfileImage from "./ProfileImage/ProfileImage";
+import Image from "./Image/Image";
 
 export {
   Icon,
@@ -20,4 +21,5 @@ export {
   SkeletonCircle,
   SkeletonText,
   ProfileImage,
+  Image,
 };

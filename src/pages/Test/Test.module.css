@@ -45,3 +45,12 @@
 .profile-image-container {
   margin: 10px;
 }
+
+.image-container {
+  margin: 10px;
+}
+
+.image-list {
+  display: flex;
+  
+}
