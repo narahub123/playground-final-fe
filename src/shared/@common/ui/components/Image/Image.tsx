@@ -56,6 +56,10 @@ const Image = ({
       },
       onFocus: () => setIsFocused(true),
       onBlur: () => setIsFocused(false),
+      ...(isFocusable
+        ? { "aria-label": `${to}로 이동` }
+        : { "aria-labelledby": "figure-description" }),
+      "aria-live": isFocused ? "polite" : "off",
     },
 
     child
