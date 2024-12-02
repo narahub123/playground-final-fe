@@ -41,7 +41,7 @@ const ProfileImage = ({
   // 로그인을 한 경우: user 상태에서 프로필 이미지 가져오기
   const user = useSelector(getUser);
 
-  const { image, setImage, handleImagePreview } = useImagePreview();
+  const { images, setImages, handleImagePreview } = useImagePreview();
 
   useEffect(() => {
     const defaultProfileImage =
@@ -54,18 +54,18 @@ const ProfileImage = ({
         : defaultProfileImage
       : defaultProfileImage; // login 안 한 경우
 
-    setImage(defaultImage);
+    setImages([defaultImage]);
   }, [login, bgTheme]);
 
   useEffect(() => {
     // 로그인한 경우
     if (login) {
-      dispatch(setUser({ profileImage: image }));
+      dispatch(setUser({ profileImage: images[0] }));
     } else {
       // 로그인 안 한 경우
-      dispatch(setSigninUser({ profileImage: image }));
+      dispatch(setSigninUser({ profileImage: images[0] }));
     }
-  }, [image]);
+  }, [images]);
 
   return (
     <div className={styles[`profile-image`]}>
@@ -88,7 +88,7 @@ const ProfileImage = ({
         />
         <img
           className={styles.img}
-          src={image}
+          src={images[0]}
           alt={`${
             login ? `${user.username} ${imgAlt.login}` : `${imgAlt.logout}`
           }`}
@@ -97,12 +97,12 @@ const ProfileImage = ({
             height: `${size}${unit}`,
             borderRadius: "50%",
             padding: `${
-              image === defaultProfile || image === defaultProfile1
+              images[0] === defaultProfile || images[0] === defaultProfile1
                 ? "10px 0px 0px 0px"
                 : "0px"
             }`,
             objectFit: `${
-              image === defaultProfile || image === defaultProfile1
+              images[0] === defaultProfile || images[0] === defaultProfile1
                 ? "contain"
                 : "cover"
             }`,

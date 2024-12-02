@@ -1,24 +1,36 @@
 import { useState } from "react";
 
-const useImagePreview = () => {
-  const [image, setImage] = useState("");
+const useImagePreview = (multiple: boolean = false) => {
+  const [images, setImages] = useState<string[]>([]);
 
   const handleImagePreview = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
+    const files = e.target.files;
 
-    if (!file) return;
+    if (!files) return;
 
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-      const result = reader.result as string;
-      setImage(result);
-    };
+    if (!multiple) {
+      const file = files[0];
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        const result = reader.result as string;
+        setImages([result]);
+      };
+    } else {
+      for (const file of files) {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+          const result = reader.result as string;
+          setImages((prev) => [...prev, result]);
+        };
+      }
+    }
   };
 
   return {
-    image,
-    setImage,
+    images,
+    setImages,
     handleImagePreview,
   };
 };

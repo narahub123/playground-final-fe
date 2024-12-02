@@ -13,7 +13,7 @@ import {
 } from "@shared/@common/ui/components";
 
 import { useRef, useState } from "react";
-import { useFocusTrap } from "@shared/@common/model/hooks";
+import { useFocusTrap, useImagePreview } from "@shared/@common/model/hooks";
 import { languageList, listModalExample } from "@shared/@common/data";
 import ModalLayout from "@shared/@common/layouts/ModalLayout/ModalLayout";
 import Select from "@shared/@common/ui/components/Select/Select";
@@ -96,6 +96,8 @@ const Test = () => {
       </>
     );
   };
+
+  const { images, setImages, handleImagePreview } = useImagePreview(true);
 
   console.log(language);
 
@@ -232,6 +234,14 @@ const Test = () => {
         <ul className={styles[`image-list`]}>
           {Array.from({ length: 4 }).map((_, index) => (
             <Image src={profile2} key={index} role="link" to="/login" />
+          ))}
+        </ul>
+      </div>
+      <div>
+        <input type="file" multiple onChange={handleImagePreview} />
+        <ul>
+          {images.map((image, index) => (
+            <Image src={image} key={index} role="link" to="/login" />
           ))}
         </ul>
       </div>
