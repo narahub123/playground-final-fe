@@ -223,7 +223,7 @@ const Test = () => {
         </Skeleton>
       </div> */}
       <div className={styles[`profile-image-container`]}>
-        <ProfileImage />
+        <ProfileImage size={150} />
       </div>
     </div>
   );
