@@ -1,4 +1,8 @@
-import { profile1, profile2 } from "@shared/@common/assets/images";
+import {
+  defaultProfile,
+  profile1,
+  profile2,
+} from "@shared/@common/assets/images";
 import styles from "./ProfileImage.module.css";
 import { useRef, useState } from "react";
 
@@ -9,7 +13,7 @@ interface ProfileImageProps {
 
 const ProfileImage = ({ size = 100, unit = "px" }: ProfileImageProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
-  const [image, setImage] = useState(profile1);
+  const [image, setImage] = useState(defaultProfile);
 
   // 업로드할 이미지 프리뷰를 생성하는 함수
   const handleImage = (e: React.ChangeEvent<HTMLInputElement>) => {
