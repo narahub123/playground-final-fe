@@ -11,6 +11,7 @@ const zh_CN = {
       login: "的个人资料照片",
       logout: "个人资料照片",
     },
+    ariaLabel: "点击更换个人资料照片。",
   },
 };
 

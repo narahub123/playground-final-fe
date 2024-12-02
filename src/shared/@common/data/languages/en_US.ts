@@ -9,6 +9,7 @@ const en_US = {
   // 프로필 이미지
   profileImage: {
     imgAlt: { login: "'s profile photo", logout: "Profile Photo" },
+    ariaLabel: "Click to change the profile picture.",
   },
 };
 

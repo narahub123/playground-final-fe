@@ -11,6 +11,7 @@ const zh_TW = {
       login: "的個人資料照片",
       logout: "個人資料照片",
     },
+    ariaLabel: "點擊更換個人資料照片。",
   },
 };
 

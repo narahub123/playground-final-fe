@@ -6,7 +6,6 @@ import {
   getBgTheme,
   getIsLoggedIn,
   getLanguage,
-  getSigninUser,
   getUser,
 } from "@shared/@common/model/selectors";
 import { useAppDispatch } from "@app/store";
@@ -34,13 +33,9 @@ const ProfileImage = ({
   // 언어 설정
   const lang = useSelector(getLanguage);
 
-  const { imgAlt } = getLangObjValue(lang, ["profileImage"]);
+  const { imgAlt, ariaLabel } = getLangObjValue(lang, ["profileImage"]);
 
   const bgTheme = useSelector(getBgTheme);
-
-  console.log(bgTheme);
-
-  console.log("로그인 여부", login);
 
   // 로그인을 한 경우: user 상태에서 프로필 이미지 가져오기
   const user = useSelector(getUser);
@@ -139,6 +134,8 @@ const ProfileImage = ({
           }}
           tabIndex={disabled ? -1 : 0} // 포커스 가능 여부
           aria-hidden={disabled} // disabled 라면 true 아니면 true
+          aria-label={ariaLabel}
+          role="button" // 클릭 가능한 요소임을 명시
           title={`${
             login ? `${user.username} ${imgAlt.login}` : `${imgAlt.logout}`
           }`}

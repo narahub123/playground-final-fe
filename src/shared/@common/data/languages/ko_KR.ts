@@ -7,7 +7,8 @@ const ko_KR = {
   },
   // 프로필 이미지
   profileImage: {
-    imgAlt: {login: "의 프로필 사진", logout: "프로필 사진"},
+    imgAlt: { login: "의 프로필 사진", logout: "프로필 사진" },
+    ariaLabel: "프로필 사진을 변경하려면 클릭하세요.",
   },
 };
 
