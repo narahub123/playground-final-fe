@@ -12,6 +12,7 @@ import { useAppDispatch } from "@app/store";
 import { setUser } from "@shared/@common/model/slices/userSlice";
 import { setSigninUser } from "@shared/@common/model/slices/signinSlice";
 import { getLangObjValue } from "@shared/@common/utils";
+import { useImagePreview } from "@shared/@common/model/hooks";
 
 interface ProfileImageProps {
   size?: number;
@@ -40,8 +41,7 @@ const ProfileImage = ({
   // 로그인을 한 경우: user 상태에서 프로필 이미지 가져오기
   const user = useSelector(getUser);
 
-  // 이미지 상태
-  const [image, setImage] = useState("");
+  const { image, setImage, handleImagePreview } = useImagePreview();
 
   useEffect(() => {
     const defaultProfileImage =
@@ -57,34 +57,15 @@ const ProfileImage = ({
     setImage(defaultImage);
   }, [login, bgTheme]);
 
-  // 업로드할 이미지 프리뷰를 생성하는 함수
-  const handleImage = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-
-    if (!file) return;
-
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-      const result = reader.result as string;
-      setImage(result);
-      // 로그인 여부 확인하기
-      if (login) {
-        dispatch(
-          setUser({
-            profileImage: result,
-          })
-        );
-      } else {
-        // 로그인을 하지 않은 경우: signIn의 경우 사용
-        dispatch(
-          setSigninUser({
-            profileImage: result,
-          })
-        );
-      }
-    };
-  };
+  useEffect(() => {
+    // 로그인한 경우
+    if (login) {
+      setUser({ profileImage: image });
+    } else {
+      // 로그인 안 한 경우
+      setSigninUser({ profileImage: image });
+    }
+  }, [image]);
 
   return (
     <div className={styles[`profile-image`]}>
@@ -102,7 +83,7 @@ const ProfileImage = ({
           type="file"
           hidden
           ref={inputRef}
-          onChange={(e) => handleImage(e)}
+          onChange={(e) => handleImagePreview(e)}
           disabled={disabled}
         />
         <img
