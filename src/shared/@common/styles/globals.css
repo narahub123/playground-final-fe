@@ -4,6 +4,10 @@ html {
   transition: all 0.3s ease;
 }
 
+body {
+  font-size: var(--font-size);
+}
+
 .top-left {
   top: 0;
   left: 0;

@@ -158,6 +158,7 @@ const Test = () => {
           reducer={setLanguage}
         />
       </div>
+      <div className={styles.fontSize}></div>
       <div>
         {/* {showModal && (
           <ModalLayout setToggle={setShowModal} showModal={showSecondModal}>
