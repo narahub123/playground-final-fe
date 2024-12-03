@@ -1,5 +1,6 @@
 // 배경 설정 키
 type ThemeKey = "light" | "dark";
+
 // 배경 설정 색상 타입
 type ThemeColorType = {
   colorPrimary: string;
@@ -20,4 +21,6 @@ type ColorThemeType =
   | "purple"
   | "black";
 
-export type { ColorThemeType, ThemeKey, ThemeColorType };
+type FontSizeType = "xs" | "s" | "b" | "l" | "xl";
+
+export type { ColorThemeType, ThemeKey, ThemeColorType, FontSizeType };

@@ -30,16 +30,19 @@ import { useSelector } from "react-redux";
 import {
   getBgTheme,
   getColorTheme,
+  getFontSize,
   getLanguage,
 } from "@shared/@common/model/selectors";
 import BGToggleButton from "@shared/@common/ui/components/BGToggleButton/BGToggleButton";
 import {
   setColorTheme,
+  setFontSize,
   setLanguage,
 } from "@shared/@common/model/slices/settingsSlice";
 import { profile } from "console";
 import { profile1, profile2 } from "@shared/@common/assets/images";
 import { useAppDispatch } from "@app/store";
+import { FontSizeType } from "@shared/@common/types";
 
 const Test = () => {
   const dispatch = useAppDispatch();
@@ -128,7 +131,7 @@ const Test = () => {
 
   const { colorThemeTitles } = useLanguageMode("colorTheme");
 
-  const [fontSize, setFontSize] = useState("b");
+  const fontSize = useSelector(getFontSize);
   useEffect(() => {
     document.documentElement.dataset.fontSize = fontSize;
   }, [fontSize]);
@@ -216,7 +219,7 @@ const Test = () => {
                         cursor: "pointer",
                       }}
                       title={font.size}
-                      onClick={() => setFontSize(font.size)}
+                      onClick={() => dispatch(setFontSize(font.size))}
                     />
                   );
                 })}
@@ -235,7 +238,7 @@ const Test = () => {
                       backgroundColor: "cornflowerblue",
                     }}
                     title="xs"
-                    onClick={() => setFontSize("xs")}
+                    onClick={() => dispatch(setFontSize("xs"))}
                   />
                   <span
                     style={{
@@ -244,7 +247,7 @@ const Test = () => {
                       backgroundColor: "cornflowerblue",
                     }}
                     title="s"
-                    onClick={() => setFontSize("s")}
+                    onClick={() => dispatch(setFontSize("s"))}
                   />
                   <span
                     style={{
@@ -253,7 +256,7 @@ const Test = () => {
                       backgroundColor: "cornflowerblue",
                     }}
                     title="s"
-                    onClick={() => setFontSize("s")}
+                    onClick={() => dispatch(setFontSize("s"))}
                   />
                   <span
                     style={{
@@ -262,7 +265,7 @@ const Test = () => {
                       backgroundColor: "cornflowerblue",
                     }}
                     title="b"
-                    onClick={() => setFontSize("b")}
+                    onClick={() => dispatch(setFontSize("b"))}
                   />
                   <span
                     style={{
@@ -271,7 +274,7 @@ const Test = () => {
                       backgroundColor: "cornflowerblue",
                     }}
                     title="b"
-                    onClick={() => setFontSize("b")}
+                    onClick={() => dispatch(setFontSize("b"))}
                   />
                   <span
                     style={{
@@ -280,7 +283,7 @@ const Test = () => {
                       backgroundColor: "cornflowerblue",
                     }}
                     title="l"
-                    onClick={() => setFontSize("l")}
+                    onClick={() => dispatch(setFontSize("l"))}
                   />
                   <span
                     style={{
@@ -289,7 +292,7 @@ const Test = () => {
                       backgroundColor: "cornflowerblue",
                     }}
                     title="l"
-                    onClick={() => setFontSize("l")}
+                    onClick={() => dispatch(setFontSize("l"))}
                   />
                   <span
                     style={{
@@ -298,7 +301,7 @@ const Test = () => {
                       backgroundColor: "cornflowerblue",
                     }}
                     title="xl"
-                    onClick={() => setFontSize("xl")}
+                    onClick={() => dispatch(setFontSize("xl"))}
                   />
                 </div>
               </ul>

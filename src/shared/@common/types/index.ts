@@ -12,7 +12,12 @@ import { SelectOptionType } from "./Select";
 import UserType from "./user";
 import { SigninType, SigninUserType, SigninUserSettingsType } from "./signin";
 
-import { ColorThemeType, ThemeKey, ThemeColorType } from "./settings";
+import {
+  ColorThemeType,
+  ThemeKey,
+  ThemeColorType,
+  FontSizeType,
+} from "./settings";
 
 export type {
   listModalCardType,
@@ -24,4 +29,5 @@ export type {
   SigninUserType,
   SigninUserSettingsType,
   ColorThemeType,
+  FontSizeType,
 };

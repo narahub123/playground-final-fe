@@ -1,17 +1,19 @@
 // 설정 관련 slice
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { ColorThemeType } from "@shared/@common/types";
+import { ColorThemeType, FontSizeType } from "@shared/@common/types";
 
 interface SettingsState {
   bgTheme: string;
   language: string;
   colorTheme: ColorThemeType;
+  fontSize: FontSizeType;
 }
 
 const initialState: SettingsState = {
   bgTheme: "light",
   language: "ko-KR",
   colorTheme: "cornflowerblue",
+  fontSize: "b",
 };
 
 // 페이지 로드 전에 setting를 먼저 로드해야 함
@@ -28,10 +30,13 @@ const settingsSlice = createSlice({
     setColorTheme: (state, action: PayloadAction<ColorThemeType>) => {
       state.colorTheme = action.payload;
     },
+    setFontSize: (state, action: PayloadAction<FontSizeType>) => {
+      state.fontSize = action.payload;
+    },
   },
 });
 
 export default settingsSlice.reducer;
 
-export const { setBackgroundTheme, setLanguage, setColorTheme } =
+export const { setBackgroundTheme, setLanguage, setColorTheme, setFontSize } =
   settingsSlice.actions;

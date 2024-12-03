@@ -1,4 +1,9 @@
-import { getBgTheme, getLanguage, getColorTheme } from "./settingsSelectors";
+import {
+  getBgTheme,
+  getLanguage,
+  getColorTheme,
+  getFontSize,
+} from "./settingsSelectors";
 import { getIsLoggedIn } from "./loginSelector";
 import { getUser, getProfileImage } from "./userSelector";
 import {
@@ -12,6 +17,7 @@ export {
   getBgTheme,
   getLanguage,
   getColorTheme,
+  getFontSize,
   // login
   getIsLoggedIn,
   // user
