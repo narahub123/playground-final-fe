@@ -6,13 +6,13 @@ interface listModalCardType {
   url?: string;
 }
 
-import { ThemeColorType, ThemeKey } from "./bgThemes";
-
 // Select 컴포넌트에 사용하는 types
 import { SelectOptionType } from "./Select";
 
 import UserType from "./user";
 import { SigninType, SigninUserType, SigninUserSettingsType } from "./signin";
+
+import { ColorThemeType, ThemeKey, ThemeColorType } from "./settings";
 
 export type {
   listModalCardType,
@@ -23,4 +23,5 @@ export type {
   SigninType,
   SigninUserType,
   SigninUserSettingsType,
+  ColorThemeType,
 };

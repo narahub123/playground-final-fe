@@ -1,5 +1,7 @@
+import { ColorThemeType } from "@shared/@common/types";
+
 // 색상 설정
-const colorThemeArr = [
+const colorThemeArr: { color: ColorThemeType }[] = [
   { color: "cornflowerblue" },
   { color: "red" },
   { color: "green" },

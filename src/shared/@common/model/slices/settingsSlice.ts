@@ -1,14 +1,17 @@
 // 설정 관련 slice
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { ColorThemeType } from "@shared/@common/types";
 
 interface SettingsState {
   bgTheme: string;
   language: string;
+  colorTheme: ColorThemeType;
 }
 
 const initialState: SettingsState = {
   bgTheme: "light",
   language: "ko-KR",
+  colorTheme: "cornflowerblue",
 };
 
 // 페이지 로드 전에 setting를 먼저 로드해야 함
@@ -22,9 +25,13 @@ const settingsSlice = createSlice({
     setLanguage: (state, action: PayloadAction<string>) => {
       state.language = action.payload;
     },
+    setColorTheme: (state, action: PayloadAction<ColorThemeType>) => {
+      state.colorTheme = action.payload;
+    },
   },
 });
 
 export default settingsSlice.reducer;
 
-export const { setBackgroundTheme, setLanguage } = settingsSlice.actions;
+export const { setBackgroundTheme, setLanguage, setColorTheme } =
+  settingsSlice.actions;

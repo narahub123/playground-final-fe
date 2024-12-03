@@ -26,13 +26,22 @@ import {
 import ModalLayout from "@shared/@common/layouts/ModalLayout/ModalLayout";
 import Select from "@shared/@common/ui/components/Select/Select";
 import { useSelector } from "react-redux";
-import { getBgTheme, getLanguage } from "@shared/@common/model/selectors";
+import {
+  getBgTheme,
+  getColorTheme,
+  getLanguage,
+} from "@shared/@common/model/selectors";
 import BGToggleButton from "@shared/@common/ui/components/BGToggleButton/BGToggleButton";
-import { setLanguage } from "@shared/@common/model/slices/settingsSlice";
+import {
+  setColorTheme,
+  setLanguage,
+} from "@shared/@common/model/slices/settingsSlice";
 import { profile } from "console";
 import { profile1, profile2 } from "@shared/@common/assets/images";
+import { useAppDispatch } from "@app/store";
 
 const Test = () => {
+  const dispatch = useAppDispatch();
   const bgTheme = useSelector(getBgTheme);
   const language = useSelector(getLanguage);
   const [showModal, setShowModal] = useState(false);
@@ -110,7 +119,8 @@ const Test = () => {
   // console.log(language);
 
   // 색상 설정 변경
-  const [colorTheme, setColorTheme] = useState("cornflowerblue");
+  const colorTheme = useSelector(getColorTheme);
+
   useEffect(() => {
     document.documentElement.dataset.colorTheme = colorTheme;
   }, [colorTheme]);
@@ -130,7 +140,7 @@ const Test = () => {
                 backgroundColor: mode.color,
                 cursor: "pointer",
               }}
-              onClick={() => setColorTheme(mode.color)}
+              onClick={() => dispatch(setColorTheme(mode.color))}
               title={colorThemeTitles[mode.color]}
             ></button>
           ))}
