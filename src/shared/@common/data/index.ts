@@ -1,5 +1,5 @@
 import { listModalExample } from "./example";
-import { bgThemes, colorThemeArr, language } from "./settings";
+import { bgThemes, colorThemeArr, language, fontSizeArr } from "./settings";
 import countryNames from "./countries/countryNamesEng";
 import { languageList } from "./components/index";
 
@@ -16,4 +16,6 @@ export {
   languageList,
   // 색상 모드
   colorThemeArr,
+  // 글자 크기 변경
+  fontSizeArr,
 };

@@ -20,6 +20,7 @@ import {
 } from "@shared/@common/model/hooks";
 import {
   colorThemeArr,
+  fontSizeArr,
   languageList,
   listModalExample,
 } from "@shared/@common/data";
@@ -126,6 +127,12 @@ const Test = () => {
   }, [colorTheme]);
 
   const { colorThemeTitles } = useLanguageMode("colorTheme");
+
+  const [fontSize, setFontSize] = useState("b");
+  useEffect(() => {
+    document.documentElement.dataset.fontSize = fontSize;
+  }, [fontSize]);
+
   return (
     <div className="test" ref={pageRef}>
       <div className={styles.colorThemes} style={{ padding: "20px" }}>
@@ -158,7 +165,148 @@ const Test = () => {
           reducer={setLanguage}
         />
       </div>
-      <div className={styles.fontSize}></div>
+      <div className={styles.fontSize}>
+        <p>글꼴 크기</p>
+        <div
+          className="container"
+          style={{ display: "flex", alignItems: "center", gap: "20px" }}
+        >
+          <span style={{ fontSize: "10px" }}>Aa</span>
+          <span
+            style={{
+              flex: 1,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <div
+              style={{
+                width: "100%",
+              }}
+            >
+              <ul
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  position: "relative",
+                }}
+              >
+                {fontSizeArr.map((font) => {
+                  return font.size === fontSize ? (
+                    <button
+                      key={font.size}
+                      style={{
+                        width: "17px",
+                        height: "17px",
+                        borderRadius: "50%",
+                        zIndex: 1,
+                      }}
+                      title={font.size}
+                    />
+                  ) : (
+                    <button
+                      key={font.size}
+                      style={{
+                        width: "12px",
+                        height: "12px",
+                        borderRadius: "50%",
+                        zIndex: 1,
+                        cursor: "pointer",
+                      }}
+                      title={font.size}
+                      onClick={() => setFontSize(font.size)}
+                    />
+                  );
+                })}
+                <div
+                  style={{
+                    position: "absolute",
+                    display: "flex",
+                    alignItems: "center",
+                    width: "100%",
+                  }}
+                >
+                  <span
+                    style={{
+                      width: "100%",
+                      height: "5px",
+                      backgroundColor: "cornflowerblue",
+                    }}
+                    title="xs"
+                    onClick={() => setFontSize("xs")}
+                  />
+                  <span
+                    style={{
+                      width: "100%",
+                      height: "5px",
+                      backgroundColor: "cornflowerblue",
+                    }}
+                    title="s"
+                    onClick={() => setFontSize("s")}
+                  />
+                  <span
+                    style={{
+                      width: "100%",
+                      height: "5px",
+                      backgroundColor: "cornflowerblue",
+                    }}
+                    title="s"
+                    onClick={() => setFontSize("s")}
+                  />
+                  <span
+                    style={{
+                      width: "100%",
+                      height: "5px",
+                      backgroundColor: "cornflowerblue",
+                    }}
+                    title="b"
+                    onClick={() => setFontSize("b")}
+                  />
+                  <span
+                    style={{
+                      width: "100%",
+                      height: "5px",
+                      backgroundColor: "cornflowerblue",
+                    }}
+                    title="b"
+                    onClick={() => setFontSize("b")}
+                  />
+                  <span
+                    style={{
+                      width: "100%",
+                      height: "5px",
+                      backgroundColor: "cornflowerblue",
+                    }}
+                    title="l"
+                    onClick={() => setFontSize("l")}
+                  />
+                  <span
+                    style={{
+                      width: "100%",
+                      height: "5px",
+                      backgroundColor: "cornflowerblue",
+                    }}
+                    title="l"
+                    onClick={() => setFontSize("l")}
+                  />
+                  <span
+                    style={{
+                      width: "100%",
+                      height: "5px",
+                      backgroundColor: "cornflowerblue",
+                    }}
+                    title="xl"
+                    onClick={() => setFontSize("xl")}
+                  />
+                </div>
+              </ul>
+            </div>
+          </span>
+          <span style={{ fontSize: "23px" }}>Aa</span>
+        </div>
+      </div>
       <div>
         {/* {showModal && (
           <ModalLayout setToggle={setShowModal} showModal={showSecondModal}>
