@@ -30,7 +30,7 @@ const MainHeader = ({
           }}
         />
       )}
-      <span className={styles.title}>{pageTitle}</span>
+      <h3 className={styles.title}>{pageTitle}</h3>
       <>{children && children}</>
     </header>
   );
