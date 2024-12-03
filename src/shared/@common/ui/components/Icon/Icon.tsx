@@ -13,8 +13,8 @@ type IconProps = {
   bgColor?: string;
   unit?: string;
   handleClick?: (value: any) => void;
-  ariaHidden?: "true" | "false";
-  className?: string; 
+  ariaHidden?: true | false;
+  className?: string;
 };
 
 const Icon = ({
@@ -26,7 +26,7 @@ const Icon = ({
   bgColor, // hover 시 배경색
   unit = "px", // 사이즈 단위
   handleClick, // 클릭 이벤트 적용하는 경우
-  ariaHidden = "false", // 아이콘이 의미 전달을 하는지 여부 aria-hidden: true이면 장식일 뿐 의미전달 하지 않음
+  ariaHidden = false, // 아이콘이 의미 전달을 하는지 여부 aria-hidden: true이면 장식일 뿐 의미전달 하지 않음
   className, // 외부에서 Icon container에 className 추가 가능
 }: IconProps) => {
   const iconHover = useGetBGThemeColor("hoverIcon");
@@ -82,6 +82,7 @@ const Icon = ({
       <Icon
         className={`${styles.icon}`}
         style={{ fontSize: `${fontSize}${unit}`, color: `${color}` }}
+        role={ariaHidden === true ? undefined : "button"}
         aria-label={title} // 아이콘을 설명하는 label 추가
       />
     </div>
