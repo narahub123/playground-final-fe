@@ -28,6 +28,16 @@ const ja_JP = {
       black: "黒色",
     },
   },
+  // 글자 크기 설정
+  fontSize: {
+    fontSizeTitles: {
+      xs: "非常に小さい",
+      s: "小さい",
+      b: "標準",
+      l: "大きい",
+      xl: "非常に大きい",
+    },
+  },
 };
 
 export default ja_JP;

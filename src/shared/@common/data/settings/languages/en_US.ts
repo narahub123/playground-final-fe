@@ -26,6 +26,16 @@ const en_US = {
       black: "black",
     },
   },
+  // 글자 크기 설정
+  fontSize: {
+    fontSizeTitles: {
+      xs: "extra small",
+      s: "small",
+      b: "default",
+      l: "large",
+      xl: "extra large",
+    },
+  },
 };
 
 export default en_US;

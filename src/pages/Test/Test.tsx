@@ -130,6 +130,7 @@ const Test = () => {
   }, [colorTheme]);
 
   const { colorThemeTitles } = useLanguageMode("colorTheme");
+  const { fontSizeTitles } = useLanguageMode("fontSize");
 
   const fontSize = useSelector(getFontSize);
   useEffect(() => {
@@ -206,7 +207,7 @@ const Test = () => {
                         borderRadius: "50%",
                         zIndex: 1,
                       }}
-                      title={font.size}
+                      title={fontSizeTitles[font.size]}
                     />
                   ) : (
                     <button
@@ -218,7 +219,7 @@ const Test = () => {
                         zIndex: 1,
                         cursor: "pointer",
                       }}
-                      title={font.size}
+                      title={fontSizeTitles[font.size]}
                       onClick={() => dispatch(setFontSize(font.size))}
                     />
                   );

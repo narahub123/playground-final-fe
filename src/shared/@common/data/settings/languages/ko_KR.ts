@@ -25,6 +25,16 @@ const ko_KR = {
       black: "검은색",
     },
   },
+  // 글자 크기 설정
+  fontSize: {
+    fontSizeTitles: {
+      xs: "아주 작게",
+      s: "작게",
+      b: "기본",
+      l: "크게",
+      xl: "아주 크게",
+    },
+  },
 };
 
 export default ko_KR;

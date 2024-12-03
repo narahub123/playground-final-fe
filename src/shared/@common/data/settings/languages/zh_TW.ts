@@ -28,6 +28,16 @@ const zh_TW = {
       black: "黑色",
     },
   },
+  // 글자 크기 설정
+  fontSize: {
+    fontSizeTitles: {
+      xs: "非常小",
+      s: "小",
+      b: "預設",
+      l: "大",
+      xl: "非常大",
+    },
+  },
 };
 
 export default zh_TW;
