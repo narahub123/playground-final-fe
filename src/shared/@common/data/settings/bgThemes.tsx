@@ -1,4 +1,4 @@
-import { ThemeColorType, ThemeKey } from "../types";
+import { ThemeColorType, ThemeKey } from "@shared/@common/types";
 
 const bgThemes: Record<ThemeKey, ThemeColorType> = {
   light: {

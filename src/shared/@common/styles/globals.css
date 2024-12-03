@@ -41,3 +41,12 @@ html {
   max-height: 500px;
   transition: all 0.3s ease-in-out;
 }
+
+button {
+  color: var(--theme-color);
+  background-color: var(--theme-bgColor);
+}
+
+button:focus-visible {
+  outline: var(--theme-outline);
+}

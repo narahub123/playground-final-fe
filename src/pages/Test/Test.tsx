@@ -12,9 +12,13 @@ import {
   Textarea,
 } from "@shared/@common/ui/components";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useFocusTrap, useImagePreview } from "@shared/@common/model/hooks";
-import { languageList, listModalExample } from "@shared/@common/data";
+import {
+  colorThemeArr,
+  languageList,
+  listModalExample,
+} from "@shared/@common/data";
 import ModalLayout from "@shared/@common/layouts/ModalLayout/ModalLayout";
 import Select from "@shared/@common/ui/components/Select/Select";
 import { useSelector } from "react-redux";
@@ -101,10 +105,31 @@ const Test = () => {
 
   // console.log(language);
 
+  // 색상 설정 변경
+  const [colorTheme, setColorTheme] = useState("cornflowerblue");
+  useEffect(() => {
+    document.documentElement.dataset.colorTheme = colorTheme;
+  }, [colorTheme]);
+
   return (
     <div className="test" ref={pageRef}>
-      <div className={styles.colorThemes}>
-        
+      <div className={styles.colorThemes} style={{ padding: "20px" }}>
+        <ul style={{ display: "flex", gap: "10px", padding: "10px" }}>
+          {colorThemeArr.map((mode, index) => (
+            <button
+              key={index}
+              style={{
+                width: "50px",
+                height: "50px",
+                borderRadius: "50%",
+                backgroundColor: mode.color,
+                cursor: "pointer",
+              }}
+              onClick={() => setColorTheme(mode.color)}
+            ></button>
+          ))}
+        </ul>
+        <button>테스트</button>
       </div>
       <div>
         {/* {showModal && (

@@ -1,4 +1,4 @@
-import { countryNamesKor } from "../countries";
+import { countryNamesKor } from "../../countries";
 
 const ko_KR = {
   languageSelect: {

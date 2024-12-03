@@ -1,4 +1,4 @@
-import { countryNamesZhTW } from "../countries";
+import { countryNamesZhTW } from "../../countries";
 
 const zh_CN = {
   languageSelect: {

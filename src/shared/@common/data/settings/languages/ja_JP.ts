@@ -1,4 +1,4 @@
-import { countryNamesJap } from "../countries";
+import { countryNamesJap } from "../../countries";
 
 const ja_JP = {
   languageSelect: {

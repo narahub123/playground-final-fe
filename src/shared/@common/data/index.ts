@@ -1,7 +1,6 @@
 import { listModalExample } from "./example";
-import bgThemes from "./bgThemes";
+import { bgThemes, colorThemeArr, language } from "./settings";
 import countryNames from "./countries/countryNamesEng";
-import language from "./languages";
 import { languageList } from "./components/index";
 
 export {
@@ -15,4 +14,6 @@ export {
   language,
   // languageSelect
   languageList,
+  // 색상 모드
+  colorThemeArr,
 };

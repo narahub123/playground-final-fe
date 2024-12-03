@@ -1,4 +1,4 @@
-import { countryNamesEng } from "../countries";
+import { countryNamesEng } from "../../countries";
 
 const en_US = {
   // 언어 선택
