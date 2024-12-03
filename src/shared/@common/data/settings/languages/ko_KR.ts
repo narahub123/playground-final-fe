@@ -35,6 +35,10 @@ const ko_KR = {
       xl: "아주 크게",
     },
   },
+  // MainHeader
+  mainHeader: {
+    backwardIconTitle: "이전 페이지로",
+  },
 };
 
 export default ko_KR;

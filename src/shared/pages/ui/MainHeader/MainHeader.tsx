@@ -2,6 +2,7 @@ import { Icon } from "@shared/@common/ui/components";
 import styles from "./MainHeader.module.css";
 import { useNavigate } from "react-router-dom";
 import React from "react";
+import { useLanguageMode } from "@shared/@common/model/hooks";
 
 interface MainHeaderProps {
   pageTitle: string;
@@ -15,12 +16,14 @@ const MainHeader = ({
   children,
 }: MainHeaderProps) => {
   const naviagte = useNavigate();
+
+  const { backwardIconTitle } = useLanguageMode("mainHeader");
   return (
     <div className={styles[`main-header`]}>
       {backward && (
         <Icon
           iconName="backward"
-          iconTitle="이전 페이지로"
+          iconTitle={backwardIconTitle}
           className={styles.icon}
           handleClick={() => {
             naviagte(-1);

@@ -38,6 +38,10 @@ const zh_TW = {
       xl: "非常大",
     },
   },
+  // MainHeader
+  mainHeader: {
+    backwardIconTitle: "返回上一頁",
+  },
 };
 
 export default zh_TW;

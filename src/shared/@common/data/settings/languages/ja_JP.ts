@@ -38,6 +38,10 @@ const ja_JP = {
       xl: "非常に大きい",
     },
   },
+  // MainHeader
+  mainHeader: {
+    backwardIconTitle: "前のページへ",
+  },
 };
 
 export default ja_JP;

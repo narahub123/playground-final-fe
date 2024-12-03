@@ -36,6 +36,10 @@ const en_US = {
       xl: "extra large",
     },
   },
+  // MainHeader
+  mainHeader: {
+    backwardIconTitle: "Go to Previous Page",
+  },
 };
 
 export default en_US;

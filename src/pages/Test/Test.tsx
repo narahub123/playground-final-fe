@@ -43,6 +43,7 @@ import { profile } from "console";
 import { profile1, profile2 } from "@shared/@common/assets/images";
 import { useAppDispatch } from "@app/store";
 import { FontSizeType } from "@shared/@common/types";
+import { Link } from "react-router-dom";
 
 const Test = () => {
   const dispatch = useAppDispatch();
@@ -311,6 +312,7 @@ const Test = () => {
           <span style={{ fontSize: "23px" }}>Aa</span>
         </div>
       </div>
+      <Link to={"/settings"}>이동</Link>
       <div>
         {/* {showModal && (
           <ModalLayout setToggle={setShowModal} showModal={showSecondModal}>
