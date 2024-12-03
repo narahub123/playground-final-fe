@@ -1,23 +1,23 @@
-html[color-theme="basic"] {
+html[data-colorTheme="cornflowerblue"] {
   --color-theme: cornflowerblue;
 }
 
-html[color-theme="red"] {
+html[data-colorTheme="red"] {
   --color-theme: red;
 }
 
-html[color-theme="green"] {
+html[data-colorTheme="green"] {
   --color-theme: green;
 }
 
-html[color-theme="yellow"] {
+html[data-colorTheme="yellow"] {
   --color-theme: yellow;
 }
 
-html[color-theme="purple"] {
+html[data-colorTheme="purple"] {
   --color-theme: purple;
 }
 
-html[color-theme="black"] {
+html[data-colorTheme="black"] {
   --color-theme: black;
 }
