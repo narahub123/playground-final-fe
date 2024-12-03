@@ -51,7 +51,7 @@ import {
 import SettingsBranchContainer from "@pages/Settings/layouts/SettingsBranchContainer/SettingsBranchContainer";
 import { AuthLayout } from "@/layouts";
 import Constant from "@/constants";
-import { PageLayout } from "@shared/pages-setting/layout";
+import { PageLayout } from "@shared/pages/layout";
 
 // 로그인 여부 확인
 const login = true;
