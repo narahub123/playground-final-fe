@@ -49,8 +49,9 @@ import {
   YourPosts,
 } from "@pages/Settings/pages";
 import SettingsBranchContainer from "@pages/Settings/layouts/SettingsBranchContainer/SettingsBranchContainer";
-import { AuthLayout, PageLayout } from "@/layouts";
+import { AuthLayout } from "@/layouts";
 import Constant from "@/constants";
+import { PageLayout } from "@shared/pages-setting/layout";
 
 // 로그인 여부 확인
 const login = true;
@@ -148,10 +149,10 @@ export const router = createBrowserRouter([
                 element: <Settings />,
                 children: [
                   // landing 페이지
-                  {
-                    index: true,
-                    element: <Landing />,
-                  },
+                  // {
+                  //   index: true,
+                  //   element: <Landing />,
+                  // },
                   // 계정
                   {
                     path: "account",
