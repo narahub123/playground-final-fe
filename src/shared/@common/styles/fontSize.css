@@ -1,15 +1,15 @@
-html[data-color-theme="xs"] {
+html[data-font-size="xs"] {
   --font-size: 10px;
 }
-html[data-color-theme="s"] {
+html[data-font-size="s"] {
   --font-size: 13px;
 }
-html[data-color-theme="b"] {
+html[data-font-size="b"] {
   --font-size: 16px;
 }
-html[data-color-theme="l"] {
+html[data-font-size="l"] {
   --font-size: 20px;
 }
-html[data-color-theme="xl"] {
+html[data-font-size="xl"] {
   --font-size: 23px;
 }
