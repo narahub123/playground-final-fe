@@ -167,9 +167,9 @@ export const router = createBrowserRouter([
                             />
                           </>
                         }
-                      >
-                        <>안녕</>
-                      </MainLayout>
+                        topContent={<button>위</button>}
+                        bottomContent={<div>아래</div>}
+                      />
                     ),
                   },
                   // 계정
