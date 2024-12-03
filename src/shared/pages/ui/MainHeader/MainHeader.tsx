@@ -19,7 +19,7 @@ const MainHeader = ({
 
   const { backwardIconTitle } = useLanguageMode("mainHeader");
   return (
-    <div className={styles[`main-header`]}>
+    <header className={styles[`main-header`]} role="banner">
       {backward && (
         <Icon
           iconName="backward"
@@ -32,7 +32,7 @@ const MainHeader = ({
       )}
       <span className={styles.title}>{pageTitle}</span>
       <>{children && children}</>
-    </div>
+    </header>
   );
 };
 
