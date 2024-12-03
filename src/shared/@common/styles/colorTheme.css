@@ -1,0 +1,23 @@
+html[color-theme="basic"] {
+  --color-theme: cornflowerblue;
+}
+
+html[color-theme="red"] {
+  --color-theme: red;
+}
+
+html[color-theme="green"] {
+  --color-theme: green;
+}
+
+html[color-theme="yellow"] {
+  --color-theme: yellow;
+}
+
+html[color-theme="purple"] {
+  --color-theme: purple;
+}
+
+html[color-theme="black"] {
+  --color-theme: black;
+}
