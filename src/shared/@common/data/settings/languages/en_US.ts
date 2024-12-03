@@ -15,6 +15,17 @@ const en_US = {
   image: {
     imgAlt: "Image",
   },
+  // 언어 설정
+  colorTheme: {
+    colorThemeTitles: {
+      cornflowerblue: "default",
+      red: "red",
+      green: "green",
+      yellow: "yellow",
+      purple: "purple",
+      black: "black",
+    },
+  },
 };
 
 export default en_US;

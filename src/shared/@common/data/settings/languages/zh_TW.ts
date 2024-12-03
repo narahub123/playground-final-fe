@@ -17,6 +17,17 @@ const zh_TW = {
   image: {
     imgAlt: "圖片",
   },
+  // 언어 설정
+  colorTheme: {
+    colorThemeTitles: {
+      cornflowerblue: "預設色",
+      red: "紅色",
+      green: "綠色",
+      yellow: "黃色",
+      purple: "紫色",
+      black: "黑色",
+    },
+  },
 };
 
 export default zh_TW;

@@ -17,6 +17,17 @@ const ja_JP = {
   image: {
     imgAlt: "画像",
   },
+  // 언어 설정
+  colorTheme: {
+    colorThemeTitles: {
+      cornflowerblue: "基本色",
+      red: "赤色",
+      green: "緑色",
+      yellow: "黄色",
+      purple: "紫色",
+      black: "黒色",
+    },
+  },
 };
 
 export default ja_JP;

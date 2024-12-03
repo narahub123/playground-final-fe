@@ -13,7 +13,11 @@ import {
 } from "@shared/@common/ui/components";
 
 import { useEffect, useRef, useState } from "react";
-import { useFocusTrap, useImagePreview } from "@shared/@common/model/hooks";
+import {
+  useFocusTrap,
+  useImagePreview,
+  useLanguageMode,
+} from "@shared/@common/model/hooks";
 import {
   colorThemeArr,
   languageList,
@@ -39,14 +43,14 @@ const Test = () => {
   const pageRef = useRef<HTMLDivElement>(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  // const { setLastClick } = useFocusTrap({
-  //   ref: pageRef,
-  //   location: "test page",
-  //   showModal:
-  //     showModal || isOpen || isOpenDropdown || isLangOpen || bgTheme === "dark"
-  //       ? true
-  //       : false, // 여러 모달 창에 적용하기 위해서 유니언으로 전달해야 함
-  // });
+  const { setLastClick } = useFocusTrap({
+    ref: pageRef,
+    location: "test page",
+    showModal:
+      showModal || isOpen || isOpenDropdown || isLangOpen || bgTheme === "dark"
+        ? true
+        : false, // 여러 모달 창에 적용하기 위해서 유니언으로 전달해야 함
+  });
 
   // 각 모달에 따라 다른 값이 들어가게 됨
   // 매개변수의 타입을 string | number | undefined로 한정함
@@ -111,6 +115,7 @@ const Test = () => {
     document.documentElement.dataset.colorTheme = colorTheme;
   }, [colorTheme]);
 
+  const { colorThemeTitles } = useLanguageMode("colorTheme");
   return (
     <div className="test" ref={pageRef}>
       <div className={styles.colorThemes} style={{ padding: "20px" }}>
@@ -126,10 +131,22 @@ const Test = () => {
                 cursor: "pointer",
               }}
               onClick={() => setColorTheme(mode.color)}
+              title={colorThemeTitles[mode.color]}
             ></button>
           ))}
         </ul>
         <button>테스트</button>
+      </div>
+      <div className={styles[`language-container`]}>
+        <Select
+          pageRef={pageRef}
+          isOpen={isLangOpen}
+          setIsOpen={setIsLangOpen}
+          setLastClick={setLastClick}
+          list={languageList(language)}
+          initialValue={language}
+          reducer={setLanguage}
+        />
       </div>
       <div>
         {/* {showModal && (
@@ -210,17 +227,7 @@ const Test = () => {
             valueMaxLength={120}
           />
         </div>
-        <div className={styles[`language-container`]}>
-          <Select
-            pageRef={pageRef}
-            isOpen={isLangOpen}
-            setIsOpen={setIsLangOpen}
-            setLastClick={setLastClick}
-            list={languageList(language)}
-            initialValue={language}
-            reducer={setLanguage}
-          />
-        </div> */}
+         */}
 
         {/* <div className={styles.skeleton}>
         <SkeletonCircle

@@ -14,6 +14,17 @@ const ko_KR = {
   image: {
     imgAlt: "이미지",
   },
+  // 언어 설정
+  colorTheme: {
+    colorThemeTitles: {
+      cornflowerblue: "기본색",
+      red: "빨강색",
+      green: "초록색",
+      yellow: "노랑색",
+      purple: "보라색",
+      black: "검은색",
+    },
+  },
 };
 
 export default ko_KR;
