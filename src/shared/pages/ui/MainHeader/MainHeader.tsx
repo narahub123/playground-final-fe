@@ -1,4 +1,4 @@
-import { Icon } from "@shared/@common/ui/components";
+import { Icon, Title } from "@shared/@common/ui/components";
 import styles from "./MainHeader.module.css";
 import { useNavigate } from "react-router-dom";
 import React from "react";
@@ -30,7 +30,7 @@ const MainHeader = ({
           }}
         />
       )}
-      <h3 className={styles.title}>{pageTitle}</h3>
+      <Title text={pageTitle} className={styles.title} />
       <>{children && children}</>
     </header>
   );
