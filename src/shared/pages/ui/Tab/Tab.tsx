@@ -63,6 +63,8 @@ const Tab = ({}: TabProps) => {
                   setFocus(list[indexPlusCond].text);
                 } else if (e.key === "ArrowLeft") {
                   setFocus(list[indexMinusCond].text);
+                } else if (e.key === "Enter") {
+                  setSelection(item.text);
                 }
               }}
             >
