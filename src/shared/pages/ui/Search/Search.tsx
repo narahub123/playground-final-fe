@@ -4,13 +4,15 @@ import { useRef, useState } from "react";
 import { debounce } from "@shared/@common/utils";
 
 interface SearchProps {
-  placeholder?: string;
+  search: string; // 검색어
+  setSearch: React.Dispatch<React.SetStateAction<string>>; // 검색어 변경
+  placeholder?: string; // placeholder
 }
 
-const Search = ({ placeholder }: SearchProps) => {
+const Search = ({ search, setSearch, placeholder }: SearchProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [isFocused, setIsFocused] = useState(false);
-  const [search, setSearch] = useState("");
+
   // 포커스 조건
   const focusCond = isFocused ? styles.focused : "";
 
