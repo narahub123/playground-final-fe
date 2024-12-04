@@ -1,20 +1,25 @@
 html[data-font-size="xs"] {
   --font-size: 10px;
   --font-size-description: 8px;
+  --font-size-title: 14px;
 }
 html[data-font-size="s"] {
   --font-size: 13px;
   --font-size-description: 10px;
+  --font-size-title: 17px;
 }
 html[data-font-size="b"] {
   --font-size: 16px;
   --font-size-description: 13px;
+  --font-size-title: 20px;
 }
 html[data-font-size="l"] {
   --font-size: 20px;
   --font-size-description: 16px;
+  --font-size-title: 24px;
 }
 html[data-font-size="xl"] {
   --font-size: 23px;
   --font-size-description: 20px;
+  --font-size-title: 27px;
 }
