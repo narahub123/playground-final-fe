@@ -52,7 +52,7 @@ import SettingsBranchContainer from "@pages/Settings/layouts/SettingsBranchConta
 import { AuthLayout } from "@/layouts";
 import Constant from "@/constants";
 import { MainLayout, PageLayout } from "@shared/pages/layout";
-import { Icon } from "@shared/@common/ui/components";
+import { Description, Icon } from "@shared/@common/ui/components";
 
 // 로그인 여부 확인
 const login = true;
@@ -167,7 +167,7 @@ export const router = createBrowserRouter([
                             />
                           </>
                         }
-                        topContent={<button>위</button>}
+                        topContent={<Description text="설명" />}
                         bottomContent={<div>아래</div>}
                       />
                     ),

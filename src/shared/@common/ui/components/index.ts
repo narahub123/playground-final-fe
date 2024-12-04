@@ -8,6 +8,7 @@ import Flag from "./Flag/Flag";
 import { Skeleton, SkeletonCircle, SkeletonText } from "./Skeleton/Skeleton";
 import ProfileImage from "./ProfileImage/ProfileImage";
 import Image from "./Image/Image";
+import Description from "./Description/Description";
 
 export {
   Icon,
@@ -22,4 +23,5 @@ export {
   SkeletonText,
   ProfileImage,
   Image,
+  Description,
 };
