@@ -1,35 +1,41 @@
 html[data-color-theme="cornflowerblue"] {
   --theme-bgColor: cornflowerblue;
   --theme-color: white;
-  --theme-outline: 2px solid cornflowerblue;
+  --theme-outline: 2px solid var(--theme-bgColor);
+  --theme-border: 2px solid var(--theme-bgColor);
 }
 
 html[data-color-theme="red"] {
   --theme-bgColor: red;
   --theme-color: white;
-  --theme-outline: 2px solid red;
+  --theme-outline: 2px solid var(--theme-bgColor);
+  --theme-border: 2px solid var(--theme-bgColor);
 }
 
 html[data-color-theme="green"] {
   --theme-bgColor: green;
   --theme-color: white;
-  --theme-outline: 2px solid green;
+  --theme-outline: 2px solid var(--theme-bgColor);
+  --theme-border: 2px solid var(--theme-bgColor);
 }
 
 html[data-color-theme="yellow"] {
   --theme-bgColor: yellow;
   --theme-color: white;
-  --theme-outline: 2px solid yellow;
+  --theme-outline: 2px solid var(--theme-bgColor);
+  --theme-border: 2px solid var(--theme-bgColor);
 }
 
 html[data-color-theme="purple"] {
   --theme-bgColor: purple;
   --theme-color: white;
-  --theme-outline: 2px solid purple;
+  --theme-outline: 2px solid var(--theme-bgColor);
+  --theme-border: 2px solid var(--theme-bgColor);
 }
 
 html[data-color-theme="black"] {
   --theme-bgColor: black;
   --theme-color: white;
-  --theme-outline: 2px solid black;
+  --theme-outline: 2px solid var(--theme-bgColor);
+  --theme-border: 2px solid var(--theme-bgColor);
 }
