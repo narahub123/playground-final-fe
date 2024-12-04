@@ -20,11 +20,18 @@
   background-color: #eee;
 }
 
+/* 포커스된 경우 */
+.item:focus-visible {
+  outline: 2px solid #aaa;
+  background-color: #eee;
+}
+
 .wrap {
   padding: 10px;
   border-bottom: 4px solid transparent;
 }
 
+/* 선택된 아이템의 경우 */
 .selected {
   font-weight: bold;
   border-bottom: 4px solid var(--theme-bgColor);
