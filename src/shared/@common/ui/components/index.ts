@@ -9,6 +9,7 @@ import { Skeleton, SkeletonCircle, SkeletonText } from "./Skeleton/Skeleton";
 import ProfileImage from "./ProfileImage/ProfileImage";
 import Image from "./Image/Image";
 import Description from "./Description/Description";
+import Title from "./Title/Title";
 
 export {
   Icon,
@@ -24,4 +25,5 @@ export {
   ProfileImage,
   Image,
   Description,
+  Title,
 };
