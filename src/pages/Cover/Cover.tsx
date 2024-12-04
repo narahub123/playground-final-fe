@@ -2,9 +2,24 @@ import { Outlet, useLocation } from "react-router-dom";
 import styles from "./Cover.module.css";
 import { useEffect } from "react";
 import { tabTitles } from "@data/title";
+import { useSelector } from "react-redux";
+import { getSettings } from "@shared/@common/model/selectors/settingsSelectors";
 
 const Cover = () => {
   const { pathname } = useLocation();
+
+  const settings = useSelector(getSettings);
+  console.log(settings);
+
+  useEffect(() => {
+    const { bgTheme, colorTheme, fontSize } = settings;
+
+    const dataset = document.documentElement.dataset;
+
+    dataset.bgTheme = bgTheme;
+    dataset.colorTheme = colorTheme;
+    dataset.fontSize = fontSize;
+  }, [settings]);
 
   // 탭 타이틀 설정하기
   useEffect(() => {

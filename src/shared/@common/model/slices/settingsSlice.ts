@@ -1,15 +1,12 @@
 // 설정 관련 slice
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { ColorThemeType, FontSizeType } from "@shared/@common/types";
+import {
+  ColorThemeType,
+  FontSizeType,
+  SettingsType,
+} from "@shared/@common/types";
 
-interface SettingsState {
-  bgTheme: string;
-  language: string;
-  colorTheme: ColorThemeType;
-  fontSize: FontSizeType;
-}
-
-const initialState: SettingsState = {
+const initialState: SettingsType = {
   bgTheme: "light",
   language: "ko-KR",
   colorTheme: "cornflowerblue",

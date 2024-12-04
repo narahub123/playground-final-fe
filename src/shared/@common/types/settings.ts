@@ -1,3 +1,11 @@
+// 설정 타입
+type SettingsType = {
+  bgTheme: string;
+  language: string;
+  colorTheme: ColorThemeType;
+  fontSize: FontSizeType;
+};
+
 // 배경 설정 키
 type ThemeKey = "light" | "dark";
 
@@ -23,4 +31,10 @@ type ColorThemeType =
 
 type FontSizeType = "xs" | "s" | "b" | "l" | "xl";
 
-export type { ColorThemeType, ThemeKey, ThemeColorType, FontSizeType };
+export type {
+  SettingsType,
+  ColorThemeType,
+  ThemeKey,
+  ThemeColorType,
+  FontSizeType,
+};

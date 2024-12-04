@@ -10,9 +10,12 @@ interface listModalCardType {
 import { SelectOptionType } from "./Select";
 
 import UserType from "./user";
+
 import { SigninType, SigninUserType, SigninUserSettingsType } from "./signin";
 
+// 설정 타입
 import {
+  SettingsType,
   ColorThemeType,
   ThemeKey,
   ThemeColorType,
@@ -30,4 +33,5 @@ export type {
   SigninUserSettingsType,
   ColorThemeType,
   FontSizeType,
+  SettingsType,
 };
