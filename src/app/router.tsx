@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import {
   Home,
   Explore,
-  Search,
+  Search as SearchPage,
   Notification,
   Messages,
   ProfilePage,
@@ -53,6 +53,7 @@ import { AuthLayout } from "@/layouts";
 import Constant from "@/constants";
 import { MainLayout, PageLayout } from "@shared/pages/layout";
 import { Description, Icon } from "@shared/@common/ui/components";
+import { Search } from "@shared/pages/ui";
 
 // 로그인 여부 확인
 const login = true;
@@ -84,7 +85,7 @@ export const router = createBrowserRouter([
               },
               {
                 path: `search`,
-                element: <Search />,
+                element: <SearchPage />,
               },
               {
                 path: "notifications",
@@ -167,7 +168,7 @@ export const router = createBrowserRouter([
                             />
                           </>
                         }
-                        topContent={<Description text="설명" />}
+                        topContent={<Search placeholder="설정 검색하기" />}
                         bottomContent={<div>아래</div>}
                       />
                     ),

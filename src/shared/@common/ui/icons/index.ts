@@ -3,7 +3,11 @@ import {
   FaCircleCheck as valid,
   FaCircleXmark as invalid,
 } from "react-icons/fa6";
-import { LuX as close, LuChevronDown as down } from "react-icons/lu";
+import {
+  LuX as close,
+  LuChevronDown as down,
+  LuSearch as search,
+} from "react-icons/lu";
 import { CiLight as light, CiDark as dark } from "react-icons/ci";
 import { RiEyeLine as eye, RiEyeOffLine as eyeoff } from "react-icons/ri";
 
@@ -18,6 +22,7 @@ const ICONS = {
   valid, // 유효함 표시
   invalid, // 유효하지 않음 표시
   down, // dropdown 닫힘 표시
+  search, // 검색 아이콘
 };
 
 export default ICONS;
