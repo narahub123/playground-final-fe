@@ -1,5 +1,7 @@
 import { TabItemType } from "@shared/pages/types";
 import styles from "./Tab.module.css";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 interface TabProps {}
 
@@ -7,28 +9,39 @@ const Tab = ({}: TabProps) => {
   const list: TabItemType[] = [
     {
       text: "전체",
-      path: "",
     },
     {
       text: "인증됨",
-      path: "verified",
+      path: "",
     },
     {
       text: "멘션",
-      path: "mention",
+      path: "",
     },
   ];
+
+  const [selection, setSelection] = useState(list[0].text);
 
   return (
     <div className={styles.tab}>
       <ul className={styles.list}>
-        {list.map((item) => (
-          <li key={item.text} className={styles.item}>
-            <div className={styles.wrap}>
-              <span className={styles.text}>{item.text}</span>
-            </div>
-          </li>
-        ))}
+        {list.map((item) => {
+          const selectedCond = selection === item.text ? styles.selected : "";
+
+          const Item = item.path ? Link : "li";
+          return (
+            <Item
+              key={item.text}
+              className={styles.item}
+              to={item.path || ""}
+              onClick={() => setSelection(item.text)}
+            >
+              <div className={`${styles.wrap} ${selectedCond}`}>
+                <span className={styles.text}>{item.text}</span>
+              </div>
+            </Item>
+          );
+        })}
       </ul>
     </div>
   );

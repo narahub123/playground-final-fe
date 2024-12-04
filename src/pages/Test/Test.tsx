@@ -140,6 +140,9 @@ const Test = () => {
 
   return (
     <div className="test" ref={pageRef}>
+      <div className={styles[`toggle-container`]}>
+        <BGToggleButton setLastClick={setLastClick} />
+      </div>
       <div className={styles.colorThemes} style={{ padding: "20px" }}>
         <ul style={{ display: "flex", gap: "10px", padding: "10px" }}>
           {colorThemeArr.map((mode, index) => (

@@ -24,3 +24,8 @@
   padding: 10px;
   border-bottom: 4px solid transparent;
 }
+
+.selected {
+  font-weight: bold;
+  border-bottom: 4px solid var(--theme-bgColor);
+}
