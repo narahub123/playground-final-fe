@@ -1,0 +1,26 @@
+.tab {
+  width: 100%;
+  border-bottom: 1px solid #eee;
+}
+
+.list {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.item:hover {
+  background-color: #eee;
+}
+
+.wrap {
+  padding: 10px;
+  border-bottom: 4px solid transparent;
+}

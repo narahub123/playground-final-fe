@@ -52,8 +52,8 @@ import SettingsBranchContainer from "@pages/Settings/layouts/SettingsBranchConta
 import { AuthLayout } from "@/layouts";
 import Constant from "@/constants";
 import { MainLayout, PageLayout } from "@shared/pages/layout";
-import { Description, Icon } from "@shared/@common/ui/components";
-import { Search } from "@shared/pages/ui";
+import { Description, Icon, Title } from "@shared/@common/ui/components";
+import { Search, Tab } from "@shared/pages/ui";
 
 // 로그인 여부 확인
 const login = true;
@@ -168,8 +168,8 @@ export const router = createBrowserRouter([
                             />
                           </>
                         }
-                        topContent={<Search placeholder="설정 검색하기" />}
-                        bottomContent={<div>아래</div>}
+                        topContent={<Title text="제목" />}
+                        bottomContent={<Tab />}
                       />
                     ),
                   },
