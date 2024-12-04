@@ -1,6 +1,5 @@
 .tab {
   width: 100%;
-  border-bottom: 1px solid #eee;
 }
 
 .list {
@@ -17,13 +16,13 @@
 }
 
 .item:hover {
-  background-color: #eee;
+  background-color: var(--hover-tab);
 }
 
 /* 포커스된 경우 */
 .item:focus-visible {
-  outline: 2px solid #aaa;
-  background-color: #eee;
+  outline: var(--outline-tab);
+  background-color: var(--hover-tab);
 }
 
 .wrap {
