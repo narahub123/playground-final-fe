@@ -14,8 +14,8 @@ html[data-theme="light"] {
   --border-modal: 2px solid transparent;
   --border-list: 2px solid black;
   --hover-icon: rgba(204, 204, 204, 0.5);
-  --hover-tab: rgba(238, 238, 238, 0.2);
   --outline-tab: 2px solid #aaa;
+  --hover-default: rgba(204, 204, 204, 0.2);
 }
 
 html[data-theme="dark"] {
@@ -33,6 +33,6 @@ html[data-theme="dark"] {
   --border-modal: 2px solid white;
   --border-list: 2px solid white;
   --hover-icon: rgba(170, 170, 170, 0.5);
-  --hover-tab: rgba(170, 170, 170, 0.2);
   --outline-tab: 2px solid #eee;
+  --hover-default: rgba(170, 170, 170, 0.2);
 }
