@@ -51,7 +51,11 @@ import {
 import SettingsBranchContainer from "@pages/Settings/layouts/SettingsBranchContainer/SettingsBranchContainer";
 import { AuthLayout } from "@/layouts";
 import Constant from "@/constants";
-import { MainLayout, PageLayout } from "@shared/pages/layout";
+import {
+  MainContentListLayout,
+  MainLayout,
+  PageLayout,
+} from "@shared/pages/layout";
 import { Description, Icon, Title } from "@shared/@common/ui/components";
 import { Search, Tab } from "@shared/pages/ui";
 import { tabListExample } from "@shared/pages/data";
@@ -176,6 +180,7 @@ export const router = createBrowserRouter([
                             initialValue={tabListExample[0].text}
                           >
                             <Tab list={tabListExample} />
+                            <MainContentListLayout list={[]} item={<></>} />
                           </SelectionProvider>
                         }
                       />
