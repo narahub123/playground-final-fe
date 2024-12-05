@@ -1,6 +1,4 @@
-import { SettingsMainBranchType } from "../types";
-
-const settingsBranchList: SettingsMainBranchType[] = [
+const settingsBranchList = [
   // 계정
   {
     title: "계정",

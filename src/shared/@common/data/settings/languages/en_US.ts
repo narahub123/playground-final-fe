@@ -1,7 +1,6 @@
-import { SettingsMainBranchType } from "@features/settings-setting/types";
 import { countryNamesEng } from "../../countries";
 
-const settingsBranchList: SettingsMainBranchType[] = [
+const settingsBranchList = [
   {
     title: "Account",
     expl: "Check your account information, download data logs, or learn about account deactivation options.",

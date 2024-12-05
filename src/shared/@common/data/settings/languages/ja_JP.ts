@@ -1,7 +1,6 @@
-import { SettingsMainBranchType } from "@features/settings-setting/types";
 import { countryNamesJap } from "../../countries";
 
-const settingsBranchList: SettingsMainBranchType[] = [
+const settingsBranchList = [
   // アカウント
   {
     title: "アカウント",

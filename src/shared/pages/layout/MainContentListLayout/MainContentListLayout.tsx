@@ -7,6 +7,8 @@ interface MainContentListLayoutProps {
 }
 
 const MainContentListLayout = ({ list, item }: MainContentListLayoutProps) => {
+  console.log(list);
+
   return (
     <div className={styles[`list-layout`]}>
       <ul className={styles.list}>

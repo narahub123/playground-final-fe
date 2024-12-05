@@ -1,7 +1,6 @@
-import { SettingsMainBranchType } from "@features/settings-setting/types";
 import { countryNamesZhTW } from "../../countries";
 
-const settingsBranchList: SettingsMainBranchType[] = [
+const settingsBranchList = [
   // 账号
   {
     title: "账号",
