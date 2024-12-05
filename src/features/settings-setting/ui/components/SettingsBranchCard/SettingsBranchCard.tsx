@@ -15,7 +15,7 @@ const SettingsBranchCard = ({ item }: settingsbranchcardProps) => {
   const Card = openModal ? "li" : Link;
 
   return (
-    <Card className={styles.card} to={item.path}>
+    <Card className={styles.card} to={item.path} tabIndex={0}>
       {item?.icon && (
         <Icon
           iconName={item.icon}

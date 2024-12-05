@@ -6,7 +6,11 @@
 }
 
 .card:hover {
-  background-color: var(hover-default);
+  background-color: var(--hover-default);
+}
+
+.card:focus {
+  background-color: var(--hover-default);
 }
 
 .icon {
