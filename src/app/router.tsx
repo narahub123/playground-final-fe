@@ -186,7 +186,7 @@ export const router = createBrowserRouter([
                           >
                             <Tab list={tabListExample} />
                             <MainContentListLayout
-                              list={AccessibilityAndDisplayAndLanguages}
+                              listName={"AccessibilityAndDisplayAndLanguages"}
                               item={<SettingsBranchCard />}
                             />
                           </SelectionProvider>
