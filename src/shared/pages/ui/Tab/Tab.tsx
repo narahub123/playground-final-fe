@@ -14,7 +14,6 @@ const Tab = ({ list }: TabProps) => {
 
   const { selection, setSelection } = useSelectionContext();
 
-  
   // 포커스
   useEffect(() => {
     const index = list.findIndex((item) => item.text === focus);
@@ -26,7 +25,7 @@ const Tab = ({ list }: TabProps) => {
 
   return (
     <div className={styles.tab}>
-      <ul className={styles.list}>
+      <ul className={styles.list} role="listbox">
         {list.map((item, index) => {
           const selectedCond = selection === item.text ? styles.selected : "";
 
@@ -40,6 +39,9 @@ const Tab = ({ list }: TabProps) => {
             <Item
               key={item.text}
               className={styles.item}
+              role="option" // 선택 가능한 옵션 표시
+              aria-selected={selection === item.text} // 선택 여부
+              aria-lable={`${item.text}`}
               to={item.path || ""}
               onClick={() => setSelection(item.text)}
               onFocus={() => setFocus(item.text)}
