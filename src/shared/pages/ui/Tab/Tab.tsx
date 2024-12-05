@@ -2,28 +2,20 @@ import { TabItemType } from "@shared/pages/types";
 import styles from "./Tab.module.css";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelectionContext } from "@shared/pages/model/hooks";
 
-interface TabProps {}
+interface TabProps {
+  list: TabItemType[];
+}
 
-const Tab = ({}: TabProps) => {
-  const list: TabItemType[] = [
-    {
-      text: "전체",
-    },
-    {
-      text: "인증됨",
-      path: "",
-    },
-    {
-      text: "멘션",
-      path: "",
-    },
-  ];
-
+const Tab = ({ list }: TabProps) => {
   const itemRefs = useRef<any>([]);
-  const [selection, setSelection] = useState(list[0].text);
   const [focus, setFocus] = useState("");
 
+  const { selection, setSelection } = useSelectionContext();
+
+  
+  // 포커스
   useEffect(() => {
     const index = list.findIndex((item) => item.text === focus);
 

@@ -54,6 +54,8 @@ import Constant from "@/constants";
 import { MainLayout, PageLayout } from "@shared/pages/layout";
 import { Description, Icon, Title } from "@shared/@common/ui/components";
 import { Search, Tab } from "@shared/pages/ui";
+import { tabListExample } from "@shared/pages/data";
+import { SelectionProvider } from "@shared/pages/model/providers";
 
 // 로그인 여부 확인
 const login = true;
@@ -169,7 +171,13 @@ export const router = createBrowserRouter([
                           </>
                         }
                         topContent={<Title text="제목" />}
-                        bottomContent={<Tab />}
+                        bottomContent={
+                          <SelectionProvider
+                            initialValue={tabListExample[0].text}
+                          >
+                            <Tab list={tabListExample} />
+                          </SelectionProvider>
+                        }
                       />
                     ),
                   },

@@ -14,6 +14,9 @@ const MainContentLayout = ({
   const [search, setSearch] = useState("");
 
   // 공유하는 정보를 컴포넌트에 추가함
+
+
+  
   const top = React.cloneElement(topContent as ReactElement, {
     search,
     setSearch,

@@ -1,3 +1,7 @@
-import { TabItemType } from "./tab";
+import {
+  TabItemType,
+  SelectionContextType,
+  SelectionProviderType,
+} from "./components";
 
-export type { TabItemType };
+export type { TabItemType, SelectionContextType, SelectionProviderType };
