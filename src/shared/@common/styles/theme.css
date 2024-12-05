@@ -16,6 +16,7 @@ html[data-theme="light"] {
   --hover-icon: rgba(204, 204, 204, 0.5);
   --outline-tab: 2px solid #aaa;
   --hover-default: rgba(204, 204, 204, 0.2);
+  --color-description: #555;
 }
 
 html[data-theme="dark"] {
@@ -35,4 +36,5 @@ html[data-theme="dark"] {
   --hover-icon: rgba(170, 170, 170, 0.5);
   --outline-tab: 2px solid #eee;
   --hover-default: rgba(170, 170, 170, 0.2);
+  --color-description: #777;
 }
