@@ -17,6 +17,7 @@ import {
   LuUsers as delegate,
   LuSmartphoneNfc as preferences,
   LuPen as pen,
+  LuChevronRight as right,
 } from "react-icons/lu";
 import { CiLight as light, CiDark as dark } from "react-icons/ci";
 import { RiEyeLine as eye, RiEyeOffLine as eyeoff } from "react-icons/ri";
@@ -51,6 +52,7 @@ const ICONS = {
   map, // 지도
   barChart, // 막대 그래프
   shortcut, // 단축키
+  right, // 우측 화살표
 };
 
 export default ICONS;

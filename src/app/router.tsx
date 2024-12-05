@@ -60,7 +60,8 @@ import { Description, Icon, Title } from "@shared/@common/ui/components";
 import { Search, Tab } from "@shared/pages/ui";
 import { tabListExample } from "@shared/pages/data";
 import { SelectionProvider } from "@shared/pages/model/providers";
-import { settingsMainBrachList } from "@features/settings-setting/data";
+import { SettingsBranchCard } from "@features/settings-setting/ui/components";
+import { accountBranchList } from "@shared/@common/data/settings/languages/ko_KR/settings-mid-branch-list";
 
 // 로그인 여부 확인
 const login = true;
@@ -175,15 +176,15 @@ export const router = createBrowserRouter([
                             />
                           </>
                         }
-                        topContent={<Title text="제목" />}
+                        topContent={<Description text="제목" />}
                         bottomContent={
                           <SelectionProvider
                             initialValue={tabListExample[0].text}
                           >
                             <Tab list={tabListExample} />
                             <MainContentListLayout
-                              list={settingsMainBrachList}
-                              item={<></>}
+                              list={accountBranchList}
+                              item={<SettingsBranchCard />}
                             />
                           </SelectionProvider>
                         }
