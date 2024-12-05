@@ -16,13 +16,13 @@
 }
 
 .item:hover {
-  background-color: var(--hover-tab);
+  background-color: var(--hover-default);
 }
 
 /* 포커스된 경우 */
 .item:focus-visible {
   outline: var(--outline-tab);
-  background-color: var(--hover-tab);
+  background-color: var(--hover-default);
 }
 
 .wrap {
