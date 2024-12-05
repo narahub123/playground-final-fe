@@ -15,7 +15,13 @@ const SettingsBranchCard = ({ item }: settingsbranchcardProps) => {
   const Card = openModal ? "li" : Link;
 
   return (
-    <Card className={styles.card} to={item.path} tabIndex={0}>
+    <Card
+      className={styles.card}
+      to={item.path}
+      tabIndex={0}
+      aria-label={item.title} // 링크인 경우 내용 추가
+      role={openModal ? "button" : undefined} // 모달창을 열 때만 role 명시
+    >
       {item?.icon && (
         <Icon
           iconName={item.icon}
