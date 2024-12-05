@@ -9,8 +9,13 @@ interface settingsbranchcardProps {
 
 const SettingsBranchCard = ({ item }: settingsbranchcardProps) => {
   if (!item) return;
+
+  const openModal = item.path.includes("/i");
+
+  const Card = openModal ? "li" : Link;
+
   return (
-    <Link className={styles.card} to={item.path}>
+    <Card className={styles.card} to={item.path}>
       {item?.icon && (
         <Icon
           iconName={item.icon}
@@ -25,7 +30,7 @@ const SettingsBranchCard = ({ item }: settingsbranchcardProps) => {
         {item.expl && <Description text={item.expl} />}
       </span>
       <Icon iconName="right" iconTitle="" ariaHidden fontSize={20} />
-    </Link>
+    </Card>
   );
 };
 
