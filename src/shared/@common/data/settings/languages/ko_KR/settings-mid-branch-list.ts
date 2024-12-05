@@ -160,7 +160,7 @@ const AccessibilityAndDisplayAndLanguages: SettingsBranchType[] = [
   {
     title: "키보드 단축키",
     path: "/i/keyboard_shortcuts",
-    icon: "",
+    icon: "shortcut",
   },
 ];
 

@@ -145,7 +145,7 @@ const AccessibilityAndDisplayAndLanguages: SettingsBranchType[] = [
   {
     title: "Keyboard Shortcuts",
     path: "/i/keyboard_shortcuts",
-    icon: "",
+    icon: "shortcut",
   },
 ];
 

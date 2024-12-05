@@ -160,7 +160,7 @@ const AccessibilityAndDisplayAndLanguages: SettingsBranchType[] = [
   {
     title: "キーボードショートカット",
     path: "/i/keyboard_shortcuts",
-    icon: "",
+    icon: "shortcut",
   },
 ];
 

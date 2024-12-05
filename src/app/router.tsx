@@ -61,7 +61,10 @@ import { Search, Tab } from "@shared/pages/ui";
 import { tabListExample } from "@shared/pages/data";
 import { SelectionProvider } from "@shared/pages/model/providers";
 import { SettingsBranchCard } from "@features/settings-setting/ui/components";
-import { accountBranchList } from "@shared/@common/data/settings/languages/ko_KR/settings-mid-branch-list";
+import {
+  AccessibilityAndDisplayAndLanguages,
+  accountBranchList,
+} from "@shared/@common/data/settings/languages/ko_KR/settings-mid-branch-list";
 
 // 로그인 여부 확인
 const login = true;
@@ -183,7 +186,7 @@ export const router = createBrowserRouter([
                           >
                             <Tab list={tabListExample} />
                             <MainContentListLayout
-                              list={accountBranchList}
+                              list={AccessibilityAndDisplayAndLanguages}
                               item={<SettingsBranchCard />}
                             />
                           </SelectionProvider>

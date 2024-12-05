@@ -160,7 +160,7 @@ const AccessibilityAndDisplayAndLanguages: SettingsBranchType[] = [
   {
     title: "键盘快捷键",
     path: "/i/keyboard_shortcuts",
-    icon: "",
+    icon: "shortcut",
   },
 ];
 
