@@ -14,7 +14,7 @@ const PrivacyAndSafetyPage = () => {
       topContent={<Description text={description} />}
       bottomContent={
         <MainContentListLayout
-          listName={["accountBranchList"]}
+          listName={["privacyAndSafetyBranchList"]}
           item={<SettingsBranchCard />}
         />
       }
