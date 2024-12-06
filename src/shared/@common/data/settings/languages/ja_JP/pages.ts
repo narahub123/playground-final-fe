@@ -8,6 +8,11 @@ const pages = {
     description:
       "アカウント情報を確認したり、データ記録をダウンロードしたり、アカウント無効化オプションについて詳しく知ることができます。",
   },
+  SecurityAndAccountAccessPage: {
+    pageTitle: "セキュリティとアカウントアクセス",
+    description:
+      "アカウントのセキュリティを管理し、接続されたアプリを含むアカウントの利用状況を追跡します。",
+  },
 };
 
 export default pages;
