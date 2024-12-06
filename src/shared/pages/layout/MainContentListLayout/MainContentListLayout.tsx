@@ -1,8 +1,10 @@
-import { cloneElement, ReactElement, ReactNode } from "react";
 import styles from "./MainContentListLayout.module.css";
+import { cloneElement, ReactElement, ReactNode } from "react";
 import { useLanguageMode } from "@shared/@common/model/hooks";
 import { SettingsBranchType } from "@features/settings-setting/types/data";
 import { Description } from "@shared/@common/ui/components";
+import { getLanguage } from "@shared/@common/model/selectors";
+import { useSelector } from "react-redux";
 
 interface MainContentListLayoutProps {
   listName: string[];
@@ -15,7 +17,17 @@ const MainContentListLayout = ({
   item,
   search,
 }: MainContentListLayoutProps) => {
+  // 언어
+  const lang = useSelector(getLanguage);
+
+  // 목록
   const list: SettingsBranchType[] = useLanguageMode(listName);
+
+  // 검색 결과가 없는 경우
+  const { title, description } = useLanguageMode([
+    "components",
+    "mainContentListLayout",
+  ]);
 
   const filteredList = list.filter((item) => {
     if (!search) {
@@ -31,9 +43,19 @@ const MainContentListLayout = ({
         {search && filteredList.length === 0 && (
           <div className={styles.empty}>
             <div className={styles.title}>
-              {`${search}에 대한 검색 결과가 없습니다.`}
+              {lang === "ko-KR"
+                ? `${search}${title[0]}`
+                : lang === "en-US"
+                ? `${title[0]} ${search}.`
+                : lang === "ja-JP"
+                ? `${search}${title[0]}`
+                : lang === "zh-CN"
+                ? `${title[0]}${search}${title[1]}`
+                : lang === "zh-TW"
+                ? `${title[0]}${search}${title[1]}`
+                : ""}
             </div>
-            <Description text="입력하신 단어에 대한 결과가 없습니다. 다른 검색어를 사용해보세요." />
+            <Description text={description} />
           </div>
         )}
         {filteredList.map((i, index) => {
