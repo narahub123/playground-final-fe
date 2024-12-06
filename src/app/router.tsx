@@ -51,6 +51,7 @@ import {
   SecurityAndAccountAccessPage,
   PrivacyAndSafetyPage,
   NotificationsPage,
+  AccessibilityAndDisplayAndLanguagesPage,
 } from "@pages/Settings/pages";
 import SettingsBranchContainer from "@pages/Settings/layouts/SettingsBranchContainer/SettingsBranchContainer";
 import { AuthLayout } from "@/layouts";
@@ -193,15 +194,7 @@ export const router = createBrowserRouter([
                   // 접근성, 표시, 언어
                   {
                     path: "accessibility_display_and_languages",
-                    element: (
-                      <SettingsBranchContainer
-                        title={Constant.settings.accessibility.title}
-                        detail={Constant.settings.accessibility.detail}
-                        settingsBranchList={
-                          Constant.settings.accessibility.settingsBranchList
-                        }
-                      />
-                    ),
+                    element: <AccessibilityAndDisplayAndLanguagesPage />,
                   },
                   // 추가 리소스
                   {

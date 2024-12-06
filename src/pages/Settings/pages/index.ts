@@ -25,12 +25,14 @@ import { AccountPage } from "./Account";
 import { SecurityAndAccountAccessPage } from "./SecurityAndAccountAccess";
 import { PrivacyAndSafetyPage } from "./PrivacyAndSafety";
 import { NotificationsPage } from "./Notifications";
+import { AccessibilityAndDisplayAndLanguagesPage } from "./AccessibilityAndDisplayAndLanguages";
 export {
   SettingsLandingPage,
   AccountPage,
   SecurityAndAccountAccessPage,
   PrivacyAndSafetyPage,
   NotificationsPage,
+  AccessibilityAndDisplayAndLanguagesPage,
   About,
   AccountData,
   ChangePassword,

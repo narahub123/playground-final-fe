@@ -1,0 +1,3 @@
+import AccessibilityAndDisplayAndLanguagesPage from "./AccessibilityAndDisplayAndLanguagesPage/AccessibilityAndDisplayAndLanguagesPage";
+
+export { AccessibilityAndDisplayAndLanguagesPage };
