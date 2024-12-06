@@ -21,6 +21,7 @@ import Accessibility from "./AccessibilityDisplayAndLanguagesFolder/Accessibilit
 import Display from "./AccessibilityDisplayAndLanguagesFolder/Display/Display";
 import Languages from "./AccessibilityDisplayAndLanguagesFolder/Languages/Languages";
 import DataUsage from "./AccessibilityDisplayAndLanguagesFolder/DataUsage/DataUsage";
+import SettingsLandingPage from "./SettingsLandingPage/SettingsLandingPage";
 
 export {
   Landing,
@@ -46,4 +47,5 @@ export {
   Display,
   Languages,
   DataUsage,
+  SettingsLandingPage,
 };

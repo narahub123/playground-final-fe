@@ -45,6 +45,7 @@ import {
   NotificationFilter,
   NotificationPreferences,
   Security,
+  SettingsLandingPage,
   SortContents,
   YourPosts,
 } from "@pages/Settings/pages";
@@ -164,35 +165,7 @@ export const router = createBrowserRouter([
                   // landing 페이지
                   {
                     index: true,
-                    element: (
-                      <MainLayout
-                        pageTitle="설정"
-                        backward
-                        extra={
-                          <>
-                            <Icon
-                              iconName="dark"
-                              iconTitle=""
-                              handleClick={() => {
-                                console.log("아이콘 눌림");
-                              }}
-                            />
-                          </>
-                        }
-                        topContent={<Description text="제목" />}
-                        bottomContent={
-                          <SelectionProvider
-                            initialValue={tabListExample[0].text}
-                          >
-                            <Tab list={tabListExample} />
-                            <MainContentListLayout
-                              listName={"AccessibilityAndDisplayAndLanguages"}
-                              item={<SettingsBranchCard />}
-                            />
-                          </SelectionProvider>
-                        }
-                      />
-                    ),
+                    element: <SettingsLandingPage />,
                   },
                   // 계정
                   {
