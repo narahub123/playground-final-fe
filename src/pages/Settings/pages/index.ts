@@ -24,11 +24,13 @@ import SettingsLandingPage from "./SettingsLandingPage/SettingsLandingPage";
 import { AccountPage } from "./Account";
 import { SecurityAndAccountAccessPage } from "./SecurityAndAccountAccess";
 import { PrivacyAndSafetyPage } from "./PrivacyAndSafety";
+import { NotificationsPage } from "./Notifications";
 export {
   SettingsLandingPage,
   AccountPage,
   SecurityAndAccountAccessPage,
   PrivacyAndSafetyPage,
+  NotificationsPage,
   About,
   AccountData,
   ChangePassword,

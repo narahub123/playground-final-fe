@@ -50,6 +50,7 @@ import {
   YourPosts,
   SecurityAndAccountAccessPage,
   PrivacyAndSafetyPage,
+  NotificationsPage,
 } from "@pages/Settings/pages";
 import SettingsBranchContainer from "@pages/Settings/layouts/SettingsBranchContainer/SettingsBranchContainer";
 import { AuthLayout } from "@/layouts";
@@ -187,15 +188,7 @@ export const router = createBrowserRouter([
                   // 알림
                   {
                     path: "notifications",
-                    element: (
-                      <SettingsBranchContainer
-                        title={Constant.settings.notifications.title}
-                        detail={Constant.settings.notifications.detail}
-                        settingsBranchList={
-                          Constant.settings.notifications.settingsBranchList
-                        }
-                      />
-                    ),
+                    element: <NotificationsPage />,
                   },
                   // 접근성, 표시, 언어
                   {
