@@ -13,6 +13,10 @@ const pages = {
     description:
       "Manage the security of your account and track account usage, including connected apps.",
   },
+  PrivacyAndSafetyPage: {
+    pageTitle: "Privacy and Safety",
+    description: "Manage the information displayed and shared on PlayGround.",
+  },
 };
 
 export default pages;

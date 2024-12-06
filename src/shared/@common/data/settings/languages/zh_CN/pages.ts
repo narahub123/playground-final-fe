@@ -11,6 +11,10 @@ const pages = {
     pageTitle: "安全与账户访问权限",
     description: "管理账户安全并跟踪账户使用情况，包括连接的应用程序。",
   },
+  PrivacyAndSafetyPage: {
+    pageTitle: "隐私与安全",
+    description: "管理在PlayGround上显示和共享的信息。",
+  },
 };
 
 export default pages;

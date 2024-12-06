@@ -13,6 +13,10 @@ const pages = {
     description:
       "계정의 보안을 관리하고, 계정에 연결된 앱을 포함해 계정 사용을 추적합니다.",
   },
+  PrivacyAndSafetyPage: {
+    pageTitle: "개인 정보 및 안전",
+    description: "PlayGround에서 표시되고 공유되는 정보를 관리합니다.",
+  },
 };
 
 export default pages;
