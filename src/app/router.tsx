@@ -54,6 +54,7 @@ import {
   NotificationsPage,
   AccessibilityAndDisplayAndLanguagesPage,
   MuteAndBlockPage,
+  NotificationPreferencePage,
 } from "@pages/Settings/pages";
 import SettingsBranchContainer from "@pages/Settings/layouts/SettingsBranchContainer/SettingsBranchContainer";
 import { AuthLayout } from "@/layouts";
@@ -282,12 +283,12 @@ export const router = createBrowserRouter([
                     element: <AdsPreferences />,
                   },
                   {
-                    path: "filters",
+                    path: "notifications/filters",
                     element: <NotificationFilter />,
                   },
                   {
-                    path: "preferences",
-                    element: <NotificationPreferences />,
+                    path: "notifications/preferences",
+                    element: <NotificationPreferencePage />,
                   },
                   {
                     path: "accessibility",

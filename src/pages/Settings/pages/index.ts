@@ -27,7 +27,7 @@ import {
   AppsAndSessionsPage,
 } from "./SecurityAndAccountAccess";
 import { PrivacyAndSafetyPage, MuteAndBlockPage } from "./PrivacyAndSafety";
-import { NotificationsPage } from "./Notifications";
+import { NotificationsPage, NotificationPreferencePage } from "./Notifications";
 import { AccessibilityAndDisplayAndLanguagesPage } from "./AccessibilityAndDisplayAndLanguages";
 export {
   SettingsLandingPage,
@@ -38,6 +38,7 @@ export {
   AccessibilityAndDisplayAndLanguagesPage,
   AppsAndSessionsPage,
   MuteAndBlockPage,
+  NotificationPreferencePage,
   About,
   AccountData,
   ChangePassword,
