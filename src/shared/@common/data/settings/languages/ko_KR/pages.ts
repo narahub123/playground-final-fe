@@ -17,6 +17,10 @@ const pages = {
     pageTitle: "개인 정보 및 안전",
     description: "PlayGround에서 표시되고 공유되는 정보를 관리합니다.",
   },
+  NotificationsPage: {
+    pageTitle: "알림",
+    description: "활동, 관심사 및 추천에 관해 받는 알림의 종류를 선택합니다.",
+  },
 };
 
 export default pages;

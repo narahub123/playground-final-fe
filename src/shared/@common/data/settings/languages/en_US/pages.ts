@@ -17,6 +17,11 @@ const pages = {
     pageTitle: "Privacy and Safety",
     description: "Manage the information displayed and shared on PlayGround.",
   },
+  NotificationsPage: {
+    pageTitle: "Notifications",
+    description:
+      "Choose the types of notifications you want to receive about activities, interests, and recommendations.",
+  },
 };
 
 export default pages;

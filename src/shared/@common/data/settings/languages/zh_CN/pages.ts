@@ -15,6 +15,10 @@ const pages = {
     pageTitle: "隐私与安全",
     description: "管理在PlayGround上显示和共享的信息。",
   },
+  NotificationsPage: {
+    pageTitle: "通知",
+    description: "选择您希望收到的有关活动、兴趣和推荐的通知类型。",
+  },
 };
 
 export default pages;
