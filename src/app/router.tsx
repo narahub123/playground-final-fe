@@ -49,6 +49,7 @@ import {
   SortContents,
   YourPosts,
   SecurityAndAccountAccessPage,
+  PrivacyAndSafetyPage,
 } from "@pages/Settings/pages";
 import SettingsBranchContainer from "@pages/Settings/layouts/SettingsBranchContainer/SettingsBranchContainer";
 import { AuthLayout } from "@/layouts";
@@ -181,15 +182,7 @@ export const router = createBrowserRouter([
                   // 개인정보 및 보안
                   {
                     path: "privacy_and_safety",
-                    element: (
-                      <SettingsBranchContainer
-                        title={Constant.settings.privacy.title}
-                        detail={Constant.settings.privacy.detail}
-                        settingsBranchList={
-                          Constant.settings.privacy.settingsBranchList
-                        }
-                      />
-                    ),
+                    element: <PrivacyAndSafetyPage />,
                   },
                   // 알림
                   {

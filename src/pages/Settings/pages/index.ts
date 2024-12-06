@@ -23,11 +23,12 @@ import DataUsage from "./AccessibilityDisplayAndLanguagesFolder/DataUsage/DataUs
 import SettingsLandingPage from "./SettingsLandingPage/SettingsLandingPage";
 import { AccountPage } from "./Account";
 import { SecurityAndAccountAccessPage } from "./SecurityAndAccountAccess";
-
+import { PrivacyAndSafetyPage } from "./PrivacyAndSafety";
 export {
   SettingsLandingPage,
   AccountPage,
   SecurityAndAccountAccessPage,
+  PrivacyAndSafetyPage,
   About,
   AccountData,
   ChangePassword,
