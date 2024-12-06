@@ -21,6 +21,22 @@ const pages = {
     pageTitle: "알림",
     description: "활동, 관심사 및 추천에 관해 받는 알림의 종류를 선택합니다.",
   },
+  AccessibilityAndDisplayAndLanguagesPage: {
+    pageTitle: "접근성, 표시, 언어",
+    description: "PlayGround의 콘텐츠 표시 방식을 관리합니다.",
+  },
+  AppsAndSessionsPage: {
+    pageTitle: "접근성, 표시, 언어",
+    description: "PlayGround의 콘텐츠 표시 방식을 관리합니다.",
+  },
+  MuteAndBlockPage: {
+    pageTitle: "접근성, 표시, 언어",
+    description: "PlayGround의 콘텐츠 표시 방식을 관리합니다.",
+  },
+  NotificationPreferencePage: {
+    pageTitle: "접근성, 표시, 언어",
+    description: "PlayGround의 콘텐츠 표시 방식을 관리합니다.",
+  },
 };
 
 export default pages;

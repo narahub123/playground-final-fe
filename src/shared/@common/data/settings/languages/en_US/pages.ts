@@ -22,6 +22,22 @@ const pages = {
     description:
       "Choose the types of notifications you want to receive about activities, interests, and recommendations.",
   },
+  AccessibilityAndDisplayAndLanguagesPage: {
+    pageTitle: "Accessibility, Display, and Languages",
+    description: "Manage how content is displayed on PlayGround.",
+  },
+  AppsAndSessionsPage: {
+    pageTitle: "Apps and Sessions",
+    description: "Manage how content is displayed on PlayGround.",
+  },
+  MuteAndBlockPage: {
+    pageTitle: "Mute and Block",
+    description: "Manage how content is displayed on PlayGround.",
+  },
+  NotificationPreferencePage: {
+    pageTitle: "Notification Preferences",
+    description: "Manage how content is displayed on PlayGround.",
+  },
 };
 
 export default pages;

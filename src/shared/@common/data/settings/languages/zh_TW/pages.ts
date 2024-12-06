@@ -19,6 +19,22 @@ const pages = {
     pageTitle: "通知",
     description: "選擇您希望接收的有關活動、興趣和推薦的通知類型。",
   },
+  AccessibilityAndDisplayAndLanguagesPage: {
+    pageTitle: "輔助功能、顯示和語言",
+    description: "管理PlayGround內容的顯示方式。",
+  },
+  AppsAndSessionsPage: {
+    pageTitle: "應用程式和會話",
+    description: "管理PlayGround內容的顯示方式。",
+  },
+  MuteAndBlockPage: {
+    pageTitle: "靜音和封鎖",
+    description: "管理PlayGround內容的顯示方式。",
+  },
+  NotificationPreferencePage: {
+    pageTitle: "通知偏好設定",
+    description: "管理PlayGround內容的顯示方式。",
+  },
 };
 
 export default pages;
