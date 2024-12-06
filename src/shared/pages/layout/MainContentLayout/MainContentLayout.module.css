@@ -1,3 +1,7 @@
 .layout {
   width: 100%;
 }
+
+.bottomContent {
+  margin-top: 10px;
+}
