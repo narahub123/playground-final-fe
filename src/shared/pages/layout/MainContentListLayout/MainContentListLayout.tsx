@@ -4,7 +4,7 @@ import { useLanguageMode } from "@shared/@common/model/hooks";
 import { SettingsBranchType } from "@features/settings-setting/types/data";
 
 interface MainContentListLayoutProps {
-  listName: string;
+  listName: string[];
   item: ReactNode;
   search?: string;
 }

@@ -9,7 +9,7 @@ const SettingsLandingPage = () => {
       topContent={<Search placeholder="설정 검색하기" />}
       bottomContent={
         <MainContentListLayout
-          listName="settingsMainBranchList"
+          listName={["settingsMainBranchList"]}
           item={<SettingsBranchCard />}
         />
       }
