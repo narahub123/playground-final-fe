@@ -14,6 +14,8 @@ import {
   notificationPreferenceBranchList,
 } from "./settings-sub-branch-list";
 
+import pages from "./pages";
+
 const en_US = {
   // 언어 선택
   languageSelect: {
@@ -64,6 +66,9 @@ const en_US = {
   appAndSessionsBranchList, // 앱 및 세션
   muteAndBlockBranchList, // 뮤트 및 차단
   notificationPreferenceBranchList, // 알림 환경설정
+
+  // 페이지
+  pages,
 };
 
 export default en_US;

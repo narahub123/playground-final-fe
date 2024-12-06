@@ -15,6 +15,8 @@ import {
   notificationPreferenceBranchList,
 } from "./settings-sub-branch-list";
 
+import pages from "./pages";
+
 const zh_TW = {
   languageSelect: {
     wrongCountryCode: "無效的國家代碼",
@@ -67,6 +69,9 @@ const zh_TW = {
   appAndSessionsBranchList, // 앱 및 세션
   muteAndBlockBranchList, // 뮤트 및 차단
   notificationPreferenceBranchList, // 알림 환경설정
+
+  // 페이지
+  pages,
 };
 
 export default zh_TW;

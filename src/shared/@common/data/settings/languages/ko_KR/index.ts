@@ -9,11 +9,14 @@ import {
   notificationBranchList,
   AccessibilityAndDisplayAndLanguages,
 } from "./settings-mid-branch-list";
+
 import {
   appAndSessionsBranchList,
   muteAndBlockBranchList,
   notificationPreferenceBranchList,
 } from "./settings-sub-branch-list";
+
+import pages from "./pages";
 
 const ko_KR = {
   languageSelect: {
@@ -64,6 +67,9 @@ const ko_KR = {
   appAndSessionsBranchList, // 앱 및 세션
   muteAndBlockBranchList, // 뮤트 및 차단
   notificationPreferenceBranchList, // 알림 환경설정
+
+  // 페이지
+  pages,
 };
 
 export default ko_KR;
