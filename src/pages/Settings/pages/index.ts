@@ -22,10 +22,12 @@ import Languages from "./AccessibilityDisplayAndLanguagesFolder/Languages/Langua
 import DataUsage from "./AccessibilityDisplayAndLanguagesFolder/DataUsage/DataUsage";
 import SettingsLandingPage from "./SettingsLandingPage/SettingsLandingPage";
 import { AccountPage } from "./Account";
+import { SecurityAndAccountAccessPage } from "./SecurityAndAccountAccess";
 
 export {
   SettingsLandingPage,
   AccountPage,
+  SecurityAndAccountAccessPage,
   About,
   AccountData,
   ChangePassword,

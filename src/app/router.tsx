@@ -48,6 +48,7 @@ import {
   Security,
   SortContents,
   YourPosts,
+  SecurityAndAccountAccessPage,
 } from "@pages/Settings/pages";
 import SettingsBranchContainer from "@pages/Settings/layouts/SettingsBranchContainer/SettingsBranchContainer";
 import { AuthLayout } from "@/layouts";
@@ -175,15 +176,7 @@ export const router = createBrowserRouter([
                   // 보안 및 계정 접근 권한
                   {
                     path: "security_and_account_access",
-                    element: (
-                      <SettingsBranchContainer
-                        title={Constant.settings.security.title}
-                        detail={Constant.settings.security.detail}
-                        settingsBranchList={
-                          Constant.settings.security.settingsBranchList
-                        }
-                      />
-                    ),
+                    element: <SecurityAndAccountAccessPage />,
                   },
                   // 개인정보 및 보안
                   {
