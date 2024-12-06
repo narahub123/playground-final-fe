@@ -26,6 +26,7 @@ import Feeds from "@pages/Explore/components/Feeds/Feeds";
 import {
   SettingsLandingPage,
   AccountPage,
+  AppsAndSessionsPage,
   About,
   Accessibility,
   AccountData,
@@ -229,7 +230,7 @@ export const router = createBrowserRouter([
                   // 앱 및 세션
                   {
                     path: "apps_and_sessions",
-                    element: <AppAndSession />,
+                    element: <AppsAndSessionsPage />,
                   },
                   {
                     path: "connected_accounts",
@@ -238,11 +239,6 @@ export const router = createBrowserRouter([
                   {
                     path: "delegate",
                     element: <Delegate />,
-                  },
-                  // 앱 및 세션
-                  {
-                    path: "apps_and_sessions",
-                    element: <AppAndSession />,
                   },
                   {
                     path: "connected_accounts",

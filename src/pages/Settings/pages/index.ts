@@ -22,7 +22,10 @@ import Languages from "./AccessibilityDisplayAndLanguagesFolder/Languages/Langua
 import DataUsage from "./AccessibilityDisplayAndLanguagesFolder/DataUsage/DataUsage";
 import SettingsLandingPage from "./SettingsLandingPage/SettingsLandingPage";
 import { AccountPage } from "./Account";
-import { SecurityAndAccountAccessPage } from "./SecurityAndAccountAccess";
+import {
+  SecurityAndAccountAccessPage,
+  AppsAndSessionsPage,
+} from "./SecurityAndAccountAccess";
 import { PrivacyAndSafetyPage } from "./PrivacyAndSafety";
 import { NotificationsPage } from "./Notifications";
 import { AccessibilityAndDisplayAndLanguagesPage } from "./AccessibilityAndDisplayAndLanguages";
@@ -33,6 +36,7 @@ export {
   PrivacyAndSafetyPage,
   NotificationsPage,
   AccessibilityAndDisplayAndLanguagesPage,
+  AppsAndSessionsPage,
   About,
   AccountData,
   ChangePassword,
