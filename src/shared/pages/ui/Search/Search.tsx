@@ -4,8 +4,8 @@ import { useRef, useState } from "react";
 import { debounce } from "@shared/@common/utils";
 
 interface SearchProps {
-  search: string; // 검색어
-  setSearch: React.Dispatch<React.SetStateAction<string>>; // 검색어 변경
+  search?: string; // 검색어
+  setSearch?: React.Dispatch<React.SetStateAction<string>>; // 검색어 변경
   placeholder?: string; // placeholder
 }
 
@@ -18,7 +18,7 @@ const Search = ({ search, setSearch, placeholder }: SearchProps) => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const text = e.target.value;
-    setSearch(text);
+    setSearch && setSearch(text);
   };
 
   const debouncedHandleChange = debounce<typeof handleChange>(
@@ -29,7 +29,7 @@ const Search = ({ search, setSearch, placeholder }: SearchProps) => {
   const handleDelete = () => {
     if (!inputRef.current) return;
     inputRef.current.value = "";
-    setSearch("");
+    setSearch && setSearch("");
   };
 
   return (
@@ -49,7 +49,7 @@ const Search = ({ search, setSearch, placeholder }: SearchProps) => {
         ariaHidden
         className={styles.searchIcon}
       />
-      {search.length > 0 && (
+      {search && search.length > 0 && (
         <Icon
           iconName="wrong"
           iconTitle=""
