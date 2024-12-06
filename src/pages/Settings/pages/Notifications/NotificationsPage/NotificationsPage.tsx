@@ -1,16 +1,17 @@
 import { SettingsBranchCard } from "@features/settings-setting/ui/components";
+import { useLanguageMode } from "@shared/@common/model/hooks";
 import { Description } from "@shared/@common/ui/components";
 import { MainContentListLayout, MainLayout } from "@shared/pages/layout";
 
 const NotificationsPage = () => {
+  const { pageTitle, description } = useLanguageMode([
+    "pages",
+    "NotificationsPage",
+  ]);
   return (
     <MainLayout
-      pageTitle={"알림"}
-      topContent={
-        <Description
-          text={"활동, 관심사 및 추천에 관해 받는 알림의 종류를 선택합니다."}
-        />
-      }
+      pageTitle={pageTitle}
+      topContent={<Description text={description} />}
       bottomContent={
         <MainContentListLayout
           listName={["accountBranchList"]}
