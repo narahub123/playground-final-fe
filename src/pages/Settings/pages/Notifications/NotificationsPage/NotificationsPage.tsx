@@ -14,7 +14,7 @@ const NotificationsPage = () => {
       topContent={<Description text={description} />}
       bottomContent={
         <MainContentListLayout
-          listName={["accountBranchList"]}
+          listName={["notificationBranchList"]}
           item={<SettingsBranchCard />}
         />
       }
