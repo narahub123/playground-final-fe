@@ -24,6 +24,8 @@ import MessageSettings from "@pages/Messages/components/MessageSettings/MessageS
 import ConversationWindow from "@pages/Messages/components/ConversationWindow/ConversationWindow";
 import Feeds from "@pages/Explore/components/Feeds/Feeds";
 import {
+  SettingsLandingPage,
+  AccountPage,
   About,
   Accessibility,
   AccountData,
@@ -44,7 +46,6 @@ import {
   NotificationFilter,
   NotificationPreferences,
   Security,
-  SettingsLandingPage,
   SortContents,
   YourPosts,
 } from "@pages/Settings/pages";
@@ -169,15 +170,7 @@ export const router = createBrowserRouter([
                   // 계정
                   {
                     path: "account",
-                    element: (
-                      <SettingsBranchContainer
-                        title={Constant.settings.account.title}
-                        detail={Constant.settings.account.detail}
-                        settingsBranchList={
-                          Constant.settings.account.settingsBranchList
-                        }
-                      />
-                    ),
+                    element: <AccountPage />,
                   },
                   // 보안 및 계정 접근 권한
                   {

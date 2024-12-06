@@ -21,8 +21,11 @@ import Display from "./AccessibilityDisplayAndLanguagesFolder/Display/Display";
 import Languages from "./AccessibilityDisplayAndLanguagesFolder/Languages/Languages";
 import DataUsage from "./AccessibilityDisplayAndLanguagesFolder/DataUsage/DataUsage";
 import SettingsLandingPage from "./SettingsLandingPage/SettingsLandingPage";
+import { AccountPage } from "./Account";
 
 export {
+  SettingsLandingPage,
+  AccountPage,
   About,
   AccountData,
   ChangePassword,
@@ -45,5 +48,4 @@ export {
   Display,
   Languages,
   DataUsage,
-  SettingsLandingPage,
 };
