@@ -17,7 +17,7 @@ const MainHeader = ({
 }: MainHeaderProps) => {
   const naviagte = useNavigate();
 
-  const { backwardIconTitle } = useLanguageMode("mainHeader");
+  const { backwardIconTitle } = useLanguageMode(["mainHeader"]);
   return (
     <header className={styles[`main-header`]} role="banner">
       {backward && (
