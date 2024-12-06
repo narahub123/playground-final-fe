@@ -1,4 +1,3 @@
-import Landing from "./Landing/Landing";
 import About from "./About/About";
 import AccountData from "./AccountFolder/AccountData/AccountData";
 import ChangePassword from "./AccountFolder/ChangePassword/ChangePassword";
@@ -24,7 +23,6 @@ import DataUsage from "./AccessibilityDisplayAndLanguagesFolder/DataUsage/DataUs
 import SettingsLandingPage from "./SettingsLandingPage/SettingsLandingPage";
 
 export {
-  Landing,
   About,
   AccountData,
   ChangePassword,
