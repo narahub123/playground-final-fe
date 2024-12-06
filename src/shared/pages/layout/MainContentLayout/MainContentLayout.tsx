@@ -1,5 +1,6 @@
 import React, { ReactElement, useState } from "react";
 import styles from "./MainContentLayout.module.css";
+import { SelectionProvider } from "@shared/pages/model/providers";
 
 interface MainContentLayoutProps {
   topContent: React.ReactNode;
@@ -15,8 +16,6 @@ const MainContentLayout = ({
 
   // 공유하는 정보를 컴포넌트에 추가함
 
-
-  
   const top = React.cloneElement(topContent as ReactElement, {
     search,
     setSearch,
@@ -27,10 +26,13 @@ const MainContentLayout = ({
   });
 
   return (
-    <div className={styles.layout}>
-      <div className={styles.topContent}>{top}</div>
-      <div className={styles.bottomContent}>{bottom}</div>
-    </div>
+    <SelectionProvider initialValue={""}>
+      {/* initialValue 부분 수정 필요 */}
+      <div className={styles.layout}>
+        <div className={styles.topContent}>{top}</div>
+        <div className={styles.bottomContent}>{bottom}</div>
+      </div>
+    </SelectionProvider>
   );
 };
 
