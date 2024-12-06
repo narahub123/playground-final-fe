@@ -16,6 +16,7 @@ import {
 } from "./settings-sub-branch-list";
 
 import pages from "./pages";
+import components from "./components";
 
 const ja_JP = {
   languageSelect: {
@@ -72,6 +73,9 @@ const ja_JP = {
 
   // 페이지
   pages,
+
+  // 컴포넌트
+  components,
 };
 
 export default ja_JP;

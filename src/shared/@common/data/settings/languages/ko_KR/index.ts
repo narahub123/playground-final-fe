@@ -17,6 +17,7 @@ import {
 } from "./settings-sub-branch-list";
 
 import pages from "./pages";
+import components from "./components";
 
 const ko_KR = {
   languageSelect: {
@@ -70,6 +71,9 @@ const ko_KR = {
 
   // 페이지
   pages,
+
+  // 컴포넌트
+  components,
 };
 
 export default ko_KR;

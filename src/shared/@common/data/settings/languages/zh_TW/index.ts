@@ -16,6 +16,7 @@ import {
 } from "./settings-sub-branch-list";
 
 import pages from "./pages";
+import components from "./components";
 
 const zh_TW = {
   languageSelect: {
@@ -72,6 +73,9 @@ const zh_TW = {
 
   // 페이지
   pages,
+
+  // 컴포넌트
+  components,
 };
 
 export default zh_TW;

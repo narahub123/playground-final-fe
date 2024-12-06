@@ -15,6 +15,7 @@ import {
 } from "./settings-sub-branch-list";
 
 import pages from "./pages";
+import components from "./components";
 
 const en_US = {
   // 언어 선택
@@ -69,6 +70,9 @@ const en_US = {
 
   // 페이지
   pages,
+
+  // 컴포넌트
+  components,
 };
 
 export default en_US;
