@@ -53,6 +53,7 @@ import {
   PrivacyAndSafetyPage,
   NotificationsPage,
   AccessibilityAndDisplayAndLanguagesPage,
+  MuteAndBlockPage,
 } from "@pages/Settings/pages";
 import SettingsBranchContainer from "@pages/Settings/layouts/SettingsBranchContainer/SettingsBranchContainer";
 import { AuthLayout } from "@/layouts";
@@ -262,7 +263,7 @@ export const router = createBrowserRouter([
                   },
                   {
                     path: "mute_and_block",
-                    element: <MuteAndBlock />,
+                    element: <MuteAndBlockPage />,
                   },
                   {
                     path: "direct_messages",
