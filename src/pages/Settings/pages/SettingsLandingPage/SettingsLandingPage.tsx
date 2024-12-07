@@ -5,7 +5,7 @@ import { Search } from "@shared/pages/ui";
 
 const SettingsLandingPage = () => {
   // 언어 설정
-  const { pageTitle, placeholder } = useLanguageMode([
+  const { pageTitle, placeholder, branchList } = useLanguageMode([
     "pages",
     "settingsLandingPage",
   ]);
@@ -16,7 +16,7 @@ const SettingsLandingPage = () => {
       topContent={<Search placeholder={placeholder} />}
       bottomContent={
         <MainContentListLayout
-          listName={["settingsMainBranchList"]}
+          list={branchList}
           item={<SettingsBranchCard />}
         />
       }
