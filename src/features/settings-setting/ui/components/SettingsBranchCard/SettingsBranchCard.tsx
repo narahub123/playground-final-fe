@@ -10,7 +10,7 @@ interface settingsbranchcardProps {
 const SettingsBranchCard = ({ item }: settingsbranchcardProps) => {
   if (!item) return;
 
-  const openModal = item.path.includes("/i");
+  const openModal = item.path.includes("/i/");
 
   const Card = openModal ? "li" : Link;
 
