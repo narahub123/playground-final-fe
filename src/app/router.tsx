@@ -51,6 +51,7 @@ import {
   MuteAndBlockPage,
   NotificationPreferencePage,
   SecurityPage,
+  AccountInfoPage,
 } from "@pages/Settings/pages";
 import { AuthLayout } from "@/layouts";
 import { PageLayout } from "@shared/pages/layout";
@@ -188,7 +189,7 @@ export const router = createBrowserRouter([
                   // 계정 정보
                   {
                     path: "your_data/account",
-                    element: <AccountData />,
+                    element: <AccountInfoPage />,
                   },
                   // password 변경
                   {
