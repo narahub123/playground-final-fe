@@ -1,3 +1,5 @@
+import { setBackgroundTheme } from "@shared/@common/model/slices/settingsSlice";
+
 const pages = {
   settingsLandingPage: {
     pageTitle: "設定",
@@ -260,6 +262,43 @@ const pages = {
       {
         title: "メール通知",
         path: "/settings/email_notifications",
+      },
+    ],
+  },
+  SecurityPage: {
+    pageTitle: "セキュリティ",
+    description: "アカウントのセキュリティを管理します。",
+    list: [
+      {
+        title: "2段階認証",
+        type: "card",
+        comp: {
+          title: "2段階認証",
+          path: "/settings/account/login_verification",
+        },
+        description:
+          "PlayGroundのパスワードに加えて、もう1つの認証方法を要求することで、アカウントを不正アクセスから保護します。SMS、認証アプリ、またはセキュリティキーから選択できます。",
+      },
+      {
+        title: "ID認証",
+        type: "card",
+        comp: {
+          title: "ID認証",
+          path: "/settings/account/id_verification",
+        },
+        description:
+          "アカウントの真正性を確認するために、承認済みのID形式をアップロードしてください。提供された情報は本人確認のためにのみ使用され、安全に処理されます。",
+      },
+      {
+        title: "パスワードリセット",
+        type: "checkbox",
+        comp: {
+          text: "パスワードリセット保護",
+          reducer: setBackgroundTheme,
+          initialValue: false,
+        },
+        description:
+          "追加の保護手段として、PlayGroundのパスワードをリセットするには、メールアドレスまたは電話番号を確認する必要があります。",
       },
     ],
   },

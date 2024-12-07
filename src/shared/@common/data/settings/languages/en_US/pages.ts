@@ -1,3 +1,5 @@
+import { setBackgroundTheme } from "@shared/@common/model/slices/settingsSlice";
+
 const pages = {
   settingsLandingPage: {
     pageTitle: "Settings",
@@ -260,6 +262,43 @@ const pages = {
       {
         title: "Email Notifications",
         path: "/settings/email_notifications",
+      },
+    ],
+  },
+  SecurityPage: {
+    pageTitle: "Security",
+    description: "Manage the security of your account.",
+    list: [
+      {
+        title: "Two-Factor Authentication",
+        type: "card",
+        comp: {
+          title: "Two-Factor Authentication",
+          path: "/settings/account/login_verification",
+        },
+        description:
+          "Protect your account from unauthorized access by requiring a second authentication method in addition to your PlayGround password. You can choose between SMS, authentication app, or security key.",
+      },
+      {
+        title: "ID Verification",
+        type: "card",
+        comp: {
+          title: "ID Verification",
+          path: "/settings/account/id_verification",
+        },
+        description:
+          "Upload an approved form of ID to verify the authenticity of your account. The information you provide will only be used for identity verification and will be securely handled.",
+      },
+      {
+        title: "Password Reset",
+        type: "checkbox",
+        comp: {
+          text: "Protect Password Reset",
+          reducer: setBackgroundTheme,
+          initialValue: false,
+        },
+        description:
+          "As an additional layer of protection, you will need to verify your email address or phone number to reset your PlayGround password.",
       },
     ],
   },

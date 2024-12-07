@@ -1,3 +1,5 @@
+import { setBackgroundTheme } from "@shared/@common/model/slices/settingsSlice";
+
 const pages = {
   settingsLandingPage: {
     pageTitle: "设置",
@@ -255,6 +257,43 @@ const pages = {
       {
         title: "邮件通知",
         path: "/settings/email_notifications",
+      },
+    ],
+  },
+  SecurityPage: {
+    pageTitle: "安全",
+    description: "管理账户的安全性。",
+    list: [
+      {
+        title: "两步验证",
+        type: "card",
+        comp: {
+          title: "两步验证",
+          path: "/settings/account/login_verification",
+        },
+        description:
+          "通过要求除了PlayGround密码之外的第二种验证方法，保护您的账户免受未经授权的访问。您可以选择短信、认证应用或安全密钥。",
+      },
+      {
+        title: "身份验证",
+        type: "card",
+        comp: {
+          title: "身份验证",
+          path: "/settings/account/id_verification",
+        },
+        description:
+          "上传批准格式的身份证明以验证账户的真实性。您提供的信息仅用于身份验证，并将被安全处理。",
+      },
+      {
+        title: "密码重置",
+        type: "checkbox",
+        comp: {
+          text: "保护密码重置",
+          reducer: setBackgroundTheme,
+          initialValue: false,
+        },
+        description:
+          "作为额外的保护措施，您需要验证您的电子邮件地址或电话号码才能重置PlayGround密码。",
       },
     ],
   },
