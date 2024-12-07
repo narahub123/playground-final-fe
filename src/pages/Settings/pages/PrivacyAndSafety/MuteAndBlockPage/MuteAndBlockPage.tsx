@@ -4,7 +4,7 @@ import { Description } from "@shared/@common/ui/components";
 import { MainContentListLayout, MainLayout } from "@shared/pages/layout";
 
 const MuteAndBlockPage = () => {
-  const { pageTitle, description } = useLanguageMode([
+  const { pageTitle, description, branchList } = useLanguageMode([
     "pages",
     "MuteAndBlockPage",
   ]);
@@ -15,7 +15,7 @@ const MuteAndBlockPage = () => {
       topContent={<Description text={description} />}
       bottomContent={
         <MainContentListLayout
-          listName={["muteAndBlockBranchList"]}
+          list={branchList}
           item={<SettingsBranchCard />}
         />
       }
