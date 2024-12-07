@@ -8,7 +8,7 @@ const pages = {
         path: "account",
       },
       {
-        title: "安全與帳戶訪問權限",
+        title: "安全與帳戶存取權限",
         path: "security_and_account_access",
       },
       {
@@ -20,257 +20,241 @@ const pages = {
         path: "notifications",
       },
       {
-        title: "輔助功能、顯示和語言",
+        title: "輔助功能、顯示與語言",
         path: "accessibility_display_and_languages",
       },
       {
-        title: "盈利",
+        title: "營利",
         path: "monetization",
       },
       {
-        title: "其他資源",
+        title: "更多資源",
         path: "about",
       },
     ],
   },
   AccountPage: {
     pageTitle: "帳戶",
-    description: "查看帳戶資訊、下載數據記錄或了解更多有關帳戶停用選項的資訊。",
+    description: "檢視帳戶資訊、下載數據記錄或了解停用帳戶選項。",
     branchList: [
-      // 계정 정보
       {
         title: "帳戶資訊",
-        expl: "查看像手機號碼和電子郵件地址這樣的帳戶資訊。",
-        path: "account_data",
+        expl: "檢視帳戶資訊，如手機號碼和電子郵件地址。",
+        path: "/settings/your_data/account",
         icon: "user",
       },
-      // 비밀번호 변경
       {
-        title: "更改密碼",
-        expl: "隨時更改密碼。",
-        path: "password",
+        title: "變更密碼",
+        expl: "隨時變更您的密碼。",
+        path: "/settings/password",
         icon: "key",
       },
-      // 데이터 기록 다운로드
       {
-        title: "數據記錄下載",
-        expl: "獲得關於帳戶中存儲的各種信息的洞察。",
-        path: "download_data",
+        title: "下載數據記錄",
+        expl: "了解儲存在帳戶中的數據類型。",
+        path: "/settings/download_data",
         icon: "download",
       },
-      // 계정 비활성화
       {
         title: "停用帳戶",
         expl: "了解如何停用帳戶。",
-        path: "inactivate",
+        path: "/settings/inactivate",
         icon: "crackedHeart",
       },
     ],
   },
   SecurityAndAccountAccessPage: {
-    pageTitle: "安全與帳戶訪問權限",
-    description: "管理帳戶安全並追蹤帳戶使用情況，包括連接的應用程式。",
+    pageTitle: "安全與帳戶存取權限",
+    description: "管理帳戶安全，追蹤包括已連結應用在內的帳戶使用情況。",
     branchList: [
-      // 보안
       {
         title: "安全",
-        path: "security",
-        expl: "管理帳戶的安全性。",
+        expl: "管理帳戶的安全設定。",
+        path: "/settings/security",
         icon: "lock",
       },
-      // 앱 및 세션
       {
-        title: "應用程式和會話",
-        path: "apps_and_sessions",
-        expl: "查看帳戶和已連接的應用程式登錄的時間信息。",
+        title: "應用與會話",
+        expl: "檢視登錄帳戶和連結應用的相關資訊。",
+        path: "/settings/apps_and_sessions",
         icon: "apps",
       },
-      // 연결된 계정
       {
-        title: "連接的帳戶",
-        path: "connected_accounts",
+        title: "已連結帳戶",
         expl: "管理用於登錄PlayGround的Google、Naver或Kakao帳戶。",
+        path: "/settings/connected_accounts",
         icon: "twoWay",
       },
-      // 위임
       {
-        title: "委任",
-        path: "delegate",
+        title: "委託",
         expl: "管理共享帳戶。",
+        path: "/settings/delegate",
         icon: "delegate",
       },
     ],
   },
   PrivacyAndSafetyPage: {
     pageTitle: "隱私與安全",
-    description: "管理在PlayGround上顯示和共享的資訊。",
+    description: "管理在PlayGround中顯示與分享的資訊。",
     branchList: [
       {
-        title: "受眾、媒體和標籤",
-        expl: "管理在X上公開的個人信息。",
-        path: "audience_and_tagging",
+        title: "受眾、媒體與標籤",
+        expl: "管理您在X中公開的資訊。",
+        path: "/settings/audience_and_tagging",
+        icon: "users",
       },
       {
         title: "我的帖子",
-        expl: "管理與帖子相關的信息。",
-        path: "my_tweets",
+        expl: "管理與帖子相關的資訊。",
+        path: "/settings/my_tweets",
+        icon: "penLine",
       },
       {
         title: "顯示的內容",
-        expl: "根據用戶的興趣和話題等決定在PlayGround上顯示的信息。",
-        path: "content_you_see",
+        expl: "根據您的主題和興趣偏好，決定PlayGround中顯示的內容。",
+        path: "/settings/content_you_see",
+        icon: "content",
       },
       {
-        title: "靜音和封鎖",
-        expl: "管理我靜音或封鎖的帳戶、詞彙和通知。",
-        path: "mute_and_block",
+        title: "靜音與封鎖",
+        expl: "管理您靜音或封鎖的帳戶、關鍵字和通知。",
+        path: "/settings/mute_and_block",
+        icon: "mute",
       },
       {
-        title: "消息",
-        expl: "管理可以直接給我發消息的人。",
-        path: "messages",
+        title: "訊息",
+        expl: "管理可以向您傳送直接訊息的對象。",
+        path: "/settings/messages",
+        icon: "message",
       },
       {
-        title: "帳戶查找和聯絡人",
-        expl: "控制帳戶查找設置並管理導入的聯絡人。",
-        path: "contacts",
+        title: "帳戶搜尋與聯絡人",
+        expl: "控制帳戶搜尋設定並管理匯入的聯絡人。",
+        path: "/settings/contacts",
+        icon: "contact",
       },
       {
-        title: "廣告設置",
-        expl: "管理PlayGround上的廣告設置。",
-        path: "ads_preferences",
+        title: "廣告偏好",
+        expl: "管理在PlayGround上的廣告設定。",
+        path: "/settings/ads_preferences",
+        icon: "ads",
       },
       {
-        title: "位置",
-        expl: "管理PlayGround用於自定義環境的位置信息。",
-        path: "location_information",
+        title: "位置資訊",
+        expl: "管理PlayGround用於個性化環境的位置資訊。",
+        path: "/settings/location_information",
+        icon: "pin",
       },
     ],
   },
   NotificationsPage: {
     pageTitle: "通知",
-    description: "選擇您希望接收的有關活動、興趣和推薦的通知類型。",
+    description: "選擇您想接收的活動、興趣及推薦通知類型。",
     branchList: [
-      // 필터
       {
-        title: "過濾器",
-        expl: "選擇您想查看的通知和不想查看的通知。",
-        path: "notifications/filters",
-        icon: "",
+        title: "篩選器",
+        expl: "選擇想檢視的通知類型以及不想檢視的類型。",
+        path: "/settings/notifications/filters",
+        icon: "filter",
       },
-      // 환경 설정
       {
-        title: "設置",
-        expl: "選擇按通知類型進行的設置。",
-        path: "notifications/preferences",
-        icon: "",
+        title: "設定",
+        expl: "為每種通知類型選擇偏好設定。",
+        path: "/settings/notifications/preferences",
+        icon: "preferences",
       },
     ],
   },
   AccessibilityAndDisplayAndLanguagesPage: {
-    pageTitle: "輔助功能、顯示和語言",
-    description: "管理PlayGround內容的顯示方式。",
+    pageTitle: "輔助功能、顯示與語言",
+    description: "管理PlayGround的內容顯示方式。",
     branchList: [
-      // 접근성
       {
         title: "輔助功能",
-        expl: "管理PlayGround的用戶界面，例如顏色對比和動作限制。這些設置會應用到此瀏覽器中的所有PlayGround帳戶。",
-        path: "accessibility",
+        expl: "管理顏色對比、動畫限制等使用者體驗設定。此設定適用於此瀏覽器上的所有PlayGround帳戶。",
+        path: "/settings/accessibility",
         icon: "eyeoff",
       },
-      // 표시
       {
         title: "顯示",
-        expl: "管理字體大小、顏色和背景等設置。這些設置會應用到此瀏覽器中的所有PlayGround帳戶。",
-        path: "display",
+        expl: "管理字體大小、顏色和背景。此設定適用於此瀏覽器上的所有PlayGround帳戶。",
+        path: "/settings/display",
         icon: "pen",
       },
-      // 언어
       {
         title: "語言",
-        expl: "管理用於定制用戶環境的語言設置。",
-        path: "languages",
+        expl: "管理用於個性化使用者體驗的語言。",
+        path: "/settings/languages",
         icon: "map",
       },
-      // 데이터 사용량
       {
         title: "數據使用",
-        expl: "PlayGround限制此設備上使用的網絡數據量。",
-        path: "data",
+        expl: "限制PlayGround在此裝置上使用的一些網路數據。",
+        path: "/settings/data",
         icon: "barChart",
       },
-      // 키보드 단축키
       {
-        title: "鍵盤快捷鍵",
+        title: "鍵盤快速鍵",
         path: "/i/keyboard_shortcuts",
         icon: "shortcut",
       },
     ],
   },
   AppsAndSessionsPage: {
-    pageTitle: "應用程式和會話",
-    description: "查看與您的帳戶相關的應用程式與登入會話資訊。",
+    pageTitle: "應用與會話",
+    description: "檢視登錄帳戶和已連結應用的相關資訊。",
     branchList: [
-      // 연결된 앱
       {
-        title: "連接的應用",
-        expl: "這些是連接到您的帳戶的應用程式。您可以查看這些應用程式訪問的信息並阻止訪問。",
-        path: "connected_apps",
+        title: "已連結應用",
+        path: "/settings/connected_apps",
       },
-      // 세션
       {
         title: "會話",
-        expl: "會話是當前或曾經使用您的PlayGround帳戶的設備。這些會話已經使用您的帳戶登錄，您可以在每個會話中登出。",
-        path: "sessions",
+        path: "/settings/sessions",
       },
-      // 계정 엑세스 기록
       {
-        title: "帳戶訪問記錄",
-        expl: "如果在應用程式中發現可疑活動，請在連接的應用程式中阻止訪問。基於IP的位置可能與實際位置不同。",
-        path: "login_history",
+        title: "帳戶存取記錄",
+        path: "/settings/login_history",
       },
-      // 로그인된 디바이스 및 앱
       {
-        title: "登錄的設備與應用",
-        path: "devices",
+        title: "已登錄裝置與應用",
+        path: "/settings/devices",
       },
     ],
   },
   MuteAndBlockPage: {
-    pageTitle: "靜音和封鎖",
-    description: "管理您已靜音或封鎖的帳戶、字詞及通知。",
+    pageTitle: "靜音與封鎖",
+    description: "管理您靜音或封鎖的帳戶、關鍵字和通知。",
     branchList: [
       {
-        title: "已封鎖帳戶",
-        path: "blocked/all",
+        title: "封鎖的帳戶",
+        path: "/settings/blocked/all",
       },
       {
-        title: "已靜音帳戶",
-        path: "muted/all",
+        title: "靜音的帳戶",
+        path: "/settings/muted/all",
       },
       {
-        title: "已靜音關鍵字",
-        path: "muted_keywords",
+        title: "靜音的關鍵字",
+        path: "/settings/muted_keywords",
       },
       {
         title: "靜音通知",
-        path: "notifications/advanced_filters",
+        path: "/settings/notifications/advanced_filters",
       },
     ],
   },
   NotificationPreferencePage: {
-    pageTitle: "偏好設定",
-    description: "為每種類型的通知選擇偏好設定。",
+    pageTitle: "設定",
+    description: "為每種通知類型選擇偏好設定。",
     branchList: [
-      // 푸시 알림
       {
-        title: "推播通知",
-        path: "push_notifications",
+        title: "推送通知",
+        path: "/settings/push_notifications",
       },
-      // 이메일 알림
       {
         title: "電子郵件通知",
-        path: "email_notifications",
+        path: "/settings/email_notifications",
       },
     ],
   },

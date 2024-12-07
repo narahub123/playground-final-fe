@@ -3,7 +3,6 @@ import {
   Home,
   Explore,
   Search as SearchPage,
-  Notification,
   Messages,
   ProfilePage,
   Bookmarks,
@@ -31,7 +30,6 @@ import {
   Accessibility,
   AccountData,
   AdsPreferences,
-  AppAndSession,
   AudienceAndTagging,
   ChangePassword,
   ConnectedAccounts,
@@ -43,9 +41,7 @@ import {
   DownloadData,
   Languages,
   LocationInfo,
-  MuteAndBlock,
   NotificationFilter,
-  NotificationPreferences,
   Security,
   SortContents,
   YourPosts,
@@ -56,23 +52,8 @@ import {
   MuteAndBlockPage,
   NotificationPreferencePage,
 } from "@pages/Settings/pages";
-import SettingsBranchContainer from "@pages/Settings/layouts/SettingsBranchContainer/SettingsBranchContainer";
 import { AuthLayout } from "@/layouts";
-import Constant from "@/constants";
-import {
-  MainContentListLayout,
-  MainLayout,
-  PageLayout,
-} from "@shared/pages/layout";
-import { Description, Icon, Title } from "@shared/@common/ui/components";
-import { Search, Tab } from "@shared/pages/ui";
-import { tabListExample } from "@shared/pages/data";
-import { SelectionProvider } from "@shared/pages/model/providers";
-import { SettingsBranchCard } from "@features/settings-setting/ui/components";
-import {
-  AccessibilityAndDisplayAndLanguages,
-  accountBranchList,
-} from "@shared/@common/data/settings/languages/ko_KR/settings-mid-branch-list";
+import { PageLayout } from "@shared/pages/layout";
 
 // 로그인 여부 확인
 const login = true;

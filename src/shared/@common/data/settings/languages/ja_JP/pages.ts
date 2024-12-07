@@ -36,34 +36,30 @@ const pages = {
   AccountPage: {
     pageTitle: "アカウント",
     description:
-      "アカウント情報を確認したり、データ記録をダウンロードしたり、アカウント無効化オプションについて詳しく知ることができます。",
+      "アカウント情報を確認したり、データ記録をダウンロードしたり、アカウントの無効化オプションについて詳しく学ぶことができます。",
     branchList: [
-      // 계정 정보
       {
         title: "アカウント情報",
-        expl: "携帯電話番号やメールアドレスなどのアカウント情報を確認してください。",
-        path: "account_data",
+        expl: "電話番号やメールアドレスなどのアカウント情報を表示します。",
+        path: "/settings/your_data/account",
         icon: "user",
       },
-      // 비밀번호 변경
       {
-        title: "パスワード変更",
+        title: "パスワードの変更",
         expl: "いつでもパスワードを変更できます。",
-        path: "password",
+        path: "/settings/password",
         icon: "key",
       },
-      // 데이터 기록 다운로드
       {
-        title: "データ記録ダウンロード",
-        expl: "アカウントに保存された情報の種類についてのインサイトを得てください。",
-        path: "download_data",
+        title: "データ記録のダウンロード",
+        expl: "アカウントに保存されている情報の種類についての洞察を得られます。",
+        path: "/settings/download_data",
         icon: "download",
       },
-      // 계정 비활성화
       {
-        title: "アカウント無効化",
-        expl: "アカウントを無効化する方法を確認してください。",
-        path: "inactivate",
+        title: "アカウントの無効化",
+        expl: "アカウントを無効化する方法を学びます。",
+        path: "/settings/inactivate",
         icon: "crackedHeart",
       },
     ],
@@ -71,34 +67,30 @@ const pages = {
   SecurityAndAccountAccessPage: {
     pageTitle: "セキュリティとアカウントアクセス",
     description:
-      "アカウントのセキュリティを管理し、接続されたアプリを含むアカウントの利用状況を追跡します。",
+      "アカウントのセキュリティを管理し、接続されたアプリを含むアカウントの利用を追跡します。",
     branchList: [
-      // 보안
       {
         title: "セキュリティ",
-        path: "security",
-        expl: "アカウントのセキュリティを管理します。",
+        expl: "アカウントのセキュリティ設定を管理します。",
+        path: "/settings/security",
         icon: "lock",
       },
-      // 앱 및 세션
       {
         title: "アプリとセッション",
-        path: "apps_and_sessions",
-        expl: "アカウントと接続されたアプリにログインした時点の情報を確認します。",
+        expl: "アカウントと接続されたアプリへのログイン情報を確認します。",
+        path: "/settings/apps_and_sessions",
         icon: "apps",
       },
-      // 연결된 계정
       {
         title: "接続されたアカウント",
-        path: "connected_accounts",
-        expl: "PlayGroundにログインするために接続されたGoogle、Naver、またはKakaoアカウントを管理します。",
+        expl: "PlayGroundログイン用に接続されたGoogle、Naver、またはKakaoアカウントを管理します。",
+        path: "/settings/connected_accounts",
         icon: "twoWay",
       },
-      // 위임
       {
-        title: "委任",
-        path: "delegate",
+        title: "代理アクセス",
         expl: "共有アカウントを管理します。",
+        path: "/settings/delegate",
         icon: "delegate",
       },
     ],
@@ -108,100 +100,102 @@ const pages = {
     description: "PlayGroundで表示および共有される情報を管理します。",
     branchList: [
       {
-        title: "オーディエンス、メディア、およびタグ付け",
-        expl: "Xで他の人々に公開する情報を管理します。",
-        path: "audience_and_tagging",
+        title: "オーディエンス、メディア、タグ付け",
+        expl: "Xで他の人に公開する情報を管理します。",
+        path: "/settings/audience_and_tagging",
+        icon: "users",
       },
       {
-        title: "私の投稿",
+        title: "自分の投稿",
         expl: "投稿に関連する情報を管理します。",
-        path: "my_tweets",
+        path: "/settings/my_tweets",
+        icon: "penLine",
       },
       {
-        title: "表示されるコンテンツ",
-        expl: "トピックや関心事など、ユーザーの好みに基づいてPlayGroundに表示される情報を決定します。",
-        path: "content_you_see",
+        title: "表示コンテンツ",
+        expl: "トピックや興味に基づいてPlayGroundに表示される情報を決定します。",
+        path: "/settings/content_you_see",
+        icon: "content",
       },
       {
-        title: "ミュートおよびブロック",
-        expl: "ミュートしたりブロックしたアカウント、単語、通知を管理します。",
-        path: "mute_and_block",
+        title: "ミュートとブロック",
+        expl: "ミュートまたはブロックしたアカウント、単語、通知を管理します。",
+        path: "/settings/mute_and_block",
+        icon: "mute",
       },
       {
         title: "メッセージ",
-        expl: "私に直接メッセージを送れる対象を管理します。",
-        path: "messages",
+        expl: "自分に直接メッセージを送れる対象を管理します。",
+        path: "/settings/messages",
+        icon: "message",
       },
       {
-        title: "アカウント検索および連絡先",
-        expl: "アカウント検索設定を制御し、インポートした連絡先を管理します。",
-        path: "contacts",
+        title: "アカウント検索と連絡先",
+        expl: "アカウント検索設定を制御し、インポートされた連絡先を管理します。",
+        path: "/settings/contacts",
+        icon: "contact",
       },
       {
-        title: "広告設定",
+        title: "広告の設定",
         expl: "PlayGroundでの広告設定を管理します。",
-        path: "ads_preferences",
+        path: "/settings/ads_preferences",
+        icon: "ads",
       },
       {
         title: "位置情報",
-        expl: "PlayGroundで環境をカスタマイズする際に使用される位置情報を管理します。",
-        path: "location_information",
+        expl: "PlayGroundで環境をカスタマイズするために使用される位置情報を管理します。",
+        path: "/settings/location_information",
+        icon: "pin",
       },
     ],
   },
   NotificationsPage: {
     pageTitle: "通知",
-    description: "アクティビティ、関心事、推薦に関する通知の種類を選択します。",
+    description:
+      "アクティビティ、興味、おすすめに関する通知の種類を選択します。",
     branchList: [
-      // 필터
       {
         title: "フィルター",
-        expl: "確認したい通知と確認したくない通知を選択してください。",
-        path: "notifications/filters",
-        icon: "",
+        expl: "確認したい通知と確認したくない通知を選択します。",
+        path: "/settings/notifications/filters",
+        icon: "filter",
       },
-      // 환경 설정
       {
         title: "設定",
-        expl: "通知の種類ごとに設定を選択してください。",
-        path: "notifications/preferences",
-        icon: "",
+        expl: "通知の種類ごとに設定を選択します。",
+        path: "/settings/notifications/preferences",
+        icon: "preferences",
       },
     ],
   },
   AccessibilityAndDisplayAndLanguagesPage: {
     pageTitle: "アクセシビリティ、表示、言語",
-    description: "PlayGroundでコンテンツが表示される方法を管理します。",
+    description: "PlayGroundのコンテンツ表示方法を管理します。",
     branchList: [
-      // 접근성
       {
         title: "アクセシビリティ",
-        expl: "色のコントラストや動作制限など、PlayGroundのユーザー環境を管理します。これらの設定はこのブラウザのすべてのPlayGroundアカウントに適用されます。",
-        path: "accessibility",
+        expl: "色のコントラストや動作制限などの設定を管理します。この設定は、このブラウザ上のすべてのPlayGroundアカウントに適用されます。",
+        path: "/settings/accessibility",
         icon: "eyeoff",
       },
-      // 표시
       {
         title: "表示",
-        expl: "フォントサイズ、色、背景を管理します。これらの設定はこのブラウザのすべてのPlayGroundアカウントに適用されます。",
-        path: "display",
+        expl: "フォントサイズ、色、背景を管理します。この設定は、このブラウザ上のすべてのPlayGroundアカウントに適用されます。",
+        path: "/settings/display",
         icon: "pen",
       },
-      // 언어
       {
         title: "言語",
-        expl: "ユーザー環境をカスタマイズする際に使用される言語を管理します。",
-        path: "languages",
+        expl: "ユーザー体験をカスタマイズするために使用される言語を管理します。",
+        path: "/settings/languages",
         icon: "map",
       },
-      // 데이터 사용량
       {
         title: "データ使用量",
-        expl: "PlayGroundはこのデバイスでユーザーの一部ネットワークデータの使用を制限します。",
-        path: "data",
+        expl: "PlayGroundがこのデバイスで使用するネットワークデータを制限します。",
+        path: "/settings/data",
         icon: "barChart",
       },
-      // 키보드 단축키
       {
         title: "キーボードショートカット",
         path: "/i/keyboard_shortcuts",
@@ -209,33 +203,26 @@ const pages = {
       },
     ],
   },
+
   AppsAndSessionsPage: {
     pageTitle: "アプリとセッション",
-    description:
-      "アカウントおよびアカウントに接続されたアプリのログイン情報を確認します。",
+    description: "アカウントと接続されたアプリへのログイン情報を確認します。",
     branchList: [
-      // 연결된 앱
       {
         title: "接続されたアプリ",
-        expl: "これらはあなたのアカウントに接続されたアプリです。これらのアプリがアクセスする情報を表示し、アクセスをブロックできます。",
-        path: "connected_apps",
+        path: "/settings/connected_apps",
       },
-      // 세션
       {
         title: "セッション",
-        expl: "セッションは現在または過去にあなたのPlayGroundアカウントを使用したデバイスです。これらのセッションは現在あなたのアカウントでログインしています。各セッションからログアウトできます。",
-        path: "sessions",
+        path: "/settings/sessions",
       },
-      // 계정 엑세스 기록
       {
         title: "アカウントアクセス履歴",
-        expl: "アプリで疑わしい活動が見つかった場合は、接続されたアプリからアクセスをブロックしてください。IPベースの位置情報は実際の位置と異なる場合があります。",
-        path: "login_history",
+        path: "/settings/login_history",
       },
-      // 로그인된 디바이스 및 앱
       {
         title: "ログイン中のデバイスとアプリ",
-        path: "devices",
+        path: "/settings/devices",
       },
     ],
   },
@@ -246,35 +233,33 @@ const pages = {
     branchList: [
       {
         title: "ブロックしたアカウント",
-        path: "blocked/all",
+        path: "/settings/blocked/all",
       },
       {
         title: "ミュートしたアカウント",
-        path: "muted/all",
+        path: "/settings/muted/all",
       },
       {
-        title: "ミュートしたキーワード",
-        path: "muted_keywords",
+        title: "ミュートした単語",
+        path: "/settings/muted_keywords",
       },
       {
-        title: "ミュートされた通知",
-        path: "notifications/advanced_filters",
+        title: "ミュート状態の通知",
+        path: "/settings/notifications/advanced_filters",
       },
     ],
   },
   NotificationPreferencePage: {
-    pageTitle: "環境設定",
-    description: "通知の種類ごとに環境設定を選択してください。",
+    pageTitle: "設定",
+    description: "通知の種類ごとに設定を選択します。",
     branchList: [
-      // 푸시 알림
       {
         title: "プッシュ通知",
-        path: "push_notifications",
+        path: "/settings/push_notifications",
       },
-      // 이메일 알림
       {
         title: "メール通知",
-        path: "email_notifications",
+        path: "/settings/email_notifications",
       },
     ],
   },

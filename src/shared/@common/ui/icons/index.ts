@@ -14,17 +14,28 @@ import {
   LuLock as lock,
   LuCopy as apps,
   LuArrowLeftRight as twoWay,
-  LuUsers as delegate,
   LuSmartphoneNfc as preferences,
   LuPen as pen,
   LuChevronRight as right,
+  LuUsers as users,
+  LuPenLine as penLine,
+  LuText as content,
+  LuVolumeX as mute,
+  LuMail as message,
+  LuContact as contact,
+  LuMapPin as pin,
+  LuSlidersHorizontal as filter,
 } from "react-icons/lu";
 import { CiLight as light, CiDark as dark } from "react-icons/ci";
-import { RiEyeLine as eye, RiEyeOffLine as eyeoff } from "react-icons/ri";
-import { VscSettings as filter } from "react-icons/vsc";
+import {
+  RiEyeLine as eye,
+  RiEyeOffLine as eyeoff,
+  RiAdvertisementLine as ads,
+} from "react-icons/ri";
 import { GiEarthAsiaOceania as map } from "react-icons/gi";
 import { BiBarChart as barChart } from "react-icons/bi";
 import { PiPersonSimpleCircle as shortcut } from "react-icons/pi";
+import { IoPeopleOutline as delegate } from "react-icons/io5";
 
 const ICONS = {
   backward, // 뒤로 가기
@@ -46,13 +57,21 @@ const ICONS = {
   apps, // 앱들
   twoWay, // 쌍방향 화살표
   delegate, // 위임
-  filter, // 필터
-  preferences, // 환경 설정
   pen, // 펜
   map, // 지도
   barChart, // 막대 그래프
   shortcut, // 단축키
   right, // 우측 화살표
+  users, // 오디언스
+  penLine, // 내 게시물
+  content, // 표시되는 콘텐츠
+  mute, // 뮤트
+  message, // 메시지
+  contact, // 연락처
+  ads, // 광고
+  pin, // 맵 핀
+  filter, // 알림 필터
+  preferences, // 알림 환경 설정
 };
 
 export default ICONS;
