@@ -1,4 +1,7 @@
-import { SettingsBranchType } from "@features/settings-setting/types/data";
+import {
+  CheckBoxType,
+  SettingsBranchType,
+} from "@features/settings-setting/types/data";
 import styles from "./SecurityPage.module.css";
 import {
   CheckBox,
@@ -18,14 +21,8 @@ interface SettingsBranchListContainerType extends SettingsContainerType {
   comp: SettingsBranchType;
 }
 
-interface SettingsCheckboxType {
-  text: string;
-  reducer: (value: boolean) => { type: string; payload: boolean };
-  initialValue: boolean;
-}
-
 interface SettingsCheckBoxContainerType extends SettingsContainerType {
-  comp: SettingsCheckboxType;
+  comp: CheckBoxType;
 }
 
 const SecurityPage = () => {
@@ -81,11 +78,7 @@ const SecurityPage = () => {
                 {type === "card" ? (
                   <SettingsBranchCard item={comp as SettingsBranchType} />
                 ) : (
-                  <CheckBox
-                    text={(comp as SettingsCheckboxType).text}
-                    reducer={(comp as SettingsCheckboxType).reducer}
-                    initialValue={(comp as SettingsCheckboxType).initialValue}
-                  />
+                  <CheckBox item={comp as CheckBoxType} />
                 )}
                 <Description text={description} />
               </div>
