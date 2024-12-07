@@ -4,7 +4,10 @@ import { Description } from "@shared/@common/ui/components";
 import { MainContentListLayout, MainLayout } from "@shared/pages/layout";
 
 const AccountPage = () => {
-  const { pageTitle, description } = useLanguageMode(["pages", "AccountPage"]);
+  const { pageTitle, description, branchList } = useLanguageMode([
+    "pages",
+    "AccountPage",
+  ]);
   return (
     <MainLayout
       pageTitle={pageTitle}
@@ -12,7 +15,7 @@ const AccountPage = () => {
       topContent={<Description text={description} />}
       bottomContent={
         <MainContentListLayout
-          listName={["accountBranchList"]}
+          list={branchList}
           item={<SettingsBranchCard />}
         />
       }
