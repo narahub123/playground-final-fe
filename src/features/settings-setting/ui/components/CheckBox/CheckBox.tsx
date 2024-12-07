@@ -5,7 +5,7 @@ import { useAppDispatch } from "@app/store";
 
 interface CheckBoxProps {
   text: string;
-  reducer: (value: any) => any;
+  reducer: (value: boolean) => { type: string; payload: boolean };
   initialValue: boolean;
 }
 
