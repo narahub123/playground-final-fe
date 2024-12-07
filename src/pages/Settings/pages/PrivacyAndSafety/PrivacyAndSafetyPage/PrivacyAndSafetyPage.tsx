@@ -4,7 +4,7 @@ import { Description } from "@shared/@common/ui/components";
 import { MainContentListLayout, MainLayout } from "@shared/pages/layout";
 
 const PrivacyAndSafetyPage = () => {
-  const { pageTitle, description } = useLanguageMode([
+  const { pageTitle, description, branchList } = useLanguageMode([
     "pages",
     "PrivacyAndSafetyPage",
   ]);
@@ -15,7 +15,7 @@ const PrivacyAndSafetyPage = () => {
       topContent={<Description text={description} />}
       bottomContent={
         <MainContentListLayout
-          listName={["privacyAndSafetyBranchList"]}
+          list={branchList}
           item={<SettingsBranchCard />}
         />
       }
