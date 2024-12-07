@@ -4,6 +4,11 @@ import {
   FaCircleXmark as invalid,
 } from "react-icons/fa6";
 import {
+  FaRegSquare as checkbox,
+  FaCheckSquare as checkedbox,
+} from "react-icons/fa";
+
+import {
   LuX as close,
   LuChevronDown as down,
   LuSearch as search,
@@ -72,6 +77,8 @@ const ICONS = {
   pin, // 맵 핀
   filter, // 알림 필터
   preferences, // 알림 환경 설정
+  checkbox, // 체크 박스
+  checkedbox, // 체크된 박스
 };
 
 export default ICONS;
