@@ -1,22 +1,9 @@
 import { countryNamesKor } from "@shared/@common/data/countries";
 
-// 설정 브랜치 목록
-import settingsMainBranchList from "./settings-main-branch-list";
-import {
-  accountBranchList,
-  securityAndAccountAccessBranchList,
-  privacyAndSafetyBranchList,
-  notificationBranchList,
-  AccessibilityAndDisplayAndLanguages,
-} from "./settings-mid-branch-list";
-
-import {
-  appAndSessionsBranchList,
-  muteAndBlockBranchList,
-  notificationPreferenceBranchList,
-} from "./settings-sub-branch-list";
-
+// 페이지
 import pages from "./pages";
+
+// 컴포넌트
 import components from "./components";
 
 const ko_KR = {
@@ -58,16 +45,6 @@ const ko_KR = {
   mainHeader: {
     backwardIconTitle: "이전 페이지로",
   },
-  // Settings 브랜치 목록
-  settingsMainBranchList, // Settings 메인 브랜치 목록
-  accountBranchList, // 계정
-  securityAndAccountAccessBranchList, // 보안 및 계정 접근 권한
-  privacyAndSafetyBranchList, // 개인 정보 및 안전
-  notificationBranchList, // 알림
-  AccessibilityAndDisplayAndLanguages, // 접근성, 표시, 언어
-  appAndSessionsBranchList, // 앱 및 세션
-  muteAndBlockBranchList, // 뮤트 및 차단
-  notificationPreferenceBranchList, // 알림 환경설정
 
   // 페이지
   pages,
