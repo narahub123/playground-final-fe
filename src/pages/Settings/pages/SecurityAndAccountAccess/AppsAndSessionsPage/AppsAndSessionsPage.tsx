@@ -4,7 +4,7 @@ import { Description } from "@shared/@common/ui/components";
 import { MainContentListLayout, MainLayout } from "@shared/pages/layout";
 
 const AppsAndSessionsPage = () => {
-  const { pageTitle, description } = useLanguageMode([
+  const { pageTitle, description, branchList } = useLanguageMode([
     "pages",
     "AppsAndSessionsPage",
   ]);
@@ -15,7 +15,7 @@ const AppsAndSessionsPage = () => {
       topContent={<Description text={description} />}
       bottomContent={
         <MainContentListLayout
-          listName={["appAndSessionsBranchList"]}
+          list={branchList}
           item={<SettingsBranchCard />}
         />
       }
