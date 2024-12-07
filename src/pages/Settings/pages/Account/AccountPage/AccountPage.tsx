@@ -8,6 +8,7 @@ const AccountPage = () => {
   return (
     <MainLayout
       pageTitle={pageTitle}
+      backward
       topContent={<Description text={description} />}
       bottomContent={
         <MainContentListLayout
