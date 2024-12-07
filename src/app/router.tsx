@@ -51,6 +51,7 @@ import {
   AccessibilityAndDisplayAndLanguagesPage,
   MuteAndBlockPage,
   NotificationPreferencePage,
+  SecurityPage,
 } from "@pages/Settings/pages";
 import { AuthLayout } from "@/layouts";
 import { PageLayout } from "@shared/pages/layout";
@@ -208,7 +209,7 @@ export const router = createBrowserRouter([
                   // 보안
                   {
                     path: "security",
-                    element: <Security />,
+                    element: <SecurityPage />,
                   },
                   // 앱 및 세션
                   {

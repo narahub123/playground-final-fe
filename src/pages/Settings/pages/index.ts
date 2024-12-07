@@ -24,6 +24,7 @@ import SettingsLandingPage from "./SettingsLandingPage/SettingsLandingPage";
 import { AccountPage } from "./Account";
 import {
   SecurityAndAccountAccessPage,
+  SecurityPage,
   AppsAndSessionsPage,
 } from "./SecurityAndAccountAccess";
 import { PrivacyAndSafetyPage, MuteAndBlockPage } from "./PrivacyAndSafety";
@@ -39,6 +40,7 @@ export {
   AppsAndSessionsPage,
   MuteAndBlockPage,
   NotificationPreferencePage,
+  SecurityPage,
   About,
   AccountData,
   ChangePassword,
