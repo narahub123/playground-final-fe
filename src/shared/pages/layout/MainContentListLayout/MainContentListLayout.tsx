@@ -1,27 +1,25 @@
 import styles from "./MainContentListLayout.module.css";
 import { cloneElement, ReactElement, ReactNode } from "react";
 import { useLanguageMode } from "@shared/@common/model/hooks";
-import { SettingsBranchType } from "@features/settings-setting/types/data";
 import { Description } from "@shared/@common/ui/components";
 import { getLanguage } from "@shared/@common/model/selectors";
 import { useSelector } from "react-redux";
+import { SettingsMainBranchType } from "@features/settings-setting/types";
+import { SettingsBranchType } from "@features/settings-setting/types/data";
 
 interface MainContentListLayoutProps {
-  listName: string[];
+  list: (SettingsMainBranchType | SettingsBranchType)[];
   item: ReactNode;
   search?: string;
 }
 
 const MainContentListLayout = ({
-  listName,
+  list,
   item,
   search,
 }: MainContentListLayoutProps) => {
   // 언어
   const lang = useSelector(getLanguage);
-
-  // 목록
-  const list: SettingsBranchType[] = useLanguageMode(listName);
 
   // 검색 결과가 없는 경우
   const { title, description } = useLanguageMode([
