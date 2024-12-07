@@ -1,3 +1,4 @@
+import { SettingsBranchType } from "@features/settings-setting/types/data";
 import styles from "./SecurityPage.module.css";
 import {
   CheckBox,
@@ -7,11 +8,35 @@ import { setBackgroundTheme } from "@shared/@common/model/slices/settingsSlice";
 import { Description, Title } from "@shared/@common/ui/components";
 import { MainLayout } from "@shared/pages/layout";
 
+interface SettingsContainerType {
+  title: string;
+  type: string;
+  description: string;
+}
+
+interface SettingsBranchListContainerType extends SettingsContainerType {
+  comp: SettingsBranchType;
+}
+
+interface SettingsCheckboxType {
+  text: string;
+  reducer: (value: boolean) => { type: string; payload: boolean };
+  initialValue: boolean;
+}
+
+interface SettingsCheckBoxContainerType extends SettingsContainerType {
+  comp: SettingsCheckboxType;
+}
+
 const SecurityPage = () => {
-  const list = [
+  const list: (
+    | SettingsBranchListContainerType
+    | SettingsCheckBoxContainerType
+  )[] = [
     {
       title: "2단계 인증",
-      card: {
+      type: "card",
+      comp: {
         title: "2단계 인증",
         path: "/settings/account/login_verification",
       },
@@ -20,7 +45,8 @@ const SecurityPage = () => {
     },
     {
       title: "ID 인증",
-      card: {
+      type: "card",
+      comp: {
         title: "ID 인증",
         path: "/settings/account/id_verification",
       },
@@ -29,8 +55,9 @@ const SecurityPage = () => {
     },
     {
       title: "비밀번호 재설정",
-      checkbox: {
-        title: "비밀번호 재설정 보호",
+      type: "checkbox",
+      comp: {
+        text: "비밀번호 재설정 보호",
         reducer: setBackgroundTheme,
         initialValue: false,
       },
@@ -46,28 +73,23 @@ const SecurityPage = () => {
       bottomContent={
         <>
           {list.map((item) => {
-            const { title, card, checkbox, description } = item;
-            if (card) {
-              return (
-                <div className={styles.section}>
-                  <Title text={title} />
-                  <SettingsBranchCard item={card} />
-                  <Description text={description} />
-                </div>
-              );
-            } else if (checkbox) {
-              return (
-                <div className={styles.section}>
-                  <Title text={title} />
+            const { title, type, comp, description } = item;
+
+            return (
+              <div className={styles.section}>
+                <Title text={title} />
+                {type === "card" ? (
+                  <SettingsBranchCard item={comp as SettingsBranchType} />
+                ) : (
                   <CheckBox
-                    text={checkbox.title}
-                    reducer={checkbox.reducer}
-                    initialValue={checkbox.initialValue}
+                    text={(comp as SettingsCheckboxType).text}
+                    reducer={(comp as SettingsCheckboxType).reducer}
+                    initialValue={(comp as SettingsCheckboxType).initialValue}
                   />
-                  <Description text={description} />
-                </div>
-              );
-            }
+                )}
+                <Description text={description} />
+              </div>
+            );
           })}
         </>
       }
