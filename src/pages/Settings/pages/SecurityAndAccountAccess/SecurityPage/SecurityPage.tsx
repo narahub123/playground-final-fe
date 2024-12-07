@@ -6,6 +6,7 @@ import styles from "./SecurityPage.module.css";
 import {
   CheckBox,
   SettingsBranchCard,
+  SettingsContainer,
 } from "@features/settings-setting/ui/components";
 import { Description, Title } from "@shared/@common/ui/components";
 import { MainLayout } from "@shared/pages/layout";
@@ -35,30 +36,7 @@ const SecurityPage = () => {
       pageTitle={pageTitle}
       backward
       topContent={<Description text={description} />}
-      bottomContent={
-        <>
-          {(
-            list as (
-              | SettingsBranchListContainerType
-              | SettingsCheckBoxContainerType
-            )[]
-          ).map((item) => {
-            const { title, type, comp, description } = item;
-
-            return (
-              <div className={styles.section}>
-                <Title text={title} />
-                {type === "card" ? (
-                  <SettingsBranchCard item={comp as SettingsBranchType} />
-                ) : (
-                  <CheckBox item={comp as CheckBoxType} />
-                )}
-                <Description text={description} />
-              </div>
-            );
-          })}
-        </>
-      }
+      bottomContent={<SettingsContainer list={list} />}
     />
   );
 };
