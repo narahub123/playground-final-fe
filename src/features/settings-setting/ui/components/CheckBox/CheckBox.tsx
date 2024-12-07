@@ -2,14 +2,15 @@ import { Icon } from "@shared/@common/ui/components";
 import styles from "./CheckBox.module.css";
 import { useEffect, useState } from "react";
 import { useAppDispatch } from "@app/store";
+import { CheckBoxType } from "@features/settings-setting/types/data";
 
 interface CheckBoxProps {
-  text: string;
-  reducer: (value: boolean) => { type: string; payload: boolean };
-  initialValue: boolean;
+  item: CheckBoxType;
 }
 
-const CheckBox = ({ text, reducer, initialValue }: CheckBoxProps) => {
+const CheckBox = ({ item }: CheckBoxProps) => {
+  const { text, reducer, initialValue } = item;
+
   const dispatch = useAppDispatch();
   const [isChecked, setIsChecked] = useState(initialValue);
 
@@ -24,11 +25,11 @@ const CheckBox = ({ text, reducer, initialValue }: CheckBoxProps) => {
         <Icon
           iconName="checkedbox"
           iconTitle=""
-          fontSize={20}
-          color="cornflowerblue"
+          fontSize={22}
+          className={styles.icon}
         />
       ) : (
-        <Icon iconName="checkbox" iconTitle="" fontSize={20} />
+        <Icon iconName="checkbox" iconTitle="" fontSize={22} />
       )}
     </div>
   );
