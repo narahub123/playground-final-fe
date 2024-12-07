@@ -4,7 +4,7 @@ import { Description } from "@shared/@common/ui/components";
 import { MainContentListLayout, MainLayout } from "@shared/pages/layout";
 
 const NotificationsPage = () => {
-  const { pageTitle, description } = useLanguageMode([
+  const { pageTitle, description, branchList } = useLanguageMode([
     "pages",
     "NotificationsPage",
   ]);
@@ -15,7 +15,7 @@ const NotificationsPage = () => {
       topContent={<Description text={description} />}
       bottomContent={
         <MainContentListLayout
-          listName={["notificationBranchList"]}
+          list={branchList}
           item={<SettingsBranchCard />}
         />
       }
