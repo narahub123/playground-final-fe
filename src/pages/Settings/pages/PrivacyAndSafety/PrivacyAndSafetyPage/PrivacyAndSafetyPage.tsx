@@ -11,6 +11,7 @@ const PrivacyAndSafetyPage = () => {
   return (
     <MainLayout
       pageTitle={pageTitle}
+      backward
       topContent={<Description text={description} />}
       bottomContent={
         <MainContentListLayout
