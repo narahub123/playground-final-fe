@@ -11,14 +11,15 @@ const SettingsBranchCard = ({ item }: settingsbranchcardProps) => {
   if (!item) return;
 
   const openModal = item.path.includes("/i/");
+  const liCond = item.path === "";
 
-  const Card = openModal ? "li" : Link;
+  const Card = openModal || liCond ? "li" : Link;
 
   return (
     <Card
-      className={styles.card}
+      className={`${styles.card} ${liCond && styles.nohover}`}
       to={item.path}
-      tabIndex={0}
+      tabIndex={liCond ? -1 : 0}
       aria-label={item.title} // 링크인 경우 내용 추가
       role={openModal ? "button" : undefined} // 모달창을 열 때만 role 명시
     >
@@ -35,7 +36,9 @@ const SettingsBranchCard = ({ item }: settingsbranchcardProps) => {
         <div>{item.title}</div>
         {item.expl && <Description text={item.expl} />}
       </span>
-      <Icon iconName="right" iconTitle="" ariaHidden fontSize={20} />
+      {item.path !== "" && (
+        <Icon iconName="right" iconTitle="" ariaHidden fontSize={20} />
+      )}
     </Card>
   );
 };

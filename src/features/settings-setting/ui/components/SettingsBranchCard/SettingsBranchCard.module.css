@@ -5,11 +5,15 @@
   padding: 10px;
 }
 
-.card:hover {
+.nohover {
+  user-select: none;
+}
+
+.card:not(.nohover):hover {
   background-color: var(--hover-default);
 }
 
-.card:focus {
+.card:not(.nohover):focus {
   background-color: var(--hover-default);
 }
 
