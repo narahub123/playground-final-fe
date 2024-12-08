@@ -2,6 +2,11 @@
   width: 100%;
 }
 
+.topContent {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .bottomContent {
   margin-top: 10px;
 }
