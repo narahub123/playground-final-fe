@@ -13,23 +13,29 @@ import {
 
 interface SettingsContainerProps {
   list: (SettingsBranchListContainerType | SettingsCheckBoxContainerType)[];
+  gap?: number;
+  unit?: string;
 }
 
-const SettingsContainer = ({ list }: SettingsContainerProps) => {
+const SettingsContainer = ({
+  list,
+  gap = 10,
+  unit = "px",
+}: SettingsContainerProps) => {
   return (
     <>
       {list.map((item) => {
         const { title, type, comp, description } = item;
 
         return (
-          <div className={styles.container}>
+          <div className={styles.container} style={{ gap: `${gap}${unit}` }}>
             <Title text={title} />
             {type === "card" ? (
               <SettingsBranchCard item={comp as SettingsBranchType} />
             ) : (
               <CheckBox item={comp as CheckBoxType} />
             )}
-            <Description text={description} />
+            {description && <Description text={description} />}
           </div>
         );
       })}
