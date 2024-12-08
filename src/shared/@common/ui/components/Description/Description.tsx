@@ -2,10 +2,11 @@ import styles from "./Description.module.css";
 
 interface DescriptionProps {
   text: string;
+  className?: string;
 }
 
-const Description = ({ text }: DescriptionProps) => {
-  return <p className={styles.description}>{text}</p>;
+const Description = ({ text, className }: DescriptionProps) => {
+  return <p className={`${styles.description} ${className}`}>{text}</p>;
 };
 
 export default Description;
