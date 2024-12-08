@@ -1,7 +1,8 @@
+import { ReactNode } from "react";
 import styles from "./Description.module.css";
 
 interface DescriptionProps {
-  text: string;
+  text: string | ReactNode;
   className?: string;
 }
 
