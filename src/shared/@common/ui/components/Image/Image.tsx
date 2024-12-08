@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { bgThemes } from "@shared/@common/data";
 import { useSelector } from "react-redux";
-import { getBgTheme, getLanguage } from "@shared/@common/model/selectors";
-import { getLangObjValue } from "@shared/@common/utils";
+import { getBgTheme } from "@shared/@common/model/selectors";
 import { Link } from "react-router-dom";
 import { useLanguageMode } from "@shared/@common/model/hooks";
 
@@ -25,7 +24,7 @@ const Image = ({
 }: ImageProps) => {
   const [isFocused, setIsFocused] = useState(false);
   const bgTheme = useSelector(getBgTheme);
-  const { imgAlt } = useLanguageMode("image");
+  const { imgAlt } = useLanguageMode(["components", "image"]);
 
   const isFocusable = role === "link";
   const container = isFocusable ? Link : "figure";
