@@ -1,4 +1,11 @@
+import { countryNamesJap } from "@shared/@common/data/countries";
+
 const utils = {
+  // 언어 선택
+  languageSelect: {
+    wrongCountryCode: "無効な国コード",
+    countryNames: countryNamesJap,
+  },
   // 성별
   translateGender: {
     m: "男性",

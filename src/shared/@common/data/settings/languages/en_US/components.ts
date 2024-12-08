@@ -1,11 +1,4 @@
-import { countryNamesEng } from "@shared/@common/data/countries";
-
 const components = {
-  // 언어 선택
-  languageSelect: {
-    wrongCountryCode: "Invalid country code",
-    countryNames: countryNamesEng,
-  },
   // 프로필 이미지
   profileImage: {
     imgAlt: { login: "'s profile photo", logout: "Profile Photo" },

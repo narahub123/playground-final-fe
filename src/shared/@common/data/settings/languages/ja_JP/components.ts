@@ -1,11 +1,4 @@
-import { countryNamesJap } from "@shared/@common/data/countries";
-
 const components = {
-  // 언어 선택
-  languageSelect: {
-    wrongCountryCode: "無効な国コード",
-    countryNames: countryNamesJap,
-  },
   // 프로필 이미지
   profileImage: {
     imgAlt: {

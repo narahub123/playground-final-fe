@@ -1,11 +1,4 @@
-import { countryNamesZhCN } from "@shared/@common/data/countries";
-
 const components = {
-  // 언어 선택
-  languageSelect: {
-    wrongCountryCode: "無效的國家代碼",
-    countryNames: countryNamesZhCN,
-  },
   // 프로필 이미지
   profileImage: {
     imgAlt: {

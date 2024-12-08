@@ -1,4 +1,11 @@
+import { countryNamesZhTW } from "@shared/@common/data/countries";
+
 const utils = {
+  // 언어 선택
+  languageSelect: {
+    wrongCountryCode: "无效的国家代码",
+    countryNames: countryNamesZhTW,
+  },
   // 성별
   translateGender: {
     m: "男性",
