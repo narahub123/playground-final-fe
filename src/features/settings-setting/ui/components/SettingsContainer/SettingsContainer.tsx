@@ -29,13 +29,18 @@ const SettingsContainer = ({
 
         return (
           <div className={styles.container} style={{ gap: `${gap}${unit}` }}>
-            <Title text={title} />
+            {title && <Title text={title} />}
             {type === "card" ? (
               <SettingsBranchCard item={comp as SettingsBranchType} />
             ) : (
-              <CheckBox item={comp as CheckBoxType} />
+              <CheckBox item={comp as CheckBoxType} className={styles.front} />
             )}
-            {description && <Description text={description} />}
+            {description && (
+              <Description
+                text={description}
+                className={`${styles.front} ${styles.bottom}`}
+              />
+            )}
           </div>
         );
       })}
