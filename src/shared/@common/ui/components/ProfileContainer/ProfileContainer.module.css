@@ -1,0 +1,19 @@
+.profile-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+.profile-container:hover {
+  background-color: var(--hover-default);
+}
+
+.info {
+  flex: 1;
+}
+
+.username {
+  font-weight: bold;
+}

@@ -10,6 +10,7 @@ import ProfileImage from "./ProfileImage/ProfileImage";
 import Image from "./Image/Image";
 import Description from "./Description/Description";
 import Title from "./Title/Title";
+import ProfileContainer from "./ProfileContainer/ProfileContainer";
 
 export {
   Icon,
@@ -26,4 +27,5 @@ export {
   Image,
   Description,
   Title,
+  ProfileContainer,
 };
