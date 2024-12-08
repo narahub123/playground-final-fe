@@ -426,6 +426,44 @@ const pages = {
       text: "無効化",
     },
   },
+  AudienceAndTaggingPage: {
+    pageTitle: "オーディエンス、メディア、タグ付け",
+    description: "PlayGroundで他の人と共有する情報を管理します。",
+    list: [
+      {
+        title: "",
+        type: "checkbox",
+        comp: {
+          text: "投稿を非公開に設定",
+          reducer: setBackgroundTheme,
+          initialValue: false,
+        },
+        description:
+          "選択すると、フォローしている人だけが自分の投稿やアカウント情報を閲覧できます。",
+      },
+      {
+        title: "",
+        type: "checkbox",
+        comp: {
+          text: "動画を保護",
+          reducer: setBackgroundTheme,
+          initialValue: false,
+        },
+        description:
+          "この設定を有効にすると、投稿内の動画をデフォルトでダウンロードできなくなります。この設定は今後の投稿に適用され、過去の投稿には適用されません。",
+      },
+      {
+        title: "",
+        type: "card",
+        comp: {
+          title: "写真のタグ付け",
+          path: "/settings/tagging",
+          expl: "誰でも自分をタグ付けすることを許可",
+        },
+        description: "",
+      },
+    ],
+  },
 };
 
 export default pages;

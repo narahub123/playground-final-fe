@@ -426,6 +426,44 @@ const pages = {
       text: "Deactivate",
     },
   },
+  AudienceAndTaggingPage: {
+    pageTitle: "Audience, Media, and Tagging",
+    description: "Manage the information you share with others on PlayGround.",
+    list: [
+      {
+        title: "",
+        type: "checkbox",
+        comp: {
+          text: "Set my posts to private",
+          reducer: setBackgroundTheme,
+          initialValue: false,
+        },
+        description:
+          "When selected, only people who follow me can view my posts and other account information.",
+      },
+      {
+        title: "",
+        type: "checkbox",
+        comp: {
+          text: "Protect videos",
+          reducer: setBackgroundTheme,
+          initialValue: false,
+        },
+        description:
+          "If enabled, videos in posts cannot be downloaded by default. This setting applies to future posts and does not apply retroactively.",
+      },
+      {
+        title: "",
+        type: "card",
+        comp: {
+          title: "Photo Tagging",
+          path: "/settings/tagging",
+          expl: "Allow anyone to tag me",
+        },
+        description: "",
+      },
+    ],
+  },
 };
 
 export default pages;

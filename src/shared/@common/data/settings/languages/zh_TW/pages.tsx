@@ -420,6 +420,43 @@ const pages = {
       text: "停用",
     },
   },
+  AudienceAndTaggingPage: {
+    pageTitle: "受眾、媒體和標記",
+    description: "管理您在PlayGround上與他人共享的資訊。",
+    list: [
+      {
+        title: "",
+        type: "checkbox",
+        comp: {
+          text: "將我的帖子設置為私人",
+          reducer: setBackgroundTheme,
+          initialValue: false,
+        },
+        description: "選中後，只有關注我的人才能查看我的帖子和其他帳號資訊。",
+      },
+      {
+        title: "",
+        type: "checkbox",
+        comp: {
+          text: "保護視頻",
+          reducer: setBackgroundTheme,
+          initialValue: false,
+        },
+        description:
+          "啟用後，帖子中的視頻默認無法下載。此設置適用於未來的帖子，不適用於過去的內容。",
+      },
+      {
+        title: "",
+        type: "card",
+        comp: {
+          title: "照片標記",
+          path: "/settings/tagging",
+          expl: "允許任何人標記我",
+        },
+        description: "",
+      },
+    ],
+  },
 };
 
 export default pages;
