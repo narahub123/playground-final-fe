@@ -384,7 +384,7 @@ const pages = {
       {
         title: "성별",
         path: "/settings/gender",
-        expl: "여성",
+        expl: user.gender,
       },
       // 생년월일
       {
