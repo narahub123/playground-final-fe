@@ -1,3 +1,4 @@
+import styles from "./HyperLink.module.css";
 import { Link } from "react-router-dom";
 
 interface HyperLinkProps {
@@ -5,15 +6,32 @@ interface HyperLinkProps {
   path: string;
   out?: boolean;
   className?: string;
+  color?: string;
 }
 
-const HyperLink = ({ text, path, className, out = true }: HyperLinkProps) => {
+const HyperLink = ({
+  text,
+  path,
+  className,
+  out = true,
+  color,
+}: HyperLinkProps) => {
   return out ? (
-    <a href={path} className={`${className}`}>
+    <a
+      href={path}
+      className={`${styles.hyperlink} ${className}`}
+      style={{ color: color }}
+    >
       {text}
     </a>
   ) : (
-    <Link to={path}>{text}</Link>
+    <Link
+      to={path}
+      className={`${styles.hyperlink} ${className}`}
+      style={{ color: color }}
+    >
+      {text}
+    </Link>
   );
 };
 
