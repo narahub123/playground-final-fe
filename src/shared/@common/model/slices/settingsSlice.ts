@@ -11,6 +11,7 @@ const initialState: SettingsType = {
   language: "ko-KR",
   colorTheme: "cornflowerblue",
   fontSize: "b",
+  isVisible: true,
 };
 
 // 페이지 로드 전에 setting를 먼저 로드해야 함

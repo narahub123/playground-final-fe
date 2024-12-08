@@ -4,6 +4,7 @@ type SettingsType = {
   language: string;
   colorTheme: ColorThemeType;
   fontSize: FontSizeType;
+  isVisible: boolean;
 };
 
 // 배경 설정 키
