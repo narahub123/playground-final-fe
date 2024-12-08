@@ -70,7 +70,7 @@ const pages = {
       {
         title: "Deactivate Account",
         expl: "Learn how to deactivate your account.",
-        path: "/settings/inactivate",
+        path: "/settings/deactivate",
         icon: "crackedHeart",
       },
     ],

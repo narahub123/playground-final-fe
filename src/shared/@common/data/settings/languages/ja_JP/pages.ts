@@ -70,7 +70,7 @@ const pages = {
       {
         title: "アカウントの無効化",
         expl: "アカウントを無効化する方法を学びます。",
-        path: "/settings/inactivate",
+        path: "/settings/deactivate",
         icon: "crackedHeart",
       },
     ],

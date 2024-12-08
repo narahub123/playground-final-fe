@@ -80,7 +80,7 @@ const pages = {
       {
         title: "계정 비활성화",
         expl: "계정을 비활성화하는 법을 알아보세요.",
-        path: "/settings/inactivate",
+        path: "/settings/deactivate",
         icon: "crackedHeart",
       },
     ],

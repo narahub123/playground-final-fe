@@ -69,7 +69,7 @@ const pages = {
       {
         title: "停用帳戶",
         expl: "了解如何停用帳戶。",
-        path: "/settings/inactivate",
+        path: "/settings/deactivate",
         icon: "crackedHeart",
       },
     ],
