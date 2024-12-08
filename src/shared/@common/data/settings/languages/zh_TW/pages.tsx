@@ -2,6 +2,7 @@ import { countryNamesZhTW } from "@shared/@common/data/countries";
 import { setBackgroundTheme } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
+import { HyperLink } from "@shared/@common/ui/components";
 import {
   calculateAge,
   convertBirthToLocalString,
@@ -385,6 +386,39 @@ const pages = {
         expl: "管理自動化帳戶。",
       },
     ],
+  },
+  DeactivatePage: {
+    pageTitle: "停用帳號",
+    section1: {
+      title: "您的帳號將被停用。",
+      description:
+        "開始停用PlayGround帳號的流程。您的顯示名稱、@用戶名和公開個人資料將不再顯示在PlayGround.com、適用於iOS的PlayGround或適用於Android的PlayGround上。",
+    },
+    section2: {
+      title: "還有哪些需要了解的內容",
+      list: [
+        "如果因誤操作或不小心停用了PlayGround帳號，您可以在30天內恢復。",
+        "部分帳號資訊可能仍可通過Google或Bing等搜索引擎訪問。",
+        <>
+          您無需停用帳號即可更改@用戶名。{" "}
+          <HyperLink text="設定" path="/settings/password" out={false} />
+          中更新用戶名。
+        </>,
+        <>
+          如果希望將當前的@用戶名或電子郵件地址用於其他PlayGround帳號，請在停用此帳號之前{" "}
+          <HyperLink
+            text="更改"
+            path="/settings/your_data/account"
+            out={false}
+          />
+          這些資訊。
+        </>,
+        "若要下載您的PlayGround數據，請務必在停用帳號之前完成請求和下載過程。無法向已停用的帳號發送數據下載鏈接。",
+      ],
+    },
+    deactivate: {
+      text: "停用",
+    },
   },
 };
 

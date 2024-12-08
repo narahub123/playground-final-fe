@@ -2,6 +2,7 @@ import { countryNamesJap } from "@shared/@common/data/countries";
 import { setBackgroundTheme } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
+import { HyperLink } from "@shared/@common/ui/components";
 import {
   calculateAge,
   convertBirthToLocalString,
@@ -390,6 +391,40 @@ const pages = {
         expl: "自動化アカウントを管理します。",
       },
     ],
+  },
+  DeactivatePage: {
+    pageTitle: "アカウントの無効化",
+    section1: {
+      title: "アカウントが無効になります。",
+      description:
+        "PlayGroundアカウントの無効化プロセスを開始します。表示名、@ユーザー名、公開プロフィールは、PlayGround.com、iOS用PlayGround、Android用PlayGroundに表示されなくなります。",
+    },
+    section2: {
+      title: "その他知っておくべきこと",
+      list: [
+        "誤ってまたは意図せずにPlayGroundアカウントを無効化した場合、30日以内であれば復元可能です。",
+        "一部のアカウント情報は、GoogleやBingなどの検索エンジンでまだアクセス可能である場合があります。",
+        <>
+          @ユーザー名を変更するためにアカウントを無効化する必要はありません。{" "}
+          <HyperLink text="設定" path="/settings/password" out={false} />
+          でユーザー名を更新してください。
+        </>,
+        <>
+          現在の@ユーザー名やメールアドレスを他のPlayGroundアカウントで
+          使用する場合は、このアカウントを無効化する前に{" "}
+          <HyperLink
+            text="変更"
+            path="/settings/your_data/account"
+            out={false}
+          />
+          してください。
+        </>,
+        "PlayGroundデータをダウンロードするには、アカウントを無効化する前にリクエストとダウンロードのプロセスを完了する必要があります。無効化されたアカウントにはデータダウンロードリンクを送信できません。",
+      ],
+    },
+    deactivate: {
+      text: "無効化",
+    },
   },
 };
 

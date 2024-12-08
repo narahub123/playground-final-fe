@@ -2,6 +2,7 @@ import { countryNamesZhCN } from "@shared/@common/data/countries";
 import { setBackgroundTheme } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
+import { HyperLink } from "@shared/@common/ui/components";
 import {
   calculateAge,
   convertBirthToLocalString,
@@ -385,6 +386,39 @@ const pages = {
         expl: "管理自动化账户。",
       },
     ],
+  },
+  DeactivatePage: {
+    pageTitle: "停用账号",
+    section1: {
+      title: "您的账号将被停用。",
+      description:
+        "开始停用PlayGround账号的流程。您的显示名称、@用户名和公开个人资料将不再显示在PlayGround.com、适用于iOS的PlayGround或适用于Android的PlayGround上。",
+    },
+    section2: {
+      title: "还有哪些需要了解的内容",
+      list: [
+        "如果因误操作或不小心停用了PlayGround账号，您可以在30天内恢复。",
+        "部分账号信息可能仍可通过Google或Bing等搜索引擎访问。",
+        <>
+          您无需停用账号即可更改@用户名。{" "}
+          <HyperLink text="设置" path="/settings/password" out={false} />
+          中更新用户名。
+        </>,
+        <>
+          如果希望将当前的@用户名或电子邮箱地址用于其他PlayGround账号，请在停用此账号之前{" "}
+          <HyperLink
+            text="更改"
+            path="/settings/your_data/account"
+            out={false}
+          />
+          这些信息。
+        </>,
+        "若要下载您的PlayGround数据，请务必在停用账号之前完成请求和下载过程。无法向已停用的账号发送数据下载链接。",
+      ],
+    },
+    deactivate: {
+      text: "停用",
+    },
   },
 };
 

@@ -2,6 +2,7 @@ import { countryNamesEng } from "@shared/@common/data/countries";
 import { setBackgroundTheme } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
+import { HyperLink } from "@shared/@common/ui/components";
 import {
   calculateAge,
   convertBirthToLocalString,
@@ -390,6 +391,40 @@ const pages = {
         expl: "Manage automation accounts.",
       },
     ],
+  },
+  DeactivatePage: {
+    pageTitle: "Deactivate Account",
+    section1: {
+      title: "Your account will be deactivated.",
+      description:
+        "You are starting the process to deactivate your PlayGround account. Your display name, @username, and public profile will no longer be visible on PlayGround.com, PlayGround for iOS, or PlayGround for Android.",
+    },
+    section2: {
+      title: "What else should I know?",
+      list: [
+        "You can recover your PlayGround account within 30 days if it was deactivated by mistake or unintentionally.",
+        "Some account information may still be accessible on search engines like Google or Bing.",
+        <>
+          You don't need to deactivate your account to change your @username.{" "}
+          <HyperLink text="Settings" path="/settings/password" out={false} />
+          to update your username.
+        </>,
+        <>
+          If you want to use your current @username or email address for another
+          PlayGround account, please{" "}
+          <HyperLink
+            text="update"
+            path="/settings/your_data/account"
+            out={false}
+          />
+          them before deactivating this account.
+        </>,
+        "To download your PlayGround data, you must complete the request and download process before deactivating your account. Data download links cannot be sent to a deactivated account.",
+      ],
+    },
+    deactivate: {
+      text: "Deactivate",
+    },
   },
 };
 
