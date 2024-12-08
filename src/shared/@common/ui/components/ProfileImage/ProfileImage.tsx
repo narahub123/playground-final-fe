@@ -16,12 +16,14 @@ interface ProfileImageProps {
   size?: number;
   unit?: string;
   disabled?: boolean; // 이미지 업데이트 가능 여부 설정
+  className?: string;
 }
 
 const ProfileImage = ({
   size = 100,
   unit = "px",
   disabled = false,
+  className,
 }: ProfileImageProps) => {
   const dispatch = useAppDispatch();
   const inputRef = useRef<HTMLInputElement>(null);
@@ -64,7 +66,7 @@ const ProfileImage = ({
   }, [images]);
 
   return (
-    <div className={styles[`profile-image`]}>
+    <div className={`${styles[`profile-image`]} ${className}`}>
       <figure
         className={styles.container}
         style={{
