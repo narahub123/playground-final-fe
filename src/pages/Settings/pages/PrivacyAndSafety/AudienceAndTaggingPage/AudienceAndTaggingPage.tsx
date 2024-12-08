@@ -13,7 +13,7 @@ const AudienceAndTaggingPage = () => {
       pageTitle={pageTitle}
       backward
       topContent={<Description text={description} />}
-      bottomContent={<SettingsContainer list={list} />}
+      bottomContent={<SettingsContainer list={list} gap={0} />}
     />
   );
 };
