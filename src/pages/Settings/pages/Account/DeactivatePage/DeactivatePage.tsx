@@ -49,9 +49,13 @@ const DeactivatePage = () => {
               ))}
             </div>
           </div>
-          <div className={styles.deactivate}>
-            <HyperLink text="비활성화" path="confirm" out={false} />
-          </div>
+
+          <HyperLink
+            text="비활성화"
+            path="confirm"
+            out={false}
+            className={styles.deactivate}
+          />
         </>
       }
     />
