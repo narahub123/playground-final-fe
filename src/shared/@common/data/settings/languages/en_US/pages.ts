@@ -1,4 +1,5 @@
 import { setBackgroundTheme } from "@shared/@common/model/slices/settingsSlice";
+import { userExample as user } from "@shared/@common/data/example";
 
 const pages = {
   settingsLandingPage: {
@@ -299,6 +300,82 @@ const pages = {
         },
         description:
           "As an additional layer of protection, you will need to verify your email address or phone number to reset your PlayGround password.",
+      },
+    ],
+  },
+  AccountInfoPage: {
+    pageTitle: "Account Information",
+    branchList: [
+      // 사용자 아이디
+      {
+        title: "User ID",
+        path: "/settings/screen_name",
+        expl: `@${user.userId}`,
+      },
+      // 휴대폰
+      {
+        title: "Phone",
+        path: "/settings/phone",
+      },
+      // 이메일
+      {
+        title: "Email",
+        path: "/settings/email",
+        expl: user.email,
+      },
+      // 인증 여부
+      {
+        title: "Authentication Status",
+        path: "",
+        expl: user.isAuthenticated,
+      },
+      // 비공개 게시물
+      {
+        title: "Private Posts",
+        path: "/settings/audience_and_tagging",
+        expl: user.isVisible,
+      },
+      // 계정 생성
+      {
+        title: "Account Creation",
+        path: "",
+        expl: user.regDate.toLocaleString(),
+      },
+      // 국가
+      {
+        title: "Country",
+        path: "/settings/country",
+        expl: user.language.split("-")[1],
+      },
+      // 언어
+      {
+        title: "Language",
+        path: "/settings/language",
+        expl: user.language,
+      },
+      // 성별
+      {
+        title: "Gender",
+        path: "/settings/gender",
+        expl: "Female",
+      },
+      // 생년월일
+      {
+        title: "Date of Birth",
+        path: "",
+        expl: user.birth,
+      },
+      // 연령
+      {
+        title: "Age",
+        path: "age",
+        expl: user.birth,
+      },
+      // 자동화
+      {
+        title: "Automation",
+        path: "automation",
+        expl: "Manage automated accounts.",
       },
     ],
   },

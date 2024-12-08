@@ -1,9 +1,11 @@
-import { listModalExample } from "./example";
+import { listModalExample, userExample } from "./example";
 import { bgThemes, colorThemeArr, language, fontSizeArr } from "./settings";
 import countryNames from "./countries/countryNamesEng";
 import { languageList } from "./components/index";
 
 export {
+  // 예시: 삭제 예정
+  userExample,
   // 예시: 삭제 예정
   listModalExample,
   // 배경 모드

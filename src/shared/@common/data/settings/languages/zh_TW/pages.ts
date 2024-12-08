@@ -1,4 +1,5 @@
 import { setBackgroundTheme } from "@shared/@common/model/slices/settingsSlice";
+import { userExample as user } from "@shared/@common/data/example";
 
 const pages = {
   settingsLandingPage: {
@@ -294,6 +295,82 @@ const pages = {
         },
         description:
           "作為額外的保護措施，您需要驗證您的電子郵件地址或電話號碼才能重設PlayGround密碼。",
+      },
+    ],
+  },
+  AccountInfoPage: {
+    pageTitle: "帳戶資訊",
+    branchList: [
+      // 사용자 아이디
+      {
+        title: "用戶ID",
+        path: "/settings/screen_name",
+        expl: `@${user.userId}`,
+      },
+      // 휴대폰
+      {
+        title: "手機",
+        path: "/settings/phone",
+      },
+      // 이메일
+      {
+        title: "電子郵件",
+        path: "/settings/email",
+        expl: user.email,
+      },
+      // 인증 여부
+      {
+        title: "認證狀態",
+        path: "",
+        expl: user.isAuthenticated,
+      },
+      // 비공개 게시물
+      {
+        title: "私人貼文",
+        path: "/settings/audience_and_tagging",
+        expl: user.isVisible,
+      },
+      // 계정 생성
+      {
+        title: "帳戶創建",
+        path: "",
+        expl: user.regDate.toLocaleString(),
+      },
+      // 국가
+      {
+        title: "國家",
+        path: "/settings/country",
+        expl: user.language.split("-")[1],
+      },
+      // 언어
+      {
+        title: "語言",
+        path: "/settings/language",
+        expl: user.language,
+      },
+      // 성별
+      {
+        title: "性別",
+        path: "/settings/gender",
+        expl: "女性",
+      },
+      // 생년월일
+      {
+        title: "出生日期",
+        path: "",
+        expl: user.birth,
+      },
+      // 연령
+      {
+        title: "年齡",
+        path: "age",
+        expl: user.birth,
+      },
+      // 자동화
+      {
+        title: "自動化",
+        path: "automation",
+        expl: "管理自動化帳戶。",
       },
     ],
   },

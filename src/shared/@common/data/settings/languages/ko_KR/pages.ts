@@ -1,4 +1,5 @@
 import { setBackgroundTheme } from "@shared/@common/model/slices/settingsSlice";
+import { userExample as user } from "@shared/@common/data/example";
 
 const pages = {
   settingsLandingPage: {
@@ -326,6 +327,82 @@ const pages = {
         },
         description:
           "추가적인 보호 조치로서, PlayGround 비밀번호를 재설정하려면 이메일 주소 또는 휴대폰 번호를 확인해야 합니다",
+      },
+    ],
+  },
+  AccountInfoPage: {
+    pageTitle: "계정 정보",
+    branchList: [
+      // 사용자 아이디
+      {
+        title: "사용자 아이디",
+        path: "/settings/screen_name",
+        expl: `@${user.userId}`,
+      },
+      // 휴대폰
+      {
+        title: "휴대폰",
+        path: "/settings/phone",
+      },
+      // 이메일
+      {
+        title: "이메일",
+        path: "/settings/email",
+        expl: user.email,
+      },
+      // 인증 여부
+      {
+        title: "인증여부",
+        path: "",
+        expl: user.isAuthenticated,
+      },
+      // 비공개 게시물
+      {
+        title: "비공개 게시물",
+        path: "/settings/audience_and_tagging",
+        expl: user.isVisible,
+      },
+      // 계정 생성
+      {
+        title: "계정 생성",
+        path: "",
+        expl: user.regDate.toLocaleString(),
+      },
+      // 국가
+      {
+        title: "국가",
+        path: "/settings/country",
+        expl: user.language.split("-")[1],
+      },
+      // 언어
+      {
+        title: "언어",
+        path: "/settings/language",
+        expl: user.language,
+      },
+      // 성별
+      {
+        title: "성별",
+        path: "/settings/gender",
+        expl: "여성",
+      },
+      // 생년월일
+      {
+        title: "생년월일",
+        path: "",
+        expl: user.birth,
+      },
+      // 연령
+      {
+        title: "연령",
+        path: "age",
+        expl: user.birth,
+      },
+      // 자동화
+      {
+        title: "자동화",
+        path: "automation",
+        expl: "자동화 계정을 관리합니다.",
       },
     ],
   },

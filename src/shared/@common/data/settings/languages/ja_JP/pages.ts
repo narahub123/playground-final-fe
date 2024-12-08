@@ -1,4 +1,5 @@
 import { setBackgroundTheme } from "@shared/@common/model/slices/settingsSlice";
+import { userExample as user } from "@shared/@common/data/example";
 
 const pages = {
   settingsLandingPage: {
@@ -299,6 +300,82 @@ const pages = {
         },
         description:
           "追加の保護手段として、PlayGroundのパスワードをリセットするには、メールアドレスまたは電話番号を確認する必要があります。",
+      },
+    ],
+  },
+  AccountInfoPage: {
+    pageTitle: "アカウント情報",
+    branchList: [
+      // 사용자 아이디
+      {
+        title: "ユーザーID",
+        path: "/settings/screen_name",
+        expl: `@${user.userId}`,
+      },
+      // 휴대폰
+      {
+        title: "携帯電話",
+        path: "/settings/phone",
+      },
+      // 이메일
+      {
+        title: "メールアドレス",
+        path: "/settings/email",
+        expl: user.email,
+      },
+      // 인증 여부
+      {
+        title: "認証状況",
+        path: "",
+        expl: user.isAuthenticated,
+      },
+      // 비공개 게시물
+      {
+        title: "非公開投稿",
+        path: "/settings/audience_and_tagging",
+        expl: user.isVisible,
+      },
+      // 계정 생성
+      {
+        title: "アカウント作成",
+        path: "",
+        expl: user.regDate.toLocaleString(),
+      },
+      // 국가
+      {
+        title: "国",
+        path: "/settings/country",
+        expl: user.language.split("-")[1],
+      },
+      // 언어
+      {
+        title: "言語",
+        path: "/settings/language",
+        expl: user.language,
+      },
+      // 성별
+      {
+        title: "性別",
+        path: "/settings/gender",
+        expl: "女性",
+      },
+      // 생년월일
+      {
+        title: "生年月日",
+        path: "",
+        expl: user.birth,
+      },
+      // 연령
+      {
+        title: "年齢",
+        path: "age",
+        expl: user.birth,
+      },
+      // 자동화
+      {
+        title: "自動化",
+        path: "automation",
+        expl: "自動化されたアカウントを管理します。",
       },
     ],
   },
