@@ -4,9 +4,9 @@ import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
 import {
   calculateAge,
-  getBirth,
-  getGender,
+  convertBirthToLocalString,
   getLangName,
+  translateGender,
 } from "@shared/@common/utils";
 
 const pages = {
@@ -369,13 +369,13 @@ const pages = {
       {
         title: "性別",
         path: "/settings/gender",
-        expl: getGender(user.gender),
+        expl: translateGender(user.gender),
       },
       // 생년월일
       {
         title: "生年月日",
         path: "",
-        expl: getBirth(user.birth),
+        expl: convertBirthToLocalString(user.birth),
       },
       // 연령
       {

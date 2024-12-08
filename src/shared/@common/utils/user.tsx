@@ -1,22 +1,28 @@
 import { langList } from "../data";
+import { useLanguageMode } from "../model/hooks";
 import { GenderType } from "../types/user";
 
-const getGender = (gender: GenderType) => {
+const translateGender = (gender: GenderType) => {
+  const { m, f, n } = useLanguageMode(["utils", "translateGender"]);
   if (gender === "m") {
-    return "남성";
+    return m;
   } else if (gender === "f") {
-    return "여성";
+    return f;
   } else if (gender === "n") {
-    return "중성";
+    return n;
   }
 };
 
-const getBirth = (birth: string) => {
+const convertBirthToLocalString = (birth: string) => {
+  const { yearUnit, monthUnit, dateUnit } = useLanguageMode([
+    "utils",
+    "convertBirthToLocalString",
+  ]);
   const year = Number(birth.slice(0, 4));
   const month = Number(birth.slice(5, 6));
   const date = Number(birth.slice(7, 8));
 
-  return `${year}년${month}월${date}일`;
+  return `${year}${yearUnit}${month}${monthUnit}${date}${dateUnit}`;
 };
 
 const calculateAge = (birth: string) => {
@@ -31,4 +37,9 @@ const getLangName = (lang: string) => {
   return langList.find((item) => item.value === lang);
 };
 
-export { getGender, getBirth, calculateAge, getLangName };
+export {
+  translateGender,
+  convertBirthToLocalString,
+  calculateAge,
+  getLangName,
+};
