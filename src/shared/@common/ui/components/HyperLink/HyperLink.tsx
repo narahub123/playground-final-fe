@@ -6,30 +6,15 @@ interface HyperLinkProps {
   path: string;
   out?: boolean;
   className?: string;
-  color?: string;
 }
 
-const HyperLink = ({
-  text,
-  path,
-  className,
-  out = true,
-  color,
-}: HyperLinkProps) => {
+const HyperLink = ({ text, path, className, out = true }: HyperLinkProps) => {
   return out ? (
-    <a
-      href={path}
-      className={`${styles.hyperlink} ${className}`}
-      style={{ color: color }}
-    >
+    <a href={path} className={`${styles.hyperlink} ${className}`}>
       {text}
     </a>
   ) : (
-    <Link
-      to={path}
-      className={`${styles.hyperlink} ${className}`}
-      style={{ color: color }}
-    >
+    <Link to={path} className={`${styles.hyperlink} ${className}`}>
       {text}
     </Link>
   );
