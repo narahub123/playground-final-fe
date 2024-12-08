@@ -134,7 +134,7 @@ const pages = {
       {
         title: "내 게시물",
         expl: "게시물과 관련된 정보를 관리합니다.",
-        path: "/settings/my_tweets",
+        path: "/settings/your_posts",
         icon: "penLine",
       },
       {
@@ -485,6 +485,32 @@ const pages = {
           title: "사진 태그하기",
           path: "/settings/tagging",
           expl: "누구나 나를 태그할 수 있도록 허용",
+        },
+        description: "",
+      },
+    ],
+  },
+  YourPostsPage: {
+    pageTitle: "내 게시물",
+    description: "게시물과 관련된 정보를 관리합니다.",
+    list: [
+      {
+        title: "",
+        type: "checkbox",
+        comp: {
+          text: "게시하는 미디어를 민감한 내용이 포함될 수 있는 미디어로 표시하기",
+          reducer: setBackgroundTheme,
+          initialValue: false,
+        },
+        description:
+          "활성화하면 게시하는 사진과 동영상이 민감한 콘텐츠가 표시되기를 원치 않는 사람들에게 민감한 콘텐츠로 표시됩니다.",
+      },
+      {
+        title: "",
+        type: "card",
+        comp: {
+          title: "게시물에 위치 정보 넣기",
+          path: "/settings/location",
         },
         description: "",
       },

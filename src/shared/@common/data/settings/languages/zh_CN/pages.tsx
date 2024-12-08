@@ -118,7 +118,7 @@ const pages = {
       {
         title: "我的帖子",
         expl: "管理与帖子相关的信息。",
-        path: "/settings/my_tweets",
+        path: "/settings/your_posts",
         icon: "penLine",
       },
       {
@@ -452,6 +452,32 @@ const pages = {
           title: "照片标记",
           path: "/settings/tagging",
           expl: "允许任何人标记我",
+        },
+        description: "",
+      },
+    ],
+  },
+  YourPostsPage: {
+    pageTitle: "我的帖子",
+    description: "管理与帖子相关的信息。",
+    list: [
+      {
+        title: "",
+        type: "checkbox",
+        comp: {
+          text: "将您发布的媒体标记为可能包含敏感内容",
+          reducer: setBackgroundTheme,
+          initialValue: false,
+        },
+        description:
+          "启用后，您发布的照片和视频将被标记为敏感内容，供不想看到敏感内容的人查看。",
+      },
+      {
+        title: "",
+        type: "card",
+        comp: {
+          title: "在帖子中添加位置信息",
+          path: "/settings/location",
         },
         description: "",
       },

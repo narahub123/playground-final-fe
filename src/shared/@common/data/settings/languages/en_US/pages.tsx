@@ -120,7 +120,7 @@ const pages = {
       {
         title: "My Posts",
         expl: "Manage information related to your posts.",
-        path: "/settings/my_tweets",
+        path: "/settings/your_posts",
         icon: "penLine",
       },
       {
@@ -459,6 +459,32 @@ const pages = {
           title: "Photo Tagging",
           path: "/settings/tagging",
           expl: "Allow anyone to tag me",
+        },
+        description: "",
+      },
+    ],
+  },
+  YourPostsPage: {
+    pageTitle: "My Posts",
+    description: "Manage information related to your posts.",
+    list: [
+      {
+        title: "",
+        type: "checkbox",
+        comp: {
+          text: "Mark media you post as potentially sensitive content",
+          reducer: setBackgroundTheme,
+          initialValue: false,
+        },
+        description:
+          "If enabled, photos and videos you post will be marked as sensitive content for people who prefer not to see sensitive material.",
+      },
+      {
+        title: "",
+        type: "card",
+        comp: {
+          title: "Add location information to posts",
+          path: "/settings/location",
         },
         description: "",
       },

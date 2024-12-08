@@ -120,7 +120,7 @@ const pages = {
       {
         title: "自分の投稿",
         expl: "投稿に関連する情報を管理します。",
-        path: "/settings/my_tweets",
+        path: "/settings/your_posts",
         icon: "penLine",
       },
       {
@@ -459,6 +459,32 @@ const pages = {
           title: "写真のタグ付け",
           path: "/settings/tagging",
           expl: "誰でも自分をタグ付けすることを許可",
+        },
+        description: "",
+      },
+    ],
+  },
+  YourPostsPage: {
+    pageTitle: "自分の投稿",
+    description: "投稿に関連する情報を管理します。",
+    list: [
+      {
+        title: "",
+        type: "checkbox",
+        comp: {
+          text: "投稿するメディアを潜在的にセンシティブなコンテンツとしてマークする",
+          reducer: setBackgroundTheme,
+          initialValue: false,
+        },
+        description:
+          "有効にすると、投稿する写真や動画は、センシティブなコンテンツを見たくない人にセンシティブとして表示されます。",
+      },
+      {
+        title: "",
+        type: "card",
+        comp: {
+          title: "投稿に位置情報を追加する",
+          path: "/settings/location",
         },
         description: "",
       },
