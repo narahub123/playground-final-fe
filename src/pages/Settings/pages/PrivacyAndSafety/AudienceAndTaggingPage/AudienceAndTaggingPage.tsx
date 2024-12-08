@@ -33,8 +33,9 @@ const AudienceAndTaggingPage = () => {
       comp: {
         title: "사진 태그하기",
         path: "/settings/tagging",
+        expl: "누구나 나를 태그할 수 있도록 허용",
       },
-      description: "누구나 나를 태그할 수 있도록 허용",
+      description: "",
     },
   ];
   return (
