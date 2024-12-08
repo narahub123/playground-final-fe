@@ -13,3 +13,10 @@
   padding: 10px;
   border-bottom: 1px solid #ccc;
 }
+
+.deactivate {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  color: red;
+}

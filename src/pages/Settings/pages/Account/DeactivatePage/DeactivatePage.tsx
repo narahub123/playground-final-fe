@@ -1,6 +1,7 @@
 import styles from "./Deactivate.module.css";
 import {
   Description,
+  HyperLink,
   ProfileContainer,
   Title,
 } from "@shared/@common/ui/components";
@@ -39,7 +40,9 @@ const DeactivatePage = () => {
               ))}
             </div>
           </div>
-          <div className={styles.section}>비활성화</div>
+          <div className={styles.deactivate}>
+            <HyperLink text="비활성화" path="confirm" out={false} />
+          </div>
         </>
       }
     />
