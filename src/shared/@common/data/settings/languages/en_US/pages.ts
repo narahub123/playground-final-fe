@@ -1,5 +1,13 @@
+import { countryNamesEng } from "@shared/@common/data/countries";
 import { setBackgroundTheme } from "@shared/@common/model/slices/settingsSlice";
-import { userExample as user } from "@shared/@common/data/example";
+import { UserType } from "@shared/@common/types";
+import { SettingsType } from "@shared/@common/types";
+import {
+  calculateAge,
+  getBirth,
+  getGender,
+  getLangName,
+} from "@shared/@common/utils";
 
 const pages = {
   settingsLandingPage: {
@@ -305,7 +313,7 @@ const pages = {
   },
   AccountInfoPage: {
     pageTitle: "Account Information",
-    branchList: [
+    branchList: (user: UserType & SettingsType) => [
       // 사용자 아이디
       {
         title: "User ID",
@@ -327,17 +335,17 @@ const pages = {
       {
         title: "Authentication Status",
         path: "",
-        expl: user.isAuthenticated,
+        expl: user.isAuthenticated ? "Authenticated" : "Not Authenticated",
       },
       // 비공개 게시물
       {
         title: "Private Posts",
         path: "/settings/audience_and_tagging",
-        expl: user.isVisible,
+        expl: user.isVisible ? "Yes" : "No",
       },
       // 계정 생성
       {
-        title: "Account Creation",
+        title: "Account Created",
         path: "",
         expl: user.regDate.toLocaleString(),
       },
@@ -345,37 +353,41 @@ const pages = {
       {
         title: "Country",
         path: "/settings/country",
-        expl: user.language.split("-")[1],
+        expl: countryNamesEng[
+          user.language
+            .split("-")[1]
+            .toLowerCase() as keyof typeof countryNamesEng
+        ],
       },
       // 언어
       {
         title: "Language",
         path: "/settings/language",
-        expl: user.language,
+        expl: getLangName(user.language)?.text,
       },
       // 성별
       {
         title: "Gender",
         path: "/settings/gender",
-        expl: user.gender,
+        expl: getGender(user.gender),
       },
       // 생년월일
       {
         title: "Date of Birth",
         path: "",
-        expl: user.birth,
+        expl: getBirth(user.birth),
       },
       // 연령
       {
         title: "Age",
         path: "age",
-        expl: user.birth,
+        expl: calculateAge(user.birth),
       },
       // 자동화
       {
         title: "Automation",
         path: "automation",
-        expl: "Manage automated accounts.",
+        expl: "Manage automation accounts.",
       },
     ],
   },

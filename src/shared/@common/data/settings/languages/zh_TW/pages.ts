@@ -1,5 +1,13 @@
+import { countryNamesZhTW } from "@shared/@common/data/countries";
 import { setBackgroundTheme } from "@shared/@common/model/slices/settingsSlice";
-import { userExample as user } from "@shared/@common/data/example";
+import { UserType } from "@shared/@common/types";
+import { SettingsType } from "@shared/@common/types";
+import {
+  calculateAge,
+  getBirth,
+  getGender,
+  getLangName,
+} from "@shared/@common/utils";
 
 const pages = {
   settingsLandingPage: {
@@ -300,7 +308,7 @@ const pages = {
   },
   AccountInfoPage: {
     pageTitle: "帳戶資訊",
-    branchList: [
+    branchList: (user: UserType & SettingsType) => [
       // 사용자 아이디
       {
         title: "用戶ID",
@@ -322,13 +330,13 @@ const pages = {
       {
         title: "認證狀態",
         path: "",
-        expl: user.isAuthenticated,
+        expl: user.isAuthenticated ? "已認證" : "未認證",
       },
       // 비공개 게시물
       {
         title: "私人貼文",
         path: "/settings/audience_and_tagging",
-        expl: user.isVisible,
+        expl: user.isVisible ? "是" : "否",
       },
       // 계정 생성
       {
@@ -340,31 +348,35 @@ const pages = {
       {
         title: "國家",
         path: "/settings/country",
-        expl: user.language.split("-")[1],
+        expl: countryNamesZhTW[
+          user.language
+            .split("-")[1]
+            .toLowerCase() as keyof typeof countryNamesZhTW
+        ],
       },
       // 언어
       {
         title: "語言",
         path: "/settings/language",
-        expl: user.language,
+        expl: getLangName(user.language)?.text,
       },
       // 성별
       {
         title: "性別",
         path: "/settings/gender",
-        expl: user.gender,
+        expl: getGender(user.gender),
       },
       // 생년월일
       {
         title: "出生日期",
         path: "",
-        expl: user.birth,
+        expl: getBirth(user.birth),
       },
       // 연령
       {
         title: "年齡",
         path: "age",
-        expl: user.birth,
+        expl: calculateAge(user.birth),
       },
       // 자동화
       {

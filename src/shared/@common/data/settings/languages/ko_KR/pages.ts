@@ -1,5 +1,12 @@
 import { setBackgroundTheme } from "@shared/@common/model/slices/settingsSlice";
-import { userExample as user } from "@shared/@common/data/example";
+import { SettingsType, UserType } from "@shared/@common/types";
+import { countryNamesKor } from "@shared/@common/data/countries";
+import {
+  calculateAge,
+  getBirth,
+  getGender,
+  getLangName,
+} from "@shared/@common/utils";
 
 const pages = {
   settingsLandingPage: {
@@ -332,7 +339,7 @@ const pages = {
   },
   AccountInfoPage: {
     pageTitle: "계정 정보",
-    branchList: [
+    branchList: (user: UserType & SettingsType) => [
       // 사용자 아이디
       {
         title: "사용자 아이디",
@@ -354,13 +361,13 @@ const pages = {
       {
         title: "인증여부",
         path: "",
-        expl: user.isAuthenticated,
+        expl: user.isAuthenticated ? "인증됨" : "인증 안됨",
       },
       // 비공개 게시물
       {
         title: "비공개 게시물",
         path: "/settings/audience_and_tagging",
-        expl: user.isVisible,
+        expl: user.isVisible ? "네" : "아니요",
       },
       // 계정 생성
       {
@@ -372,31 +379,35 @@ const pages = {
       {
         title: "국가",
         path: "/settings/country",
-        expl: user.language.split("-")[1],
+        expl: countryNamesKor[
+          user.language
+            .split("-")[1]
+            .toLowerCase() as keyof typeof countryNamesKor
+        ],
       },
       // 언어
       {
         title: "언어",
         path: "/settings/language",
-        expl: user.language,
+        expl: getLangName(user.language)?.text,
       },
       // 성별
       {
         title: "성별",
         path: "/settings/gender",
-        expl: user.gender,
+        expl: getGender(user.gender),
       },
       // 생년월일
       {
         title: "생년월일",
         path: "",
-        expl: user.birth,
+        expl: getBirth(user.birth),
       },
       // 연령
       {
         title: "연령",
         path: "age",
-        expl: user.birth,
+        expl: calculateAge(user.birth),
       },
       // 자동화
       {

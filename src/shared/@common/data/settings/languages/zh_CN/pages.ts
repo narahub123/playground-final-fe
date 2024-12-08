@@ -1,5 +1,13 @@
+import { countryNamesZhCN } from "@shared/@common/data/countries";
 import { setBackgroundTheme } from "@shared/@common/model/slices/settingsSlice";
-import { userExample as user } from "@shared/@common/data/example";
+import { UserType } from "@shared/@common/types";
+import { SettingsType } from "@shared/@common/types";
+import {
+  calculateAge,
+  getBirth,
+  getGender,
+  getLangName,
+} from "@shared/@common/utils";
 
 const pages = {
   settingsLandingPage: {
@@ -300,7 +308,7 @@ const pages = {
   },
   AccountInfoPage: {
     pageTitle: "账户信息",
-    branchList: [
+    branchList: (user: UserType & SettingsType) => [
       // 사용자 아이디
       {
         title: "用户ID",
@@ -314,7 +322,7 @@ const pages = {
       },
       // 이메일
       {
-        title: "邮箱",
+        title: "电子邮件",
         path: "/settings/email",
         expl: user.email,
       },
@@ -322,13 +330,13 @@ const pages = {
       {
         title: "认证状态",
         path: "",
-        expl: user.isAuthenticated,
+        expl: user.isAuthenticated ? "已认证" : "未认证",
       },
       // 비공개 게시물
       {
         title: "私人帖子",
         path: "/settings/audience_and_tagging",
-        expl: user.isVisible,
+        expl: user.isVisible ? "是" : "否",
       },
       // 계정 생성
       {
@@ -340,31 +348,35 @@ const pages = {
       {
         title: "国家",
         path: "/settings/country",
-        expl: user.language.split("-")[1],
+        expl: countryNamesZhCN[
+          user.language
+            .split("-")[1]
+            .toLowerCase() as keyof typeof countryNamesZhCN
+        ],
       },
       // 언어
       {
         title: "语言",
         path: "/settings/language",
-        expl: user.language,
+        expl: getLangName(user.language)?.text,
       },
       // 성별
       {
         title: "性别",
         path: "/settings/gender",
-        expl: user.gender,
+        expl: getGender(user.gender),
       },
       // 생년월일
       {
         title: "出生日期",
         path: "",
-        expl: user.birth,
+        expl: getBirth(user.birth),
       },
       // 연령
       {
         title: "年龄",
         path: "age",
-        expl: user.birth,
+        expl: calculateAge(user.birth),
       },
       // 자동화
       {

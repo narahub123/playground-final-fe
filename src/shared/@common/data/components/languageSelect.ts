@@ -12,6 +12,8 @@ const langList = [
   { value: "zh-TW", text: "繁體中文" },
 ];
 
+
+
 // 언어 목록 데이터
 const languageList: (lang: string) => SelectOptionType[] = (lang: string) => {
   return langList.map((item) => ({
@@ -28,4 +30,4 @@ const languageList: (lang: string) => SelectOptionType[] = (lang: string) => {
   }));
 };
 
-export { languageList };
+export { languageList, langList };

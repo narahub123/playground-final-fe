@@ -1,7 +1,7 @@
 import { listModalExample, userExample } from "./example";
 import { bgThemes, colorThemeArr, language, fontSizeArr } from "./settings";
 import countryNames from "./countries/countryNamesEng";
-import { languageList } from "./components/index";
+import { languageList, langList } from "./components/index";
 
 export {
   // 예시: 삭제 예정
@@ -20,4 +20,6 @@ export {
   colorThemeArr,
   // 글자 크기 변경
   fontSizeArr,
+  // 언어 이름
+  langList,
 };

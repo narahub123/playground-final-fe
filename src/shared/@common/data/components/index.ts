@@ -1,3 +1,3 @@
-import { languageList } from "./languageSelect";
+import { languageList, langList } from "./languageSelect";
 
-export { languageList };
+export { languageList, langList };

@@ -1,4 +1,4 @@
-type GenderType = "m" | "f" | "n";
+export type GenderType = "m" | "f" | "n";
 
 interface UserType {
   userId: string;
