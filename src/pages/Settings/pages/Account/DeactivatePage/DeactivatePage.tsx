@@ -17,21 +17,29 @@ const DeactivatePage = () => {
   return (
     <MainLayout
       pageTitle="계정 비활성화"
+      backward
       topContent={<ProfileContainer />}
       bottomContent={
         <>
           <div className={styles.section}>
-            <Title text="계정이 비활성화됩니다." />
-            <Description text="PlayGround 계정 비활성화 과정을 시작합니다. 내 표시 이름, @사용자 아이디, 공개 프로필이 PlayGround.com, iOS용 PlayGround, Android용 PlayGround에 더 이상 표시되지 않습니다." />
+            <Title text="계정이 비활성화됩니다." className={styles.title} />
+            <Description
+              text="PlayGround 계정 비활성화 과정을 시작합니다. 내 표시 이름, @사용자 아이디, 공개 프로필이 PlayGround.com, iOS용 PlayGround, Android용 PlayGround에 더 이상 표시되지 않습니다."
+              className={styles.description}
+            />
           </div>
           <div className={styles.section}>
-            <Title text="그 밖에 내가 알아야 할 내용" />
+            <Title
+              text="그 밖에 내가 알아야 할 내용"
+              className={styles.title}
+            />
             <div>
               {list.map((item) => (
-                <Description text={item} />
+                <Description text={item} className={styles.item} />
               ))}
             </div>
           </div>
+          <div className={styles.section}>비활성화</div>
         </>
       }
     />

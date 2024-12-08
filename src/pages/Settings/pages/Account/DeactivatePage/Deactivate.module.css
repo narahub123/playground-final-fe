@@ -1,10 +1,14 @@
 .section {
   display: flex;
   flex-direction: column;
-  gap: 10px;
   margin-bottom: 10px;
 }
-
+.title {
+  padding: 10px;
+}
+.description {
+  padding: 10px;
+}
 .item {
   padding: 10px;
   border-bottom: 1px solid #ccc;
