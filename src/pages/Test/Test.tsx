@@ -130,8 +130,8 @@ const Test = () => {
     document.documentElement.dataset.colorTheme = colorTheme;
   }, [colorTheme]);
 
-  const { colorThemeTitles } = useLanguageMode(["colorTheme"]);
-  const { fontSizeTitles } = useLanguageMode(["fontSize"]);
+  const { colorThemeTitles } = useLanguageMode(["components", "colorTheme"]);
+  const { fontSizeTitles } = useLanguageMode(["components", "fontSize"]);
 
   const fontSize = useSelector(getFontSize);
   useEffect(() => {
