@@ -5,13 +5,11 @@ import { useSelector } from "react-redux";
 import {
   getBgTheme,
   getIsLoggedIn,
-  getLanguage,
   getUser,
 } from "@shared/@common/model/selectors";
 import { useAppDispatch } from "@app/store";
 import { setUser } from "@shared/@common/model/slices/userSlice";
 import { setSigninUser } from "@shared/@common/model/slices/signinSlice";
-import { getLangObjValue } from "@shared/@common/utils";
 import { useImagePreview, useLanguageMode } from "@shared/@common/model/hooks";
 
 interface ProfileImageProps {
@@ -32,7 +30,7 @@ const ProfileImage = ({
   const login = useSelector(getIsLoggedIn);
 
   // 언어 설정
-  const { imgAlt, ariaLabel } = useLanguageMode("profileImage");
+  const { imgAlt, ariaLabel } = useLanguageMode(["components", "profileImage"]);
 
   const bgTheme = useSelector(getBgTheme);
 
