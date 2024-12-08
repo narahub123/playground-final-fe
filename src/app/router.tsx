@@ -52,6 +52,7 @@ import {
   NotificationPreferencePage,
   SecurityPage,
   AccountInfoPage,
+  DeactivatePage,
 } from "@pages/Settings/pages";
 import { AuthLayout } from "@/layouts";
 import { PageLayout } from "@shared/pages/layout";
@@ -204,7 +205,7 @@ export const router = createBrowserRouter([
                   // 계정 비활성화
                   {
                     path: "deactivate",
-                    element: <Deactivate />,
+                    element: <DeactivatePage />,
                   },
                   // 보안
                   {
