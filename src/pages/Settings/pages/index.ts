@@ -26,7 +26,11 @@ import {
   SecurityPage,
   AppsAndSessionsPage,
 } from "./SecurityAndAccountAccess";
-import { PrivacyAndSafetyPage, MuteAndBlockPage } from "./PrivacyAndSafety";
+import {
+  PrivacyAndSafetyPage,
+  MuteAndBlockPage,
+  AudienceAndTaggingPage,
+} from "./PrivacyAndSafety";
 import { NotificationsPage, NotificationPreferencePage } from "./Notifications";
 import { AccessibilityAndDisplayAndLanguagesPage } from "./AccessibilityAndDisplayAndLanguages";
 export {
@@ -42,6 +46,7 @@ export {
   SecurityPage,
   AccountInfoPage,
   DeactivatePage,
+  AudienceAndTaggingPage,
   About,
   AccountData,
   ChangePassword,

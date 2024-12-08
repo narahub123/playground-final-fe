@@ -53,6 +53,7 @@ import {
   SecurityPage,
   AccountInfoPage,
   DeactivatePage,
+  AudienceAndTaggingPage,
 } from "@pages/Settings/pages";
 import { AuthLayout } from "@/layouts";
 import { PageLayout } from "@shared/pages/layout";
@@ -235,7 +236,7 @@ export const router = createBrowserRouter([
                   },
                   {
                     path: "audience_and_tagging",
-                    element: <AudienceAndTagging />,
+                    element: <AudienceAndTaggingPage />,
                   },
                   {
                     path: "your_posts",
