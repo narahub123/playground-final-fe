@@ -30,6 +30,7 @@ import {
   PrivacyAndSafetyPage,
   MuteAndBlockPage,
   AudienceAndTaggingPage,
+  YourPostsPage,
 } from "./PrivacyAndSafety";
 import { NotificationsPage, NotificationPreferencePage } from "./Notifications";
 import { AccessibilityAndDisplayAndLanguagesPage } from "./AccessibilityAndDisplayAndLanguages";
@@ -47,6 +48,7 @@ export {
   AccountInfoPage,
   DeactivatePage,
   AudienceAndTaggingPage,
+  YourPostsPage,
   About,
   AccountData,
   ChangePassword,
