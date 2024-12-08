@@ -5,9 +5,10 @@ import { Link } from "react-router-dom";
 
 interface settingsbranchcardProps {
   item?: SettingsBranchType;
+  className?: string;
 }
 
-const SettingsBranchCard = ({ item }: settingsbranchcardProps) => {
+const SettingsBranchCard = ({ item, className }: settingsbranchcardProps) => {
   if (!item) return;
 
   const openModal = item.path.includes("/i/");
@@ -17,7 +18,7 @@ const SettingsBranchCard = ({ item }: settingsbranchcardProps) => {
 
   return (
     <Card
-      className={`${styles.card} ${liCond && styles.nohover}`}
+      className={`${styles.card} ${liCond && styles.nohover} ${className}`}
       to={item.path}
       tabIndex={liCond ? -1 : 0}
       aria-label={item.title} // 링크인 경우 내용 추가
