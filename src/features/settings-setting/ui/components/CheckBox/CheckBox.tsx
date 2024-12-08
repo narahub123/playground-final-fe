@@ -6,9 +6,10 @@ import { CheckBoxType } from "@features/settings-setting/types/data";
 
 interface CheckBoxProps {
   item: CheckBoxType;
+  className?: string;
 }
 
-const CheckBox = ({ item }: CheckBoxProps) => {
+const CheckBox = ({ item, className }: CheckBoxProps) => {
   const { text, reducer, initialValue } = item;
 
   const dispatch = useAppDispatch();
@@ -19,7 +20,10 @@ const CheckBox = ({ item }: CheckBoxProps) => {
   }, [isChecked]);
 
   return (
-    <div className={styles.checkbox} onClick={() => setIsChecked(!isChecked)}>
+    <div
+      className={`${styles.checkbox} ${className}`}
+      onClick={() => setIsChecked(!isChecked)}
+    >
       <span>{text}</span>
       {isChecked ? (
         <Icon
