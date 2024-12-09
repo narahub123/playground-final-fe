@@ -24,6 +24,7 @@ const initialState: SettingsType = {
   colorContrast: false,
   reduceMotion: false,
   addImgExpl: false, // 이미지 설명 추가 알림
+  dataSaver: false,
 };
 
 // 페이지 로드 전에 setting를 먼저 로드해야 함
@@ -76,6 +77,9 @@ const settingsSlice = createSlice({
     setAddImgExpl: (state, action: PayloadAction<boolean>) => {
       state.addImgExpl = action.payload;
     },
+    setDataSaver: (state, action: PayloadAction<boolean>) => {
+      state.dataSaver = action.payload;
+    },
   },
 });
 
@@ -97,4 +101,5 @@ export const {
   setColorContrast,
   setReduceMotion,
   setAddImgExpl,
+  setDataSaver,
 } = settingsSlice.actions;

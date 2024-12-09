@@ -14,6 +14,7 @@ import {
   getColorContrast,
   getReduceMotion,
   getAddImgExpl,
+  getDataSaver,
 } from "./settingsSelectors";
 import { getIsLoggedIn } from "./loginSelector";
 import { getUser, getProfileImage } from "./userSelector";
@@ -40,6 +41,7 @@ export {
   getColorContrast,
   getReduceMotion,
   getAddImgExpl,
+  getDataSaver,
   // login
   getIsLoggedIn,
   // user

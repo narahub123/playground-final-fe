@@ -16,6 +16,7 @@ type SettingsType = {
   colorContrast: boolean;
   reduceMotion: boolean;
   addImgExpl: boolean; // 이미지 설명 추가 알림
+  dataSaver: boolean;
 };
 
 // 배경 설정 키
