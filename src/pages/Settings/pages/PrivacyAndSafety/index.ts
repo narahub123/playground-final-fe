@@ -6,6 +6,7 @@ import ContentYouSeePage from "./ContentYouSeePage/ContentYouSeePage";
 import MessageSettingPage from "./MessageSettingPage/MessageSettingPage";
 import ContactsPage from "./ContactsPage/ContactsPage";
 import AdsPreferencesPage from "./AdsPreferencesPage/AdsPreferencesPage";
+import LocationInfoPage from "./LocationInfoPage/LocationInfoPage";
 
 export {
   PrivacyAndSafetyPage,
@@ -16,4 +17,5 @@ export {
   MessageSettingPage,
   ContactsPage,
   AdsPreferencesPage,
+  LocationInfoPage,
 };

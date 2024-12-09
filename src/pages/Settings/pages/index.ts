@@ -35,6 +35,7 @@ import {
   MessageSettingPage,
   ContactsPage,
   AdsPreferencesPage,
+  LocationInfoPage,
 } from "./PrivacyAndSafety";
 import { NotificationsPage, NotificationPreferencePage } from "./Notifications";
 import { AccessibilityAndDisplayAndLanguagesPage } from "./AccessibilityAndDisplayAndLanguages";
@@ -57,6 +58,7 @@ export {
   MessageSettingPage,
   ContactsPage,
   AdsPreferencesPage,
+  LocationInfoPage,
   About,
   AccountData,
   ChangePassword,

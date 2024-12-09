@@ -59,6 +59,7 @@ import {
   MessageSettingPage,
   ContactsPage,
   AdsPreferencesPage,
+  LocationInfoPage,
 } from "@pages/Settings/pages";
 import { AuthLayout } from "@/layouts";
 import { PageLayout } from "@shared/pages/layout";
@@ -265,7 +266,7 @@ export const router = createBrowserRouter([
                   },
                   {
                     path: "location_information",
-                    element: <LocationInfo />,
+                    element: <LocationInfoPage />,
                   },
                   {
                     path: "ads_preferences",
