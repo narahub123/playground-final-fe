@@ -1,5 +1,15 @@
 import { countryNamesJap } from "@shared/@common/data/countries";
-import { setBackgroundTheme } from "@shared/@common/model/slices/settingsSlice";
+import {
+  getAllowMessages,
+  getHideMessages,
+  getShowRead,
+} from "@shared/@common/model/selectors";
+import {
+  setAllowMessages,
+  setBackgroundTheme,
+  setHideMessages,
+  setShowRead,
+} from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
 import { HyperLink } from "@shared/@common/ui/components";
@@ -515,6 +525,60 @@ const pages = {
       {
         title: "検索設定",
         path: `/settings/search`,
+      },
+    ],
+  },
+  MessageSettingPage: {
+    pageTitle: "メッセージ",
+    list: [
+      {
+        text: "次のユーザーからのメッセージリクエストを許可",
+        detail:
+          "フォローしているユーザーから送信されたメッセージは常に受信できます。",
+        type: "checkboxlist",
+        selector: getAllowMessages,
+        comp: [
+          {
+            text: "受信しない",
+            reducer: setAllowMessages,
+            value: "none",
+          },
+          {
+            text: "認証済みユーザー",
+            reducer: setAllowMessages,
+            value: "authenticated",
+          },
+          {
+            text: "すべてのユーザー",
+            reducer: setAllowMessages,
+            value: "all",
+          },
+        ],
+      },
+      {
+        title: "",
+        type: "checkbox",
+        selector: getHideMessages,
+        comp: {
+          text: "低品質なメッセージをフィルタリングする",
+          reducer: setHideMessages,
+        },
+        description:
+          "スパムや低品質な内容が含まれていると判断されたメッセージリクエストを非表示にします。これらのリクエストは、メッセージリクエストリストの下部にある別の受信箱に送られます。必要に応じて確認することができます。",
+        top: true,
+        disabled: true,
+      },
+      {
+        title: "",
+        type: "checkbox",
+        selector: getShowRead,
+        comp: {
+          text: "既読通知を表示",
+          reducer: setShowRead,
+        },
+        description:
+          "メッセージをやり取りする人が、あなたがメッセージを確認したときに通知されるようにします。既読通知はメッセージリクエストには表示されません。",
+        top: true,
       },
     ],
   },

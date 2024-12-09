@@ -1,5 +1,6 @@
 import { countryNamesZhTW } from "@shared/@common/data/countries";
-import { setBackgroundTheme } from "@shared/@common/model/slices/settingsSlice";
+import { getAllowMessages, getHideMessages, getShowRead } from "@shared/@common/model/selectors";
+import { setAllowMessages, setBackgroundTheme, setHideMessages, setShowRead } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
 import { HyperLink } from "@shared/@common/ui/components";
@@ -508,6 +509,59 @@ const pages = {
       {
         title: "搜索設定",
         path: `/settings/search`,
+      },
+    ],
+  },
+  MessageSettingPage: {
+    pageTitle: "消息",
+    list: [
+      {
+        text: "允許以下用戶的消息請求",
+        detail: "您始終可以接收您關注的用戶發送的消息。",
+        type: "checkboxlist",
+        selector: getAllowMessages,
+        comp: [
+          {
+            text: "不接收",
+            reducer: setAllowMessages,
+            value: "none",
+          },
+          {
+            text: "已認證用戶",
+            reducer: setAllowMessages,
+            value: "authenticated",
+          },
+          {
+            text: "所有人",
+            reducer: setAllowMessages,
+            value: "all",
+          },
+        ],
+      },
+      {
+        title: "",
+        type: "checkbox",
+        selector: getHideMessages,
+        comp: {
+          text: "過濾低質量消息",
+          reducer: setHideMessages,
+        },
+        description:
+          "隱藏被識別為垃圾郵件或包含低質量內容的消息請求。這些請求將被發送到消息請求列表底部的單獨收件箱中。如果需要，您仍然可以查看。",
+        top: true,
+        disabled: true,
+      },
+      {
+        title: "",
+        type: "checkbox",
+        selector: getShowRead,
+        comp: {
+          text: "顯示已讀回執",
+          reducer: setShowRead,
+        },
+        description:
+          "允許發送消息的人知道您何時已閱讀消息。已讀回執不會顯示在消息請求中。",
+        top: true,
       },
     ],
   },
