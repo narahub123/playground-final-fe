@@ -18,6 +18,12 @@ import {
   getReduceMotion,
   getShowRead,
   getTagSensitiveMedia,
+  getMuteNotFollowing,
+  getMuteNotFollower,
+  getMuteNewAccount,
+  getMuteDefaultProfile,
+  getMuteEmailAuthenticated,
+  getMutePhoneAuthenticated,
 } from "@shared/@common/model/selectors";
 import {
   setAddImgExpl,
@@ -39,6 +45,12 @@ import {
   setReduceMotion,
   setShowRead,
   setTagSensitiveMedia,
+  setMuteNotFollowing,
+  setMuteNotFollower,
+  setMuteNewAccount,
+  setMuteDefaultProfile,
+  setMuteEmailAuthenticated,
+  setMutePhoneAuthenticated,
 } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
@@ -852,6 +864,61 @@ const pages = {
       },
     },
     hyperlink: "删除帖子中添加的所有位置信息。",
+  },
+  NotificationAdvancedFilters: {
+    pageTitle: "静音通知",
+    list: [
+      {
+        title: "静音以下帐户的通知:",
+        type: "checkbox",
+        selector: getMuteNotFollowing,
+        comp: {
+          text: "我未关注的帐户",
+          reducer: setMuteNotFollowing,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getMuteNotFollower,
+        comp: {
+          text: "未关注我的帐户",
+          reducer: setMuteNotFollower,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getMuteNewAccount,
+        comp: {
+          text: "新帐户",
+          reducer: setMuteNewAccount,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getMuteDefaultProfile,
+        comp: {
+          text: "使用默认头像的帐户",
+          reducer: setMuteDefaultProfile,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getMuteEmailAuthenticated,
+        comp: {
+          text: "未验证邮箱的帐户",
+          reducer: setMuteEmailAuthenticated,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getMutePhoneAuthenticated,
+        comp: {
+          text: "未验证手机号码的帐户",
+          reducer: setMutePhoneAuthenticated,
+        },
+        description: "此过滤器不影响我关注的人的通知。",
+      },
+    ],
   },
 };
 

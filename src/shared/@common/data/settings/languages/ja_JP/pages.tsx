@@ -18,6 +18,12 @@ import {
   getReduceMotion,
   getShowRead,
   getTagSensitiveMedia,
+  getMuteNotFollowing,
+  getMuteNotFollower,
+  getMuteNewAccount,
+  getMuteDefaultProfile,
+  getMuteEmailAuthenticated,
+  getMutePhoneAuthenticated,
 } from "@shared/@common/model/selectors";
 import {
   setAddImgExpl,
@@ -39,6 +45,12 @@ import {
   setReduceMotion,
   setShowRead,
   setTagSensitiveMedia,
+  setMuteNotFollowing,
+  setMuteNotFollower,
+  setMuteNewAccount,
+  setMuteDefaultProfile,
+  setMuteEmailAuthenticated,
+  setMutePhoneAuthenticated,
 } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
@@ -872,6 +884,62 @@ const pages = {
       },
     },
     hyperlink: "投稿に追加されたすべての位置情報を削除します。",
+  },
+  NotificationAdvancedFilters: {
+    pageTitle: "ミュートされた通知",
+    list: [
+      {
+        title: "次のアカウントからの通知をミュート:",
+        type: "checkbox",
+        selector: getMuteNotFollowing,
+        comp: {
+          text: "自分がフォローしていないアカウント",
+          reducer: setMuteNotFollowing,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getMuteNotFollower,
+        comp: {
+          text: "自分をフォローしていないアカウント",
+          reducer: setMuteNotFollower,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getMuteNewAccount,
+        comp: {
+          text: "新しいアカウント",
+          reducer: setMuteNewAccount,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getMuteDefaultProfile,
+        comp: {
+          text: "デフォルトのプロフィール画像を使用しているアカウント",
+          reducer: setMuteDefaultProfile,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getMuteEmailAuthenticated,
+        comp: {
+          text: "メールを認証していないアカウント",
+          reducer: setMuteEmailAuthenticated,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getMutePhoneAuthenticated,
+        comp: {
+          text: "電話番号を認証していないアカウント",
+          reducer: setMutePhoneAuthenticated,
+        },
+        description:
+          "このフィルターは、フォローしている人からの通知には影響しません。",
+      },
+    ],
   },
 };
 

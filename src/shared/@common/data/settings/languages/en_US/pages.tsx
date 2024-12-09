@@ -18,6 +18,12 @@ import {
   getReduceMotion,
   getShowRead,
   getTagSensitiveMedia,
+  getMuteNotFollowing,
+  getMuteNotFollower,
+  getMuteNewAccount,
+  getMuteDefaultProfile,
+  getMuteEmailAuthenticated,
+  getMutePhoneAuthenticated,
 } from "@shared/@common/model/selectors";
 import {
   setAddImgExpl,
@@ -39,6 +45,12 @@ import {
   setReduceMotion,
   setShowRead,
   setTagSensitiveMedia,
+  setMuteNotFollowing,
+  setMuteNotFollower,
+  setMuteNewAccount,
+  setMuteDefaultProfile,
+  setMuteEmailAuthenticated,
+  setMutePhoneAuthenticated,
 } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
@@ -871,6 +883,62 @@ const pages = {
       },
     },
     hyperlink: "Delete all location information added to posts.",
+  },
+  NotificationAdvancedFilters: {
+    pageTitle: "Muted Notifications",
+    list: [
+      {
+        title: "Mute notifications from the following accounts:",
+        type: "checkbox",
+        selector: getMuteNotFollowing,
+        comp: {
+          text: "Accounts I don't follow",
+          reducer: setMuteNotFollowing,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getMuteNotFollower,
+        comp: {
+          text: "Accounts that don't follow me",
+          reducer: setMuteNotFollower,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getMuteNewAccount,
+        comp: {
+          text: "New accounts",
+          reducer: setMuteNewAccount,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getMuteDefaultProfile,
+        comp: {
+          text: "Accounts with default profile images",
+          reducer: setMuteDefaultProfile,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getMuteEmailAuthenticated,
+        comp: {
+          text: "Accounts without verified email",
+          reducer: setMuteEmailAuthenticated,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getMutePhoneAuthenticated,
+        comp: {
+          text: "Accounts without verified phone number",
+          reducer: setMutePhoneAuthenticated,
+        },
+        description:
+          "This filter does not affect notifications from people I follow.",
+      },
+    ],
   },
 };
 
