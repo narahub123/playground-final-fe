@@ -1,5 +1,6 @@
 import { countryNamesJap } from "@shared/@common/data/countries";
 import {
+  getAllowBehavioralAds,
   getAllowMessages,
   getFindByEmail,
   getFindByPhone,
@@ -7,6 +8,7 @@ import {
   getShowRead,
 } from "@shared/@common/model/selectors";
 import {
+  setAllowBehavioralAds,
   setAllowMessages,
   setBackgroundTheme,
   setFindByEmail,
@@ -623,6 +625,30 @@ const pages = {
           path: "/settings/contacts_dashboard",
         },
         top: true,
+      },
+    ],
+  },
+  AdsPreferencesPage: {
+    pageTitle: "広告設定",
+    description: "PlayGroundで広告設定を管理します。",
+    checkbox: {
+      type: "checkbox",
+      selector: getAllowBehavioralAds,
+      comp: {
+        text: "パーソナライズ広告",
+        reducer: setAllowBehavioralAds,
+      },
+      description:
+        "PlayGroundでのアクティビティに基づいた広告が常に表示されます。この設定を有効にすると、PlayGround内外でPlayGround広告主の広告をカスタマイズするために、PlayGroundのアクティビティとパートナーが提供するその他のオンラインアクティビティや情報を組み合わせることができます。",
+    },
+    branchList: [
+      {
+        title: "興味関心",
+        path: "/settings/your_twitter_data/twitter_interests",
+      },
+      {
+        title: "広告主リスト",
+        path: "/settings/your_twitter_data/audiences",
       },
     ],
   },

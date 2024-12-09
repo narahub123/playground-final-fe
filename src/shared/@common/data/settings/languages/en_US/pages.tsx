@@ -1,5 +1,6 @@
 import { countryNamesEng } from "@shared/@common/data/countries";
 import {
+  getAllowBehavioralAds,
   getAllowMessages,
   getFindByEmail,
   getFindByPhone,
@@ -7,6 +8,7 @@ import {
   getShowRead,
 } from "@shared/@common/model/selectors";
 import {
+  setAllowBehavioralAds,
   setAllowMessages,
   setBackgroundTheme,
   setFindByEmail,
@@ -622,6 +624,30 @@ const pages = {
           path: "/settings/contacts_dashboard",
         },
         top: true,
+      },
+    ],
+  },
+  AdsPreferencesPage: {
+    pageTitle: "Ad Preferences",
+    description: "Manage ad settings on PlayGround.",
+    checkbox: {
+      type: "checkbox",
+      selector: getAllowBehavioralAds,
+      comp: {
+        text: "Personalized Ads",
+        reducer: setAllowBehavioralAds,
+      },
+      description:
+        "You will always see ads based on your activity on PlayGround. When this setting is enabled, PlayGround can personalize ads from PlayGround advertisers both on and off PlayGround by combining your PlayGround activity with other online activities and information provided by partners.",
+    },
+    branchList: [
+      {
+        title: "Interests",
+        path: "/settings/your_twitter_data/twitter_interests",
+      },
+      {
+        title: "Advertisers List",
+        path: "/settings/your_twitter_data/audiences",
       },
     ],
   },

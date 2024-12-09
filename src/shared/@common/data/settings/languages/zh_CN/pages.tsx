@@ -1,5 +1,6 @@
 import { countryNamesZhCN } from "@shared/@common/data/countries";
 import {
+  getAllowBehavioralAds,
   getAllowMessages,
   getFindByEmail,
   getFindByPhone,
@@ -7,6 +8,7 @@ import {
   getShowRead,
 } from "@shared/@common/model/selectors";
 import {
+  setAllowBehavioralAds,
   setAllowMessages,
   setBackgroundTheme,
   setFindByEmail,
@@ -612,6 +614,30 @@ const pages = {
           path: "/settings/contacts_dashboard",
         },
         top: true,
+      },
+    ],
+  },
+  AdsPreferencesPage: {
+    pageTitle: "广告偏好",
+    description: "管理PlayGround上的广告设置。",
+    checkbox: {
+      type: "checkbox",
+      selector: getAllowBehavioralAds,
+      comp: {
+        text: "个性化广告",
+        reducer: setAllowBehavioralAds,
+      },
+      description:
+        "您将始终看到基于您在PlayGround上的活动的广告。启用此设置后，PlayGround可以通过将您的PlayGround活动与合作伙伴提供的其他在线活动和信息相结合，在PlayGround内外个性化PlayGround广告主的广告。",
+    },
+    branchList: [
+      {
+        title: "兴趣",
+        path: "/settings/your_twitter_data/twitter_interests",
+      },
+      {
+        title: "广告主列表",
+        path: "/settings/your_twitter_data/audiences",
       },
     ],
   },

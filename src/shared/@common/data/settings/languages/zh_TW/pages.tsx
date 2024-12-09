@@ -1,6 +1,21 @@
 import { countryNamesZhTW } from "@shared/@common/data/countries";
-import { getAllowMessages, getFindByEmail, getFindByPhone, getHideMessages, getShowRead } from "@shared/@common/model/selectors";
-import { setAllowMessages, setBackgroundTheme, setFindByEmail, setFindByPhone, setHideMessages, setShowRead } from "@shared/@common/model/slices/settingsSlice";
+import {
+  getAllowBehavioralAds,
+  getAllowMessages,
+  getFindByEmail,
+  getFindByPhone,
+  getHideMessages,
+  getShowRead,
+} from "@shared/@common/model/selectors";
+import {
+  setAllowBehavioralAds,
+  setAllowMessages,
+  setBackgroundTheme,
+  setFindByEmail,
+  setFindByPhone,
+  setHideMessages,
+  setShowRead,
+} from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
 import { HyperLink } from "@shared/@common/ui/components";
@@ -599,6 +614,30 @@ const pages = {
           path: "/settings/contacts_dashboard",
         },
         top: true,
+      },
+    ],
+  },
+  AdsPreferencesPage: {
+    pageTitle: "廣告偏好",
+    description: "管理PlayGround上的廣告設定。",
+    checkbox: {
+      type: "checkbox",
+      selector: getAllowBehavioralAds,
+      comp: {
+        text: "個性化廣告",
+        reducer: setAllowBehavioralAds,
+      },
+      description:
+        "您將始終看到基於您在PlayGround上的活動的廣告。啟用此設置後，PlayGround可以通過將您的PlayGround活動與合作夥伴提供的其他在線活動和信息結合，在PlayGround內外個性化PlayGround廣告主的廣告。",
+    },
+    branchList: [
+      {
+        title: "興趣",
+        path: "/settings/your_twitter_data/twitter_interests",
+      },
+      {
+        title: "廣告主列表",
+        path: "/settings/your_twitter_data/audiences",
       },
     ],
   },
