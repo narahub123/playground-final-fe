@@ -483,6 +483,34 @@ const pages = {
       },
     ],
   },
+  ContentYouSeePage: {
+    pageTitle: "顯示的內容",
+    description:
+      "根據用戶的偏好，如主題和興趣，決定在 PlayGround 上顯示的資訊。",
+    checkboxItem: {
+      text: "顯示可能包含敏感內容的媒體",
+      reducer: setBackgroundTheme,
+      initialValue: true,
+    },
+    branchList: (user: UserType) => [
+      {
+        title: "主題",
+        path: `/${user.userId}/topics`,
+      },
+      {
+        title: "興趣",
+        path: `/settings/your_data/your_interests`,
+      },
+      {
+        title: "探索設定",
+        path: `/settings/explore`,
+      },
+      {
+        title: "搜索設定",
+        path: `/settings/search`,
+      },
+    ],
+  },
 };
 
 export default pages;

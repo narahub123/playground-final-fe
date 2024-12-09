@@ -516,6 +516,34 @@ const pages = {
       },
     ],
   },
+  ContentYouSeePage: {
+    pageTitle: "표시되는 콘텐츠",
+    description:
+      "토픽과 관심사 등 사용자의 선호도를 바탕으로 PlayGround에 표시되는 정보를 결정합니다",
+    checkboxItem: {
+      text: "민감한 내용을 포함할 수 있는 미디어 표시",
+      reducer: setBackgroundTheme,
+      initialValue: true,
+    },
+    branchList: (user: UserType) => [
+      {
+        title: "토픽",
+        path: `/${user.userId}/topics`,
+      },
+      {
+        title: "관심사",
+        path: `/settings/your_data/your_interests`,
+      },
+      {
+        title: "탐색 설정",
+        path: `/settings/explore`,
+      },
+      {
+        title: "검색 설정",
+        path: `/settings/search`,
+      },
+    ],
+  },
 };
 
 export default pages;

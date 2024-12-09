@@ -490,6 +490,34 @@ const pages = {
       },
     ],
   },
+  ContentYouSeePage: {
+    pageTitle: "表示されるコンテンツ",
+    description:
+      "トピックや関心事などのユーザーの好みに基づいて、PlayGroundに表示される情報を決定します。",
+    checkboxItem: {
+      text: "センシティブな内容を含む可能性のあるメディアを表示する",
+      reducer: setBackgroundTheme,
+      initialValue: true,
+    },
+    branchList: (user: UserType) => [
+      {
+        title: "トピック",
+        path: `/${user.userId}/topics`,
+      },
+      {
+        title: "関心事",
+        path: `/settings/your_data/your_interests`,
+      },
+      {
+        title: "探索設定",
+        path: `/settings/explore`,
+      },
+      {
+        title: "検索設定",
+        path: `/settings/search`,
+      },
+    ],
+  },
 };
 
 export default pages;

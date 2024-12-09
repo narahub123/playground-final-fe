@@ -490,6 +490,34 @@ const pages = {
       },
     ],
   },
+  ContentYouSeePage: {
+    pageTitle: "Content You See",
+    description:
+      "Determines the information displayed on PlayGround based on your preferences, such as topics and interests.",
+    checkboxItem: {
+      text: "Show media that may contain sensitive content",
+      reducer: setBackgroundTheme,
+      initialValue: true,
+    },
+    branchList: (user: UserType) => [
+      {
+        title: "Topics",
+        path: `/${user.userId}/topics`,
+      },
+      {
+        title: "Interests",
+        path: `/settings/your_data/your_interests`,
+      },
+      {
+        title: "Explore Settings",
+        path: `/settings/explore`,
+      },
+      {
+        title: "Search Settings",
+        path: `/settings/search`,
+      },
+    ],
+  },
 };
 
 export default pages;
