@@ -21,6 +21,9 @@ const initialState: SettingsType = {
   allowBehavioralAds: false,
   allowLocationAds: false,
   qualityFilter: false,
+  colorContrast: false,
+  reduceMotion: false,
+  addImgExpl: false, // 이미지 설명 추가 알림
 };
 
 // 페이지 로드 전에 setting를 먼저 로드해야 함
@@ -64,6 +67,15 @@ const settingsSlice = createSlice({
     setQualityFilter: (state, action: PayloadAction<boolean>) => {
       state.qualityFilter = action.payload;
     },
+    setColorContrast: (state, action: PayloadAction<boolean>) => {
+      state.colorContrast = action.payload;
+    },
+    setReduceMotion: (state, action: PayloadAction<boolean>) => {
+      state.reduceMotion = action.payload;
+    },
+    setAddImgExpl: (state, action: PayloadAction<boolean>) => {
+      state.addImgExpl = action.payload;
+    },
   },
 });
 
@@ -82,4 +94,7 @@ export const {
   setAllowBehavioralAds,
   setAllowLocationAds,
   setQualityFilter,
+  setColorContrast,
+  setReduceMotion,
+  setAddImgExpl,
 } = settingsSlice.actions;

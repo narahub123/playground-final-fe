@@ -13,6 +13,9 @@ type SettingsType = {
   allowBehavioralAds: boolean;
   allowLocationAds: boolean;
   qualityFilter: boolean;
+  colorContrast: boolean;
+  reduceMotion: boolean;
+  addImgExpl: boolean; // 이미지 설명 추가 알림
 };
 
 // 배경 설정 키

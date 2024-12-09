@@ -11,6 +11,9 @@ import {
   getAllowBehavioralAds,
   getAllowLocationAds,
   getQualityFilter,
+  getColorContrast,
+  getReduceMotion,
+  getAddImgExpl,
 } from "./settingsSelectors";
 import { getIsLoggedIn } from "./loginSelector";
 import { getUser, getProfileImage } from "./userSelector";
@@ -34,6 +37,9 @@ export {
   getAllowBehavioralAds,
   getAllowLocationAds,
   getQualityFilter,
+  getColorContrast,
+  getReduceMotion,
+  getAddImgExpl,
   // login
   getIsLoggedIn,
   // user

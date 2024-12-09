@@ -15,6 +15,9 @@ const getAllowBehavioralAds = (state: RootState) =>
 const getAllowLocationAds = (state: RootState) =>
   state.settings.allowLocationAds;
 const getQualityFilter = (state: RootState) => state.settings.qualityFilter;
+const getColorContrast = (state: RootState) => state.settings.colorContrast;
+const getReduceMotion = (state: RootState) => state.settings.reduceMotion;
+const getAddImgExpl = (state: RootState) => state.settings.addImgExpl;
 
 export {
   getSettings,
@@ -30,4 +33,7 @@ export {
   getAllowBehavioralAds,
   getAllowLocationAds,
   getQualityFilter,
+  getColorContrast,
+  getReduceMotion,
+  getAddImgExpl,
 };
