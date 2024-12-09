@@ -37,7 +37,11 @@ import {
   AdsPreferencesPage,
   LocationInfoPage,
 } from "./PrivacyAndSafety";
-import { NotificationsPage, NotificationPreferencePage } from "./Notifications";
+import {
+  NotificationsPage,
+  NotificationPreferencePage,
+  NotificationFilterPage,
+} from "./Notifications";
 import { AccessibilityAndDisplayAndLanguagesPage } from "./AccessibilityAndDisplayAndLanguages";
 export {
   SettingsLandingPage,
@@ -59,6 +63,7 @@ export {
   ContactsPage,
   AdsPreferencesPage,
   LocationInfoPage,
+  NotificationFilterPage,
   About,
   AccountData,
   ChangePassword,
