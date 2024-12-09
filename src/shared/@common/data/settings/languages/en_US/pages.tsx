@@ -24,6 +24,7 @@ import {
   getMuteDefaultProfile,
   getMuteEmailAuthenticated,
   getMutePhoneAuthenticated,
+  getTwoFactorAuthentication,
 } from "@shared/@common/model/selectors";
 import {
   setAddImgExpl,
@@ -51,6 +52,7 @@ import {
   setMuteDefaultProfile,
   setMuteEmailAuthenticated,
   setMutePhoneAuthenticated,
+  setTwoFactorAuthentication,
 } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
@@ -937,6 +939,48 @@ const pages = {
         },
         description:
           "This filter does not affect notifications from people I follow.",
+      },
+    ],
+  },
+  LoginVerficationPage: {
+    pageTitle: "Two-Step Verification",
+    list: [
+      {
+        title: "Two-Step Verification",
+        type: "checkbox",
+        selector: getTwoFactorAuthentication,
+        comp: {
+          text: "SMS",
+          reducer: setTwoFactorAuthentication,
+          value: "sms",
+        },
+        description:
+          "You will receive a text message with a verification code on your phone when logging into PG.",
+        top: true,
+      },
+      {
+        type: "checkbox",
+        selector: getTwoFactorAuthentication,
+        comp: {
+          text: "Authentication App",
+          reducer: setTwoFactorAuthentication,
+          value: "app",
+        },
+        description:
+          "Use a mobile authentication app to receive a verification code every time you log into PG.",
+        top: true,
+      },
+      {
+        type: "checkbox",
+        selector: getTwoFactorAuthentication,
+        comp: {
+          text: "Security Key",
+          reducer: setTwoFactorAuthentication,
+          value: "key",
+        },
+        description:
+          "Use a security key that you either input into your computer or sync with your mobile device when logging into PG. Supported mobile devices or web browsers are required.",
+        top: true,
       },
     ],
   },

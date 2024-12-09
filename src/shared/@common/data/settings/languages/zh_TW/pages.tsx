@@ -24,6 +24,7 @@ import {
   getMuteDefaultProfile,
   getMuteEmailAuthenticated,
   getMutePhoneAuthenticated,
+  getTwoFactorAuthentication,
 } from "@shared/@common/model/selectors";
 import {
   setAddImgExpl,
@@ -51,6 +52,7 @@ import {
   setMuteDefaultProfile,
   setMuteEmailAuthenticated,
   setMutePhoneAuthenticated,
+  setTwoFactorAuthentication,
 } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
@@ -917,6 +919,46 @@ const pages = {
           reducer: setMutePhoneAuthenticated,
         },
         description: "此過濾器不影響我關注的人的通知。",
+      },
+    ],
+  },
+  LoginVerficationPage: {
+    pageTitle: "二步驟驗證",
+    list: [
+      {
+        title: "二步驟驗證",
+        type: "checkbox",
+        selector: getTwoFactorAuthentication,
+        comp: {
+          text: "簡訊",
+          reducer: setTwoFactorAuthentication,
+          value: "sms",
+        },
+        description: "登錄PG時，您將收到包含驗證代碼的簡訊。",
+        top: true,
+      },
+      {
+        type: "checkbox",
+        selector: getTwoFactorAuthentication,
+        comp: {
+          text: "認證應用程式",
+          reducer: setTwoFactorAuthentication,
+          value: "app",
+        },
+        description: "使用移動認證應用程式，每次登錄PG時接收驗證代碼。",
+        top: true,
+      },
+      {
+        type: "checkbox",
+        selector: getTwoFactorAuthentication,
+        comp: {
+          text: "安全密鑰",
+          reducer: setTwoFactorAuthentication,
+          value: "key",
+        },
+        description:
+          "登錄PG時，使用輸入到計算機中或與移動設備同步的安全密鑰。需要使用支援的移動設備或網頁瀏覽器。",
+        top: true,
       },
     ],
   },

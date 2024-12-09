@@ -24,6 +24,7 @@ import {
   getMuteDefaultProfile,
   getMuteEmailAuthenticated,
   getMutePhoneAuthenticated,
+  getTwoFactorAuthentication,
 } from "@shared/@common/model/selectors";
 import {
   setAddImgExpl,
@@ -51,6 +52,7 @@ import {
   setMuteDefaultProfile,
   setMuteEmailAuthenticated,
   setMutePhoneAuthenticated,
+  setTwoFactorAuthentication,
 } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
@@ -917,6 +919,46 @@ const pages = {
           reducer: setMutePhoneAuthenticated,
         },
         description: "此过滤器不影响我关注的人的通知。",
+      },
+    ],
+  },
+  LoginVerficationPage: {
+    pageTitle: "二步验证",
+    list: [
+      {
+        title: "二步验证",
+        type: "checkbox",
+        selector: getTwoFactorAuthentication,
+        comp: {
+          text: "短信",
+          reducer: setTwoFactorAuthentication,
+          value: "sms",
+        },
+        description: "登录PG时，您将收到包含验证代码的短信。",
+        top: true,
+      },
+      {
+        type: "checkbox",
+        selector: getTwoFactorAuthentication,
+        comp: {
+          text: "认证应用",
+          reducer: setTwoFactorAuthentication,
+          value: "app",
+        },
+        description: "使用移动认证应用程序，每次登录PG时接收验证代码。",
+        top: true,
+      },
+      {
+        type: "checkbox",
+        selector: getTwoFactorAuthentication,
+        comp: {
+          text: "安全密钥",
+          reducer: setTwoFactorAuthentication,
+          value: "key",
+        },
+        description:
+          "登录PG时，使用一个输入到计算机中或与移动设备同步的安全密钥。需要使用支持的移动设备或网页浏览器。",
+        top: true,
       },
     ],
   },

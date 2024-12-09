@@ -24,6 +24,7 @@ import {
   getMuteDefaultProfile,
   getMuteEmailAuthenticated,
   getMutePhoneAuthenticated,
+  getTwoFactorAuthentication,
 } from "@shared/@common/model/selectors";
 import {
   setAddImgExpl,
@@ -51,6 +52,7 @@ import {
   setMuteDefaultProfile,
   setMuteEmailAuthenticated,
   setMutePhoneAuthenticated,
+  setTwoFactorAuthentication,
 } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
@@ -938,6 +940,48 @@ const pages = {
         },
         description:
           "このフィルターは、フォローしている人からの通知には影響しません。",
+      },
+    ],
+  },
+  LoginVerficationPage: {
+    pageTitle: "二段階認証",
+    list: [
+      {
+        title: "二段階認証",
+        type: "checkbox",
+        selector: getTwoFactorAuthentication,
+        comp: {
+          text: "SMS",
+          reducer: setTwoFactorAuthentication,
+          value: "sms",
+        },
+        description:
+          "PGにログインする際に認証コードが含まれたSMSメッセージが携帯電話に届きます。",
+        top: true,
+      },
+      {
+        type: "checkbox",
+        selector: getTwoFactorAuthentication,
+        comp: {
+          text: "認証アプリ",
+          reducer: setTwoFactorAuthentication,
+          value: "app",
+        },
+        description:
+          "モバイル認証アプリを使用してPGにログインするたびに認証コードを受け取ります。",
+        top: true,
+      },
+      {
+        type: "checkbox",
+        selector: getTwoFactorAuthentication,
+        comp: {
+          text: "セキュリティキー",
+          reducer: setTwoFactorAuthentication,
+          value: "key",
+        },
+        description:
+          "PGにログインする際に、コンピューターに入力するか、モバイルデバイスと同期するセキュリティキーを使用します。サポートされているモバイルデバイスまたはウェブブラウザーを使用する必要があります。",
+        top: true,
       },
     ],
   },
