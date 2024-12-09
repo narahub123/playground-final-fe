@@ -1,5 +1,6 @@
 import {
   setAddImgExpl,
+  setAddLocationInfo,
   setAllowBehavioralAds,
   setAllowLocationAds,
   setAllowMessages,
@@ -29,6 +30,7 @@ import {
 import { HyperLink } from "@shared/@common/ui/components";
 import {
   getAddImgExpl,
+  getAddLocationInfo,
   getAllowBehavioralAds,
   getAllowLocationAds,
   getAllowMessages,
@@ -878,6 +880,19 @@ const pages = {
         },
       ],
     },
+  },
+  LocationPage: {
+    pageTitle: "게시물에 위치 정보 넣기",
+    description: "활성화하면 게시물에 위치 정보를 첨부할 수 있습니다.",
+    item: {
+      type: "checkbox",
+      selector: getAddLocationInfo,
+      comp: {
+        text: "게시물에 위치 정보 넣기",
+        reducer: setAddLocationInfo,
+      },
+    },
+    hyperlink: "게시물에 추가된 모든 위치 정보를 삭제합니다.",
   },
 };
 

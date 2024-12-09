@@ -1,6 +1,7 @@
 import { countryNamesZhTW } from "@shared/@common/data/countries";
 import {
   getAddImgExpl,
+  getAddLocationInfo,
   getAllowBehavioralAds,
   getAllowLocationAds,
   getAllowMessages,
@@ -20,6 +21,7 @@ import {
 } from "@shared/@common/model/selectors";
 import {
   setAddImgExpl,
+  setAddLocationInfo,
   setAllowBehavioralAds,
   setAllowLocationAds,
   setAllowMessages,
@@ -837,6 +839,19 @@ const pages = {
         },
       ],
     },
+  },
+  LocationPage: {
+    pageTitle: "將位置信息添加到帖子",
+    description: "啟用後，可以將位置信息附加到您的帖子中。",
+    item: {
+      type: "checkbox",
+      selector: getAddLocationInfo,
+      comp: {
+        text: "將位置信息添加到帖子",
+        reducer: setAddLocationInfo,
+      },
+    },
+    hyperlink: "刪除帖子中添加的所有位置信息。",
   },
 };
 

@@ -1,6 +1,7 @@
 import { countryNamesEng } from "@shared/@common/data/countries";
 import {
   getAddImgExpl,
+  getAddLocationInfo,
   getAllowBehavioralAds,
   getAllowLocationAds,
   getAllowMessages,
@@ -20,6 +21,7 @@ import {
 } from "@shared/@common/model/selectors";
 import {
   setAddImgExpl,
+  setAddLocationInfo,
   setAllowBehavioralAds,
   setAllowLocationAds,
   setAllowMessages,
@@ -856,6 +858,19 @@ const pages = {
         },
       ],
     },
+  },
+  LocationPage: {
+    pageTitle: "Add Location to Posts",
+    description: "Enable to attach location information to your posts.",
+    item: {
+      type: "checkbox",
+      selector: getAddLocationInfo,
+      comp: {
+        text: "Add location to posts",
+        reducer: setAddLocationInfo,
+      },
+    },
+    hyperlink: "Delete all location information added to posts.",
   },
 };
 

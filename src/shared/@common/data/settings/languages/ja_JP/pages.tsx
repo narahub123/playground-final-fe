@@ -1,6 +1,7 @@
 import { countryNamesJap } from "@shared/@common/data/countries";
 import {
   getAddImgExpl,
+  getAddLocationInfo,
   getAllowBehavioralAds,
   getAllowLocationAds,
   getAllowMessages,
@@ -20,6 +21,7 @@ import {
 } from "@shared/@common/model/selectors";
 import {
   setAddImgExpl,
+  setAddLocationInfo,
   setAllowBehavioralAds,
   setAllowLocationAds,
   setAllowMessages,
@@ -857,6 +859,19 @@ const pages = {
         },
       ],
     },
+  },
+  LocationPage: {
+    pageTitle: "投稿に位置情報を追加",
+    description: "有効にすると、投稿に位置情報を添付できます。",
+    item: {
+      type: "checkbox",
+      selector: getAddLocationInfo,
+      comp: {
+        text: "投稿に位置情報を追加",
+        reducer: setAddLocationInfo,
+      },
+    },
+    hyperlink: "投稿に追加されたすべての位置情報を削除します。",
   },
 };
 
