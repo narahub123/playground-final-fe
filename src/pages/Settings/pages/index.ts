@@ -37,6 +37,7 @@ import {
   AdsPreferencesPage,
   LocationInfoPage,
   LocationPage,
+  NotificationAdvancedFilters,
 } from "./PrivacyAndSafety";
 import {
   NotificationsPage,
@@ -76,6 +77,7 @@ export {
   DataPage,
   AutoplayPage,
   LocationPage,
+  NotificationAdvancedFilters,
   About,
   AccountData,
   ChangePassword,

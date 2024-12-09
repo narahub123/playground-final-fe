@@ -55,6 +55,7 @@ import {
   DataPage,
   AutoplayPage,
   LocationPage,
+  NotificationAdvancedFilters,
 } from "@pages/Settings/pages";
 import { AuthLayout } from "@/layouts";
 import { PageLayout } from "@shared/pages/layout";
@@ -298,6 +299,10 @@ export const router = createBrowserRouter([
                   {
                     path: "autoplay",
                     element: <AutoplayPage />,
+                  },
+                  {
+                    path: "notifications/advanced_filters",
+                    element: <NotificationAdvancedFilters />,
                   },
                 ],
               },
