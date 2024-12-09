@@ -22,6 +22,7 @@ type SettingsType = {
   protectVideo: boolean;
   tagSensitiveMedia: boolean; // 포스트 할 때 민감한 미디어 표시하기
   displaySensitiveMedia: boolean; // 피드에 민감한 미디어 표시하기
+  addLocationInfo: boolean;
 };
 
 type AutoplayType = "off" | "on";

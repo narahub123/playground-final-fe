@@ -1,17 +1,17 @@
 import styles from "./LocationPage.module.css";
 import { SettingsContainer } from "@features/settings-setting/ui/components";
-import { getFindByEmail } from "@shared/@common/model/selectors";
-import { setFindByEmail } from "@shared/@common/model/slices/settingsSlice";
+import { getAddLocationInfo } from "@shared/@common/model/selectors";
+import { setAddLocationInfo } from "@shared/@common/model/slices/settingsSlice";
 import { Description, HyperLink } from "@shared/@common/ui/components";
 import { MainLayout } from "@shared/pages/layout";
 
 const LocationPage = () => {
   const item = {
     type: "checkbox",
-    selector: getFindByEmail,
+    selector: getAddLocationInfo,
     comp: {
       text: "게시물에 위치 정보 넣기",
-      reducer: setFindByEmail,
+      reducer: setAddLocationInfo,
     },
   };
   return (

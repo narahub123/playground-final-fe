@@ -26,6 +26,7 @@ const getTagSensitiveMedia = (state: RootState) =>
   state.settings.tagSensitiveMedia;
 const getDisplaySensitiveMedia = (state: RootState) =>
   state.settings.displaySensitiveMedia;
+const getAddLocationInfo = (state: RootState) => state.settings.addLocationInfo;
 
 export {
   getSettings,
@@ -50,4 +51,5 @@ export {
   getProtectVideo,
   getTagSensitiveMedia,
   getDisplaySensitiveMedia,
+  getAddLocationInfo,
 };

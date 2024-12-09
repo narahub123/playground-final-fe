@@ -20,6 +20,7 @@ import {
   getProtectVideo,
   getTagSensitiveMedia,
   getDisplaySensitiveMedia,
+  getAddLocationInfo,
 } from "./settingsSelectors";
 import { getIsLoggedIn } from "./loginSelector";
 import { getUser, getProfileImage } from "./userSelector";
@@ -52,6 +53,7 @@ export {
   getProtectVideo,
   getTagSensitiveMedia,
   getDisplaySensitiveMedia,
+  getAddLocationInfo,
   // login
   getIsLoggedIn,
   // user

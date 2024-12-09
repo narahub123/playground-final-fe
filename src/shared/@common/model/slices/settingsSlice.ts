@@ -31,6 +31,7 @@ const initialState: SettingsType = {
   protectVideo: false,
   tagSensitiveMedia: false, // 포스트 할 때 민감한 미디어 표시하기
   displaySensitiveMedia: false, // 피드에 민감한 미디어 표시하기
+  addLocationInfo: false,
 };
 
 // 페이지 로드 전에 setting를 먼저 로드해야 함
@@ -101,6 +102,9 @@ const settingsSlice = createSlice({
     setDisplaySensitiveMedia: (state, action: PayloadAction<boolean>) => {
       state.displaySensitiveMedia = action.payload;
     },
+    setAddLocationInfo: (state, action: PayloadAction<boolean>) => {
+      state.addLocationInfo = action.payload;
+    },
   },
 });
 
@@ -128,4 +132,5 @@ export const {
   setProtectVideo,
   setTagSensitiveMedia,
   setDisplaySensitiveMedia,
+  setAddLocationInfo,
 } = settingsSlice.actions;
