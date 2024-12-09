@@ -761,6 +761,43 @@ const pages = {
       },
     ],
   },
+  LanguagesPage: {
+    pageTitle: "言語",
+    description:
+      "ユーザー体験をカスタマイズする際に使用される言語を管理します。",
+    list: [
+      {
+        title: "表示言語",
+        detail:
+          "PGの見出し、ボタン、その他のテキストに使用する主要言語を選択します。",
+        type: "card",
+        comp: {
+          title: "表示言語",
+          expl: "韓国語",
+          path: "/settings/language",
+        },
+      },
+      {
+        title: "追加言語を選択",
+        detail: "PGで表示したいコンテンツの追加言語を選択します。",
+        type: "card",
+        comp: {
+          title: "追加言語",
+          path: "/i/flow/language_selector",
+        },
+      },
+      {
+        title: "認識された言語",
+        detail:
+          "フォローしているアカウントや反応を示した投稿など、あなたのアクティビティに基づいてPGが推測した言語を管理します。",
+        type: "card",
+        comp: {
+          title: "認識された言語",
+          path: "/settings/your_twitter_data/language",
+        },
+      },
+    ],
+  },
 };
 
 export default pages;

@@ -762,6 +762,43 @@ const pages = {
       },
     ],
   },
+  LanguagesPage: {
+    pageTitle: "Languages",
+    description: "Manage the languages used to customize your user experience.",
+    list: [
+      {
+        title: "Display Language",
+        detail:
+          "Select the primary language for headlines, buttons, and other text on PG.",
+        type: "card",
+        comp: {
+          title: "Display Language",
+          expl: "Korean",
+          path: "/settings/language",
+        },
+      },
+      {
+        title: "Select Additional Languages",
+        detail:
+          "Choose additional languages for the content you want to see on PG.",
+        type: "card",
+        comp: {
+          title: "Additional Languages",
+          path: "/i/flow/language_selector",
+        },
+      },
+      {
+        title: "Known Languages",
+        detail:
+          "Manage the languages PG inferred based on your activities, such as accounts you follow and posts you've interacted with.",
+        type: "card",
+        comp: {
+          title: "Known Languages",
+          path: "/settings/your_twitter_data/language",
+        },
+      },
+    ],
+  },
 };
 
 export default pages;

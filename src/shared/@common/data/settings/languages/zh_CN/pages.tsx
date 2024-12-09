@@ -747,6 +747,41 @@ const pages = {
       },
     ],
   },
+  LanguagesPage: {
+    pageTitle: "语言",
+    description: "管理用于定制用户体验的语言。",
+    list: [
+      {
+        title: "显示语言",
+        detail: "选择PG标题、按钮和其他文本所使用的主要语言。",
+        type: "card",
+        comp: {
+          title: "显示语言",
+          expl: "韩语",
+          path: "/settings/language",
+        },
+      },
+      {
+        title: "选择其他语言",
+        detail: "选择您希望在PG上显示的内容的其他语言。",
+        type: "card",
+        comp: {
+          title: "其他语言",
+          path: "/i/flow/language_selector",
+        },
+      },
+      {
+        title: "已知语言",
+        detail:
+          "管理PG根据您的活动（如您关注的账号和您互动过的帖子）推断出的语言。",
+        type: "card",
+        comp: {
+          title: "已知语言",
+          path: "/settings/your_twitter_data/language",
+        },
+      },
+    ],
+  },
 };
 
 export default pages;
