@@ -1,6 +1,7 @@
 import { countryNamesZhTW } from "@shared/@common/data/countries";
 import {
   getAllowBehavioralAds,
+  getAllowLocationAds,
   getAllowMessages,
   getFindByEmail,
   getFindByPhone,
@@ -9,6 +10,7 @@ import {
 } from "@shared/@common/model/selectors";
 import {
   setAllowBehavioralAds,
+  setAllowLocationAds,
   setAllowMessages,
   setBackgroundTheme,
   setFindByEmail,
@@ -638,6 +640,34 @@ const pages = {
       {
         title: "廣告主列表",
         path: "/settings/your_twitter_data/audiences",
+      },
+    ],
+  },
+  LocationInfoPage: {
+    pageTitle: "位置信息",
+    description: "管理用於在PlayGround上個性化體驗的位置信息。",
+    checkbox: {
+      type: "checkbox",
+      selector: getAllowLocationAds,
+      comp: {
+        text: "基於我去過的地方進行個性化",
+        reducer: setAllowLocationAds,
+      },
+      description:
+        "PlayGround始終使用例如我註冊的地點或當前位置等信息來提供個性化內容。啟用此設置後，可以通過我去過的地方來提供個性化內容。",
+    },
+    branchList: [
+      {
+        title: "我去過的地方",
+        path: "/settings/your_twitter_data/locations",
+      },
+      {
+        title: "將位置信息添加到帖子",
+        path: "/settings/location",
+      },
+      {
+        title: "探索設置",
+        path: "/settings/location",
       },
     ],
   },

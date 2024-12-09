@@ -1,6 +1,7 @@
 import { countryNamesJap } from "@shared/@common/data/countries";
 import {
   getAllowBehavioralAds,
+  getAllowLocationAds,
   getAllowMessages,
   getFindByEmail,
   getFindByPhone,
@@ -9,6 +10,7 @@ import {
 } from "@shared/@common/model/selectors";
 import {
   setAllowBehavioralAds,
+  setAllowLocationAds,
   setAllowMessages,
   setBackgroundTheme,
   setFindByEmail,
@@ -649,6 +651,35 @@ const pages = {
       {
         title: "広告主リスト",
         path: "/settings/your_twitter_data/audiences",
+      },
+    ],
+  },
+  LocationInfoPage: {
+    pageTitle: "位置情報",
+    description:
+      "PlayGroundでの体験をパーソナライズするために使用される位置情報を管理します。",
+    checkbox: {
+      type: "checkbox",
+      selector: getAllowLocationAds,
+      comp: {
+        text: "訪問した場所を基にパーソナライズ",
+        reducer: setAllowLocationAds,
+      },
+      description:
+        "PlayGroundは、登録した場所や現在の場所などの情報を使用して、常にパーソナライズされたコンテンツを提供します。この設定を有効にすると、訪問した場所に基づいてパーソナライズされたコンテンツを提供することができます。",
+    },
+    branchList: [
+      {
+        title: "訪問した場所",
+        path: "/settings/your_twitter_data/locations",
+      },
+      {
+        title: "投稿に位置情報を追加",
+        path: "/settings/location",
+      },
+      {
+        title: "探索設定",
+        path: "/settings/location",
       },
     ],
   },

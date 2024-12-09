@@ -1,6 +1,7 @@
 import { countryNamesEng } from "@shared/@common/data/countries";
 import {
   getAllowBehavioralAds,
+  getAllowLocationAds,
   getAllowMessages,
   getFindByEmail,
   getFindByPhone,
@@ -9,6 +10,7 @@ import {
 } from "@shared/@common/model/selectors";
 import {
   setAllowBehavioralAds,
+  setAllowLocationAds,
   setAllowMessages,
   setBackgroundTheme,
   setFindByEmail,
@@ -648,6 +650,35 @@ const pages = {
       {
         title: "Advertisers List",
         path: "/settings/your_twitter_data/audiences",
+      },
+    ],
+  },
+  LocationInfoPage: {
+    pageTitle: "Location Information",
+    description:
+      "Manage location information used to personalize your experience on PlayGround.",
+    checkbox: {
+      type: "checkbox",
+      selector: getAllowLocationAds,
+      comp: {
+        text: "Personalize based on places I've been",
+        reducer: setAllowLocationAds,
+      },
+      description:
+        "PlayGround always uses information like the location where I signed up or my current location to provide personalized content. Enabling this setting allows personalized content to be provided based on the places I’ve visited.",
+    },
+    branchList: [
+      {
+        title: "Places I've Been",
+        path: "/settings/your_twitter_data/locations",
+      },
+      {
+        title: "Add Location to Posts",
+        path: "/settings/location",
+      },
+      {
+        title: "Explore Settings",
+        path: "/settings/location",
       },
     ],
   },
