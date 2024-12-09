@@ -6,10 +6,11 @@ import { CheckBoxType } from "@features/settings-setting/types/data";
 
 interface CheckBoxProps {
   item: CheckBoxType;
+  isRounded?: boolean;
   className?: string;
 }
 
-const CheckBox = ({ item, className }: CheckBoxProps) => {
+const CheckBox = ({ item, isRounded = false, className }: CheckBoxProps) => {
   const { text, reducer, initialValue } = item;
 
   const dispatch = useAppDispatch();
@@ -26,12 +27,23 @@ const CheckBox = ({ item, className }: CheckBoxProps) => {
     >
       <span>{text}</span>
       {isChecked ? (
-        <Icon
-          iconName="checkedbox"
-          iconTitle=""
-          fontSize={22}
-          className={styles.icon}
-        />
+        isRounded ? (
+          <Icon
+            iconName="roundedCheckedbox"
+            iconTitle=""
+            fontSize={22}
+            className={styles.icon}
+          />
+        ) : (
+          <Icon
+            iconName="checkedbox"
+            iconTitle=""
+            fontSize={22}
+            className={styles.icon}
+          />
+        )
+      ) : isRounded ? (
+        <Icon iconName="roundedCheckbox" iconTitle="" fontSize={22} />
       ) : (
         <Icon iconName="checkbox" iconTitle="" fontSize={22} />
       )}

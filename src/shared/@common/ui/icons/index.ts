@@ -6,6 +6,8 @@ import {
 import {
   FaRegSquare as checkbox,
   FaCheckSquare as checkedbox,
+  FaRegCircle as roundedCheckbox,
+  FaCheckCircle as roundedCheckedbox,
 } from "react-icons/fa";
 
 import {
@@ -79,6 +81,8 @@ const ICONS = {
   preferences, // 알림 환경 설정
   checkbox, // 체크 박스
   checkedbox, // 체크된 박스
+  roundedCheckbox, // 둥근 체크 박스
+  roundedCheckedbox, // 둥근 체크된 박스
 };
 
 export default ICONS;
