@@ -46,6 +46,7 @@ import {
   AccessibilityAndDisplayAndLanguagesPage,
   AccessibilityPage,
   LanguagesPage,
+  DataPage,
 } from "./AccessibilityAndDisplayAndLanguages";
 export {
   SettingsLandingPage,
@@ -70,6 +71,7 @@ export {
   NotificationFilterPage,
   AccessibilityPage,
   LanguagesPage,
+  DataPage,
   About,
   AccountData,
   ChangePassword,

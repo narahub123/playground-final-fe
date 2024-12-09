@@ -52,6 +52,7 @@ import {
   NotificationFilterPage,
   AccessibilityPage,
   LanguagesPage,
+  DataPage,
 } from "@pages/Settings/pages";
 import { AuthLayout } from "@/layouts";
 import { PageLayout } from "@shared/pages/layout";
@@ -285,8 +286,8 @@ export const router = createBrowserRouter([
                     element: <LanguagesPage />,
                   },
                   {
-                    path: "data_usage",
-                    element: <DataUsage />,
+                    path: "data",
+                    element: <DataPage />,
                   },
                 ],
               },
