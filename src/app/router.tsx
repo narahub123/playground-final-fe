@@ -55,6 +55,7 @@ import {
   DeactivatePage,
   AudienceAndTaggingPage,
   YourPostsPage,
+  ContentYouSeePage,
 } from "@pages/Settings/pages";
 import { AuthLayout } from "@/layouts";
 import { PageLayout } from "@shared/pages/layout";
@@ -245,7 +246,7 @@ export const router = createBrowserRouter([
                   },
                   {
                     path: "content_you_see",
-                    element: <SortContents />,
+                    element: <ContentYouSeePage />,
                   },
                   {
                     path: "mute_and_block",
