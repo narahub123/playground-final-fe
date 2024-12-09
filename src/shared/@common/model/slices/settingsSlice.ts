@@ -32,6 +32,16 @@ const initialState: SettingsType = {
   tagSensitiveMedia: false, // 포스트 할 때 민감한 미디어 표시하기
   displaySensitiveMedia: false, // 피드에 민감한 미디어 표시하기
   addLocationInfo: false,
+  notifications: {
+    mutes: {
+      notFollowing: false,
+      notFollower: false,
+      newAccount: false,
+      defaultProfile: false,
+      emailAuthenticated: false,
+      phoneAuthenticated: false,
+    },
+  },
 };
 
 // 페이지 로드 전에 setting를 먼저 로드해야 함
@@ -105,6 +115,24 @@ const settingsSlice = createSlice({
     setAddLocationInfo: (state, action: PayloadAction<boolean>) => {
       state.addLocationInfo = action.payload;
     },
+    setMuteNotFollowing: (state, action: PayloadAction<boolean>) => {
+      state.notifications.mutes.notFollowing = action.payload;
+    },
+    setMuteNotFollower: (state, action: PayloadAction<boolean>) => {
+      state.notifications.mutes.notFollower = action.payload;
+    },
+    setMuteNewAccount: (state, action: PayloadAction<boolean>) => {
+      state.notifications.mutes.newAccount = action.payload;
+    },
+    setMuteDefaultProfile: (state, action: PayloadAction<boolean>) => {
+      state.notifications.mutes.defaultProfile = action.payload;
+    },
+    setMuteEmailAuthenticated: (state, action: PayloadAction<boolean>) => {
+      state.notifications.mutes.emailAuthenticated = action.payload;
+    },
+    setMutePhoneAuthenticated: (state, action: PayloadAction<boolean>) => {
+      state.notifications.mutes.phoneAuthenticated = action.payload;
+    },
   },
 });
 
@@ -133,4 +161,10 @@ export const {
   setTagSensitiveMedia,
   setDisplaySensitiveMedia,
   setAddLocationInfo,
+  setMuteNotFollowing,
+  setMuteNotFollower,
+  setMuteNewAccount,
+  setMuteDefaultProfile,
+  setMuteEmailAuthenticated,
+  setMutePhoneAuthenticated,
 } = settingsSlice.actions;

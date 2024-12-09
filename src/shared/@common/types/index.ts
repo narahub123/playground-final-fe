@@ -22,6 +22,8 @@ import {
   FontSizeType,
   AllowMessageType,
   AutoplayType,
+  NotificationsType,
+  MutesType,
 } from "./settings";
 
 export type {
@@ -38,4 +40,6 @@ export type {
   SettingsType,
   AllowMessageType,
   AutoplayType,
+  NotificationsType,
+  MutesType,
 };

@@ -21,6 +21,12 @@ import {
   getTagSensitiveMedia,
   getDisplaySensitiveMedia,
   getAddLocationInfo,
+  getMuteNotFollowing,
+  getMuteNotFollower,
+  getMuteNewAccount,
+  getMuteDefaultProfile,
+  getMuteEmailAuthenticated,
+  getMutePhoneAuthenticated,
 } from "./settingsSelectors";
 import { getIsLoggedIn } from "./loginSelector";
 import { getUser, getProfileImage } from "./userSelector";
@@ -54,6 +60,12 @@ export {
   getTagSensitiveMedia,
   getDisplaySensitiveMedia,
   getAddLocationInfo,
+  getMuteNotFollowing,
+  getMuteNotFollower,
+  getMuteNewAccount,
+  getMuteDefaultProfile,
+  getMuteEmailAuthenticated,
+  getMutePhoneAuthenticated,
   // login
   getIsLoggedIn,
   // user

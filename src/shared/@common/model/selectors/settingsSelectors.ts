@@ -27,6 +27,18 @@ const getTagSensitiveMedia = (state: RootState) =>
 const getDisplaySensitiveMedia = (state: RootState) =>
   state.settings.displaySensitiveMedia;
 const getAddLocationInfo = (state: RootState) => state.settings.addLocationInfo;
+const getMuteNotFollowing = (state: RootState) =>
+  state.settings.notifications.mutes.notFollowing;
+const getMuteNotFollower = (state: RootState) =>
+  state.settings.notifications.mutes.notFollower;
+const getMuteNewAccount = (state: RootState) =>
+  state.settings.notifications.mutes.newAccount;
+const getMuteDefaultProfile = (state: RootState) =>
+  state.settings.notifications.mutes.defaultProfile;
+const getMuteEmailAuthenticated = (state: RootState) =>
+  state.settings.notifications.mutes.emailAuthenticated;
+const getMutePhoneAuthenticated = (state: RootState) =>
+  state.settings.notifications.mutes.phoneAuthenticated;
 
 export {
   getSettings,
@@ -52,4 +64,10 @@ export {
   getTagSensitiveMedia,
   getDisplaySensitiveMedia,
   getAddLocationInfo,
+  getMuteNotFollowing,
+  getMuteNotFollower,
+  getMuteNewAccount,
+  getMuteDefaultProfile,
+  getMuteEmailAuthenticated,
+  getMutePhoneAuthenticated,
 };

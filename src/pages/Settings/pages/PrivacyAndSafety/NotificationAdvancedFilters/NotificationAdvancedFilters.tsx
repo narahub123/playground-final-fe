@@ -3,8 +3,22 @@ import {
   SettingsCheckBoxContainerType,
 } from "@features/settings-setting/types";
 import { SettingsContainer } from "@features/settings-setting/ui/components";
-import { getFindByEmail } from "@shared/@common/model/selectors";
-import { setFindByEmail } from "@shared/@common/model/slices/settingsSlice";
+import {
+  getMuteNotFollowing,
+  getMuteNotFollower,
+  getMuteNewAccount,
+  getMuteDefaultProfile,
+  getMuteEmailAuthenticated,
+  getMutePhoneAuthenticated,
+} from "@shared/@common/model/selectors";
+import {
+  setMuteNotFollowing,
+  setMuteNotFollower,
+  setMuteNewAccount,
+  setMuteDefaultProfile,
+  setMuteEmailAuthenticated,
+  setMutePhoneAuthenticated,
+} from "@shared/@common/model/slices/settingsSlice";
 import { MainLayout } from "@shared/pages/layout";
 
 const NotificationAdvancedFilters = () => {
@@ -12,50 +26,50 @@ const NotificationAdvancedFilters = () => {
     {
       title: "다음 계정의 알림 뮤트하기:",
       type: "checkbox",
-      selector: getFindByEmail,
+      selector: getMuteNotFollowing,
       comp: {
         text: "내가 팔로하지 않는 계정",
-        reducer: setFindByEmail,
+        reducer: setMuteNotFollowing,
       },
     },
     {
       type: "checkbox",
-      selector: getFindByEmail,
+      selector: getMuteNotFollower,
       comp: {
         text: "나를 팔로하지 않는 계정",
-        reducer: setFindByEmail,
+        reducer: setMuteNotFollower,
       },
     },
     {
       type: "checkbox",
-      selector: getFindByEmail,
+      selector: getMuteNewAccount,
       comp: {
         text: "새 계정",
-        reducer: setFindByEmail,
+        reducer: setMuteNewAccount,
       },
     },
     {
       type: "checkbox",
-      selector: getFindByEmail,
+      selector: getMuteDefaultProfile,
       comp: {
         text: "기본 프로필 이미지를 사용하는 계정",
-        reducer: setFindByEmail,
+        reducer: setMuteDefaultProfile,
       },
     },
     {
       type: "checkbox",
-      selector: getFindByEmail,
+      selector: getMuteEmailAuthenticated,
       comp: {
         text: "이메일을 인증하지 않은 계정",
-        reducer: setFindByEmail,
+        reducer: setMuteEmailAuthenticated,
       },
     },
     {
       type: "checkbox",
-      selector: getFindByEmail,
+      selector: getMutePhoneAuthenticated,
       comp: {
         text: "휴대폰 번호를 인증하지 않는 계정",
-        reducer: setFindByEmail,
+        reducer: setMutePhoneAuthenticated,
       },
       description:
         "이 필터는 내가 팔로우하는 사람에게서 받는 알림에는 영향을 주지 않습니다.",

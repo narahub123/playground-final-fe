@@ -23,6 +23,20 @@ type SettingsType = {
   tagSensitiveMedia: boolean; // 포스트 할 때 민감한 미디어 표시하기
   displaySensitiveMedia: boolean; // 피드에 민감한 미디어 표시하기
   addLocationInfo: boolean;
+  notifications: NotificationsType;
+};
+
+type NotificationsType = {
+  mutes: MutesType;
+};
+
+type MutesType = {
+  notFollowing: boolean;
+  notFollower: boolean;
+  newAccount: boolean;
+  defaultProfile: boolean;
+  emailAuthenticated: boolean;
+  phoneAuthenticated: boolean;
 };
 
 type AutoplayType = "off" | "on";
@@ -61,4 +75,6 @@ export type {
   FontSizeType,
   AllowMessageType,
   AutoplayType,
+  NotificationsType,
+  MutesType,
 };
