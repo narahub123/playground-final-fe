@@ -1,6 +1,6 @@
 import { countryNamesZhTW } from "@shared/@common/data/countries";
-import { getAllowMessages, getHideMessages, getShowRead } from "@shared/@common/model/selectors";
-import { setAllowMessages, setBackgroundTheme, setHideMessages, setShowRead } from "@shared/@common/model/slices/settingsSlice";
+import { getAllowMessages, getFindByEmail, getFindByPhone, getHideMessages, getShowRead } from "@shared/@common/model/selectors";
+import { setAllowMessages, setBackgroundTheme, setFindByEmail, setFindByPhone, setHideMessages, setShowRead } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
 import { HyperLink } from "@shared/@common/ui/components";
@@ -561,6 +561,43 @@ const pages = {
         },
         description:
           "允許發送消息的人知道您何時已閱讀消息。已讀回執不會顯示在消息請求中。",
+        top: true,
+      },
+    ],
+  },
+  ContactsPage: {
+    pageTitle: "查找帳戶和聯絡人",
+    description: "控制帳戶查找設置並管理導入的聯絡人。",
+    list: [
+      {
+        title: "可搜索性",
+        detail:
+          "決定是否允許知道您的電子郵件地址或手機號碼的人在PG上找到並聯繫您。",
+        type: "checkbox",
+        selector: getFindByEmail,
+        comp: {
+          text: "允許知道我的電子郵件地址的人在PG上找到我",
+          reducer: setFindByEmail,
+        },
+        description: "允許知道您的電子郵件地址的人在PG上找到並聯繫您。",
+      },
+      {
+        type: "checkbox",
+        selector: getFindByPhone,
+        comp: {
+          text: "允許知道我的手機號碼的人在PG上找到我",
+          reducer: setFindByPhone,
+        },
+        description: "允許知道您的手機號碼的人在PG上找到並聯繫您。",
+      },
+      {
+        title: "聯絡人",
+        detail: "管理從移動設備導入的聯絡人。",
+        type: "card",
+        comp: {
+          title: "管理聯絡人",
+          path: "/settings/contacts_dashboard",
+        },
         top: true,
       },
     ],

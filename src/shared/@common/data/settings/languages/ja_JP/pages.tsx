@@ -1,12 +1,16 @@
 import { countryNamesJap } from "@shared/@common/data/countries";
 import {
   getAllowMessages,
+  getFindByEmail,
+  getFindByPhone,
   getHideMessages,
   getShowRead,
 } from "@shared/@common/model/selectors";
 import {
   setAllowMessages,
   setBackgroundTheme,
+  setFindByEmail,
+  setFindByPhone,
   setHideMessages,
   setShowRead,
 } from "@shared/@common/model/slices/settingsSlice";
@@ -578,6 +582,46 @@ const pages = {
         },
         description:
           "メッセージをやり取りする人が、あなたがメッセージを確認したときに通知されるようにします。既読通知はメッセージリクエストには表示されません。",
+        top: true,
+      },
+    ],
+  },
+  ContactsPage: {
+    pageTitle: "アカウント検索と連絡先",
+    description:
+      "アカウント検索設定を制御し、インポートした連絡先を管理します。",
+    list: [
+      {
+        title: "検索可能性",
+        detail:
+          "あなたのメールアドレスや電話番号を知っている人がPGであなたを見つけて連絡できるかを決定します。",
+        type: "checkbox",
+        selector: getFindByEmail,
+        comp: {
+          text: "メールアドレスを知っている人がPGで私を見つけることを許可する",
+          reducer: setFindByEmail,
+        },
+        description:
+          "メールアドレスを知っている人がPGであなたを見つけて連絡できるようにします。",
+      },
+      {
+        type: "checkbox",
+        selector: getFindByPhone,
+        comp: {
+          text: "電話番号を知っている人がPGで私を見つけることを許可する",
+          reducer: setFindByPhone,
+        },
+        description:
+          "電話番号を知っている人がPGであなたを見つけて連絡できるようにします。",
+      },
+      {
+        title: "連絡先",
+        detail: "モバイルデバイスからインポートした連絡先を管理します。",
+        type: "card",
+        comp: {
+          title: "連絡先の管理",
+          path: "/settings/contacts_dashboard",
+        },
         top: true,
       },
     ],

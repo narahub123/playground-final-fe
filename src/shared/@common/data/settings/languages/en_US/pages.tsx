@@ -1,12 +1,16 @@
 import { countryNamesEng } from "@shared/@common/data/countries";
 import {
   getAllowMessages,
+  getFindByEmail,
+  getFindByPhone,
   getHideMessages,
   getShowRead,
 } from "@shared/@common/model/selectors";
 import {
   setAllowMessages,
   setBackgroundTheme,
+  setFindByEmail,
+  setFindByPhone,
   setHideMessages,
   setShowRead,
 } from "@shared/@common/model/slices/settingsSlice";
@@ -577,6 +581,46 @@ const pages = {
         },
         description:
           "Allows people exchanging messages to know when you have read a message. Read receipts do not appear in message requests.",
+        top: true,
+      },
+    ],
+  },
+  ContactsPage: {
+    pageTitle: "Find Account and Contacts",
+    description:
+      "Control account discovery settings and manage imported contacts.",
+    list: [
+      {
+        title: "Discoverability",
+        detail:
+          "Decide whether people who know your email address or phone number can find and contact you on PG.",
+        type: "checkbox",
+        selector: getFindByEmail,
+        comp: {
+          text: "Allow people who know my email address to find me on PG",
+          reducer: setFindByEmail,
+        },
+        description:
+          "Allows people who know your email address to find and contact you on PG.",
+      },
+      {
+        type: "checkbox",
+        selector: getFindByPhone,
+        comp: {
+          text: "Allow people who know my phone number to find me on PG",
+          reducer: setFindByPhone,
+        },
+        description:
+          "Allows people who know your phone number to find and contact you on PG.",
+      },
+      {
+        title: "Contacts",
+        detail: "Manage contacts imported from your mobile device.",
+        type: "card",
+        comp: {
+          title: "Manage Contacts",
+          path: "/settings/contacts_dashboard",
+        },
         top: true,
       },
     ],

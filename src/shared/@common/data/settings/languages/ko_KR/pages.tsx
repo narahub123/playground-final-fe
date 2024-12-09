@@ -1,4 +1,11 @@
-import { setAllowMessages, setBackgroundTheme, setHideMessages, setShowRead } from "@shared/@common/model/slices/settingsSlice";
+import {
+  setAllowMessages,
+  setBackgroundTheme,
+  setFindByEmail,
+  setFindByPhone,
+  setHideMessages,
+  setShowRead,
+} from "@shared/@common/model/slices/settingsSlice";
 import { SettingsType, UserType } from "@shared/@common/types";
 import { countryNamesKor } from "@shared/@common/data/countries";
 import {
@@ -8,7 +15,13 @@ import {
   translateGender,
 } from "@shared/@common/utils";
 import { HyperLink } from "@shared/@common/ui/components";
-import { getAllowMessages, getHideMessages, getShowRead } from "@shared/@common/model/selectors";
+import {
+  getAllowMessages,
+  getFindByEmail,
+  getFindByPhone,
+  getHideMessages,
+  getShowRead,
+} from "@shared/@common/model/selectors";
 
 const pages = {
   settingsLandingPage: {
@@ -594,6 +607,45 @@ const pages = {
         },
         description:
           "쪽지를 주고 받는 사람들이 내가 메시지를 확인했을 때를 알 수 있도록 허용합니다. 읽음 표시는 쪽지 요청에 나타나지 않습니다.",
+        top: true,
+      },
+    ],
+  },
+  ContactsPage: {
+    pageTitle: "계정찾기 및 연락처",
+    description: "계정찾기 설정을 제어하고 가져온 연락처를 관리합니다.",
+    list: [
+      {
+        title: "검색 가능성",
+        detail:
+          "내 이메일 주소 또는 휴대폰 번호를 알고 있는 사람들이 PG에서 나를 찾고 연락할 수 있게 할지 여부를 결정합니다.",
+        type: "checkbox",
+        selector: getFindByEmail,
+        comp: {
+          text: "내 이메일 주소를 알고 있는 사람들이 PG에서 나를 찾을 수 있도록 허용",
+          reducer: setFindByEmail,
+        },
+        description:
+          "내 이메일 주소를 알고 있는 사람들이 PG에서 나를 찾고 연락할 수 있도록 합니다.",
+      },
+      {
+        type: "checkbox",
+        selector: getFindByPhone,
+        comp: {
+          text: "내 휴대폰 번호를 알고 있는 사람들이 PG에서 나를 찾을 수 있도록 허용",
+          reducer: setFindByPhone,
+        },
+        description:
+          "내 휴대폰 번호를 알고 있는 사람이 PG에서 나를 찾고 연락할 수 있도록 합니다.",
+      },
+      {
+        title: "연락처",
+        detail: "내모바일 디바이스에서 가져온 연락처를 관리합니다. ",
+        type: "card",
+        comp: {
+          title: "연락처 관리",
+          path: "/settings/contacts_dashboard",
+        },
         top: true,
       },
     ],

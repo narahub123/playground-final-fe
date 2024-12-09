@@ -1,12 +1,16 @@
 import { countryNamesZhCN } from "@shared/@common/data/countries";
 import {
   getAllowMessages,
+  getFindByEmail,
+  getFindByPhone,
   getHideMessages,
   getShowRead,
 } from "@shared/@common/model/selectors";
 import {
   setAllowMessages,
   setBackgroundTheme,
+  setFindByEmail,
+  setFindByPhone,
   setHideMessages,
   setShowRead,
 } from "@shared/@common/model/slices/settingsSlice";
@@ -570,6 +574,43 @@ const pages = {
         },
         description:
           "允许发送消息的人知道您何时已阅读消息。已读回执不会显示在消息请求中。",
+        top: true,
+      },
+    ],
+  },
+  ContactsPage: {
+    pageTitle: "查找账户和联系人",
+    description: "控制账户查找设置并管理导入的联系人。",
+    list: [
+      {
+        title: "可搜索性",
+        detail:
+          "决定是否允许知道您的邮箱地址或手机号码的人在PG上找到并联系您。",
+        type: "checkbox",
+        selector: getFindByEmail,
+        comp: {
+          text: "允许知道我邮箱地址的人在PG上找到我",
+          reducer: setFindByEmail,
+        },
+        description: "允许知道您邮箱地址的人在PG上找到并联系您。",
+      },
+      {
+        type: "checkbox",
+        selector: getFindByPhone,
+        comp: {
+          text: "允许知道我手机号码的人在PG上找到我",
+          reducer: setFindByPhone,
+        },
+        description: "允许知道您手机号码的人在PG上找到并联系您。",
+      },
+      {
+        title: "联系人",
+        detail: "管理从移动设备导入的联系人。",
+        type: "card",
+        comp: {
+          title: "管理联系人",
+          path: "/settings/contacts_dashboard",
+        },
         top: true,
       },
     ],
