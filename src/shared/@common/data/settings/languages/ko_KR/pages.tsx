@@ -6,6 +6,7 @@ import {
   setFindByEmail,
   setFindByPhone,
   setHideMessages,
+  setQualityFilter,
   setShowRead,
 } from "@shared/@common/model/slices/settingsSlice";
 import { SettingsType, UserType } from "@shared/@common/types";
@@ -24,6 +25,7 @@ import {
   getFindByEmail,
   getFindByPhone,
   getHideMessages,
+  getQualityFilter,
   getShowRead,
 } from "@shared/@common/model/selectors";
 
@@ -704,6 +706,29 @@ const pages = {
       {
         title: "탐색 설정",
         path: "/settings/location",
+      },
+    ],
+  },
+  NotificationFilterPage: {
+    pageTitle: "필터",
+    description: "확인하고자 하는 알림과 확인하고 싶지 않은 알림을 선택하세요.",
+    list: [
+      {
+        type: "checkbox",
+        selector: getQualityFilter,
+        comp: {
+          text: "퀄리티 필터",
+          reducer: setQualityFilter,
+        },
+        description:
+          "선택하면 중복 및 자동 게시물과 같은 콘텐츠가 필터링됩니다. 팔로우 중이거나 최근 대화한 계정의 알림에 적용되지 않습니다.",
+      },
+      {
+        type: "card",
+        comp: {
+          title: "뮤트 상태의 알림",
+          path: "/settings/notifications/advanced_filters",
+        },
       },
     ],
   },

@@ -6,6 +6,7 @@ import {
   getFindByEmail,
   getFindByPhone,
   getHideMessages,
+  getQualityFilter,
   getShowRead,
 } from "@shared/@common/model/selectors";
 import {
@@ -16,6 +17,7 @@ import {
   setFindByEmail,
   setFindByPhone,
   setHideMessages,
+  setQualityFilter,
   setShowRead,
 } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
@@ -679,6 +681,30 @@ const pages = {
       {
         title: "Explore Settings",
         path: "/settings/location",
+      },
+    ],
+  },
+  NotificationFilterPage: {
+    pageTitle: "Filters",
+    description:
+      "Choose the notifications you want to see and those you don’t.",
+    list: [
+      {
+        type: "checkbox",
+        selector: getQualityFilter,
+        comp: {
+          text: "Quality Filter",
+          reducer: setQualityFilter,
+        },
+        description:
+          "When selected, content such as duplicates and automated posts will be filtered. This does not apply to notifications from accounts you follow or have recently interacted with.",
+      },
+      {
+        type: "card",
+        comp: {
+          title: "Muted Notifications",
+          path: "/settings/notifications/advanced_filters",
+        },
       },
     ],
   },

@@ -6,6 +6,7 @@ import {
   getFindByEmail,
   getFindByPhone,
   getHideMessages,
+  getQualityFilter,
   getShowRead,
 } from "@shared/@common/model/selectors";
 import {
@@ -16,6 +17,7 @@ import {
   setFindByEmail,
   setFindByPhone,
   setHideMessages,
+  setQualityFilter,
   setShowRead,
 } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
@@ -680,6 +682,29 @@ const pages = {
       {
         title: "探索設定",
         path: "/settings/location",
+      },
+    ],
+  },
+  NotificationFilterPage: {
+    pageTitle: "フィルター",
+    description: "表示したい通知と表示したくない通知を選択してください。",
+    list: [
+      {
+        type: "checkbox",
+        selector: getQualityFilter,
+        comp: {
+          text: "品質フィルター",
+          reducer: setQualityFilter,
+        },
+        description:
+          "選択すると、重複や自動投稿などのコンテンツがフィルタリングされます。フォロー中または最近やり取りしたアカウントの通知には適用されません。",
+      },
+      {
+        type: "card",
+        comp: {
+          title: "ミュート通知",
+          path: "/settings/notifications/advanced_filters",
+        },
       },
     ],
   },

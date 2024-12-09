@@ -6,6 +6,7 @@ import {
   getFindByEmail,
   getFindByPhone,
   getHideMessages,
+  getQualityFilter,
   getShowRead,
 } from "@shared/@common/model/selectors";
 import {
@@ -16,6 +17,7 @@ import {
   setFindByEmail,
   setFindByPhone,
   setHideMessages,
+  setQualityFilter,
   setShowRead,
 } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
@@ -668,6 +670,29 @@ const pages = {
       {
         title: "探索设置",
         path: "/settings/location",
+      },
+    ],
+  },
+  NotificationFilterPage: {
+    pageTitle: "筛选",
+    description: "选择您想查看和不想查看的通知。",
+    list: [
+      {
+        type: "checkbox",
+        selector: getQualityFilter,
+        comp: {
+          text: "质量筛选",
+          reducer: setQualityFilter,
+        },
+        description:
+          "选择后，将过滤重复内容和自动发布的内容。这不适用于您关注或最近互动的帐户的通知。",
+      },
+      {
+        type: "card",
+        comp: {
+          title: "静音通知",
+          path: "/settings/notifications/advanced_filters",
+        },
       },
     ],
   },
