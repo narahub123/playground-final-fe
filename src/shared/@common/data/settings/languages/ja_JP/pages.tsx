@@ -16,6 +16,7 @@ import {
   getQualityFilter,
   getReduceMotion,
   getShowRead,
+  getTagSensitiveMedia,
 } from "@shared/@common/model/selectors";
 import {
   setAddImgExpl,
@@ -35,6 +36,7 @@ import {
   setQualityFilter,
   setReduceMotion,
   setShowRead,
+  setTagSensitiveMedia,
 } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
@@ -506,10 +508,10 @@ const pages = {
     list: [
       {
         type: "checkbox",
-        selector: getDisplaySensitiveMedia,
+        selector: getTagSensitiveMedia,
         comp: {
           text: "投稿するメディアを潜在的にセンシティブなコンテンツとしてマークする",
-          reducer: setDisplaySensitiveMedia,
+          reducer: setTagSensitiveMedia,
         },
         description:
           "有効にすると、投稿する写真や動画は、センシティブなコンテンツを見たくない人にセンシティブとして表示されます。",
@@ -528,10 +530,14 @@ const pages = {
     description:
       "トピックや関心事などのユーザーの好みに基づいて、PlayGroundに表示される情報を決定します。",
     checkboxItem: {
-      text: "センシティブな内容を含む可能性のあるメディアを表示する",
-      reducer: setBackgroundTheme,
-      initialValue: true,
+      type: "checkbox",
+      selector: getDisplaySensitiveMedia,
+      comp: {
+        text: "センシティブな内容を含む可能性のあるメディアを表示する",
+        reducer: setDisplaySensitiveMedia,
+      },
     },
+
     branchList: (user: UserType) => [
       {
         title: "トピック",

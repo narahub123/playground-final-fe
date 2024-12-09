@@ -22,6 +22,8 @@ const getDataSaver = (state: RootState) => state.settings.dataSaver;
 const getAutoplay = (state: RootState) => state.settings.autoplay;
 const getIsPrivate = (state: RootState) => state.settings.isPrivate;
 const getProtectVideo = (state: RootState) => state.settings.protectVideo;
+const getTagSensitiveMedia = (state: RootState) =>
+  state.settings.tagSensitiveMedia;
 const getDisplaySensitiveMedia = (state: RootState) =>
   state.settings.displaySensitiveMedia;
 
@@ -46,5 +48,6 @@ export {
   getAutoplay,
   getIsPrivate,
   getProtectVideo,
+  getTagSensitiveMedia,
   getDisplaySensitiveMedia,
 };

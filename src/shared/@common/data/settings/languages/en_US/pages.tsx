@@ -16,6 +16,7 @@ import {
   getQualityFilter,
   getReduceMotion,
   getShowRead,
+  getTagSensitiveMedia,
 } from "@shared/@common/model/selectors";
 import {
   setAddImgExpl,
@@ -35,6 +36,7 @@ import {
   setQualityFilter,
   setReduceMotion,
   setShowRead,
+  setTagSensitiveMedia,
 } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
@@ -506,10 +508,10 @@ const pages = {
     list: [
       {
         type: "checkbox",
-        selector: getDisplaySensitiveMedia,
+        selector: getTagSensitiveMedia,
         comp: {
           text: "Mark media you post as potentially sensitive content",
-          reducer: setDisplaySensitiveMedia,
+          reducer: setTagSensitiveMedia,
         },
         description:
           "If enabled, photos and videos you post will be marked as sensitive content for people who prefer not to see sensitive material.",
@@ -528,9 +530,12 @@ const pages = {
     description:
       "Determines the information displayed on PlayGround based on your preferences, such as topics and interests.",
     checkboxItem: {
-      text: "Show media that may contain sensitive content",
-      reducer: setBackgroundTheme,
-      initialValue: true,
+      type: "checkbox",
+      selector: getDisplaySensitiveMedia,
+      comp: {
+        text: "Show media that may contain sensitive content",
+        reducer: setDisplaySensitiveMedia,
+      },
     },
     branchList: (user: UserType) => [
       {

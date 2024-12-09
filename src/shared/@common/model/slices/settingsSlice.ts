@@ -29,7 +29,8 @@ const initialState: SettingsType = {
   autoplay: "off",
   isPrivate: false,
   protectVideo: false,
-  displaySensitiveMedia: false,
+  tagSensitiveMedia: false, // 포스트 할 때 민감한 미디어 표시하기
+  displaySensitiveMedia: false, // 피드에 민감한 미디어 표시하기
 };
 
 // 페이지 로드 전에 setting를 먼저 로드해야 함
@@ -94,6 +95,9 @@ const settingsSlice = createSlice({
     setProtectVideo: (state, action: PayloadAction<boolean>) => {
       state.protectVideo = action.payload;
     },
+    setTagSensitiveMedia: (state, action: PayloadAction<boolean>) => {
+      state.tagSensitiveMedia = action.payload;
+    },
     setDisplaySensitiveMedia: (state, action: PayloadAction<boolean>) => {
       state.displaySensitiveMedia = action.payload;
     },
@@ -122,5 +126,6 @@ export const {
   setAutoplay,
   setIsPrivate,
   setProtectVideo,
+  setTagSensitiveMedia,
   setDisplaySensitiveMedia,
 } = settingsSlice.actions;

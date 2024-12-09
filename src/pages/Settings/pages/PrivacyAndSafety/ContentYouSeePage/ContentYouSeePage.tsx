@@ -1,6 +1,6 @@
 import {
-  CheckBox,
   SettingsBranchCard,
+  SettingsContainer,
 } from "@features/settings-setting/ui/components";
 import { useLanguageMode } from "@shared/@common/model/hooks";
 import { getUser } from "@shared/@common/model/selectors";
@@ -22,7 +22,7 @@ const ContentYouSeePage = () => {
       topContent={<Description text={description} />}
       bottomContent={
         <>
-          <CheckBox item={checkboxItem} />
+          <SettingsContainer item={checkboxItem} />
           <MainContentListLayout
             item={<SettingsBranchCard />}
             list={branchList(user)}

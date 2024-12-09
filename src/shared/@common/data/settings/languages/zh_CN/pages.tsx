@@ -16,6 +16,7 @@ import {
   getQualityFilter,
   getReduceMotion,
   getShowRead,
+  getTagSensitiveMedia,
 } from "@shared/@common/model/selectors";
 import {
   setAddImgExpl,
@@ -35,6 +36,7 @@ import {
   setQualityFilter,
   setReduceMotion,
   setShowRead,
+  setTagSensitiveMedia,
 } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
@@ -499,10 +501,10 @@ const pages = {
     list: [
       {
         type: "checkbox",
-        selector: getDisplaySensitiveMedia,
+        selector: getTagSensitiveMedia,
         comp: {
           text: "将您发布的媒体标记为可能包含敏感内容",
-          reducer: setDisplaySensitiveMedia,
+          reducer: setTagSensitiveMedia,
         },
         description:
           "启用后，您发布的照片和视频将被标记为敏感内容，供不想看到敏感内容的人查看。",
@@ -521,9 +523,12 @@ const pages = {
     description:
       "根据用户的偏好，如主题和兴趣，决定在 PlayGround 上显示的信息。",
     checkboxItem: {
-      text: "显示可能包含敏感内容的媒体",
-      reducer: setBackgroundTheme,
-      initialValue: true,
+      type: "checkbox",
+      selector: getDisplaySensitiveMedia,
+      comp: {
+        text: "显示可能包含敏感内容的媒体",
+        reducer: setDisplaySensitiveMedia,
+      },
     },
     branchList: (user: UserType) => [
       {

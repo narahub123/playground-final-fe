@@ -16,6 +16,7 @@ import {
   setQualityFilter,
   setReduceMotion,
   setShowRead,
+  setTagSensitiveMedia,
 } from "@shared/@common/model/slices/settingsSlice";
 import { SettingsType, UserType } from "@shared/@common/types";
 import { countryNamesKor } from "@shared/@common/data/countries";
@@ -43,6 +44,7 @@ import {
   getQualityFilter,
   getReduceMotion,
   getShowRead,
+  getTagSensitiveMedia,
 } from "@shared/@common/model/selectors";
 
 const pages = {
@@ -532,10 +534,10 @@ const pages = {
     list: [
       {
         type: "checkbox",
-        selector: getDisplaySensitiveMedia,
+        selector: getTagSensitiveMedia,
         comp: {
           text: "게시하는 미디어를 민감한 내용이 포함될 수 있는 미디어로 표시하기",
-          reducer: setDisplaySensitiveMedia,
+          reducer: setTagSensitiveMedia,
         },
         description:
           "활성화하면 게시하는 사진과 동영상이 민감한 콘텐츠가 표시되기를 원치 않는 사람들에게 민감한 콘텐츠로 표시됩니다.",
@@ -554,9 +556,12 @@ const pages = {
     description:
       "토픽과 관심사 등 사용자의 선호도를 바탕으로 PlayGround에 표시되는 정보를 결정합니다",
     checkboxItem: {
-      text: "민감한 내용을 포함할 수 있는 미디어 표시",
-      reducer: setBackgroundTheme,
-      initialValue: true,
+      type: "checkbox",
+      selector: getDisplaySensitiveMedia,
+      comp: {
+        text: "민감한 내용을 포함할 수 있는 미디어 표시",
+        reducer: setDisplaySensitiveMedia,
+      },
     },
     branchList: (user: UserType) => [
       {

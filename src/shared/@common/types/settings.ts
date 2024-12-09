@@ -20,7 +20,8 @@ type SettingsType = {
   autoplay: AutoplayType;
   isPrivate: boolean;
   protectVideo: boolean;
-  displaySensitiveMedia: boolean;
+  tagSensitiveMedia: boolean; // 포스트 할 때 민감한 미디어 표시하기
+  displaySensitiveMedia: boolean; // 피드에 민감한 미디어 표시하기
 };
 
 type AutoplayType = "off" | "on";

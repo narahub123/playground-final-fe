@@ -18,6 +18,7 @@ import {
   getAutoplay,
   getIsPrivate,
   getProtectVideo,
+  getTagSensitiveMedia,
   getDisplaySensitiveMedia,
 } from "./settingsSelectors";
 import { getIsLoggedIn } from "./loginSelector";
@@ -49,6 +50,7 @@ export {
   getAutoplay,
   getIsPrivate,
   getProtectVideo,
+  getTagSensitiveMedia,
   getDisplaySensitiveMedia,
   // login
   getIsLoggedIn,
