@@ -24,6 +24,7 @@ type SettingsType = {
   displaySensitiveMedia: boolean; // 피드에 민감한 미디어 표시하기
   addLocationInfo: boolean;
   notifications: NotificationsType;
+  protectRenewPassword: boolean; // 비밀번호 재설정 보호
 };
 
 type NotificationsType = {

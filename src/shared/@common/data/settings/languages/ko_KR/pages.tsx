@@ -24,6 +24,7 @@ import {
   setMuteDefaultProfile,
   setMuteEmailAuthenticated,
   setMutePhoneAuthenticated,
+  setProtectRenewPassword,
 } from "@shared/@common/model/slices/settingsSlice";
 import { SettingsType, UserType } from "@shared/@common/types";
 import { countryNamesKor } from "@shared/@common/data/countries";
@@ -59,6 +60,7 @@ import {
   getMuteDefaultProfile,
   getMuteEmailAuthenticated,
   getMutePhoneAuthenticated,
+  getProtectRenewPassword,
 } from "@shared/@common/model/selectors";
 
 const pages = {
@@ -160,7 +162,7 @@ const pages = {
       // 연결된 계정
       {
         title: "연결된 계정",
-        expl: "PlayGround에 로그인하기 위해 연결된 Google 또는 Naver 또는 Kakao 계정을 관리합니다.",
+        expl: "PG에 로그인하기 위해 연결된 Google 또는 Naver 또는 Kakao 계정을 관리합니다.",
         path: "/settings/connected_accounts",
         icon: "twoWay",
       },
@@ -175,7 +177,7 @@ const pages = {
   },
   PrivacyAndSafetyPage: {
     pageTitle: "개인 정보 및 안전",
-    description: "PlayGround에서 표시되고 공유되는 정보를 관리합니다.",
+    description: "PG에서 표시되고 공유되는 정보를 관리합니다.",
     branchList: [
       {
         title: "오디언스, 미디어 및 태그하기",
@@ -191,7 +193,7 @@ const pages = {
       },
       {
         title: "표시되는 콘텐츠",
-        expl: "토픽과 관심사 등 사용자의 선호도를 바탕으로 PlayGround에 표시되는 정보를 결정합니다.",
+        expl: "토픽과 관심사 등 사용자의 선호도를 바탕으로 PG에 표시되는 정보를 결정합니다.",
         path: "/settings/content_you_see",
         icon: "content",
       },
@@ -215,13 +217,13 @@ const pages = {
       },
       {
         title: "광고 환경 설정",
-        expl: "PlayGround에서 광고 설정을 관리합니다.",
+        expl: "PG에서 광고 설정을 관리합니다.",
         path: "/settings/ads_preferences",
         icon: "ads",
       },
       {
         title: "위치 정보",
-        expl: "PlayGround에서 환경을 맞춤 설정할 때 사용하는 위치 정보를 관리합니다.",
+        expl: "PG에서 환경을 맞춤 설정할 때 사용하는 위치 정보를 관리합니다.",
         path: "/settings/location_information",
         icon: "pin",
       },
@@ -249,19 +251,19 @@ const pages = {
   },
   AccessibilityAndDisplayAndLanguagesPage: {
     pageTitle: "접근성, 표시, 언어",
-    description: "PlayGround의 콘텐츠 표시 방식을 관리합니다.",
+    description: "PG의 콘텐츠 표시 방식을 관리합니다.",
     branchList: [
       // 접근성
       {
         title: "접근성",
-        expl: "색 대비와 동작 제한 등 PlayGround의 사용자 환경을 관리합니다. 이러한 설정은 이 브라우저의 모든 PlayGround 계정에 적용됩니다.",
+        expl: "색 대비와 동작 제한 등 PG의 사용자 환경을 관리합니다. 이러한 설정은 이 브라우저의 모든 PG 계정에 적용됩니다.",
         path: "/settings/accessibility",
         icon: "eyeoff",
       },
       // 표시
       {
         title: "표시",
-        expl: "글꼴 크기, 색상 및 배경을 관리합니다. 이러한 설정은 이 브라우저의 모든 PlayGround 계정에 적용됩니다.",
+        expl: "글꼴 크기, 색상 및 배경을 관리합니다. 이러한 설정은 이 브라우저의 모든 PG 계정에 적용됩니다.",
         path: "/settings/display",
         icon: "pen",
       },
@@ -275,7 +277,7 @@ const pages = {
       // 데이터 사용량
       {
         title: "데이터 사용량 ",
-        expl: "PlayGround는 이 디바이스에서 사용자의 일부 네트워크 데이터를 사용하는 방식을 제한합니다.",
+        expl: "PG는 이 디바이스에서 사용자의 일부 네트워크 데이터를 사용하는 방식을 제한합니다.",
         path: "/settings/data",
         icon: "barChart",
       },
@@ -365,7 +367,7 @@ const pages = {
           path: "/settings/account/login_verification",
         },
         description:
-          "PlayGround 비밀번호 외에 두 번째 인증 방법을 요구하도록 하여 무단 액세스로부터 계정을 보호하세요. 문자 메시지, 인증 앱 또는 보안 키 중에서 선택할 수 있습니다.",
+          "PG 비밀번호 외에 두 번째 인증 방법을 요구하도록 하여 무단 액세스로부터 계정을 보호하세요. 문자 메시지, 인증 앱 또는 보안 키 중에서 선택할 수 있습니다.",
       },
       {
         title: "ID 인증",
@@ -380,13 +382,13 @@ const pages = {
       {
         title: "비밀번호 재설정",
         type: "checkbox",
+        selector: getProtectRenewPassword,
         comp: {
           text: "비밀번호 재설정 보호",
-          reducer: setBackgroundTheme,
-          initialValue: false,
+          reducer: setProtectRenewPassword,
         },
         description:
-          "추가적인 보호 조치로서, PlayGround 비밀번호를 재설정하려면 이메일 주소 또는 휴대폰 번호를 확인해야 합니다",
+          "추가적인 보호 조치로서, PG 비밀번호를 재설정하려면 이메일 주소 또는 휴대폰 번호를 확인해야 합니다",
       },
     ],
   },
@@ -475,12 +477,12 @@ const pages = {
     section1: {
       title: "계정이 비활성화됩니다.",
       description:
-        "PlayGround 계정 비활성화 과정을 시작합니다. 내 표시 이름, @사용자 아이디, 공개 프로필이 PlayGround.com, iOS용 PlayGround, Android용 PlayGround에 더 이상 표시되지 않습니다.",
+        "PG 계정 비활성화 과정을 시작합니다. 내 표시 이름, @사용자 아이디, 공개 프로필이 PG.com, iOS용 PG, Android용 PG에 더 이상 표시되지 않습니다.",
     },
     section2: {
       title: "그 밖에 내가 알아야 할 내용",
       list: [
-        "실수로 또는 잘못하여 PlayGround 계정을 비활성화한 후에도 30일 이내에 복구할 수 있습니다.",
+        "실수로 또는 잘못하여 PG 계정을 비활성화한 후에도 30일 이내에 복구할 수 있습니다.",
         "일부 계정 정보는 Google 또는 Bing과 같은 검색 엔진에서 아직 접근 가능할 수도 있습니다.",
         <>
           @사용자 아이디를 변경하기 위해 계정을 비활성화할 필요는 없습니다.{" "}
@@ -488,8 +490,8 @@ const pages = {
           에서 아이디를 수정하세요.
         </>,
         <>
-          현재 @사용자 아이디 또는 이메일 주소를 다른 PlayGround 계정에서
-          사용하려면 이 계정을 비활성화하기 전에 해당 항목을{" "}
+          현재 @사용자 아이디 또는 이메일 주소를 다른 PG 계정에서 사용하려면 이
+          계정을 비활성화하기 전에 해당 항목을{" "}
           <HyperLink
             text="변경"
             path="/settings/your_data/account"
@@ -497,7 +499,7 @@ const pages = {
           />
           하시기 바랍니다.,
         </>,
-        "내 PlayGround 데이터를 다운로드하려면 계정을 비활성화하기 전에 요청 및 다운로드 프로세스를 모두 완료해야 합니다. 비활성화된 계정으로는 데이터 다운로드 링크를 보낼 수 없습니다.",
+        "내 PG 데이터를 다운로드하려면 계정을 비활성화하기 전에 요청 및 다운로드 프로세스를 모두 완료해야 합니다. 비활성화된 계정으로는 데이터 다운로드 링크를 보낼 수 없습니다.",
       ],
     },
     deactivate: {
@@ -506,7 +508,7 @@ const pages = {
   },
   AudienceAndTaggingPage: {
     pageTitle: "오디언스, 미디어 및 태그하기",
-    description: "PlayGround에서 다른 사람들에게 공개하는 정보를 관리합니다.",
+    description: "PG에서 다른 사람들에게 공개하는 정보를 관리합니다.",
     list: [
       {
         title: "",
@@ -568,7 +570,7 @@ const pages = {
   ContentYouSeePage: {
     pageTitle: "표시되는 콘텐츠",
     description:
-      "토픽과 관심사 등 사용자의 선호도를 바탕으로 PlayGround에 표시되는 정보를 결정합니다",
+      "토픽과 관심사 등 사용자의 선호도를 바탕으로 PG에 표시되는 정보를 결정합니다",
     checkboxItem: {
       type: "checkbox",
       selector: getDisplaySensitiveMedia,
@@ -690,7 +692,7 @@ const pages = {
   },
   AdsPreferencesPage: {
     pageTitle: "광고 환경설정",
-    description: "PlayGround에서 광고 설정을 관리합니다.",
+    description: "PG에서 광고 설정을 관리합니다.",
     checkbox: {
       type: "checkbox",
       selector: getAllowBehavioralAds,
@@ -699,7 +701,7 @@ const pages = {
         reducer: setAllowBehavioralAds,
       },
       description:
-        "PlayGround에서 항상 내 PlayGround 활동에 기반한 광고를 보게 됩니다. 이 설정이 활성화되어 있으면 PlayGround에서 내 PlayGround 활동과 파트너가 제공한 기타 온라인 활동 및 정보를 결합하여 PlayGround 내외에서 PlayGround 광고주의 광고를 맞춤 설정할 수 있습니다.",
+        "PG에서 항상 내 PG 활동에 기반한 광고를 보게 됩니다. 이 설정이 활성화되어 있으면 PG에서 내 PG 활동과 파트너가 제공한 기타 온라인 활동 및 정보를 결합하여 PG 내외에서 PG 광고주의 광고를 맞춤 설정할 수 있습니다.",
     },
     branchList: [
       {
@@ -724,7 +726,7 @@ const pages = {
         reducer: setAllowLocationAds,
       },
       description:
-        "PlayGround는 항상 내게 맞춤 콘텐츠를 제공하기 위해 내가 가입한 위치나 현재 위치와 같은 정보를 사용합니다. 이 설정을 활성화하면 내가 방문한 장소를 통해 맞춤 콘텐츠를 제공할 수 있습니다.",
+        "PG는 항상 내게 맞춤 콘텐츠를 제공하기 위해 내가 가입한 위치나 현재 위치와 같은 정보를 사용합니다. 이 설정을 활성화하면 내가 방문한 장소를 통해 맞춤 콘텐츠를 제공할 수 있습니다.",
     },
     branchList: [
       {
@@ -767,7 +769,7 @@ const pages = {
   AccessibilityPage: {
     pageTitle: "접근성",
     description:
-      "색 대비와 동작 제한 등 PlayGround의 사용자 환경을 관리합니다. 이러한 설정은 이 브라우저의 모든 PlayGround 계정에 적용됩니다.",
+      "색 대비와 동작 제한 등 PG의 사용자 환경을 관리합니다. 이러한 설정은 이 브라우저의 모든 PG 계정에 적용됩니다.",
     list: [
       {
         title: "보기 지원",

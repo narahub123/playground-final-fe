@@ -42,6 +42,7 @@ const initialState: SettingsType = {
       phoneAuthenticated: false,
     },
   },
+  protectRenewPassword: false, // 비밀번호 재설정 보호
 };
 
 // 페이지 로드 전에 setting를 먼저 로드해야 함
@@ -133,6 +134,9 @@ const settingsSlice = createSlice({
     setMutePhoneAuthenticated: (state, action: PayloadAction<boolean>) => {
       state.notifications.mutes.phoneAuthenticated = action.payload;
     },
+    setProtectRenewPassword: (state, action: PayloadAction<boolean>) => {
+      state.protectRenewPassword = action.payload;
+    },
   },
 });
 
@@ -167,4 +171,5 @@ export const {
   setMuteDefaultProfile,
   setMuteEmailAuthenticated,
   setMutePhoneAuthenticated,
+  setProtectRenewPassword,
 } = settingsSlice.actions;
