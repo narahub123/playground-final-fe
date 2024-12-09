@@ -4,6 +4,7 @@ import {
   getAllowBehavioralAds,
   getAllowLocationAds,
   getAllowMessages,
+  getAutoplay,
   getColorContrast,
   getDataSaver,
   getFindByEmail,
@@ -18,6 +19,7 @@ import {
   setAllowBehavioralAds,
   setAllowLocationAds,
   setAllowMessages,
+  setAutoplay,
   setBackgroundTheme,
   setColorContrast,
   setDataSaver,
@@ -824,6 +826,28 @@ const pages = {
         },
       },
     ],
+  },
+  AutoplayPage: {
+    pageTitle: "自動再生",
+    item: {
+      text: "自動再生",
+      detail:
+        "このデバイスで動画やGIFを自動再生するかどうかを選択してください。",
+      type: "checkboxlist",
+      selector: getAutoplay,
+      comp: [
+        {
+          text: "モバイルデータまたはWi-Fi使用時",
+          reducer: setAutoplay,
+          value: "on",
+        },
+        {
+          text: "使用しない",
+          reducer: setAutoplay,
+          value: "off",
+        },
+      ],
+    },
   },
 };
 

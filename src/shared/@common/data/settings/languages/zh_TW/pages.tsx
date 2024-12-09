@@ -4,6 +4,7 @@ import {
   getAllowBehavioralAds,
   getAllowLocationAds,
   getAllowMessages,
+  getAutoplay,
   getColorContrast,
   getDataSaver,
   getFindByEmail,
@@ -18,6 +19,7 @@ import {
   setAllowBehavioralAds,
   setAllowLocationAds,
   setAllowMessages,
+  setAutoplay,
   setBackgroundTheme,
   setColorContrast,
   setDataSaver,
@@ -806,6 +808,27 @@ const pages = {
         },
       },
     ],
+  },
+  AutoplayPage: {
+    pageTitle: "自動播放",
+    item: {
+      text: "自動播放",
+      detail: "選擇是否在此設備上自動播放視頻和GIF。",
+      type: "checkboxlist",
+      selector: getAutoplay,
+      comp: [
+        {
+          text: "使用蜂窩數據或Wi-Fi時",
+          reducer: setAutoplay,
+          value: "on",
+        },
+        {
+          text: "不使用",
+          reducer: setAutoplay,
+          value: "off",
+        },
+      ],
+    },
   },
 };
 

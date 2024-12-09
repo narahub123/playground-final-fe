@@ -3,6 +3,7 @@ import {
   setAllowBehavioralAds,
   setAllowLocationAds,
   setAllowMessages,
+  setAutoplay,
   setBackgroundTheme,
   setColorContrast,
   setDataSaver,
@@ -27,6 +28,7 @@ import {
   getAllowBehavioralAds,
   getAllowLocationAds,
   getAllowMessages,
+  getAutoplay,
   getColorContrast,
   getDataSaver,
   getFindByEmail,
@@ -847,7 +849,28 @@ const pages = {
       },
     ],
   },
-  
+  AutoplayPage: {
+    pageTitle: "자동 재생",
+    item: {
+      text: "자동 재생",
+      detail:
+        "이 디바이스에서 동영상 및 GIF를 자동으로 재생할지 여부를 선택하세요.",
+      type: "checkboxlist",
+      selector: getAutoplay,
+      comp: [
+        {
+          text: "셀룰러 데이터 또는 Wi-Fi 사용 시",
+          reducer: setAutoplay,
+          value: "on",
+        },
+        {
+          text: "사용하지 않음",
+          reducer: setAutoplay,
+          value: "off",
+        },
+      ],
+    },
+  },
 };
 
 export default pages;

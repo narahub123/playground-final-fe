@@ -4,6 +4,7 @@ import {
   getAllowBehavioralAds,
   getAllowLocationAds,
   getAllowMessages,
+  getAutoplay,
   getColorContrast,
   getDataSaver,
   getFindByEmail,
@@ -18,6 +19,7 @@ import {
   setAllowBehavioralAds,
   setAllowLocationAds,
   setAllowMessages,
+  setAutoplay,
   setBackgroundTheme,
   setColorContrast,
   setDataSaver,
@@ -825,6 +827,27 @@ const pages = {
         },
       },
     ],
+  },
+  AutoplayPage: {
+    pageTitle: "Autoplay",
+    item: {
+      text: "Autoplay",
+      detail: "Choose whether to autoplay videos and GIFs on this device.",
+      type: "checkboxlist",
+      selector: getAutoplay,
+      comp: [
+        {
+          text: "When using cellular data or Wi-Fi",
+          reducer: setAutoplay,
+          value: "on",
+        },
+        {
+          text: "Do not use",
+          reducer: setAutoplay,
+          value: "off",
+        },
+      ],
+    },
   },
 };
 
