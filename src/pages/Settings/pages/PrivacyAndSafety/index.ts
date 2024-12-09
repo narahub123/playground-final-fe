@@ -5,6 +5,7 @@ import YourPostsPage from "./YourPostsPage/YourPostsPage";
 import ContentYouSeePage from "./ContentYouSeePage/ContentYouSeePage";
 import MessageSettingPage from "./MessageSettingPage/MessageSettingPage";
 import ContactsPage from "./ContactsPage/ContactsPage";
+import AdsPreferencesPage from "./AdsPreferencesPage/AdsPreferencesPage";
 
 export {
   PrivacyAndSafetyPage,
@@ -14,4 +15,5 @@ export {
   ContentYouSeePage,
   MessageSettingPage,
   ContactsPage,
+  AdsPreferencesPage,
 };

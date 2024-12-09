@@ -34,6 +34,7 @@ import {
   ContentYouSeePage,
   MessageSettingPage,
   ContactsPage,
+  AdsPreferencesPage,
 } from "./PrivacyAndSafety";
 import { NotificationsPage, NotificationPreferencePage } from "./Notifications";
 import { AccessibilityAndDisplayAndLanguagesPage } from "./AccessibilityAndDisplayAndLanguages";
@@ -55,6 +56,7 @@ export {
   ContentYouSeePage,
   MessageSettingPage,
   ContactsPage,
+  AdsPreferencesPage,
   About,
   AccountData,
   ChangePassword,
