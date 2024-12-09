@@ -5,6 +5,7 @@ import {
   getAllowLocationAds,
   getAllowMessages,
   getColorContrast,
+  getDataSaver,
   getFindByEmail,
   getFindByPhone,
   getHideMessages,
@@ -19,6 +20,7 @@ import {
   setAllowMessages,
   setBackgroundTheme,
   setColorContrast,
+  setDataSaver,
   setFindByEmail,
   setFindByPhone,
   setHideMessages,
@@ -794,6 +796,31 @@ const pages = {
         comp: {
           title: "認識された言語",
           path: "/settings/your_twitter_data/language",
+        },
+      },
+    ],
+  },
+  DataPage: {
+    pageTitle: "データ使用量",
+    description:
+      "PGは、このデバイスでネットワークデータの使用方法を制限します。",
+    list: [
+      {
+        type: "checkbox",
+        selector: getDataSaver,
+        comp: {
+          text: "データセーバー",
+          reducer: setDataSaver,
+        },
+        description:
+          "このオプションを選択すると、PGのネットワークデータ使用量が削減されます。",
+      },
+      {
+        type: "card",
+        comp: {
+          title: "自動再生",
+          expl: "モバイルデータまたはWi-Fi使用時",
+          path: "/settings/autoplay",
         },
       },
     ],

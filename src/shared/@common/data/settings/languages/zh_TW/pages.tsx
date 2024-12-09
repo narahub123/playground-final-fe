@@ -5,6 +5,7 @@ import {
   getAllowLocationAds,
   getAllowMessages,
   getColorContrast,
+  getDataSaver,
   getFindByEmail,
   getFindByPhone,
   getHideMessages,
@@ -19,6 +20,7 @@ import {
   setAllowMessages,
   setBackgroundTheme,
   setColorContrast,
+  setDataSaver,
   setFindByEmail,
   setFindByPhone,
   setHideMessages,
@@ -778,6 +780,29 @@ const pages = {
         comp: {
           title: "已知語言",
           path: "/settings/your_twitter_data/language",
+        },
+      },
+    ],
+  },
+  DataPage: {
+    pageTitle: "數據使用量",
+    description: "PG會限制在此設備上使用的部分網絡數據。",
+    list: [
+      {
+        type: "checkbox",
+        selector: getDataSaver,
+        comp: {
+          text: "數據節省器",
+          reducer: setDataSaver,
+        },
+        description: "選擇此選項將減少PG使用的網絡數據。",
+      },
+      {
+        type: "card",
+        comp: {
+          title: "自動播放",
+          expl: "使用蜂窩數據或Wi-Fi時",
+          path: "/settings/autoplay",
         },
       },
     ],
