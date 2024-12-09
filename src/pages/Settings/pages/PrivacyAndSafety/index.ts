@@ -4,6 +4,7 @@ import AudienceAndTaggingPage from "./AudienceAndTaggingPage/AudienceAndTaggingP
 import YourPostsPage from "./YourPostsPage/YourPostsPage";
 import ContentYouSeePage from "./ContentYouSeePage/ContentYouSeePage";
 import MessageSettingPage from "./MessageSettingPage/MessageSettingPage";
+import ContactsPage from "./ContactsPage/ContactsPage";
 
 export {
   PrivacyAndSafetyPage,
@@ -12,4 +13,5 @@ export {
   YourPostsPage,
   ContentYouSeePage,
   MessageSettingPage,
+  ContactsPage,
 };

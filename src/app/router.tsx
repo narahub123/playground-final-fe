@@ -57,6 +57,7 @@ import {
   YourPostsPage,
   ContentYouSeePage,
   MessageSettingPage,
+  ContactsPage,
 } from "@pages/Settings/pages";
 import { AuthLayout } from "@/layouts";
 import { PageLayout } from "@shared/pages/layout";
@@ -259,7 +260,7 @@ export const router = createBrowserRouter([
                   },
                   {
                     path: "contacts",
-                    element: <Contacts />,
+                    element: <ContactsPage />,
                   },
                   {
                     path: "location_information",
