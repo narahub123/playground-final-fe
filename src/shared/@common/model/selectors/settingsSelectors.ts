@@ -14,6 +14,8 @@ const getAllowBehavioralAds = (state: RootState) =>
   state.settings.allowBehavioralAds;
 const getAllowLocationAds = (state: RootState) =>
   state.settings.allowLocationAds;
+const getQualityFilter = (state: RootState) => state.settings.qualityFilter;
+
 export {
   getSettings,
   getBgTheme,
@@ -27,4 +29,5 @@ export {
   getFindByPhone,
   getAllowBehavioralAds,
   getAllowLocationAds,
+  getQualityFilter,
 };

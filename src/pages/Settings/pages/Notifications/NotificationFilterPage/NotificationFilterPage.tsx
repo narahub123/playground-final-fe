@@ -1,6 +1,12 @@
 import { SettingsContainer } from "@features/settings-setting/ui/components";
-import { getFindByEmail } from "@shared/@common/model/selectors";
-import { setFindByEmail } from "@shared/@common/model/slices/settingsSlice";
+import {
+  getFindByEmail,
+  getQualityFilter,
+} from "@shared/@common/model/selectors";
+import {
+  setFindByEmail,
+  setQualityFilter,
+} from "@shared/@common/model/slices/settingsSlice";
 import { Description } from "@shared/@common/ui/components";
 import { MainLayout } from "@shared/pages/layout";
 
@@ -8,10 +14,10 @@ const NotificationFilterPage = () => {
   const list = [
     {
       type: "checkbox",
-      selector: getFindByEmail,
+      selector: getQualityFilter,
       comp: {
         text: "퀄리티 필터",
-        reducer: setFindByEmail,
+        reducer: setQualityFilter,
       },
       description:
         "선택하면 중복 및 자동 게시물과 같은 콘텐츠가 필터링됩니다. 팔로우 중이거나 최근 대화한 계정의 알림에 적용되지 않습니다.",

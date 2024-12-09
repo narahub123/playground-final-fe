@@ -12,6 +12,7 @@ type SettingsType = {
   findByPhone: boolean;
   allowBehavioralAds: boolean;
   allowLocationAds: boolean;
+  qualityFilter: boolean;
 };
 
 // 배경 설정 키

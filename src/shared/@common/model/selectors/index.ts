@@ -10,6 +10,7 @@ import {
   getFindByPhone,
   getAllowBehavioralAds,
   getAllowLocationAds,
+  getQualityFilter,
 } from "./settingsSelectors";
 import { getIsLoggedIn } from "./loginSelector";
 import { getUser, getProfileImage } from "./userSelector";
@@ -32,6 +33,7 @@ export {
   getFindByPhone,
   getAllowBehavioralAds,
   getAllowLocationAds,
+  getQualityFilter,
   // login
   getIsLoggedIn,
   // user
