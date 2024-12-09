@@ -42,7 +42,10 @@ import {
   NotificationPreferencePage,
   NotificationFilterPage,
 } from "./Notifications";
-import { AccessibilityAndDisplayAndLanguagesPage } from "./AccessibilityAndDisplayAndLanguages";
+import {
+  AccessibilityAndDisplayAndLanguagesPage,
+  AccessibilityPage,
+} from "./AccessibilityAndDisplayAndLanguages";
 export {
   SettingsLandingPage,
   AccountPage,
@@ -64,6 +67,7 @@ export {
   AdsPreferencesPage,
   LocationInfoPage,
   NotificationFilterPage,
+  AccessibilityPage,
   About,
   AccountData,
   ChangePassword,
