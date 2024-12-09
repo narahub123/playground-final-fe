@@ -1,23 +1,29 @@
 import { countryNamesZhTW } from "@shared/@common/data/countries";
 import {
+  getAddImgExpl,
   getAllowBehavioralAds,
   getAllowLocationAds,
   getAllowMessages,
+  getColorContrast,
   getFindByEmail,
   getFindByPhone,
   getHideMessages,
   getQualityFilter,
+  getReduceMotion,
   getShowRead,
 } from "@shared/@common/model/selectors";
 import {
+  setAddImgExpl,
   setAllowBehavioralAds,
   setAllowLocationAds,
   setAllowMessages,
   setBackgroundTheme,
+  setColorContrast,
   setFindByEmail,
   setFindByPhone,
   setHideMessages,
   setQualityFilter,
+  setReduceMotion,
   setShowRead,
 } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
@@ -693,6 +699,51 @@ const pages = {
           title: "靜音通知",
           path: "/settings/notifications/advanced_filters",
         },
+      },
+    ],
+  },
+  AccessibilityPage: {
+    pageTitle: "輔助功能",
+    description:
+      "管理您的PlayGround用戶體驗，例如色彩對比和動畫限制。這些設置適用於此瀏覽器上的所有PlayGround帳戶。",
+    list: [
+      {
+        title: "視覺輔助",
+        type: "checkbox",
+        selector: getColorContrast,
+        comp: {
+          text: "提高色彩對比度",
+          reducer: setColorContrast,
+        },
+        description: "通過提高文字與背景色的對比度來提升可讀性。",
+      },
+      {
+        title: "動作",
+        type: "checkbox",
+        selector: getReduceMotion,
+        comp: {
+          text: "減少動畫效果",
+          reducer: setReduceMotion,
+        },
+        description: "減少應用程序內的動畫效果，包括直播參與人數顯示。",
+      },
+      {
+        type: "card",
+        comp: {
+          title: "自動播放",
+          expl: "使用蜂窩數據或Wi-Fi時",
+          path: "/settings/autoplay",
+        },
+      },
+      {
+        title: "媒體",
+        type: "checkbox",
+        selector: getAddImgExpl,
+        comp: {
+          text: "接收圖片描述通知",
+          reducer: setAddImgExpl,
+        },
+        description: "在發送帖子之前，會收到添加圖片描述的通知。",
       },
     ],
   },

@@ -1,23 +1,29 @@
 import { countryNamesJap } from "@shared/@common/data/countries";
 import {
+  getAddImgExpl,
   getAllowBehavioralAds,
   getAllowLocationAds,
   getAllowMessages,
+  getColorContrast,
   getFindByEmail,
   getFindByPhone,
   getHideMessages,
   getQualityFilter,
+  getReduceMotion,
   getShowRead,
 } from "@shared/@common/model/selectors";
 import {
+  setAddImgExpl,
   setAllowBehavioralAds,
   setAllowLocationAds,
   setAllowMessages,
   setBackgroundTheme,
+  setColorContrast,
   setFindByEmail,
   setFindByPhone,
   setHideMessages,
   setQualityFilter,
+  setReduceMotion,
   setShowRead,
 } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
@@ -705,6 +711,53 @@ const pages = {
           title: "ミュート通知",
           path: "/settings/notifications/advanced_filters",
         },
+      },
+    ],
+  },
+  AccessibilityPage: {
+    pageTitle: "アクセシビリティ",
+    description:
+      "色のコントラストや動作制限など、PlayGroundのユーザーエクスペリエンスを管理します。これらの設定は、このブラウザ上のすべてのPlayGroundアカウントに適用されます。",
+    list: [
+      {
+        title: "視覚サポート",
+        type: "checkbox",
+        selector: getColorContrast,
+        comp: {
+          text: "色のコントラストを高める",
+          reducer: setColorContrast,
+        },
+        description:
+          "テキストと背景色のコントラストを高め、読みやすさを向上させます。",
+      },
+      {
+        title: "動作",
+        type: "checkbox",
+        selector: getReduceMotion,
+        comp: {
+          text: "動作を減らす",
+          reducer: setReduceMotion,
+        },
+        description: "ライブ参加人数を含むアプリ内アニメーションを減らします。",
+      },
+      {
+        type: "card",
+        comp: {
+          title: "自動再生",
+          expl: "セルラーデータまたはWi-Fi使用時",
+          path: "/settings/autoplay",
+        },
+      },
+      {
+        title: "メディア",
+        type: "checkbox",
+        selector: getAddImgExpl,
+        comp: {
+          text: "画像説明通知を受け取る",
+          reducer: setAddImgExpl,
+        },
+        description:
+          "投稿を送信する前に画像説明を追加するよう通知を受け取ります。",
       },
     ],
   },

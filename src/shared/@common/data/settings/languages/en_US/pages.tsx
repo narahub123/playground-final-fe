@@ -1,23 +1,29 @@
 import { countryNamesEng } from "@shared/@common/data/countries";
 import {
+  getAddImgExpl,
   getAllowBehavioralAds,
   getAllowLocationAds,
   getAllowMessages,
+  getColorContrast,
   getFindByEmail,
   getFindByPhone,
   getHideMessages,
   getQualityFilter,
+  getReduceMotion,
   getShowRead,
 } from "@shared/@common/model/selectors";
 import {
+  setAddImgExpl,
   setAllowBehavioralAds,
   setAllowLocationAds,
   setAllowMessages,
   setBackgroundTheme,
+  setColorContrast,
   setFindByEmail,
   setFindByPhone,
   setHideMessages,
   setQualityFilter,
+  setReduceMotion,
   setShowRead,
 } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
@@ -705,6 +711,54 @@ const pages = {
           title: "Muted Notifications",
           path: "/settings/notifications/advanced_filters",
         },
+      },
+    ],
+  },
+  AccessibilityPage: {
+    pageTitle: "Accessibility",
+    description:
+      "Manage your PlayGround user experience, such as color contrast and motion restrictions. These settings apply to all PlayGround accounts on this browser.",
+    list: [
+      {
+        title: "Visual Assistance",
+        type: "checkbox",
+        selector: getColorContrast,
+        comp: {
+          text: "Increase Color Contrast",
+          reducer: setColorContrast,
+        },
+        description:
+          "Enhance readability by increasing contrast between text and background colors.",
+      },
+      {
+        title: "Motion",
+        type: "checkbox",
+        selector: getReduceMotion,
+        comp: {
+          text: "Reduce Motion",
+          reducer: setReduceMotion,
+        },
+        description:
+          "Reduce in-app animations, including live participation counts.",
+      },
+      {
+        type: "card",
+        comp: {
+          title: "Autoplay",
+          expl: "When using cellular data or Wi-Fi",
+          path: "/settings/autoplay",
+        },
+      },
+      {
+        title: "Media",
+        type: "checkbox",
+        selector: getAddImgExpl,
+        comp: {
+          text: "Receive Image Description Notifications",
+          reducer: setAddImgExpl,
+        },
+        description:
+          "Get notified to add image descriptions before sending posts.",
       },
     ],
   },

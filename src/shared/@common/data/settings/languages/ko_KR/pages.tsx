@@ -1,12 +1,15 @@
 import {
+  setAddImgExpl,
   setAllowBehavioralAds,
   setAllowLocationAds,
   setAllowMessages,
   setBackgroundTheme,
+  setColorContrast,
   setFindByEmail,
   setFindByPhone,
   setHideMessages,
   setQualityFilter,
+  setReduceMotion,
   setShowRead,
 } from "@shared/@common/model/slices/settingsSlice";
 import { SettingsType, UserType } from "@shared/@common/types";
@@ -19,13 +22,16 @@ import {
 } from "@shared/@common/utils";
 import { HyperLink } from "@shared/@common/ui/components";
 import {
+  getAddImgExpl,
   getAllowBehavioralAds,
   getAllowLocationAds,
   getAllowMessages,
+  getColorContrast,
   getFindByEmail,
   getFindByPhone,
   getHideMessages,
   getQualityFilter,
+  getReduceMotion,
   getShowRead,
 } from "@shared/@common/model/selectors";
 
@@ -729,6 +735,52 @@ const pages = {
           title: "뮤트 상태의 알림",
           path: "/settings/notifications/advanced_filters",
         },
+      },
+    ],
+  },
+  AccessibilityPage: {
+    pageTitle: "접근성",
+    description:
+      "색 대비와 동작 제한 등 PlayGround의 사용자 환경을 관리합니다. 이러한 설정은 이 브라우저의 모든 PlayGround 계정에 적용됩니다.",
+    list: [
+      {
+        title: "보기 지원",
+        type: "checkbox",
+        selector: getColorContrast,
+        comp: {
+          text: "색 대비 높이기",
+          reducer: setColorContrast,
+        },
+        description: "텍스트와 배경색의 대비를 높여 가독성을 향상시킵니다.",
+      },
+      {
+        title: "동작",
+        type: "checkbox",
+        selector: getReduceMotion,
+        comp: {
+          text: "동작 줄이기",
+          reducer: setReduceMotion,
+        },
+        description: "생방송 참여수를 포함한 앱 내 애니메이션을 줄입니다.",
+      },
+      {
+        type: "card",
+        comp: {
+          title: "자동 재생",
+          expl: "셀룰러 데이터 또는 Wi-Fi 사용 시",
+          path: "/settings/autoplay",
+        },
+      },
+      {
+        title: "미디어",
+        type: "checkbox",
+        selector: getAddImgExpl,
+        comp: {
+          text: "이미지 설명 알림을 받습니다.",
+          reducer: setAddImgExpl,
+        },
+        description:
+          "게시물을 전송하기 전에 이미지 설명을 추가하라는 알림을 받습니다.",
       },
     ],
   },
