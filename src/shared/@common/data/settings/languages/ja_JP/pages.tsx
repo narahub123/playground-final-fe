@@ -10,6 +10,8 @@ import {
   getFindByEmail,
   getFindByPhone,
   getHideMessages,
+  getIsPrivate,
+  getProtectVideo,
   getQualityFilter,
   getReduceMotion,
   getShowRead,
@@ -26,6 +28,8 @@ import {
   setFindByEmail,
   setFindByPhone,
   setHideMessages,
+  setIsPrivate,
+  setProtectVideo,
   setQualityFilter,
   setReduceMotion,
   setShowRead,
@@ -463,10 +467,10 @@ const pages = {
       {
         title: "",
         type: "checkbox",
+        selector: getIsPrivate,
         comp: {
           text: "投稿を非公開に設定",
-          reducer: setBackgroundTheme,
-          initialValue: false,
+          reducer: setIsPrivate,
         },
         description:
           "選択すると、フォローしている人だけが自分の投稿やアカウント情報を閲覧できます。",
@@ -474,10 +478,10 @@ const pages = {
       {
         title: "",
         type: "checkbox",
+        selector: getProtectVideo,
         comp: {
           text: "動画を保護",
-          reducer: setBackgroundTheme,
-          initialValue: false,
+          reducer: setProtectVideo,
         },
         description:
           "この設定を有効にすると、投稿内の動画をデフォルトでダウンロードできなくなります。この設定は今後の投稿に適用され、過去の投稿には適用されません。",

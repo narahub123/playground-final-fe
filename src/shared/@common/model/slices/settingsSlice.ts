@@ -27,6 +27,8 @@ const initialState: SettingsType = {
   addImgExpl: false, // 이미지 설명 추가 알림
   dataSaver: false,
   autoplay: "off",
+  isPrivate: false,
+  protectVideo: false,
 };
 
 // 페이지 로드 전에 setting를 먼저 로드해야 함
@@ -85,6 +87,12 @@ const settingsSlice = createSlice({
     setAutoplay: (state, action: PayloadAction<AutoplayType>) => {
       state.autoplay = action.payload;
     },
+    setIsPrivate: (state, action: PayloadAction<boolean>) => {
+      state.isPrivate = action.payload;
+    },
+    setProtectVideo: (state, action: PayloadAction<boolean>) => {
+      state.protectVideo = action.payload;
+    },
   },
 });
 
@@ -108,4 +116,6 @@ export const {
   setAddImgExpl,
   setDataSaver,
   setAutoplay,
+  setIsPrivate,
+  setProtectVideo,
 } = settingsSlice.actions;

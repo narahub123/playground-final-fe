@@ -1,3 +1,7 @@
+import {
+  SettingsBranchListContainerType,
+  SettingsCheckBoxContainerType,
+} from "@features/settings-setting/types";
 import { SettingsContainer } from "@features/settings-setting/ui/components";
 import { useLanguageMode } from "@shared/@common/model/hooks";
 import { Description } from "@shared/@common/ui/components";
@@ -13,7 +17,18 @@ const AudienceAndTaggingPage = () => {
       pageTitle={pageTitle}
       backward
       topContent={<Description text={description} />}
-      bottomContent={<SettingsContainer list={list} gap={0} />}
+      bottomContent={
+        <>
+          {(
+            list as (
+              | SettingsBranchListContainerType
+              | SettingsCheckBoxContainerType
+            )[]
+          ).map((item, index) => (
+            <SettingsContainer item={item} gap={0} key={index} />
+          ))}
+        </>
+      }
     />
   );
 };

@@ -10,6 +10,8 @@ import {
   getFindByEmail,
   getFindByPhone,
   getHideMessages,
+  getIsPrivate,
+  getProtectVideo,
   getQualityFilter,
   getReduceMotion,
   getShowRead,
@@ -26,6 +28,8 @@ import {
   setFindByEmail,
   setFindByPhone,
   setHideMessages,
+  setIsPrivate,
+  setProtectVideo,
   setQualityFilter,
   setReduceMotion,
   setShowRead,
@@ -463,10 +467,10 @@ const pages = {
       {
         title: "",
         type: "checkbox",
+        selector: getIsPrivate,
         comp: {
           text: "Set my posts to private",
-          reducer: setBackgroundTheme,
-          initialValue: false,
+          reducer: setIsPrivate,
         },
         description:
           "When selected, only people who follow me can view my posts and other account information.",
@@ -474,10 +478,10 @@ const pages = {
       {
         title: "",
         type: "checkbox",
+        selector: getProtectVideo,
         comp: {
           text: "Protect videos",
-          reducer: setBackgroundTheme,
-          initialValue: false,
+          reducer: setProtectVideo,
         },
         description:
           "If enabled, videos in posts cannot be downloaded by default. This setting applies to future posts and does not apply retroactively.",

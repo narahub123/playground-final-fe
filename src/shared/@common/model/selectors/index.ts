@@ -16,6 +16,8 @@ import {
   getAddImgExpl,
   getDataSaver,
   getAutoplay,
+  getIsPrivate,
+  getProtectVideo,
 } from "./settingsSelectors";
 import { getIsLoggedIn } from "./loginSelector";
 import { getUser, getProfileImage } from "./userSelector";
@@ -44,6 +46,8 @@ export {
   getAddImgExpl,
   getDataSaver,
   getAutoplay,
+  getIsPrivate,
+  getProtectVideo,
   // login
   getIsLoggedIn,
   // user

@@ -20,6 +20,8 @@ const getReduceMotion = (state: RootState) => state.settings.reduceMotion;
 const getAddImgExpl = (state: RootState) => state.settings.addImgExpl;
 const getDataSaver = (state: RootState) => state.settings.dataSaver;
 const getAutoplay = (state: RootState) => state.settings.autoplay;
+const getIsPrivate = (state: RootState) => state.settings.isPrivate;
+const getProtectVideo = (state: RootState) => state.settings.protectVideo;
 
 export {
   getSettings,
@@ -40,4 +42,6 @@ export {
   getAddImgExpl,
   getDataSaver,
   getAutoplay,
+  getIsPrivate,
+  getProtectVideo,
 };

@@ -10,6 +10,8 @@ import {
   getFindByEmail,
   getFindByPhone,
   getHideMessages,
+  getIsPrivate,
+  getProtectVideo,
   getQualityFilter,
   getReduceMotion,
   getShowRead,
@@ -26,6 +28,8 @@ import {
   setFindByEmail,
   setFindByPhone,
   setHideMessages,
+  setIsPrivate,
+  setProtectVideo,
   setQualityFilter,
   setReduceMotion,
   setShowRead,
@@ -457,20 +461,20 @@ const pages = {
       {
         title: "",
         type: "checkbox",
+        selector: getIsPrivate,
         comp: {
           text: "将我的帖子设置为私密",
-          reducer: setBackgroundTheme,
-          initialValue: false,
+          reducer: setIsPrivate,
         },
         description: "选中后，只有关注我的人才能查看我的帖子和其他账户信息。",
       },
       {
         title: "",
         type: "checkbox",
+        selector: getProtectVideo,
         comp: {
           text: "保护视频",
-          reducer: setBackgroundTheme,
-          initialValue: false,
+          reducer: setProtectVideo,
         },
         description:
           "启用后，帖子中的视频默认无法下载。此设置适用于未来的帖子，不适用于过去的内容。",

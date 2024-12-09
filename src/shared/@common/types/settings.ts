@@ -18,6 +18,8 @@ type SettingsType = {
   addImgExpl: boolean; // 이미지 설명 추가 알림
   dataSaver: boolean;
   autoplay: AutoplayType;
+  isPrivate: boolean;
+  protectVideo: boolean;
 };
 
 type AutoplayType = "off" | "on";

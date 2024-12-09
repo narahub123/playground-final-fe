@@ -10,6 +10,8 @@ import {
   setFindByEmail,
   setFindByPhone,
   setHideMessages,
+  setIsPrivate,
+  setProtectVideo,
   setQualityFilter,
   setReduceMotion,
   setShowRead,
@@ -34,6 +36,8 @@ import {
   getFindByEmail,
   getFindByPhone,
   getHideMessages,
+  getIsPrivate,
+  getProtectVideo,
   getQualityFilter,
   getReduceMotion,
   getShowRead,
@@ -489,10 +493,10 @@ const pages = {
       {
         title: "",
         type: "checkbox",
+        selector: getIsPrivate,
         comp: {
           text: "내 게시물을 비공개로 설정",
-          reducer: setBackgroundTheme,
-          initialValue: false,
+          reducer: setIsPrivate,
         },
         description:
           "선택하면 나를 팔로우하는 사람들만 내 게시물 및 기타 계정 정보를 볼 수 있게 됩니다.",
@@ -500,10 +504,10 @@ const pages = {
       {
         title: "",
         type: "checkbox",
+        selector: getProtectVideo,
         comp: {
           text: "동영상 보호하기",
-          reducer: setBackgroundTheme,
-          initialValue: false,
+          reducer: setProtectVideo,
         },
         description:
           "이 설정을 선택하면 기본적으로 게시물의 동영상을 다운로드할 수 없게 됩니다. 이 설정은 앞으로 작성하는 게시물에 적용되며 소급 적용되지 않습니다. ",
