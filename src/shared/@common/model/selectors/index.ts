@@ -6,6 +6,8 @@ import {
   getAllowMessages,
   getHideMessages,
   getShowRead,
+  getFindByEmail,
+  getFindByPhone,
 } from "./settingsSelectors";
 import { getIsLoggedIn } from "./loginSelector";
 import { getUser, getProfileImage } from "./userSelector";
@@ -24,6 +26,8 @@ export {
   getAllowMessages,
   getHideMessages,
   getShowRead,
+  getFindByEmail,
+  getFindByPhone,
   // login
   getIsLoggedIn,
   // user

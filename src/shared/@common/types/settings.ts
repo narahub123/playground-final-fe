@@ -8,6 +8,8 @@ type SettingsType = {
   allowMessages: AllowMessageType;
   hideMessages: boolean;
   showRead: boolean;
+  findByEmail: boolean;
+  findByPhone: boolean;
 };
 
 // 배경 설정 키

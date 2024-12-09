@@ -8,6 +8,8 @@ const getFontSize = (state: RootState) => state.settings.fontSize;
 const getAllowMessages = (state: RootState) => state.settings.allowMessages;
 const getHideMessages = (state: RootState) => state.settings.hideMessages;
 const getShowRead = (state: RootState) => state.settings.showRead;
+const getFindByEmail = (state: RootState) => state.settings.findByEmail;
+const getFindByPhone = (state: RootState) => state.settings.findByPhone;
 
 export {
   getSettings,
@@ -18,4 +20,6 @@ export {
   getAllowMessages,
   getHideMessages,
   getShowRead,
+  getFindByEmail,
+  getFindByPhone,
 };

@@ -16,6 +16,8 @@ const initialState: SettingsType = {
   allowMessages: "all",
   hideMessages: true,
   showRead: false,
+  findByEmail: false,
+  findByPhone: false,
 };
 
 // 페이지 로드 전에 setting를 먼저 로드해야 함
@@ -44,6 +46,12 @@ const settingsSlice = createSlice({
     setShowRead: (state, action: PayloadAction<boolean>) => {
       state.showRead = action.payload;
     },
+    setFindByEmail: (state, action: PayloadAction<boolean>) => {
+      state.findByEmail = action.payload;
+    },
+    setFindByPhone: (state, action: PayloadAction<boolean>) => {
+      state.findByPhone = action.payload;
+    },
   },
 });
 
@@ -57,4 +65,6 @@ export const {
   setAllowMessages,
   setHideMessages,
   setShowRead,
+  setFindByEmail,
+  setFindByPhone,
 } = settingsSlice.actions;
