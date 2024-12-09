@@ -25,7 +25,10 @@ type SettingsType = {
   addLocationInfo: boolean;
   notifications: NotificationsType;
   protectRenewPassword: boolean; // 비밀번호 재설정 보호
+  twoFactorAuthentication: TwoFactorAuthentication; // 2단계 인증
 };
+
+type TwoFactorAuthentication = "sms" | "app" | "key" | "";
 
 type NotificationsType = {
   mutes: MutesType;
@@ -78,4 +81,5 @@ export type {
   AutoplayType,
   NotificationsType,
   MutesType,
+  TwoFactorAuthentication,
 };

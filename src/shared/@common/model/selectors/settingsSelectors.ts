@@ -41,7 +41,8 @@ const getMutePhoneAuthenticated = (state: RootState) =>
   state.settings.notifications.mutes.phoneAuthenticated;
 const getProtectRenewPassword = (state: RootState) =>
   state.settings.protectRenewPassword;
-
+const getTwoFactorAuthentication = (state: RootState) =>
+  state.settings.twoFactorAuthentication;
 export {
   getSettings,
   getBgTheme,
@@ -73,4 +74,5 @@ export {
   getMuteEmailAuthenticated,
   getMutePhoneAuthenticated,
   getProtectRenewPassword,
+  getTwoFactorAuthentication,
 };

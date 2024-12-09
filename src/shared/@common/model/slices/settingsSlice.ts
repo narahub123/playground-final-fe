@@ -6,6 +6,7 @@ import {
   ColorThemeType,
   FontSizeType,
   SettingsType,
+  TwoFactorAuthentication,
 } from "@shared/@common/types";
 
 const initialState: SettingsType = {
@@ -43,6 +44,7 @@ const initialState: SettingsType = {
     },
   },
   protectRenewPassword: false, // 비밀번호 재설정 보호
+  twoFactorAuthentication: "", // 2단계 인증
 };
 
 // 페이지 로드 전에 setting를 먼저 로드해야 함
@@ -137,6 +139,18 @@ const settingsSlice = createSlice({
     setProtectRenewPassword: (state, action: PayloadAction<boolean>) => {
       state.protectRenewPassword = action.payload;
     },
+    setTwoFactorAuthentication: (
+      state,
+      action: PayloadAction<TwoFactorAuthentication>
+    ) => {
+      const value = action.payload;
+
+      if (value !== state.twoFactorAuthentication) {
+        state.twoFactorAuthentication = value;
+      } else {
+        state.twoFactorAuthentication = "";
+      }
+    },
   },
 });
 
@@ -172,4 +186,5 @@ export const {
   setMuteEmailAuthenticated,
   setMutePhoneAuthenticated,
   setProtectRenewPassword,
+  setTwoFactorAuthentication,
 } = settingsSlice.actions;

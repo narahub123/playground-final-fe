@@ -24,6 +24,7 @@ import {
   AutoplayType,
   NotificationsType,
   MutesType,
+  TwoFactorAuthentication,
 } from "./settings";
 
 export type {
@@ -42,4 +43,5 @@ export type {
   AutoplayType,
   NotificationsType,
   MutesType,
+  TwoFactorAuthentication,
 };
