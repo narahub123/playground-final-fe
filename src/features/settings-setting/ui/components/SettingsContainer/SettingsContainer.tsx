@@ -24,7 +24,7 @@ const SettingsContainer = ({
   gap = 10,
   unit = "px",
 }: SettingsContainerProps) => {
-  const { title, type, comp, description } = item;
+  const { title, text, detail, type, comp, description, top, disabled } = item;
   const { selector } = item as SettingsCheckBoxContainerType;
 
   const roundCond = isRounded || Array.isArray(item.comp);
@@ -32,12 +32,16 @@ const SettingsContainer = ({
   return (
     <div className={styles.container} style={{ gap: `${gap}${unit}` }}>
       {title && <Title text={title} />}
+      {text && <h3 className={`${styles.heading} ${styles.front}`}>{text}</h3>}
+      {detail && <Description text={detail} className={styles.front} />}
       {type === "card" ? (
         <SettingsBranchCard item={comp as SettingsBranchType} />
       ) : type === "checkbox" ? (
         <CheckBox
           item={comp as CheckBoxType}
-          className={styles.front}
+          className={`${styles.front} ${top ? styles.top : undefined} ${
+            disabled ? styles.disabled : undefined
+          }`}
           isRounded={roundCond}
           selector={selector}
         />
@@ -46,7 +50,9 @@ const SettingsContainer = ({
           <CheckBox
             key={index}
             item={i}
-            className={styles.front}
+            className={`${styles.front} ${top ? styles.top : undefined}  ${
+              disabled ? styles.disabled : undefined
+            }`}
             isRounded={roundCond}
             selector={selector}
           />
@@ -55,7 +61,9 @@ const SettingsContainer = ({
       {description && (
         <Description
           text={description}
-          className={`${styles.front} ${styles.bottom}`}
+          className={`${styles.front} ${styles.bottom} ${
+            disabled ? styles.disabled : undefined
+          }`}
         />
       )}
     </div>

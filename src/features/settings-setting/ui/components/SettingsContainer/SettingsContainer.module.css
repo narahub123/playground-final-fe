@@ -7,11 +7,22 @@
   border-bottom: 1px solid #eee;
 }
 
+.heading {
+  font-weight: bolder;
+}
+
 .front {
   padding-left: 10px;
   padding-right: 10px;
 }
 
+.disabled {
+  color: #ccc;
+}
+
+.top {
+  padding-top: 5px;
+}
 .bottom {
   padding-bottom: 10px;
 }

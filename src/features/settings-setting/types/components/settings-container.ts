@@ -2,9 +2,13 @@ import { RootState } from "@app/store";
 import { CheckBoxType, SettingsBranchType } from "../data";
 
 interface SettingsContainerType {
-  title: string;
+  title?: string;
+  text?: string;
+  detail?: string;
   type: string;
-  description: string;
+  description?: string;
+  top?: boolean;
+  disabled?: boolean;
 }
 
 interface SettingsBranchListContainerType extends SettingsContainerType {
