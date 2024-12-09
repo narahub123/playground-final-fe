@@ -32,6 +32,7 @@ import {
   AudienceAndTaggingPage,
   YourPostsPage,
   ContentYouSeePage,
+  MessageSettingPage,
 } from "./PrivacyAndSafety";
 import { NotificationsPage, NotificationPreferencePage } from "./Notifications";
 import { AccessibilityAndDisplayAndLanguagesPage } from "./AccessibilityAndDisplayAndLanguages";
@@ -51,6 +52,7 @@ export {
   AudienceAndTaggingPage,
   YourPostsPage,
   ContentYouSeePage,
+  MessageSettingPage,
   About,
   AccountData,
   ChangePassword,
