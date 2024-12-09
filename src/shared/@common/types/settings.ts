@@ -5,6 +5,9 @@ type SettingsType = {
   colorTheme: ColorThemeType;
   fontSize: FontSizeType;
   isVisible: boolean;
+  allowMessages: AllowMessageType;
+  hideMessages: boolean;
+  showRead: boolean;
 };
 
 // 배경 설정 키
@@ -32,10 +35,13 @@ type ColorThemeType =
 
 type FontSizeType = "xs" | "s" | "b" | "l" | "xl";
 
+type AllowMessageType = "all" | "authenticated" | "none";
+
 export type {
   SettingsType,
   ColorThemeType,
   ThemeKey,
   ThemeColorType,
   FontSizeType,
+  AllowMessageType,
 };

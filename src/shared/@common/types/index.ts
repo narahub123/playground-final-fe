@@ -20,6 +20,7 @@ import {
   ThemeKey,
   ThemeColorType,
   FontSizeType,
+  AllowMessageType,
 } from "./settings";
 
 export type {
@@ -34,4 +35,5 @@ export type {
   ColorThemeType,
   FontSizeType,
   SettingsType,
+  AllowMessageType,
 };

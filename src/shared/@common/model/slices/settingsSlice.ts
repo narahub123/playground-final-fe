@@ -1,6 +1,7 @@
 // 설정 관련 slice
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import {
+  AllowMessageType,
   ColorThemeType,
   FontSizeType,
   SettingsType,
@@ -12,6 +13,9 @@ const initialState: SettingsType = {
   colorTheme: "cornflowerblue",
   fontSize: "b",
   isVisible: true,
+  allowMessages: "all",
+  hideMessages: true,
+  showRead: false,
 };
 
 // 페이지 로드 전에 setting를 먼저 로드해야 함
@@ -31,10 +35,26 @@ const settingsSlice = createSlice({
     setFontSize: (state, action: PayloadAction<FontSizeType>) => {
       state.fontSize = action.payload;
     },
+    setAllowMessages: (state, action: PayloadAction<AllowMessageType>) => {
+      state.allowMessages = action.payload;
+    },
+    setHideMessages: (state, action: PayloadAction<boolean>) => {
+      state.hideMessages = action.payload;
+    },
+    setShowRead: (state, action: PayloadAction<boolean>) => {
+      state.showRead = action.payload;
+    },
   },
 });
 
 export default settingsSlice.reducer;
 
-export const { setBackgroundTheme, setLanguage, setColorTheme, setFontSize } =
-  settingsSlice.actions;
+export const {
+  setBackgroundTheme,
+  setLanguage,
+  setColorTheme,
+  setFontSize,
+  setAllowMessages,
+  setHideMessages,
+  setShowRead,
+} = settingsSlice.actions;

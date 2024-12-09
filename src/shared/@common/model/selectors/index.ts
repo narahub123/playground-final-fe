@@ -3,6 +3,9 @@ import {
   getLanguage,
   getColorTheme,
   getFontSize,
+  getAllowMessages,
+  getHideMessages,
+  getShowRead,
 } from "./settingsSelectors";
 import { getIsLoggedIn } from "./loginSelector";
 import { getUser, getProfileImage } from "./userSelector";
@@ -18,6 +21,9 @@ export {
   getLanguage,
   getColorTheme,
   getFontSize,
+  getAllowMessages,
+  getHideMessages,
+  getShowRead,
   // login
   getIsLoggedIn,
   // user
