@@ -1,5 +1,15 @@
 import { countryNamesEng } from "@shared/@common/data/countries";
-import { setBackgroundTheme } from "@shared/@common/model/slices/settingsSlice";
+import {
+  getAllowMessages,
+  getHideMessages,
+  getShowRead,
+} from "@shared/@common/model/selectors";
+import {
+  setAllowMessages,
+  setBackgroundTheme,
+  setHideMessages,
+  setShowRead,
+} from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
 import { HyperLink } from "@shared/@common/ui/components";
@@ -515,6 +525,59 @@ const pages = {
       {
         title: "Search Settings",
         path: `/settings/search`,
+      },
+    ],
+  },
+  MessageSettingPage: {
+    pageTitle: "Messages",
+    list: [
+      {
+        text: "Allow message requests from the following users",
+        detail: "You can always receive messages sent by users you follow.",
+        type: "checkboxlist",
+        selector: getAllowMessages,
+        comp: [
+          {
+            text: "Do not receive",
+            reducer: setAllowMessages,
+            value: "none",
+          },
+          {
+            text: "Verified users",
+            reducer: setAllowMessages,
+            value: "authenticated",
+          },
+          {
+            text: "Everyone",
+            reducer: setAllowMessages,
+            value: "all",
+          },
+        ],
+      },
+      {
+        title: "",
+        type: "checkbox",
+        selector: getHideMessages,
+        comp: {
+          text: "Filter low-quality messages",
+          reducer: setHideMessages,
+        },
+        description:
+          "Hides message requests identified as spam or containing low-quality content. These requests will be sent to a separate inbox at the bottom of the message request list. You can still check them if you want.",
+        top: true,
+        disabled: true,
+      },
+      {
+        title: "",
+        type: "checkbox",
+        selector: getShowRead,
+        comp: {
+          text: "Show read receipts",
+          reducer: setShowRead,
+        },
+        description:
+          "Allows people exchanging messages to know when you have read a message. Read receipts do not appear in message requests.",
+        top: true,
       },
     ],
   },

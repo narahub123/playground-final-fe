@@ -1,5 +1,15 @@
 import { countryNamesZhCN } from "@shared/@common/data/countries";
-import { setBackgroundTheme } from "@shared/@common/model/slices/settingsSlice";
+import {
+  getAllowMessages,
+  getHideMessages,
+  getShowRead,
+} from "@shared/@common/model/selectors";
+import {
+  setAllowMessages,
+  setBackgroundTheme,
+  setHideMessages,
+  setShowRead,
+} from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
 import { HyperLink } from "@shared/@common/ui/components";
@@ -508,6 +518,59 @@ const pages = {
       {
         title: "搜索设置",
         path: `/settings/search`,
+      },
+    ],
+  },
+  MessageSettingPage: {
+    pageTitle: "消息",
+    list: [
+      {
+        text: "允许以下用户的消息请求",
+        detail: "您始终可以接收您关注的用户发送的消息。",
+        type: "checkboxlist",
+        selector: getAllowMessages,
+        comp: [
+          {
+            text: "不接收",
+            reducer: setAllowMessages,
+            value: "none",
+          },
+          {
+            text: "已认证用户",
+            reducer: setAllowMessages,
+            value: "authenticated",
+          },
+          {
+            text: "所有人",
+            reducer: setAllowMessages,
+            value: "all",
+          },
+        ],
+      },
+      {
+        title: "",
+        type: "checkbox",
+        selector: getHideMessages,
+        comp: {
+          text: "过滤低质量消息",
+          reducer: setHideMessages,
+        },
+        description:
+          "隐藏被识别为垃圾邮件或包含低质量内容的消息请求。这些请求将被发送到消息请求列表底部的单独收件箱中。如果需要，您仍然可以查看。",
+        top: true,
+        disabled: true,
+      },
+      {
+        title: "",
+        type: "checkbox",
+        selector: getShowRead,
+        comp: {
+          text: "显示已读回执",
+          reducer: setShowRead,
+        },
+        description:
+          "允许发送消息的人知道您何时已阅读消息。已读回执不会显示在消息请求中。",
+        top: true,
       },
     ],
   },
