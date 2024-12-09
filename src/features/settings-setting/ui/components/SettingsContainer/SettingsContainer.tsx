@@ -31,7 +31,7 @@ const SettingsContainer = ({
 
   return (
     <div className={styles.container} style={{ gap: `${gap}${unit}` }}>
-      {title && <Title text={title} />}
+      {title && <Title text={title} className={`${styles.front}`} />}
       {text && <h3 className={`${styles.heading} ${styles.front}`}>{text}</h3>}
       {detail && <Description text={detail} className={styles.front} />}
       {type === "card" ? (
