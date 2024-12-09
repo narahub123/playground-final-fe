@@ -11,6 +11,7 @@ type SettingsType = {
   findByEmail: boolean;
   findByPhone: boolean;
   allowBehavioralAds: boolean;
+  allowLocationAds: boolean;
 };
 
 // 배경 설정 키

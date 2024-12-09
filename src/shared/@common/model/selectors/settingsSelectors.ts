@@ -12,7 +12,8 @@ const getFindByEmail = (state: RootState) => state.settings.findByEmail;
 const getFindByPhone = (state: RootState) => state.settings.findByPhone;
 const getAllowBehavioralAds = (state: RootState) =>
   state.settings.allowBehavioralAds;
-
+const getAllowLocationAds = (state: RootState) =>
+  state.settings.allowLocationAds;
 export {
   getSettings,
   getBgTheme,
@@ -25,4 +26,5 @@ export {
   getFindByEmail,
   getFindByPhone,
   getAllowBehavioralAds,
+  getAllowLocationAds,
 };

@@ -19,6 +19,7 @@ const initialState: SettingsType = {
   findByEmail: false,
   findByPhone: false,
   allowBehavioralAds: false,
+  allowLocationAds: false,
 };
 
 // 페이지 로드 전에 setting를 먼저 로드해야 함
@@ -56,6 +57,9 @@ const settingsSlice = createSlice({
     setAllowBehavioralAds: (state, action: PayloadAction<boolean>) => {
       state.allowBehavioralAds = action.payload;
     },
+    setAllowLocationAds: (state, action: PayloadAction<boolean>) => {
+      state.allowLocationAds = action.payload;
+    },
   },
 });
 
@@ -72,4 +76,5 @@ export const {
   setFindByEmail,
   setFindByPhone,
   setAllowBehavioralAds,
+  setAllowLocationAds,
 } = settingsSlice.actions;
