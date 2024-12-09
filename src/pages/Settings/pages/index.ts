@@ -25,6 +25,7 @@ import {
   SecurityAndAccountAccessPage,
   SecurityPage,
   AppsAndSessionsPage,
+  LoginVerficationPage,
 } from "./SecurityAndAccountAccess";
 import {
   PrivacyAndSafetyPage,
@@ -78,6 +79,7 @@ export {
   AutoplayPage,
   LocationPage,
   NotificationAdvancedFilters,
+  LoginVerficationPage,
   About,
   AccountData,
   ChangePassword,
