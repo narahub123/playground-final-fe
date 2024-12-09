@@ -27,6 +27,8 @@ const SettingsContainer = ({
   const { title, type, comp, description } = item;
   const { selector } = item as SettingsCheckBoxContainerType;
 
+  const roundCond = isRounded || Array.isArray(item.comp);
+
   return (
     <div className={styles.container} style={{ gap: `${gap}${unit}` }}>
       {title && <Title text={title} />}
@@ -36,7 +38,7 @@ const SettingsContainer = ({
         <CheckBox
           item={comp as CheckBoxType}
           className={styles.front}
-          isRounded={isRounded}
+          isRounded={roundCond}
           selector={selector}
         />
       ) : type === "checkboxlist" ? (
@@ -45,7 +47,7 @@ const SettingsContainer = ({
             key={index}
             item={i}
             className={styles.front}
-            isRounded={isRounded}
+            isRounded={roundCond}
             selector={selector}
           />
         ))
