@@ -21,6 +21,7 @@ import {
   ThemeColorType,
   FontSizeType,
   AllowMessageType,
+  AutoplayType,
 } from "./settings";
 
 export type {
@@ -36,4 +37,5 @@ export type {
   FontSizeType,
   SettingsType,
   AllowMessageType,
+  AutoplayType,
 };

@@ -2,6 +2,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import {
   AllowMessageType,
+  AutoplayType,
   ColorThemeType,
   FontSizeType,
   SettingsType,
@@ -25,6 +26,7 @@ const initialState: SettingsType = {
   reduceMotion: false,
   addImgExpl: false, // 이미지 설명 추가 알림
   dataSaver: false,
+  autoplay: "off",
 };
 
 // 페이지 로드 전에 setting를 먼저 로드해야 함
@@ -80,6 +82,9 @@ const settingsSlice = createSlice({
     setDataSaver: (state, action: PayloadAction<boolean>) => {
       state.dataSaver = action.payload;
     },
+    setAutoplay: (state, action: PayloadAction<AutoplayType>) => {
+      state.autoplay = action.payload;
+    },
   },
 });
 
@@ -102,4 +107,5 @@ export const {
   setReduceMotion,
   setAddImgExpl,
   setDataSaver,
+  setAutoplay,
 } = settingsSlice.actions;

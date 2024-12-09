@@ -17,8 +17,10 @@ type SettingsType = {
   reduceMotion: boolean;
   addImgExpl: boolean; // 이미지 설명 추가 알림
   dataSaver: boolean;
+  autoplay: AutoplayType;
 };
 
+type AutoplayType = "off" | "on";
 // 배경 설정 키
 type ThemeKey = "light" | "dark";
 
@@ -53,4 +55,5 @@ export type {
   ThemeColorType,
   FontSizeType,
   AllowMessageType,
+  AutoplayType,
 };

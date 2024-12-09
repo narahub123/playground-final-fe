@@ -15,6 +15,7 @@ import {
   getReduceMotion,
   getAddImgExpl,
   getDataSaver,
+  getAutoplay,
 } from "./settingsSelectors";
 import { getIsLoggedIn } from "./loginSelector";
 import { getUser, getProfileImage } from "./userSelector";
@@ -42,6 +43,7 @@ export {
   getReduceMotion,
   getAddImgExpl,
   getDataSaver,
+  getAutoplay,
   // login
   getIsLoggedIn,
   // user

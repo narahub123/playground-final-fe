@@ -19,6 +19,7 @@ const getColorContrast = (state: RootState) => state.settings.colorContrast;
 const getReduceMotion = (state: RootState) => state.settings.reduceMotion;
 const getAddImgExpl = (state: RootState) => state.settings.addImgExpl;
 const getDataSaver = (state: RootState) => state.settings.dataSaver;
+const getAutoplay = (state: RootState) => state.settings.autoplay;
 
 export {
   getSettings,
@@ -38,4 +39,5 @@ export {
   getReduceMotion,
   getAddImgExpl,
   getDataSaver,
+  getAutoplay,
 };
