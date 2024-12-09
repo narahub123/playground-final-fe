@@ -8,6 +8,7 @@ import {
   getShowRead,
   getFindByEmail,
   getFindByPhone,
+  getAllowBehavioralAds,
 } from "./settingsSelectors";
 import { getIsLoggedIn } from "./loginSelector";
 import { getUser, getProfileImage } from "./userSelector";
@@ -28,6 +29,7 @@ export {
   getShowRead,
   getFindByEmail,
   getFindByPhone,
+  getAllowBehavioralAds,
   // login
   getIsLoggedIn,
   // user

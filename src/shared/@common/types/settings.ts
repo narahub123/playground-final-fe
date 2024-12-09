@@ -10,6 +10,7 @@ type SettingsType = {
   showRead: boolean;
   findByEmail: boolean;
   findByPhone: boolean;
+  allowBehavioralAds: boolean;
 };
 
 // 배경 설정 키

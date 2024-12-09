@@ -18,6 +18,7 @@ const initialState: SettingsType = {
   showRead: false,
   findByEmail: false,
   findByPhone: false,
+  allowBehavioralAds: false,
 };
 
 // 페이지 로드 전에 setting를 먼저 로드해야 함
@@ -52,6 +53,9 @@ const settingsSlice = createSlice({
     setFindByPhone: (state, action: PayloadAction<boolean>) => {
       state.findByPhone = action.payload;
     },
+    setAllowBehavioralAds: (state, action: PayloadAction<boolean>) => {
+      state.allowBehavioralAds = action.payload;
+    },
   },
 });
 
@@ -67,4 +71,5 @@ export const {
   setShowRead,
   setFindByEmail,
   setFindByPhone,
+  setAllowBehavioralAds,
 } = settingsSlice.actions;
