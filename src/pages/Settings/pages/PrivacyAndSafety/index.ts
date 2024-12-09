@@ -7,6 +7,7 @@ import MessageSettingPage from "./MessageSettingPage/MessageSettingPage";
 import ContactsPage from "./ContactsPage/ContactsPage";
 import AdsPreferencesPage from "./AdsPreferencesPage/AdsPreferencesPage";
 import LocationInfoPage from "./LocationInfoPage/LocationInfoPage";
+import LocationPage from "./LocationPage/LocationPage";
 
 export {
   PrivacyAndSafetyPage,
@@ -18,4 +19,5 @@ export {
   ContactsPage,
   AdsPreferencesPage,
   LocationInfoPage,
+  LocationPage,
 };

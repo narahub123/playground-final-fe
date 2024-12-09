@@ -1,0 +1,11 @@
+.hyperlink {
+  color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.hyperlink:hover {
+  background-color: rgba(255, 0, 0, 0.1);
+}

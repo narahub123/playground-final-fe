@@ -36,6 +36,7 @@ import {
   ContactsPage,
   AdsPreferencesPage,
   LocationInfoPage,
+  LocationPage,
 } from "./PrivacyAndSafety";
 import {
   NotificationsPage,
@@ -74,6 +75,7 @@ export {
   LanguagesPage,
   DataPage,
   AutoplayPage,
+  LocationPage,
   About,
   AccountData,
   ChangePassword,
