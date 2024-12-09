@@ -4,7 +4,7 @@ interface CheckBoxType {
     type: string;
     payload: boolean | string | number;
   };
-  value: undefined | string | number;
+  value?: string | number;
 }
 
 export type { CheckBoxType };

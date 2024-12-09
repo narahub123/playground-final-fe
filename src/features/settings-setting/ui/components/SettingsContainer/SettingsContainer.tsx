@@ -12,49 +12,51 @@ import {
 } from "@features/settings-setting/types/data";
 
 interface SettingsContainerProps {
-  list: (SettingsBranchListContainerType | SettingsCheckBoxContainerType)[];
+  item: SettingsBranchListContainerType | SettingsCheckBoxContainerType;
   isRounded?: boolean;
   gap?: number;
   unit?: string;
 }
 
 const SettingsContainer = ({
-  list,
+  item,
   isRounded = false,
   gap = 10,
   unit = "px",
 }: SettingsContainerProps) => {
-  return (
-    <>
-      {list.map((item, index) => {
-        const { title, type, comp, description } = item;
+  const { title, type, comp, description } = item;
+  const { selector } = item as SettingsCheckBoxContainerType;
 
-        return (
-          <div
-            className={styles.container}
-            style={{ gap: `${gap}${unit}` }}
+  return (
+    <div className={styles.container} style={{ gap: `${gap}${unit}` }}>
+      {title && <Title text={title} />}
+      {type === "card" ? (
+        <SettingsBranchCard item={comp as SettingsBranchType} />
+      ) : type === "checkbox" ? (
+        <CheckBox
+          item={comp as CheckBoxType}
+          className={styles.front}
+          isRounded={isRounded}
+          selector={selector}
+        />
+      ) : type === "checkboxlist" ? (
+        (comp as CheckBoxType[]).map((i, index) => (
+          <CheckBox
             key={index}
-          >
-            {title && <Title text={title} />}
-            {type === "card" ? (
-              <SettingsBranchCard item={comp as SettingsBranchType} />
-            ) : (
-              <CheckBox
-                item={comp as CheckBoxType}
-                className={styles.front}
-                isRounded={isRounded}
-              />
-            )}
-            {description && (
-              <Description
-                text={description}
-                className={`${styles.front} ${styles.bottom}`}
-              />
-            )}
-          </div>
-        );
-      })}
-    </>
+            item={i}
+            className={styles.front}
+            isRounded={isRounded}
+            selector={selector}
+          />
+        ))
+      ) : undefined}
+      {description && (
+        <Description
+          text={description}
+          className={`${styles.front} ${styles.bottom}`}
+        />
+      )}
+    </div>
   );
 };
 

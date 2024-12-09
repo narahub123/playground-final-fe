@@ -1,3 +1,4 @@
+import { RootState } from "@app/store";
 import { CheckBoxType, SettingsBranchType } from "../data";
 
 interface SettingsContainerType {
@@ -11,7 +12,8 @@ interface SettingsBranchListContainerType extends SettingsContainerType {
 }
 
 interface SettingsCheckBoxContainerType extends SettingsContainerType {
-  comp: CheckBoxType;
+  comp: CheckBoxType | CheckBoxType[];
+  selector: (state: RootState) => boolean | string | number;
 }
 
 export type {
