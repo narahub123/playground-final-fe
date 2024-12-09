@@ -27,23 +27,12 @@ import {
   AccountPage,
   AppsAndSessionsPage,
   About,
-  Accessibility,
-  AccountData,
-  AdsPreferences,
-  AudienceAndTagging,
   ChangePassword,
   ConnectedAccounts,
-  Contacts,
   DataUsage,
-  Deactivate,
   Delegate,
   Display,
   DownloadData,
-  Languages,
-  LocationInfo,
-  NotificationFilter,
-  SortContents,
-  YourPosts,
   SecurityAndAccountAccessPage,
   PrivacyAndSafetyPage,
   NotificationsPage,
@@ -62,6 +51,7 @@ import {
   LocationInfoPage,
   NotificationFilterPage,
   AccessibilityPage,
+  LanguagesPage,
 } from "@pages/Settings/pages";
 import { AuthLayout } from "@/layouts";
 import { PageLayout } from "@shared/pages/layout";
@@ -292,7 +282,7 @@ export const router = createBrowserRouter([
                   },
                   {
                     path: "languages",
-                    element: <Languages />,
+                    element: <LanguagesPage />,
                   },
                   {
                     path: "data_usage",
