@@ -7,6 +7,7 @@ import {
   getAutoplay,
   getColorContrast,
   getDataSaver,
+  getDisplaySensitiveMedia,
   getFindByEmail,
   getFindByPhone,
   getHideMessages,
@@ -25,6 +26,7 @@ import {
   setBackgroundTheme,
   setColorContrast,
   setDataSaver,
+  setDisplaySensitiveMedia,
   setFindByEmail,
   setFindByPhone,
   setHideMessages,
@@ -503,24 +505,21 @@ const pages = {
     description: "投稿に関連する情報を管理します。",
     list: [
       {
-        title: "",
         type: "checkbox",
+        selector: getDisplaySensitiveMedia,
         comp: {
           text: "投稿するメディアを潜在的にセンシティブなコンテンツとしてマークする",
-          reducer: setBackgroundTheme,
-          initialValue: false,
+          reducer: setDisplaySensitiveMedia,
         },
         description:
           "有効にすると、投稿する写真や動画は、センシティブなコンテンツを見たくない人にセンシティブとして表示されます。",
       },
       {
-        title: "",
         type: "card",
         comp: {
           title: "投稿に位置情報を追加する",
           path: "/settings/location",
         },
-        description: "",
       },
     ],
   },

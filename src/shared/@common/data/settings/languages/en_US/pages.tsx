@@ -7,6 +7,7 @@ import {
   getAutoplay,
   getColorContrast,
   getDataSaver,
+  getDisplaySensitiveMedia,
   getFindByEmail,
   getFindByPhone,
   getHideMessages,
@@ -25,6 +26,7 @@ import {
   setBackgroundTheme,
   setColorContrast,
   setDataSaver,
+  setDisplaySensitiveMedia,
   setFindByEmail,
   setFindByPhone,
   setHideMessages,
@@ -503,24 +505,21 @@ const pages = {
     description: "Manage information related to your posts.",
     list: [
       {
-        title: "",
         type: "checkbox",
+        selector: getDisplaySensitiveMedia,
         comp: {
           text: "Mark media you post as potentially sensitive content",
-          reducer: setBackgroundTheme,
-          initialValue: false,
+          reducer: setDisplaySensitiveMedia,
         },
         description:
           "If enabled, photos and videos you post will be marked as sensitive content for people who prefer not to see sensitive material.",
       },
       {
-        title: "",
         type: "card",
         comp: {
           title: "Add location information to posts",
           path: "/settings/location",
         },
-        description: "",
       },
     ],
   },

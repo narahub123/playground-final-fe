@@ -1,6 +1,9 @@
+import {
+  SettingsBranchListContainerType,
+  SettingsCheckBoxContainerType,
+} from "@features/settings-setting/types";
 import { SettingsContainer } from "@features/settings-setting/ui/components";
 import { useLanguageMode } from "@shared/@common/model/hooks";
-import { setBackgroundTheme } from "@shared/@common/model/slices/settingsSlice";
 import { Description } from "@shared/@common/ui/components";
 import { MainLayout } from "@shared/pages/layout";
 
@@ -14,7 +17,18 @@ const YourPostsPage = () => {
       pageTitle={pageTitle}
       backward
       topContent={<Description text={description} />}
-      bottomContent={<SettingsContainer list={list} gap={0} />}
+      bottomContent={
+        <>
+          {(
+            list as (
+              | SettingsBranchListContainerType
+              | SettingsCheckBoxContainerType
+            )[]
+          ).map((item, index) => (
+            <SettingsContainer item={item} gap={0} key={index} />
+          ))}
+        </>
+      }
     />
   );
 };

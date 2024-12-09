@@ -22,6 +22,8 @@ const getDataSaver = (state: RootState) => state.settings.dataSaver;
 const getAutoplay = (state: RootState) => state.settings.autoplay;
 const getIsPrivate = (state: RootState) => state.settings.isPrivate;
 const getProtectVideo = (state: RootState) => state.settings.protectVideo;
+const getDisplaySensitiveMedia = (state: RootState) =>
+  state.settings.displaySensitiveMedia;
 
 export {
   getSettings,
@@ -44,4 +46,5 @@ export {
   getAutoplay,
   getIsPrivate,
   getProtectVideo,
+  getDisplaySensitiveMedia,
 };

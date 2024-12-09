@@ -20,6 +20,7 @@ type SettingsType = {
   autoplay: AutoplayType;
   isPrivate: boolean;
   protectVideo: boolean;
+  displaySensitiveMedia: boolean;
 };
 
 type AutoplayType = "off" | "on";

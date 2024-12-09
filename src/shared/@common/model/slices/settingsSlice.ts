@@ -29,6 +29,7 @@ const initialState: SettingsType = {
   autoplay: "off",
   isPrivate: false,
   protectVideo: false,
+  displaySensitiveMedia: false,
 };
 
 // 페이지 로드 전에 setting를 먼저 로드해야 함
@@ -93,6 +94,9 @@ const settingsSlice = createSlice({
     setProtectVideo: (state, action: PayloadAction<boolean>) => {
       state.protectVideo = action.payload;
     },
+    setDisplaySensitiveMedia: (state, action: PayloadAction<boolean>) => {
+      state.displaySensitiveMedia = action.payload;
+    },
   },
 });
 
@@ -118,4 +122,5 @@ export const {
   setAutoplay,
   setIsPrivate,
   setProtectVideo,
+  setDisplaySensitiveMedia,
 } = settingsSlice.actions;

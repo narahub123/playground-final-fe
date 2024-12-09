@@ -18,6 +18,7 @@ import {
   getAutoplay,
   getIsPrivate,
   getProtectVideo,
+  getDisplaySensitiveMedia,
 } from "./settingsSelectors";
 import { getIsLoggedIn } from "./loginSelector";
 import { getUser, getProfileImage } from "./userSelector";
@@ -48,6 +49,7 @@ export {
   getAutoplay,
   getIsPrivate,
   getProtectVideo,
+  getDisplaySensitiveMedia,
   // login
   getIsLoggedIn,
   // user

@@ -7,6 +7,7 @@ import {
   getAutoplay,
   getColorContrast,
   getDataSaver,
+  getDisplaySensitiveMedia,
   getFindByEmail,
   getFindByPhone,
   getHideMessages,
@@ -25,6 +26,7 @@ import {
   setBackgroundTheme,
   setColorContrast,
   setDataSaver,
+  setDisplaySensitiveMedia,
   setFindByEmail,
   setFindByPhone,
   setHideMessages,
@@ -496,24 +498,21 @@ const pages = {
     description: "管理与帖子相关的信息。",
     list: [
       {
-        title: "",
         type: "checkbox",
+        selector: getDisplaySensitiveMedia,
         comp: {
           text: "将您发布的媒体标记为可能包含敏感内容",
-          reducer: setBackgroundTheme,
-          initialValue: false,
+          reducer: setDisplaySensitiveMedia,
         },
         description:
           "启用后，您发布的照片和视频将被标记为敏感内容，供不想看到敏感内容的人查看。",
       },
       {
-        title: "",
         type: "card",
         comp: {
           title: "在帖子中添加位置信息",
           path: "/settings/location",
         },
-        description: "",
       },
     ],
   },
