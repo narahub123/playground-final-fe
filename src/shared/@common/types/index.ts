@@ -27,6 +27,9 @@ import {
   TwoFactorAuthentication,
 } from "./settings";
 
+// 컴포넌트
+import { HyperLinkCardType } from "./components";
+
 export type {
   listModalCardType,
   ThemeColorType,
@@ -44,4 +47,5 @@ export type {
   NotificationsType,
   MutesType,
   TwoFactorAuthentication,
+  HyperLinkCardType,
 };

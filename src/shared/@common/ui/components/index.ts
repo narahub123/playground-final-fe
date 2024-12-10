@@ -12,6 +12,7 @@ import Description from "./Description/Description";
 import Title from "./Title/Title";
 import ProfileContainer from "./ProfileContainer/ProfileContainer";
 import HyperLink from "./HyperLink/HyperLink";
+import HyperLinkCard from "./HyperLinkCard/HyperLinkCard";
 
 export {
   Icon,
@@ -30,4 +31,5 @@ export {
   Title,
   ProfileContainer,
   HyperLink,
+  HyperLinkCard,
 };

@@ -32,6 +32,7 @@ import {
   LuContact as contact,
   LuMapPin as pin,
   LuSlidersHorizontal as filter,
+  LuArrowUpRight as outlink,
 } from "react-icons/lu";
 import { CiLight as light, CiDark as dark } from "react-icons/ci";
 import {
@@ -83,6 +84,7 @@ const ICONS = {
   checkedbox, // 체크된 박스
   roundedCheckbox, // 둥근 체크 박스
   roundedCheckedbox, // 둥근 체크된 박스
+  outlink, // hyperlinkCard
 };
 
 export default ICONS;
