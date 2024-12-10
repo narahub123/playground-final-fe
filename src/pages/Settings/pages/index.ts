@@ -20,7 +20,12 @@ import Display from "./AccessibilityDisplayAndLanguagesFolder/Display/Display";
 import Languages from "./AccessibilityDisplayAndLanguagesFolder/Languages/Languages";
 import DataUsage from "./AccessibilityDisplayAndLanguagesFolder/DataUsage/DataUsage";
 import SettingsLandingPage from "./SettingsLandingPage/SettingsLandingPage";
-import { AccountPage, AccountInfoPage, DeactivatePage } from "./Account";
+import {
+  AccountPage,
+  AccountInfoPage,
+  DeactivatePage,
+  GenderPage,
+} from "./Account";
 import {
   SecurityAndAccountAccessPage,
   SecurityPage,
@@ -82,6 +87,7 @@ export {
   NotificationAdvancedFilters,
   LoginVerficationPage,
   IdVerficationPage,
+  GenderPage,
   About,
   AccountData,
   ChangePassword,
