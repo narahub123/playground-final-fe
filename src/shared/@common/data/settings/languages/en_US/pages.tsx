@@ -26,6 +26,7 @@ import {
   getMutePhoneAuthenticated,
   getTwoFactorAuthentication,
   getHideLabel,
+  getGender,
 } from "@shared/@common/model/selectors";
 import {
   setAddImgExpl,
@@ -56,6 +57,7 @@ import {
   setTwoFactorAuthentication,
   setHideLabel,
 } from "@shared/@common/model/slices/settingsSlice";
+import { setGender } from "@shared/@common/model/slices/userSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
 import { HyperLink } from "@shared/@common/ui/components";
@@ -1010,6 +1012,46 @@ const pages = {
         },
       },
     ],
+  },
+  GenderPage: {
+    pageTitle: "Gender",
+    description:
+      "If no gender is specified, it may be inferred based on your profile and activity on the account. This information is not publicly displayed.",
+    list: [
+      {
+        type: "checkbox",
+        selector: getGender,
+        comp: {
+          text: "Female",
+          reducer: setGender,
+          value: "f",
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getGender,
+        comp: {
+          text: "Male",
+          reducer: setGender,
+          value: "m",
+        },
+      },
+    ],
+    item: {
+      type: "checkbox",
+      selector: getGender,
+      comp: {
+        text: "Add a new gender.",
+        reducer: setGender,
+        value: "new",
+      },
+    },
+    input: {
+      fieldTitle: "Gender",
+    },
+    button: {
+      text: "Save",
+    },
   },
 };
 

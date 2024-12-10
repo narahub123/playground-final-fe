@@ -26,6 +26,7 @@ import {
   getMutePhoneAuthenticated,
   getTwoFactorAuthentication,
   getHideLabel,
+  getGender,
 } from "@shared/@common/model/selectors";
 import {
   setAddImgExpl,
@@ -56,6 +57,7 @@ import {
   setTwoFactorAuthentication,
   setHideLabel,
 } from "@shared/@common/model/slices/settingsSlice";
+import { setGender } from "@shared/@common/model/slices/userSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
 import { HyperLink } from "@shared/@common/ui/components";
@@ -1011,6 +1013,46 @@ const pages = {
         },
       },
     ],
+  },
+  GenderPage: {
+    pageTitle: "性別",
+    description:
+      "性別を指定していない場合、アカウントのプロフィールや活動に基づいて推測される場合があります。この情報は公開されません。",
+    list: [
+      {
+        type: "checkbox",
+        selector: getGender,
+        comp: {
+          text: "女性",
+          reducer: setGender,
+          value: "f",
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getGender,
+        comp: {
+          text: "男性",
+          reducer: setGender,
+          value: "m",
+        },
+      },
+    ],
+    item: {
+      type: "checkbox",
+      selector: getGender,
+      comp: {
+        text: "新しい性別を追加",
+        reducer: setGender,
+        value: "new",
+      },
+    },
+    input: {
+      fieldTitle: "性別",
+    },
+    button: {
+      text: "保存",
+    },
   },
 };
 

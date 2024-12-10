@@ -26,6 +26,7 @@ import {
   getMutePhoneAuthenticated,
   getTwoFactorAuthentication,
   getHideLabel,
+  getGender,
 } from "@shared/@common/model/selectors";
 import {
   setAddImgExpl,
@@ -56,6 +57,7 @@ import {
   setTwoFactorAuthentication,
   setHideLabel,
 } from "@shared/@common/model/slices/settingsSlice";
+import { setGender } from "@shared/@common/model/slices/userSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
 import { HyperLink } from "@shared/@common/ui/components";
@@ -987,6 +989,46 @@ const pages = {
         },
       },
     ],
+  },
+  GenderPage: {
+    pageTitle: "性别",
+    description:
+      "如果未指定性别，可能会根据您的账户资料和活动推测性别。此信息不会公开显示。",
+    list: [
+      {
+        type: "checkbox",
+        selector: getGender,
+        comp: {
+          text: "女性",
+          reducer: setGender,
+          value: "f",
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getGender,
+        comp: {
+          text: "男性",
+          reducer: setGender,
+          value: "m",
+        },
+      },
+    ],
+    item: {
+      type: "checkbox",
+      selector: getGender,
+      comp: {
+        text: "添加新性别",
+        reducer: setGender,
+        value: "new",
+      },
+    },
+    input: {
+      fieldTitle: "性别",
+    },
+    button: {
+      text: "保存",
+    },
   },
 };
 
