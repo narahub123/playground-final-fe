@@ -2,7 +2,7 @@ import { listModalExample, userExample } from "./example";
 import { bgThemes, colorThemeArr, language, fontSizeArr } from "./settings";
 import countryNames from "./countries/countryNamesEng";
 import { languageList, langList } from "./components/index";
-
+import regExp from "./regExp";
 export {
   // 예시: 삭제 예정
   userExample,
@@ -22,4 +22,6 @@ export {
   fontSizeArr,
   // 언어 이름
   langList,
+  // 정규 표현식
+  regExp,
 };

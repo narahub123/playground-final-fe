@@ -1,4 +1,5 @@
 import { countryNamesEng } from "@shared/@common/data/countries";
+import regExp from "@shared/@common/data/regExp";
 import {
   getAddImgExpl,
   getAddLocationInfo,
@@ -1041,6 +1042,17 @@ const pages = {
     input: {
       fieldTitle: "Gender",
     },
+    button: {
+      text: "Save",
+    },
+  },
+  ScreenNamePage: {
+    pageTitle: "Change Username",
+    input: {
+      fieldTitle: "User ID",
+      validation: regExp.userId,
+    },
+    title: "Recommendations",
     button: {
       text: "Save",
     },

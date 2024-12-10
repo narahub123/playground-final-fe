@@ -1,4 +1,5 @@
 import { countryNamesZhTW } from "@shared/@common/data/countries";
+import regExp from "@shared/@common/data/regExp";
 import {
   getAddImgExpl,
   getAddLocationInfo,
@@ -1019,6 +1020,17 @@ const pages = {
     input: {
       fieldTitle: "性別",
     },
+    button: {
+      text: "儲存",
+    },
+  },
+  ScreenNamePage: {
+    pageTitle: "更改使用者名稱",
+    input: {
+      fieldTitle: "使用者ID",
+      validation: regExp.userId,
+    },
+    title: "推薦",
     button: {
       text: "儲存",
     },

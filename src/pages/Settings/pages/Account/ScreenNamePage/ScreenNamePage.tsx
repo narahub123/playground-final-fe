@@ -5,6 +5,7 @@ import { Input, Title } from "@shared/@common/ui/components";
 import { MainLayout } from "@shared/pages/layout";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { useLanguageMode } from "@shared/@common/model/hooks";
 
 const ScreenNamePage = () => {
   const userId = useSelector(getUserId);
@@ -13,9 +14,14 @@ const ScreenNamePage = () => {
   // 유효성
   const [isValid, setIsValid] = useState(true);
 
+  const { pageTitle, input, title, button } = useLanguageMode([
+    "pages",
+    "ScreenNamePage",
+  ]);
+
   return (
     <MainLayout
-      pageTitle="사용자 이름 변경"
+      pageTitle={pageTitle}
       backward
       topContent={<></>}
       bottomContent={
@@ -23,17 +29,17 @@ const ScreenNamePage = () => {
           <div className={styles[`input-container`]}>
             <Input
               field="userId"
-              fieldTitle="사용자 아이디"
+              fieldTitle={input.fieldTitle}
               value={value}
               setValue={setValue}
               isValid={isValid}
               setIsValid={setIsValid}
               valueMaxLength={15}
-              validation={/^(?=.*[a-zA-Z])[a-zA-Z0-9]{4,15}$/} // 유효성 검사
+              validation={input.validation} // 유효성 검사
             />
           </div>
           <div className={styles[`recom-container`]}>
-            <Title text="추천" />
+            <Title text={title} />
           </div>
           <div className={styles[`button-container`]}>
             <button
@@ -41,7 +47,7 @@ const ScreenNamePage = () => {
                 isValid ? undefined : styles.invalid
               }`}
             >
-              {"저장"}
+              {button.text}
             </button>
           </div>
         </>

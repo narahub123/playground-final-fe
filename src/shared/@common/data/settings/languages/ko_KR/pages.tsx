@@ -65,6 +65,7 @@ import {
   getTwoFactorAuthentication,
   getHideLabel,
 } from "@shared/@common/model/selectors";
+import regExp from "@shared/@common/data/regExp";
 
 const pages = {
   settingsLandingPage: {
@@ -1067,6 +1068,17 @@ const pages = {
     button: {
       text: "저장",
     },
+  },
+  ScreenNamePage: {
+    pageTitle: "사용자 이름 변경",
+    input: {
+      fieldTitle: "사용자 아이디",
+      validation: regExp.userId,
+    },
+    title: "추천",
+    button: {
+      text: "저장"
+    }
   },
 };
 

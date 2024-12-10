@@ -1,4 +1,5 @@
 import { countryNamesJap } from "@shared/@common/data/countries";
+import regExp from "@shared/@common/data/regExp";
 import {
   getAddImgExpl,
   getAddLocationInfo,
@@ -1042,6 +1043,17 @@ const pages = {
     input: {
       fieldTitle: "性別",
     },
+    button: {
+      text: "保存",
+    },
+  },
+  ScreenNamePage: {
+    pageTitle: "ユーザー名の変更",
+    input: {
+      fieldTitle: "ユーザーID",
+      validation: regExp.userId,
+    },
+    title: "おすすめ",
     button: {
       text: "保存",
     },
