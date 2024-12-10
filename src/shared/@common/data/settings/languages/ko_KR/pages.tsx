@@ -26,6 +26,7 @@ import {
   setMutePhoneAuthenticated,
   setProtectRenewPassword,
   setTwoFactorAuthentication,
+  setHideLabel,
 } from "@shared/@common/model/slices/settingsSlice";
 import { SettingsType, UserType } from "@shared/@common/types";
 import { countryNamesKor } from "@shared/@common/data/countries";
@@ -63,6 +64,7 @@ import {
   getMutePhoneAuthenticated,
   getProtectRenewPassword,
   getTwoFactorAuthentication,
+  getHideLabel,
 } from "@shared/@common/model/selectors";
 
 const pages = {
@@ -1005,6 +1007,24 @@ const pages = {
         description:
           "PG에 로그인할 때 컴퓨터에 입력하거나 모바일 디바이스와 동기화되는 보안 키를 사용하세요. 지원되는 모바일 디바이스나 웹 브라우저를 사용해야 합니다.",
         top: true,
+      },
+    ],
+  },
+  IdVerficationPage: {
+    pageTitle: "ID 인증",
+    descriptioin:
+      "신분증을 인증하면 계정을 사칭으로부터 보호하고 프로필에 ID 인증 라벨을 표시할 수 있습니다.",
+    list: [
+      {
+        type: "checkbox",
+        selector: getHideLabel,
+        comp: {
+          text: "ID 인증 라벨 숨기기",
+          reducer: setHideLabel,
+        },
+        description:
+          "사람들이 내 프로필 페이지에서 파란색 체크마크를 탭했을 때 ID 인증 라벨이 표시되지 않도록 숨깁니다.",
+        disabled: true,
       },
     ],
   },

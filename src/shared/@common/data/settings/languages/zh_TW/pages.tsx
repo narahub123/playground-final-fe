@@ -25,6 +25,7 @@ import {
   getMuteEmailAuthenticated,
   getMutePhoneAuthenticated,
   getTwoFactorAuthentication,
+  getHideLabel,
 } from "@shared/@common/model/selectors";
 import {
   setAddImgExpl,
@@ -53,6 +54,7 @@ import {
   setMuteEmailAuthenticated,
   setMutePhoneAuthenticated,
   setTwoFactorAuthentication,
+  setHideLabel,
 } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
@@ -959,6 +961,24 @@ const pages = {
         description:
           "登錄PG時，使用輸入到計算機中或與移動設備同步的安全密鑰。需要使用支援的移動設備或網頁瀏覽器。",
         top: true,
+      },
+    ],
+  },
+  IdVerficationPage: {
+    pageTitle: "ID驗證",
+    description:
+      "驗證您的身份證以保護帳戶免受冒充，並在個人資料中顯示ID驗證標籤。",
+    list: [
+      {
+        type: "checkbox",
+        selector: getHideLabel,
+        comp: {
+          text: "隱藏ID驗證標籤",
+          reducer: setHideLabel,
+        },
+        description:
+          "當其他人在我的個人資料頁面點擊藍色勾號時，隱藏ID驗證標籤。",
+        disabled: true,
       },
     ],
   },

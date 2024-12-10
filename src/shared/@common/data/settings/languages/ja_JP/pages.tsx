@@ -25,6 +25,7 @@ import {
   getMuteEmailAuthenticated,
   getMutePhoneAuthenticated,
   getTwoFactorAuthentication,
+  getHideLabel,
 } from "@shared/@common/model/selectors";
 import {
   setAddImgExpl,
@@ -53,6 +54,7 @@ import {
   setMuteEmailAuthenticated,
   setMutePhoneAuthenticated,
   setTwoFactorAuthentication,
+  setHideLabel,
 } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
@@ -982,6 +984,24 @@ const pages = {
         description:
           "PGにログインする際に、コンピューターに入力するか、モバイルデバイスと同期するセキュリティキーを使用します。サポートされているモバイルデバイスまたはウェブブラウザーを使用する必要があります。",
         top: true,
+      },
+    ],
+  },
+  IdVerficationPage: {
+    pageTitle: "ID認証",
+    description:
+      "IDを認証してアカウントをなりすましから保護し、プロフィールにID認証ラベルを表示します。",
+    list: [
+      {
+        type: "checkbox",
+        selector: getHideLabel,
+        comp: {
+          text: "ID認証ラベルを非表示にする",
+          reducer: setHideLabel,
+        },
+        description:
+          "プロフィールページで青いチェックマークをタップされた際に、ID認証ラベルが表示されないようにします。",
+        disabled: true,
       },
     ],
   },

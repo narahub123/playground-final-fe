@@ -25,6 +25,7 @@ import {
   getMuteEmailAuthenticated,
   getMutePhoneAuthenticated,
   getTwoFactorAuthentication,
+  getHideLabel,
 } from "@shared/@common/model/selectors";
 import {
   setAddImgExpl,
@@ -53,6 +54,7 @@ import {
   setMuteEmailAuthenticated,
   setMutePhoneAuthenticated,
   setTwoFactorAuthentication,
+  setHideLabel,
 } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
@@ -981,6 +983,24 @@ const pages = {
         description:
           "Use a security key that you either input into your computer or sync with your mobile device when logging into PG. Supported mobile devices or web browsers are required.",
         top: true,
+      },
+    ],
+  },
+  IdVerficationPage: {
+    pageTitle: "ID Verification",
+    description:
+      "Verify your ID to protect your account from impersonation and display an ID verification label on your profile.",
+    list: [
+      {
+        type: "checkbox",
+        selector: getHideLabel,
+        comp: {
+          text: "Hide ID Verification Label",
+          reducer: setHideLabel,
+        },
+        description:
+          "Prevents the ID verification label from being displayed when people tap the blue checkmark on my profile page.",
+        disabled: true,
       },
     ],
   },

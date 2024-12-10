@@ -25,6 +25,7 @@ import {
   getMuteEmailAuthenticated,
   getMutePhoneAuthenticated,
   getTwoFactorAuthentication,
+  getHideLabel,
 } from "@shared/@common/model/selectors";
 import {
   setAddImgExpl,
@@ -53,6 +54,7 @@ import {
   setMuteEmailAuthenticated,
   setMutePhoneAuthenticated,
   setTwoFactorAuthentication,
+  setHideLabel,
 } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
@@ -959,6 +961,23 @@ const pages = {
         description:
           "登录PG时，使用一个输入到计算机中或与移动设备同步的安全密钥。需要使用支持的移动设备或网页浏览器。",
         top: true,
+      },
+    ],
+  },
+  IdVerficationPage: {
+    pageTitle: "ID认证",
+    description:
+      "通过验证您的身份证来保护账户免遭冒充，并在个人资料中显示ID认证标签。",
+    list: [
+      {
+        type: "checkbox",
+        selector: getHideLabel,
+        comp: {
+          text: "隐藏ID认证标签",
+          reducer: setHideLabel,
+        },
+        description: "当他人在我的个人主页点击蓝色对勾时，不显示ID认证标签。",
+        disabled: true,
       },
     ],
   },
