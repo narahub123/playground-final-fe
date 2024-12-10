@@ -1003,6 +1003,13 @@ const pages = {
           "プロフィールページで青いチェックマークをタップされた際に、ID認証ラベルが表示されないようにします。",
         disabled: true,
       },
+      {
+        type: "link",
+        comp: {
+          text: "ヘルプセンター",
+          path: "https://help.x.com/ko/rules-and-policies/verification-policy",
+        },
+      },
     ],
   },
 };

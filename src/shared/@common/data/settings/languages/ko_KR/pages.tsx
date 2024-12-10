@@ -1026,6 +1026,13 @@ const pages = {
           "사람들이 내 프로필 페이지에서 파란색 체크마크를 탭했을 때 ID 인증 라벨이 표시되지 않도록 숨깁니다.",
         disabled: true,
       },
+      {
+        type: "link",
+        comp: {
+          text: "고객 센터",
+          path: "https://help.x.com/ko/rules-and-policies/verification-policy",
+        },
+      },
     ],
   },
 };

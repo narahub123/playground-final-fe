@@ -980,6 +980,13 @@ const pages = {
           "當其他人在我的個人資料頁面點擊藍色勾號時，隱藏ID驗證標籤。",
         disabled: true,
       },
+      {
+        type: "link",
+        comp: {
+          text: "帮助中心",
+          path: "https://help.x.com/ko/rules-and-policies/verification-policy",
+        },
+      },
     ],
   },
 };

@@ -1002,6 +1002,13 @@ const pages = {
           "Prevents the ID verification label from being displayed when people tap the blue checkmark on my profile page.",
         disabled: true,
       },
+      {
+        type: "link",
+        comp: {
+          text: "Help Center",
+          path: "https://help.x.com/ko/rules-and-policies/verification-policy",
+        },
+      },
     ],
   },
 };

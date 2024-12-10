@@ -979,6 +979,13 @@ const pages = {
         description: "当他人在我的个人主页点击蓝色对勾时，不显示ID认证标签。",
         disabled: true,
       },
+      {
+        type: "link",
+        comp: {
+          text: "帮助中心",
+          path: "https://help.x.com/ko/rules-and-policies/verification-policy",
+        },
+      },
     ],
   },
 };
