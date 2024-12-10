@@ -1,7 +1,12 @@
+.input-wrapper {
+  padding: 10px;
+}
+
 .button-container {
   width: 100%;
   display: flex;
   justify-content: end;
+  margin-top: 10px;
 }
 .button {
   border-radius: 30px;
