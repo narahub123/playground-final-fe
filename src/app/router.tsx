@@ -57,6 +57,7 @@ import {
   LocationPage,
   NotificationAdvancedFilters,
   LoginVerficationPage,
+  IdVerficationPage,
 } from "@pages/Settings/pages";
 import { AuthLayout } from "@/layouts";
 import { PageLayout } from "@shared/pages/layout";
@@ -308,6 +309,10 @@ export const router = createBrowserRouter([
                   {
                     path: "account/login_verification",
                     element: <LoginVerficationPage />,
+                  },
+                  {
+                    path: "account/id_verification",
+                    element: <IdVerficationPage />,
                   },
                 ],
               },
