@@ -3,4 +3,6 @@ interface HyperLinkCardType {
   path: string;
 }
 
-export type { HyperLinkCardType };
+type InputValueType = string | number;
+
+export type { HyperLinkCardType, InputValueType };

@@ -38,14 +38,14 @@
 }
 
 .title {
-  font-weight: bold;
-  font-size: 30px;
+  margin-left: 5px;
+  font-size: 18px;
   transition: all 0.3s ease-in-out;
 }
 
 .title.focused {
-  font-size: 14px;
-  color: var(--color-focused);
+  font-size: 12px;
+  color: var(--theme-bgColor);
   transition: all 0.3s ease-in-out;
 }
 
@@ -54,7 +54,8 @@
   /* transition: all 0.3s ease-in-out; */
 }
 .count.focused {
-  font-size: 14px;
+  margin-right: 5px;
+  font-size: 13px;
   visibility: visible;
   /* transition: all 0.3s ease-in-out; */
 }
@@ -82,7 +83,8 @@
   padding-block: 1px;
   padding-inline: 2px;
   height: 28px;
-  font-size: 20px;
+  /* font-size: 20px; */
+  margin-left: 8px;
 }
 
 .icon {

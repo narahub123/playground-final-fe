@@ -28,7 +28,7 @@ import {
 } from "./settings";
 
 // 컴포넌트
-import { HyperLinkCardType } from "./components";
+import { HyperLinkCardType, InputValueType } from "./components";
 
 export type {
   listModalCardType,
@@ -47,5 +47,8 @@ export type {
   NotificationsType,
   MutesType,
   TwoFactorAuthentication,
+
+  // components
   HyperLinkCardType,
+  InputValueType,
 };

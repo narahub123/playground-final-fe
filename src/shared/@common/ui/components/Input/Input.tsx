@@ -1,11 +1,17 @@
-import { useEffect, useRef, useState } from "react";
 import styles from "./Input.module.css";
+import { useEffect, useRef, useState } from "react";
 import Icon from "../Icon/Icon";
 import { debounce } from "@shared/@common/utils";
+import { InputValueType } from "@shared/@common/types";
 
 interface InputProps {
   field: string;
   fieldTitle: string;
+  value: InputValueType; // 값 상태
+  setValue: React.Dispatch<React.SetStateAction<InputValueType>>;
+  validation?: RegExp;
+  isValid: boolean;
+  setIsValid: React.Dispatch<React.SetStateAction<boolean>>;
   valueMaxLength?: number;
   iconName?: string;
   iconTitle?: string;
@@ -18,6 +24,11 @@ interface InputProps {
 const Input = ({
   field,
   fieldTitle,
+  value,
+  setValue,
+  validation,
+  isValid,
+  setIsValid,
   valueMaxLength,
   iconName,
   iconTitle = "",
@@ -31,9 +42,6 @@ const Input = ({
   const [isFocus, setIsFocus] = useState(false);
   // 비밀번호 보이기 여부 상태
   const [isVisible, setIsVisible] = useState(false);
-  // 입력값의 유효성을 여부 상태
-  const [isValid, setIsValid] = useState(false);
-  const [value, setValue] = useState("");
   const focusCond = isFocus || value ? styles.focused : "";
   const validCond = !isValid && value ? styles.invalid : "";
 
@@ -49,8 +57,28 @@ const Input = ({
     const value = e.target.value;
     console.log(value);
 
+    // 최대 값보다 길이가 길어지는 경우 변경하지 않고 반환
+    if (valueMaxLength && value.length > valueMaxLength) return;
+
+    // 유효성 검사
+    // validation이 있는 경우
+    if (validation) {
+      setIsValid(validation.test(value));
+    } else {
+      // validation이 없는 경우
+      // value가 빈문자열인 경우
+      if (value === "") {
+        setIsValid(false);
+      } else {
+        // value가 빈문자열이 아닌 경우
+        setIsValid(true);
+      }
+    }
+
     setValue(value);
   };
+
+  console.log("유효성", isValid);
 
   // debounce를 적용한 handleChange 함수
   const debounceHandleChange = debounce<typeof handleChange>(handleChange, 500);
@@ -74,20 +102,24 @@ const Input = ({
           </label>
           <span
             className={`${styles.count} ${valueMaxLength ? focusCond : ""}`}
-          >{`${value.length} / ${valueMaxLength}`}</span>
+          >{`${(value as string).length} / ${valueMaxLength}`}</span>
         </div>
         <div className={`${styles.lower} ${focusCond}`}>
           <input
             id={field}
             type={inputType}
             className={`${styles.input} ${focusCond}`}
-            onChange={debounceHandleChange}
+            onChange={
+              (e) => (valueMaxLength ? handleChange(e) : debounceHandleChange) // 문자열 제한이 없는 경우에만 debounce 적용
+            }
             ref={inputRef}
+            defaultValue={value}
             aria-labelledby={field}
             aria-invalid={!isValid}
             aria-describedby={isValid ? "" : "input-error"}
             disabled={disabled}
             aria-hidden={disabled}
+            maxLength={valueMaxLength ? valueMaxLength - 1 : undefined} // 최대 글자 수 제한
           />
           {field === "password" && (
             <Icon
@@ -105,7 +137,7 @@ const Input = ({
               iconTitle={isValid ? "입력값이 유효함" : "입력값이 유효하지 않음"}
               className={`${styles.icon} ${focusCond}`}
               color={isValid ? "green" : "red"}
-              ariaHidden="true"
+              ariaHidden={true}
             />
           )}
           {iconName && (
