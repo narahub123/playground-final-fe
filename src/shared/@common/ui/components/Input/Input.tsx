@@ -119,7 +119,7 @@ const Input = ({
             aria-describedby={isValid ? "" : "input-error"}
             disabled={disabled}
             aria-hidden={disabled}
-            maxLength={valueMaxLength ? valueMaxLength - 1 : undefined} // 최대 글자 수 제한
+            maxLength={valueMaxLength} // 최대 글자 수 제한
           />
           {field === "password" && (
             <Icon
