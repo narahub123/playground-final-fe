@@ -26,9 +26,12 @@ const userSlice = createSlice({
     setGender: (state, action: PayloadAction<GenderType>) => {
       state.gender = action.payload;
     },
+    setUserId: (state, action: PayloadAction<string>) => {
+      state.userId = action.payload;
+    },
   },
 });
 
 export default userSlice.reducer;
 
-export const { setUser, setGender } = userSlice.actions;
+export const { setUser, setGender, setUserId } = userSlice.actions;
