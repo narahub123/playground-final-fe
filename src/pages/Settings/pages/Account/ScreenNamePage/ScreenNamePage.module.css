@@ -1,0 +1,20 @@
+.input-container {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.recom-container {
+  padding: 15px;
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.button {
+  padding: 10px 15px;
+  border-radius: 30px;
+  cursor: pointer;
+}

@@ -59,6 +59,7 @@ import {
   LoginVerficationPage,
   IdVerficationPage,
   GenderPage,
+  ScreenNamePage,
 } from "@pages/Settings/pages";
 import { AuthLayout } from "@/layouts";
 import { PageLayout } from "@shared/pages/layout";
@@ -318,6 +319,10 @@ export const router = createBrowserRouter([
                   {
                     path: "gender",
                     element: <GenderPage />,
+                  },
+                  {
+                    path: "screen_name",
+                    element: <ScreenNamePage />,
                   },
                 ],
               },

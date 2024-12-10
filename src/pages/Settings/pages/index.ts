@@ -25,6 +25,7 @@ import {
   AccountInfoPage,
   DeactivatePage,
   GenderPage,
+  ScreenNamePage,
 } from "./Account";
 import {
   SecurityAndAccountAccessPage,
@@ -88,6 +89,7 @@ export {
   LoginVerficationPage,
   IdVerficationPage,
   GenderPage,
+  ScreenNamePage,
   About,
   AccountData,
   ChangePassword,
