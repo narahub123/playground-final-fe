@@ -1,18 +1,27 @@
-import { Description, Title } from "@shared/@common/ui/components";
+import {
+  Description,
+  HyperLinkCard,
+  Title,
+} from "@shared/@common/ui/components";
 import styles from "./SettingsContainer.module.css";
 import SettingsBranchCard from "../SettingsBranchCard/SettingsBranchCard";
 import CheckBox from "../CheckBox/CheckBox";
 import {
   SettingsBranchListContainerType,
   SettingsCheckBoxContainerType,
+  SettingsHyperLinkCardContainerType,
 } from "@features/settings-setting/types";
 import {
   CheckBoxType,
   SettingsBranchType,
 } from "@features/settings-setting/types/data";
+import { HyperLinkCardType } from "@shared/@common/types";
 
 interface SettingsContainerProps {
-  item: SettingsBranchListContainerType | SettingsCheckBoxContainerType;
+  item:
+    | SettingsBranchListContainerType
+    | SettingsCheckBoxContainerType
+    | SettingsHyperLinkCardContainerType;
   isRounded?: boolean;
   gap?: number;
   unit?: string;
@@ -57,6 +66,8 @@ const SettingsContainer = ({
             selector={selector}
           />
         ))
+      ) : type === "link" ? (
+        <HyperLinkCard item={comp as HyperLinkCardType} />
       ) : undefined}
       {description && (
         <Description

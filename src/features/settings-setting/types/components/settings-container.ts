@@ -1,5 +1,6 @@
 import { RootState } from "@app/store";
 import { CheckBoxType, SettingsBranchType } from "../data";
+import { HyperLinkCardType } from "@shared/@common/types";
 
 interface SettingsContainerType {
   title?: string;
@@ -20,8 +21,12 @@ interface SettingsCheckBoxContainerType extends SettingsContainerType {
   selector: (state: RootState) => boolean | string | number;
 }
 
+interface SettingsHyperLinkCardContainerType extends SettingsContainerType {
+  comp: HyperLinkCardType;
+}
 export type {
   SettingsBranchListContainerType,
   SettingsCheckBoxContainerType,
+  SettingsHyperLinkCardContainerType,
   SettingsContainerType,
 };

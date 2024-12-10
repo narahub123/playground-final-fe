@@ -2,6 +2,7 @@ import { SettingsMainBranchType } from "./data";
 import {
   SettingsBranchListContainerType,
   SettingsCheckBoxContainerType,
+  SettingsHyperLinkCardContainerType,
   SettingsContainerType,
 } from "./components";
 
@@ -12,5 +13,6 @@ export type {
   // SettingsContainer
   SettingsBranchListContainerType,
   SettingsCheckBoxContainerType,
+  SettingsHyperLinkCardContainerType,
   SettingsContainerType,
 };
