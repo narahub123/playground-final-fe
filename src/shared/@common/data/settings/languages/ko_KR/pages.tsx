@@ -5,7 +5,6 @@ import {
   setAllowLocationAds,
   setAllowMessages,
   setAutoplay,
-  setBackgroundTheme,
   setColorContrast,
   setDataSaver,
   setDisplaySensitiveMedia,
@@ -65,9 +64,7 @@ import {
   getProtectRenewPassword,
   getTwoFactorAuthentication,
   getHideLabel,
-  getGender,
 } from "@shared/@common/model/selectors";
-import { setGender } from "@shared/@common/model/slices/userSlice";
 
 const pages = {
   settingsLandingPage: {

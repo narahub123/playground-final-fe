@@ -26,7 +26,6 @@ import {
   getMutePhoneAuthenticated,
   getTwoFactorAuthentication,
   getHideLabel,
-  getGender,
 } from "@shared/@common/model/selectors";
 import {
   setAddImgExpl,
@@ -57,7 +56,6 @@ import {
   setTwoFactorAuthentication,
   setHideLabel,
 } from "@shared/@common/model/slices/settingsSlice";
-import { setGender } from "@shared/@common/model/slices/userSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
 import { HyperLink } from "@shared/@common/ui/components";
