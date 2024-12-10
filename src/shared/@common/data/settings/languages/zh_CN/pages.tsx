@@ -997,30 +997,24 @@ const pages = {
     list: [
       {
         type: "checkbox",
-        selector: getGender,
         comp: {
           text: "女性",
-          reducer: setGender,
           value: "f",
         },
       },
       {
         type: "checkbox",
-        selector: getGender,
         comp: {
           text: "男性",
-          reducer: setGender,
           value: "m",
         },
       },
     ],
     item: {
       type: "checkbox",
-      selector: getGender,
       comp: {
         text: "添加新性别",
-        reducer: setGender,
-        value: "new",
+        value: false,
       },
     },
     input: {

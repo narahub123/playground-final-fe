@@ -1020,30 +1020,24 @@ const pages = {
     list: [
       {
         type: "checkbox",
-        selector: getGender,
         comp: {
           text: "Female",
-          reducer: setGender,
           value: "f",
         },
       },
       {
         type: "checkbox",
-        selector: getGender,
         comp: {
           text: "Male",
-          reducer: setGender,
           value: "m",
         },
       },
     ],
     item: {
       type: "checkbox",
-      selector: getGender,
       comp: {
         text: "Add a new gender.",
-        reducer: setGender,
-        value: "new",
+        value: false,
       },
     },
     input: {

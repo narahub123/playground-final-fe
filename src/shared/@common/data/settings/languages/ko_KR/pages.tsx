@@ -1044,30 +1044,24 @@ const pages = {
     list: [
       {
         type: "checkbox",
-        selector: getGender,
         comp: {
           text: "여성",
-          reducer: setGender,
           value: "f",
         },
       },
       {
         type: "checkbox",
-        selector: getGender,
         comp: {
           text: "남성",
-          reducer: setGender,
           value: "m",
         },
       },
     ],
     item: {
       type: "checkbox",
-      selector: getGender,
       comp: {
         text: "성별을 추가하세요.",
-        reducer: setGender,
-        value: "new",
+        value: false,
       },
     },
     input: {
