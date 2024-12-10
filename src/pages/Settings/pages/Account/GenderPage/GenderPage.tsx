@@ -1,58 +1,36 @@
 import styles from "./GenderPage.module.css";
+import {
+  SettingsBranchListContainerType,
+  SettingsCheckBoxContainerType,
+  SettingsHyperLinkCardContainerType,
+} from "@features/settings-setting/types";
 import { SettingsContainer } from "@features/settings-setting/ui/components";
-import { getGender } from "@shared/@common/model/selectors";
-import { setGender } from "@shared/@common/model/slices/userSlice";
+import { useLanguageMode } from "@shared/@common/model/hooks";
 import { Description, Input } from "@shared/@common/ui/components";
 import { MainLayout } from "@shared/pages/layout";
 import { useState } from "react";
 
 const GenderPage = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const list = [
-    {
-      type: "checkbox",
-      selector: getGender,
-      comp: {
-        text: "여성",
-        reducer: setGender,
-        value: "f",
-      },
-    },
-    {
-      type: "checkbox",
-      selector: getGender,
-      comp: {
-        text: "남성",
-        reducer: setGender,
-        value: "m",
-      },
-    },
-  ];
 
-  const item = {
-    type: "checkbox",
-    selector: getGender,
-    comp: {
-      text: "성별을 추가하세요.",
-      reducer: setGender,
-      value: "new",
-    },
-  };
+  const { pageTitle, description, list, item, input, button } = useLanguageMode(
+    ["pages", "GenderPage"]
+  );
 
   return (
     <MainLayout
-      pageTitle="성별"
+      pageTitle={pageTitle}
       backward
-      topContent={
-        <Description
-          text={
-            "아직 성별을 지정하지 않은 경우에는 계정의 프로필과 활동을 바탕으로 성별이 추정됩니다. 이 정보는 공개적으로 표시되지 않습니다."
-          }
-        />
-      }
+      topContent={<Description text={description} />}
       bottomContent={
         <>
-          {list.map((item, index) => (
+          {(
+            list as (
+              | SettingsBranchListContainerType
+              | SettingsCheckBoxContainerType
+              | SettingsHyperLinkCardContainerType
+            )[]
+          ).map((item, index) => (
             <SettingsContainer item={item} gap={0} key={index} isRounded />
           ))}
           <div className={styles.wrapper} onClick={() => setIsOpen(true)}>
@@ -60,11 +38,15 @@ const GenderPage = () => {
           </div>
           {isOpen && (
             <div className={styles[`input-wrapper`]}>
-              <Input field="gender" fieldTitle="성별" />
+              <Input
+                field="gender"
+                fieldTitle={input.fieldTitle}
+                valueMaxLength={30}
+              />
             </div>
           )}
           <div className={styles[`button-container`]}>
-            <button className={styles.button}>저장</button>
+            <button className={styles.button}>{button.text}</button>
           </div>
         </>
       }
