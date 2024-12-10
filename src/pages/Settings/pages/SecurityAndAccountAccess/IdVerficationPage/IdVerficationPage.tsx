@@ -1,6 +1,7 @@
 import {
   SettingsBranchListContainerType,
   SettingsCheckBoxContainerType,
+  SettingsHyperLinkCardContainerType,
 } from "@features/settings-setting/types";
 import { SettingsContainer } from "@features/settings-setting/ui/components";
 import { useLanguageMode } from "@shared/@common/model/hooks";
@@ -23,6 +24,7 @@ const IdVerficationPage = () => {
             list as (
               | SettingsBranchListContainerType
               | SettingsCheckBoxContainerType
+              | SettingsHyperLinkCardContainerType
             )[]
           ).map((item, index) => (
             <SettingsContainer item={item} gap={0} key={index} />
