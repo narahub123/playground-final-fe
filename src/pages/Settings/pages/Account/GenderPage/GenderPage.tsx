@@ -1,29 +1,29 @@
 import styles from "./GenderPage.module.css";
 import { SettingsContainer } from "@features/settings-setting/ui/components";
-import { getFindByEmail } from "@shared/@common/model/selectors";
-import { setFindByEmail } from "@shared/@common/model/slices/settingsSlice";
+import { getGender } from "@shared/@common/model/selectors";
+import { setGender } from "@shared/@common/model/slices/userSlice";
 import { Description } from "@shared/@common/ui/components";
 import { MainLayout } from "@shared/pages/layout";
 
 const GenderPage = () => {
   const item = {
     type: "checkboxlist",
-    selector: getFindByEmail,
+    selector: getGender,
     comp: [
       {
         text: "여성",
-        reducer: setFindByEmail,
+        reducer: setGender,
         value: "f",
       },
       {
         text: "남성",
-        reducer: setFindByEmail,
+        reducer: setGender,
         value: "m",
       },
       {
         text: "성별을 추가하세요",
-        reducer: setFindByEmail,
-        value: "",
+        reducer: setGender,
+        value: "new",
       },
     ],
   };

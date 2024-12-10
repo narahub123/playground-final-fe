@@ -32,7 +32,7 @@ import {
   getHideLabel,
 } from "./settingsSelectors";
 import { getIsLoggedIn } from "./loginSelector";
-import { getUser, getProfileImage } from "./userSelector";
+import { getUser, getProfileImage, getGender } from "./userSelector";
 import {
   getSigninInfo,
   getSigninUser,
@@ -77,6 +77,7 @@ export {
   // user
   getUser,
   getProfileImage,
+  getGender,
   // signin
   getSigninInfo,
   getSigninUser,

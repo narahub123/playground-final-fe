@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { profile1 } from "@shared/@common/assets/images";
 import { UserType } from "@shared/@common/types";
+import { GenderType } from "@shared/@common/types/user";
 
 const initialState: UserType = {
   userId: "abcdefg",
@@ -22,9 +23,12 @@ const userSlice = createSlice({
     setUser: (state, action: PayloadAction<Partial<UserType>>) => {
       return { ...state, ...action.payload };
     },
+    setGender: (state, action: PayloadAction<GenderType>) => {
+      state.gender = action.payload;
+    },
   },
 });
 
 export default userSlice.reducer;
 
-export const { setUser } = userSlice.actions;
+export const { setUser, setGender } = userSlice.actions;
