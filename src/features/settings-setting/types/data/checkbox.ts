@@ -1,6 +1,6 @@
 interface CheckBoxType {
   text: string;
-  reducer: (value: boolean | string | number) => {
+  reducer?: (value: boolean | string | number) => {
     type: string;
     payload: boolean | string | number;
   };
