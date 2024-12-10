@@ -1,33 +1,30 @@
+import {
+  SettingsBranchListContainerType,
+  SettingsCheckBoxContainerType,
+} from "@features/settings-setting/types";
 import { SettingsContainer } from "@features/settings-setting/ui/components";
-import { getHideLabel } from "@shared/@common/model/selectors";
-import { setHideLabel } from "@shared/@common/model/slices/settingsSlice";
+import { useLanguageMode } from "@shared/@common/model/hooks";
 import { Description } from "@shared/@common/ui/components";
 import { MainLayout } from "@shared/pages/layout";
 
 const IdVerficationPage = () => {
-  const list = [
-    {
-      type: "checkbox",
-      selector: getHideLabel,
-      comp: {
-        text: "ID 인증 라벨 숨기기",
-        reducer: setHideLabel,
-      },
-      description:
-        "사람들이 내 프로필 페이지에서 파란색 체크마크를 탭했을 때 ID 인증 라벨이 표시되지 않도록 숨깁니다.",
-      disabled: true,
-    },
-  ];
+  const { pageTitle, descriptioin, list } = useLanguageMode([
+    "pages",
+    "IdVerficationPage",
+  ]);
   return (
     <MainLayout
-      pageTitle="ID 인증"
+      pageTitle={pageTitle}
       backward
-      topContent={
-        <Description text="신분증을 인증하면 계정을 사칭으로부터 보호하고 프로필에 ID 인증 라벨을 표시할 수 있습니다." />
-      }
+      topContent={<Description text={descriptioin} />}
       bottomContent={
         <>
-          {list.map((item, index) => (
+          {(
+            list as (
+              | SettingsBranchListContainerType
+              | SettingsCheckBoxContainerType
+            )[]
+          ).map((item, index) => (
             <SettingsContainer item={item} gap={0} key={index} />
           ))}
         </>
