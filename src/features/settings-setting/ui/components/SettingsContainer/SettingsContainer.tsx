@@ -15,13 +15,15 @@ import {
   CheckBoxType,
   SettingsBranchType,
 } from "@features/settings-setting/types/data";
-import { HyperLinkCardType } from "@shared/@common/types";
+import { HyperLinkCardType, InputValueType } from "@shared/@common/types";
 
 interface SettingsContainerProps {
   item:
     | SettingsBranchListContainerType
     | SettingsCheckBoxContainerType
     | SettingsHyperLinkCardContainerType;
+  initialValue?: InputValueType;
+  setter?: React.Dispatch<React.SetStateAction<InputValueType>>;
   isRounded?: boolean;
   gap?: number;
   unit?: string;
@@ -29,6 +31,8 @@ interface SettingsContainerProps {
 
 const SettingsContainer = ({
   item,
+  initialValue,
+  setter,
   isRounded = false,
   gap = 10,
   unit = "px",
@@ -53,6 +57,8 @@ const SettingsContainer = ({
           }`}
           isRounded={roundCond}
           selector={selector}
+          initialValue={initialValue}
+          setter={setter}
         />
       ) : type === "checkboxlist" ? (
         (comp as CheckBoxType[]).map((i, index) => (
@@ -64,6 +70,8 @@ const SettingsContainer = ({
             }`}
             isRounded={roundCond}
             selector={selector}
+            initialValue={initialValue}
+            setter={setter}
           />
         ))
       ) : type === "link" ? (

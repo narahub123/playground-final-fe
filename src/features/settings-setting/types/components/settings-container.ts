@@ -18,7 +18,7 @@ interface SettingsBranchListContainerType extends SettingsContainerType {
 
 interface SettingsCheckBoxContainerType extends SettingsContainerType {
   comp: CheckBoxType | CheckBoxType[];
-  selector: (state: RootState) => boolean | string | number;
+  selector?: (state: RootState) => boolean | string | number;
 }
 
 interface SettingsHyperLinkCardContainerType extends SettingsContainerType {
