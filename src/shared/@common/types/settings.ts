@@ -26,6 +26,7 @@ type SettingsType = {
   notifications: NotificationsType;
   protectRenewPassword: boolean; // 비밀번호 재설정 보호
   twoFactorAuthentication: TwoFactorAuthentication; // 2단계 인증
+  hideLabel: boolean; // 인증 라벨 숨기기
 };
 
 type TwoFactorAuthentication = "sms" | "app" | "key" | "";

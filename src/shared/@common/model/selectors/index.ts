@@ -29,6 +29,7 @@ import {
   getMutePhoneAuthenticated,
   getProtectRenewPassword,
   getTwoFactorAuthentication,
+  getHideLabel,
 } from "./settingsSelectors";
 import { getIsLoggedIn } from "./loginSelector";
 import { getUser, getProfileImage } from "./userSelector";
@@ -70,6 +71,7 @@ export {
   getMutePhoneAuthenticated,
   getProtectRenewPassword,
   getTwoFactorAuthentication,
+  getHideLabel,
   // login
   getIsLoggedIn,
   // user

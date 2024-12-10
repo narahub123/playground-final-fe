@@ -1,6 +1,6 @@
 import { SettingsContainer } from "@features/settings-setting/ui/components";
-import { getFindByEmail } from "@shared/@common/model/selectors";
-import { setFindByEmail } from "@shared/@common/model/slices/settingsSlice";
+import { getHideLabel } from "@shared/@common/model/selectors";
+import { setHideLabel } from "@shared/@common/model/slices/settingsSlice";
 import { Description } from "@shared/@common/ui/components";
 import { MainLayout } from "@shared/pages/layout";
 
@@ -8,10 +8,10 @@ const IdVerficationPage = () => {
   const list = [
     {
       type: "checkbox",
-      selector: setFindByEmail,
+      selector: getHideLabel,
       comp: {
         text: "ID 인증 라벨 숨기기",
-        reducer: getFindByEmail,
+        reducer: setHideLabel,
       },
       description:
         "사람들이 내 프로필 페이지에서 파란색 체크마크를 탭했을 때 ID 인증 라벨이 표시되지 않도록 숨깁니다.",

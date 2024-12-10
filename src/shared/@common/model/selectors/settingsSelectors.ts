@@ -43,6 +43,8 @@ const getProtectRenewPassword = (state: RootState) =>
   state.settings.protectRenewPassword;
 const getTwoFactorAuthentication = (state: RootState) =>
   state.settings.twoFactorAuthentication;
+const getHideLabel = (state: RootState) => state.settings.hideLabel;
+
 export {
   getSettings,
   getBgTheme,
@@ -75,4 +77,5 @@ export {
   getMutePhoneAuthenticated,
   getProtectRenewPassword,
   getTwoFactorAuthentication,
+  getHideLabel,
 };

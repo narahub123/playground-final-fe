@@ -45,6 +45,7 @@ const initialState: SettingsType = {
   },
   protectRenewPassword: false, // 비밀번호 재설정 보호
   twoFactorAuthentication: "", // 2단계 인증
+  hideLabel: false,
 };
 
 // 페이지 로드 전에 setting를 먼저 로드해야 함
@@ -151,6 +152,9 @@ const settingsSlice = createSlice({
         state.twoFactorAuthentication = "";
       }
     },
+    setHideLabel: (state, action: PayloadAction<boolean>) => {
+      state.hideLabel = action.payload;
+    },
   },
 });
 
@@ -187,4 +191,5 @@ export const {
   setMutePhoneAuthenticated,
   setProtectRenewPassword,
   setTwoFactorAuthentication,
+  setHideLabel,
 } = settingsSlice.actions;
