@@ -4,14 +4,18 @@ import { MainLayout } from "@shared/pages/layout";
 import { setFindByEmail } from "@shared/@common/model/slices/settingsSlice";
 import { useSelector } from "react-redux";
 import { getPhone } from "@shared/@common/model/selectors";
+import { useLanguageMode } from "@shared/@common/model/hooks";
 
 const PhonePage = () => {
   const phoneList = useSelector(getPhone);
+
+  const { pageTitle, addPhone } = useLanguageMode(["pages", "PhonePage"]);
+
   // 클릭시 모달창이 열리는 함수 작성 필요
 
   return (
     <MainLayout
-      pageTitle="휴대폰 변경"
+      pageTitle={pageTitle}
       backward
       topContent={<></>}
       bottomContent={
@@ -26,7 +30,7 @@ const PhonePage = () => {
             </ul>
           )}
           <div className={styles.container}>
-            <HyperLink text="휴대폰 번호 추가" setter={setFindByEmail} />
+            <HyperLink text={addPhone} setter={setFindByEmail} />
           </div>
         </>
       }
