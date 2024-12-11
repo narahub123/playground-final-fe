@@ -33,6 +33,9 @@ import { HyperLinkCardType, InputValueType } from "./components";
 // utils
 import { alphabetGeneratorModeType } from "./utils";
 
+// hooks
+import { ValidationCheckerType } from "./hooks";
+
 export type {
   listModalCardType,
   ThemeColorType,
@@ -57,4 +60,7 @@ export type {
 
   // utils
   alphabetGeneratorModeType,
+
+  // hooks
+  ValidationCheckerType,
 };
