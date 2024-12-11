@@ -5,21 +5,24 @@ import { useState } from "react";
 import { InputValueType } from "@shared/@common/types";
 import { useSelector } from "react-redux";
 import { getEmail } from "@shared/@common/model/selectors";
+import { useLanguageMode } from "@shared/@common/model/hooks";
 
 const EmailPage = () => {
   const email = useSelector(getEmail);
   const [value, setValue] = useState<InputValueType>(email);
   const [isValid, setIsValid] = useState(true);
 
+  const { pageTitle, input } = useLanguageMode(["pages", "EmailPage"]);
+
   return (
     <MainLayout
-      pageTitle="이메일 변경"
+      pageTitle={pageTitle}
       backward
       topContent={
         <div className={styles[`input-container`]}>
           <Input
             field="email"
-            fieldTitle="현재 이메일"
+            fieldTitle={input.fieldTitle}
             value={value}
             setValue={setValue}
             isValid={isValid}
