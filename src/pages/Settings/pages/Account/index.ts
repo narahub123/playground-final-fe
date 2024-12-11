@@ -3,6 +3,7 @@ import AccountInfoPage from "./AccountInfoPage/AccountInfoPage";
 import DeactivatePage from "./DeactivatePage/DeactivatePage";
 import GenderPage from "./GenderPage/GenderPage";
 import ScreenNamePage from "./ScreenNamePage/ScreenNamePage";
+import PhonePage from "./PhonePage/PhonePage";
 
 export {
   AccountPage,
@@ -10,4 +11,5 @@ export {
   DeactivatePage,
   GenderPage,
   ScreenNamePage,
+  PhonePage,
 };
