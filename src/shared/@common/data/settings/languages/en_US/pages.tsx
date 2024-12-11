@@ -1050,12 +1050,26 @@ const pages = {
     pageTitle: "Change Username",
     input: {
       fieldTitle: "User ID",
-      validation: regExp.userId,
+      validation: regExp.userId.default,
     },
     title: "Recommendations",
     button: {
       text: "Save",
     },
+    validations: [
+      {
+        regExp: regExp.userId.countError,
+        msg: "User ID must be between 4 and 15 characters.",
+      },
+      {
+        regExp: regExp.userId.typeError,
+        msg: "User ID can only contain uppercase and lowercase letters and numbers.",
+      },
+      {
+        regExp: regExp.userId.numberError,
+        msg: "User ID must contain at least one uppercase or lowercase letter.",
+      },
+    ],
   },
 };
 

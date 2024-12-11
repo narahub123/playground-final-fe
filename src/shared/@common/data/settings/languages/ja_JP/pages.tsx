@@ -1051,12 +1051,26 @@ const pages = {
     pageTitle: "ユーザー名の変更",
     input: {
       fieldTitle: "ユーザーID",
-      validation: regExp.userId,
+      validation: regExp.userId.default,
     },
     title: "おすすめ",
     button: {
       text: "保存",
     },
+    validations: [
+      {
+        regExp: regExp.userId.countError,
+        msg: "ユーザーIDは4文字以上15文字以内でなければなりません。",
+      },
+      {
+        regExp: regExp.userId.typeError,
+        msg: "ユーザーIDには英大文字と小文字、数字のみを使用できます。",
+      },
+      {
+        regExp: regExp.userId.numberError,
+        msg: "ユーザーIDには少なくとも1文字の英大文字または小文字が必要です。",
+      },
+    ],
   },
 };
 

@@ -1028,12 +1028,26 @@ const pages = {
     pageTitle: "更改使用者名稱",
     input: {
       fieldTitle: "使用者ID",
-      validation: regExp.userId,
+      validation: regExp.userId.default,
     },
     title: "推薦",
     button: {
       text: "儲存",
     },
+    validations: [
+      {
+        regExp: regExp.userId.countError,
+        msg: "使用者ID必須介於4至15個字元之間。",
+      },
+      {
+        regExp: regExp.userId.typeError,
+        msg: "使用者ID只能包含大小寫字母和數字。",
+      },
+      {
+        regExp: regExp.userId.numberError,
+        msg: "使用者ID必須至少包含一個大小寫字母。",
+      },
+    ],
   },
 };
 

@@ -1073,12 +1073,26 @@ const pages = {
     pageTitle: "사용자 이름 변경",
     input: {
       fieldTitle: "사용자 아이디",
-      validation: regExp.userId,
+      validation: regExp.userId.default,
     },
     title: "추천",
     button: {
-      text: "저장"
-    }
+      text: "저장",
+    },
+    validations: [
+      {
+        regExp: regExp.userId.countError,
+        msg: "사용자 아이디는 4자 이상 15자 이하여야 합니다.",
+      },
+      {
+        regExp: regExp.userId.typeError,
+        msg: "사용자 아이디는 영문 대소문자와 숫자만 사용 가능합니다.",
+      },
+      {
+        regExp: regExp.userId.numberError,
+        msg: "사용자 아이디는 적어도 하나 이상의 영문 대소문자가 필요합니다.",
+      },
+    ],
   },
 };
 

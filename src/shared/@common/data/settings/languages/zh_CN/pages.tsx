@@ -1027,12 +1027,26 @@ const pages = {
     pageTitle: "更改用户名",
     input: {
       fieldTitle: "用户ID",
-      validation: regExp.userId,
+      validation: regExp.userId.default,
     },
     title: "推荐",
     button: {
       text: "保存",
     },
+    validations: [
+      {
+        regExp: regExp.userId.countError,
+        msg: "用户ID必须在4到15个字符之间。",
+      },
+      {
+        regExp: regExp.userId.typeError,
+        msg: "用户ID只能包含大小写字母和数字。",
+      },
+      {
+        regExp: regExp.userId.numberError,
+        msg: "用户ID必须包含至少一个大写字母或小写字母。",
+      },
+    ],
   },
 };
 

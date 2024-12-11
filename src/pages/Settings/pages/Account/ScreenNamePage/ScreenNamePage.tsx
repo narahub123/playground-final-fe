@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useLanguageMode } from "@shared/@common/model/hooks";
 import { createNewUserIdByIds } from "@features/settings-branch-list/data";
+import useValidationChecker from "@shared/@common/model/hooks/useValidationChecker";
 
 const ScreenNamePage = () => {
   const userId = useSelector(getUserId);
@@ -20,7 +21,7 @@ const ScreenNamePage = () => {
   // 추천 아이디
   const [recommendedUserIds, setRecommnedUserIds] = useState<string[]>([]);
 
-  const { pageTitle, input, title, button } = useLanguageMode([
+  const { pageTitle, input, title, button, validations } = useLanguageMode([
     "pages",
     "ScreenNamePage",
   ]);
@@ -36,7 +37,7 @@ const ScreenNamePage = () => {
     fetchData(); // 비동기 함수 호출
   }, [userId]); // 의존성 배열에 userId 추가
 
-  console.log(recommendedUserIds);
+  const { errorMessage } = useValidationChecker(value as string, validations);
 
   return (
     <MainLayout
@@ -55,6 +56,7 @@ const ScreenNamePage = () => {
               setIsValid={setIsValid}
               valueMaxLength={15}
               validation={input.validation} // 유효성 검사
+              errorMessage={errorMessage}
             />
           </div>
           <div className={styles[`recom-container`]}>
