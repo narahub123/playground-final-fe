@@ -3,9 +3,10 @@ import styles from "./ScreenNamePage.module.css";
 import { InputValueType } from "@shared/@common/types";
 import { Input, Title } from "@shared/@common/ui/components";
 import { MainLayout } from "@shared/pages/layout";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useLanguageMode } from "@shared/@common/model/hooks";
+import { createNewUserIdByIds } from "@features/settings-branch-list/data";
 
 const ScreenNamePage = () => {
   const userId = useSelector(getUserId);
@@ -13,11 +14,26 @@ const ScreenNamePage = () => {
   const [value, setValue] = useState<InputValueType>(userId);
   // 유효성
   const [isValid, setIsValid] = useState(true);
+  // 추천 아이디
+  const [recommendedUserIds, setRecommnedUserIds] = useState<string[]>([]);
 
   const { pageTitle, input, title, button } = useLanguageMode([
     "pages",
     "ScreenNamePage",
   ]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const newUserId = await createNewUserIdByIds(userId);
+      if (newUserId) {
+        setRecommnedUserIds(newUserId); // 추천 아이디 업데이트
+      }
+    };
+
+    fetchData(); // 비동기 함수 호출
+  }, [userId]); // 의존성 배열에 userId 추가
+
+  console.log(recommendedUserIds);
 
   return (
     <MainLayout

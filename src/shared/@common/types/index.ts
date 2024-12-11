@@ -30,6 +30,9 @@ import {
 // 컴포넌트
 import { HyperLinkCardType, InputValueType } from "./components";
 
+// utils
+import { alphabetGeneratorModeType } from "./utils";
+
 export type {
   listModalCardType,
   ThemeColorType,
@@ -51,4 +54,7 @@ export type {
   // components
   HyperLinkCardType,
   InputValueType,
+
+  // utils
+  alphabetGeneratorModeType,
 };
