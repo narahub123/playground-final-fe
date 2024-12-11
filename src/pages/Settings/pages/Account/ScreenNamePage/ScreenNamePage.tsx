@@ -1,20 +1,21 @@
 import { getUserId } from "@shared/@common/model/selectors";
 import styles from "./ScreenNamePage.module.css";
 import { InputValueType } from "@shared/@common/types";
-import { HyperLink, Input, Title } from "@shared/@common/ui/components";
+import { Button, HyperLink, Input, Title } from "@shared/@common/ui/components";
 import { MainLayout } from "@shared/pages/layout";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useLanguageMode } from "@shared/@common/model/hooks";
 import { createNewUserIdByIds } from "@features/settings-branch-list/data";
 import useValidationChecker from "@shared/@common/model/hooks/useValidationChecker";
+import { useAppDispatch } from "@app/store";
+import { setUserId } from "@shared/@common/model/slices/userSlice";
 
 const ScreenNamePage = () => {
+  const dispatch = useAppDispatch();
   const userId = useSelector(getUserId);
   // 아이디 값
   const [value, setValue] = useState<InputValueType>(userId);
-
-  console.log(value);
 
   // 유효성
   const [isValid, setIsValid] = useState(true);
@@ -38,6 +39,10 @@ const ScreenNamePage = () => {
   }, [userId]); // 의존성 배열에 userId 추가
 
   const { errorMessage } = useValidationChecker(value as string, validations);
+
+  const handleClick = () => {
+    dispatch(setUserId(value as string));
+  };
 
   return (
     <MainLayout
@@ -68,13 +73,11 @@ const ScreenNamePage = () => {
             </ul>
           </div>
           <div className={styles[`button-container`]}>
-            <button
-              className={`button ${styles.button} ${
-                isValid ? undefined : styles.invalid
-              }`}
-            >
-              {button.text}
-            </button>
+            <Button
+              text={button.text}
+              isValid={isValid && userId !== value}
+              handleClick={handleClick}
+            />
           </div>
         </>
       }
