@@ -7,7 +7,7 @@ const initialState: UserType = {
   userId: "abcdefg",
   username: "몰러",
   profileImage: profile1,
-  phone: "01001010101",
+  phone: ["01001010101"],
   email: "example@example.com",
   isAuthenticated: false,
   regDate: new Date(),
@@ -29,9 +29,12 @@ const userSlice = createSlice({
     setUserId: (state, action: PayloadAction<string>) => {
       state.userId = action.payload;
     },
+    setPhone: (state, action: PayloadAction<string[]>) => {
+      state.phone = [...state.phone, ...action.payload];
+    },
   },
 });
 
 export default userSlice.reducer;
 
-export const { setUser, setGender, setUserId } = userSlice.actions;
+export const { setUser, setGender, setUserId, setPhone } = userSlice.actions;

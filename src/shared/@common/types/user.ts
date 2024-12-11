@@ -3,7 +3,7 @@ export type GenderType = "m" | "f" | string;
 interface UserType {
   userId: string;
   username: string;
-  phone: string;
+  phone: string[];
   profileImage: string;
   email: string;
   isAuthenticated: boolean;
