@@ -1,7 +1,7 @@
 import { getUserId } from "@shared/@common/model/selectors";
 import styles from "./ScreenNamePage.module.css";
 import { InputValueType } from "@shared/@common/types";
-import { Input, Title } from "@shared/@common/ui/components";
+import { HyperLink, Input, Title } from "@shared/@common/ui/components";
 import { MainLayout } from "@shared/pages/layout";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
@@ -12,6 +12,9 @@ const ScreenNamePage = () => {
   const userId = useSelector(getUserId);
   // 아이디 값
   const [value, setValue] = useState<InputValueType>(userId);
+
+  console.log(value);
+
   // 유효성
   const [isValid, setIsValid] = useState(true);
   // 추천 아이디
@@ -56,10 +59,15 @@ const ScreenNamePage = () => {
           </div>
           <div className={styles[`recom-container`]}>
             <Title text={title} />
+            <ul className={styles.recoms}>
+              {recommendedUserIds.map((item, index) => (
+                <HyperLink text={item} path="" key={index} setter={setValue} />
+              ))}
+            </ul>
           </div>
           <div className={styles[`button-container`]}>
             <button
-              className={`${styles.button} ${
+              className={`button ${styles.button} ${
                 isValid ? undefined : styles.invalid
               }`}
             >

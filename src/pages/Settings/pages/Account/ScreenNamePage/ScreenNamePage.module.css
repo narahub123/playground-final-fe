@@ -7,6 +7,12 @@
   padding: 15px;
 }
 
+.recoms {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+}
+
 .button-container {
   width: 100%;
   display: flex;
