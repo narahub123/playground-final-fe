@@ -1071,6 +1071,10 @@ const pages = {
       },
     ],
   },
+  PhonePage: {
+    pageTitle: "Change Phone Number",
+    addPhone: "Add Phone Number",
+  },
 };
 
 export default pages;

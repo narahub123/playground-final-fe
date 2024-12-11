@@ -1094,6 +1094,10 @@ const pages = {
       },
     ],
   },
+  PhonePage: {
+    pageTitle: "휴대폰 변경",
+    addPhone: "휴대폰 번호 추가",
+  },
 };
 
 export default pages;

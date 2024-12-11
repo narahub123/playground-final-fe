@@ -1049,6 +1049,10 @@ const pages = {
       },
     ],
   },
+  PhonePage: {
+    pageTitle: "更改手機號碼",
+    addPhone: "添加手機號碼",
+  },
 };
 
 export default pages;

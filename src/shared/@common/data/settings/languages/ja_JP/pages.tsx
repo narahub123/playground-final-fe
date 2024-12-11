@@ -1072,6 +1072,10 @@ const pages = {
       },
     ],
   },
+  PhonePage: {
+    pageTitle: "電話番号の変更",
+    addPhone: "電話番号を追加",
+  },
 };
 
 export default pages;

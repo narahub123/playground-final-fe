@@ -1048,6 +1048,10 @@ const pages = {
       },
     ],
   },
+  PhonePage: {
+    pageTitle: "更改手机号",
+    addPhone: "添加手机号",
+  },
 };
 
 export default pages;
