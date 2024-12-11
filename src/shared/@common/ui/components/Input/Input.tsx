@@ -44,6 +44,7 @@ const Input = ({
   const [isVisible, setIsVisible] = useState(false);
   const focusCond = isFocus || value ? styles.focused : "";
   const validCond = !isValid && value ? styles.invalid : "";
+  const disabledCond = disabled ? styles.disabled : "";
 
   useEffect(() => {
     if (!isFocus || !inputRef.current) return;
@@ -78,8 +79,6 @@ const Input = ({
     setValue(value);
   };
 
-  console.log("유효성", isValid);
-
   // debounce를 적용한 handleChange 함수
   const debounceHandleChange = debounce<typeof handleChange>(handleChange, 500);
 
@@ -89,7 +88,7 @@ const Input = ({
   return (
     <div className={styles.wrapper}>
       <div
-        className={`${styles.container} ${focusCond} ${validCond}`}
+        className={`${styles.container} ${focusCond} ${validCond} ${disabledCond}`}
         onClick={() => {}}
         tabIndex={isFocus || disabled ? -1 : 0}
         onFocus={() => setIsFocus(true)}
@@ -97,7 +96,10 @@ const Input = ({
         ref={containerRef}
       >
         <div className={`${styles.upper} ${focusCond}`}>
-          <label htmlFor={field} className={`${styles.title} ${focusCond}`}>
+          <label
+            htmlFor={field}
+            className={`${styles.title} ${focusCond} ${disabledCond}`}
+          >
             {fieldTitle}
           </label>
           <span

@@ -4,12 +4,15 @@ html[data-theme="light"] {
   --color-invalid: red;
   --color-focused: cornflowerblue;
   --color-background: white;
+  --color-disabled: #aaa;
+  --color-background-disabled: #eeeeee67;
   --outline-default: 2px solid black;
   --outline-profile-image: 2px solid cornflowerblue;
   --outline-image: 2px solid cornflowerblue;
   --border-default: 2px solid black;
   --border-input-normal: 2px solid black;
   --border-input-focused: 2px solid cornflowerblue;
+  --border-input-disabled: 2px solid transparent;
   --border-input-invalid: 2px solid red;
   --border-modal: 2px solid transparent;
   --border-list: 2px solid black;
@@ -24,6 +27,8 @@ html[data-theme="dark"] {
   --color-focused: cornflowerblue;
   --color-invalid: red;
   --color-background: black;
+  --color-disabled: #aaa;
+  --color-background-disabled: #eeeeee67;
   --outline-default: 2px solid white;
   --outline-profile-image: 2px solid cornflowerblue;
   --outline-image: 2px solid cornflowerblue;
@@ -31,6 +36,7 @@ html[data-theme="dark"] {
   --border-input-normal: 2px solid white;
   --border-input-focused: 2px solid cornflowerblue;
   --border-input-invalid: 2px solid red;
+  --border-input-disabled: 2px solid transparent;
   --border-modal: 2px solid white;
   --border-list: 2px solid white;
   --hover-icon: rgba(170, 170, 170, 0.5);
