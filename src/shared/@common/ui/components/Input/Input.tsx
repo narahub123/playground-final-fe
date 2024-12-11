@@ -113,7 +113,7 @@ const Input = ({
               (e) => (valueMaxLength ? handleChange(e) : debounceHandleChange) // 문자열 제한이 없는 경우에만 debounce 적용
             }
             ref={inputRef}
-            defaultValue={value}
+            value={value}
             aria-labelledby={field}
             aria-invalid={!isValid}
             aria-describedby={isValid ? "" : "input-error"}
