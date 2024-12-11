@@ -4,7 +4,7 @@ html[data-theme="light"] {
   --color-invalid: red;
   --color-focused: cornflowerblue;
   --color-background: white;
-  --outline-basic: 2px solid black;
+  --outline-default: 2px solid black;
   --outline-profile-image: 2px solid cornflowerblue;
   --outline-image: 2px solid cornflowerblue;
   --border-default: 2px solid black;
@@ -24,7 +24,7 @@ html[data-theme="dark"] {
   --color-focused: cornflowerblue;
   --color-invalid: red;
   --color-background: black;
-  --outline-basic: 2px solid white;
+  --outline-default: 2px solid white;
   --outline-profile-image: 2px solid cornflowerblue;
   --outline-image: 2px solid cornflowerblue;
   --border-default: 2px solid white;

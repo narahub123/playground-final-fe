@@ -13,7 +13,7 @@ import Title from "./Title/Title";
 import ProfileContainer from "./ProfileContainer/ProfileContainer";
 import HyperLink from "./HyperLink/HyperLink";
 import HyperLinkCard from "./HyperLinkCard/HyperLinkCard";
-
+import Button from "./Button/Button";
 export {
   Icon,
   ListModal,
@@ -32,4 +32,5 @@ export {
   ProfileContainer,
   HyperLink,
   HyperLinkCard,
+  Button,
 };

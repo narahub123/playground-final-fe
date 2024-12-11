@@ -1,0 +1,22 @@
+.button {
+  padding: 10px 15px;
+  border-radius: 30px;
+  color: var(--theme-color);
+  background-color: var(--theme-bgColor);
+}
+
+.button:focus-visible {
+  outline: var(--outline-default);
+}
+
+.valid {
+  cursor: pointer;
+}
+
+.valid:hover {
+  background-color: var(--theme-hover-bgColor);
+}
+
+.invalid {
+  background-color: var(--theme-invalid);
+}
