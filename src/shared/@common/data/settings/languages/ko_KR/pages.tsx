@@ -1101,7 +1101,7 @@ const pages = {
   EmailPage: {
     pageTitle: "이메일 변경",
     input: {
-      filedTitle: "현재 이메일",
+      fieldTitle: "현재 이메일",
     },
   },
 };
