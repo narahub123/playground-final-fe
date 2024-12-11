@@ -1053,6 +1053,12 @@ const pages = {
     pageTitle: "更改手機號碼",
     addPhone: "添加手機號碼",
   },
+  EmailPage: {
+    pageTitle: "更改電子郵件",
+    input: {
+      fieldTitle: "當前電子郵件",
+    },
+  },
 };
 
 export default pages;

@@ -1052,6 +1052,12 @@ const pages = {
     pageTitle: "更改手机号",
     addPhone: "添加手机号",
   },
+  EmailPage: {
+    pageTitle: "更改邮箱",
+    input: {
+      fieldTitle: "当前邮箱",
+    },
+  },
 };
 
 export default pages;

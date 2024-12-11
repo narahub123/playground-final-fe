@@ -1075,6 +1075,12 @@ const pages = {
     pageTitle: "Change Phone Number",
     addPhone: "Add Phone Number",
   },
+  EmailPage: {
+    pageTitle: "Change Email",
+    input: {
+      fieldTitle: "Current Email",
+    },
+  },
 };
 
 export default pages;

@@ -1076,6 +1076,12 @@ const pages = {
     pageTitle: "電話番号の変更",
     addPhone: "電話番号を追加",
   },
+  EmailPage: {
+    pageTitle: "メールアドレスの変更",
+    input: {
+      fieldTitle: "現在のメールアドレス",
+    },
+  },
 };
 
 export default pages;

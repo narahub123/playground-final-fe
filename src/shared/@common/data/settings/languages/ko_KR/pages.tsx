@@ -1098,6 +1098,12 @@ const pages = {
     pageTitle: "휴대폰 변경",
     addPhone: "휴대폰 번호 추가",
   },
+  EmailPage: {
+    pageTitle: "이메일 변경",
+    input: {
+      filedTitle: "현재 이메일",
+    },
+  },
 };
 
 export default pages;
