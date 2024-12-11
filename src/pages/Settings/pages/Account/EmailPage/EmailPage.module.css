@@ -1,0 +1,11 @@
+.input-container {
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.container {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}

@@ -32,9 +32,13 @@ const userSlice = createSlice({
     setPhone: (state, action: PayloadAction<string[]>) => {
       state.phone = [...state.phone, ...action.payload];
     },
+    setEmail: (state, action: PayloadAction<string>) => {
+      state.email = action.payload;
+    },
   },
 });
 
 export default userSlice.reducer;
 
-export const { setUser, setGender, setUserId, setPhone } = userSlice.actions;
+export const { setUser, setGender, setUserId, setPhone, setEmail } =
+  userSlice.actions;
