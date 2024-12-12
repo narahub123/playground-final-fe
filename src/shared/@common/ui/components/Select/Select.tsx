@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { forwardRef, useEffect, useRef, useState } from "react";
 import styles from "./Select.module.css";
 import {
   useClickOutside,
@@ -21,52 +21,48 @@ type OptionProps = {
   reducer?: ActionCreatorWithPayload<any, string>;
 };
 
-const Option = ({
-  option,
-  selection,
-  setSelection,
-  hideModal,
-  showCond,
-  reducer,
-}: OptionProps) => {
-  const dispatch = useAppDispatch();
+const Option = forwardRef<HTMLLIElement, OptionProps>(
+  ({ option, selection, setSelection, hideModal, showCond, reducer }, ref) => {
+    const dispatch = useAppDispatch();
 
-  const selectedCond = option.value === selection ? styles.selected : "";
+    const selectedCond = option.value === selection ? styles.selected : "";
 
-  return (
-    <li
-      role="option" // 역할 정의
-      className={`${styles.option} ${selectedCond} ${showCond}`}
-      onClick={
-        selectedCond
-          ? undefined
-          : () => {
-              setSelection(option.value);
-              reducer && dispatch(reducer(option.value));
-              hideModal();
-            }
-      }
-      tabIndex={0} // 선택된 값에 커서 이동하지 않을 경우 option.value === selection ? -1 : 0
-      aria-selected={option.value === selection} // 현재 선택된 항목인지 표시
-      title={option.optionTitle}
-    >
-      {/* 아이콘이 있는 경우 */}
-      {option.iconName && (
-        <Icon iconName={option.iconName} iconTitle="" ariaHidden={true} />
-      )}
-      {/* 이미지가 있는 경우 */}
-      {option.imgSrc && (
-        <img
-          src={option.imgSrc}
-          alt={option.imgAlt}
-          aria-hidden="true"
-          className={styles.img}
-        />
-      )}
-      <span className={styles.text}>{option.text}</span>
-    </li>
-  );
-};
+    return (
+      <li
+        role="option" // 역할 정의
+        className={`${styles.option} ${selectedCond} ${showCond}`}
+        onClick={
+          selectedCond
+            ? undefined
+            : () => {
+                setSelection(option.value);
+                reducer && dispatch(reducer(option.value));
+                hideModal();
+              }
+        }
+        tabIndex={0} // 선택된 값에 커서 이동하지 않을 경우 option.value === selection ? -1 : 0
+        aria-selected={option.value === selection} // 현재 선택된 항목인지 표시
+        title={option.optionTitle}
+        ref={ref}
+      >
+        {/* 아이콘이 있는 경우 */}
+        {option.iconName && (
+          <Icon iconName={option.iconName} iconTitle="" ariaHidden={true} />
+        )}
+        {/* 이미지가 있는 경우 */}
+        {option.imgSrc && (
+          <img
+            src={option.imgSrc}
+            alt={option.imgAlt}
+            aria-hidden="true"
+            className={styles.img}
+          />
+        )}
+        <span className={styles.text}>{option.text}</span>
+      </li>
+    );
+  }
+);
 
 type ListProps = {
   isOpen: boolean;
@@ -88,6 +84,7 @@ const List = ({
   reducer,
 }: ListProps) => {
   const containerRef = useRef<HTMLUListElement>(null);
+  const optionRefs = useRef<HTMLLIElement[]>([]); // 동적 ref 생성하기
   const { showCond, handleTransitionEnd, hideModal } = useShowAndHideEffect(
     setIsOpen,
     "dropdown"
@@ -103,6 +100,30 @@ const List = ({
 
   useClickOutside(containerRef, setIsOpen, hideModal);
 
+  useEffect(() => {
+    const options = optionRefs.current;
+
+    const selected = options.find((item) =>
+      item.className.includes("selected")
+    );
+
+    // 선택된 요소에 focus 주기
+    selected?.focus();
+
+    // 선택 요소가 가운데에 위치하도록 스크롤을 이동하는 함수
+    const moveToSelected = () => {
+      selected?.scrollIntoView({
+        behavior: "smooth", // 부드럽게 이동
+        block: "center", // 리스트의 가운데 위치
+      });
+    };
+
+    // 리스트에 transition이 걸려 있어서 tranistion 종료 후에 스크롤 이동이 이루어지도록 함
+    selected?.addEventListener("transitionend", moveToSelected);
+
+    return () => selected?.removeEventListener("transitionend", moveToSelected);
+  }, [selection]);
+
   return (
     <ul
       className={`${styles.list} ${showCond}`}
@@ -111,7 +132,7 @@ const List = ({
       role="listbox" // 리스트 역할 명시
       id="dropdown-list" // 버튼과 연결
     >
-      {list.map((option) => (
+      {list.map((option, idx) => (
         <Option
           key={option.text}
           option={option}
@@ -120,6 +141,7 @@ const List = ({
           hideModal={hideModal}
           showCond={showCond}
           reducer={reducer}
+          ref={(el: HTMLLIElement) => (optionRefs.current[idx] = el)} // 동적 ref 적용하기
         />
       ))}
     </ul>
