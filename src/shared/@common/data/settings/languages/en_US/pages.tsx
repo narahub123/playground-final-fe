@@ -419,8 +419,8 @@ const pages = {
       },
       // 언어
       {
-        title: "Language",
-        path: "/settings/language",
+        title: "Languages",
+        path: "/settings/languages",
         expl: getLangName(user.language)?.text,
       },
       // 성별
