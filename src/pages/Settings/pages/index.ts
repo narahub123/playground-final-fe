@@ -31,6 +31,7 @@ import {
   CountryPage,
   LanguagePage,
   AgePage,
+  PasswordPage,
 } from "./Account";
 import {
   SecurityAndAccountAccessPage,
@@ -100,6 +101,7 @@ export {
   CountryPage,
   LanguagePage,
   AgePage,
+  PasswordPage,
   About,
   AccountData,
   ChangePassword,

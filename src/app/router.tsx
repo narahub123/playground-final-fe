@@ -65,6 +65,7 @@ import {
   CountryPage,
   LanguagePage,
   AgePage,
+  PasswordPage,
 } from "@pages/Settings/pages";
 import { AuthLayout } from "@/layouts";
 import { PageLayout } from "@shared/pages/layout";
@@ -207,7 +208,7 @@ export const router = createBrowserRouter([
                   // password 변경
                   {
                     path: "password",
-                    element: <ChangePassword />,
+                    element: <PasswordPage />,
                   },
                   // 다운로드 데이터
                   {

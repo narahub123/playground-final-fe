@@ -1069,6 +1069,27 @@ const pages = {
     description: "推特推測的您的年齡範圍。",
     info: "資訊是否有誤？您可以在不公開資訊的情況下將生日新增至個人檔案。",
   },
+  PasswordPage: {
+    pageTitle: "更改密碼",
+    fieldTitle1: "當前密碼",
+    hyperlink: "忘記密碼？",
+    fieldTitle2: "新密碼",
+    fieldTitle3: "確認密碼",
+    validation: regExp.password.default,
+    validations: [
+      {
+        regExp: regExp.password.countError,
+        msg: "密碼長度需為8至20字元。",
+      },
+      {
+        regExp: regExp.password.typeError,
+        msg: "密碼必須至少包含一個大寫字母、一個特殊字元和一個數字。",
+      },
+    ],
+    button: {
+      text: "保存",
+    },
+  },
 };
 
 export default pages;

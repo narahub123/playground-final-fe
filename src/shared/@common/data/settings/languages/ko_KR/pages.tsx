@@ -1114,6 +1114,27 @@ const pages = {
     description: "트위터에서 추정한 내 연령대입니다.",
     info: "정보가 잘못되었나요? 외부에 정보를 공개하지 않으면서 프로필에 생일을 추가할 수 있습니다.",
   },
+  PasswordPage: {
+    pageTitle: "비밀번호 변경",
+    fieldTitle1: "현재 비밀번호",
+    hyperlink: "비밀번호를 잊으셨나요?",
+    fieldTitle2: "새 비밀번호",
+    fieldTitle3: "비밀번호 확인",
+    validation: regExp.password.default,
+    validations: [
+      {
+        regExp: regExp.password.countError,
+        msg: "비밀번호는 8자 이상 20자 이상이어야 합니다.",
+      },
+      {
+        regExp: regExp.password.typeError,
+        msg: "비밀번호는 영문 대소문자, 특수문자, 숫자가 각각 하나 이상 존재해야 합니다.",
+      },
+    ],
+    button: {
+      text: "저장",
+    },
+  },
 };
 
 export default pages;

@@ -1091,6 +1091,27 @@ const pages = {
     description: "The age range estimated by Twitter.",
     info: "Is the information incorrect? You can add your birthday to your profile without making it public.",
   },
+  PasswordPage: {
+    pageTitle: "Change Password",
+    fieldTitle1: "Current Password",
+    hyperlink: "Forgot your password?",
+    fieldTitle2: "New Password",
+    fieldTitle3: "Confirm Password",
+    validation: regExp.password.default,
+    validations: [
+      {
+        regExp: regExp.password.countError,
+        msg: "Password must be between 8 and 20 characters.",
+      },
+      {
+        regExp: regExp.password.typeError,
+        msg: "Password must include at least one uppercase letter, one special character, and one number.",
+      },
+    ],
+    button: {
+      text: "Save",
+    },
+  },
 };
 
 export default pages;

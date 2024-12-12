@@ -1092,6 +1092,27 @@ const pages = {
     description: "Twitterが推定したあなたの年齢層です。",
     info: "情報が間違っていますか？ 情報を公開することなくプロフィールに誕生日を追加できます。",
   },
+  PasswordPage: {
+    pageTitle: "パスワードの変更",
+    fieldTitle1: "現在のパスワード",
+    hyperlink: "パスワードをお忘れですか？",
+    fieldTitle2: "新しいパスワード",
+    fieldTitle3: "パスワードの確認",
+    validation: regExp.password.default,
+    validations: [
+      {
+        regExp: regExp.password.countError,
+        msg: "パスワードは8文字以上20文字以内である必要があります。",
+      },
+      {
+        regExp: regExp.password.typeError,
+        msg: "パスワードには少なくとも1つの大文字、1つの特殊文字、1つの数字が含まれている必要があります。",
+      },
+    ],
+    button: {
+      text: "保存",
+    },
+  },
 };
 
 export default pages;

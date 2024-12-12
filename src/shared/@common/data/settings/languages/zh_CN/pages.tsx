@@ -1068,6 +1068,27 @@ const pages = {
     description: "推特推测的您的年龄范围。",
     info: "信息有误吗？您可以在不公开信息的情况下将生日添加到个人资料中。",
   },
+  PasswordPage: {
+    pageTitle: "更改密码",
+    fieldTitle1: "当前密码",
+    hyperlink: "忘记密码？",
+    fieldTitle2: "新密码",
+    fieldTitle3: "确认密码",
+    validation: regExp.password.default,
+    validations: [
+      {
+        regExp: regExp.password.countError,
+        msg: "密码长度需为8至20字符。",
+      },
+      {
+        regExp: regExp.password.typeError,
+        msg: "密码必须至少包含一个大写字母、一个特殊字符和一个数字。",
+      },
+    ],
+    button: {
+      text: "保存",
+    },
+  },
 };
 
 export default pages;

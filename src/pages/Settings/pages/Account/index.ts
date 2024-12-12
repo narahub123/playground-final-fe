@@ -8,6 +8,7 @@ import EmailPage from "./EmailPage/EmailPage";
 import CountryPage from "./CountryPage/CountryPage";
 import LanguagePage from "./LanguagePage/LanguagePage";
 import AgePage from "./AgePage/AgePage";
+import PasswordPage from "./PasswordPage/PasswordPage";
 
 export {
   AccountPage,
@@ -20,4 +21,5 @@ export {
   CountryPage,
   LanguagePage,
   AgePage,
+  PasswordPage,
 };
