@@ -6,6 +6,7 @@ import ScreenNamePage from "./ScreenNamePage/ScreenNamePage";
 import PhonePage from "./PhonePage/PhonePage";
 import EmailPage from "./EmailPage/EmailPage";
 import CountryPage from "./CountryPage/CountryPage";
+import LanguagePage from "./LanguagePage/LanguagePage";
 
 export {
   AccountPage,
@@ -16,4 +17,5 @@ export {
   PhonePage,
   EmailPage,
   CountryPage,
+  LanguagePage,
 };
