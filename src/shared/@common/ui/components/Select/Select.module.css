@@ -12,8 +12,9 @@
   border-radius: 5px;
 }
 
+/* 포커스시 스타일: 색상 설정 적용 */
 .select:focus-visible {
-  outline: var(--outline-basic);
+  outline: var(--theme-outline);
 }
 
 .list {
@@ -43,13 +44,14 @@
 }
 
 /* hover에서 selected 클래스 제외 */
-.option:not(.selected):hover {
+.option :hover {
   background-color: cornflowerblue;
   color: white;
 }
 
 .selected {
-  color: cornflowerblue;
+  color: var(--theme-color);
+  background-color: var(--theme-bgColor);
 }
 
 .img {

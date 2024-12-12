@@ -46,13 +46,13 @@ const Option = ({
               hideModal();
             }
       }
-      tabIndex={option.value === selection ? -1 : 0}
+      tabIndex={0} // 선택된 값에 커서 이동하지 않을 경우 option.value === selection ? -1 : 0
       aria-selected={option.value === selection} // 현재 선택된 항목인지 표시
       title={option.optionTitle}
     >
       {/* 아이콘이 있는 경우 */}
       {option.iconName && (
-        <Icon iconName={option.iconName} iconTitle="" ariaHidden="true" />
+        <Icon iconName={option.iconName} iconTitle="" ariaHidden={true} />
       )}
       {/* 이미지가 있는 경우 */}
       {option.imgSrc && (
@@ -191,7 +191,7 @@ const Select = ({
       >
         {/* 아이콘이 있는 경우 */}
         {selected.iconName && (
-          <Icon iconName={selected.iconName} iconTitle="" ariaHidden="true" />
+          <Icon iconName={selected.iconName} iconTitle="" ariaHidden={true} />
         )}
         {/* 이미지가 있는 경우 */}
         {selected.imgSrc && (
@@ -207,7 +207,7 @@ const Select = ({
           iconName="down"
           iconTitle=""
           className={`${styles.icon} ${isOpen ? styles.open : ""}`}
-          ariaHidden="true"
+          ariaHidden={true}
         />
       </button>
       {isOpen && (
