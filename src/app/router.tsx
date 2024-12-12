@@ -62,6 +62,7 @@ import {
   ScreenNamePage,
   PhonePage,
   EmailPage,
+  CountryPage,
 } from "@pages/Settings/pages";
 import { AuthLayout } from "@/layouts";
 import { PageLayout } from "@shared/pages/layout";
@@ -333,6 +334,10 @@ export const router = createBrowserRouter([
                   {
                     path: "email",
                     element: <EmailPage />,
+                  },
+                  {
+                    path: "country",
+                    element: <CountryPage />,
                   },
                 ],
               },

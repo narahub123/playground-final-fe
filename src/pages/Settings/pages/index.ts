@@ -28,6 +28,7 @@ import {
   ScreenNamePage,
   PhonePage,
   EmailPage,
+  CountryPage,
 } from "./Account";
 import {
   SecurityAndAccountAccessPage,
@@ -94,6 +95,7 @@ export {
   ScreenNamePage,
   PhonePage,
   EmailPage,
+  CountryPage,
   About,
   AccountData,
   ChangePassword,
