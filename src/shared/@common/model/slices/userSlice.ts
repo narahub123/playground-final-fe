@@ -11,6 +11,7 @@ const initialState: UserType = {
   email: "example@example.com",
   isAuthenticated: false,
   regDate: new Date(),
+  country: "ko",
   language: "ko-KR",
   gender: "f",
   birth: "20060515",
@@ -35,10 +36,13 @@ const userSlice = createSlice({
     setEmail: (state, action: PayloadAction<string>) => {
       state.email = action.payload;
     },
+    setCountry: (state, action: PayloadAction<string>) => {
+      state.country = action.payload;
+    },
   },
 });
 
 export default userSlice.reducer;
 
-export const { setUser, setGender, setUserId, setPhone, setEmail } =
+export const { setUser, setGender, setUserId, setPhone, setEmail, setCountry } =
   userSlice.actions;

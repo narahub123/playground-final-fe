@@ -8,6 +8,7 @@ interface UserType {
   email: string;
   isAuthenticated: boolean;
   regDate: Date;
+  country: string;
   language: string;
   gender: GenderType;
   birth: string;

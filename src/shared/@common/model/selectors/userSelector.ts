@@ -6,5 +6,14 @@ const getGender = (state: RootState) => state.user.gender;
 const getUserId = (state: RootState) => state.user.userId;
 const getPhone = (state: RootState) => state.user.phone;
 const getEmail = (state: RootState) => state.user.email;
+const getCountry = (state: RootState) => state.user.country;
 
-export { getUser, getProfileImage, getGender, getUserId, getPhone, getEmail };
+export {
+  getUser,
+  getProfileImage,
+  getGender,
+  getUserId,
+  getPhone,
+  getEmail,
+  getCountry,
+};
