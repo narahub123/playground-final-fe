@@ -1,13 +1,17 @@
-import { MainLayout } from "@shared/pages/layout";
 import styles from "./CountryPage.module.css";
+import { MainLayout } from "@shared/pages/layout";
 import { Description } from "@shared/@common/ui/components";
 import { useRef, useState } from "react";
 import Select from "@shared/@common/ui/components/Select/Select";
 import { useFocusTrap } from "@shared/@common/model/hooks";
-import { langList } from "@shared/@common/data";
+import { countryList } from "@shared/@common/utils/countries";
+import { useSelector } from "react-redux";
+import { getLanguage } from "@shared/@common/model/selectors";
+import { setCountry } from "@shared/@common/model/slices/userSlice";
 
 const CountryPage = () => {
   const pageRef = useRef<HTMLDivElement>(null);
+  const langCode = useSelector(getLanguage);
   const [isOpen, setIsOpen] = useState(false);
 
   const { setLastClick } = useFocusTrap({
@@ -29,7 +33,8 @@ const CountryPage = () => {
               isOpen={isOpen}
               setIsOpen={setIsOpen}
               setLastClick={setLastClick}
-              list={langList}
+              list={countryList(langCode)}
+              reducer={setCountry}
             />
             <Description
               text={
