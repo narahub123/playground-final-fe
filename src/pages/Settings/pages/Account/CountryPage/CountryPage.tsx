@@ -6,12 +6,13 @@ import Select from "@shared/@common/ui/components/Select/Select";
 import { useFocusTrap } from "@shared/@common/model/hooks";
 import { countryList } from "@shared/@common/utils/countries";
 import { useSelector } from "react-redux";
-import { getLanguage } from "@shared/@common/model/selectors";
+import { getCountry, getLanguage } from "@shared/@common/model/selectors";
 import { setCountry } from "@shared/@common/model/slices/userSlice";
 
 const CountryPage = () => {
   const pageRef = useRef<HTMLDivElement>(null);
   const langCode = useSelector(getLanguage);
+  const countryCode = useSelector(getCountry);
   const [isOpen, setIsOpen] = useState(false);
 
   const { setLastClick } = useFocusTrap({
@@ -35,6 +36,7 @@ const CountryPage = () => {
               setLastClick={setLastClick}
               list={countryList(langCode)}
               reducer={setCountry}
+              initialValue={countryCode}
             />
             <Description
               text={

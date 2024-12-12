@@ -11,7 +11,7 @@ const initialState: UserType = {
   email: "example@example.com",
   isAuthenticated: false,
   regDate: new Date(),
-  country: "ko",
+  country: "kr",
   language: "ko-KR",
   gender: "f",
   birth: "20060515",
