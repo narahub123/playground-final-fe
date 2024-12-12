@@ -1082,6 +1082,11 @@ const pages = {
       fieldTitle: "現在のメールアドレス",
     },
   },
+  LanguagePage: {
+    pageTitle: "表示言語の変更",
+    description:
+      "このアカウントで使用するPGの見出し、ボタン、その他のテキストのデフォルト言語を選択してください。タイムラインに表示されるコンテンツの言語は変更されません。",
+  },
 };
 
 export default pages;

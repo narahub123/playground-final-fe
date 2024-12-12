@@ -1081,6 +1081,12 @@ const pages = {
       fieldTitle: "Current Email",
     },
   },
+  LanguagePage: {
+    pageTitle: "Change Display Language",
+    description:
+      "Select the default language for PG headlines, buttons, and other text used in this account. This will not change the language of content displayed on your timeline.",
+  },
+  
 };
 
 export default pages;

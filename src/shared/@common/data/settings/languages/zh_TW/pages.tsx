@@ -1059,6 +1059,11 @@ const pages = {
       fieldTitle: "當前電子郵件",
     },
   },
+  LanguagePage: {
+    pageTitle: "更改顯示語言",
+    description:
+      "選擇此帳戶中PG標題、按鈕和其他文字的預設語言。這不會更改時間軸中顯示的內容語言。",
+  },
 };
 
 export default pages;

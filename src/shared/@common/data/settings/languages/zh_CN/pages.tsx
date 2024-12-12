@@ -1058,6 +1058,11 @@ const pages = {
       fieldTitle: "当前邮箱",
     },
   },
+  LanguagePage: {
+    pageTitle: "更改显示语言",
+    description:
+      "选择此账户中PG标题、按钮和其他文本的默认语言。这不会更改时间线中显示的内容语言。",
+  },
 };
 
 export default pages;

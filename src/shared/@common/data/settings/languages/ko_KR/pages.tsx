@@ -1104,6 +1104,11 @@ const pages = {
       fieldTitle: "현재 이메일",
     },
   },
+  LanguagePage: {
+    pageTitle: "표시 언어 변경",
+    description:
+      "이 계정에서 PG 헤드라인, 버튼 및 기타 텍스트에 사용할 기본 언어를 선택하세요. 타임라인에 표시되는 콘텐츠의 언어는 변경되지 않습니다.",
+  },
 };
 
 export default pages;
