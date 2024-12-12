@@ -111,11 +111,9 @@ const Input = ({
             id={field}
             type={inputType}
             className={`${styles.input} ${focusCond}`}
-            onChange={
-              (e) => (valueMaxLength ? handleChange(e) : debounceHandleChange) // 문자열 제한이 없는 경우에만 debounce 적용
-            }
+            onChange={(e) => handleChange(e)}
             ref={inputRef}
-            value={value}
+            value={field === "password" ? undefined : value}
             aria-labelledby={field}
             aria-invalid={!isValid}
             aria-describedby={isValid ? "" : "input-error"}
