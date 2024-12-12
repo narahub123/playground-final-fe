@@ -1,0 +1,10 @@
+.container {
+  padding: 10px;
+}
+
+.age {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}

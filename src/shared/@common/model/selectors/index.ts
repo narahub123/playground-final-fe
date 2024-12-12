@@ -40,6 +40,7 @@ import {
   getPhone,
   getEmail,
   getCountry,
+  getBirth,
 } from "./userSelector";
 import {
   getSigninInfo,
@@ -90,6 +91,7 @@ export {
   getPhone,
   getEmail,
   getCountry,
+  getBirth,
   // signin
   getSigninInfo,
   getSigninUser,

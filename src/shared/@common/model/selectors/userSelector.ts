@@ -7,6 +7,7 @@ const getUserId = (state: RootState) => state.user.userId;
 const getPhone = (state: RootState) => state.user.phone;
 const getEmail = (state: RootState) => state.user.email;
 const getCountry = (state: RootState) => state.user.country;
+const getBirth = (state: RootState) => state.user.birth;
 
 export {
   getUser,
@@ -16,4 +17,5 @@ export {
   getPhone,
   getEmail,
   getCountry,
+  getBirth,
 };

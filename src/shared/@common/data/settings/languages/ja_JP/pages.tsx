@@ -438,7 +438,7 @@ const pages = {
       // 연령
       {
         title: "年齢",
-        path: "age",
+        path: "/settings/your_data/age",
         expl: calculateAge(user.birth),
       },
       // 자동화
@@ -1086,6 +1086,11 @@ const pages = {
     pageTitle: "表示言語の変更",
     description:
       "このアカウントで使用するPGの見出し、ボタン、その他のテキストのデフォルト言語を選択してください。タイムラインに表示されるコンテンツの言語は変更されません。",
+  },
+  AgePage: {
+    pageTitle: "年齢",
+    description: "Twitterが推定したあなたの年齢層です。",
+    info: "情報が間違っていますか？ 情報を公開することなくプロフィールに誕生日を追加できます。",
   },
 };
 

@@ -465,7 +465,7 @@ const pages = {
       // 연령
       {
         title: "연령",
-        path: "age",
+        path: "/settings/your_data/age",
         expl: calculateAge(user.birth),
       },
       // 자동화
@@ -1108,6 +1108,11 @@ const pages = {
     pageTitle: "표시 언어 변경",
     description:
       "이 계정에서 PG 헤드라인, 버튼 및 기타 텍스트에 사용할 기본 언어를 선택하세요. 타임라인에 표시되는 콘텐츠의 언어는 변경되지 않습니다.",
+  },
+  AgePage: {
+    pageTitle: "연령",
+    description: "트위터에서 추정한 내 연령대입니다.",
+    info: "정보가 잘못되었나요? 외부에 정보를 공개하지 않으면서 프로필에 생일을 추가할 수 있습니다.",
   },
 };
 

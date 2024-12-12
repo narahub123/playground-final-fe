@@ -63,10 +63,11 @@ import {
   PhonePage,
   EmailPage,
   CountryPage,
+  LanguagePage,
+  AgePage,
 } from "@pages/Settings/pages";
 import { AuthLayout } from "@/layouts";
 import { PageLayout } from "@shared/pages/layout";
-import { LanguagePage } from "@pages/Settings/pages/Account";
 
 // 로그인 여부 확인
 const login = true;
@@ -343,6 +344,10 @@ export const router = createBrowserRouter([
                   {
                     path: "language",
                     element: <LanguagePage />,
+                  },
+                  {
+                    path: "your_data/age",
+                    element: <AgePage />,
                   },
                 ],
               },

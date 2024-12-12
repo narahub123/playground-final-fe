@@ -433,7 +433,7 @@ const pages = {
       // 연령
       {
         title: "年齡",
-        path: "age",
+        path: "/settings/your_data/age",
         expl: calculateAge(user.birth),
       },
       // 자동화
@@ -1063,6 +1063,11 @@ const pages = {
     pageTitle: "更改顯示語言",
     description:
       "選擇此帳戶中PG標題、按鈕和其他文字的預設語言。這不會更改時間軸中顯示的內容語言。",
+  },
+  AgePage: {
+    pageTitle: "年齡",
+    description: "推特推測的您的年齡範圍。",
+    info: "資訊是否有誤？您可以在不公開資訊的情況下將生日新增至個人檔案。",
   },
 };
 

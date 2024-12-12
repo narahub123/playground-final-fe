@@ -438,7 +438,7 @@ const pages = {
       // 연령
       {
         title: "Age",
-        path: "age",
+        path: "/settings/your_data/age",
         expl: calculateAge(user.birth),
       },
       // 자동화
@@ -1086,7 +1086,11 @@ const pages = {
     description:
       "Select the default language for PG headlines, buttons, and other text used in this account. This will not change the language of content displayed on your timeline.",
   },
-  
+  AgePage: {
+    pageTitle: "Age",
+    description: "The age range estimated by Twitter.",
+    info: "Is the information incorrect? You can add your birthday to your profile without making it public.",
+  },
 };
 
 export default pages;
