@@ -1167,6 +1167,12 @@ const pages = {
       },
     ],
   },
+  DelegateGroupsPage: {
+    pageTitle: "委託給我的帳戶",
+    description:
+      "作為該社群的成員，您可以發送訊息、發布內容、創建和查看列表。此外，管理員可以邀請或移除帳戶參與者，並查看發布分析。",
+    empty: "沒有委託給我的帳戶。",
+  },
 };
 
 export default pages;

@@ -1166,6 +1166,12 @@ const pages = {
       },
     ],
   },
+  DelegateGroupsPage: {
+    pageTitle: "委托给我的账户",
+    description:
+      "作为该社区的成员，您可以发送消息、发布内容、创建和查看列表。此外，管理员可以邀请或移除账户参与者，并查看发布分析。",
+    empty: "没有委托给我的账户。",
+  },
 };
 
 export default pages;

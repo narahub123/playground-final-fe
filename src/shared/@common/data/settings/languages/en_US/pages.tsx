@@ -1194,6 +1194,12 @@ const pages = {
       },
     ],
   },
+  DelegateGroupsPage: {
+    pageTitle: "Accounts Delegated to Me",
+    description:
+      "As a member of this community, you can send messages, post, create and view lists. Additionally, administrators can invite or remove participants from the account and view post analytics.",
+    empty: "No accounts have been delegated to me.",
+  },
 };
 
 export default pages;

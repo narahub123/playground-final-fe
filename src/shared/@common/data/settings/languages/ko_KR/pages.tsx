@@ -1216,6 +1216,12 @@ const pages = {
       },
     ],
   },
+  DelegateGroupsPage: {
+    pageTitle: "나에게 위임된 계정",
+    description:
+      "이 커뮤니티의 멤버로서 쪽지를 보내고, 게시하고, 리스트를 만들고 볼 수 있습니다. 또한 관리자는 해당 계정에 참여자를 초대하거나 삭제할 수 있으며 게시 애널리틱스를 조회할 수도 있습니다.",
+    empty: "나에게 위임된 계정이 없습니다",
+  },
 };
 
 export default pages;

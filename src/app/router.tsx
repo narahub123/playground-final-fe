@@ -68,6 +68,8 @@ import {
   DevicesPage,
   ConnectedAccountsPage,
   DelegatePage,
+  DelegateGroupsPage,
+  // DelegateMembersPage,
 } from "@pages/Settings/pages";
 import { AuthLayout } from "@/layouts";
 import { PageLayout } from "@shared/pages/layout";
@@ -257,6 +259,14 @@ export const router = createBrowserRouter([
                     path: "delegate",
                     element: <DelegatePage />,
                   },
+                  {
+                    path: "delegate/groups",
+                    element: <DelegateGroupsPage />,
+                  },
+                  // {
+                  //   path: "delegate/members",
+                  //   element: <DelegateMembersPage />,
+                  // },
                   {
                     path: "audience_and_tagging",
                     element: <AudienceAndTaggingPage />,

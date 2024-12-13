@@ -42,6 +42,7 @@ import {
   DevicesPage,
   ConnectedAccountsPage,
   DelegatePage,
+  DelegateGroupsPage,
 } from "./SecurityAndAccountAccess";
 import {
   PrivacyAndSafetyPage,
@@ -116,6 +117,7 @@ export {
   AppAndSession,
   ConnectedAccounts,
   Delegate,
+  DelegateGroupsPage,
   AudienceAndTagging,
   YourPosts,
   SortContents,
