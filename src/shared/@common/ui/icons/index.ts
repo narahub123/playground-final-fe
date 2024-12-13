@@ -33,6 +33,8 @@ import {
   LuMapPin as pin,
   LuSlidersHorizontal as filter,
   LuArrowUpRight as outlink,
+  LuPlus as plus,
+  LuCheck as check,
 } from "react-icons/lu";
 import { CiLight as light, CiDark as dark } from "react-icons/ci";
 import {
@@ -85,6 +87,8 @@ const ICONS = {
   roundedCheckbox, // 둥근 체크 박스
   roundedCheckedbox, // 둥근 체크된 박스
   outlink, // hyperlinkCard
+  plus, // + , add
+  check, // 체크
 };
 
 export default ICONS;

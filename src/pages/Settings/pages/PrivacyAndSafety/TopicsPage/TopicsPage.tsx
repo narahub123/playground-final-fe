@@ -26,6 +26,9 @@ const TopicsPage = () => {
     description2,
   } = useLanguageMode(["pages", "TopicsPage"]);
 
+  const recs = ["강해린", "뉴진스"];
+
+  const list = topics.length !== 0 ? topics : recs;
   return (
     <MainLayout
       pageTitle={pageTitle}
@@ -39,8 +42,8 @@ const TopicsPage = () => {
           <div className={`${styles.section} ${styles[`border-bottom`]}`}>
             <Text text={heading} type="heading" />
             <Text text={expl} type="description" />
-            <ul>
-              {topics.map((item, index) => (
+            <ul className={styles.list}>
+              {list.map((item, index) => (
                 <TopicButton text={item} key={index} />
               ))}
             </ul>
