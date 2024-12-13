@@ -1129,6 +1129,20 @@ const pages = {
     description:
       "These are the apps connected to your account. You can view the information they access and revoke access.",
   },
+  SessionsPage: {
+    pageTitle: "Sessions",
+    description:
+      "Sessions are the devices currently using or have used your PG account. These sessions are logged into your account. You can log out of each session.",
+    heading1: "Current Active Session",
+    expl1:
+      "This device is logged into this PG account and is currently in use.",
+    heading2: "Log Out from Other Sessions",
+    expl2:
+      "This account is logged into this device, but it is not currently in use.",
+    expl3:
+      "Logging out will end 4 other active PG sessions. This will not affect your current active session.",
+    hyperlink: "Log out of all other sessions",
+  },
 };
 
 export default pages;

@@ -31,6 +31,7 @@ import {
   getTwoFactorAuthentication,
   getHideLabel,
   getConnectedApps,
+  getSessions,
 } from "./settingsSelectors";
 import { getIsLoggedIn } from "./loginSelector";
 import {
@@ -83,6 +84,7 @@ export {
   getTwoFactorAuthentication,
   getHideLabel,
   getConnectedApps,
+  getSessions,
   // login
   getIsLoggedIn,
   // user

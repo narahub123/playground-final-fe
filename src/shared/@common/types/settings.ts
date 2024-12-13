@@ -28,6 +28,7 @@ type SettingsType = {
   twoFactorAuthentication: TwoFactorAuthentication; // 2단계 인증
   hideLabel: boolean; // 인증 라벨 숨기기
   connectedApps: string[]; // 연결된 앱
+  sessions: string[];
 };
 
 type TwoFactorAuthentication = "sms" | "app" | "key" | "";

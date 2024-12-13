@@ -45,6 +45,7 @@ const getTwoFactorAuthentication = (state: RootState) =>
   state.settings.twoFactorAuthentication;
 const getHideLabel = (state: RootState) => state.settings.hideLabel;
 const getConnectedApps = (state: RootState) => state.settings.connectedApps;
+const getSessions = (state: RootState) => state.settings.sessions;
 
 export {
   getSettings,
@@ -80,4 +81,5 @@ export {
   getTwoFactorAuthentication,
   getHideLabel,
   getConnectedApps,
+  getSessions,
 };

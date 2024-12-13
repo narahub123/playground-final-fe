@@ -37,6 +37,7 @@ import {
   LoginVerficationPage,
   IdVerficationPage,
   ConnectedAppsPage,
+  SessionsPage,
 } from "./SecurityAndAccountAccess";
 import {
   PrivacyAndSafetyPage,
@@ -102,6 +103,7 @@ export {
   PasswordPage,
   DownloadDataPage,
   ConnectedAppsPage,
+  SessionsPage,
   About,
   AppAndSession,
   ConnectedAccounts,

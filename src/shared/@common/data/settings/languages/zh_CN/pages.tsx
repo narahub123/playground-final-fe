@@ -1105,6 +1105,18 @@ const pages = {
     description:
       "这是连接到您账户的应用。您可以查看它们访问的信息并撤销访问权限。",
   },
+  SessionsPage: {
+    pageTitle: "会话",
+    description:
+      "会话是指当前使用或曾使用您PG账户的设备。这些会话已登录您的账户。您可以退出每个会话。",
+    heading1: "当前活动会话",
+    expl1: "此设备已登录此PG账户，并且当前正在使用中。",
+    heading2: "退出其他会话",
+    expl2: "此账户已登录此设备，但当前未在使用。",
+    expl3: "退出登录将结束其他4个活动PG会话。这不会影响您当前的活动会话。",
+    hyperlink: "退出所有其他会话",
+  },
+  
 };
 
 export default pages;

@@ -47,6 +47,7 @@ const initialState: SettingsType = {
   twoFactorAuthentication: "", // 2단계 인증
   hideLabel: false,
   connectedApps: [],
+  sessions: [],
 };
 
 // 페이지 로드 전에 setting를 먼저 로드해야 함
@@ -159,6 +160,9 @@ const settingsSlice = createSlice({
     setConnectedApps: (state, action: PayloadAction<string>) => {
       state.connectedApps = [...state.connectedApps, action.payload];
     },
+    setSessions: (state, action: PayloadAction<string>) => {
+      state.sessions = [...state.sessions, action.payload];
+    },
   },
 });
 
@@ -197,4 +201,5 @@ export const {
   setTwoFactorAuthentication,
   setHideLabel,
   setConnectedApps,
+  setSessions,
 } = settingsSlice.actions;

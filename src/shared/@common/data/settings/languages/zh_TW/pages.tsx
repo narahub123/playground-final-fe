@@ -1106,6 +1106,17 @@ const pages = {
     description:
       "這是連接到您賬戶的應用。您可以查看它們訪問的信息並撤銷訪問權限。",
   },
+  SessionsPage: {
+    pageTitle: "會話",
+    description:
+      "會話是指當前使用或曾使用您PG賬戶的設備。這些會話已登錄您的賬戶。您可以退出每個會話。",
+    heading1: "當前活動會話",
+    expl1: "此設備已登錄此PG賬戶，並且當前正在使用中。",
+    heading2: "退出其他會話",
+    expl2: "此賬戶已登錄此設備，但當前未在使用。",
+    expl3: "退出登錄將結束其他4個活動PG會話。這不會影響您當前的活動會話。",
+    hyperlink: "退出所有其他會話",
+  },
 };
 
 export default pages;
