@@ -9,6 +9,7 @@ import CountryPage from "./CountryPage/CountryPage";
 import LanguagePage from "./LanguagePage/LanguagePage";
 import AgePage from "./AgePage/AgePage";
 import PasswordPage from "./PasswordPage/PasswordPage";
+import DownloadDataPage from "./DownloadDataPage/DownloadDataPage";
 
 export {
   AccountPage,
@@ -22,4 +23,5 @@ export {
   LanguagePage,
   AgePage,
   PasswordPage,
+  DownloadDataPage,
 };

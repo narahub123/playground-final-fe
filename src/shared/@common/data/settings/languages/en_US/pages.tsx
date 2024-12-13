@@ -1112,6 +1112,18 @@ const pages = {
       text: "Save",
     },
   },
+  DownloadDataPage: {
+    pageTitle: "Download Your Data Archive",
+    description:
+      "Gain insights into the types of information stored in your account.",
+    expl1:
+      "You can request a ZIP file containing your account information, account history, apps and devices, account activity, interests, and ad data records. When your data archive is ready to download, you will receive an in-app notification.",
+    expl2:
+      "Your data archive is ready. It can be downloaded and viewed in a desktop browser. This data will expire in a few days, so don't forget to download it before then.",
+    button: {
+      text: "Download Data",
+    },
+  },
 };
 
 export default pages;

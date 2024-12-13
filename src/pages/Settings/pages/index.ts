@@ -32,6 +32,7 @@ import {
   LanguagePage,
   AgePage,
   PasswordPage,
+  DownloadDataPage,
 } from "./Account";
 import {
   SecurityAndAccountAccessPage,
@@ -102,6 +103,7 @@ export {
   LanguagePage,
   AgePage,
   PasswordPage,
+  DownloadDataPage,
   About,
   AccountData,
   ChangePassword,

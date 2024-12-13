@@ -66,6 +66,7 @@ import {
   LanguagePage,
   AgePage,
   PasswordPage,
+  DownloadDataPage,
 } from "@pages/Settings/pages";
 import { AuthLayout } from "@/layouts";
 import { PageLayout } from "@shared/pages/layout";
@@ -213,7 +214,7 @@ export const router = createBrowserRouter([
                   // 다운로드 데이터
                   {
                     path: "download_data",
-                    element: <DownloadData />,
+                    element: <DownloadDataPage />,
                   },
                   // 계정 비활성화
                   {
