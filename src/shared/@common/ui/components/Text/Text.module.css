@@ -3,7 +3,6 @@
   color: var(--color-description);
 }
 
-.title {
-  font-weight: bold;
+.heading {
   font-size: var(--font-size-title);
 }
