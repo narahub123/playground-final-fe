@@ -14,6 +14,8 @@ import ProfileContainer from "./ProfileContainer/ProfileContainer";
 import HyperLink from "./HyperLink/HyperLink";
 import HyperLinkCard from "./HyperLinkCard/HyperLinkCard";
 import Button from "./Button/Button";
+import Toggle from "./Toggle/Toggle";
+
 export {
   Icon,
   ListModal,
@@ -33,4 +35,5 @@ export {
   HyperLink,
   HyperLinkCard,
   Button,
+  Toggle,
 };
