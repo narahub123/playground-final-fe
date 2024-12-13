@@ -1117,6 +1117,23 @@ const pages = {
     expl3: "退出登錄將結束其他4個活動PG會話。這不會影響您當前的活動會話。",
     hyperlink: "退出所有其他會話",
   },
+  LoginHistoryPage: {
+    pageTitle: "帳戶訪問記錄",
+    description: (
+      <>
+        如果應用程式中檢測到可疑活動，請從{" "}
+        <HyperLink text="已連接應用" path="/settings/connected_app" />
+        阻止訪問。基於IP的位置信息可能與實際位置不同。
+      </>
+    ),
+    heading1: "驗證您的密碼。",
+    expl1: "請輸入密碼以繼續。",
+    fieldTitle: "密碼",
+    hyperlink: "忘記密碼？",
+    button: {
+      text: "確認",
+    },
+  },
 };
 
 export default pages;

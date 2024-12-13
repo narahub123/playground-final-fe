@@ -1142,6 +1142,24 @@ const pages = {
       "ログアウトすると、他の4つのアクティブPGセッションが終了します。現在のアクティブセッションには影響しません。",
     hyperlink: "他のすべてのセッションからログアウト",
   },
+  LoginHistoryPage: {
+    pageTitle: "アカウントアクセス履歴",
+    description: (
+      <>
+        アプリで不審な活動が検出された場合は、{" "}
+        <HyperLink text="接続されたアプリ" path="/settings/connected_app" />
+        からアクセスをブロックしてください。
+        IPベースの位置情報は実際の位置と異なる場合があります。
+      </>
+    ),
+    heading1: "パスワードを確認してください。",
+    expl1: "続行するにはパスワードを入力してください。",
+    fieldTitle: "パスワード",
+    hyperlink: "パスワードを忘れましたか？",
+    button: {
+      text: "確認",
+    },
+  },
 };
 
 export default pages;

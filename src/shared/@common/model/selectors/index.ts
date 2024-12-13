@@ -32,6 +32,7 @@ import {
   getHideLabel,
   getConnectedApps,
   getSessions,
+  getLoginHistory,
 } from "./settingsSelectors";
 import { getIsLoggedIn } from "./loginSelector";
 import {
@@ -85,6 +86,7 @@ export {
   getHideLabel,
   getConnectedApps,
   getSessions,
+  getLoginHistory,
   // login
   getIsLoggedIn,
   // user

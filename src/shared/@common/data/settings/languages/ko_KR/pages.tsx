@@ -1165,6 +1165,23 @@ const pages = {
       "로그아웃하면 4개의 다른 활성 PG 세션이 종료됩니다. 현재의 활성 세션에는 영향을 미치지 않습니다. ",
     hyperlink: "기타 모든 세션에서 로그아웃",
   },
+  LoginHistoryPage: {
+    pageTitle: "계정 액세스 기록",
+    description: (
+      <>
+        앱에서 의심스러운 활동이 발견된 경우{" "}
+        <HyperLink text="연결된 앱" path="/settings/connected_app" />
+        에서 액세스를 차단하세요. IP 기반 위치는 실제 위치와 다를 수 있습니다.
+      </>
+    ),
+    heading1: "비밀번호를 확인하세요.",
+    expl1: "비밀번호를 입력하여 계속하세요.",
+    fieldTitle: "비밀번호",
+    hyperlink: "비밀번호를 잊으셨나요?",
+    button: {
+      text: "확인",
+    },
+  },
 };
 
 export default pages;

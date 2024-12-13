@@ -1,0 +1,17 @@
+.section {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hyperlink {
+  font-size: 12px;
+}
+
+.button-container {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: end;
+}

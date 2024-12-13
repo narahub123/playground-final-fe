@@ -1143,6 +1143,23 @@ const pages = {
       "Logging out will end 4 other active PG sessions. This will not affect your current active session.",
     hyperlink: "Log out of all other sessions",
   },
+  LoginHistoryPage: {
+    pageTitle: "Account Access History",
+    description: (
+      <>
+        If suspicious activity is detected in the app, block access from{" "}
+        <HyperLink text="Connected Apps" path="/settings/connected_app" />.
+        IP-based locations may differ from actual locations.
+      </>
+    ),
+    heading1: "Verify your password.",
+    expl1: "Enter your password to continue.",
+    fieldTitle: "Password",
+    hyperlink: "Forgot your password?",
+    button: {
+      text: "Confirm",
+    },
+  },
 };
 
 export default pages;

@@ -48,6 +48,7 @@ const initialState: SettingsType = {
   hideLabel: false,
   connectedApps: [],
   sessions: [],
+  loginHistory: [],
 };
 
 // 페이지 로드 전에 setting를 먼저 로드해야 함
@@ -163,6 +164,9 @@ const settingsSlice = createSlice({
     setSessions: (state, action: PayloadAction<string>) => {
       state.sessions = [...state.sessions, action.payload];
     },
+    setLoginHistory: (state, action: PayloadAction<string>) => {
+      state.loginHistory = [...state.loginHistory, action.payload];
+    },
   },
 });
 
@@ -202,4 +206,5 @@ export const {
   setHideLabel,
   setConnectedApps,
   setSessions,
+  setLoginHistory,
 } = settingsSlice.actions;
