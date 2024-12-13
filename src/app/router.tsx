@@ -27,12 +27,9 @@ import {
   AccountPage,
   AppsAndSessionsPage,
   About,
-  ChangePassword,
   ConnectedAccounts,
-  DataUsage,
   Delegate,
   Display,
-  DownloadData,
   SecurityAndAccountAccessPage,
   PrivacyAndSafetyPage,
   NotificationsPage,
@@ -239,10 +236,10 @@ export const router = createBrowserRouter([
                     path: "delegate",
                     element: <Delegate />,
                   },
-                  {
-                    path: "connected_accounts",
-                    element: <DownloadData />,
-                  },
+                  // {
+                  //   path: "connected_accounts",
+                  //   element: <DownloadData />,
+                  // },
                   {
                     path: "delegate",
                     element: <Delegate />,

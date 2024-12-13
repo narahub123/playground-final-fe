@@ -1,8 +1,4 @@
 import About from "./About/About";
-import AccountData from "./AccountFolder/AccountData/AccountData";
-import ChangePassword from "./AccountFolder/ChangePassword/ChangePassword";
-import DownloadData from "./AccountFolder/DownloadData/DownloadData";
-import Deactivate from "./AccountFolder/Deactivate/Deactivate";
 import AppAndSession from "./SecurityFolder/AppAndSession/AppAndSession";
 import ConnectedAccounts from "./SecurityFolder/ConnectedAccounts/ConnectedAccounts";
 import Delegate from "./SecurityFolder/Delegate/Delegate";
@@ -105,10 +101,6 @@ export {
   PasswordPage,
   DownloadDataPage,
   About,
-  AccountData,
-  ChangePassword,
-  DownloadData,
-  Deactivate,
   AppAndSession,
   ConnectedAccounts,
   Delegate,
