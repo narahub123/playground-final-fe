@@ -1,17 +1,26 @@
-import { useState } from "react";
+import { useAppDispatch } from "@app/store";
 import styles from "./Toggle.module.css";
+import { ActionCreatorWithPayload } from "@reduxjs/toolkit";
 
 interface ToggleProps {
-  value?: boolean;
+  toggle?: boolean;
+  reducer?: ActionCreatorWithPayload<any, string>;
   size?: number;
   unit?: string;
 }
 
-const Toggle = ({ value = false, size = 16, unit = "px" }: ToggleProps) => {
-  const [toggle, setToggle] = useState(value);
+const Toggle = ({
+  toggle = false,
+  reducer,
+  size = 16,
+  unit = "px",
+}: ToggleProps) => {
+  const dispatch = useAppDispatch();
 
   const handleClick = () => {
-    setToggle(!toggle);
+    if (reducer) {
+      dispatch(reducer(!toggle));
+    }
   };
   return (
     <div
