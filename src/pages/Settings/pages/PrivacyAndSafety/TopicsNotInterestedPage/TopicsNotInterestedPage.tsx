@@ -1,5 +1,6 @@
 import styles from "./TopicsNotInterestedPage.module.css";
 import { useLanguageMode } from "@shared/@common/model/hooks";
+import { TopicFollowCard } from "@shared/@common/ui/components";
 import { MainLayout } from "@shared/pages/layout";
 import { Tab } from "@shared/pages/ui";
 
@@ -15,7 +16,7 @@ const TopicsNotInterestedPage = () => {
       bottomContent={
         <ul className={styles.list}>
           {list.map((item, index) => (
-            <li key={index}>{item}</li>
+            <TopicFollowCard key={index} text={item} />
           ))}
         </ul>
       }
