@@ -2,17 +2,9 @@ import { MainLayout } from "@shared/pages/layout";
 import styles from "./TopicsPage.module.css";
 import { useLanguageMode } from "@shared/@common/model/hooks";
 import { Tab } from "@shared/pages/ui";
-import { HyperLink, Text } from "@shared/@common/ui/components";
+import { HyperLink, Text, TopicButton } from "@shared/@common/ui/components";
 import { useSelector } from "react-redux";
 import { getTopics } from "@shared/@common/model/selectors";
-
-interface TopicButtonProps {
-  text: string;
-}
-
-const TopicButton = ({ text }: TopicButtonProps) => {
-  return <span>{text}</span>;
-};
 
 const TopicsPage = () => {
   const topics = useSelector(getTopics);
