@@ -15,6 +15,7 @@ import HyperLink from "./HyperLink/HyperLink";
 import HyperLinkCard from "./HyperLinkCard/HyperLinkCard";
 import Button from "./Button/Button";
 import Toggle from "./Toggle/Toggle";
+import Text from "./Text/Text";
 
 export {
   Icon,
@@ -36,4 +37,5 @@ export {
   HyperLinkCard,
   Button,
   Toggle,
+  Text,
 };

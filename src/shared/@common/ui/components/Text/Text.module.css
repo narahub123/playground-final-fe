@@ -1,0 +1,9 @@
+.description {
+  font-size: var(--font-size-description);
+  color: var(--color-description);
+}
+
+.title {
+  font-weight: bold;
+  font-size: var(--font-size-title);
+}
