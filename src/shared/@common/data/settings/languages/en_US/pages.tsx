@@ -1160,6 +1160,12 @@ const pages = {
       text: "Confirm",
     },
   },
+  DevicesPage: {
+    pageTitle: "Logged-in Devices and Apps",
+    heading1: "Mobile Devices",
+    expl1:
+      "This includes the browsers, devices, and information PG uses to customize your user experience. It also includes devices and browsers you've never used to log in to X, as well as email addresses and phone numbers linked to your PG account.",
+  },
 };
 
 export default pages;

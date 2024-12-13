@@ -39,6 +39,7 @@ import {
   ConnectedAppsPage,
   SessionsPage,
   LoginHistoryPage,
+  DevicesPage,
 } from "./SecurityAndAccountAccess";
 import {
   PrivacyAndSafetyPage,
@@ -106,6 +107,7 @@ export {
   ConnectedAppsPage,
   SessionsPage,
   LoginHistoryPage,
+  DevicesPage,
   About,
   AppAndSession,
   ConnectedAccounts,

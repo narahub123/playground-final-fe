@@ -6,6 +6,7 @@ import IdVerficationPage from "./IdVerficationPage/IdVerficationPage";
 import ConnectedAppsPage from "./ConnectedAppsPage/ConnectedAppsPage";
 import SessionsPage from "./SessionsPage/SessionsPage";
 import LoginHistoryPage from "./LoginHistoryPage/LoginHistoryPage";
+import DevicesPage from "./DevicesPage/DevicesPage";
 
 export {
   SecurityAndAccountAccessPage,
@@ -16,4 +17,5 @@ export {
   ConnectedAppsPage,
   SessionsPage,
   LoginHistoryPage,
+  DevicesPage,
 };

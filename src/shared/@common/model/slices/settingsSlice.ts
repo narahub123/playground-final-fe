@@ -49,6 +49,7 @@ const initialState: SettingsType = {
   connectedApps: [],
   sessions: [],
   loginHistory: [],
+  devices: [],
 };
 
 // 페이지 로드 전에 setting를 먼저 로드해야 함
@@ -167,6 +168,9 @@ const settingsSlice = createSlice({
     setLoginHistory: (state, action: PayloadAction<string>) => {
       state.loginHistory = [...state.loginHistory, action.payload];
     },
+    setDevices: (state, action: PayloadAction<string>) => {
+      state.devices = [...state.devices, action.payload];
+    },
   },
 });
 
@@ -207,4 +211,5 @@ export const {
   setConnectedApps,
   setSessions,
   setLoginHistory,
+  setDevices,
 } = settingsSlice.actions;

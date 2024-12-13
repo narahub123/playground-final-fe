@@ -67,6 +67,7 @@ import {
   ConnectedAppsPage,
   SessionsPage,
   LoginHistoryPage,
+  DevicesPage,
 } from "@pages/Settings/pages";
 import { AuthLayout } from "@/layouts";
 import { PageLayout } from "@shared/pages/layout";
@@ -232,6 +233,10 @@ export const router = createBrowserRouter([
                     element: <AppsAndSessionsPage />,
                   },
                   {
+                    path: "connected_accounts",
+                    element: <ConnectedAccounts />,
+                  },
+                  {
                     path: "connected_apps",
                     element: <ConnectedAppsPage />,
                   },
@@ -244,9 +249,10 @@ export const router = createBrowserRouter([
                     element: <LoginHistoryPage />,
                   },
                   {
-                    path: "connected_accounts",
-                    element: <ConnectedAccounts />,
+                    path: "devices",
+                    element: <DevicesPage />,
                   },
+
                   {
                     path: "delegate",
                     element: <Delegate />,

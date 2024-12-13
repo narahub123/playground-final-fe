@@ -47,6 +47,7 @@ const getHideLabel = (state: RootState) => state.settings.hideLabel;
 const getConnectedApps = (state: RootState) => state.settings.connectedApps;
 const getSessions = (state: RootState) => state.settings.sessions;
 const getLoginHistory = (state: RootState) => state.settings.loginHistory;
+const getDevices = (state: RootState) => state.settings.devices;
 
 export {
   getSettings,
@@ -84,4 +85,5 @@ export {
   getConnectedApps,
   getSessions,
   getLoginHistory,
+  getDevices,
 };

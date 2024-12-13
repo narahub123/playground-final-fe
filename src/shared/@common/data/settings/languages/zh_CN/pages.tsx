@@ -1133,6 +1133,12 @@ const pages = {
       text: "确认",
     },
   },
+  DevicesPage: {
+    pageTitle: "已登录的设备和应用",
+    heading1: "手机",
+    expl1:
+      "包括PG用于定制用户体验的浏览器、设备和信息，还包括您从未用于登录X的设备和浏览器，以及与您的PG帐户关联的电子邮件地址和电话号码。",
+  },
 };
 
 export default pages;

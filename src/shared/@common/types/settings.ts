@@ -30,6 +30,7 @@ type SettingsType = {
   connectedApps: string[]; // 연결된 앱
   sessions: string[];
   loginHistory: string[];
+  devices: string[];
 };
 
 type TwoFactorAuthentication = "sms" | "app" | "key" | "";

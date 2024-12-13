@@ -1134,6 +1134,12 @@ const pages = {
       text: "確認",
     },
   },
+  DevicesPage: {
+    pageTitle: "已登錄的裝置和應用",
+    heading1: "手機",
+    expl1:
+      "包括PG用於定制用戶體驗的瀏覽器、裝置和信息，還包括您從未用於登錄X的裝置和瀏覽器，以及與您的PG帳戶關聯的電子郵件地址和電話號碼。",
+  },
 };
 
 export default pages;

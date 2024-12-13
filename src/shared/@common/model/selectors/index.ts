@@ -33,6 +33,7 @@ import {
   getConnectedApps,
   getSessions,
   getLoginHistory,
+  getDevices,
 } from "./settingsSelectors";
 import { getIsLoggedIn } from "./loginSelector";
 import {
@@ -87,6 +88,7 @@ export {
   getConnectedApps,
   getSessions,
   getLoginHistory,
+  getDevices,
   // login
   getIsLoggedIn,
   // user
