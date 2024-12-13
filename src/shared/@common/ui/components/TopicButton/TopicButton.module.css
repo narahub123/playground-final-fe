@@ -1,0 +1,30 @@
+.container {
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  width: 152.6px;
+}
+
+.checked {
+  border: none;
+  background-color: var(--theme-bgColor);
+  color: var(--theme-color);
+}
+
+.text {
+  margin-left: 5px;
+}
+
+.divider {
+  border-left: 1px solid #ccc;
+  height: var(--font-size);
+  width: 1px;
+}
+
+.plus {
+  color: var(--theme-bgColor);
+}
