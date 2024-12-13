@@ -1,11 +1,12 @@
 import { MainLayout } from "@shared/pages/layout";
 import styles from "./DelegatePage.module.css";
 import { useLanguageMode } from "@shared/@common/model/hooks";
-import { Description, Title } from "@shared/@common/ui/components";
+import { Description, Title, Toggle } from "@shared/@common/ui/components";
 import { SettingsContainer } from "@features/settings-setting/ui/components";
 import { SettingsBranchListContainerType } from "@features/settings-setting/types";
 import { useSelector } from "react-redux";
-import { getDelegate } from "@shared/@common/model/selectors";
+import { getCanbeInvited } from "@shared/@common/model/selectors";
+import { setCanBeInvited } from "@shared/@common/model/slices/settingsSlice";
 
 interface TextProps {
   text: string;
@@ -16,6 +17,7 @@ const Text = ({ text }: TextProps) => {
 };
 
 const DelegatePage = () => {
+  const canBeInvited = useSelector(getCanbeInvited);
   const { pageTitle, description, text, expl, heading, list } = useLanguageMode(
     ["pages", "DelegatePage"]
   );
@@ -29,7 +31,7 @@ const DelegatePage = () => {
           <div className={styles[`slider-section`]}>
             <div className={styles.container}>
               <Text text={text} />
-              {/* 슬라이더 */}
+              <Toggle toggle={canBeInvited} reducer={setCanBeInvited} />
             </div>
             <Description text={expl} />
           </div>

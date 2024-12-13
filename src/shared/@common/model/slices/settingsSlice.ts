@@ -51,6 +51,7 @@ const initialState: SettingsType = {
   loginHistory: [],
   devices: [],
   connectedAccounts: [],
+  canBeInvited: false,
   delegate: {
     groups: [],
     members: [],
@@ -185,6 +186,9 @@ const settingsSlice = createSlice({
     setDelegateMembers: (state, action: PayloadAction<string>) => {
       state.delegate.members = [...state.delegate.members, action.payload];
     },
+    setCanBeInvited: (state, action: PayloadAction<boolean>) => {
+      state.canBeInvited = action.payload;
+    },
   },
 });
 
@@ -227,6 +231,7 @@ export const {
   setLoginHistory,
   setDevices,
   setConnectedAccounts,
+  setCanBeInvited,
   setDelegateGroups,
   setDelegateMembers,
 } = settingsSlice.actions;

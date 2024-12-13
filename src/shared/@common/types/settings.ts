@@ -32,6 +32,7 @@ type SettingsType = {
   loginHistory: string[];
   devices: string[];
   connectedAccounts: string[]; // 연결된 계정
+  canBeInvited: boolean;
   delegate: {
     groups: string[];
     members: string[];

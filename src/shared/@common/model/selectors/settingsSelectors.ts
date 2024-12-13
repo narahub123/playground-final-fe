@@ -54,6 +54,7 @@ const getDelegate = (state: RootState) => state.settings.delegate;
 const getDelegateGroups = (state: RootState) => state.settings.delegate.groups;
 const getDelegateMembers = (state: RootState) =>
   state.settings.delegate.members;
+const getCanbeInvited = (state: RootState) => state.settings.canBeInvited;
 
 export {
   getSettings,
@@ -93,6 +94,7 @@ export {
   getLoginHistory,
   getDevices,
   getConnectedAccounts,
+  getCanbeInvited,
   getDelegate,
   getDelegateGroups,
   getDelegateMembers,
