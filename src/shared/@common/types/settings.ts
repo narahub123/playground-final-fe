@@ -37,7 +37,13 @@ type SettingsType = {
     groups: string[];
     members: string[];
   };
+  tagging: {
+    allow: boolean;
+    whom?: TaggingWhomType;
+  };
 };
+
+type TaggingWhomType = "all" | "followers";
 
 type TwoFactorAuthentication = "sms" | "app" | "key" | "";
 
@@ -93,4 +99,5 @@ export type {
   NotificationsType,
   MutesType,
   TwoFactorAuthentication,
+  TaggingWhomType,
 };

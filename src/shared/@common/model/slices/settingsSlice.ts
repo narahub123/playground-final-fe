@@ -6,6 +6,7 @@ import {
   ColorThemeType,
   FontSizeType,
   SettingsType,
+  TaggingWhomType,
   TwoFactorAuthentication,
 } from "@shared/@common/types";
 
@@ -55,6 +56,10 @@ const initialState: SettingsType = {
   delegate: {
     groups: [],
     members: [],
+  },
+  tagging: {
+    allow: false,
+    whom: "all",
   },
 };
 
@@ -189,6 +194,12 @@ const settingsSlice = createSlice({
     setCanBeInvited: (state, action: PayloadAction<boolean>) => {
       state.canBeInvited = action.payload;
     },
+    setAllowTagging: (state, action: PayloadAction<boolean>) => {
+      state.tagging.allow = action.payload;
+    },
+    setAllowTaggingWhom: (state, action: PayloadAction<TaggingWhomType>) => {
+      state.tagging.whom = action.payload;
+    },
   },
 });
 
@@ -234,4 +245,6 @@ export const {
   setCanBeInvited,
   setDelegateGroups,
   setDelegateMembers,
+  setAllowTagging,
+  setAllowTaggingWhom,
 } = settingsSlice.actions;

@@ -27,6 +27,7 @@ import {
   getMutePhoneAuthenticated,
   getTwoFactorAuthentication,
   getHideLabel,
+  getAllowTaggingWhom,
 } from "@shared/@common/model/selectors";
 import {
   setAddImgExpl,
@@ -56,6 +57,7 @@ import {
   setMutePhoneAuthenticated,
   setTwoFactorAuthentication,
   setHideLabel,
+  setAllowTaggingWhom,
 } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
@@ -1206,6 +1208,27 @@ const pages = {
       "Invite other users to manage account roles on your behalf. Members can send messages, post, create and view lists.",
     hyperlink: "Invite Members",
     empty: "No members have been added yet.",
+  },
+  TaggingPage: {
+    pageTitle: "Photo Tagging",
+    text: "Photo Tagging",
+    expl: "Allow people to tag me in their photos and receive notifications whenever I'm tagged.",
+    item: {
+      type: "checkboxlist",
+      selector: getAllowTaggingWhom,
+      comp: [
+        {
+          text: "Allow anyone to tag me",
+          reducer: setAllowTaggingWhom,
+          value: "all",
+        },
+        {
+          text: "Allow only people I follow to tag me",
+          reducer: setAllowTaggingWhom,
+          value: "followers",
+        },
+      ],
+    },
   },
 };
 

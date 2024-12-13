@@ -25,6 +25,7 @@ import {
   NotificationsType,
   MutesType,
   TwoFactorAuthentication,
+  TaggingWhomType,
 } from "./settings";
 
 // 컴포넌트
@@ -53,6 +54,7 @@ export type {
   NotificationsType,
   MutesType,
   TwoFactorAuthentication,
+  TaggingWhomType,
 
   // components
   HyperLinkCardType,

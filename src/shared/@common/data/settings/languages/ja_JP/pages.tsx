@@ -27,6 +27,7 @@ import {
   getMutePhoneAuthenticated,
   getTwoFactorAuthentication,
   getHideLabel,
+  getAllowTaggingWhom,
 } from "@shared/@common/model/selectors";
 import {
   setAddImgExpl,
@@ -56,6 +57,7 @@ import {
   setMutePhoneAuthenticated,
   setTwoFactorAuthentication,
   setHideLabel,
+  setAllowTaggingWhom,
 } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
@@ -1206,6 +1208,27 @@ const pages = {
       "他のユーザーを招待して、自分の代わりにアカウントの役割を管理できるようにします。メンバーはメッセージを送信したり、投稿したり、リストを作成および閲覧することができます。",
     hyperlink: "メンバーを招待する",
     empty: "まだメンバーが追加されていません。",
+  },
+  TaggingPage: {
+    pageTitle: "写真のタグ付け",
+    text: "写真のタグ付け",
+    expl: "他の人が自分を写真にタグ付けすることを許可し、タグ付けされるたびに通知を受け取ります。",
+    item: {
+      type: "checkboxlist",
+      selector: getAllowTaggingWhom,
+      comp: [
+        {
+          text: "誰でも自分をタグ付けできるように許可する",
+          reducer: setAllowTaggingWhom,
+          value: "all",
+        },
+        {
+          text: "フォローしている人のみが自分をタグ付けできるように許可する",
+          reducer: setAllowTaggingWhom,
+          value: "followers",
+        },
+      ],
+    },
   },
 };
 

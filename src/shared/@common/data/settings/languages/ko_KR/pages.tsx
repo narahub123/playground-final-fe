@@ -26,6 +26,7 @@ import {
   setProtectRenewPassword,
   setTwoFactorAuthentication,
   setHideLabel,
+  setAllowTaggingWhom,
 } from "@shared/@common/model/slices/settingsSlice";
 import { SettingsType, UserType } from "@shared/@common/types";
 import { countryNamesKor } from "@shared/@common/data/countries";
@@ -64,6 +65,7 @@ import {
   getProtectRenewPassword,
   getTwoFactorAuthentication,
   getHideLabel,
+  getAllowTaggingWhom,
 } from "@shared/@common/model/selectors";
 import regExp from "@shared/@common/data/regExp";
 
@@ -1228,6 +1230,27 @@ const pages = {
       "다른 사용자를 초대하여 내 계정을 대신해 계정 역할을 관리하도록 합니다. 멤버는 쪽지를 보내고, 게시하고, 리스트를 만들고 볼 수 있습니다.",
     hyperlink: "멤버 초대하기",
     empty: "아직 추가한 멤버가 없습니다.",
+  },
+  TaggingPage: {
+    pageTitle: "사진 태그하기",
+    text: "사진 태그하기",
+    expl: "사람들이 나를 그들의 사진에 태그하도록 허용하고 태그될 때마다 알림을 받습니다.",
+    item: {
+      type: "checkboxlist",
+      selector: getAllowTaggingWhom,
+      comp: [
+        {
+          text: "누구나 나를 태그할 수 있도록 허용",
+          reducer: setAllowTaggingWhom,
+          value: "all",
+        },
+        {
+          text: "내가 팔로우하는 사람만 나를 태그할 수 있도록 허용",
+          reducer: setAllowTaggingWhom,
+          value: "followers",
+        },
+      ],
+    },
   },
 };
 

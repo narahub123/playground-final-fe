@@ -9,6 +9,7 @@ import AdsPreferencesPage from "./AdsPreferencesPage/AdsPreferencesPage";
 import LocationInfoPage from "./LocationInfoPage/LocationInfoPage";
 import LocationPage from "./LocationPage/LocationPage";
 import NotificationAdvancedFilters from "./NotificationAdvancedFilters/NotificationAdvancedFilters";
+import TaggingPage from "./TaggingPage/TaggingPage";
 
 export {
   PrivacyAndSafetyPage,
@@ -22,4 +23,5 @@ export {
   LocationInfoPage,
   LocationPage,
   NotificationAdvancedFilters,
+  TaggingPage,
 };

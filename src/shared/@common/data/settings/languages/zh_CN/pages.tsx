@@ -27,6 +27,7 @@ import {
   getMutePhoneAuthenticated,
   getTwoFactorAuthentication,
   getHideLabel,
+  getAllowTaggingWhom,
 } from "@shared/@common/model/selectors";
 import {
   setAddImgExpl,
@@ -56,6 +57,7 @@ import {
   setMutePhoneAuthenticated,
   setTwoFactorAuthentication,
   setHideLabel,
+  setAllowTaggingWhom,
 } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
@@ -1178,6 +1180,27 @@ const pages = {
       "邀请其他用户代表您管理账户角色。成员可以发送消息、发布内容、创建和查看列表。",
     hyperlink: "邀请成员",
     empty: "尚未添加成员。",
+  },
+  TaggingPage: {
+    pageTitle: "照片标记",
+    text: "照片标记",
+    expl: "允许他人在照片中标记我，并在被标记时收到通知。",
+    item: {
+      type: "checkboxlist",
+      selector: getAllowTaggingWhom,
+      comp: [
+        {
+          text: "允许任何人标记我",
+          reducer: setAllowTaggingWhom,
+          value: "all",
+        },
+        {
+          text: "仅允许我关注的人标记我",
+          reducer: setAllowTaggingWhom,
+          value: "followers",
+        },
+      ],
+    },
   },
 };
 

@@ -70,6 +70,7 @@ import {
   DelegatePage,
   DelegateGroupsPage,
   DelegateMembersPage,
+  TaggingPage,
 } from "@pages/Settings/pages";
 import { AuthLayout } from "@/layouts";
 import { PageLayout } from "@shared/pages/layout";
@@ -326,6 +327,10 @@ export const router = createBrowserRouter([
                   {
                     path: "data",
                     element: <DataPage />,
+                  },
+                  {
+                    path: "tagging",
+                    element: <TaggingPage />,
                   },
                   {
                     path: "autoplay",

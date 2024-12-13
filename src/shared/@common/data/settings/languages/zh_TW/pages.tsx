@@ -27,6 +27,7 @@ import {
   getMutePhoneAuthenticated,
   getTwoFactorAuthentication,
   getHideLabel,
+  getAllowTaggingWhom,
 } from "@shared/@common/model/selectors";
 import {
   setAddImgExpl,
@@ -56,6 +57,7 @@ import {
   setMutePhoneAuthenticated,
   setTwoFactorAuthentication,
   setHideLabel,
+  setAllowTaggingWhom,
 } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
@@ -1179,6 +1181,27 @@ const pages = {
       "邀請其他用戶代表您管理帳戶角色。成員可以發送訊息、發布內容、創建和查看列表。",
     hyperlink: "邀請成員",
     empty: "尚未添加成員。",
+  },
+  TaggingPage: {
+    pageTitle: "照片標籤",
+    text: "照片標籤",
+    expl: "允許他人在照片中標記我，並在被標記時接收通知。",
+    item: {
+      type: "checkboxlist",
+      selector: getAllowTaggingWhom,
+      comp: [
+        {
+          text: "允許任何人標記我",
+          reducer: setAllowTaggingWhom,
+          value: "all",
+        },
+        {
+          text: "僅允許我關注的人標記我",
+          reducer: setAllowTaggingWhom,
+          value: "followers",
+        },
+      ],
+    },
   },
 };
 
