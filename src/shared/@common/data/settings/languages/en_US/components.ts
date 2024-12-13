@@ -40,6 +40,10 @@ const components = {
   TopicButton: {
     hideIconTitle: "Hide",
   },
+  TopicFollowCard: {
+    following: "Following",
+    follow: "Follow",
+  },
 };
 
 export default components;

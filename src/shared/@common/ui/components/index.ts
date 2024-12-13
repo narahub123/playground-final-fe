@@ -17,6 +17,7 @@ import Button from "./Button/Button";
 import Toggle from "./Toggle/Toggle";
 import Text from "./Text/Text";
 import TopicButton from "./TopicButton/TopicButton";
+import TopicFollowCard from "./TopicFollowCard/TopicFollowCard";
 
 export {
   Icon,
@@ -40,4 +41,5 @@ export {
   Toggle,
   Text,
   TopicButton,
+  TopicFollowCard,
 };

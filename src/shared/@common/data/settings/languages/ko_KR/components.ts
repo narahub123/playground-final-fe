@@ -40,6 +40,10 @@ const components = {
   TopicButton: {
     hideIconTitle: "숨기기",
   },
+  TopicFollowCard: {
+    following: "팔로잉",
+    follow: "팔로우",
+  },
 };
 
 export default components;

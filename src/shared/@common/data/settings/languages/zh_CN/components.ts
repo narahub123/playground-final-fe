@@ -42,6 +42,10 @@ const components = {
   TopicButton: {
     hideIconTitle: "隐藏",
   },
+  TopicFollowCard: {
+    following: "已关注",
+    follow: "关注",
+  },
 };
 
 export default components;
