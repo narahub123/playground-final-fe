@@ -10,6 +10,7 @@ import DevicesPage from "./DevicesPage/DevicesPage";
 import ConnectedAccountsPage from "./ConnectedAccountsPage/ConnectedAccountsPage";
 import DelegatePage from "./DelegatePage/DelegatePage";
 import DelegateGroupsPage from "./DelegateGroupsPage/DelegateGroupsPage";
+import DelegateMembersPage from "./DelegateMembersPage/DelegateMembersPage";
 
 export {
   SecurityAndAccountAccessPage,
@@ -24,4 +25,5 @@ export {
   ConnectedAccountsPage,
   DelegatePage,
   DelegateGroupsPage,
+  DelegateMembersPage,
 };

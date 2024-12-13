@@ -1172,6 +1172,13 @@ const pages = {
       "作为该社区的成员，您可以发送消息、发布内容、创建和查看列表。此外，管理员可以邀请或移除账户参与者，并查看发布分析。",
     empty: "没有委托给我的账户。",
   },
+  DelegateMembersPage: {
+    pageTitle: "被委托的成员",
+    description:
+      "邀请其他用户代表您管理账户角色。成员可以发送消息、发布内容、创建和查看列表。",
+    hyperlink: "邀请成员",
+    empty: "尚未添加成员。",
+  },
 };
 
 export default pages;

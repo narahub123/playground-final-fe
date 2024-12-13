@@ -1173,6 +1173,13 @@ const pages = {
       "作為該社群的成員，您可以發送訊息、發布內容、創建和查看列表。此外，管理員可以邀請或移除帳戶參與者，並查看發布分析。",
     empty: "沒有委託給我的帳戶。",
   },
+  DelegateMembersPage: {
+    pageTitle: "被委託的成員",
+    description:
+      "邀請其他用戶代表您管理帳戶角色。成員可以發送訊息、發布內容、創建和查看列表。",
+    hyperlink: "邀請成員",
+    empty: "尚未添加成員。",
+  },
 };
 
 export default pages;

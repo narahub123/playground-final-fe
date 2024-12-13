@@ -1,0 +1,12 @@
+.hyperlink-container {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #eee;
+}
+
+.empty {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}

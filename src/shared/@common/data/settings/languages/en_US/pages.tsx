@@ -1200,6 +1200,13 @@ const pages = {
       "As a member of this community, you can send messages, post, create and view lists. Additionally, administrators can invite or remove participants from the account and view post analytics.",
     empty: "No accounts have been delegated to me.",
   },
+  DelegateMembersPage: {
+    pageTitle: "Delegated Members",
+    description:
+      "Invite other users to manage account roles on your behalf. Members can send messages, post, create and view lists.",
+    hyperlink: "Invite Members",
+    empty: "No members have been added yet.",
+  },
 };
 
 export default pages;

@@ -43,6 +43,7 @@ import {
   ConnectedAccountsPage,
   DelegatePage,
   DelegateGroupsPage,
+  DelegateMembersPage,
 } from "./SecurityAndAccountAccess";
 import {
   PrivacyAndSafetyPage,
@@ -118,6 +119,7 @@ export {
   ConnectedAccounts,
   Delegate,
   DelegateGroupsPage,
+  DelegateMembersPage,
   AudienceAndTagging,
   YourPosts,
   SortContents,
