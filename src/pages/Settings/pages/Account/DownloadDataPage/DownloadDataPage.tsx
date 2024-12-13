@@ -18,7 +18,7 @@ const DownloadDataPage = () => {
           <p>{expl1}</p>
           <p>{expl2}</p>
           <div className={styles[`button-container`]}>
-            <Button text="데이터 다운로드" handleClick={() => {}} />
+            <Button text={button.text} handleClick={() => {}} />
           </div>
         </>
       }
