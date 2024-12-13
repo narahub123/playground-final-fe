@@ -41,6 +41,7 @@ type SettingsType = {
     allow: boolean;
     whom?: TaggingWhomType;
   };
+  topics: string[];
 };
 
 type TaggingWhomType = "all" | "followers";

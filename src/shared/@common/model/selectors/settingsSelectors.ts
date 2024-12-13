@@ -57,6 +57,7 @@ const getDelegateMembers = (state: RootState) =>
 const getCanbeInvited = (state: RootState) => state.settings.canBeInvited;
 const getAllowTagging = (state: RootState) => state.settings.tagging.allow;
 const getAllowTaggingWhom = (state: RootState) => state.settings.tagging.whom;
+const getTopics = (state: RootState) => state.settings.topics;
 
 export {
   getSettings,
@@ -102,4 +103,5 @@ export {
   getDelegateMembers,
   getAllowTagging,
   getAllowTaggingWhom,
+  getTopics,
 };

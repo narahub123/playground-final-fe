@@ -61,6 +61,7 @@ const initialState: SettingsType = {
     allow: false,
     whom: "all",
   },
+  topics: ["강해린", "뉴진스"],
 };
 
 // 페이지 로드 전에 setting를 먼저 로드해야 함
@@ -200,6 +201,9 @@ const settingsSlice = createSlice({
     setAllowTaggingWhom: (state, action: PayloadAction<TaggingWhomType>) => {
       state.tagging.whom = action.payload;
     },
+    setTopics: (state, action: PayloadAction<string[]>) => {
+      state.topics = action.payload;
+    },
   },
 });
 
@@ -247,4 +251,5 @@ export const {
   setDelegateMembers,
   setAllowTagging,
   setAllowTaggingWhom,
+  setTopics,
 } = settingsSlice.actions;

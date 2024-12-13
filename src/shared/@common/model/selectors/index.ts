@@ -41,6 +41,7 @@ import {
   getDelegateMembers,
   getAllowTagging,
   getAllowTaggingWhom,
+  getTopics,
 } from "./settingsSelectors";
 import { getIsLoggedIn } from "./loginSelector";
 import {
@@ -103,6 +104,7 @@ export {
   getDelegateMembers,
   getAllowTagging,
   getAllowTaggingWhom,
+  getTopics,
   // login
   getIsLoggedIn,
   // user

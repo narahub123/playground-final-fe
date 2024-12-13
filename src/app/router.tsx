@@ -71,6 +71,7 @@ import {
   DelegateGroupsPage,
   DelegateMembersPage,
   TaggingPage,
+  TopicsPage,
 } from "@pages/Settings/pages";
 import { AuthLayout } from "@/layouts";
 import { PageLayout } from "@shared/pages/layout";
@@ -78,7 +79,7 @@ import { PageLayout } from "@shared/pages/layout";
 // 로그인 여부 확인
 const login = true;
 // 로그인 한 경우 유저 아이디
-const id = "abc";
+const id = "abcdefg";
 
 export const router = createBrowserRouter([
   {
@@ -164,6 +165,10 @@ export const router = createBrowserRouter([
               {
                 path: `bookmarks`,
                 element: <Bookmarks />,
+              },
+              {
+                path: `${id}/topics`,
+                element: <TopicsPage />,
               },
               // 설정
               {
@@ -332,6 +337,7 @@ export const router = createBrowserRouter([
                     path: "tagging",
                     element: <TaggingPage />,
                   },
+
                   {
                     path: "autoplay",
                     element: <AutoplayPage />,

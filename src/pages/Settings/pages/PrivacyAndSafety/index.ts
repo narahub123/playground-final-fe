@@ -10,6 +10,7 @@ import LocationInfoPage from "./LocationInfoPage/LocationInfoPage";
 import LocationPage from "./LocationPage/LocationPage";
 import NotificationAdvancedFilters from "./NotificationAdvancedFilters/NotificationAdvancedFilters";
 import TaggingPage from "./TaggingPage/TaggingPage";
+import TopicsPage from "./TopicsPage/TopicsPage";
 
 export {
   PrivacyAndSafetyPage,
@@ -24,4 +25,5 @@ export {
   LocationPage,
   NotificationAdvancedFilters,
   TaggingPage,
+  TopicsPage,
 };
