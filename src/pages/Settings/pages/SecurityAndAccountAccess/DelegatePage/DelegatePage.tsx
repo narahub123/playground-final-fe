@@ -1,12 +1,7 @@
 import styles from "./DelegatePage.module.css";
 import { MainLayout } from "@shared/pages/layout";
 import { useLanguageMode } from "@shared/@common/model/hooks";
-import {
-  Description,
-  Text,
-  Title,
-  Toggle,
-} from "@shared/@common/ui/components";
+import { Text, Toggle } from "@shared/@common/ui/components";
 import { SettingsContainer } from "@features/settings-setting/ui/components";
 import { SettingsBranchListContainerType } from "@features/settings-setting/types";
 import { useSelector } from "react-redux";
@@ -27,7 +22,7 @@ const DelegatePage = () => {
         <>
           <div className={styles[`slider-section`]}>
             <div className={styles.container}>
-              <Text text={text} />
+              <Text text={text} bold />
               <Toggle toggle={canBeInvited} reducer={setCanBeInvited} />
             </div>
             <Text text={expl} type="description" />
