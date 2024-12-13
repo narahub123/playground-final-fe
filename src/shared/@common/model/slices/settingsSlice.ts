@@ -51,6 +51,10 @@ const initialState: SettingsType = {
   loginHistory: [],
   devices: [],
   connectedAccounts: [],
+  delegate: {
+    groups: [],
+    members: [],
+  },
 };
 
 // 페이지 로드 전에 setting를 먼저 로드해야 함
@@ -175,6 +179,12 @@ const settingsSlice = createSlice({
     setConnectedAccounts: (state, action: PayloadAction<string>) => {
       state.connectedAccounts = [...state.connectedAccounts, action.payload];
     },
+    setDelegateGroups: (state, action: PayloadAction<string>) => {
+      state.delegate.groups = [...state.delegate.groups, action.payload];
+    },
+    setDelegateMembers: (state, action: PayloadAction<string>) => {
+      state.delegate.members = [...state.delegate.members, action.payload];
+    },
   },
 });
 
@@ -217,4 +227,6 @@ export const {
   setLoginHistory,
   setDevices,
   setConnectedAccounts,
+  setDelegateGroups,
+  setDelegateMembers,
 } = settingsSlice.actions;

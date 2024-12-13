@@ -27,7 +27,6 @@ import {
   AccountPage,
   AppsAndSessionsPage,
   About,
-  Delegate,
   Display,
   SecurityAndAccountAccessPage,
   PrivacyAndSafetyPage,
@@ -68,6 +67,7 @@ import {
   LoginHistoryPage,
   DevicesPage,
   ConnectedAccountsPage,
+  DelegatePage,
 } from "@pages/Settings/pages";
 import { AuthLayout } from "@/layouts";
 import { PageLayout } from "@shared/pages/layout";
@@ -255,7 +255,7 @@ export const router = createBrowserRouter([
                   },
                   {
                     path: "delegate",
-                    element: <Delegate />,
+                    element: <DelegatePage />,
                   },
                   {
                     path: "audience_and_tagging",

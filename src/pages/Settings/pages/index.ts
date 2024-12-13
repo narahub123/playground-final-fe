@@ -41,6 +41,7 @@ import {
   LoginHistoryPage,
   DevicesPage,
   ConnectedAccountsPage,
+  DelegatePage,
 } from "./SecurityAndAccountAccess";
 import {
   PrivacyAndSafetyPage,
@@ -110,6 +111,7 @@ export {
   LoginHistoryPage,
   DevicesPage,
   ConnectedAccountsPage,
+  DelegatePage,
   About,
   AppAndSession,
   ConnectedAccounts,

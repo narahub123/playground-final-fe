@@ -35,6 +35,9 @@ import {
   getLoginHistory,
   getDevices,
   getConnectedAccounts,
+  getDelegate,
+  getDelegateGroups,
+  getDelegateMembers,
 } from "./settingsSelectors";
 import { getIsLoggedIn } from "./loginSelector";
 import {
@@ -91,6 +94,9 @@ export {
   getLoginHistory,
   getDevices,
   getConnectedAccounts,
+  getDelegate,
+  getDelegateGroups,
+  getDelegateMembers,
   // login
   getIsLoggedIn,
   // user

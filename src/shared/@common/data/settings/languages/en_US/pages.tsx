@@ -1171,6 +1171,29 @@ const pages = {
     description:
       "These are the social accounts linked to log in to your PG account. You can disable access here.",
   },
+  DelegatePage: {
+    pageTitle: "Delegation",
+    description: "Share your account with people you delegate roles to.",
+    text: "Other users can invite me to their accounts.",
+    expl: "Enable this setting to allow others to invite you to share their accounts.",
+    heading: "My Delegated Accounts",
+    list: [
+      {
+        type: "card",
+        comp: {
+          title: "Accounts Delegated to Me",
+          path: "groups",
+        },
+      },
+      {
+        type: "card",
+        comp: {
+          title: "Members I Delegated Roles To",
+          path: "members",
+        },
+      },
+    ],
+  },
 };
 
 export default pages;

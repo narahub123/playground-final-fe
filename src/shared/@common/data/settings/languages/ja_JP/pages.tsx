@@ -1171,6 +1171,29 @@ const pages = {
     description:
       "PGアカウントへのログインにリンクされたソーシャルアカウントです。ここでアクセスを無効にできます。",
   },
+  DelegatePage: {
+    pageTitle: "委任",
+    description: "役割を委任した人々とアカウントを共有します。",
+    text: "他のユーザーが自分のアカウントに私を招待することができます。",
+    expl: "この設定を有効にすると、他の人があなたを招待して自分のアカウントを共有することができます。",
+    heading: "私の委任されたアカウント",
+    list: [
+      {
+        type: "card",
+        comp: {
+          title: "私に委任されたアカウント",
+          path: "groups",
+        },
+      },
+      {
+        type: "card",
+        comp: {
+          title: "私が役割を委任したメンバー",
+          path: "members",
+        },
+      },
+    ],
+  },
 };
 
 export default pages;

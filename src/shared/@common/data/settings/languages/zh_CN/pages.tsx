@@ -1143,6 +1143,29 @@ const pages = {
     pageTitle: "关联账户",
     description: "这些是与您的PG账户登录关联的社交账户。您可以在此禁用访问。",
   },
+  DelegatePage: {
+    pageTitle: "委托",
+    description: "与您委托角色的人共享账户。",
+    text: "其他用户可以邀请我加入他们的账户。",
+    expl: "启用此设置以允许其他人邀请您共享他们的账户。",
+    heading: "我的委托账户",
+    list: [
+      {
+        type: "card",
+        comp: {
+          title: "委托给我的账户",
+          path: "groups",
+        },
+      },
+      {
+        type: "card",
+        comp: {
+          title: "我委托角色的成员",
+          path: "members",
+        },
+      },
+    ],
+  },
 };
 
 export default pages;

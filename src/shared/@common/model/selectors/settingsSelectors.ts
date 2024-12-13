@@ -50,6 +50,10 @@ const getLoginHistory = (state: RootState) => state.settings.loginHistory;
 const getDevices = (state: RootState) => state.settings.devices;
 const getConnectedAccounts = (state: RootState) =>
   state.settings.connectedAccounts;
+const getDelegate = (state: RootState) => state.settings.delegate;
+const getDelegateGroups = (state: RootState) => state.settings.delegate.groups;
+const getDelegateMembers = (state: RootState) =>
+  state.settings.delegate.members;
 
 export {
   getSettings,
@@ -89,4 +93,7 @@ export {
   getLoginHistory,
   getDevices,
   getConnectedAccounts,
+  getDelegate,
+  getDelegateGroups,
+  getDelegateMembers,
 };

@@ -1193,6 +1193,29 @@ const pages = {
     description:
       "PG 계정에 로그인하기 위해 연결한 소셜 계정입니다. 여기에서 액세스를 비활성화할 수 있습니다.",
   },
+  DelegatePage: {
+    pageTitle: "위임",
+    description: "역할을 위이함 사람들과 계정을 공유합니다.",
+    text: "다른 사용자가 자신의 계정으로 나를 초대할 수 있습니다.",
+    expl: "이 설정을 켜면 다른 사람들이 자신의 계정을 공유하기 위해 나를 초대할 수 있습니다.",
+    heading: "내 위임 계정",
+    list: [
+      {
+        type: "card",
+        comp: {
+          title: "나에게 위임된 계정",
+          path: "groups",
+        },
+      },
+      {
+        type: "card",
+        comp: {
+          title: "역할을 위임한 멤버",
+          path: "members",
+        },
+      },
+    ],
+  },
 };
 
 export default pages;

@@ -1144,6 +1144,29 @@ const pages = {
     pageTitle: "關聯賬戶",
     description: "這些是與您的PG賬戶登錄關聯的社交賬戶。您可以在此禁用訪問。",
   },
+  DelegatePage: {
+    pageTitle: "委託",
+    description: "與您委託角色的人共享帳戶。",
+    text: "其他使用者可以邀請我加入他們的帳戶。",
+    expl: "啟用此設置以允許其他人邀請您共享他們的帳戶。",
+    heading: "我的委託帳戶",
+    list: [
+      {
+        type: "card",
+        comp: {
+          title: "委託給我的帳戶",
+          path: "groups",
+        },
+      },
+      {
+        type: "card",
+        comp: {
+          title: "我委託角色的成員",
+          path: "members",
+        },
+      },
+    ],
+  },
 };
 
 export default pages;

@@ -32,6 +32,10 @@ type SettingsType = {
   loginHistory: string[];
   devices: string[];
   connectedAccounts: string[]; // 연결된 계정
+  delegate: {
+    groups: string[];
+    members: string[];
+  };
 };
 
 type TwoFactorAuthentication = "sms" | "app" | "key" | "";
