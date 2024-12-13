@@ -59,6 +59,7 @@ import {
   NotificationAdvancedFilters,
   TaggingPage,
   TopicsPage,
+  TopicsNotInterestedPage,
 } from "./PrivacyAndSafety";
 import {
   NotificationsPage,
@@ -124,6 +125,7 @@ export {
   DelegateMembersPage,
   TaggingPage,
   TopicsPage,
+  TopicsNotInterestedPage,
   AudienceAndTagging,
   YourPosts,
   SortContents,

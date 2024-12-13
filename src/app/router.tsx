@@ -72,6 +72,7 @@ import {
   DelegateMembersPage,
   TaggingPage,
   TopicsPage,
+  TopicsNotInterestedPage,
 } from "@pages/Settings/pages";
 import { AuthLayout } from "@/layouts";
 import { PageLayout } from "@shared/pages/layout";
@@ -169,6 +170,10 @@ export const router = createBrowserRouter([
               {
                 path: `${id}/topics`,
                 element: <TopicsPage />,
+              },
+              {
+                path: `${id}/topics/not_interested`,
+                element: <TopicsNotInterestedPage />,
               },
               // 설정
               {
