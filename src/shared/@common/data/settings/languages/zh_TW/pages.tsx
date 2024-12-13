@@ -1140,6 +1140,10 @@ const pages = {
     expl1:
       "包括PG用於定制用戶體驗的瀏覽器、裝置和信息，還包括您從未用於登錄X的裝置和瀏覽器，以及與您的PG帳戶關聯的電子郵件地址和電話號碼。",
   },
+  ConnectedAccountsPage: {
+    pageTitle: "關聯賬戶",
+    description: "這些是與您的PG賬戶登錄關聯的社交賬戶。您可以在此禁用訪問。",
+  },
 };
 
 export default pages;

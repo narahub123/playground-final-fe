@@ -7,6 +7,7 @@ import ConnectedAppsPage from "./ConnectedAppsPage/ConnectedAppsPage";
 import SessionsPage from "./SessionsPage/SessionsPage";
 import LoginHistoryPage from "./LoginHistoryPage/LoginHistoryPage";
 import DevicesPage from "./DevicesPage/DevicesPage";
+import ConnectedAccountsPage from "./ConnectedAccountsPage/ConnectedAccountsPage";
 
 export {
   SecurityAndAccountAccessPage,
@@ -18,4 +19,5 @@ export {
   SessionsPage,
   LoginHistoryPage,
   DevicesPage,
+  ConnectedAccountsPage,
 };

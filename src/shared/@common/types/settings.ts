@@ -31,6 +31,7 @@ type SettingsType = {
   sessions: string[];
   loginHistory: string[];
   devices: string[];
+  connectedAccounts: string[]; // 연결된 계정
 };
 
 type TwoFactorAuthentication = "sms" | "app" | "key" | "";

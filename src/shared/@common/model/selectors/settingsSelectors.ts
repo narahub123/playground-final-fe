@@ -48,6 +48,8 @@ const getConnectedApps = (state: RootState) => state.settings.connectedApps;
 const getSessions = (state: RootState) => state.settings.sessions;
 const getLoginHistory = (state: RootState) => state.settings.loginHistory;
 const getDevices = (state: RootState) => state.settings.devices;
+const getConnectedAccounts = (state: RootState) =>
+  state.settings.connectedAccounts;
 
 export {
   getSettings,
@@ -86,4 +88,5 @@ export {
   getSessions,
   getLoginHistory,
   getDevices,
+  getConnectedAccounts,
 };

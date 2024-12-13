@@ -1166,6 +1166,11 @@ const pages = {
     expl1:
       "This includes the browsers, devices, and information PG uses to customize your user experience. It also includes devices and browsers you've never used to log in to X, as well as email addresses and phone numbers linked to your PG account.",
   },
+  ConnectedAccountsPage: {
+    pageTitle: "Connected Accounts",
+    description:
+      "These are the social accounts linked to log in to your PG account. You can disable access here.",
+  },
 };
 
 export default pages;
