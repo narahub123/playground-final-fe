@@ -64,6 +64,7 @@ import {
   AgePage,
   PasswordPage,
   DownloadDataPage,
+  ConnectedAppsPage,
 } from "@pages/Settings/pages";
 import { AuthLayout } from "@/layouts";
 import { PageLayout } from "@shared/pages/layout";
@@ -229,17 +230,17 @@ export const router = createBrowserRouter([
                     element: <AppsAndSessionsPage />,
                   },
                   {
-                    path: "connected_accounts",
-                    element: <ConnectedAccounts />,
+                    path: "connected_apps",
+                    element: <ConnectedAppsPage />,
                   },
                   {
                     path: "delegate",
                     element: <Delegate />,
                   },
-                  // {
-                  //   path: "connected_accounts",
-                  //   element: <DownloadData />,
-                  // },
+                  {
+                    path: "connected_accounts",
+                    element: <ConnectedAccounts />,
+                  },
                   {
                     path: "delegate",
                     element: <Delegate />,

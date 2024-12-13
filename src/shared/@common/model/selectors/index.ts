@@ -30,6 +30,7 @@ import {
   getProtectRenewPassword,
   getTwoFactorAuthentication,
   getHideLabel,
+  getConnectedApps,
 } from "./settingsSelectors";
 import { getIsLoggedIn } from "./loginSelector";
 import {
@@ -81,6 +82,7 @@ export {
   getProtectRenewPassword,
   getTwoFactorAuthentication,
   getHideLabel,
+  getConnectedApps,
   // login
   getIsLoggedIn,
   // user

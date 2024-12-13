@@ -3,6 +3,7 @@ import SecurityPage from "./SecurityPage/SecurityPage";
 import AppsAndSessionsPage from "./AppsAndSessionsPage/AppsAndSessionsPage";
 import LoginVerficationPage from "./LoginVerficationPage/LoginVerficationPage";
 import IdVerficationPage from "./IdVerficationPage/IdVerficationPage";
+import ConnectedAppsPage from "./ConnectedAppsPage/ConnectedAppsPage";
 
 export {
   SecurityAndAccountAccessPage,
@@ -10,4 +11,5 @@ export {
   AppsAndSessionsPage,
   LoginVerficationPage,
   IdVerficationPage,
+  ConnectedAppsPage,
 };

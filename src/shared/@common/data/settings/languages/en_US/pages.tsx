@@ -1124,6 +1124,11 @@ const pages = {
       text: "Download Data",
     },
   },
+  ConnectedAppsPage: {
+    pageTitle: "Connected Apps",
+    description:
+      "These are the apps connected to your account. You can view the information they access and revoke access.",
+  },
 };
 
 export default pages;

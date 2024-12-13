@@ -46,6 +46,7 @@ const initialState: SettingsType = {
   protectRenewPassword: false, // 비밀번호 재설정 보호
   twoFactorAuthentication: "", // 2단계 인증
   hideLabel: false,
+  connectedApps: [],
 };
 
 // 페이지 로드 전에 setting를 먼저 로드해야 함
@@ -155,6 +156,9 @@ const settingsSlice = createSlice({
     setHideLabel: (state, action: PayloadAction<boolean>) => {
       state.hideLabel = action.payload;
     },
+    setConnectedApps: (state, action: PayloadAction<string>) => {
+      state.connectedApps = [...state.connectedApps, action.payload];
+    },
   },
 });
 
@@ -192,4 +196,5 @@ export const {
   setProtectRenewPassword,
   setTwoFactorAuthentication,
   setHideLabel,
+  setConnectedApps,
 } = settingsSlice.actions;

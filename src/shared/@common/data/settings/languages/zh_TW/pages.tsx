@@ -1101,6 +1101,11 @@ const pages = {
       text: "下載數據",
     },
   },
+  ConnectedAppsPage: {
+    pageTitle: "已連接的應用",
+    description:
+      "這是連接到您賬戶的應用。您可以查看它們訪問的信息並撤銷訪問權限。",
+  },
 };
 
 export default pages;

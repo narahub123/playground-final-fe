@@ -1100,6 +1100,11 @@ const pages = {
       text: "下载数据",
     },
   },
+  ConnectedAppsPage: {
+    pageTitle: "已连接的应用",
+    description:
+      "这是连接到您账户的应用。您可以查看它们访问的信息并撤销访问权限。",
+  },
 };
 
 export default pages;

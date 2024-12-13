@@ -44,6 +44,7 @@ const getProtectRenewPassword = (state: RootState) =>
 const getTwoFactorAuthentication = (state: RootState) =>
   state.settings.twoFactorAuthentication;
 const getHideLabel = (state: RootState) => state.settings.hideLabel;
+const getConnectedApps = (state: RootState) => state.settings.connectedApps;
 
 export {
   getSettings,
@@ -78,4 +79,5 @@ export {
   getProtectRenewPassword,
   getTwoFactorAuthentication,
   getHideLabel,
+  getConnectedApps,
 };

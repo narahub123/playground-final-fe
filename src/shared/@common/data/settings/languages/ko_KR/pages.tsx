@@ -1146,6 +1146,11 @@ const pages = {
       text: "데이터 다운로드",
     },
   },
+  ConnectedAppsPage: {
+    pageTitle: "연결된 앱",
+    description:
+      "이것은 계정에 연결된 앱입니다. 이러한 앱이 액세스하는 정보를 표시하고 액세스를 차단할 수 있습니다.",
+  },
 };
 
 export default pages;

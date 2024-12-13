@@ -1124,6 +1124,11 @@ const pages = {
       text: "データをダウンロードする",
     },
   },
+  ConnectedAppsPage: {
+    pageTitle: "接続されたアプリ",
+    description:
+      "これはアカウントに接続されているアプリです。これらのアプリがアクセスする情報を表示し、アクセスを取り消すことができます。",
+  },
 };
 
 export default pages;
