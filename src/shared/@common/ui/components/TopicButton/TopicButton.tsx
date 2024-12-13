@@ -4,6 +4,7 @@ import styles from "./TopicButton.module.css";
 import { getTopics } from "@shared/@common/model/selectors";
 import { useAppDispatch } from "@app/store";
 import { setTopics } from "@shared/@common/model/slices/settingsSlice";
+import { useLanguageMode } from "@shared/@common/model/hooks";
 
 interface TopicButtonProp {
   text: string;
@@ -14,6 +15,8 @@ const TopicButton = ({ text, style }: TopicButtonProp) => {
   const dispatch = useAppDispatch();
   const topics = useSelector(getTopics);
   const included = topics.findIndex((item) => item === text) !== -1;
+
+  const { hideIconTitle } = useLanguageMode(["components", "TopicButton"]);
 
   const handleAdd = () => {
     const newTopics = [...topics, text];
@@ -32,7 +35,9 @@ const TopicButton = ({ text, style }: TopicButtonProp) => {
 
   return (
     <span
-      className={`${styles.container} ${included ? styles.checked : ""}`}
+      className={`${styles.container} ${
+        included ? styles.checked : ""
+      } ${style}`}
       onClick={included ? handleDelete : handleAdd}
     >
       <span className={styles.text}>{text}</span>
@@ -44,7 +49,7 @@ const TopicButton = ({ text, style }: TopicButtonProp) => {
           <p className={styles.divider} />
           <Icon
             iconName="close"
-            iconTitle="숨기기"
+            iconTitle={hideIconTitle}
             handleClick={(e) => handleRemove(e)}
           />
         </>

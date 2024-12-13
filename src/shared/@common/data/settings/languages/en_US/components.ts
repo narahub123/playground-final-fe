@@ -37,6 +37,9 @@ const components = {
     description:
       "There are no results for your input. Please try using different keywords.",
   },
+  TopicButton: {
+    hideIconTitle: "Hide",
+  },
 };
 
 export default components;

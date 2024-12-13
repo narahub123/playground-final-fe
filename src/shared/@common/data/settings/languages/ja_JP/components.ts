@@ -41,6 +41,9 @@ const components = {
     description:
       "入力された単語に一致する結果はありません。別のキーワードをお試しください。",
   },
+  TopicButton: {
+    hideIconTitle: "非表示",
+  },
 };
 
 export default components;

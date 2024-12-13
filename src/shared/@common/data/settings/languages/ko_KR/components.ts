@@ -37,6 +37,9 @@ const components = {
     description:
       "입력하신 단어에 대한 결과가 없습니다. 다른 검색어를 사용해보세요.",
   },
+  TopicButton: {
+    hideIconTitle: "숨기기",
+  },
 };
 
 export default components;
