@@ -1253,10 +1253,12 @@ const pages = {
       {
         text: "すべて",
         path: "",
+        value: "",
       },
       {
         text: "インポート済み",
         path: "/settings/blocked/imported",
+        value: "imported",
       },
     ],
     description:

@@ -1253,10 +1253,12 @@ const pages = {
       {
         text: "All",
         path: "",
+        value: "",
       },
       {
         text: "Imported",
         path: "/settings/blocked/imported",
+        value: "imported",
       },
     ],
     description:

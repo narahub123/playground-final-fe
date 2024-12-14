@@ -77,6 +77,8 @@ import {
 import { AuthLayout } from "@/layouts";
 import { PageLayout } from "@shared/pages/layout";
 import {
+  BlockedAllOutlet,
+  BlockedImportedOutlet,
   TopicsNotInterestedOutlet,
   TopicsOutlet,
 } from "@features/settings-branch-list/ui/outlets";
@@ -310,8 +312,18 @@ export const router = createBrowserRouter([
                     element: <MuteAndBlockPage />,
                   },
                   {
-                    path: "blocked/all",
+                    path: "blocked",
                     element: <BlockedAllPage />,
+                    children: [
+                      {
+                        path: "all",
+                        element: <BlockedAllOutlet />,
+                      },
+                      {
+                        path: "imported",
+                        element: <BlockedImportedOutlet />,
+                      },
+                    ],
                   },
                   {
                     path: "messages",

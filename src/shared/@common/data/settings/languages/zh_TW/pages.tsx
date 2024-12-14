@@ -1226,10 +1226,12 @@ const pages = {
       {
         text: "全部",
         path: "",
+        value: "",
       },
       {
         text: "已匯入",
         path: "/settings/blocked/imported",
+        value: "imported",
       },
     ],
     description:

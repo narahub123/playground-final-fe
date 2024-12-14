@@ -1225,10 +1225,12 @@ const pages = {
       {
         text: "全部",
         path: "",
+        value: "",
       },
       {
         text: "已导入",
         path: "/settings/blocked/imported",
+        value: "imported",
       },
     ],
     description:

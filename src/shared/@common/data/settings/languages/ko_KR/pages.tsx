@@ -1275,10 +1275,12 @@ const pages = {
       {
         text: "전체",
         path: "",
+        value: "",
       },
       {
         text: "가져옴",
         path: "/settings/blocked/imported",
+        value: "imported",
       },
     ],
     description:
