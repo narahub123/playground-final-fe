@@ -73,6 +73,7 @@ import {
   TaggingPage,
   TopicsPage,
   TopicsNotInterestedPage,
+  BlockedAllPage,
 } from "@pages/Settings/pages";
 import { AuthLayout } from "@/layouts";
 import { PageLayout } from "@shared/pages/layout";
@@ -297,6 +298,10 @@ export const router = createBrowserRouter([
                   {
                     path: "mute_and_block",
                     element: <MuteAndBlockPage />,
+                  },
+                  {
+                    path: "blocked/all",
+                    element: <BlockedAllPage />,
                   },
                   {
                     path: "messages",

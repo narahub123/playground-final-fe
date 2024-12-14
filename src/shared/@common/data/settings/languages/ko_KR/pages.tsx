@@ -1277,6 +1277,21 @@ const pages = {
       </>
     ),
   },
+  BlockedAllPage: {
+    pageTitle: "차단한 계정",
+    tabList: [
+      {
+        text: "전체",
+        path: "",
+      },
+      {
+        text: "가져옴",
+        path: "/settings/blocked/imported",
+      },
+    ],
+    description:
+      "사용자를 차단하면 해당 사용자는 나를 팔로우하거나 내게 쪽지를 보낼 수 없고, 해당 사용자의 알림이 표시되지 않습니다.",
+  },
 };
 
 export default pages;

@@ -53,6 +53,7 @@ import {
   getEmail,
   getCountry,
   getBirth,
+  getBlockedUsers,
 } from "./userSelector";
 import {
   getSigninInfo,
@@ -116,6 +117,7 @@ export {
   getEmail,
   getCountry,
   getBirth,
+  getBlockedUsers,
   // signin
   getSigninInfo,
   getSigninUser,

@@ -12,6 +12,7 @@ import NotificationAdvancedFilters from "./NotificationAdvancedFilters/Notificat
 import TaggingPage from "./TaggingPage/TaggingPage";
 import TopicsPage from "./TopicsPage/TopicsPage";
 import TopicsNotInterestedPage from "./TopicsNotInterestedPage/TopicsNotInterestedPage";
+import BlockedAllPage from "./BlockedAllPage/BlockedAllPage";
 
 export {
   PrivacyAndSafetyPage,
@@ -28,4 +29,5 @@ export {
   TaggingPage,
   TopicsPage,
   TopicsNotInterestedPage,
+  BlockedAllPage,
 };

@@ -1228,6 +1228,21 @@ const pages = {
       </>
     ),
   },
+  BlockedAllPage: {
+    pageTitle: "已封鎖的帳號",
+    tabList: [
+      {
+        text: "全部",
+        path: "",
+      },
+      {
+        text: "已匯入",
+        path: "/settings/blocked/imported",
+      },
+    ],
+    description:
+      "封鎖用戶後，他們將無法關注您、向您發送消息或出現在您的通知中。",
+  },
 };
 
 export default pages;

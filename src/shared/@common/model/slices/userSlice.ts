@@ -15,6 +15,7 @@ const initialState: UserType = {
   language: "ko-KR",
   gender: "f",
   birth: "20060515",
+  blockedUsers: [],
 };
 
 const userSlice = createSlice({
@@ -39,10 +40,20 @@ const userSlice = createSlice({
     setCountry: (state, action: PayloadAction<string>) => {
       state.country = action.payload;
     },
+    setBlockedUsers: (state, action: PayloadAction<string[]>) => {
+      state.blockedUsers = action.payload;
+    },
   },
 });
 
 export default userSlice.reducer;
 
-export const { setUser, setGender, setUserId, setPhone, setEmail, setCountry } =
-  userSlice.actions;
+export const {
+  setUser,
+  setGender,
+  setUserId,
+  setPhone,
+  setEmail,
+  setCountry,
+  setBlockedUsers,
+} = userSlice.actions;

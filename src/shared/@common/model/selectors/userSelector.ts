@@ -8,6 +8,7 @@ const getPhone = (state: RootState) => state.user.phone;
 const getEmail = (state: RootState) => state.user.email;
 const getCountry = (state: RootState) => state.user.country;
 const getBirth = (state: RootState) => state.user.birth;
+const getBlockedUsers = (state: RootState) => state.user.blockedUsers;
 
 export {
   getUser,
@@ -18,4 +19,5 @@ export {
   getEmail,
   getCountry,
   getBirth,
+  getBlockedUsers,
 };

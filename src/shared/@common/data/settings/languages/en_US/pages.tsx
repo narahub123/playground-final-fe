@@ -1255,6 +1255,21 @@ const pages = {
       </>
     ),
   },
+  BlockedAllPage: {
+    pageTitle: "Blocked Accounts",
+    tabList: [
+      {
+        text: "All",
+        path: "",
+      },
+      {
+        text: "Imported",
+        path: "/settings/blocked/imported",
+      },
+    ],
+    description:
+      "Blocking a user prevents them from following you, sending you messages, or appearing in your notifications.",
+  },
 };
 
 export default pages;

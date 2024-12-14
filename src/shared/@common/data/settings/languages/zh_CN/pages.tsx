@@ -1227,6 +1227,21 @@ const pages = {
       </>
     ),
   },
+  BlockedAllPage: {
+    pageTitle: "已屏蔽的账号",
+    tabList: [
+      {
+        text: "全部",
+        path: "",
+      },
+      {
+        text: "已导入",
+        path: "/settings/blocked/imported",
+      },
+    ],
+    description:
+      "屏蔽用户后，他们将无法关注您、向您发送消息或出现在您的通知中。",
+  },
 };
 
 export default pages;

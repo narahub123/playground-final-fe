@@ -1256,6 +1256,21 @@ const pages = {
       </>
     ),
   },
+  BlockedAllPage: {
+    pageTitle: "ブロックしたアカウント",
+    tabList: [
+      {
+        text: "すべて",
+        path: "",
+      },
+      {
+        text: "インポート済み",
+        path: "/settings/blocked/imported",
+      },
+    ],
+    description:
+      "ユーザーをブロックすると、そのユーザーはあなたをフォローしたり、メッセージを送ったり、通知に表示されたりすることができなくなります。",
+  },
 };
 
 export default pages;

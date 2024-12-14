@@ -12,6 +12,7 @@ interface UserType {
   language: string;
   gender: GenderType;
   birth: string;
+  blockedUsers: string[];
 }
 
 export default UserType;
