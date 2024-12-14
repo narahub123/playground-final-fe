@@ -1210,10 +1210,12 @@ const pages = {
         {
           text: "已追蹤",
           path: `/${userId}/topics`,
+          value: "",
         },
         {
           text: "不感興趣",
           path: `/${userId}/topics/not_interested`,
+          value: "not",
         },
       ];
     },

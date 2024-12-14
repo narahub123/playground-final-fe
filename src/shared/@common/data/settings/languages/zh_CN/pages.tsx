@@ -1209,10 +1209,12 @@ const pages = {
         {
           text: "已关注",
           path: `/${userId}/topics`,
+          value: "",
         },
         {
           text: "不感兴趣",
           path: `/${userId}/topics/not_interested`,
+          value: "not",
         },
       ];
     },

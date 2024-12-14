@@ -2,7 +2,8 @@ import { ReactNode } from "react";
 
 interface TabItemType {
   text: string;
-  path?: string;
+  path: string;
+  value: string;
 }
 
 interface SelectionContextType {

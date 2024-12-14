@@ -16,7 +16,7 @@ const Tab = ({ list }: TabProps) => {
 
   // 포커스
   useEffect(() => {
-    const index = list.findIndex((item) => item.text === focus);
+    const index = list.findIndex((item) => item.value === focus);
 
     if (index !== -1) {
       itemRefs.current[index].focus();
@@ -27,38 +27,38 @@ const Tab = ({ list }: TabProps) => {
     <div className={styles.tab}>
       <ul className={styles.list} role="listbox">
         {list.map((item, index) => {
-          const selectedCond = selection === item.text ? styles.selected : "";
+          const selectedCond = selection === item.value ? styles.selected : "";
 
           // -> 키에 대한 조건
           const indexPlusCond = index + 1 === list.length ? 0 : index + 1;
           // <- 키에 대한 조건
           const indexMinusCond = index - 1 < 0 ? list.length - 1 : index - 1;
 
-          const Item = item.path ? Link : "li";
+          const Item = item.path || item.path === "" ? Link : "li";
           return (
             <Item
               key={item.text}
               className={styles.item}
               role="option" // 선택 가능한 옵션 표시
-              aria-selected={selection === item.text} // 선택 여부
-              aria-lable={`${item.text}`}
+              aria-selected={selection === item.value} // 선택 여부
+              aria-label={`${item.text}`}
               to={item.path || ""}
-              onClick={() => setSelection(item.text)}
-              onFocus={() => setFocus(item.text)}
+              onClick={() => setSelection(item.value)}
+              onFocus={() => setFocus(item.value)}
               onBlur={() => setFocus("")}
               // tab 이동
-              tabIndex={selection === item.text ? 0 : -1}
+              tabIndex={selection === item.value ? 0 : -1}
               ref={(el: any) => {
                 itemRefs.current[index] = el;
               }}
               // 방향키로 포커스 이동
               onKeyDown={(e) => {
                 if (e.key === "ArrowRight") {
-                  setFocus(list[indexPlusCond].text);
+                  setFocus(list[indexPlusCond].value);
                 } else if (e.key === "ArrowLeft") {
-                  setFocus(list[indexMinusCond].text);
+                  setFocus(list[indexMinusCond].value);
                 } else if (e.key === "Enter") {
-                  setSelection(item.text);
+                  setSelection(item.value);
                 }
               }}
             >

@@ -1237,10 +1237,12 @@ const pages = {
         {
           text: "Following",
           path: `/${userId}/topics`,
+          value: "",
         },
         {
           text: "Not Interested",
           path: `/${userId}/topics/not_interested`,
+          value: "not",
         },
       ];
     },

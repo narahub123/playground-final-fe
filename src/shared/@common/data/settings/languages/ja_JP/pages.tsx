@@ -1237,10 +1237,12 @@ const pages = {
         {
           text: "フォロー中",
           path: `/${userId}/topics/not_interested`,
+          value: "",
         },
         {
           text: "興味なし",
           path: `/${userId}/topics/not_interested`,
+          value: "not",
         },
       ];
     },

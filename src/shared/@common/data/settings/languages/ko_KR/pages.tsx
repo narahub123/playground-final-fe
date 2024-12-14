@@ -1259,10 +1259,12 @@ const pages = {
         {
           text: "팔로우함",
           path: `/${userId}/topics`,
+          value: "",
         },
         {
           text: "관심 없음",
           path: `/${userId}/topics/not_interested`,
+          value: "not",
         },
       ];
     },
