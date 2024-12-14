@@ -6,6 +6,7 @@ import components from "./components";
 
 // utils
 import utils from "./utils";
+import outlets from "./outlets";
 
 const en_US = {
   // 페이지
@@ -16,6 +17,9 @@ const en_US = {
 
   // utils
   utils,
+
+  // outlets
+  outlets,
 };
 
 export default en_US;

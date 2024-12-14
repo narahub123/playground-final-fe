@@ -72,11 +72,14 @@ import {
   DelegateMembersPage,
   TaggingPage,
   TopicsPage,
-  TopicsNotInterestedPage,
   BlockedAllPage,
 } from "@pages/Settings/pages";
 import { AuthLayout } from "@/layouts";
 import { PageLayout } from "@shared/pages/layout";
+import {
+  TopicsNotInterestedOutlet,
+  TopicsOutlet,
+} from "@features/settings-branch-list/ui/outlets";
 
 // 로그인 여부 확인
 const login = true;
@@ -171,11 +174,18 @@ export const router = createBrowserRouter([
               {
                 path: `${id}/topics`,
                 element: <TopicsPage />,
+                children: [
+                  {
+                    path: ``,
+                    element: <TopicsOutlet />,
+                  },
+                  {
+                    path: `not_interested`,
+                    element: <TopicsNotInterestedOutlet />,
+                  },
+                ],
               },
-              {
-                path: `${id}/topics/not_interested`,
-                element: <TopicsNotInterestedPage />,
-              },
+
               // 설정
               {
                 path: `settings`,

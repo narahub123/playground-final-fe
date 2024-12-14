@@ -6,6 +6,7 @@ import components from "./components";
 
 // utils
 import utils from "./utils";
+import outlets from "./outlets";
 
 const ja_JP = {
   // 페이지
@@ -16,6 +17,9 @@ const ja_JP = {
 
   // utils
   utils,
+
+  // outlets
+  outlets
 };
 
 export default ja_JP;

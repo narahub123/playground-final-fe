@@ -6,6 +6,7 @@ import components from "./components";
 
 // utils
 import utils from "./utils";
+import outlets from "./outlets";
 
 const zh_CN = {
   // 페이지
@@ -16,6 +17,9 @@ const zh_CN = {
 
   // utils
   utils,
+
+  // outlets
+  outlets,
 };
 
 export default zh_CN;

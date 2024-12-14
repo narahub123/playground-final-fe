@@ -11,7 +11,6 @@ import LocationPage from "./LocationPage/LocationPage";
 import NotificationAdvancedFilters from "./NotificationAdvancedFilters/NotificationAdvancedFilters";
 import TaggingPage from "./TaggingPage/TaggingPage";
 import TopicsPage from "./TopicsPage/TopicsPage";
-import TopicsNotInterestedPage from "./TopicsNotInterestedPage/TopicsNotInterestedPage";
 import BlockedAllPage from "./BlockedAllPage/BlockedAllPage";
 
 export {
@@ -28,6 +27,5 @@ export {
   NotificationAdvancedFilters,
   TaggingPage,
   TopicsPage,
-  TopicsNotInterestedPage,
   BlockedAllPage,
 };
