@@ -42,6 +42,7 @@ type SettingsType = {
     whom?: TaggingWhomType;
   };
   topics: string[];
+  mutedKeywords: string[];
 };
 
 type TaggingWhomType = "all" | "followers";

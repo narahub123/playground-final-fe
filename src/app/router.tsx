@@ -74,6 +74,7 @@ import {
   TopicsPage,
   BlockedAllPage,
   MutedAllPage,
+  MutedKeywordsPage,
 } from "@pages/Settings/pages";
 import { AuthLayout } from "@/layouts";
 import { PageLayout } from "@shared/pages/layout";
@@ -329,6 +330,10 @@ export const router = createBrowserRouter([
                   {
                     path: "muted/all",
                     element: <MutedAllPage />,
+                  },
+                  {
+                    path: "muted_keywords",
+                    element: <MutedKeywordsPage />,
                   },
                   {
                     path: "messages",

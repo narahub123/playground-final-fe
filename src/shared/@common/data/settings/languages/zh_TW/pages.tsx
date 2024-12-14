@@ -1241,6 +1241,13 @@ const pages = {
     pageTitle: "已靜音的帳號",
     description: "所有已靜音的用戶都將顯示在此處。您可以從列表中添加或刪除。",
   },
+  MutedKeywordsPage: {
+    pageTitle: "已靜音的關鍵字",
+    empty: {
+      heading: "新增靜音關鍵字",
+      expl: "靜音關鍵字後，包含該關鍵字的帖子將不會出現在您的主頁時間軸上，您也不會收到相關通知。",
+    },
+  },
 };
 
 export default pages;

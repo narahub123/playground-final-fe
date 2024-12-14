@@ -61,6 +61,7 @@ import {
   TopicsPage,
   BlockedAllPage,
   MutedAllPage,
+  MutedKeywordsPage,
 } from "./PrivacyAndSafety";
 import {
   NotificationsPage,
@@ -128,6 +129,7 @@ export {
   TopicsPage,
   BlockedAllPage,
   MutedAllPage,
+  MutedKeywordsPage,
   AudienceAndTagging,
   YourPosts,
   SortContents,

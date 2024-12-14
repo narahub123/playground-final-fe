@@ -13,6 +13,7 @@ import TaggingPage from "./TaggingPage/TaggingPage";
 import TopicsPage from "./TopicsPage/TopicsPage";
 import BlockedAllPage from "./BlockedAllPage/BlockedAllPage";
 import MutedAllPage from "./MutedAllPage/MutedAllPage";
+import MutedKeywordsPage from "./MutedKeywordsPage/MutedKeywordsPage";
 
 export {
   PrivacyAndSafetyPage,
@@ -30,4 +31,5 @@ export {
   TopicsPage,
   BlockedAllPage,
   MutedAllPage,
+  MutedKeywordsPage,
 };

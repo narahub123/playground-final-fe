@@ -1269,6 +1269,13 @@ const pages = {
     description:
       "ミュートしたすべてのユーザーが表示されます。このリストから追加または削除できます。",
   },
+  MutedKeywordsPage: {
+    pageTitle: "ミュートしたキーワード",
+    empty: {
+      heading: "ミュートするキーワードを追加",
+      expl: "キーワードをミュートすると、そのキーワードを含む投稿がホームタイムラインに表示されず、関連する通知も受信しなくなります。",
+    },
+  },
 };
 
 export default pages;

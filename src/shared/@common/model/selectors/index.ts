@@ -42,6 +42,7 @@ import {
   getAllowTagging,
   getAllowTaggingWhom,
   getTopics,
+  getMutedKeywords,
 } from "./settingsSelectors";
 import { getIsLoggedIn } from "./loginSelector";
 import {
@@ -109,6 +110,7 @@ export {
   getAllowTagging,
   getAllowTaggingWhom,
   getTopics,
+  getMutedKeywords,
   // login
   getIsLoggedIn,
   // user

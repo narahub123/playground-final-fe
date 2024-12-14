@@ -1291,6 +1291,13 @@ const pages = {
     description:
       "뮤트한 모든 사용자가 나타납니다. 이 리스트에서 추가하거나 제거할 수 있습니다.",
   },
+  MutedKeywordsPage: {
+    pageTitle: "뮤트한 단어",
+    empty: {
+      heading: "뮤트할 단어 추가",
+      expl: "단어를 뮤트하면 해당 단어를 포함한 게시물이 홈 타임라인에서 보이지 않으며, 관련 알림도 받지 않게 됩니다.",
+    },
+  },
 };
 
 export default pages;

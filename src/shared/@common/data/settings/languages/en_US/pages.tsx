@@ -1269,6 +1269,13 @@ const pages = {
     description:
       "All muted users are listed here. You can add or remove them from this list.",
   },
+  MutedKeywordsPage: {
+    pageTitle: "Muted Keywords",
+    empty: {
+      heading: "Add Muted Keywords",
+      expl: "When you mute a keyword, posts containing that keyword won't appear on your home timeline, and you won't receive related notifications.",
+    },
+  },
 };
 
 export default pages;

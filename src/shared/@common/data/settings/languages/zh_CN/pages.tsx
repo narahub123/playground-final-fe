@@ -1240,6 +1240,13 @@ const pages = {
     pageTitle: "已静音的账号",
     description: "所有已静音的用户都将在此显示。您可以从列表中添加或删除。",
   },
+  MutedKeywordsPage: {
+    pageTitle: "已静音的关键词",
+    empty: {
+      heading: "添加静音关键词",
+      expl: "静音关键词后，包含该关键词的帖子将不会出现在您的主页时间线上，您也不会收到相关通知。",
+    },
+  },
 };
 
 export default pages;

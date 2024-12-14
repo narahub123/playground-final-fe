@@ -58,6 +58,7 @@ const getCanbeInvited = (state: RootState) => state.settings.canBeInvited;
 const getAllowTagging = (state: RootState) => state.settings.tagging.allow;
 const getAllowTaggingWhom = (state: RootState) => state.settings.tagging.whom;
 const getTopics = (state: RootState) => state.settings.topics;
+const getMutedKeywords = (state: RootState) => state.settings.mutedKeywords;
 
 export {
   getSettings,
@@ -104,4 +105,5 @@ export {
   getAllowTagging,
   getAllowTaggingWhom,
   getTopics,
+  getMutedKeywords,
 };
