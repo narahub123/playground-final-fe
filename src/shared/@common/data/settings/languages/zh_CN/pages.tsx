@@ -1204,16 +1204,18 @@ const pages = {
   },
   TopicsPage: {
     pageTitle: "话题",
-    tabList: [
-      {
-        text: "已关注",
-        path: "",
-      },
-      {
-        text: "不感兴趣",
-        path: "not_interested",
-      },
-    ],
+    tabList: (userId: string) => {
+      return [
+        {
+          text: "已关注",
+          path: `/${userId}/topics`,
+        },
+        {
+          text: "不感兴趣",
+          path: `/${userId}/topics/not_interested`,
+        },
+      ];
+    },
     description1:
       "您关注的话题将用于个性化帖子、活动和广告，并在您的个人资料上公开显示您关注的话题。",
     heading: "推荐话题",

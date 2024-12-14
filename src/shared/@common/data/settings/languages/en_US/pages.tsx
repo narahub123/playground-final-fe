@@ -1232,16 +1232,18 @@ const pages = {
   },
   TopicsPage: {
     pageTitle: "Topics",
-    tabList: [
-      {
-        text: "Following",
-        path: "",
-      },
-      {
-        text: "Not Interested",
-        path: "not_interested",
-      },
-    ],
+    tabList: (userId: string) => {
+      return [
+        {
+          text: "Following",
+          path: `/${userId}/topics`,
+        },
+        {
+          text: "Not Interested",
+          path: `/${userId}/topics/not_interested`,
+        },
+      ];
+    },
     description1:
       "Topics you follow are used to personalize posts, events, and ads, and publicly display which topics you follow on your profile.",
     heading: "Recommended Topics",

@@ -1232,16 +1232,18 @@ const pages = {
   },
   TopicsPage: {
     pageTitle: "トピック",
-    tabList: [
-      {
-        text: "フォロー中",
-        path: "",
-      },
-      {
-        text: "興味なし",
-        path: "not_interested",
-      },
-    ],
+    tabList: (userId: string) => {
+      return [
+        {
+          text: "フォロー中",
+          path: `/${userId}/topics/not_interested`,
+        },
+        {
+          text: "興味なし",
+          path: `/${userId}/topics/not_interested`,
+        },
+      ];
+    },
     description1:
       "フォローしているトピックは、投稿、イベント、広告をパーソナライズし、プロフィールにフォローしているトピックを公開表示するために使用されます。",
     heading: "おすすめのトピック",

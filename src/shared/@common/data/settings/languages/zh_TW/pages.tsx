@@ -1205,16 +1205,18 @@ const pages = {
   },
   TopicsPage: {
     pageTitle: "主題",
-    tabList: [
-      {
-        text: "已追蹤",
-        path: "",
-      },
-      {
-        text: "不感興趣",
-        path: "not_interested",
-      },
-    ],
+    tabList: (userId: string) => {
+      return [
+        {
+          text: "已追蹤",
+          path: `/${userId}/topics`,
+        },
+        {
+          text: "不感興趣",
+          path: `/${userId}/topics/not_interested`,
+        },
+      ];
+    },
     description1:
       "您追蹤的主題將用於個性化帖子、活動和廣告，並在您的個人檔案上公開顯示您追蹤的主題。",
     heading: "推薦主題",

@@ -1254,16 +1254,18 @@ const pages = {
   },
   TopicsPage: {
     pageTitle: "토픽",
-    tabList: [
-      {
-        text: "팔로우함",
-        path: "",
-      },
-      {
-        text: "관심 없음",
-        path: "not_interested",
-      },
-    ],
+    tabList: (userId: string) => {
+      return [
+        {
+          text: "팔로우함",
+          path: `/${userId}/topics`,
+        },
+        {
+          text: "관심 없음",
+          path: `/${userId}/topics/not_interested`,
+        },
+      ];
+    },
     description1:
       "내가 팔로우하는 토픽은 게시물, 이벤트 및 광고를 맞춤 설정하고 프로필에 어떤 토픽을 팔로우하는지 공개적으로 표시하는 데 사용됩니다.",
     heading: "추천 토픽",
