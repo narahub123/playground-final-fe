@@ -23,8 +23,8 @@ const BlockedAllPage = () => {
           <div className={styles.container}>
             <Text text={description} type="description" />
           </div>
-          {blockedUsers.map((user, index) => (
-            <ProfileContainer key={index} />
+          {blockedUsers.map((userId, index) => (
+            <ProfileContainer key={index} item={userId} />
           ))}
         </>
       }
