@@ -44,6 +44,11 @@ const components = {
     following: "팔로잉",
     follow: "팔로우",
   },
+  ProfileContainer: {
+    blocked: "차단함",
+    following: "팔로잉",
+    follow: "팔로우",
+  },
 };
 
 export default components;

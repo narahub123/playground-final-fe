@@ -12,7 +12,11 @@ interface UserType {
   language: string;
   gender: GenderType;
   birth: string;
+  intro: string;
   blockedUsers: string[];
+  followings: string[];
+  followers: string[];
+  mutes: string[];
 }
 
 export default UserType;

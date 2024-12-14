@@ -44,6 +44,11 @@ const components = {
     following: "Following",
     follow: "Follow",
   },
+  ProfileContainer: {
+    blocked: "Blocked",
+    following: "Following",
+    follow: "Follow",
+  },
 };
 
 export default components;

@@ -15,7 +15,11 @@ const initialState: UserType = {
   language: "ko-KR",
   gender: "f",
   birth: "20060515",
-  blockedUsers: [],
+  intro: "안녕하세요.",
+  blockedUsers: ["abcdefg"],
+  followings: [],
+  followers: [],
+  mutes: [],
 };
 
 const userSlice = createSlice({
@@ -43,6 +47,15 @@ const userSlice = createSlice({
     setBlockedUsers: (state, action: PayloadAction<string[]>) => {
       state.blockedUsers = action.payload;
     },
+    setFollowings: (state, action: PayloadAction<string[]>) => {
+      state.followings = action.payload;
+    },
+    setFollowers: (state, action: PayloadAction<string[]>) => {
+      state.followers = action.payload;
+    },
+    setMutes: (state, action: PayloadAction<string[]>) => {
+      state.mutes = action.payload;
+    },
   },
 });
 
@@ -56,4 +69,7 @@ export const {
   setEmail,
   setCountry,
   setBlockedUsers,
+  setFollowings,
+  setFollowers,
+  setMutes,
 } = userSlice.actions;

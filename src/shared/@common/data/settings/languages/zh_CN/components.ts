@@ -46,6 +46,11 @@ const components = {
     following: "已关注",
     follow: "关注",
   },
+  ProfileContainer: {
+    blocked: "已屏蔽",
+    following: "正在关注",
+    follow: "关注",
+  },
 };
 
 export default components;

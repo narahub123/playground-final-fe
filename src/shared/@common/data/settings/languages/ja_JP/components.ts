@@ -48,6 +48,11 @@ const components = {
     following: "フォロー中",
     follow: "フォロー",
   },
+  ProfileContainer: {
+    blocked: "ブロック済み",
+    following: "フォロー中",
+    follow: "フォローする",
+  },
 };
 
 export default components;

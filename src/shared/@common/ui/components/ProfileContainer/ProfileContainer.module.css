@@ -17,3 +17,13 @@
 .username {
   font-weight: bold;
 }
+
+.blocked {
+  background-color: red !important;
+  opacity: 0.8;
+}
+
+.blocked:hover {
+  background-color: red !important;
+  opacity: 1;
+}

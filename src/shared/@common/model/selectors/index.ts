@@ -54,6 +54,9 @@ import {
   getCountry,
   getBirth,
   getBlockedUsers,
+  getFollowings,
+  getFollowers,
+  getMutes,
 } from "./userSelector";
 import {
   getSigninInfo,
@@ -118,6 +121,9 @@ export {
   getCountry,
   getBirth,
   getBlockedUsers,
+  getFollowings,
+  getFollowers,
+  getMutes,
   // signin
   getSigninInfo,
   getSigninUser,
