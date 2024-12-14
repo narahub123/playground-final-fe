@@ -1286,6 +1286,11 @@ const pages = {
     description:
       "사용자를 차단하면 해당 사용자는 나를 팔로우하거나 내게 쪽지를 보낼 수 없고, 해당 사용자의 알림이 표시되지 않습니다.",
   },
+  MutedAllPage: {
+    pageTitle: "뮤트한 계정",
+    description:
+      "뮤트한 모든 사용자가 나타납니다. 이 리스트에서 추가하거나 제거할 수 있습니다.",
+  },
 };
 
 export default pages;

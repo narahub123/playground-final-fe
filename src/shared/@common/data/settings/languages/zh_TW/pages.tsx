@@ -1237,6 +1237,10 @@ const pages = {
     description:
       "封鎖用戶後，他們將無法關注您、向您發送消息或出現在您的通知中。",
   },
+  MutedAllPage: {
+    pageTitle: "已靜音的帳號",
+    description: "所有已靜音的用戶都將顯示在此處。您可以從列表中添加或刪除。",
+  },
 };
 
 export default pages;

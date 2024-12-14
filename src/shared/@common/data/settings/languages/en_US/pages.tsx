@@ -1264,6 +1264,11 @@ const pages = {
     description:
       "Blocking a user prevents them from following you, sending you messages, or appearing in your notifications.",
   },
+  MutedAllPage: {
+    pageTitle: "Muted Accounts",
+    description:
+      "All muted users are listed here. You can add or remove them from this list.",
+  },
 };
 
 export default pages;

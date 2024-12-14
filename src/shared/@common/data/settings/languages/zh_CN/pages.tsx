@@ -1236,6 +1236,10 @@ const pages = {
     description:
       "屏蔽用户后，他们将无法关注您、向您发送消息或出现在您的通知中。",
   },
+  MutedAllPage: {
+    pageTitle: "已静音的账号",
+    description: "所有已静音的用户都将在此显示。您可以从列表中添加或删除。",
+  },
 };
 
 export default pages;

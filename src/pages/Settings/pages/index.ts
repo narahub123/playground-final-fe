@@ -60,6 +60,7 @@ import {
   TaggingPage,
   TopicsPage,
   BlockedAllPage,
+  MutedAllPage,
 } from "./PrivacyAndSafety";
 import {
   NotificationsPage,
@@ -126,6 +127,7 @@ export {
   TaggingPage,
   TopicsPage,
   BlockedAllPage,
+  MutedAllPage,
   AudienceAndTagging,
   YourPosts,
   SortContents,
