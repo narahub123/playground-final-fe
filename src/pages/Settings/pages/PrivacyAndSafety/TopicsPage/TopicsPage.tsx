@@ -4,10 +4,11 @@ import { useLanguageMode } from "@shared/@common/model/hooks";
 import { Tab } from "@shared/pages/ui";
 import { HyperLink, Text, TopicButton } from "@shared/@common/ui/components";
 import { useSelector } from "react-redux";
-import { getTopics } from "@shared/@common/model/selectors";
+import { getTopics, getUser } from "@shared/@common/model/selectors";
 
 const TopicsPage = () => {
   const topics = useSelector(getTopics);
+  const user = useSelector(getUser);
   const {
     pageTitle,
     tabList,
@@ -25,7 +26,7 @@ const TopicsPage = () => {
     <MainLayout
       pageTitle={pageTitle}
       backward
-      topContent={<Tab list={tabList} />}
+      topContent={<Tab list={tabList(user.userId)} />}
       bottomContent={
         <>
           <div className={`${styles.section} ${styles[`border-bottom`]}`}>
