@@ -2,7 +2,6 @@
   padding: 10px 15px;
   border-radius: 30px;
   color: var(--theme-color);
-  background-color: var(--theme-bgColor);
 }
 
 .button:focus-visible {
@@ -11,6 +10,7 @@
 
 .valid {
   cursor: pointer;
+  background-color: var(--theme-bgColor);
 }
 
 .valid:hover {
