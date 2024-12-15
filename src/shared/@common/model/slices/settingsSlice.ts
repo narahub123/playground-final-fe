@@ -12,6 +12,7 @@ import {
   TaggingWhomType,
   TwoFactorAuthentication,
 } from "@shared/@common/types";
+import { PopularPostsType } from "@shared/@common/types/settings";
 
 const initialState: SettingsType = {
   bgTheme: "light",
@@ -76,6 +77,22 @@ const initialState: SettingsType = {
   interests: [],
   audiences: [],
   locations: [],
+  emailNotification: false,
+  emailNotifications: {
+    newNotification: true,
+    messages: true,
+    postsSentByEmail: true,
+    popularPosts: "off",
+    myStatics: true,
+    PGUpdates: true,
+    PGTips: true,
+    PGLatest: true,
+    PGPartners: true,
+    PGSurvey: true,
+    PGRecommend: true,
+    PGRecentFollowings: true,
+    PGBusiness: true,
+  },
 };
 
 // 페이지 로드 전에 setting를 먼저 로드해야 함
@@ -248,6 +265,69 @@ const settingsSlice = createSlice({
     setLocations: (state, action: PayloadAction<string[]>) => {
       state.locations = action.payload;
     },
+    setEmailNotification: (state, action: PayloadAction<boolean>) => {
+      state.emailNotification = action.payload;
+    },
+    setEmailNotificationsNewNotification: (
+      state,
+      action: PayloadAction<boolean>
+    ) => {
+      state.emailNotifications.newNotification = action.payload;
+    },
+    setEmailNotificationsMessages: (state, action: PayloadAction<boolean>) => {
+      state.emailNotifications.messages = action.payload;
+    },
+    setEmailNotificationsPostsSentByEmail: (
+      state,
+      action: PayloadAction<boolean>
+    ) => {
+      state.emailNotifications.postsSentByEmail = action.payload;
+    },
+    setEmailNotificationsPopularPosts: (
+      state,
+      action: PayloadAction<PopularPostsType>
+    ) => {
+      state.emailNotifications.popularPosts = action.payload;
+    },
+    setEmailNotificationsMyStatics: (state, action: PayloadAction<boolean>) => {
+      state.emailNotifications.myStatics = action.payload;
+    },
+    setEmailNotificationsPGUpdates: (state, action: PayloadAction<boolean>) => {
+      state.emailNotifications.PGUpdates = action.payload;
+    },
+    setEmailNotificationsPGTips: (state, action: PayloadAction<boolean>) => {
+      state.emailNotifications.PGTips = action.payload;
+    },
+    setEmailNotificationsPGLatest: (state, action: PayloadAction<boolean>) => {
+      state.emailNotifications.PGLatest = action.payload;
+    },
+    setEmailNotificationsPGPartners: (
+      state,
+      action: PayloadAction<boolean>
+    ) => {
+      state.emailNotifications.PGPartners = action.payload;
+    },
+    setEmailNotificationsPGSurvey: (state, action: PayloadAction<boolean>) => {
+      state.emailNotifications.PGSurvey = action.payload;
+    },
+    setEmailNotificationsPGRecommend: (
+      state,
+      action: PayloadAction<boolean>
+    ) => {
+      state.emailNotifications.PGRecommend = action.payload;
+    },
+    setEmailNotificationsPGRecentFollowings: (
+      state,
+      action: PayloadAction<boolean>
+    ) => {
+      state.emailNotifications.PGRecentFollowings = action.payload;
+    },
+    setEmailNotificationsPGBusiness: (
+      state,
+      action: PayloadAction<boolean>
+    ) => {
+      state.emailNotifications.PGBusiness = action.payload;
+    },
   },
 });
 
@@ -306,4 +386,18 @@ export const {
   setInterests,
   setAudiences,
   setLocations,
+  setEmailNotification,
+  setEmailNotificationsNewNotification,
+  setEmailNotificationsMessages,
+  setEmailNotificationsPostsSentByEmail,
+  setEmailNotificationsPopularPosts,
+  setEmailNotificationsMyStatics,
+  setEmailNotificationsPGUpdates,
+  setEmailNotificationsPGTips,
+  setEmailNotificationsPGLatest,
+  setEmailNotificationsPGPartners,
+  setEmailNotificationsPGSurvey,
+  setEmailNotificationsPGRecommend,
+  setEmailNotificationsPGRecentFollowings,
+  setEmailNotificationsPGBusiness,
 } = settingsSlice.actions;

@@ -28,6 +28,18 @@ import {
   getTwoFactorAuthentication,
   getHideLabel,
   getAllowTaggingWhom,
+  getEmailNotificationsPGBusiness,
+  getEmailNotificationsPGRecentFollowings,
+  getEmailNotificationsPGRecommend,
+  getEmailNotificationsPGSurvey,
+  getEmailNotificationsPGPartners,
+  getEmailNotificationsPGLatest,
+  getEmailNotificationsPGTips,
+  getEmailNotificationsPGUpdates,
+  getEmailNotificationsPopularPosts,
+  getEmailNotificationsPostsSentByEmail,
+  getEmailNotificationsMessages,
+  getEmailNotificationsNewNotification,
 } from "@shared/@common/model/selectors";
 import {
   setAddImgExpl,
@@ -58,6 +70,18 @@ import {
   setTwoFactorAuthentication,
   setHideLabel,
   setAllowTaggingWhom,
+  setEmailNotificationsPGBusiness,
+  setEmailNotificationsPGRecentFollowings,
+  setEmailNotificationsPGRecommend,
+  setEmailNotificationsPGSurvey,
+  setEmailNotificationsPGPartners,
+  setEmailNotificationsPGLatest,
+  setEmailNotificationsPGTips,
+  setEmailNotificationsPGUpdates,
+  setEmailNotificationsPopularPosts,
+  setEmailNotificationsPostsSentByEmail,
+  setEmailNotificationsMessages,
+  setEmailNotificationsNewNotification,
 } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
@@ -1374,6 +1398,135 @@ const pages = {
         ),
       },
     },
+  },
+  EmailNotificationsPage: {
+    pageTitle: "Email Notifications",
+    toggle: {
+      text: "Email Notifications",
+      expl: "Stay updated on what's happening on PG via email when you're away. You can turn off this setting anytime.",
+    },
+    postList: [
+      {
+        title: "About me or my posts",
+        type: "checkbox",
+        selector: getEmailNotificationsNewNotification,
+        comp: {
+          text: "New Notifications",
+          reducer: setEmailNotificationsNewNotification,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsMessages,
+        comp: {
+          text: "Messages",
+          reducer: setEmailNotificationsMessages,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsPostsSentByEmail,
+        comp: {
+          text: "Posts sent to me via email",
+          reducer: setEmailNotificationsPostsSentByEmail,
+        },
+      },
+      {
+        type: "checkboxlist",
+        text: "Popular Posts and Stories",
+        selector: getEmailNotificationsPopularPosts,
+        comp: [
+          {
+            text: "Send Daily",
+            reducer: setEmailNotificationsPopularPosts,
+            value: "daily",
+          },
+          {
+            text: "Send Weekly",
+            reducer: setEmailNotificationsPopularPosts,
+            value: "weekly",
+          },
+          {
+            text: "Send Frequently",
+            reducer: setEmailNotificationsPopularPosts,
+            value: "frequently",
+          },
+          {
+            text: "Turn Off",
+            reducer: setEmailNotificationsPopularPosts,
+            value: "off",
+          },
+        ],
+      },
+    ],
+    heading2: "Notifications from PG",
+    pgList: [
+      {
+        title: "Notifications from PG",
+        type: "checkbox",
+        selector: getEmailNotificationsPGUpdates,
+        comp: {
+          text: "Updates on PG services and features",
+          reducer: setEmailNotificationsPGUpdates,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsPGTips,
+        comp: {
+          text: "Tips for getting the most out of PG",
+          reducer: setEmailNotificationsPGTips,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsPGLatest,
+        comp: {
+          text: "Catch up on what's happened since you last logged in",
+          reducer: setEmailNotificationsPGLatest,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsPGPartners,
+        comp: {
+          text: "News about PG from partner products and third-party services",
+          reducer: setEmailNotificationsPGPartners,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsPGSurvey,
+        comp: {
+          text: "Tips for getting the most out of PG",
+          reducer: setEmailNotificationsPGSurvey,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsPGRecommend,
+        comp: {
+          text: "Suggestions for recommended accounts",
+          reducer: setEmailNotificationsPGRecommend,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsPGRecentFollowings,
+        comp: {
+          text: "Recommendations based on recent followings",
+          reducer: setEmailNotificationsPGRecentFollowings,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsPGBusiness,
+        comp: {
+          text: "Tips related to PG Business products",
+          reducer: setEmailNotificationsPGBusiness,
+        },
+      },
+    ],
   },
 };
 

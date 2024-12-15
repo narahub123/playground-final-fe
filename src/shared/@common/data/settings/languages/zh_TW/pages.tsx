@@ -28,6 +28,18 @@ import {
   getTwoFactorAuthentication,
   getHideLabel,
   getAllowTaggingWhom,
+  getEmailNotificationsPGBusiness,
+  getEmailNotificationsPGRecentFollowings,
+  getEmailNotificationsPGRecommend,
+  getEmailNotificationsPGSurvey,
+  getEmailNotificationsPGPartners,
+  getEmailNotificationsPGLatest,
+  getEmailNotificationsPGTips,
+  getEmailNotificationsPGUpdates,
+  getEmailNotificationsPopularPosts,
+  getEmailNotificationsPostsSentByEmail,
+  getEmailNotificationsMessages,
+  getEmailNotificationsNewNotification,
 } from "@shared/@common/model/selectors";
 import {
   setAddImgExpl,
@@ -58,6 +70,18 @@ import {
   setTwoFactorAuthentication,
   setHideLabel,
   setAllowTaggingWhom,
+  setEmailNotificationsPGBusiness,
+  setEmailNotificationsPGRecentFollowings,
+  setEmailNotificationsPGRecommend,
+  setEmailNotificationsPGSurvey,
+  setEmailNotificationsPGPartners,
+  setEmailNotificationsPGLatest,
+  setEmailNotificationsPGTips,
+  setEmailNotificationsPGUpdates,
+  setEmailNotificationsPopularPosts,
+  setEmailNotificationsPostsSentByEmail,
+  setEmailNotificationsMessages,
+  setEmailNotificationsNewNotification,
 } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
@@ -1343,6 +1367,135 @@ const pages = {
         ),
       },
     },
+  },
+  EmailNotificationsPage: {
+    pageTitle: "電子郵件通知",
+    toggle: {
+      text: "電子郵件通知",
+      expl: "通過電子郵件隨時瞭解您不在時PG發生的事情。您可以隨時關閉此設置。",
+    },
+    postList: [
+      {
+        title: "關於我或我的帖子",
+        type: "checkbox",
+        selector: getEmailNotificationsNewNotification,
+        comp: {
+          text: "新通知",
+          reducer: setEmailNotificationsNewNotification,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsMessages,
+        comp: {
+          text: "消息",
+          reducer: setEmailNotificationsMessages,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsPostsSentByEmail,
+        comp: {
+          text: "通過電子郵件發送給我的帖子",
+          reducer: setEmailNotificationsPostsSentByEmail,
+        },
+      },
+      {
+        type: "checkboxlist",
+        text: "熱門帖子和故事",
+        selector: getEmailNotificationsPopularPosts,
+        comp: [
+          {
+            text: "每日發送",
+            reducer: setEmailNotificationsPopularPosts,
+            value: "daily",
+          },
+          {
+            text: "每週發送",
+            reducer: setEmailNotificationsPopularPosts,
+            value: "weekly",
+          },
+          {
+            text: "頻繁發送",
+            reducer: setEmailNotificationsPopularPosts,
+            value: "frequently",
+          },
+          {
+            text: "關閉",
+            reducer: setEmailNotificationsPopularPosts,
+            value: "off",
+          },
+        ],
+      },
+    ],
+    heading2: "來自PG的通知",
+    pgList: [
+      {
+        title: "來自PG的通知",
+        type: "checkbox",
+        selector: getEmailNotificationsPGUpdates,
+        comp: {
+          text: "PG服務和功能更新",
+          reducer: setEmailNotificationsPGUpdates,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsPGTips,
+        comp: {
+          text: "充分利用PG的提示",
+          reducer: setEmailNotificationsPGTips,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsPGLatest,
+        comp: {
+          text: "自上次登錄以來發生的事情",
+          reducer: setEmailNotificationsPGLatest,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsPGPartners,
+        comp: {
+          text: "關於PG的合作夥伴產品和第三方服務的新聞",
+          reducer: setEmailNotificationsPGPartners,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsPGSurvey,
+        comp: {
+          text: "充分利用PG的提示",
+          reducer: setEmailNotificationsPGSurvey,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsPGRecommend,
+        comp: {
+          text: "推薦賬戶建議",
+          reducer: setEmailNotificationsPGRecommend,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsPGRecentFollowings,
+        comp: {
+          text: "基於最近關注的推薦",
+          reducer: setEmailNotificationsPGRecentFollowings,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsPGBusiness,
+        comp: {
+          text: "與PG商業產品相關的提示",
+          reducer: setEmailNotificationsPGBusiness,
+        },
+      },
+    ],
   },
 };
 

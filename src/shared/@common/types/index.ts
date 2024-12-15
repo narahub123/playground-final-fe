@@ -29,6 +29,7 @@ import {
   MuteType,
   MuteTargetType,
   MuteDurationType,
+  PopularPostsType,
 } from "./settings";
 
 // 컴포넌트

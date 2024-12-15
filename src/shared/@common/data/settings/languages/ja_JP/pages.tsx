@@ -28,6 +28,18 @@ import {
   getTwoFactorAuthentication,
   getHideLabel,
   getAllowTaggingWhom,
+  getEmailNotificationsPGBusiness,
+  getEmailNotificationsPGRecentFollowings,
+  getEmailNotificationsPGRecommend,
+  getEmailNotificationsPGSurvey,
+  getEmailNotificationsPGPartners,
+  getEmailNotificationsPGLatest,
+  getEmailNotificationsPGTips,
+  getEmailNotificationsPGUpdates,
+  getEmailNotificationsPopularPosts,
+  getEmailNotificationsPostsSentByEmail,
+  getEmailNotificationsMessages,
+  getEmailNotificationsNewNotification,
 } from "@shared/@common/model/selectors";
 import {
   setAddImgExpl,
@@ -58,6 +70,18 @@ import {
   setTwoFactorAuthentication,
   setHideLabel,
   setAllowTaggingWhom,
+  setEmailNotificationsPGBusiness,
+  setEmailNotificationsPGRecentFollowings,
+  setEmailNotificationsPGRecommend,
+  setEmailNotificationsPGSurvey,
+  setEmailNotificationsPGPartners,
+  setEmailNotificationsPGLatest,
+  setEmailNotificationsPGTips,
+  setEmailNotificationsPGUpdates,
+  setEmailNotificationsPopularPosts,
+  setEmailNotificationsPostsSentByEmail,
+  setEmailNotificationsMessages,
+  setEmailNotificationsNewNotification,
 } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
@@ -1374,6 +1398,135 @@ const pages = {
         ),
       },
     },
+  },
+  EmailNotificationsPage: {
+    pageTitle: "メール通知",
+    toggle: {
+      text: "メール通知",
+      expl: "不在時にPGで何が起きているかをメールで確認できます。この設定はいつでもオフにすることができます。",
+    },
+    postList: [
+      {
+        title: "自分または自分の投稿に関すること",
+        type: "checkbox",
+        selector: getEmailNotificationsNewNotification,
+        comp: {
+          text: "新しい通知",
+          reducer: setEmailNotificationsNewNotification,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsMessages,
+        comp: {
+          text: "メッセージ",
+          reducer: setEmailNotificationsMessages,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsPostsSentByEmail,
+        comp: {
+          text: "メールで送信された投稿",
+          reducer: setEmailNotificationsPostsSentByEmail,
+        },
+      },
+      {
+        type: "checkboxlist",
+        text: "人気の投稿とストーリー",
+        selector: getEmailNotificationsPopularPosts,
+        comp: [
+          {
+            text: "毎日送信",
+            reducer: setEmailNotificationsPopularPosts,
+            value: "daily",
+          },
+          {
+            text: "毎週送信",
+            reducer: setEmailNotificationsPopularPosts,
+            value: "weekly",
+          },
+          {
+            text: "頻繁に送信",
+            reducer: setEmailNotificationsPopularPosts,
+            value: "frequently",
+          },
+          {
+            text: "オフ",
+            reducer: setEmailNotificationsPopularPosts,
+            value: "off",
+          },
+        ],
+      },
+    ],
+    heading2: "PGからの通知",
+    pgList: [
+      {
+        title: "PGからの通知",
+        type: "checkbox",
+        selector: getEmailNotificationsPGUpdates,
+        comp: {
+          text: "PGサービスおよび機能に関する更新",
+          reducer: setEmailNotificationsPGUpdates,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsPGTips,
+        comp: {
+          text: "PGを最大限活用するためのヒント",
+          reducer: setEmailNotificationsPGTips,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsPGLatest,
+        comp: {
+          text: "最後のログイン以降に起きたことを確認",
+          reducer: setEmailNotificationsPGLatest,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsPGPartners,
+        comp: {
+          text: "パートナー製品および第三者サービスのPGに関するニュース",
+          reducer: setEmailNotificationsPGPartners,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsPGSurvey,
+        comp: {
+          text: "PGを最大限活用するためのヒント",
+          reducer: setEmailNotificationsPGSurvey,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsPGRecommend,
+        comp: {
+          text: "おすすめアカウントに関する提案",
+          reducer: setEmailNotificationsPGRecommend,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsPGRecentFollowings,
+        comp: {
+          text: "最近フォローしたアカウントに基づくおすすめ",
+          reducer: setEmailNotificationsPGRecentFollowings,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsPGBusiness,
+        comp: {
+          text: "PGビジネス製品に関連するヒント",
+          reducer: setEmailNotificationsPGBusiness,
+        },
+      },
+    ],
   },
 };
 

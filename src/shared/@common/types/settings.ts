@@ -48,6 +48,8 @@ type SettingsType = {
   interests: string[];
   audiences: string[];
   locations: string[];
+  emailNotification: boolean;
+  emailNotifications: EmailNotificationsType;
 };
 
 type MuteType = {
@@ -68,6 +70,24 @@ type TwoFactorAuthentication = "sms" | "app" | "key" | "";
 type NotificationsType = {
   mutes: MutesType;
 };
+
+type EmailNotificationsType = {
+  newNotification: boolean;
+  messages: boolean;
+  postsSentByEmail: boolean;
+  popularPosts: PopularPostsType;
+  myStatics: boolean;
+  PGUpdates: boolean;
+  PGTips: boolean;
+  PGLatest: boolean;
+  PGPartners: boolean;
+  PGSurvey: boolean;
+  PGRecommend: boolean;
+  PGRecentFollowings: boolean;
+  PGBusiness: boolean;
+};
+
+type PopularPostsType = "daily" | "weekly" | "frequently" | "off";
 
 type MutesType = {
   notFollowing: boolean;
@@ -121,4 +141,5 @@ export type {
   MuteType,
   MuteTargetType,
   MuteDurationType,
+  PopularPostsType,
 };

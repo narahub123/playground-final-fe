@@ -69,6 +69,34 @@ const getContacts = (state: RootState) => state.settings.contacts;
 const getInterests = (state: RootState) => state.settings.interests;
 const getAudiences = (state: RootState) => state.settings.audiences;
 const getLocations = (state: RootState) => state.settings.locations;
+const getEmailNotification = (state: RootState) =>
+  state.settings.emailNotification;
+const getEmailNotificationsNewNotification = (state: RootState) =>
+  state.settings.emailNotifications.newNotification;
+const getEmailNotificationsMessages = (state: RootState) =>
+  state.settings.emailNotifications.messages;
+const getEmailNotificationsPostsSentByEmail = (state: RootState) =>
+  state.settings.emailNotifications.postsSentByEmail;
+const getEmailNotificationsPopularPosts = (state: RootState) =>
+  state.settings.emailNotifications.popularPosts;
+const getEmailNotificationsMyStatics = (state: RootState) =>
+  state.settings.emailNotifications.myStatics;
+const getEmailNotificationsPGUpdates = (state: RootState) =>
+  state.settings.emailNotifications.PGUpdates;
+const getEmailNotificationsPGTips = (state: RootState) =>
+  state.settings.emailNotifications.PGTips;
+const getEmailNotificationsPGLatest = (state: RootState) =>
+  state.settings.emailNotifications.PGLatest;
+const getEmailNotificationsPGPartners = (state: RootState) =>
+  state.settings.emailNotifications.PGPartners;
+const getEmailNotificationsPGSurvey = (state: RootState) =>
+  state.settings.emailNotifications.PGSurvey;
+const getEmailNotificationsPGRecommend = (state: RootState) =>
+  state.settings.emailNotifications.PGRecommend;
+const getEmailNotificationsPGRecentFollowings = (state: RootState) =>
+  state.settings.emailNotifications.PGRecentFollowings;
+const getEmailNotificationsPGBusiness = (state: RootState) =>
+  state.settings.emailNotifications.PGBusiness;
 
 export {
   getSettings,
@@ -125,4 +153,18 @@ export {
   getInterests,
   getAudiences,
   getLocations,
+  getEmailNotification,
+  getEmailNotificationsNewNotification,
+  getEmailNotificationsMessages,
+  getEmailNotificationsPostsSentByEmail,
+  getEmailNotificationsPopularPosts,
+  getEmailNotificationsMyStatics,
+  getEmailNotificationsPGUpdates,
+  getEmailNotificationsPGTips,
+  getEmailNotificationsPGLatest,
+  getEmailNotificationsPGPartners,
+  getEmailNotificationsPGSurvey,
+  getEmailNotificationsPGRecommend,
+  getEmailNotificationsPGRecentFollowings,
+  getEmailNotificationsPGBusiness,
 };

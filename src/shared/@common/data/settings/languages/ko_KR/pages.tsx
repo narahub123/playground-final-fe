@@ -27,6 +27,18 @@ import {
   setTwoFactorAuthentication,
   setHideLabel,
   setAllowTaggingWhom,
+  setEmailNotificationsNewNotification,
+  setEmailNotificationsMessages,
+  setEmailNotificationsPostsSentByEmail,
+  setEmailNotificationsPopularPosts,
+  setEmailNotificationsPGUpdates,
+  setEmailNotificationsPGTips,
+  setEmailNotificationsPGLatest,
+  setEmailNotificationsPGPartners,
+  setEmailNotificationsPGSurvey,
+  setEmailNotificationsPGRecommend,
+  setEmailNotificationsPGRecentFollowings,
+  setEmailNotificationsPGBusiness,
 } from "@shared/@common/model/slices/settingsSlice";
 import { SettingsType, UserType } from "@shared/@common/types";
 import { countryNamesKor } from "@shared/@common/data/countries";
@@ -66,6 +78,18 @@ import {
   getTwoFactorAuthentication,
   getHideLabel,
   getAllowTaggingWhom,
+  getEmailNotificationsNewNotification,
+  getEmailNotificationsMessages,
+  getEmailNotificationsPostsSentByEmail,
+  getEmailNotificationsPopularPosts,
+  getEmailNotificationsPGUpdates,
+  getEmailNotificationsPGTips,
+  getEmailNotificationsPGLatest,
+  getEmailNotificationsPGPartners,
+  getEmailNotificationsPGSurvey,
+  getEmailNotificationsPGRecommend,
+  getEmailNotificationsPGRecentFollowings,
+  getEmailNotificationsPGBusiness,
 } from "@shared/@common/model/selectors";
 import regExp from "@shared/@common/data/regExp";
 
@@ -1392,6 +1416,135 @@ const pages = {
         ),
       },
     },
+  },
+  EmailNotificationsPage: {
+    pageTitle: "이메일 알림",
+    toggle: {
+      text: "이메일 알림",
+      expl: "PG에서 자리를 비운 사이 무슨 일이 일어났는지 이메일로 알아볼 수 있습니다. 언제든 이 설정을 끌 수 있습니다.",
+    },
+    postList: [
+      {
+        title: "나 또는 내 게시물 관련",
+        type: "checkbox",
+        selector: getEmailNotificationsNewNotification,
+        comp: {
+          text: "새 알림",
+          reducer: setEmailNotificationsNewNotification,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsMessages,
+        comp: {
+          text: "메시지",
+          reducer: setEmailNotificationsMessages,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsPostsSentByEmail,
+        comp: {
+          text: "내게 이메일로 전송된 게시물",
+          reducer: setEmailNotificationsPostsSentByEmail,
+        },
+      },
+      {
+        type: "checkboxlist",
+        text: "인기 게시물 및 스토리",
+        selector: getEmailNotificationsPopularPosts,
+        comp: [
+          {
+            text: "메일 보내기",
+            reducer: setEmailNotificationsPopularPosts,
+            value: "daily",
+          },
+          {
+            text: "매주 보내기",
+            reducer: setEmailNotificationsPopularPosts,
+            value: "weekly",
+          },
+          {
+            text: "수시로 보내기",
+            reducer: setEmailNotificationsPopularPosts,
+            value: "frequently",
+          },
+          {
+            text: "끄기",
+            reducer: setEmailNotificationsPopularPosts,
+            value: "off",
+          },
+        ],
+      },
+    ],
+    heading2: "PG에서 알림",
+    pgList: [
+      {
+        title: "PG에서 알림",
+        type: "checkbox",
+        selector: getEmailNotificationsPGUpdates,
+        comp: {
+          text: "PG 서비스 및 기능 업데이트 소식",
+          reducer: setEmailNotificationsPGUpdates,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsPGTips,
+        comp: {
+          text: "PG를 최대한 활용하기 위한 팁",
+          reducer: setEmailNotificationsPGTips,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsPGLatest,
+        comp: {
+          text: "마지막으로 PG에 로그인한 이후 자리를 비운 사이에 일어난 일",
+          reducer: setEmailNotificationsPGLatest,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsPGPartners,
+        comp: {
+          text: "파트너 제품 및 기타 타사 서비스의 PG 관련 소식",
+          reducer: setEmailNotificationsPGPartners,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsPGSurvey,
+        comp: {
+          text: "PG를 최대한 활용하기 위한 팁",
+          reducer: setEmailNotificationsPGSurvey,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsPGRecommend,
+        comp: {
+          text: "추천 계정에 대한 제안",
+          reducer: setEmailNotificationsPGRecommend,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsPGRecentFollowings,
+        comp: {
+          text: "최근 팔로우 기반 추천",
+          reducer: setEmailNotificationsPGRecentFollowings,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getEmailNotificationsPGBusiness,
+        comp: {
+          text: "PG 비즈니스 제품 관련 도움말",
+          reducer: setEmailNotificationsPGBusiness,
+        },
+      },
+    ],
   },
 };
 
