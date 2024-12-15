@@ -146,7 +146,7 @@ type ColorThemeType =
   | "green"
   | "yellow"
   | "purple"
-  | "black";
+  | "orange";
 
 type FontSizeType = "xs" | "s" | "b" | "l" | "xl";
 

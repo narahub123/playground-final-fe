@@ -1783,6 +1783,28 @@ const pages = {
       },
     ],
   },
+  DisplayPage: {
+    pageTitle: "표시",
+    description:
+      "글꼴 크기, 색상 및 배경을 관리합니다. 이러한 설정은 이 브라우저의 모든 PG 계정에 적용됩니다.",
+    heading1: "글꼴 크기",
+    heading2: "색상",
+    heading3: "배경",
+    list: [
+      {
+        text: "기본",
+        value: "light",
+      },
+      {
+        text: "어둡게",
+        value: "dark",
+      },
+      {
+        text: "완전히 어둡게",
+        value: "darker",
+      },
+    ],
+  },
 };
 
 export default pages;

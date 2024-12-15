@@ -1734,6 +1734,28 @@ const pages = {
       },
     ],
   },
+  DisplayPage: {
+    pageTitle: "顯示",
+    description:
+      "管理字型大小、顏色和背景。這些設定將應用於此瀏覽器的所有PG帳戶。",
+    heading1: "字型大小",
+    heading2: "顏色",
+    heading3: "背景",
+    list: [
+      {
+        text: "預設",
+        value: "light",
+      },
+      {
+        text: "暗色",
+        value: "dark",
+      },
+      {
+        text: "非常暗",
+        value: "darker",
+      },
+    ],
+  },
 };
 
 export default pages;

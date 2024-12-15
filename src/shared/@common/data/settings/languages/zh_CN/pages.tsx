@@ -1733,6 +1733,28 @@ const pages = {
       },
     ],
   },
+  DisplayPage: {
+    pageTitle: "显示",
+    description:
+      "管理字体大小、颜色和背景。这些设置将应用于此浏览器的所有PG帐户。",
+    heading1: "字体大小",
+    heading2: "颜色",
+    heading3: "背景",
+    list: [
+      {
+        text: "默认",
+        value: "light",
+      },
+      {
+        text: "暗色",
+        value: "dark",
+      },
+      {
+        text: "非常暗",
+        value: "darker",
+      },
+    ],
+  },
 };
 
 export default pages;

@@ -12,7 +12,6 @@ import AdsPreferences from "./PrivacyFolder/AdsPreferences/AdsPreferences";
 import NotificationFilter from "./NotificationFolder/NotificationFilter/NotificationFilter";
 import NotificationPreferences from "./NotificationFolder/NotificationPreferences/NotificationPreferences";
 import Accessibility from "./AccessibilityDisplayAndLanguagesFolder/Accessibility/Accessibility";
-import Display from "./AccessibilityDisplayAndLanguagesFolder/Display/Display";
 import Languages from "./AccessibilityDisplayAndLanguagesFolder/Languages/Languages";
 import DataUsage from "./AccessibilityDisplayAndLanguagesFolder/DataUsage/DataUsage";
 import SettingsLandingPage from "./SettingsLandingPage/SettingsLandingPage";
@@ -81,6 +80,7 @@ import {
   LanguagesPage,
   DataPage,
   AutoplayPage,
+  DisplayPage,
 } from "./AccessibilityAndDisplayAndLanguages";
 export {
   SettingsLandingPage,
@@ -154,7 +154,7 @@ export {
   EmailNotificationsPage,
   PushNotificationsPage,
   Accessibility,
-  Display,
   Languages,
   DataUsage,
+  DisplayPage,
 };

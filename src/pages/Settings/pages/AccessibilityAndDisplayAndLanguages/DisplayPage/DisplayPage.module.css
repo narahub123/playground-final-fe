@@ -1,0 +1,109 @@
+.section {
+  padding: 10px;
+}
+.font-size {
+  display: flex;
+  align-items: center;
+}
+.graph {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.circle-container {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 93%;
+}
+.circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--theme-deselected);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.selected {
+  width: 20px;
+  height: 20px;
+}
+
+.line {
+  width: 90%;
+  height: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.part {
+  height: 5px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1;
+  background-color: var(--theme-deselected);
+}
+
+.xs {
+  font-size: 10px;
+}
+
+.xl {
+  font-size: 23px;
+}
+
+.active {
+  background-color: var(--theme-bgColor);
+}
+
+/* 색상 */
+.color-list {
+  display: flex;
+  justify-content: space-around;
+}
+.color-circle {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* 배경 */
+.list {
+  display: flex;
+  gap: 10px;
+}
+
+.bgItem {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.light {
+  background-color: #fff;
+  color: black;
+}
+.dark {
+  background-color: #00000091;
+  color: #fff;
+}
+.darker {
+  background-color: #000;
+  color: #fff;
+}

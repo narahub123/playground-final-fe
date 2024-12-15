@@ -5,24 +5,7 @@ html[data-color-theme="cornflowerblue"] {
   --theme-border: 2px solid var(--theme-bgColor);
   --theme-hover-bgColor: rgba(100, 140, 237); /* 149 -> 140 */
   --theme-invalid: rgba(100, 149, 237, 0.7);
-}
-
-html[data-color-theme="red"] {
-  --theme-bgColor: red;
-  --theme-color: white;
-  --theme-outline: 2px solid var(--theme-bgColor);
-  --theme-border: 2px solid var(--theme-bgColor);
-  --theme-hover-bgColor: rgb(255, 10, 0); /* 0 -> 10 */
-  --theme-invalid: rgba(255, 0, 0, 0.7);
-}
-
-html[data-color-theme="green"] {
-  --theme-bgColor: green;
-  --theme-color: white;
-  --theme-outline: 2px solid var(--theme-bgColor);
-  --theme-border: 2px solid var(--theme-bgColor);
-  --theme-hover-bgColor: rgb(0, 120, 0); /* 128 -> 120 */
-  --theme-invalid: rgba(0, 128, 0, 0.7);
+  --theme-deselected: #a6c8e3;
 }
 
 html[data-color-theme="yellow"] {
@@ -32,6 +15,17 @@ html[data-color-theme="yellow"] {
   --theme-border: 2px solid var(--theme-bgColor);
   --theme-hover-bgColor: rgb(255, 255, 0); /* 255 => 250 */
   --theme-invalid: rgba(255, 255, 0, 0.7);
+  --theme-deselected: #ffff7f;
+}
+
+html[data-color-theme="red"] {
+  --theme-bgColor: red;
+  --theme-color: white;
+  --theme-outline: 2px solid var(--theme-bgColor);
+  --theme-border: 2px solid var(--theme-bgColor);
+  --theme-hover-bgColor: rgb(255, 10, 0); /* 0 -> 10 */
+  --theme-invalid: rgba(255, 0, 0, 0.7);
+  --theme-deselected: #ff7f7f;
 }
 
 html[data-color-theme="purple"] {
@@ -41,13 +35,25 @@ html[data-color-theme="purple"] {
   --theme-border: 2px solid var(--theme-bgColor);
   --theme-hover-bgColor: rgb(128, 10, 128); /* 0 -> 10 */
   --theme-invalid: rgba(128, 0, 128, 0.7);
+  --theme-deselected: #d480d4;
 }
 
-html[data-color-theme="black"] {
-  --theme-bgColor: black;
+html[data-color-theme="orange"] {
+  --theme-bgColor: orange;
   --theme-color: white;
   --theme-outline: 2px solid var(--theme-bgColor);
   --theme-border: 2px solid var(--theme-bgColor);
-  --theme-hover-bgColor: rgb(0, 10, 0); /* 0 -> 10 */
-  --theme-invalid: rgba(0, 0, 0, 0.7);
+  --theme-hover-bgColor: rgb(255, 175, 0); /* 0 -> 10 */
+  --theme-invalid: rgba(255, 165, 0, 0.7);
+  --theme-deselected: #ffbf80;
+}
+
+html[data-color-theme="green"] {
+  --theme-bgColor: green;
+  --theme-color: white;
+  --theme-outline: 2px solid var(--theme-bgColor);
+  --theme-border: 2px solid var(--theme-bgColor);
+  --theme-hover-bgColor: rgb(0, 120, 0); /* 128 -> 120 */
+  --theme-invalid: rgba(0, 128, 0, 0.7);
+  --theme-deselected: #7fff7f;
 }

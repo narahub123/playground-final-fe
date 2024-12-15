@@ -1765,6 +1765,28 @@ const pages = {
       },
     ],
   },
+  DisplayPage: {
+    pageTitle: "Display",
+    description:
+      "Manage font size, color, and background. These settings will apply to all PG accounts in this browser.",
+    heading1: "Font Size",
+    heading2: "Color",
+    heading3: "Background",
+    list: [
+      {
+        text: "Default",
+        value: "light",
+      },
+      {
+        text: "Dark",
+        value: "dark",
+      },
+      {
+        text: "Very Dark",
+        value: "darker",
+      },
+    ],
+  },
 };
 
 export default pages;

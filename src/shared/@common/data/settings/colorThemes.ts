@@ -7,7 +7,7 @@ const colorThemeArr: { color: ColorThemeType }[] = [
   { color: "green" },
   { color: "yellow" },
   { color: "purple" },
-  { color: "black" },
+  { color: "orange" },
 ];
 
 export { colorThemeArr };

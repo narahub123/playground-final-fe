@@ -1765,6 +1765,28 @@ const pages = {
       },
     ],
   },
+  DisplayPage: {
+    pageTitle: "表示",
+    description:
+      "フォントサイズ、色、背景を管理します。これらの設定は、このブラウザのすべてのPGアカウントに適用されます。",
+    heading1: "フォントサイズ",
+    heading2: "色",
+    heading3: "背景",
+    list: [
+      {
+        text: "デフォルト",
+        value: "light",
+      },
+      {
+        text: "暗く",
+        value: "dark",
+      },
+      {
+        text: "非常に暗く",
+        value: "darker",
+      },
+    ],
+  },
 };
 
 export default pages;

@@ -27,7 +27,6 @@ import {
   AccountPage,
   AppsAndSessionsPage,
   About,
-  Display,
   SecurityAndAccountAccessPage,
   PrivacyAndSafetyPage,
   NotificationsPage,
@@ -82,6 +81,7 @@ import {
   LocationsPage,
   EmailNotificationsPage,
   PushNotificationsPage,
+  DisplayPage,
 } from "@pages/Settings/pages";
 import { AuthLayout } from "@/layouts";
 import { PageLayout } from "@shared/pages/layout";
@@ -400,7 +400,7 @@ export const router = createBrowserRouter([
                   },
                   {
                     path: "display",
-                    element: <Display />,
+                    element: <DisplayPage />,
                   },
                   {
                     path: "languages",
