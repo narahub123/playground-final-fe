@@ -15,15 +15,15 @@ import {
   CheckBoxType,
   SettingsBranchType,
 } from "@features/settings-setting/types/data";
-import { HyperLinkCardType, InputValueType } from "@shared/@common/types";
+import { HyperLinkCardType } from "@shared/@common/types";
 
 interface SettingsContainerProps {
   item:
     | SettingsBranchListContainerType
     | SettingsCheckBoxContainerType
     | SettingsHyperLinkCardContainerType;
-  initialValue?: InputValueType;
-  setter?: React.Dispatch<React.SetStateAction<InputValueType>>;
+  initialValue?: any;
+  setter?: React.Dispatch<React.SetStateAction<any>>;
   isRounded?: boolean;
   gap?: number;
   unit?: string;
