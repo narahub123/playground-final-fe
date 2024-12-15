@@ -27,10 +27,6 @@ import {
   setTwoFactorAuthentication,
   setHideLabel,
   setAllowTaggingWhom,
-  setMuteinHomeFeed,
-  setMuteNotification,
-  setMuteTarget,
-  setMuteDuration,
 } from "@shared/@common/model/slices/settingsSlice";
 import { SettingsType, UserType } from "@shared/@common/types";
 import { countryNamesKor } from "@shared/@common/data/countries";
@@ -70,10 +66,6 @@ import {
   getTwoFactorAuthentication,
   getHideLabel,
   getAllowTaggingWhom,
-  getMuteinHomeFeed,
-  getMuteNotification,
-  getMuteTarget,
-  getMuteDuration,
 } from "@shared/@common/model/selectors";
 import regExp from "@shared/@common/data/regExp";
 
