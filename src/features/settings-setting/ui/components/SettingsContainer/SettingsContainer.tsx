@@ -27,6 +27,7 @@ interface SettingsContainerProps {
   isRounded?: boolean;
   gap?: number;
   unit?: string;
+  disabled?: boolean;
 }
 
 const SettingsContainer = ({
@@ -36,19 +37,41 @@ const SettingsContainer = ({
   isRounded = false,
   gap = 10,
   unit = "px",
+  disabled = false,
 }: SettingsContainerProps) => {
-  const { title, text, detail, type, comp, description, top, disabled } = item;
+  const { title, text, detail, type, comp, description, top } = item;
   const { selector } = item as SettingsCheckBoxContainerType;
 
   const roundCond = isRounded || Array.isArray(item.comp);
 
   return (
     <div className={styles.container} style={{ gap: `${gap}${unit}` }}>
-      {title && <Title text={title} className={`${styles.front}`} />}
-      {text && <h3 className={`${styles.heading} ${styles.front}`}>{text}</h3>}
-      {detail && <Description text={detail} className={styles.front} />}
+      {title && (
+        <Title
+          text={title}
+          className={`${styles.front} ${disabled ? styles.disabled : ""}`}
+        />
+      )}
+      {text && (
+        <h3
+          className={`${styles.heading} ${styles.front} ${
+            disabled ? styles.disabled : ""
+          }`}
+        >
+          {text}
+        </h3>
+      )}
+      {detail && (
+        <Description
+          text={detail}
+          className={`${styles.front} ${disabled ? styles.disabled : ""}`}
+        />
+      )}
       {type === "card" ? (
-        <SettingsBranchCard item={comp as SettingsBranchType} />
+        <SettingsBranchCard
+          item={comp as SettingsBranchType}
+          className={`${disabled ? styles.disabled : undefined}`}
+        />
       ) : type === "checkbox" ? (
         <CheckBox
           item={comp as CheckBoxType}
@@ -59,6 +82,7 @@ const SettingsContainer = ({
           selector={selector}
           initialValue={initialValue}
           setter={setter}
+          disabled={disabled}
         />
       ) : type === "checkboxlist" ? (
         (comp as CheckBoxType[]).map((i, index) => (
@@ -72,10 +96,14 @@ const SettingsContainer = ({
             selector={selector}
             initialValue={initialValue}
             setter={setter}
+            disabled={disabled}
           />
         ))
       ) : type === "link" ? (
-        <HyperLinkCard item={comp as HyperLinkCardType} />
+        <HyperLinkCard
+          item={comp as HyperLinkCardType}
+          className={`${disabled ? styles.disabled : undefined}`}
+        />
       ) : undefined}
       {description && (
         <Description
