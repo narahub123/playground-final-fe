@@ -1331,6 +1331,14 @@ const pages = {
       text: "Save",
     },
   },
+  ContactsDashboardPage: {
+    pageTitle: "Manage Contacts",
+    hyperlink1: "Delete All Contacts",
+    expl: "These are contacts imported from your mobile device. This information is used to personalize your PG experience, such as recommending accounts to follow. You can delete previously uploaded contacts and disable syncing with PG on all devices. This process may take some time.",
+    heading: "Verify Your Password",
+    inputFieldTitle: "Password",
+    hyperlink2: "Forgot your password?",
+  },
 };
 
 export default pages;

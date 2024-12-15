@@ -1,0 +1,19 @@
+.heading {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+.hyperlink {
+  width: 100%;
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+  color: red;
+}
+
+.container {
+  padding: 10px;
+}
+
+.forget {
+  font-size: 12px;
+}

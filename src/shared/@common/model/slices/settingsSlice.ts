@@ -72,6 +72,7 @@ const initialState: SettingsType = {
     target: "notFollowing",
     duration: "forever",
   },
+  contacts: [],
 };
 
 // 페이지 로드 전에 setting를 먼저 로드해야 함
@@ -232,6 +233,9 @@ const settingsSlice = createSlice({
     setMuteDuration: (state, action: PayloadAction<MuteDurationType>) => {
       state.mute.duration = action.payload;
     },
+    setContacts: (state, action: PayloadAction<string[]>) => {
+      state.contacts = action.payload;
+    },
   },
 });
 
@@ -286,4 +290,5 @@ export const {
   setMuteNotification,
   setMuteTarget,
   setMuteDuration,
+  setContacts,
 } = settingsSlice.actions;

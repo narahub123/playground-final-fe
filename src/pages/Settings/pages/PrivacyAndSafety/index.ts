@@ -15,6 +15,7 @@ import BlockedAllPage from "./BlockedAllPage/BlockedAllPage";
 import MutedAllPage from "./MutedAllPage/MutedAllPage";
 import MutedKeywordsPage from "./MutedKeywordsPage/MutedKeywordsPage";
 import AddMutedKeywordsPage from "./AddMutedKeywordsPage/AddMutedKeywordsPage";
+import ContactsDashboardPage from "./ContactsDashboardPage/ContactsDashboardPage";
 
 export {
   PrivacyAndSafetyPage,
@@ -34,4 +35,5 @@ export {
   MutedAllPage,
   MutedKeywordsPage,
   AddMutedKeywordsPage,
+  ContactsDashboardPage,
 };

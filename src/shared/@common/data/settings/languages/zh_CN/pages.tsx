@@ -1302,6 +1302,14 @@ const pages = {
       text: "保存",
     },
   },
+  ContactsDashboardPage: {
+    pageTitle: "管理联系人",
+    hyperlink1: "删除所有联系人",
+    expl: "这些是从您的移动设备导入的联系人。这些信息用于个性化您的PG体验，例如推荐关注的帐户。您可以删除以前上传的联系人，并禁用所有设备与PG的同步。此过程可能需要一些时间。",
+    heading: "验证您的密码",
+    inputFieldTitle: "密码",
+    hyperlink2: "忘记密码了吗？",
+  },
 };
 
 export default pages;

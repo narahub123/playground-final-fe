@@ -76,6 +76,7 @@ import {
   MutedAllPage,
   MutedKeywordsPage,
   AddMutedKeywordsPage,
+  ContactsDashboardPage,
 } from "@pages/Settings/pages";
 import { AuthLayout } from "@/layouts";
 import { PageLayout } from "@shared/pages/layout";
@@ -363,6 +364,10 @@ export const router = createBrowserRouter([
                   {
                     path: "notifications/preferences",
                     element: <NotificationPreferencePage />,
+                  },
+                  {
+                    path: "contacts_dashboard",
+                    element: <ContactsDashboardPage />,
                   },
                   {
                     path: "accessibility",

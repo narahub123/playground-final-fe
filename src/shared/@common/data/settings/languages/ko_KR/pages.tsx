@@ -1353,6 +1353,14 @@ const pages = {
       text: "저장",
     },
   },
+  ContactsDashboardPage: {
+    pageTitle: "연락처 관리",
+    hyperlink1: "모든 연락처 삭제",
+    expl: "모바일 디바이스에서 가져온 연락처입니다. 이 정보는 팔로우할 계정 추천 등 PG 환경을 맞춤 설정하는 데 사용됩니다. 이전에 업로드했던 연락처를 삭제하고 모든 디바이스에서 PG와의 동기화를 끌 수 있습니다. 이 작업은 시간이 조금 걸릴 수 있습니다.",
+    heading: "비밀번호를 확인하세요.",
+    inputFieldTitle: "비밀번호",
+    hyperlink2: "비밀번호을 잊으셨나요?",
+  },
 };
 
 export default pages;

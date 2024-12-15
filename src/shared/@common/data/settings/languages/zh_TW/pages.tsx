@@ -1303,6 +1303,14 @@ const pages = {
       text: "儲存",
     },
   },
+  ContactsDashboardPage: {
+    pageTitle: "管理聯絡人",
+    hyperlink1: "刪除所有聯絡人",
+    expl: "這些是從您的行動裝置匯入的聯絡人。這些資訊用於個性化您的PG體驗，例如推薦要關注的帳戶。您可以刪除先前上傳的聯絡人，並停用所有裝置與PG的同步。此過程可能需要一些時間。",
+    heading: "驗證您的密碼",
+    inputFieldTitle: "密碼",
+    hyperlink2: "忘記密碼了嗎？",
+  },
 };
 
 export default pages;

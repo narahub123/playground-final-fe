@@ -44,6 +44,7 @@ type SettingsType = {
   topics: string[];
   mutedKeywords: string[];
   mute: MuteType;
+  contacts: string[];
 };
 
 type MuteType = {
