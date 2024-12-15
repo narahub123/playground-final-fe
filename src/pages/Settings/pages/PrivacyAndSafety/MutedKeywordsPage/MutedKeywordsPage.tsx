@@ -19,7 +19,7 @@ const MutedKeywordsPage = () => {
         <Icon
           iconName="plus"
           iconTitle="추가"
-          handleClick={() => navigate("/settings/add_muted_keyword")}
+          handleClick={() => navigate("/settings/add_muted_keywords")}
         />
       }
       topContent={<></>}
