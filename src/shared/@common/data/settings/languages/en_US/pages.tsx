@@ -1344,6 +1344,9 @@ const pages = {
     description:
       "These interests are provided based on your profile, activity, and topics you follow. This information is used to personalize your experience across PG, including ads. If the interests are not appropriate, you can adjust them (changes may take some time to apply).",
   },
+  AudiencesPage: {
+    pageTitle: "My Advertiser List",
+  },
 };
 
 export default pages;

@@ -65,6 +65,7 @@ import {
   AddMutedKeywordsPage,
   ContactsDashboardPage,
   InterestsPage,
+  AudiencesPage,
 } from "./PrivacyAndSafety";
 import {
   NotificationsPage,
@@ -136,6 +137,7 @@ export {
   AddMutedKeywordsPage,
   ContactsDashboardPage,
   InterestsPage,
+  AudiencesPage,
   AudienceAndTagging,
   YourPosts,
   SortContents,

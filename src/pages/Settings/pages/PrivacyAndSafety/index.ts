@@ -17,6 +17,7 @@ import MutedKeywordsPage from "./MutedKeywordsPage/MutedKeywordsPage";
 import AddMutedKeywordsPage from "./AddMutedKeywordsPage/AddMutedKeywordsPage";
 import ContactsDashboardPage from "./ContactsDashboardPage/ContactsDashboardPage";
 import InterestsPage from "./InterestsPage/InterestsPage";
+import AudiencesPage from "./AudiencesPage/AudiencesPage";
 
 export {
   PrivacyAndSafetyPage,
@@ -38,4 +39,5 @@ export {
   AddMutedKeywordsPage,
   ContactsDashboardPage,
   InterestsPage,
+  AudiencesPage,
 };

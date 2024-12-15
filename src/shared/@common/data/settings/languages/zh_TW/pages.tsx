@@ -1316,6 +1316,9 @@ const pages = {
     description:
       "這些興趣是根據您的個人資料、活動以及您關注的主題提供的。此資訊用於個性化PG整體體驗，包括廣告。如果興趣不適合，您可以進行調整（更改可能需要一些時間才能生效）。",
   },
+  AudiencesPage: {
+    pageTitle: "我的廣告商列表",
+  },
 };
 
 export default pages;
