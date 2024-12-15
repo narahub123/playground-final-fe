@@ -11,6 +11,7 @@ interface CheckBoxProps {
   setter?: React.Dispatch<React.SetStateAction<any>>; // 값 변경 setter
   isRounded?: boolean;
   className?: string;
+  disabled?: boolean;
 }
 
 const CheckBox = ({
@@ -20,6 +21,7 @@ const CheckBox = ({
   initialValue,
   isRounded = false,
   className,
+  disabled = false,
 }: CheckBoxProps) => {
   const dispatch = useAppDispatch();
   const { text, reducer, value } = item;
@@ -56,7 +58,7 @@ const CheckBox = ({
   return (
     <div
       className={`${styles.checkbox} ${className}`}
-      onClick={() => handleClick(value)}
+      onClick={disabled ? undefined : () => handleClick(value)}
     >
       <span>{text}</span>
       {(typeCond ? initVal : initVal === value) ? (
@@ -66,21 +68,31 @@ const CheckBox = ({
             iconName="roundedCheckedbox"
             iconTitle=""
             fontSize={22}
-            className={styles.icon}
+            className={`${styles.icon} ${disabled ? styles.disabled : ""}`}
           />
         ) : (
           <Icon
             iconName="checkedbox"
             iconTitle=""
             fontSize={22}
-            className={styles.icon}
+            className={`${styles.icon} ${disabled ? styles.disabled : ""}`}
           />
         )
       ) : // 일치하지 않은 경우
       isRounded ? (
-        <Icon iconName="roundedCheckbox" iconTitle="" fontSize={22} />
+        <Icon
+          iconName="roundedCheckbox"
+          iconTitle=""
+          fontSize={22}
+          className={disabled ? styles.disabled : ""}
+        />
       ) : (
-        <Icon iconName="checkbox" iconTitle="" fontSize={22} />
+        <Icon
+          iconName="checkbox"
+          iconTitle=""
+          fontSize={22}
+          className={disabled ? styles.disabled : ""}
+        />
       )}
     </div>
   );
