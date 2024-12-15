@@ -77,6 +77,7 @@ import {
   MutedKeywordsPage,
   AddMutedKeywordsPage,
   ContactsDashboardPage,
+  InterestsPage,
 } from "@pages/Settings/pages";
 import { AuthLayout } from "@/layouts";
 import { PageLayout } from "@shared/pages/layout";
@@ -368,6 +369,10 @@ export const router = createBrowserRouter([
                   {
                     path: "contacts_dashboard",
                     element: <ContactsDashboardPage />,
+                  },
+                  {
+                    path: "your_data/interests",
+                    element: <InterestsPage />,
                   },
                   {
                     path: "accessibility",

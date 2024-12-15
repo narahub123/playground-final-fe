@@ -66,6 +66,7 @@ const getMuteNotification = (state: RootState) =>
 const getMuteTarget = (state: RootState) => state.settings.mute.target;
 const getMuteDuration = (state: RootState) => state.settings.mute.duration;
 const getContacts = (state: RootState) => state.settings.contacts;
+const getInterests = (state: RootState) => state.settings.interests;
 
 export {
   getSettings,
@@ -119,4 +120,5 @@ export {
   getMuteTarget,
   getMuteDuration,
   getContacts,
+  getInterests,
 };

@@ -676,11 +676,11 @@ const pages = {
     branchList: [
       {
         title: "興趣",
-        path: "/settings/your_twitter_data/twitter_interests",
+        path: "/settings/your_data/interests",
       },
       {
         title: "廣告主列表",
-        path: "/settings/your_twitter_data/audiences",
+        path: "/settings/your_data/audiences",
       },
     ],
   },
@@ -1310,6 +1310,11 @@ const pages = {
     heading: "驗證您的密碼",
     inputFieldTitle: "密碼",
     hyperlink2: "忘記密碼了嗎？",
+  },
+  InterestsPage: {
+    pageTitle: "興趣",
+    description:
+      "這些興趣是根據您的個人資料、活動以及您關注的主題提供的。此資訊用於個性化PG整體體驗，包括廣告。如果興趣不適合，您可以進行調整（更改可能需要一些時間才能生效）。",
   },
 };
 

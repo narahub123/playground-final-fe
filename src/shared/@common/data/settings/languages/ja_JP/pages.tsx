@@ -688,11 +688,11 @@ const pages = {
     branchList: [
       {
         title: "興味関心",
-        path: "/settings/your_twitter_data/twitter_interests",
+        path: "/settings/your_data/interests",
       },
       {
         title: "広告主リスト",
-        path: "/settings/your_twitter_data/audiences",
+        path: "/settings/your_data/audiences",
       },
     ],
   },
@@ -1338,6 +1338,11 @@ const pages = {
     heading: "パスワードを確認してください",
     inputFieldTitle: "パスワード",
     hyperlink2: "パスワードをお忘れですか？",
+  },
+  InterestsPage: {
+    pageTitle: "興味関心",
+    description:
+      "これらの関心は、あなたのプロフィール、アクティビティ、およびフォローしているトピックに基づいて提供されます。この情報は、広告を含むPG全体の体験をパーソナライズするために使用されます。不適切な関心がある場合は調整できます（変更が反映されるまでに時間がかかる場合があります）。",
   },
 };
 

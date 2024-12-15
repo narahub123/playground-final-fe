@@ -49,6 +49,7 @@ import {
   getMuteTarget,
   getMuteDuration,
   getContacts,
+  getInterests,
 } from "./settingsSelectors";
 import { getIsLoggedIn } from "./loginSelector";
 import {
@@ -123,6 +124,7 @@ export {
   getMuteTarget,
   getMuteDuration,
   getContacts,
+  getInterests,
   // login
   getIsLoggedIn,
   // user

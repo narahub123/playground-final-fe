@@ -73,6 +73,7 @@ const initialState: SettingsType = {
     duration: "forever",
   },
   contacts: [],
+  interests: [],
 };
 
 // 페이지 로드 전에 setting를 먼저 로드해야 함
@@ -236,6 +237,9 @@ const settingsSlice = createSlice({
     setContacts: (state, action: PayloadAction<string[]>) => {
       state.contacts = action.payload;
     },
+    setInterests: (state, action: PayloadAction<string[]>) => {
+      state.interests = action.payload;
+    },
   },
 });
 
@@ -291,4 +295,5 @@ export const {
   setMuteTarget,
   setMuteDuration,
   setContacts,
+  setInterests,
 } = settingsSlice.actions;

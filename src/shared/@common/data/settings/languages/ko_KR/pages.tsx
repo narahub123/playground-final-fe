@@ -712,11 +712,11 @@ const pages = {
     branchList: [
       {
         title: "관심사",
-        path: "/settings/your_twitter_data/twitter_interests",
+        path: "/settings/your_data/interests",
       },
       {
         title: "내 광고주 목록",
-        path: "/settings/your_twitter_data/audiences",
+        path: "/settings/your_data/audiences",
       },
     ],
   },
@@ -1360,6 +1360,11 @@ const pages = {
     heading: "비밀번호를 확인하세요.",
     inputFieldTitle: "비밀번호",
     hyperlink2: "비밀번호을 잊으셨나요?",
+  },
+  InterestsPage: {
+    pageTitle: "관심사",
+    description:
+      "내 프로필, 활동 및 내가 팔로우하는 토픽을 기반으로 제공된 관심사입니다. 이 정보는 PG 전반에서 광고를 포함한 사용자 환경을 맞춤 설정하는 데 사용됩니다. 적절한 관심사가 아닐 경우 조정할 수 있습니다(변경 사항이 적용되기까지 잠시 시간이 걸릴 수 있음).",
   },
 };
 
