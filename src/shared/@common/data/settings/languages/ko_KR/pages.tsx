@@ -39,6 +39,22 @@ import {
   setEmailNotificationsPGRecommend,
   setEmailNotificationsPGRecentFollowings,
   setEmailNotificationsPGBusiness,
+  setPushNotificationsPosts,
+  setPushNotificationsReplies,
+  setPushNotificationsReposts,
+  setPushNotificationsLikes,
+  setPushNotificationsPhotoTags,
+  setPushNotificationsMessages,
+  setPushNotificationsReplyMessage,
+  setPushNotificationsJoinPplInContacts,
+  setPushNotificationsTopics,
+  setPushNotificationsNewsAndSports,
+  setPushNotificationsProfessional,
+  setPushNotificationsRecommend,
+  setPushNotificationsMoments,
+  setPushNotificationsLives,
+  setPushNotificationsOtherLives,
+  setPushNotificationsAlertAndAgent,
 } from "@shared/@common/model/slices/settingsSlice";
 import { SettingsType, UserType } from "@shared/@common/types";
 import { countryNamesKor } from "@shared/@common/data/countries";
@@ -90,6 +106,22 @@ import {
   getEmailNotificationsPGRecommend,
   getEmailNotificationsPGRecentFollowings,
   getEmailNotificationsPGBusiness,
+  getPushNotificationsPosts,
+  getPushNotificationsReplies,
+  getPushNotificationsReposts,
+  getPushNotificationsLikes,
+  getPushNotificationsPhotoTags,
+  getPushNotificationsMessages,
+  getPushNotificationsReplyMessage,
+  getPushNotificationsJoinPplInContacts,
+  getPushNotificationsTopics,
+  getPushNotificationsNewsAndSports,
+  getPushNotificationsProfessional,
+  getPushNotificationsRecommend,
+  getPushNotificationsMoments,
+  getPushNotificationsLives,
+  getPushNotificationsOtherLives,
+  getPushNotificationsAlertAndAgent,
 } from "@shared/@common/model/selectors";
 import regExp from "@shared/@common/data/regExp";
 
@@ -1542,6 +1574,211 @@ const pages = {
         comp: {
           text: "PG 비즈니스 제품 관련 도움말",
           reducer: setEmailNotificationsPGBusiness,
+        },
+      },
+    ],
+  },
+  PushNotificationsPage: {
+    pageTitle: "푸시 알림",
+    toggle: {
+      text: "푸시 알림",
+      expl: "자리를 비운 동안 PG에서 일어난 일에 대한 푸시 알림을 받아 보세요. 알림은 언제든지 끌 수 있습니다.",
+    },
+    empty: {
+      title: "푸시 알림 켜기",
+      expl: "푸시 알림을 통해 지금 일어나는 일에 대한 소식을 실시간으로 받아보세요. PG에 로그인하지 않아도 알림을 받을 수 있습니다. 알림은 언제든지 끌 수 있습니다.",
+    },
+    button: {
+      text: "켜기",
+    },
+    list: [
+      {
+        title: "나 또는 내 게시물 관련",
+        type: "checkbox",
+        selector: getPushNotificationsPosts,
+        comp: {
+          text: "게시물",
+          reducer: setPushNotificationsPosts,
+        },
+        description:
+          "내가 팔로우하는 사람들의 게시물에 대한 알림을 켜면 해당 사용자들의 게시물 또는 생방송 동영상에 대한 알림을 받게 됩니다.",
+      },
+      {
+        text: "멘션 및 답글",
+        type: "checkboxlist",
+        selector: getPushNotificationsReplies,
+        comp: [
+          {
+            text: "맞춤형 설정",
+            reducer: setPushNotificationsReplies,
+            value: "custom",
+          },
+          {
+            text: "모든 사람",
+            reducer: setPushNotificationsReplies,
+            value: "all",
+          },
+          {
+            text: "꺼짐",
+            reducer: setPushNotificationsReplies,
+            value: "off",
+          },
+        ],
+      },
+      {
+        text: "재게시",
+        type: "checkboxlist",
+        selector: getPushNotificationsReposts,
+        comp: [
+          {
+            text: "맞춤형 설정",
+            reducer: setPushNotificationsReposts,
+            value: "custom",
+          },
+          {
+            text: "모든 사람",
+            reducer: setPushNotificationsReposts,
+            value: "all",
+          },
+          {
+            text: "꺼짐",
+            reducer: setPushNotificationsReposts,
+            value: "off",
+          },
+        ],
+      },
+      {
+        text: "마음에 들어요",
+        type: "checkboxlist",
+        selector: getPushNotificationsLikes,
+        comp: [
+          {
+            text: "맞춤형 설정",
+            reducer: setPushNotificationsLikes,
+            value: "custom",
+          },
+          {
+            text: "모든 사람",
+            reducer: setPushNotificationsLikes,
+            value: "all",
+          },
+          {
+            text: "꺼짐",
+            reducer: setPushNotificationsLikes,
+            value: "off",
+          },
+        ],
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsPhotoTags,
+        comp: {
+          text: "사진 태그",
+          reducer: setPushNotificationsPhotoTags,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsMessages,
+        comp: {
+          text: "메시지",
+          reducer: setPushNotificationsMessages,
+        },
+      },
+      {
+        text: "메시지에 대한 반응",
+        type: "checkboxlist",
+        selector: getPushNotificationsReplyMessage,
+        comp: [
+          {
+            text: "내 메시지",
+            reducer: setPushNotificationsReplyMessage,
+            value: "mine",
+          },
+          {
+            text: "모든 사용자의 메시지",
+            reducer: setPushNotificationsReplyMessage,
+            value: "all",
+          },
+          {
+            text: "꺼짐",
+            reducer: setPushNotificationsReplyMessage,
+            value: "off",
+          },
+        ],
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsJoinPplInContacts,
+        comp: {
+          text: "내 연락처에 있는 사용자가 PG에 가입함",
+          reducer: setPushNotificationsJoinPplInContacts,
+        },
+      },
+      {
+        type: "checkbox",
+        title: "PG에서 알림",
+        selector: getPushNotificationsTopics,
+        comp: {
+          text: "토픽",
+          reducer: setPushNotificationsTopics,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsNewsAndSports,
+        comp: {
+          text: "뉴스/스포츠",
+          reducer: setPushNotificationsNewsAndSports,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsRecommend,
+        comp: {
+          text: "추천",
+          reducer: setPushNotificationsRecommend,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsMoments,
+        comp: {
+          text: "모멘트",
+          reducer: setPushNotificationsMoments,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsLives,
+        comp: {
+          text: "생방송",
+          reducer: setPushNotificationsLives,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsOtherLives,
+        comp: {
+          text: "다른 실시간 생방송",
+          reducer: setPushNotificationsOtherLives,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsAlertAndAgent,
+        comp: {
+          text: "위기 및 긴급 알람",
+          reducer: setPushNotificationsAlertAndAgent,
+        },
+      },
+      {
+        type: "checkbox",
+        title: "프로페셔널용 PG",
+        selector: getPushNotificationsProfessional,
+        comp: {
+          text: "프로페셔널 알림",
+          reducer: setPushNotificationsProfessional,
         },
       },
     ],

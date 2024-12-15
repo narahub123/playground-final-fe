@@ -73,6 +73,7 @@ import {
   NotificationPreferencePage,
   NotificationFilterPage,
   EmailNotificationsPage,
+  PushNotificationsPage,
 } from "./Notifications";
 import {
   AccessibilityAndDisplayAndLanguagesPage,
@@ -151,6 +152,7 @@ export {
   NotificationFilter,
   NotificationPreferences,
   EmailNotificationsPage,
+  PushNotificationsPage,
   Accessibility,
   Display,
   Languages,

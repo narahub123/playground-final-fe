@@ -12,7 +12,11 @@ import {
   TaggingWhomType,
   TwoFactorAuthentication,
 } from "@shared/@common/types";
-import { PopularPostsType } from "@shared/@common/types/settings";
+import {
+  PopularPostsType,
+  PushNotificationsCustomType,
+  ReplyMessageType,
+} from "@shared/@common/types/settings";
 
 const initialState: SettingsType = {
   bgTheme: "light",
@@ -92,6 +96,26 @@ const initialState: SettingsType = {
     PGRecommend: true,
     PGRecentFollowings: true,
     PGBusiness: true,
+  },
+  pushNotification: false,
+  pushNotificatins: {
+    posts: true,
+    replies: "custom",
+    reposts: "custom",
+    likes: "custom",
+    photoTags: true,
+    newFollower: true,
+    messages: true,
+    replyMessage: "mine",
+    joinPplInContacts: true,
+    topics: true,
+    newsAndSports: true,
+    recommend: true,
+    moments: true,
+    lives: true,
+    otherLives: true,
+    alertAndAgent: true,
+    professional: true,
   },
 };
 
@@ -328,6 +352,87 @@ const settingsSlice = createSlice({
     ) => {
       state.emailNotifications.PGBusiness = action.payload;
     },
+    setPushNotification: (state, action: PayloadAction<boolean>) => {
+      state.pushNotification = action.payload;
+    },
+    setPushNotificationsPosts: (state, action: PayloadAction<boolean>) => {
+      state.pushNotificatins.posts = action.payload;
+    },
+    setPushNotificationsReplies: (
+      state,
+      action: PayloadAction<PushNotificationsCustomType>
+    ) => {
+      state.pushNotificatins.replies = action.payload;
+    },
+    setPushNotificationsReposts: (
+      state,
+      action: PayloadAction<PushNotificationsCustomType>
+    ) => {
+      state.pushNotificatins.reposts = action.payload;
+    },
+    setPushNotificationsLikes: (
+      state,
+      action: PayloadAction<PushNotificationsCustomType>
+    ) => {
+      state.pushNotificatins.likes = action.payload;
+    },
+    setPushNotificationsPhotoTags: (state, action: PayloadAction<boolean>) => {
+      state.pushNotificatins.photoTags = action.payload;
+    },
+    setPushNotificationsNewFollower: (
+      state,
+      action: PayloadAction<boolean>
+    ) => {
+      state.pushNotificatins.newFollower = action.payload;
+    },
+    setPushNotificationsMessages: (state, action: PayloadAction<boolean>) => {
+      state.pushNotificatins.messages = action.payload;
+    },
+    setPushNotificationsReplyMessage: (
+      state,
+      action: PayloadAction<ReplyMessageType>
+    ) => {
+      state.pushNotificatins.replyMessage = action.payload;
+    },
+    setPushNotificationsJoinPplInContacts: (
+      state,
+      action: PayloadAction<boolean>
+    ) => {
+      state.pushNotificatins.joinPplInContacts = action.payload;
+    },
+    setPushNotificationsTopics: (state, action: PayloadAction<boolean>) => {
+      state.pushNotificatins.topics = action.payload;
+    },
+    setPushNotificationsNewsAndSports: (
+      state,
+      action: PayloadAction<boolean>
+    ) => {
+      state.pushNotificatins.newsAndSports = action.payload;
+    },
+    setPushNotificationsRecommend: (state, action: PayloadAction<boolean>) => {
+      state.pushNotificatins.recommend = action.payload;
+    },
+    setPushNotificationsMoments: (state, action: PayloadAction<boolean>) => {
+      state.pushNotificatins.moments = action.payload;
+    },
+    setPushNotificationsLives: (state, action: PayloadAction<boolean>) => {
+      state.pushNotificatins.lives = action.payload;
+    },
+    setPushNotificationsOtherLives: (state, action: PayloadAction<boolean>) => {
+      state.pushNotificatins.otherLives = action.payload;
+    },
+    setPushNotificationsAlertAndAgent: (
+      state,
+      action: PayloadAction<boolean>
+    ) => {
+      state.pushNotificatins.alertAndAgent = action.payload;
+    },
+    setPushNotificationsProfessional: (
+      state,
+      action: PayloadAction<boolean>
+    ) => {
+      state.pushNotificatins.professional = action.payload;
+    },
   },
 });
 
@@ -400,4 +505,22 @@ export const {
   setEmailNotificationsPGRecommend,
   setEmailNotificationsPGRecentFollowings,
   setEmailNotificationsPGBusiness,
+  setPushNotification,
+  setPushNotificationsPosts,
+  setPushNotificationsReplies,
+  setPushNotificationsReposts,
+  setPushNotificationsLikes,
+  setPushNotificationsPhotoTags,
+  setPushNotificationsNewFollower,
+  setPushNotificationsMessages,
+  setPushNotificationsReplyMessage,
+  setPushNotificationsJoinPplInContacts,
+  setPushNotificationsTopics,
+  setPushNotificationsNewsAndSports,
+  setPushNotificationsRecommend,
+  setPushNotificationsMoments,
+  setPushNotificationsLives,
+  setPushNotificationsOtherLives,
+  setPushNotificationsAlertAndAgent,
+  setPushNotificationsProfessional,
 } = settingsSlice.actions;

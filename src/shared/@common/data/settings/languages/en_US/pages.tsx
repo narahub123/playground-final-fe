@@ -40,6 +40,22 @@ import {
   getEmailNotificationsPostsSentByEmail,
   getEmailNotificationsMessages,
   getEmailNotificationsNewNotification,
+  getPushNotificationsProfessional,
+  getPushNotificationsAlertAndAgent,
+  getPushNotificationsOtherLives,
+  getPushNotificationsLives,
+  getPushNotificationsMoments,
+  getPushNotificationsRecommend,
+  getPushNotificationsNewsAndSports,
+  getPushNotificationsTopics,
+  getPushNotificationsJoinPplInContacts,
+  getPushNotificationsReplyMessage,
+  getPushNotificationsMessages,
+  getPushNotificationsPhotoTags,
+  getPushNotificationsLikes,
+  getPushNotificationsReposts,
+  getPushNotificationsReplies,
+  getPushNotificationsPosts,
 } from "@shared/@common/model/selectors";
 import {
   setAddImgExpl,
@@ -82,6 +98,22 @@ import {
   setEmailNotificationsPostsSentByEmail,
   setEmailNotificationsMessages,
   setEmailNotificationsNewNotification,
+  setPushNotificationsProfessional,
+  setPushNotificationsAlertAndAgent,
+  setPushNotificationsOtherLives,
+  setPushNotificationsLives,
+  setPushNotificationsMoments,
+  setPushNotificationsRecommend,
+  setPushNotificationsNewsAndSports,
+  setPushNotificationsTopics,
+  setPushNotificationsJoinPplInContacts,
+  setPushNotificationsReplyMessage,
+  setPushNotificationsMessages,
+  setPushNotificationsPhotoTags,
+  setPushNotificationsLikes,
+  setPushNotificationsReposts,
+  setPushNotificationsReplies,
+  setPushNotificationsPosts,
 } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
@@ -1524,6 +1556,211 @@ const pages = {
         comp: {
           text: "Tips related to PG Business products",
           reducer: setEmailNotificationsPGBusiness,
+        },
+      },
+    ],
+  },
+  PushNotificationsPage: {
+    pageTitle: "Push Notifications",
+    toggle: {
+      text: "Push Notifications",
+      expl: "Receive push notifications about what's happening in PG while you're away. You can turn them off anytime.",
+    },
+    empty: {
+      title: "Turn on Push Notifications",
+      expl: "Stay updated with real-time notifications even when you're not logged into PG. Notifications can be turned off anytime.",
+    },
+    button: {
+      text: "Turn On",
+    },
+    list: [
+      {
+        title: "About Me or My Posts",
+        type: "checkbox",
+        selector: getPushNotificationsPosts,
+        comp: {
+          text: "Posts",
+          reducer: setPushNotificationsPosts,
+        },
+        description:
+          "Enable notifications for posts by people you follow to receive alerts about their posts or live videos.",
+      },
+      {
+        text: "Mentions and Replies",
+        type: "checkboxlist",
+        selector: getPushNotificationsReplies,
+        comp: [
+          {
+            text: "Custom Settings",
+            reducer: setPushNotificationsReplies,
+            value: "custom",
+          },
+          {
+            text: "Everyone",
+            reducer: setPushNotificationsReplies,
+            value: "all",
+          },
+          {
+            text: "Off",
+            reducer: setPushNotificationsReplies,
+            value: "off",
+          },
+        ],
+      },
+      {
+        text: "Reposts",
+        type: "checkboxlist",
+        selector: getPushNotificationsReposts,
+        comp: [
+          {
+            text: "Custom Settings",
+            reducer: setPushNotificationsReposts,
+            value: "custom",
+          },
+          {
+            text: "Everyone",
+            reducer: setPushNotificationsReposts,
+            value: "all",
+          },
+          {
+            text: "Off",
+            reducer: setPushNotificationsReposts,
+            value: "off",
+          },
+        ],
+      },
+      {
+        text: "Likes",
+        type: "checkboxlist",
+        selector: getPushNotificationsLikes,
+        comp: [
+          {
+            text: "Custom Settings",
+            reducer: setPushNotificationsLikes,
+            value: "custom",
+          },
+          {
+            text: "Everyone",
+            reducer: setPushNotificationsLikes,
+            value: "all",
+          },
+          {
+            text: "Off",
+            reducer: setPushNotificationsLikes,
+            value: "off",
+          },
+        ],
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsPhotoTags,
+        comp: {
+          text: "Photo Tags",
+          reducer: setPushNotificationsPhotoTags,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsMessages,
+        comp: {
+          text: "Messages",
+          reducer: setPushNotificationsMessages,
+        },
+      },
+      {
+        text: "Reactions to Messages",
+        type: "checkboxlist",
+        selector: getPushNotificationsReplyMessage,
+        comp: [
+          {
+            text: "My Messages",
+            reducer: setPushNotificationsReplyMessage,
+            value: "mine",
+          },
+          {
+            text: "All Users' Messages",
+            reducer: setPushNotificationsReplyMessage,
+            value: "all",
+          },
+          {
+            text: "Off",
+            reducer: setPushNotificationsReplyMessage,
+            value: "off",
+          },
+        ],
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsJoinPplInContacts,
+        comp: {
+          text: "People in My Contacts Joining PG",
+          reducer: setPushNotificationsJoinPplInContacts,
+        },
+      },
+      {
+        type: "checkbox",
+        title: "Notifications from PG",
+        selector: getPushNotificationsTopics,
+        comp: {
+          text: "Topics",
+          reducer: setPushNotificationsTopics,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsNewsAndSports,
+        comp: {
+          text: "News/Sports",
+          reducer: setPushNotificationsNewsAndSports,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsRecommend,
+        comp: {
+          text: "Recommendations",
+          reducer: setPushNotificationsRecommend,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsMoments,
+        comp: {
+          text: "Moments",
+          reducer: setPushNotificationsMoments,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsLives,
+        comp: {
+          text: "Live Broadcasts",
+          reducer: setPushNotificationsLives,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsOtherLives,
+        comp: {
+          text: "Other Live Broadcasts",
+          reducer: setPushNotificationsOtherLives,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsAlertAndAgent,
+        comp: {
+          text: "Crisis and Emergency Alerts",
+          reducer: setPushNotificationsAlertAndAgent,
+        },
+      },
+      {
+        type: "checkbox",
+        title: "Professional PG",
+        selector: getPushNotificationsProfessional,
+        comp: {
+          text: "Professional Notifications",
+          reducer: setPushNotificationsProfessional,
         },
       },
     ],

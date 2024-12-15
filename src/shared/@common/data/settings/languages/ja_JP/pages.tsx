@@ -40,6 +40,22 @@ import {
   getEmailNotificationsPostsSentByEmail,
   getEmailNotificationsMessages,
   getEmailNotificationsNewNotification,
+  getPushNotificationsProfessional,
+  getPushNotificationsAlertAndAgent,
+  getPushNotificationsOtherLives,
+  getPushNotificationsLives,
+  getPushNotificationsMoments,
+  getPushNotificationsRecommend,
+  getPushNotificationsNewsAndSports,
+  getPushNotificationsTopics,
+  getPushNotificationsJoinPplInContacts,
+  getPushNotificationsReplyMessage,
+  getPushNotificationsMessages,
+  getPushNotificationsPhotoTags,
+  getPushNotificationsLikes,
+  getPushNotificationsReposts,
+  getPushNotificationsReplies,
+  getPushNotificationsPosts,
 } from "@shared/@common/model/selectors";
 import {
   setAddImgExpl,
@@ -82,6 +98,22 @@ import {
   setEmailNotificationsPostsSentByEmail,
   setEmailNotificationsMessages,
   setEmailNotificationsNewNotification,
+  setPushNotificationsProfessional,
+  setPushNotificationsAlertAndAgent,
+  setPushNotificationsOtherLives,
+  setPushNotificationsLives,
+  setPushNotificationsMoments,
+  setPushNotificationsRecommend,
+  setPushNotificationsNewsAndSports,
+  setPushNotificationsTopics,
+  setPushNotificationsJoinPplInContacts,
+  setPushNotificationsReplyMessage,
+  setPushNotificationsMessages,
+  setPushNotificationsPhotoTags,
+  setPushNotificationsLikes,
+  setPushNotificationsReposts,
+  setPushNotificationsReplies,
+  setPushNotificationsPosts,
 } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
@@ -1524,6 +1556,211 @@ const pages = {
         comp: {
           text: "PGビジネス製品に関連するヒント",
           reducer: setEmailNotificationsPGBusiness,
+        },
+      },
+    ],
+  },
+  PushNotificationsPage: {
+    pageTitle: "プッシュ通知",
+    toggle: {
+      text: "プッシュ通知",
+      expl: "離席中にPGで何が起きたかについてのプッシュ通知を受け取ります。通知はいつでもオフにすることができます。",
+    },
+    empty: {
+      title: "プッシュ通知をオンにする",
+      expl: "プッシュ通知を利用して、現在の出来事をリアルタイムで受け取れます。PGにログインしていなくても通知を受け取ることが可能です。通知はいつでもオフにできます。",
+    },
+    button: {
+      text: "オンにする",
+    },
+    list: [
+      {
+        title: "自分または自分の投稿に関する通知",
+        type: "checkbox",
+        selector: getPushNotificationsPosts,
+        comp: {
+          text: "投稿",
+          reducer: setPushNotificationsPosts,
+        },
+        description:
+          "フォローしているユーザーの投稿に関する通知をオンにすると、そのユーザーの投稿やライブ動画の通知を受け取れます。",
+      },
+      {
+        text: "メンションと返信",
+        type: "checkboxlist",
+        selector: getPushNotificationsReplies,
+        comp: [
+          {
+            text: "カスタム設定",
+            reducer: setPushNotificationsReplies,
+            value: "custom",
+          },
+          {
+            text: "全員",
+            reducer: setPushNotificationsReplies,
+            value: "all",
+          },
+          {
+            text: "オフ",
+            reducer: setPushNotificationsReplies,
+            value: "off",
+          },
+        ],
+      },
+      {
+        text: "再投稿",
+        type: "checkboxlist",
+        selector: getPushNotificationsReposts,
+        comp: [
+          {
+            text: "カスタム設定",
+            reducer: setPushNotificationsReposts,
+            value: "custom",
+          },
+          {
+            text: "全員",
+            reducer: setPushNotificationsReposts,
+            value: "all",
+          },
+          {
+            text: "オフ",
+            reducer: setPushNotificationsReposts,
+            value: "off",
+          },
+        ],
+      },
+      {
+        text: "いいね",
+        type: "checkboxlist",
+        selector: getPushNotificationsLikes,
+        comp: [
+          {
+            text: "カスタム設定",
+            reducer: setPushNotificationsLikes,
+            value: "custom",
+          },
+          {
+            text: "全員",
+            reducer: setPushNotificationsLikes,
+            value: "all",
+          },
+          {
+            text: "オフ",
+            reducer: setPushNotificationsLikes,
+            value: "off",
+          },
+        ],
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsPhotoTags,
+        comp: {
+          text: "写真タグ",
+          reducer: setPushNotificationsPhotoTags,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsMessages,
+        comp: {
+          text: "メッセージ",
+          reducer: setPushNotificationsMessages,
+        },
+      },
+      {
+        text: "メッセージへの反応",
+        type: "checkboxlist",
+        selector: getPushNotificationsReplyMessage,
+        comp: [
+          {
+            text: "自分のメッセージ",
+            reducer: setPushNotificationsReplyMessage,
+            value: "mine",
+          },
+          {
+            text: "すべてのユーザーのメッセージ",
+            reducer: setPushNotificationsReplyMessage,
+            value: "all",
+          },
+          {
+            text: "オフ",
+            reducer: setPushNotificationsReplyMessage,
+            value: "off",
+          },
+        ],
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsJoinPplInContacts,
+        comp: {
+          text: "連絡先のユーザーがPGに登録",
+          reducer: setPushNotificationsJoinPplInContacts,
+        },
+      },
+      {
+        type: "checkbox",
+        title: "PGからの通知",
+        selector: getPushNotificationsTopics,
+        comp: {
+          text: "トピック",
+          reducer: setPushNotificationsTopics,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsNewsAndSports,
+        comp: {
+          text: "ニュース/スポーツ",
+          reducer: setPushNotificationsNewsAndSports,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsRecommend,
+        comp: {
+          text: "おすすめ",
+          reducer: setPushNotificationsRecommend,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsMoments,
+        comp: {
+          text: "モーメント",
+          reducer: setPushNotificationsMoments,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsLives,
+        comp: {
+          text: "ライブ放送",
+          reducer: setPushNotificationsLives,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsOtherLives,
+        comp: {
+          text: "その他のライブ放送",
+          reducer: setPushNotificationsOtherLives,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsAlertAndAgent,
+        comp: {
+          text: "危機および緊急アラート",
+          reducer: setPushNotificationsAlertAndAgent,
+        },
+      },
+      {
+        type: "checkbox",
+        title: "プロフェッショナル向けPG",
+        selector: getPushNotificationsProfessional,
+        comp: {
+          text: "プロフェッショナル通知",
+          reducer: setPushNotificationsProfessional,
         },
       },
     ],

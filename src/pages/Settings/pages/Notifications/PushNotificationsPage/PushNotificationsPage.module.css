@@ -1,0 +1,10 @@
+.toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.empty {
+  width: 60%;
+  margin: 20px auto;
+}

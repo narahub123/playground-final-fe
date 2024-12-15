@@ -40,6 +40,22 @@ import {
   getEmailNotificationsPostsSentByEmail,
   getEmailNotificationsMessages,
   getEmailNotificationsNewNotification,
+  getPushNotificationsProfessional,
+  getPushNotificationsAlertAndAgent,
+  getPushNotificationsOtherLives,
+  getPushNotificationsLives,
+  getPushNotificationsMoments,
+  getPushNotificationsRecommend,
+  getPushNotificationsNewsAndSports,
+  getPushNotificationsTopics,
+  getPushNotificationsJoinPplInContacts,
+  getPushNotificationsReplyMessage,
+  getPushNotificationsMessages,
+  getPushNotificationsPhotoTags,
+  getPushNotificationsLikes,
+  getPushNotificationsReposts,
+  getPushNotificationsReplies,
+  getPushNotificationsPosts,
 } from "@shared/@common/model/selectors";
 import {
   setAddImgExpl,
@@ -82,6 +98,22 @@ import {
   setEmailNotificationsPostsSentByEmail,
   setEmailNotificationsMessages,
   setEmailNotificationsNewNotification,
+  setPushNotificationsProfessional,
+  setPushNotificationsAlertAndAgent,
+  setPushNotificationsOtherLives,
+  setPushNotificationsLives,
+  setPushNotificationsMoments,
+  setPushNotificationsRecommend,
+  setPushNotificationsNewsAndSports,
+  setPushNotificationsTopics,
+  setPushNotificationsJoinPplInContacts,
+  setPushNotificationsReplyMessage,
+  setPushNotificationsMessages,
+  setPushNotificationsPhotoTags,
+  setPushNotificationsLikes,
+  setPushNotificationsReposts,
+  setPushNotificationsReplies,
+  setPushNotificationsPosts,
 } from "@shared/@common/model/slices/settingsSlice";
 import { UserType } from "@shared/@common/types";
 import { SettingsType } from "@shared/@common/types";
@@ -1492,6 +1524,211 @@ const pages = {
         comp: {
           text: "与PG商业产品相关的提示",
           reducer: setEmailNotificationsPGBusiness,
+        },
+      },
+    ],
+  },
+  PushNotificationsPage: {
+    pageTitle: "推送通知",
+    toggle: {
+      text: "推送通知",
+      expl: "在离开时接收关于PG中发生的事情的推送通知。您可以随时关闭通知。",
+    },
+    empty: {
+      title: "开启推送通知",
+      expl: "通过推送通知，实时接收正在发生的事情的消息。即使不登录PG，您也能收到通知。通知随时可以关闭。",
+    },
+    button: {
+      text: "开启",
+    },
+    list: [
+      {
+        title: "关于我或我的帖子",
+        type: "checkbox",
+        selector: getPushNotificationsPosts,
+        comp: {
+          text: "帖子",
+          reducer: setPushNotificationsPosts,
+        },
+        description:
+          "当你开启关于我关注的人的帖子通知时，将会收到他们的帖子或直播视频的通知。",
+      },
+      {
+        text: "提及和回复",
+        type: "checkboxlist",
+        selector: getPushNotificationsReplies,
+        comp: [
+          {
+            text: "自定义设置",
+            reducer: setPushNotificationsReplies,
+            value: "custom",
+          },
+          {
+            text: "所有人",
+            reducer: setPushNotificationsReplies,
+            value: "all",
+          },
+          {
+            text: "关闭",
+            reducer: setPushNotificationsReplies,
+            value: "off",
+          },
+        ],
+      },
+      {
+        text: "转发",
+        type: "checkboxlist",
+        selector: getPushNotificationsReposts,
+        comp: [
+          {
+            text: "自定义设置",
+            reducer: setPushNotificationsReposts,
+            value: "custom",
+          },
+          {
+            text: "所有人",
+            reducer: setPushNotificationsReposts,
+            value: "all",
+          },
+          {
+            text: "关闭",
+            reducer: setPushNotificationsReposts,
+            value: "off",
+          },
+        ],
+      },
+      {
+        text: "点赞",
+        type: "checkboxlist",
+        selector: getPushNotificationsLikes,
+        comp: [
+          {
+            text: "自定义设置",
+            reducer: setPushNotificationsLikes,
+            value: "custom",
+          },
+          {
+            text: "所有人",
+            reducer: setPushNotificationsLikes,
+            value: "all",
+          },
+          {
+            text: "关闭",
+            reducer: setPushNotificationsLikes,
+            value: "off",
+          },
+        ],
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsPhotoTags,
+        comp: {
+          text: "照片标签",
+          reducer: setPushNotificationsPhotoTags,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsMessages,
+        comp: {
+          text: "消息",
+          reducer: setPushNotificationsMessages,
+        },
+      },
+      {
+        text: "消息反应",
+        type: "checkboxlist",
+        selector: getPushNotificationsReplyMessage,
+        comp: [
+          {
+            text: "我的消息",
+            reducer: setPushNotificationsReplyMessage,
+            value: "mine",
+          },
+          {
+            text: "所有用户的消息",
+            reducer: setPushNotificationsReplyMessage,
+            value: "all",
+          },
+          {
+            text: "关闭",
+            reducer: setPushNotificationsReplyMessage,
+            value: "off",
+          },
+        ],
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsJoinPplInContacts,
+        comp: {
+          text: "我联系人中的用户加入了PG",
+          reducer: setPushNotificationsJoinPplInContacts,
+        },
+      },
+      {
+        type: "checkbox",
+        title: "PG中的通知",
+        selector: getPushNotificationsTopics,
+        comp: {
+          text: "话题",
+          reducer: setPushNotificationsTopics,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsNewsAndSports,
+        comp: {
+          text: "新闻/体育",
+          reducer: setPushNotificationsNewsAndSports,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsRecommend,
+        comp: {
+          text: "推荐",
+          reducer: setPushNotificationsRecommend,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsMoments,
+        comp: {
+          text: "时刻",
+          reducer: setPushNotificationsMoments,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsLives,
+        comp: {
+          text: "直播",
+          reducer: setPushNotificationsLives,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsOtherLives,
+        comp: {
+          text: "其他实时直播",
+          reducer: setPushNotificationsOtherLives,
+        },
+      },
+      {
+        type: "checkbox",
+        selector: getPushNotificationsAlertAndAgent,
+        comp: {
+          text: "危机和紧急通知",
+          reducer: setPushNotificationsAlertAndAgent,
+        },
+      },
+      {
+        type: "checkbox",
+        title: "专业用PG",
+        selector: getPushNotificationsProfessional,
+        comp: {
+          text: "专业通知",
+          reducer: setPushNotificationsProfessional,
         },
       },
     ],

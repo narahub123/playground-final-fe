@@ -81,6 +81,7 @@ import {
   AudiencesPage,
   LocationsPage,
   EmailNotificationsPage,
+  PushNotificationsPage,
 } from "@pages/Settings/pages";
 import { AuthLayout } from "@/layouts";
 import { PageLayout } from "@shared/pages/layout";
@@ -372,6 +373,10 @@ export const router = createBrowserRouter([
                   {
                     path: "email_notifications",
                     element: <EmailNotificationsPage />,
+                  },
+                  {
+                    path: "push_notifications",
+                    element: <PushNotificationsPage />,
                   },
                   {
                     path: "contacts_dashboard",

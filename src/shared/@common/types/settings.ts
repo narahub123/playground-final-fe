@@ -50,7 +50,33 @@ type SettingsType = {
   locations: string[];
   emailNotification: boolean;
   emailNotifications: EmailNotificationsType;
+  pushNotification: boolean;
+  pushNotificatins: PushNotificationsType;
 };
+
+type PushNotificationsType = {
+  posts: boolean;
+  replies: PushNotificationsCustomType;
+  reposts: PushNotificationsCustomType;
+  likes: PushNotificationsCustomType;
+  photoTags: boolean;
+  newFollower: boolean;
+  messages: boolean;
+  replyMessage: ReplyMessageType;
+  joinPplInContacts: boolean;
+  topics: boolean;
+  newsAndSports: boolean;
+  recommend: boolean;
+  moments: boolean;
+  lives: boolean;
+  otherLives: boolean;
+  alertAndAgent: boolean;
+  professional: boolean;
+};
+
+type ReplyMessageType = "mine" | "all" | "off";
+
+type PushNotificationsCustomType = "custom" | "all" | "off";
 
 type MuteType = {
   homeFeed: boolean;
@@ -142,4 +168,6 @@ export type {
   MuteTargetType,
   MuteDurationType,
   PopularPostsType,
+  PushNotificationsCustomType,
+  ReplyMessageType,
 };

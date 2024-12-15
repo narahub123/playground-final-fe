@@ -97,6 +97,42 @@ const getEmailNotificationsPGRecentFollowings = (state: RootState) =>
   state.settings.emailNotifications.PGRecentFollowings;
 const getEmailNotificationsPGBusiness = (state: RootState) =>
   state.settings.emailNotifications.PGBusiness;
+const getPushNotification = (state: RootState) =>
+  state.settings.pushNotification;
+const getPushNotificationsPosts = (state: RootState) =>
+  state.settings.pushNotificatins.posts;
+const getPushNotificationsReplies = (state: RootState) =>
+  state.settings.pushNotificatins.replies;
+const getPushNotificationsReposts = (state: RootState) =>
+  state.settings.pushNotificatins.reposts;
+const getPushNotificationsLikes = (state: RootState) =>
+  state.settings.pushNotificatins.likes;
+const getPushNotificationsPhotoTags = (state: RootState) =>
+  state.settings.pushNotificatins.photoTags;
+const getPushNotificationsNewFollower = (state: RootState) =>
+  state.settings.pushNotificatins.newFollower;
+const getPushNotificationsMessages = (state: RootState) =>
+  state.settings.pushNotificatins.messages;
+const getPushNotificationsReplyMessage = (state: RootState) =>
+  state.settings.pushNotificatins.replyMessage;
+const getPushNotificationsJoinPplInContacts = (state: RootState) =>
+  state.settings.pushNotificatins.joinPplInContacts;
+const getPushNotificationsTopics = (state: RootState) =>
+  state.settings.pushNotificatins.topics;
+const getPushNotificationsNewsAndSports = (state: RootState) =>
+  state.settings.pushNotificatins.newsAndSports;
+const getPushNotificationsRecommend = (state: RootState) =>
+  state.settings.pushNotificatins.recommend;
+const getPushNotificationsMoments = (state: RootState) =>
+  state.settings.pushNotificatins.moments;
+const getPushNotificationsLives = (state: RootState) =>
+  state.settings.pushNotificatins.lives;
+const getPushNotificationsOtherLives = (state: RootState) =>
+  state.settings.pushNotificatins.otherLives;
+const getPushNotificationsAlertAndAgent = (state: RootState) =>
+  state.settings.pushNotificatins.alertAndAgent;
+const getPushNotificationsProfessional = (state: RootState) =>
+  state.settings.pushNotificatins.professional;
 
 export {
   getSettings,
@@ -167,4 +203,22 @@ export {
   getEmailNotificationsPGRecommend,
   getEmailNotificationsPGRecentFollowings,
   getEmailNotificationsPGBusiness,
+  getPushNotification,
+  getPushNotificationsPosts,
+  getPushNotificationsReplies,
+  getPushNotificationsReposts,
+  getPushNotificationsLikes,
+  getPushNotificationsPhotoTags,
+  getPushNotificationsNewFollower,
+  getPushNotificationsMessages,
+  getPushNotificationsReplyMessage,
+  getPushNotificationsJoinPplInContacts,
+  getPushNotificationsTopics,
+  getPushNotificationsNewsAndSports,
+  getPushNotificationsRecommend,
+  getPushNotificationsMoments,
+  getPushNotificationsLives,
+  getPushNotificationsOtherLives,
+  getPushNotificationsAlertAndAgent,
+  getPushNotificationsProfessional,
 };
