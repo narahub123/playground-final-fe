@@ -27,6 +27,10 @@ import {
   setTwoFactorAuthentication,
   setHideLabel,
   setAllowTaggingWhom,
+  setMuteinHomeFeed,
+  setMuteNotification,
+  setMuteTarget,
+  setMuteDuration,
 } from "@shared/@common/model/slices/settingsSlice";
 import { SettingsType, UserType } from "@shared/@common/types";
 import { countryNamesKor } from "@shared/@common/data/countries";
@@ -66,6 +70,10 @@ import {
   getTwoFactorAuthentication,
   getHideLabel,
   getAllowTaggingWhom,
+  getMuteinHomeFeed,
+  getMuteNotification,
+  getMuteTarget,
+  getMuteDuration,
 } from "@shared/@common/model/selectors";
 import regExp from "@shared/@common/data/regExp";
 
@@ -1296,6 +1304,61 @@ const pages = {
     empty: {
       heading: "뮤트할 단어 추가",
       expl: "단어를 뮤트하면 해당 단어를 포함한 게시물이 홈 타임라인에서 보이지 않으며, 관련 알림도 받지 않게 됩니다.",
+    },
+  },
+  AddMutedKeywordsPage: {
+    pageTitle: "뮤트할 단어 추가하기",
+    expl: "한 번에 단어, 문구, @사용자 아이디, 해시태그 중 하나만 뮤트할 수 있습니다.",
+    heading1: "다음에서 뮤트",
+    item1: {
+      type: "checkbox",
+      comp: {
+        text: "홈타임라인",
+      },
+    },
+    item2: {
+      type: "toggle",
+      comp: {
+        text: "알림",
+      },
+    },
+    item3: {
+      type: "checkboxlist",
+      comp: [
+        {
+          text: "모든 사용자",
+          value: "all",
+        },
+        {
+          text: "내가 팔로우하지 않는 사람들",
+          value: "notFollowing",
+        },
+      ],
+    },
+    heading2: "기간",
+    item4: {
+      type: "checkboxlist",
+      comp: [
+        {
+          text: "해당 단어를 언뮤트할 때까지",
+          value: "forever",
+        },
+        {
+          text: "24시",
+          value: "24h",
+        },
+        {
+          text: "7일",
+          value: "7d",
+        },
+        {
+          text: "30일",
+          value: "30d",
+        },
+      ],
+    },
+    button: {
+      text: "저장",
     },
   },
 };

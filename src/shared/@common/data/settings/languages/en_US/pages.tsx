@@ -1276,6 +1276,61 @@ const pages = {
       expl: "When you mute a keyword, posts containing that keyword won't appear on your home timeline, and you won't receive related notifications.",
     },
   },
+  AddMutedKeywordsPage: {
+    pageTitle: "Add Muted Keywords",
+    expl: "You can mute one item at a time: a word, phrase, @username, or hashtag.",
+    heading1: "Mute in",
+    item1: {
+      type: "checkbox",
+      comp: {
+        text: "Home Timeline",
+      },
+    },
+    item2: {
+      type: "toggle",
+      comp: {
+        text: "Notifications",
+      },
+    },
+    item3: {
+      type: "checkboxlist",
+      comp: [
+        {
+          text: "All users",
+          value: "all",
+        },
+        {
+          text: "People I don’t follow",
+          value: "notFollowing",
+        },
+      ],
+    },
+    heading2: "Duration",
+    item4: {
+      type: "checkboxlist",
+      comp: [
+        {
+          text: "Until you unmute this word",
+          value: "forever",
+        },
+        {
+          text: "24 hours",
+          value: "24h",
+        },
+        {
+          text: "7 days",
+          value: "7d",
+        },
+        {
+          text: "30 days",
+          value: "30d",
+        },
+      ],
+    },
+    button: {
+      text: "Save",
+    },
+  },
 };
 
 export default pages;

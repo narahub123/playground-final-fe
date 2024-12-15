@@ -1247,6 +1247,61 @@ const pages = {
       expl: "静音关键词后，包含该关键词的帖子将不会出现在您的主页时间线上，您也不会收到相关通知。",
     },
   },
+  AddMutedKeywordsPage: {
+    pageTitle: "添加静音关键词",
+    expl: "您可以一次静音一个项目：单词、短语、@用户名或标签。",
+    heading1: "静音范围",
+    item1: {
+      type: "checkbox",
+      comp: {
+        text: "主页时间线",
+      },
+    },
+    item2: {
+      type: "toggle",
+      comp: {
+        text: "通知",
+      },
+    },
+    item3: {
+      type: "checkboxlist",
+      comp: [
+        {
+          text: "所有用户",
+          value: "all",
+        },
+        {
+          text: "我未关注的人",
+          value: "notFollowing",
+        },
+      ],
+    },
+    heading2: "时长",
+    item4: {
+      type: "checkboxlist",
+      comp: [
+        {
+          text: "直到取消静音此单词",
+          value: "forever",
+        },
+        {
+          text: "24小时",
+          value: "24h",
+        },
+        {
+          text: "7天",
+          value: "7d",
+        },
+        {
+          text: "30天",
+          value: "30d",
+        },
+      ],
+    },
+    button: {
+      text: "保存",
+    },
+  },
 };
 
 export default pages;

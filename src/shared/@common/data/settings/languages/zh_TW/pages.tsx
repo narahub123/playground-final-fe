@@ -1248,6 +1248,61 @@ const pages = {
       expl: "靜音關鍵字後，包含該關鍵字的帖子將不會出現在您的主頁時間軸上，您也不會收到相關通知。",
     },
   },
+  AddMutedKeywordsPage: {
+    pageTitle: "新增靜音關鍵字",
+    expl: "您可以一次靜音一個項目：單詞、短語、@用戶名或標籤。",
+    heading1: "靜音範圍",
+    item1: {
+      type: "checkbox",
+      comp: {
+        text: "主頁時間軸",
+      },
+    },
+    item2: {
+      type: "toggle",
+      comp: {
+        text: "通知",
+      },
+    },
+    item3: {
+      type: "checkboxlist",
+      comp: [
+        {
+          text: "所有用戶",
+          value: "all",
+        },
+        {
+          text: "我未關注的人",
+          value: "notFollowing",
+        },
+      ],
+    },
+    heading2: "時長",
+    item4: {
+      type: "checkboxlist",
+      comp: [
+        {
+          text: "直到取消靜音此單字",
+          value: "forever",
+        },
+        {
+          text: "24小時",
+          value: "24h",
+        },
+        {
+          text: "7天",
+          value: "7d",
+        },
+        {
+          text: "30天",
+          value: "30d",
+        },
+      ],
+    },
+    button: {
+      text: "儲存",
+    },
+  },
 };
 
 export default pages;

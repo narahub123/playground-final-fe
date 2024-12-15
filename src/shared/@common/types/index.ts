@@ -26,6 +26,9 @@ import {
   MutesType,
   TwoFactorAuthentication,
   TaggingWhomType,
+  MuteType,
+  MuteTargetType,
+  MuteDurationType,
 } from "./settings";
 
 // 컴포넌트
@@ -55,6 +58,9 @@ export type {
   MutesType,
   TwoFactorAuthentication,
   TaggingWhomType,
+  MuteType,
+  MuteTargetType,
+  MuteDurationType,
 
   // components
   HyperLinkCardType,

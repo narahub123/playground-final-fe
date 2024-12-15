@@ -1,0 +1,19 @@
+.section {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+.heading {
+  padding: 10px;
+}
+
+.toggle-container {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-container {
+  display: flex;
+  justify-content: end;
+  padding: 10px;
+}

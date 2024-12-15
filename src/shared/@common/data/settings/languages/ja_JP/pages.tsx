@@ -1276,6 +1276,61 @@ const pages = {
       expl: "キーワードをミュートすると、そのキーワードを含む投稿がホームタイムラインに表示されず、関連する通知も受信しなくなります。",
     },
   },
+  AddMutedKeywordsPage: {
+    pageTitle: "ミュートする単語を追加",
+    expl: "単語、フレーズ、@ユーザー名、ハッシュタグのいずれかを一度にミュートできます。",
+    heading1: "ミュート対象",
+    item1: {
+      type: "checkbox",
+      comp: {
+        text: "ホームタイムライン",
+      },
+    },
+    item2: {
+      type: "toggle",
+      comp: {
+        text: "通知",
+      },
+    },
+    item3: {
+      type: "checkboxlist",
+      comp: [
+        {
+          text: "すべてのユーザー",
+          value: "all",
+        },
+        {
+          text: "フォローしていない人",
+          value: "notFollowing",
+        },
+      ],
+    },
+    heading2: "期間",
+    item4: {
+      type: "checkboxlist",
+      comp: [
+        {
+          text: "単語をアンミュートするまで",
+          value: "forever",
+        },
+        {
+          text: "24時間",
+          value: "24h",
+        },
+        {
+          text: "7日間",
+          value: "7d",
+        },
+        {
+          text: "30日間",
+          value: "30d",
+        },
+      ],
+    },
+    button: {
+      text: "保存",
+    },
+  },
 };
 
 export default pages;

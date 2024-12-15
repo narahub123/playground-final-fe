@@ -43,7 +43,19 @@ type SettingsType = {
   };
   topics: string[];
   mutedKeywords: string[];
+  mute: MuteType;
 };
+
+type MuteType = {
+  homeFeed: boolean;
+  notification: boolean;
+  target: MuteTargetType;
+  duration: MuteDurationType;
+};
+
+type MuteDurationType = "forever" | "24h" | "7d" | "30d";
+
+type MuteTargetType = "all" | "notFollowing";
 
 type TaggingWhomType = "all" | "followers";
 
@@ -102,4 +114,7 @@ export type {
   MutesType,
   TwoFactorAuthentication,
   TaggingWhomType,
+  MuteType,
+  MuteTargetType,
+  MuteDurationType,
 };

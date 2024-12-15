@@ -58,7 +58,13 @@ const getCanbeInvited = (state: RootState) => state.settings.canBeInvited;
 const getAllowTagging = (state: RootState) => state.settings.tagging.allow;
 const getAllowTaggingWhom = (state: RootState) => state.settings.tagging.whom;
 const getTopics = (state: RootState) => state.settings.topics;
+const getMute = (state: RootState) => state.settings.mute;
 const getMutedKeywords = (state: RootState) => state.settings.mutedKeywords;
+const getMuteinHomeFeed = (state: RootState) => state.settings.mute.homeFeed;
+const getMuteNotification = (state: RootState) =>
+  state.settings.mute.notification;
+const getMuteTarget = (state: RootState) => state.settings.mute.target;
+const getMuteDuration = (state: RootState) => state.settings.mute.duration;
 
 export {
   getSettings,
@@ -106,4 +112,9 @@ export {
   getAllowTaggingWhom,
   getTopics,
   getMutedKeywords,
+  getMute,
+  getMuteinHomeFeed,
+  getMuteNotification,
+  getMuteTarget,
+  getMuteDuration,
 };

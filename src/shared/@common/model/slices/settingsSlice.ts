@@ -5,6 +5,9 @@ import {
   AutoplayType,
   ColorThemeType,
   FontSizeType,
+  MuteDurationType,
+  MuteTargetType,
+  MuteType,
   SettingsType,
   TaggingWhomType,
   TwoFactorAuthentication,
@@ -63,6 +66,12 @@ const initialState: SettingsType = {
   },
   topics: ["강해린", "뉴진스"],
   mutedKeywords: [],
+  mute: {
+    homeFeed: true,
+    notification: true,
+    target: "notFollowing",
+    duration: "forever",
+  },
 };
 
 // 페이지 로드 전에 setting를 먼저 로드해야 함
@@ -208,6 +217,21 @@ const settingsSlice = createSlice({
     setMutedKeywords: (state, action: PayloadAction<string[]>) => {
       state.mutedKeywords = action.payload;
     },
+    setMute: (state, action: PayloadAction<MuteType>) => {
+      state.mute = action.payload;
+    },
+    setMuteinHomeFeed: (state, action: PayloadAction<boolean>) => {
+      state.mute.homeFeed = action.payload;
+    },
+    setMuteNotification: (state, action: PayloadAction<boolean>) => {
+      state.mute.notification = action.payload;
+    },
+    setMuteTarget: (state, action: PayloadAction<MuteTargetType>) => {
+      state.mute.target = action.payload;
+    },
+    setMuteDuration: (state, action: PayloadAction<MuteDurationType>) => {
+      state.mute.duration = action.payload;
+    },
   },
 });
 
@@ -257,4 +281,9 @@ export const {
   setAllowTaggingWhom,
   setTopics,
   setMutedKeywords,
+  setMute,
+  setMuteinHomeFeed,
+  setMuteNotification,
+  setMuteTarget,
+  setMuteDuration,
 } = settingsSlice.actions;
