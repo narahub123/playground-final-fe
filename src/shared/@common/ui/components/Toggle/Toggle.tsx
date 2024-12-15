@@ -5,6 +5,7 @@ import { ActionCreatorWithPayload } from "@reduxjs/toolkit";
 interface ToggleProps {
   toggle?: boolean;
   reducer?: ActionCreatorWithPayload<any, string>;
+  setter?: React.Dispatch<React.SetStateAction<boolean>>;
   size?: number;
   unit?: string;
 }
@@ -12,6 +13,7 @@ interface ToggleProps {
 const Toggle = ({
   toggle = false,
   reducer,
+  setter,
   size = 16,
   unit = "px",
 }: ToggleProps) => {
@@ -20,6 +22,8 @@ const Toggle = ({
   const handleClick = () => {
     if (reducer) {
       dispatch(reducer(!toggle));
+    } else if (setter) {
+      setter(!toggle);
     }
   };
   return (
