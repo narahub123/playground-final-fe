@@ -700,7 +700,7 @@ const pages = {
     branchList: [
       {
         title: "我去過的地方",
-        path: "/settings/your_twitter_data/locations",
+        path: "/settings/your_data/locations",
       },
       {
         title: "將位置信息添加到帖子",
@@ -1318,6 +1318,31 @@ const pages = {
   },
   AudiencesPage: {
     pageTitle: "我的廣告商列表",
+  },
+  LocationsPage: {
+    pageTitle: "我曾經訪問過的地方",
+    verification: {
+      description: "請輸入密碼以繼續。",
+      inputFieldTitle: "密碼",
+      hyperlink: "忘記密碼了嗎？",
+      button: {
+        text: "確認",
+      },
+    },
+    verified: {
+      description:
+        "PG 使用這些位置來顯示更相關的內容。如果關閉「根據訪問地點個性化」，此處將不會顯示列出的地點。",
+      empty: {
+        heading: "此設置已關閉。",
+        expl: (
+          <>
+            在{" "}
+            <HyperLink text="位置設定" path="/settings/location_information" />
+            中啟用此功能。
+          </>
+        ),
+      },
+    },
   },
 };
 

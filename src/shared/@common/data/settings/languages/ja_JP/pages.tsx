@@ -713,7 +713,7 @@ const pages = {
     branchList: [
       {
         title: "訪問した場所",
-        path: "/settings/your_twitter_data/locations",
+        path: "/settings/your_data/locations",
       },
       {
         title: "投稿に位置情報を追加",
@@ -1346,6 +1346,34 @@ const pages = {
   },
   AudiencesPage: {
     pageTitle: "自分の広告主リスト",
+  },
+  LocationsPage: {
+    pageTitle: "訪問した場所",
+    verification: {
+      description: "続行するにはパスワードを入力してください。",
+      inputFieldTitle: "パスワード",
+      hyperlink: "パスワードをお忘れですか？",
+      button: {
+        text: "確認",
+      },
+    },
+    verified: {
+      description:
+        "PGは、より関連性の高いコンテンツを表示するためにこれらの場所を使用します。「訪問した場所に基づいてパーソナライズ」をオフにすると、ここには場所が表示されません。",
+      empty: {
+        heading: "この設定はオフになっています。",
+        expl: (
+          <>
+            この機能を{" "}
+            <HyperLink
+              text="位置情報設定"
+              path="/settings/location_information"
+            />
+            でオンにしてください。
+          </>
+        ),
+      },
+    },
   },
 };
 

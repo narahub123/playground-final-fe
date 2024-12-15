@@ -737,7 +737,7 @@ const pages = {
     branchList: [
       {
         title: "내가 방문한 장소",
-        path: "/settings/your_twitter_data/locations",
+        path: "/settings/your_data/locations",
       },
       {
         title: "게시물에 위치 정보 넣기",
@@ -1368,6 +1368,30 @@ const pages = {
   },
   AudiencesPage: {
     pageTitle: "내 광고주 목록",
+  },
+  LocationsPage: {
+    pageTitle: "내가 방문한 장소",
+    verification: {
+      description: "비밀번호를 입력하여 계속하세요.",
+      inputFieldTitle: "비밀번호",
+      hyperlink: "비밀번호를 잊으셨나요?",
+      button: {
+        text: "확인",
+      },
+    },
+    verified: {
+      description:
+        "PG에서 관련성이 더 큰 콘텐츠를 표시할 때 사용하는 위치입니다. '방문한 장소를 토대로 맞춤 설정'을 끄면 여기에 열거된 장소가 표시되지 않습니다.",
+      empty: {
+        heading: "이 설정은 꺼져 있습니다.",
+        expl: (
+          <>
+            <HyperLink text="위치 설정" path="/settings/location_information" />
+            에서 이 기능을 켜세요.
+          </>
+        ),
+      },
+    },
   },
 };
 

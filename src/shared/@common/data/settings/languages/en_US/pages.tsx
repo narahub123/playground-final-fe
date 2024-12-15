@@ -711,7 +711,7 @@ const pages = {
     branchList: [
       {
         title: "Places I've Been",
-        path: "/settings/your_twitter_data/locations",
+        path: "/settings/your_data/locations",
       },
       {
         title: "Add Location to Posts",
@@ -1346,6 +1346,34 @@ const pages = {
   },
   AudiencesPage: {
     pageTitle: "My Advertiser List",
+  },
+  LocationsPage: {
+    pageTitle: "Places I've Visited",
+    verification: {
+      description: "Enter your password to continue.",
+      inputFieldTitle: "Password",
+      hyperlink: "Forgot your password?",
+      button: {
+        text: "Confirm",
+      },
+    },
+    verified: {
+      description:
+        "Locations used by PG to display more relevant content. If you turn off 'Personalize based on places visited,' the listed locations will not be displayed here.",
+      empty: {
+        heading: "This setting is turned off.",
+        expl: (
+          <>
+            Turn this feature on in{" "}
+            <HyperLink
+              text="Location Settings"
+              path="/settings/location_information"
+            />
+            .
+          </>
+        ),
+      },
+    },
   },
 };
 

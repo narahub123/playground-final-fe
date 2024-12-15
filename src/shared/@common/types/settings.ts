@@ -47,6 +47,7 @@ type SettingsType = {
   contacts: string[];
   interests: string[];
   audiences: string[];
+  locations: string[];
 };
 
 type MuteType = {

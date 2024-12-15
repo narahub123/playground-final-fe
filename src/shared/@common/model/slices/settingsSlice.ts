@@ -75,6 +75,7 @@ const initialState: SettingsType = {
   contacts: [],
   interests: [],
   audiences: [],
+  locations: [],
 };
 
 // 페이지 로드 전에 setting를 먼저 로드해야 함
@@ -244,6 +245,9 @@ const settingsSlice = createSlice({
     setAudiences: (state, action: PayloadAction<string[]>) => {
       state.audiences = action.payload;
     },
+    setLocations: (state, action: PayloadAction<string[]>) => {
+      state.locations = action.payload;
+    },
   },
 });
 
@@ -301,4 +305,5 @@ export const {
   setContacts,
   setInterests,
   setAudiences,
+  setLocations,
 } = settingsSlice.actions;

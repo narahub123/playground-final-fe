@@ -700,7 +700,7 @@ const pages = {
     branchList: [
       {
         title: "我去过的地方",
-        path: "/settings/your_twitter_data/locations",
+        path: "/settings/your_data/locations",
       },
       {
         title: "将位置信息添加到帖子",
@@ -1317,6 +1317,31 @@ const pages = {
   },
   AudiencesPage: {
     pageTitle: "我的广告商列表",
+  },
+  LocationsPage: {
+    pageTitle: "我访问过的地方",
+    verification: {
+      description: "请输入密码以继续。",
+      inputFieldTitle: "密码",
+      hyperlink: "忘记密码了吗？",
+      button: {
+        text: "确认",
+      },
+    },
+    verified: {
+      description:
+        "PG 使用这些位置来显示更相关的内容。如果关闭“基于访问的地点个性化”，这里将不会显示列出的地点。",
+      empty: {
+        heading: "此设置已关闭。",
+        expl: (
+          <>
+            在{" "}
+            <HyperLink text="位置设置" path="/settings/location_information" />
+            中启用此功能。
+          </>
+        ),
+      },
+    },
   },
 };
 

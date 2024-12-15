@@ -51,6 +51,7 @@ import {
   getContacts,
   getInterests,
   getAudiences,
+  getLocations,
 } from "./settingsSelectors";
 import { getIsLoggedIn } from "./loginSelector";
 import {
@@ -127,6 +128,7 @@ export {
   getContacts,
   getInterests,
   getAudiences,
+  getLocations,
   // login
   getIsLoggedIn,
   // user

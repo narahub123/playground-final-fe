@@ -79,6 +79,7 @@ import {
   ContactsDashboardPage,
   InterestsPage,
   AudiencesPage,
+  LocationsPage,
 } from "@pages/Settings/pages";
 import { AuthLayout } from "@/layouts";
 import { PageLayout } from "@shared/pages/layout";
@@ -378,6 +379,10 @@ export const router = createBrowserRouter([
                   {
                     path: "your_data/audiences",
                     element: <AudiencesPage />,
+                  },
+                  {
+                    path: "your_data/locations",
+                    element: <LocationsPage />,
                   },
                   {
                     path: "accessibility",

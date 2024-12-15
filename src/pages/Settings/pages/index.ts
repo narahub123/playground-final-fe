@@ -66,6 +66,7 @@ import {
   ContactsDashboardPage,
   InterestsPage,
   AudiencesPage,
+  LocationsPage,
 } from "./PrivacyAndSafety";
 import {
   NotificationsPage,
@@ -138,6 +139,7 @@ export {
   ContactsDashboardPage,
   InterestsPage,
   AudiencesPage,
+  LocationsPage,
   AudienceAndTagging,
   YourPosts,
   SortContents,
