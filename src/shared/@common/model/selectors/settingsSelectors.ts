@@ -2,11 +2,10 @@ import { RootState } from "@app/store";
 
 const getSettings = (state: RootState) => state.settings;
 const getBgTheme = (state: RootState) => state.settings.bgTheme;
-const getLanguage = (state: RootState) => state.settings.language;
 const getColorTheme = (state: RootState) => state.settings.colorTheme;
 const getFontSize = (state: RootState) => state.settings.fontSize;
 const getAllowMessages = (state: RootState) => state.settings.allowMessages;
-const getHideMessages = (state: RootState) => state.settings.hideMessages;
+const getFilterMessages = (state: RootState) => state.settings.filterMessages;
 const getShowRead = (state: RootState) => state.settings.showRead;
 const getFindByEmail = (state: RootState) => state.settings.findByEmail;
 const getFindByPhone = (state: RootState) => state.settings.findByPhone;
@@ -14,7 +13,8 @@ const getAllowBehavioralAds = (state: RootState) =>
   state.settings.allowBehavioralAds;
 const getAllowLocationAds = (state: RootState) =>
   state.settings.allowLocationAds;
-const getQualityFilter = (state: RootState) => state.settings.qualityFilter;
+const getQualityFilter = (state: RootState) =>
+  state.settings.notifications.qualityFilter;
 const getColorContrast = (state: RootState) => state.settings.colorContrast;
 const getReduceMotion = (state: RootState) => state.settings.reduceMotion;
 const getAddImgExpl = (state: RootState) => state.settings.addImgExpl;
@@ -28,17 +28,17 @@ const getDisplaySensitiveMedia = (state: RootState) =>
   state.settings.displaySensitiveMedia;
 const getAddLocationInfo = (state: RootState) => state.settings.addLocationInfo;
 const getMuteNotFollowing = (state: RootState) =>
-  state.settings.notifications.mutes.notFollowing;
+  state.settings.notifications.mutesNotifications.notFollowing;
 const getMuteNotFollower = (state: RootState) =>
-  state.settings.notifications.mutes.notFollower;
+  state.settings.notifications.mutesNotifications.notFollower;
 const getMuteNewAccount = (state: RootState) =>
-  state.settings.notifications.mutes.newAccount;
+  state.settings.notifications.mutesNotifications.newAccount;
 const getMuteDefaultProfile = (state: RootState) =>
-  state.settings.notifications.mutes.defaultProfile;
+  state.settings.notifications.mutesNotifications.defaultProfile;
 const getMuteEmailAuthenticated = (state: RootState) =>
-  state.settings.notifications.mutes.emailAuthenticated;
+  state.settings.notifications.mutesNotifications.emailAuthenticated;
 const getMutePhoneAuthenticated = (state: RootState) =>
-  state.settings.notifications.mutes.phoneAuthenticated;
+  state.settings.notifications.mutesNotifications.phoneAuthenticated;
 const getProtectRenewPassword = (state: RootState) =>
   state.settings.protectRenewPassword;
 const getTwoFactorAuthentication = (state: RootState) =>
@@ -70,78 +70,77 @@ const getInterests = (state: RootState) => state.settings.interests;
 const getAudiences = (state: RootState) => state.settings.audiences;
 const getLocations = (state: RootState) => state.settings.locations;
 const getEmailNotification = (state: RootState) =>
-  state.settings.emailNotification;
+  state.settings.notifications.emailNotification;
 const getEmailNotificationsNewNotification = (state: RootState) =>
-  state.settings.emailNotifications.newNotification;
+  state.settings.notifications.emailNotifications.newNotification;
 const getEmailNotificationsMessages = (state: RootState) =>
-  state.settings.emailNotifications.messages;
+  state.settings.notifications.emailNotifications.messages;
 const getEmailNotificationsPostsSentByEmail = (state: RootState) =>
-  state.settings.emailNotifications.postsSentByEmail;
+  state.settings.notifications.emailNotifications.postsSentByEmail;
 const getEmailNotificationsPopularPosts = (state: RootState) =>
-  state.settings.emailNotifications.popularPosts;
+  state.settings.notifications.emailNotifications.popularPosts;
 const getEmailNotificationsMyStatics = (state: RootState) =>
-  state.settings.emailNotifications.myStatics;
+  state.settings.notifications.emailNotifications.myStatics;
 const getEmailNotificationsPGUpdates = (state: RootState) =>
-  state.settings.emailNotifications.PGUpdates;
+  state.settings.notifications.emailNotifications.PGUpdates;
 const getEmailNotificationsPGTips = (state: RootState) =>
-  state.settings.emailNotifications.PGTips;
+  state.settings.notifications.emailNotifications.PGTips;
 const getEmailNotificationsPGLatest = (state: RootState) =>
-  state.settings.emailNotifications.PGLatest;
+  state.settings.notifications.emailNotifications.PGLatest;
 const getEmailNotificationsPGPartners = (state: RootState) =>
-  state.settings.emailNotifications.PGPartners;
+  state.settings.notifications.emailNotifications.PGPartners;
 const getEmailNotificationsPGSurvey = (state: RootState) =>
-  state.settings.emailNotifications.PGSurvey;
+  state.settings.notifications.emailNotifications.PGSurvey;
 const getEmailNotificationsPGRecommend = (state: RootState) =>
-  state.settings.emailNotifications.PGRecommend;
+  state.settings.notifications.emailNotifications.PGRecommend;
 const getEmailNotificationsPGRecentFollowings = (state: RootState) =>
-  state.settings.emailNotifications.PGRecentFollowings;
+  state.settings.notifications.emailNotifications.PGRecentFollowings;
 const getEmailNotificationsPGBusiness = (state: RootState) =>
-  state.settings.emailNotifications.PGBusiness;
+  state.settings.notifications.emailNotifications.PGBusiness;
 const getPushNotification = (state: RootState) =>
-  state.settings.pushNotification;
+  state.settings.notifications.pushNotification;
 const getPushNotificationsPosts = (state: RootState) =>
-  state.settings.pushNotificatins.posts;
+  state.settings.notifications.pushNotifications.posts;
 const getPushNotificationsReplies = (state: RootState) =>
-  state.settings.pushNotificatins.replies;
+  state.settings.notifications.pushNotifications.replies;
 const getPushNotificationsReposts = (state: RootState) =>
-  state.settings.pushNotificatins.reposts;
+  state.settings.notifications.pushNotifications.reposts;
 const getPushNotificationsLikes = (state: RootState) =>
-  state.settings.pushNotificatins.likes;
+  state.settings.notifications.pushNotifications.likes;
 const getPushNotificationsPhotoTags = (state: RootState) =>
-  state.settings.pushNotificatins.photoTags;
+  state.settings.notifications.pushNotifications.photoTags;
 const getPushNotificationsNewFollower = (state: RootState) =>
-  state.settings.pushNotificatins.newFollower;
+  state.settings.notifications.pushNotifications.newFollower;
 const getPushNotificationsMessages = (state: RootState) =>
-  state.settings.pushNotificatins.messages;
+  state.settings.notifications.pushNotifications.messages;
 const getPushNotificationsReplyMessage = (state: RootState) =>
-  state.settings.pushNotificatins.replyMessage;
+  state.settings.notifications.pushNotifications.replyMessage;
 const getPushNotificationsJoinPplInContacts = (state: RootState) =>
-  state.settings.pushNotificatins.joinPplInContacts;
+  state.settings.notifications.pushNotifications.joinPplInContacts;
 const getPushNotificationsTopics = (state: RootState) =>
-  state.settings.pushNotificatins.topics;
+  state.settings.notifications.pushNotifications.topics;
 const getPushNotificationsNewsAndSports = (state: RootState) =>
-  state.settings.pushNotificatins.newsAndSports;
+  state.settings.notifications.pushNotifications.newsAndSports;
 const getPushNotificationsRecommend = (state: RootState) =>
-  state.settings.pushNotificatins.recommend;
+  state.settings.notifications.pushNotifications.recommend;
 const getPushNotificationsMoments = (state: RootState) =>
-  state.settings.pushNotificatins.moments;
+  state.settings.notifications.pushNotifications.moments;
 const getPushNotificationsLives = (state: RootState) =>
-  state.settings.pushNotificatins.lives;
+  state.settings.notifications.pushNotifications.lives;
 const getPushNotificationsOtherLives = (state: RootState) =>
-  state.settings.pushNotificatins.otherLives;
+  state.settings.notifications.pushNotifications.otherLives;
 const getPushNotificationsAlertAndAgent = (state: RootState) =>
-  state.settings.pushNotificatins.alertAndAgent;
+  state.settings.notifications.pushNotifications.alertAndAgent;
 const getPushNotificationsProfessional = (state: RootState) =>
-  state.settings.pushNotificatins.professional;
+  state.settings.notifications.pushNotifications.professional;
 
 export {
   getSettings,
   getBgTheme,
-  getLanguage,
   getColorTheme,
   getFontSize,
   getAllowMessages,
-  getHideMessages,
+  getFilterMessages,
   getShowRead,
   getFindByEmail,
   getFindByPhone,

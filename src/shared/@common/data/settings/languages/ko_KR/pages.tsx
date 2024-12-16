@@ -10,7 +10,7 @@ import {
   setDisplaySensitiveMedia,
   setFindByEmail,
   setFindByPhone,
-  setHideMessages,
+  setFilterMessages,
   setIsPrivate,
   setProtectVideo,
   setQualityFilter,
@@ -77,7 +77,7 @@ import {
   getDisplaySensitiveMedia,
   getFindByEmail,
   getFindByPhone,
-  getHideMessages,
+  getFilterMessages,
   getIsPrivate,
   getProtectVideo,
   getQualityFilter,
@@ -478,7 +478,7 @@ const pages = {
       {
         title: "인증여부",
         path: "",
-        expl: user.isAuthenticated ? "인증됨" : "인증 안됨",
+        expl: user.isAuthorized ? "인증됨" : "인증 안됨",
       },
       // 비공개 게시물
       {
@@ -490,7 +490,7 @@ const pages = {
       {
         title: "계정 생성",
         path: "",
-        expl: user.regDate.toLocaleString(),
+        expl: user.createdAt.toLocaleString(),
       },
       // 국가
       {
@@ -689,10 +689,10 @@ const pages = {
       {
         title: "",
         type: "checkbox",
-        selector: getHideMessages,
+        selector: getFilterMessages,
         comp: {
           text: "저질스러운 쪽지 필터링하기",
-          reducer: setHideMessages,
+          reducer: setFilterMessages,
         },
         description:
           "스팸 또는 저질스러운 내용이 포함된 것으로 파악되는 쪽지 요청을 숨깁니다. 이러한 요청은 쪽지 요청함의 하단에 있는 별도의 받은 쪽지함으로 전송됩니다. 원하는 경우 여전히 확인할 수 있습니다.",

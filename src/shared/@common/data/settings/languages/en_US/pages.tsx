@@ -12,7 +12,7 @@ import {
   getDisplaySensitiveMedia,
   getFindByEmail,
   getFindByPhone,
-  getHideMessages,
+  getFilterMessages,
   getIsPrivate,
   getProtectVideo,
   getQualityFilter,
@@ -70,7 +70,7 @@ import {
   setDisplaySensitiveMedia,
   setFindByEmail,
   setFindByPhone,
-  setHideMessages,
+  setFilterMessages,
   setIsPrivate,
   setProtectVideo,
   setQualityFilter,
@@ -451,7 +451,7 @@ const pages = {
       {
         title: "Authentication Status",
         path: "",
-        expl: user.isAuthenticated ? "Authenticated" : "Not Authenticated",
+        expl: user.isAuthorized ? "Authenticated" : "Not Authenticated",
       },
       // 비공개 게시물
       {
@@ -463,7 +463,7 @@ const pages = {
       {
         title: "Account Created",
         path: "",
-        expl: user.regDate.toLocaleString(),
+        expl: user.createdAt.toLocaleString(),
       },
       // 국가
       {
@@ -662,10 +662,10 @@ const pages = {
       {
         title: "",
         type: "checkbox",
-        selector: getHideMessages,
+        selector: getFilterMessages,
         comp: {
           text: "Filter low-quality messages",
-          reducer: setHideMessages,
+          reducer: setFilterMessages,
         },
         description:
           "Hides message requests identified as spam or containing low-quality content. These requests will be sent to a separate inbox at the bottom of the message request list. You can still check them if you want.",

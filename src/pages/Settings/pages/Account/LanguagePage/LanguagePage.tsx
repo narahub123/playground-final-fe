@@ -7,7 +7,7 @@ import { useFocusTrap, useLanguageMode } from "@shared/@common/model/hooks";
 import { langList } from "@shared/@common/data";
 import { useSelector } from "react-redux";
 import { getLanguage } from "@shared/@common/model/selectors";
-import { setLanguage } from "@shared/@common/model/slices/settingsSlice";
+import { setLanguage } from "@shared/@common/model/slices/userSlice";
 
 const LanguagePage = () => {
   const pageRef = useRef<HTMLDivElement>(null);

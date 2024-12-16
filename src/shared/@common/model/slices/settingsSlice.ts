@@ -20,18 +20,16 @@ import {
 
 const initialState: SettingsType = {
   bgTheme: "light",
-  language: "ko-KR",
   colorTheme: "cornflowerblue",
   fontSize: "b",
   isVisible: true,
   allowMessages: "all",
-  hideMessages: true,
+  filterMessages: true,
   showRead: false,
   findByEmail: false,
   findByPhone: false,
   allowBehavioralAds: false,
   allowLocationAds: false,
-  qualityFilter: false,
   colorContrast: false,
   reduceMotion: false,
   addImgExpl: false, // 이미지 설명 추가 알림
@@ -43,13 +41,50 @@ const initialState: SettingsType = {
   displaySensitiveMedia: false, // 피드에 민감한 미디어 표시하기
   addLocationInfo: false,
   notifications: {
-    mutes: {
+    qualityFilter: false,
+    mutesNotifications: {
       notFollowing: false,
       notFollower: false,
       newAccount: false,
       defaultProfile: false,
       emailAuthenticated: false,
       phoneAuthenticated: false,
+    },
+    emailNotification: false,
+    emailNotifications: {
+      newNotification: true,
+      messages: true,
+      postsSentByEmail: true,
+      popularPosts: "off",
+      myStatics: true,
+      PGUpdates: true,
+      PGTips: true,
+      PGLatest: true,
+      PGPartners: true,
+      PGSurvey: true,
+      PGRecommend: true,
+      PGRecentFollowings: true,
+      PGBusiness: true,
+    },
+    pushNotification: false,
+    pushNotifications: {
+      posts: true,
+      replies: "custom",
+      reposts: "custom",
+      likes: "custom",
+      photoTags: true,
+      newFollower: true,
+      messages: true,
+      replyMessage: "mine",
+      joinPplInContacts: true,
+      topics: true,
+      newsAndSports: true,
+      recommend: true,
+      moments: true,
+      lives: true,
+      otherLives: true,
+      alertAndAgent: true,
+      professional: true,
     },
   },
   protectRenewPassword: false, // 비밀번호 재설정 보호
@@ -81,42 +116,6 @@ const initialState: SettingsType = {
   interests: [],
   audiences: [],
   locations: [],
-  emailNotification: false,
-  emailNotifications: {
-    newNotification: true,
-    messages: true,
-    postsSentByEmail: true,
-    popularPosts: "off",
-    myStatics: true,
-    PGUpdates: true,
-    PGTips: true,
-    PGLatest: true,
-    PGPartners: true,
-    PGSurvey: true,
-    PGRecommend: true,
-    PGRecentFollowings: true,
-    PGBusiness: true,
-  },
-  pushNotification: false,
-  pushNotificatins: {
-    posts: true,
-    replies: "custom",
-    reposts: "custom",
-    likes: "custom",
-    photoTags: true,
-    newFollower: true,
-    messages: true,
-    replyMessage: "mine",
-    joinPplInContacts: true,
-    topics: true,
-    newsAndSports: true,
-    recommend: true,
-    moments: true,
-    lives: true,
-    otherLives: true,
-    alertAndAgent: true,
-    professional: true,
-  },
 };
 
 // 페이지 로드 전에 setting를 먼저 로드해야 함
@@ -127,9 +126,6 @@ const settingsSlice = createSlice({
     setBackgroundTheme: (state, action) => {
       state.bgTheme = action.payload;
     },
-    setLanguage: (state, action: PayloadAction<string>) => {
-      state.language = action.payload;
-    },
     setColorTheme: (state, action: PayloadAction<ColorThemeType>) => {
       state.colorTheme = action.payload;
     },
@@ -139,8 +135,8 @@ const settingsSlice = createSlice({
     setAllowMessages: (state, action: PayloadAction<AllowMessageType>) => {
       state.allowMessages = action.payload;
     },
-    setHideMessages: (state, action: PayloadAction<boolean>) => {
-      state.hideMessages = action.payload;
+    setFilterMessages: (state, action: PayloadAction<boolean>) => {
+      state.filterMessages = action.payload;
     },
     setShowRead: (state, action: PayloadAction<boolean>) => {
       state.showRead = action.payload;
@@ -158,7 +154,7 @@ const settingsSlice = createSlice({
       state.allowLocationAds = action.payload;
     },
     setQualityFilter: (state, action: PayloadAction<boolean>) => {
-      state.qualityFilter = action.payload;
+      state.notifications.qualityFilter = action.payload;
     },
     setColorContrast: (state, action: PayloadAction<boolean>) => {
       state.colorContrast = action.payload;
@@ -191,22 +187,24 @@ const settingsSlice = createSlice({
       state.addLocationInfo = action.payload;
     },
     setMuteNotFollowing: (state, action: PayloadAction<boolean>) => {
-      state.notifications.mutes.notFollowing = action.payload;
+      state.notifications.mutesNotifications.notFollowing = action.payload;
     },
     setMuteNotFollower: (state, action: PayloadAction<boolean>) => {
-      state.notifications.mutes.notFollower = action.payload;
+      state.notifications.mutesNotifications.notFollower = action.payload;
     },
     setMuteNewAccount: (state, action: PayloadAction<boolean>) => {
-      state.notifications.mutes.newAccount = action.payload;
+      state.notifications.mutesNotifications.newAccount = action.payload;
     },
     setMuteDefaultProfile: (state, action: PayloadAction<boolean>) => {
-      state.notifications.mutes.defaultProfile = action.payload;
+      state.notifications.mutesNotifications.defaultProfile = action.payload;
     },
     setMuteEmailAuthenticated: (state, action: PayloadAction<boolean>) => {
-      state.notifications.mutes.emailAuthenticated = action.payload;
+      state.notifications.mutesNotifications.emailAuthenticated =
+        action.payload;
     },
     setMutePhoneAuthenticated: (state, action: PayloadAction<boolean>) => {
-      state.notifications.mutes.phoneAuthenticated = action.payload;
+      state.notifications.mutesNotifications.phoneAuthenticated =
+        action.payload;
     },
     setProtectRenewPassword: (state, action: PayloadAction<boolean>) => {
       state.protectRenewPassword = action.payload;
@@ -290,148 +288,149 @@ const settingsSlice = createSlice({
       state.locations = action.payload;
     },
     setEmailNotification: (state, action: PayloadAction<boolean>) => {
-      state.emailNotification = action.payload;
+      state.notifications.emailNotification = action.payload;
     },
     setEmailNotificationsNewNotification: (
       state,
       action: PayloadAction<boolean>
     ) => {
-      state.emailNotifications.newNotification = action.payload;
+      state.notifications.emailNotifications.newNotification = action.payload;
     },
     setEmailNotificationsMessages: (state, action: PayloadAction<boolean>) => {
-      state.emailNotifications.messages = action.payload;
+      state.notifications.emailNotifications.messages = action.payload;
     },
     setEmailNotificationsPostsSentByEmail: (
       state,
       action: PayloadAction<boolean>
     ) => {
-      state.emailNotifications.postsSentByEmail = action.payload;
+      state.notifications.emailNotifications.postsSentByEmail = action.payload;
     },
     setEmailNotificationsPopularPosts: (
       state,
       action: PayloadAction<PopularPostsType>
     ) => {
-      state.emailNotifications.popularPosts = action.payload;
+      state.notifications.emailNotifications.popularPosts = action.payload;
     },
     setEmailNotificationsMyStatics: (state, action: PayloadAction<boolean>) => {
-      state.emailNotifications.myStatics = action.payload;
+      state.notifications.emailNotifications.myStatics = action.payload;
     },
     setEmailNotificationsPGUpdates: (state, action: PayloadAction<boolean>) => {
-      state.emailNotifications.PGUpdates = action.payload;
+      state.notifications.emailNotifications.PGUpdates = action.payload;
     },
     setEmailNotificationsPGTips: (state, action: PayloadAction<boolean>) => {
-      state.emailNotifications.PGTips = action.payload;
+      state.notifications.emailNotifications.PGTips = action.payload;
     },
     setEmailNotificationsPGLatest: (state, action: PayloadAction<boolean>) => {
-      state.emailNotifications.PGLatest = action.payload;
+      state.notifications.emailNotifications.PGLatest = action.payload;
     },
     setEmailNotificationsPGPartners: (
       state,
       action: PayloadAction<boolean>
     ) => {
-      state.emailNotifications.PGPartners = action.payload;
+      state.notifications.emailNotifications.PGPartners = action.payload;
     },
     setEmailNotificationsPGSurvey: (state, action: PayloadAction<boolean>) => {
-      state.emailNotifications.PGSurvey = action.payload;
+      state.notifications.emailNotifications.PGSurvey = action.payload;
     },
     setEmailNotificationsPGRecommend: (
       state,
       action: PayloadAction<boolean>
     ) => {
-      state.emailNotifications.PGRecommend = action.payload;
+      state.notifications.emailNotifications.PGRecommend = action.payload;
     },
     setEmailNotificationsPGRecentFollowings: (
       state,
       action: PayloadAction<boolean>
     ) => {
-      state.emailNotifications.PGRecentFollowings = action.payload;
+      state.notifications.emailNotifications.PGRecentFollowings =
+        action.payload;
     },
     setEmailNotificationsPGBusiness: (
       state,
       action: PayloadAction<boolean>
     ) => {
-      state.emailNotifications.PGBusiness = action.payload;
+      state.notifications.emailNotifications.PGBusiness = action.payload;
     },
     setPushNotification: (state, action: PayloadAction<boolean>) => {
-      state.pushNotification = action.payload;
+      state.notifications.pushNotification = action.payload;
     },
     setPushNotificationsPosts: (state, action: PayloadAction<boolean>) => {
-      state.pushNotificatins.posts = action.payload;
+      state.notifications.pushNotifications.posts = action.payload;
     },
     setPushNotificationsReplies: (
       state,
       action: PayloadAction<PushNotificationsCustomType>
     ) => {
-      state.pushNotificatins.replies = action.payload;
+      state.notifications.pushNotifications.replies = action.payload;
     },
     setPushNotificationsReposts: (
       state,
       action: PayloadAction<PushNotificationsCustomType>
     ) => {
-      state.pushNotificatins.reposts = action.payload;
+      state.notifications.pushNotifications.reposts = action.payload;
     },
     setPushNotificationsLikes: (
       state,
       action: PayloadAction<PushNotificationsCustomType>
     ) => {
-      state.pushNotificatins.likes = action.payload;
+      state.notifications.pushNotifications.likes = action.payload;
     },
     setPushNotificationsPhotoTags: (state, action: PayloadAction<boolean>) => {
-      state.pushNotificatins.photoTags = action.payload;
+      state.notifications.pushNotifications.photoTags = action.payload;
     },
     setPushNotificationsNewFollower: (
       state,
       action: PayloadAction<boolean>
     ) => {
-      state.pushNotificatins.newFollower = action.payload;
+      state.notifications.pushNotifications.newFollower = action.payload;
     },
     setPushNotificationsMessages: (state, action: PayloadAction<boolean>) => {
-      state.pushNotificatins.messages = action.payload;
+      state.notifications.pushNotifications.messages = action.payload;
     },
     setPushNotificationsReplyMessage: (
       state,
       action: PayloadAction<ReplyMessageType>
     ) => {
-      state.pushNotificatins.replyMessage = action.payload;
+      state.notifications.pushNotifications.replyMessage = action.payload;
     },
     setPushNotificationsJoinPplInContacts: (
       state,
       action: PayloadAction<boolean>
     ) => {
-      state.pushNotificatins.joinPplInContacts = action.payload;
+      state.notifications.pushNotifications.joinPplInContacts = action.payload;
     },
     setPushNotificationsTopics: (state, action: PayloadAction<boolean>) => {
-      state.pushNotificatins.topics = action.payload;
+      state.notifications.pushNotifications.topics = action.payload;
     },
     setPushNotificationsNewsAndSports: (
       state,
       action: PayloadAction<boolean>
     ) => {
-      state.pushNotificatins.newsAndSports = action.payload;
+      state.notifications.pushNotifications.newsAndSports = action.payload;
     },
     setPushNotificationsRecommend: (state, action: PayloadAction<boolean>) => {
-      state.pushNotificatins.recommend = action.payload;
+      state.notifications.pushNotifications.recommend = action.payload;
     },
     setPushNotificationsMoments: (state, action: PayloadAction<boolean>) => {
-      state.pushNotificatins.moments = action.payload;
+      state.notifications.pushNotifications.moments = action.payload;
     },
     setPushNotificationsLives: (state, action: PayloadAction<boolean>) => {
-      state.pushNotificatins.lives = action.payload;
+      state.notifications.pushNotifications.lives = action.payload;
     },
     setPushNotificationsOtherLives: (state, action: PayloadAction<boolean>) => {
-      state.pushNotificatins.otherLives = action.payload;
+      state.notifications.pushNotifications.otherLives = action.payload;
     },
     setPushNotificationsAlertAndAgent: (
       state,
       action: PayloadAction<boolean>
     ) => {
-      state.pushNotificatins.alertAndAgent = action.payload;
+      state.notifications.pushNotifications.alertAndAgent = action.payload;
     },
     setPushNotificationsProfessional: (
       state,
       action: PayloadAction<boolean>
     ) => {
-      state.pushNotificatins.professional = action.payload;
+      state.notifications.pushNotifications.professional = action.payload;
     },
   },
 });
@@ -440,11 +439,10 @@ export default settingsSlice.reducer;
 
 export const {
   setBackgroundTheme,
-  setLanguage,
   setColorTheme,
   setFontSize,
   setAllowMessages,
-  setHideMessages,
+  setFilterMessages,
   setShowRead,
   setFindByEmail,
   setFindByPhone,

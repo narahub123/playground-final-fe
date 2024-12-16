@@ -12,7 +12,7 @@ import {
   getDisplaySensitiveMedia,
   getFindByEmail,
   getFindByPhone,
-  getHideMessages,
+  getFilterMessages,
   getIsPrivate,
   getProtectVideo,
   getQualityFilter,
@@ -70,7 +70,7 @@ import {
   setDisplaySensitiveMedia,
   setFindByEmail,
   setFindByPhone,
-  setHideMessages,
+  setFilterMessages,
   setIsPrivate,
   setProtectVideo,
   setQualityFilter,
@@ -446,7 +446,7 @@ const pages = {
       {
         title: "認證狀態",
         path: "",
-        expl: user.isAuthenticated ? "已認證" : "未認證",
+        expl: user.isAuthorized ? "已認證" : "未認證",
       },
       // 비공개 게시물
       {
@@ -458,7 +458,7 @@ const pages = {
       {
         title: "帳戶創建",
         path: "",
-        expl: user.regDate.toLocaleString(),
+        expl: user.createdAt.toLocaleString(),
       },
       // 국가
       {
@@ -655,10 +655,10 @@ const pages = {
       {
         title: "",
         type: "checkbox",
-        selector: getHideMessages,
+        selector: getFilterMessages,
         comp: {
           text: "過濾低質量消息",
-          reducer: setHideMessages,
+          reducer: setFilterMessages,
         },
         description:
           "隱藏被識別為垃圾郵件或包含低質量內容的消息請求。這些請求將被發送到消息請求列表底部的單獨收件箱中。如果需要，您仍然可以查看。",

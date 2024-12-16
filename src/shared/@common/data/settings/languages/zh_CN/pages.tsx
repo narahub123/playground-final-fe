@@ -12,7 +12,7 @@ import {
   getDisplaySensitiveMedia,
   getFindByEmail,
   getFindByPhone,
-  getHideMessages,
+  getFilterMessages,
   getIsPrivate,
   getProtectVideo,
   getQualityFilter,
@@ -70,7 +70,7 @@ import {
   setDisplaySensitiveMedia,
   setFindByEmail,
   setFindByPhone,
-  setHideMessages,
+  setFilterMessages,
   setIsPrivate,
   setProtectVideo,
   setQualityFilter,
@@ -446,7 +446,7 @@ const pages = {
       {
         title: "认证状态",
         path: "",
-        expl: user.isAuthenticated ? "已认证" : "未认证",
+        expl: user.isAuthorized ? "已认证" : "未认证",
       },
       // 비공개 게시물
       {
@@ -458,7 +458,7 @@ const pages = {
       {
         title: "账户创建",
         path: "",
-        expl: user.regDate.toLocaleString(),
+        expl: user.createdAt.toLocaleString(),
       },
       // 국가
       {
@@ -655,10 +655,10 @@ const pages = {
       {
         title: "",
         type: "checkbox",
-        selector: getHideMessages,
+        selector: getFilterMessages,
         comp: {
           text: "过滤低质量消息",
-          reducer: setHideMessages,
+          reducer: setFilterMessages,
         },
         description:
           "隐藏被识别为垃圾邮件或包含低质量内容的消息请求。这些请求将被发送到消息请求列表底部的单独收件箱中。如果需要，您仍然可以查看。",

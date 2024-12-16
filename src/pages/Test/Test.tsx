@@ -37,13 +37,13 @@ import BGToggleButton from "@shared/@common/ui/components/BGToggleButton/BGToggl
 import {
   setColorTheme,
   setFontSize,
-  setLanguage,
 } from "@shared/@common/model/slices/settingsSlice";
 import { profile } from "console";
 import { profile1, profile2 } from "@shared/@common/assets/images";
 import { useAppDispatch } from "@app/store";
 import { FontSizeType } from "@shared/@common/types";
 import { Link } from "react-router-dom";
+import { setLanguage } from "@shared/@common/model/slices/userSlice";
 
 const Test = () => {
   const dispatch = useAppDispatch();

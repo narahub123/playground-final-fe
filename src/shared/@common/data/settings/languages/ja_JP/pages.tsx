@@ -12,7 +12,7 @@ import {
   getDisplaySensitiveMedia,
   getFindByEmail,
   getFindByPhone,
-  getHideMessages,
+  getFilterMessages,
   getIsPrivate,
   getProtectVideo,
   getQualityFilter,
@@ -70,7 +70,7 @@ import {
   setDisplaySensitiveMedia,
   setFindByEmail,
   setFindByPhone,
-  setHideMessages,
+  setFilterMessages,
   setIsPrivate,
   setProtectVideo,
   setQualityFilter,
@@ -451,7 +451,7 @@ const pages = {
       {
         title: "認証状況",
         path: "",
-        expl: user.isAuthenticated ? "認証済み" : "未認証",
+        expl: user.isAuthorized ? "認証済み" : "未認証",
       },
       // 비공개 게시물
       {
@@ -463,7 +463,7 @@ const pages = {
       {
         title: "アカウント作成",
         path: "",
-        expl: user.regDate.toLocaleString(),
+        expl: user.createdAt.toLocaleString(),
       },
       // 국가
       {
@@ -664,10 +664,10 @@ const pages = {
       {
         title: "",
         type: "checkbox",
-        selector: getHideMessages,
+        selector: getFilterMessages,
         comp: {
           text: "低品質なメッセージをフィルタリングする",
-          reducer: setHideMessages,
+          reducer: setFilterMessages,
         },
         description:
           "スパムや低品質な内容が含まれていると判断されたメッセージリクエストを非表示にします。これらのリクエストは、メッセージリクエストリストの下部にある別の受信箱に送られます。必要に応じて確認することができます。",

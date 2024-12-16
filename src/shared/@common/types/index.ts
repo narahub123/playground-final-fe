@@ -9,7 +9,7 @@ interface listModalCardType {
 // Select 컴포넌트에 사용하는 types
 import { SelectOptionType } from "./Select";
 
-import UserType from "./user";
+import UserType, { GenderType, UserRoleType, SocialType } from "./user";
 
 import { SigninType, SigninUserType, SigninUserSettingsType } from "./signin";
 
@@ -42,6 +42,12 @@ import { alphabetGeneratorModeType } from "./utils";
 import { ValidationCheckerType } from "./hooks";
 
 export type {
+  // user 타입
+  GenderType,
+  UserRoleType,
+  SocialType,
+
+  //
   listModalCardType,
   ThemeColorType,
   ThemeKey,
@@ -62,6 +68,7 @@ export type {
   MuteType,
   MuteTargetType,
   MuteDurationType,
+  PopularPostsType,
 
   // components
   HyperLinkCardType,
