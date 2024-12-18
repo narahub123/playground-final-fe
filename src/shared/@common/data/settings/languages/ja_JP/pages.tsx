@@ -1787,6 +1787,47 @@ const pages = {
       },
     ],
   },
+  AuthPage: {
+    title: "こんにちは、こちらはPLAYGROUNDです。",
+    heading1: "今すぐサインアップ。",
+    list1: [
+      {
+        text: "Googleでサインアップ",
+        path: "",
+      },
+      {
+        text: "Naverでサインアップ",
+        path: "",
+      },
+      {
+        text: "Kakaoでサインアップ",
+        path: "",
+      },
+      {
+        text: "メールでサインアップ",
+        path: "",
+      },
+    ],
+    heading2: "すでにアカウントをお持ちですか？",
+    list2: [
+      {
+        text: "Googleでログイン",
+        path: "",
+      },
+      {
+        text: "Naverでログイン",
+        path: "",
+      },
+      {
+        text: "Kakaoでログイン",
+        path: "",
+      },
+      {
+        text: "メールでログイン",
+        path: "",
+      },
+    ],
+  },
 };
 
 export default pages;

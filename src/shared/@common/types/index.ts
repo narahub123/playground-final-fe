@@ -23,7 +23,6 @@ import {
   AllowMessageType,
   AutoplayType,
   NotificationsType,
-  MutesType,
   TwoFactorAuthentication,
   TaggingWhomType,
   MuteType,
@@ -33,7 +32,11 @@ import {
 } from "./settings";
 
 // 컴포넌트
-import { HyperLinkCardType, InputValueType } from "./components";
+import {
+  HyperLinkCardType,
+  InputValueType,
+  AuthButtonType,
+} from "./components";
 
 // utils
 import { alphabetGeneratorModeType } from "./utils";
@@ -62,7 +65,6 @@ export type {
   AllowMessageType,
   AutoplayType,
   NotificationsType,
-  MutesType,
   TwoFactorAuthentication,
   TaggingWhomType,
   MuteType,
@@ -73,6 +75,7 @@ export type {
   // components
   HyperLinkCardType,
   InputValueType,
+  AuthButtonType,
 
   // utils
   alphabetGeneratorModeType,

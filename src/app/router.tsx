@@ -7,7 +7,6 @@ import {
   ProfilePage,
   Bookmarks,
   Settings,
-  Auth,
   Login,
   Signin,
   Logout,
@@ -91,6 +90,7 @@ import {
   TopicsOutlet,
 } from "@features/settings-branch-list/ui/outlets";
 import { AuthLayout } from "@shared/auth/layout";
+import { AuthPage } from "@pages/Auth";
 
 // 로그인 여부 확인
 const login = false;
@@ -469,7 +469,7 @@ export const router = createBrowserRouter([
           : [
               {
                 index: true,
-                element: <Auth />,
+                element: <AuthPage />,
               },
               {
                 path: `login`,

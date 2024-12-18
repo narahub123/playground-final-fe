@@ -1805,6 +1805,47 @@ const pages = {
       },
     ],
   },
+  AuthPage: {
+    title: "안녕하세요. 여기는 PLAYGROUND입니다.",
+    heading1: "지금 가입하세요.",
+    list1: [
+      {
+        text: "구글 회원 가입",
+        path: "",
+      },
+      {
+        text: "네이버 회원 가입",
+        path: "",
+      },
+      {
+        text: "카카오 회원 가입",
+        path: "",
+      },
+      {
+        text: "이메일 가입",
+        path: "",
+      },
+    ],
+    heading2: "이미 가입하셨나요?",
+    list2: [
+      {
+        text: "구글 로그인",
+        path: "",
+      },
+      {
+        text: "네이버 로그인",
+        path: "",
+      },
+      {
+        text: "카카오 로그인",
+        path: "",
+      },
+      {
+        text: "이메일 로그인",
+        path: "",
+      },
+    ],
+  },
 };
 
 export default pages;

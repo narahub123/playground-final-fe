@@ -1787,6 +1787,47 @@ const pages = {
       },
     ],
   },
+  AuthPage: {
+    title: "Hello, welcome to PLAYGROUND.",
+    heading1: "Sign up now.",
+    list1: [
+      {
+        text: "Sign up with Google",
+        path: "",
+      },
+      {
+        text: "Sign up with Naver",
+        path: "",
+      },
+      {
+        text: "Sign up with Kakao",
+        path: "",
+      },
+      {
+        text: "Sign up with Email",
+        path: "",
+      },
+    ],
+    heading2: "Already have an account?",
+    list2: [
+      {
+        text: "Log in with Google",
+        path: "",
+      },
+      {
+        text: "Log in with Naver",
+        path: "",
+      },
+      {
+        text: "Log in with Kakao",
+        path: "",
+      },
+      {
+        text: "Log in with Email",
+        path: "",
+      },
+    ],
+  },
 };
 
 export default pages;

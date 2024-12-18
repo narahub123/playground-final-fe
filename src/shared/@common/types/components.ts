@@ -5,4 +5,9 @@ interface HyperLinkCardType {
 
 type InputValueType = string | number;
 
-export type { HyperLinkCardType, InputValueType };
+type AuthButtonType = {
+  text: string;
+  path: string;
+};
+
+export type { HyperLinkCardType, InputValueType, AuthButtonType };

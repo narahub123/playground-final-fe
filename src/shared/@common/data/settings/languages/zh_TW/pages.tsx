@@ -1756,6 +1756,47 @@ const pages = {
       },
     ],
   },
+  AuthPage: {
+    title: "你好，歡迎來到PLAYGROUND。",
+    heading1: "現在註冊。",
+    list1: [
+      {
+        text: "使用Google註冊",
+        path: "",
+      },
+      {
+        text: "使用Naver註冊",
+        path: "",
+      },
+      {
+        text: "使用Kakao註冊",
+        path: "",
+      },
+      {
+        text: "使用電子郵件註冊",
+        path: "",
+      },
+    ],
+    heading2: "已經有帳戶了嗎？",
+    list2: [
+      {
+        text: "使用Google登入",
+        path: "",
+      },
+      {
+        text: "使用Naver登入",
+        path: "",
+      },
+      {
+        text: "使用Kakao登入",
+        path: "",
+      },
+      {
+        text: "使用電子郵件登入",
+        path: "",
+      },
+    ],
+  },
 };
 
 export default pages;

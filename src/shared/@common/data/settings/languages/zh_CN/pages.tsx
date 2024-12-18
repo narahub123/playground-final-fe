@@ -1755,6 +1755,47 @@ const pages = {
       },
     ],
   },
+  AuthPage: {
+    title: "你好，欢迎来到PLAYGROUND。",
+    heading1: "现在注册。",
+    list1: [
+      {
+        text: "使用Google注册",
+        path: "",
+      },
+      {
+        text: "使用Naver注册",
+        path: "",
+      },
+      {
+        text: "使用Kakao注册",
+        path: "",
+      },
+      {
+        text: "使用电子邮件注册",
+        path: "",
+      },
+    ],
+    heading2: "已经有账户了吗？",
+    list2: [
+      {
+        text: "使用Google登录",
+        path: "",
+      },
+      {
+        text: "使用Naver登录",
+        path: "",
+      },
+      {
+        text: "使用Kakao登录",
+        path: "",
+      },
+      {
+        text: "使用电子邮件登录",
+        path: "",
+      },
+    ],
+  },
 };
 
 export default pages;
