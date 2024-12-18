@@ -6,7 +6,6 @@ import Messages from "./Messages/Messages";
 import ProfilePage from "./ProfilePage/ProfilePage";
 import Bookmarks from "./Bookmarks/Bookmarks";
 import Settings from "./Settings/Settings";
-import Auth from "./Auth/Auth";
 import Login from "./Login/Login";
 import Signin from "./Signin/Signin";
 import Logout from "./Logout/Logout";
@@ -23,7 +22,6 @@ export {
   ProfilePage,
   Bookmarks,
   Settings,
-  Auth,
   Login,
   Signin,
   Logout,
