@@ -83,7 +83,6 @@ import {
   PushNotificationsPage,
   DisplayPage,
 } from "@pages/Settings/pages";
-import { AuthLayout } from "@/layouts";
 import { PageLayout } from "@shared/pages/layout";
 import {
   BlockedAllOutlet,
@@ -91,6 +90,7 @@ import {
   TopicsNotInterestedOutlet,
   TopicsOutlet,
 } from "@features/settings-branch-list/ui/outlets";
+import { AuthLayout } from "@shared/auth/layout";
 
 // 로그인 여부 확인
 const login = true;
