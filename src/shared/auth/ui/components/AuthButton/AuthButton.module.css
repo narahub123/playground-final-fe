@@ -1,0 +1,20 @@
+.auth-button {
+  border: 1px solid #ccc;
+  border-radius: 40px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.color-theme {
+  color: var(--theme-color);
+  background-color: var(--theme-bgColor);
+}
