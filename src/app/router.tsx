@@ -93,7 +93,7 @@ import {
 import { AuthLayout } from "@shared/auth/layout";
 
 // 로그인 여부 확인
-const login = true;
+const login = false;
 // 로그인 한 경우 유저 아이디
 const id = "abcdefg";
 
