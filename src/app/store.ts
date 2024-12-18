@@ -4,7 +4,8 @@ import {
   settingsSlice as settings,
   userSlice as user,
   loginSlice as login,
-  signinslice as signin,
+  signinSlice as signin,
+  modalSlice as modal,
 } from "@shared/@common/model/slices";
 
 export const store = configureStore({
@@ -13,6 +14,7 @@ export const store = configureStore({
     user,
     login,
     signin,
+    modal,
   },
 
   // serializableCheck 옵션을 false로 설정하여
