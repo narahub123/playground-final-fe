@@ -124,6 +124,7 @@ import {
   getPushNotificationsAlertAndAgent,
 } from "@shared/@common/model/selectors";
 import regExp from "@shared/@common/data/regExp";
+import { google, kakao, naver } from "@shared/@common/assets/logos";
 
 const pages = {
   settingsLandingPage: {
@@ -1812,18 +1813,21 @@ const pages = {
       {
         text: "구글 회원 가입",
         path: "",
+        img: google,
       },
       {
         text: "네이버 회원 가입",
         path: "",
+        img: naver,
       },
       {
         text: "카카오 회원 가입",
         path: "",
+        img: kakao,
       },
       {
-        text: "이메일 가입",
-        path: "",
+        text: "이메일 회원 가입",
+        colorTheme: true,
       },
     ],
     heading2: "이미 가입하셨나요?",
@@ -1831,18 +1835,21 @@ const pages = {
       {
         text: "구글 로그인",
         path: "",
+        img: google,
       },
       {
         text: "네이버 로그인",
         path: "",
+        img: naver,
       },
       {
         text: "카카오 로그인",
         path: "",
+        img: kakao,
       },
       {
         text: "이메일 로그인",
-        path: "",
+        colorTheme: true,
       },
     ],
   },

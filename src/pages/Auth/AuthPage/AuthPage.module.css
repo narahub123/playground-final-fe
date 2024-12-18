@@ -18,10 +18,14 @@
   flex-direction: column;
   align-items: center;
   width: 300px;
+  gap: 30px;
 }
 
 .section {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .heading {
@@ -32,6 +36,7 @@
 .list {
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 
 .item {
